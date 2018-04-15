@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html>
     <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             body{
-                display: block; text-align: center; background: #91def0;
+                display: block; text-align: center; background: #A7383E;
+                font-size: 20px;
             }
             #ui{
-                border: 0.5em ridge;
+                font-size: 110%;
+                margin: 0px 0px;
+                border: 0.25em ridge;
+                
             }
+            
+            .hide{
+                display: none;
+            }
+            
             #d1{
                 background-color: #c6bbbb;
-                border: 0.2em solid;
+                border: 0.1em solid;
             }
+            
             #d2{
-                color: #f2113d; margin=auto;
-            }            
+                color: #FBA7AB;
+            }
+            footer{
+                color: #FBA7AB;
+            }
         </style>
     </head>
     
     <body>        
-        <textarea rows="5" cols="50" "text" id= "ui" onkeyup="update()" placeholder="Please write something here! This app will display the total length of the written character. " ></textarea>
+        <textarea rows="10" cols="30" "text" id= "ui" onkeyup="update()" placeholder="Please write something here! This app will display the total length of the written character. " ></textarea>
         
-        <div>
-            <textarea readonly rows="5" cols="50" "text" id= "d1" onkeyup="update()" placeholder="You written text will appear here."></textarea><br>
-            <h3><span id= "d2" >[String Length].</span></h3>
+        <div class="hide">
+            <textarea readonly rows="5" cols="50" "text" id= "d1" onkeyup="update()" placeholder="You written text will appear here."></textarea>            
         </div>
         
+        <h3><span id= "d2" >[Word Count will appear here.].</span></h3>
+        
         <script>
+            
+            
             function update(){
                 var ui_val = e("ui").value;
                 e("d1").innerHTML = ui_val;
@@ -41,8 +59,8 @@
             }
         </script>
         <footer>
-			Made by Soumen- April 2018<br>
-			<a href="index.html">Home</a>
+			Made by Soumen - v.01 April 2018<br>
+			<!--<a href="index.html">Home</a>-->
 		
 		</footer>
     </body>
