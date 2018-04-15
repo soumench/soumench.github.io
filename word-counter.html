@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                display: block; text-align: center; background: #91def0;
+            }
+            #ui{
+                border: 0.5em ridge;
+            }
+            #d1{
+                background-color: #c6bbbb;
+                border: 0.2em solid;
+            }
+            #d2{
+                color: #f2113d; margin=auto;
+            }            
+        </style>
+    </head>
+    
+    <body>        
+        <textarea rows="5" cols="50" "text" id= "ui" onkeyup="update()" placeholder="Please write something here! This app will display the total length of the written character. " ></textarea>
+        
+        <div>
+            <textarea readonly rows="5" cols="50" "text" id= "d1" onkeyup="update()" placeholder="You written text will appear here."></textarea><br>
+            <h3><span id= "d2" >[String Length].</span></h3>
+        </div>
+        
+        <script>
+            function update(){
+                var ui_val = e("ui").value;
+                e("d1").innerHTML = ui_val;
+                e("d2").innerHTML = "Words : "+ wordcount(ui_val)+"<br>Characters : " + ui_val.length  ; 
+            }
+            
+            function wordcount(txt){
+                return txt.split(" ").length;
+            }
+            function e(id){
+                return document.getElementById(id);
+            }
+        </script>
+        <footer>
+			Made by Soumen- April 2018<br>
+			<a href="index.html">Home</a>
+		
+		</footer>
+    </body>
+</html>
