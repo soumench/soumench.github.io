@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Date Checker</title>
+    </head>
+    <body>
+        <h1>Date Checker</h1>
+        <p>Please enter 1 to 7 </p>
+        <p>This is an example of switch case statement</p>
+        <input 
+               type= "text" id = "input" 
+               onkeyup = "calculate()" //this is for live update 
+               style= "text-align: center; width:4em"
+               placeholder = "enter"
+        />
+        <br>
+        <span id = "display">some text here</span>
+        <br><br>
+        <a href="index.html">Go back.</a>
+         
+        <script>
+            
+            function write(txt){
+                document.getElementById("display").innerHTML = txt;
+            }
+            
+            function calculate(){
+                var day = parseInt(document.getElementById("input").value);
+                switch (day) {
+                  case 1:
+                    write("Monday");
+                    break;
+                  case 2:
+                    write("Tuesday");
+                    break;
+                  case 3:
+                    write("Wednesday");
+                    break;
+                  case 4:
+                    write("Thursday");
+                    break;
+                  case 5:
+                    write("Friday");
+                    break;
+                  case 6:
+                    write("Saturday");
+                    break;
+                  case 7:
+                    write("Sunday");
+                    break;
+                  default:
+                    write("Another day");
+                }
+            }
+        </script>
+            
+    </body>
+</html>
