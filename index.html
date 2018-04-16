@@ -1,79 +1,19 @@
 <html>
 	<head>
-		<title>My simple Word Counter Example</title>
+		<title>My Code Playground</title>
 	</head>
 
 	<body>
 		<h1>Welcome to my Website</h1>
 		<p>This is my place for my hobbyist activities for purely noncommercial and educational purpose.</p>
-		<h1 id = "d" style= "margin-left:2em; color: red"> Click to start the timer.</h1>
-	
-
-		<button id = "start_btn" onclick= "start_timer()" > Start </button>
-
-		<button id = "stop_btn" onclick= "stop_timer()" > Stop </button>
-
-		<button onclick= "reset()" > Reset </button>
 		
+		My simple programs:<br>
+		1.<a href="word-counter.html"> A word counter </a><br>
+		2.<a href="date-checker.html"> A day checker</a><br>
+		3.<a href="custom-timer.html"> A custom timer</a>
 
-		<p> A simple timer with a timed trigger - my example </p>
-		My other programs:<br>
-		<a href="word-counter.html"> A simple word and character counter example</a><br>
-		<a href="date-checker.html"> A date checker example using switch-case statement</a>
 
-		<script>
-			var i = 0;  var time;
-
-            button_state("stop_btn", 1, "start_btn", 0);            
-
-			function stop_timer(){
-
-                clearInterval(time);
-
-                button_state("stop_btn", 1,"start_btn", 0);
-            }			
-
-			function start_timer(){
-
-                time = setInterval(write,1000);
-
-                button_state("stop_btn", 0, "start_btn", 1);
-            }
-			
-			function reset(){
-
-				stop_timer(); // first stop the timer
-
-				i = 0;
-
-				write(i);
-
-                button_state("stop_btn", 1, "start_btn", 0);
-            }
-
-            function button_state(id1, state1, id2, state2){
-
-                e(id1).disabled = state1;
-
-                e(id2).disabled = state2;
-            } 
-					
-			function write(){
-
-				e("d").innerHTML =i++ ;
-
-				// Just a check point here to do stuff 
-
-				if(i > 60){   
-
-					reset();
-				}
-			}
-			function e(id){
-				return document.getElementById(id);
-			}
-		</script>
-
+		
 	</body>
 
 </html>
