@@ -52,8 +52,15 @@
             }
             
             function wordcount(txt){
-                return txt.split(" ").length;
+                txt = txt.replace(/(^\s*)|(\s*$)/gi,"");
+                txt = txt.replace(/[ ]{2,}/gi," ");
+                txt = txt.replace(/\n /,"\n");
+                return txt.split(' ').length;
             }
+            
+            /*function wordcount(txt){
+                return txt.split(" ").length;
+            }*/
             function e(id){
                 return document.getElementById(id);
             }
