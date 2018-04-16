@@ -50,18 +50,26 @@
                 var ui_val = e("ui").value;
                 e("d1").innerHTML = ui_val;
                 e("d2").innerHTML = "Words : "+ wordcount(ui_val)+"<br>Characters : " + ui_val.length  ; 
+                /*e("d2").innerHTML = "Words : "+ nonSpacesCount(ui_val)+"<br>Characters : " + ui_val.length  ;*/ 
             }
             
+            /*function nonSpacesCount(txt){
+                return (txt.match(/\S/g)||[]).length;
+            }*/
+            
             function wordcount(txt){
+                
+                return txt.split(/\s+/).length-1;
+            }
+            
+            /*function wordcount(txt){
                 txt = txt.replace(/(^\s*)|(\s*$)/gi,"");
                 txt = txt.replace(/[ ]{2,}/gi," ");
                 txt = txt.replace(/\n /,"\n");
                 return txt.split(' ').length;
-            }
-            
-            /*function wordcount(txt){
-                return txt.split(" ").length;
             }*/
+            
+            
             function e(id){
                 return document.getElementById(id);
             }
