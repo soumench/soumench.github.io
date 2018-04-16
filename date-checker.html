@@ -1,28 +1,40 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Date Checker</title>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Day Checker</title>
+        <style>
+            body{
+                background-color: pink;
+                font-size: 1em;
+                text-align: center;
+            }
+            h1{
+                box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
+            }
+            p{
+                font-size: 200%; font-weight: bolder;
+            }
+            #input{
+                font-size: 200%; text-align: center; width: 10%;
+            }
+            footer{
+                box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
+                margin: 2em auto;
+            }
+        </style>
     </head>
     <body>
-        <h1>Date Checker</h1>
+        <h1>Day Checker</h1>
         <p>Please enter 1 to 7 </p>
-        <p>This is an example of switch case statement</p>
-        <input 
-               type= "text" id = "input" 
-               onkeyup = "calculate()" //this is for live update 
-               style= "text-align: center; width:4em"
-               placeholder = "enter"
-        />
+        <input type="text" id="input" onkeyup="calculate()" placeholder="..."/>
+        
+        <p id = "display">...</p>
         <br>
-        <span id = "display">some text here</span>
-        <br><br>
-        <a href="index.html">Go back.</a>
+        
          
-        <script>
-            
-            function write(txt){
-                document.getElementById("display").innerHTML = txt;
-            }
-            
+        <script>            
             function calculate(){
                 var day = parseInt(document.getElementById("input").value);
                 switch (day) {
@@ -51,7 +63,12 @@
                     write("Another day");
                 }
             }
+            function write(txt){
+                document.getElementById("display").innerHTML = txt;
+            }
         </script>
-            
+        
+        <footer>Made by Soumen <br> April - 2018
+        </footer>            
     </body>
 </html>
