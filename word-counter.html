@@ -52,6 +52,7 @@
                 /*e("d2").innerHTML = "Words : "+ wordcount(ui_val)+"<br>Characters : " + ui_val.length  ; */
                 /*e("d2").innerHTML = "Words : "+ nonSpacesCount(ui_val)+"<br>Characters : " + ui_val.length  ;*/ 
                 e("d2").innerHTML = "Words : "+ wordcount(ui_val)+"<br>Characters : " + ui_val.length  + "<br>Nonspaces: "+ nonSpacesCount(ui_val) ;
+                /*e("d2").innerHTML = "Words : "+ mysplit.length +"<br>Characters : " + ui_val.length  + "<br>Nonspaces: "+ nonSpacesCount(ui_val) ;*/
             }
             
             function nonSpacesCount(txt){
@@ -59,8 +60,14 @@
             }
             
             function wordcount(txt){
-                
-                return txt.split(/\s+/).length;
+                return mysplit(txt).length;
+            }
+            
+            function mysplit(txt){
+                txt = txt.replace(/^\s+/,"");
+                if(""==txt)return [];
+                txt = txt.replace(/\s+$/,"");
+                return txt.split(/\s+/);
             }
             
             function e(id){
