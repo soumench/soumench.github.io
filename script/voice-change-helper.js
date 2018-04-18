@@ -17,12 +17,13 @@
             subActive.value=firstUpperCase(subActive.value);
             e("subPassive").value = subToObj(subActive.value);
             e("objPassive").value = firstUpperCase(objToSub(objActive.value));
+            e("vrbActive").value=e("vrbActive").value.toLowerCase();
             e("punc2").value = punc1.value;
             
             detectNumberTense();
             
             var pastParticiple= e("3rdForm1").value;
-            e("3rdForm2").value= pastParticiple;
+            e("3rdForm2").value= pastParticiple.toLowerCase();
             
             if(pastParticiple==="known"){/*exception*/
                 e("by").value="to";      /*exception*/
