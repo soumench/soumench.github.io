@@ -44,7 +44,7 @@ p {
 }
 
 #by {
-    width: 1em;
+    width: 2em;
 }
 
 .3rdFormInput { /*problem here, cannot resize this textbox*/
