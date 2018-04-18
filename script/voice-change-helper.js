@@ -1,5 +1,6 @@
    /* <script>*/
-        
+        /*Made by Soumen Chakraborty 18-April-2018
+        Only for Educational, Research and strictly Non-commercial Purpose.*/
         var number; 
         var tense ;
         function buttonUpdate(){
