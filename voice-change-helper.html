@@ -7,36 +7,40 @@
     <style>
         body{font-size: 22px; text-align: center; display: block;
             background-color: rgba(80, 13, 96, 0.25);
+            margin: .5em;
         }
-        p{font-size: 90%; font-weight: bolder; color: rgba(190, 20, 20, 0.95);}
+        h4{box-shadow: 5px 10px #888888;}
+        p{font-size: 87%; font-weight: bolder; color: rgba(190, 20, 20, 0.95);}
         .ActiveVoiceInput{
             border: 1px solid red; border-radius: 10px;
-            padding: 5px 0.1em;
+            padding: 5px 0.1em; box-shadow: 5px 10px #888888;
         }
         .active, .passive{text-align: center; width: 5em; }
         .active{font-size: 85%;}
         .passive{font-size: 90%;}
         #punc1, #punc2{width:0.48em;}
         #by{width:1em;}
-        .askUser{font-size: 90%;text-align: right}
-        .askUser p{
-            text-align: center;
+        .3rdFormInput{font-size:150%;} /*problem here, cannot resize this textbox*/
+        .askUser{font-size: 85%;border: 1px solid red; border-radius: 10px;
+            padding: 0.3em; box-shadow: 5px 10px #888888;
         }
-        legend{text-align: left; margin-top: .1em;}
-        .3rdFormInput{font-size:110%;} /*problem here, cannot resize this textbox*/
-        .btn{margin: 1em; padding: 0.1em; font-size: .8em;}
+        .rad{text-align: left;}
+        legend{text-align: center; margin-top: .1em;}
+        
+        .btn{margin: 0.1em; padding: auto 0.02em; font-size: .9em;}
+        .passiveHeading{border: 0px; padding: 0px; margin: 0px;}
         .passiveDisplay{
             border: 1px solid red; border-radius: 10px;
-            padding: 0.3em; box-shadow: 5px 10px #888888:
+            padding: 0.2em; box-shadow: 5px 10px #888888;
         }
-        footer{ font-size:75%; margin-top: 1em; border-top: 0.1em solid grey; 
-                padding-top: 0.4em; color: #1212a7
+        footer{ font-size:70%; margin-top: 1em; border-top: 0.1em solid grey; 
+                padding-top: 0.1em; color: #1212a7;
         }
     </style>
 </head>
 
 <body>
-    <h3>Voice Change Helper V-0.1</h3>
+    <h4>Voice Change Helper V-0.1</h4>
     <p>Write the active voice ( in SVO format ):</p>
     <!--Active voice section-->
     <div class="ActiveVoiceInput">
@@ -46,13 +50,13 @@
         <input type="text" class="active" id="punc1" onkeyup="update()" placeholder=".">
     </div>
     <!--Ask for user input : singular || plural , past || present || future-->
-    <p>Provide three information:</p>
+    <p>Provide the following information:</p>
     <div class="askUser">       
-        <legend><b>1.</b> Is the Object Singular or plural ? </legend>
+        <legend><b>1.</b> Is the Object a Singular or a plural Number? </legend>
         <input type="radio" name="Number" class="rad" onclick="selectNumber(this.value)" value="singular">Singular
         <input type="radio" name="Number" class="rad" onclick="selectNumber(this.value)" value="plural">Plural
         
-        <legend><b>2.</b> Is the Tense in Past, Present or Future ? </legend>
+        <legend><b>2.</b> Is the Tense in Past, Present or Future? </legend>
         <input type="radio" name="Tense" class="rad" onclick="selectTense(this.value)" value="past">Past
         <input type="radio" name="Tense" class="rad" onclick="selectTense(this.value)" value="present">Present
         <!--<input type="radio" name="Tense" onclick="selectTense(this.value)" value="future">Future-->
@@ -64,6 +68,7 @@
     <button type="text" class="btn" onclick="buttonUpdate()">Change the voice</button><br> 
     
     <!--Passive Voice Section--   no user input -->
+    <p class="passiveHeading">Passive voice:</p>
     <div class="passiveDisplay">
         <input type="text" class="passive" id="objPassive" placeholder="Subject" readonly>
         <input type="text" class="passive" id="aux-verb" placeholder="aux verb" readonly>
@@ -79,7 +84,7 @@
         function buttonUpdate(){
             var ppInput = e("3rdForm1");
             if(ppInput.value== ""|| number===undefined|| tense===undefined){
-                alert("Please provide all the following information\n 1. Number,\n 2. Tense \n 3. Past Paticiple Form of the main verb!");
+                alert("Please provide all the following information\n 1. Number\n 2. Tense \n 3. Past Paticiple Form of the main verb!");
                 ppInput.style.backgroundColor="red";
                 return;
             }
@@ -134,7 +139,7 @@
         function subToObj(txt) {
             var myText;
             switch (txt) {
-                case "I": myText = "me"; break;
+                case "I" || "i": myText = "me"; break;
                 case "We":myText = "us";break;
                 case "He":myText = "him";break;
                 case "She":myText = "her";break;
