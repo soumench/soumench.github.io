@@ -4,39 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Voice Change Helper.</title>
-    <style>
-        body{font-size: 22px; text-align: center; display: block;
-            background-color: rgba(80, 13, 96, 0.25);
-            margin: .5em;
-        }
-        h4{box-shadow: 5px 10px #888888;}
-        p{font-size: 87%; font-weight: bolder; color: rgba(190, 20, 20, 0.95);}
-        .ActiveVoiceInput{
-            border: 1px solid red; border-radius: 10px;
-            padding: 5px 0.1em; box-shadow: 5px 10px #888888;
-        }
-        .active, .passive{text-align: center; width: 5em; }
-        .active{font-size: 85%;}
-        .passive{font-size: 90%;}
-        #punc1, #punc2{width:0.48em;}
-        #by{width:1em;}
-        .3rdFormInput{font-size:150%;} /*problem here, cannot resize this textbox*/
-        .askUser{font-size: 85%;border: 1px solid red; border-radius: 10px;
-            padding: 0.3em; box-shadow: 5px 10px #888888;
-        }
-        .rad{text-align: left;}
-        legend{text-align: center; margin-top: .1em;}
-        
-        .btn{margin: 0.1em; padding: auto 0.02em; font-size: .9em;}
-        .passiveHeading{border: 0px; padding: 0px; margin: 0px;}
-        .passiveDisplay{
-            border: 1px solid red; border-radius: 10px;
-            padding: 0.2em; box-shadow: 5px 10px #888888;
-        }
-        footer{ font-size:70%; margin-top: 1em; border-top: 0.1em solid grey; 
-                padding-top: 0.1em; color: #1212a7;
-        }
-    </style>
+    <link rel="stylesheet" href="css/voice-change-helper.css"> 
 </head>
 
 <body>
@@ -77,104 +45,8 @@
         <input type="text" class="passive" id="subPassive" placeholder="Object" readonly>
         <input type="text" class="passive" id="punc2"  placeholder="." readonly>
     </div>
-    <script>
-        
-        var number; 
-        var tense ;
-        function buttonUpdate(){
-            var ppInput = e("3rdForm1");
-            if(ppInput.value== ""|| number===undefined|| tense===undefined){
-                alert("Please provide all the following information\n 1. Number\n 2. Tense \n 3. Past Paticiple Form of the main verb!");
-                ppInput.style.backgroundColor="red";
-                return;
-            }
-            ppInput.style.backgroundColor="white";
-            update();
-        }
-        function update() {
-            subActive.value=firstUpperCase(subActive.value);
-            e("subPassive").value = subToObj(subActive.value);
-            e("objPassive").value = firstUpperCase(objToSub(objActive.value));
-            e("punc2").value = punc1.value;
-            
-            detectNumberTense();
-            
-            var pastParticiple= e("3rdForm1").value;
-            e("3rdForm2").value= pastParticiple;
-            
-            if(pastParticiple==="known"){/*exception*/
-                e("by").value="to";      /*exception*/
-            }else{e("by").value="by";}  /*exception*/
-        }
-        
-        function detectNumberTense(){
-            
-            var msg;
-            if(number == "singular" && tense == "present"){
-                if(objPassive.value=="I"){msg="am";}
-                else if(objPassive.value==="You"){msg="are";}
-                else{msg="is";}                
-            }else if(number == "plural" && tense == "present"){
-               msg = "are"; 
-            }else if(number == "singular" && tense == "past"){
-                if(objPassive.value=="You"){msg="were";}
-                else{msg="was";}
-            }else if(number == "plural" && tense == "past"){
-               msg = "were"; 
-            }else if(tense=="future"){
-                msg="will be";
-            }
-            
-            e("aux-verb").value= msg;
-        }
-        
-        function selectNumber(Number){  /*called at radio buttton check event*/
-           number = Number;
-        }
-        
-        function selectTense(Tense){/*called at radio buttton check event*/
-           tense =Tense;           
-        }
-
-        function subToObj(txt) {
-            var myText;
-            switch (txt) {
-                case "I" || "i": myText = "me"; break;
-                case "We":myText = "us";break;
-                case "He":myText = "him";break;
-                case "She":myText = "her";break;
-                case "They":myText = "them";break;
-                default:myText = firstLowerCase(txt);
-            }
-            return myText;
-        }
-
-        function objToSub(txt) {
-            var myText;
-            switch (txt) {
-                case "me":myText = "I";break;
-                case "us":myText = firstUpperCase("we");break;
-                case "you":myText = firstUpperCase("you");break;
-                case "him":myText = firstUpperCase("he");break;
-                case "her":myText = firstUpperCase("she");break;
-                case "them":myText = firstUpperCase("they");break;
-                default:myText = txt;
-            }
-            return myText;
-        }
-
-        function firstUpperCase(txt) {
-            return txt.substr(0, 1).toUpperCase() + txt.substr(1);
-        }
-        
-        function firstLowerCase(txt) {
-            return txt.substr(0, 1).toLowerCase() + txt.substr(1);
-        }
-
-        function e(id) {
-            return document.getElementById(id);
-        }
-    </script>
-    <footer> &copy; Soumen - April 2018<br> For Educational and Non-commercial purpose only.</footer>
+    <!--<script> PLACE FOR LOCAL SCRIPT </script>-->
+    <script src="script/voice-change-helper.js"></script>
+    <footer> &copy; Soumen Chakraborty - April 2018<br> For Educational and Non-commercial purpose only.</footer>
     </body>
 </html>
