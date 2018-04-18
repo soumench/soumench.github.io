@@ -67,7 +67,8 @@
                 case "He":myText = "him";break;
                 case "She":myText = "her";break;
                 case "They":myText = "them";break;
-                default:myText = firstLowerCase(txt);
+                
+                default:myText = firstLowerCase(txt); /*-a name should not change the capitalization--*/
             }
             return myText;
         }
