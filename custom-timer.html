@@ -73,7 +73,7 @@
             e("timeValue").innerHTML= "Current Timer duration: "+ trigger +" seconds";
             
             e("progressBar").max = trigger;
-            e("progressBar").value=trigger;
+            e("progressBar").value=0;
             function update(){
                 i=0;
                 e("progressBar").value=i;
@@ -102,8 +102,9 @@
 			
 			function reset(){
 				stop_timer(); 
-				i = 0;
-                write(i);
+				
+                write("Time Up!");
+                i = 0;
             }           
 
             function button_state(id1, state1, id2, state2){
@@ -116,7 +117,8 @@
                 e("progressBar").value= i;
 				// Just a check point here to do stuff
 				if(i > trigger){ 
-                    sound.play();
+                    e("progressBar").value= 0;
+                    sound.play();                    
                     reset();
                 }
 			}

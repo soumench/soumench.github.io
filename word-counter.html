@@ -3,35 +3,7 @@
     <head>
        <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body{
-                margin: .5em auto;
-                display: block; text-align: center; background: #A7383E;
-                font-size: 20px;
-            }
-            #ui{
-                font-size: 110%;
-                margin: 0px 0px;
-                border: 0.25em ridge;
-                
-            }
-            
-            .hide{
-                display: none;
-            }
-            
-            #d1{
-                background-color: #c6bbbb;
-                border: 0.1em solid;
-            }
-            
-            #d2{
-                color: #FBA7AB;
-            }
-            footer{
-                color: #FBA7AB;
-            }
-        </style>
+       <link rel="stylesheet" href="css/wor-counter.css"> 
     </head>
     
     <body>        
@@ -43,41 +15,33 @@
         
         <h3><span id= "d2" >[Word Count will appear here.]</span></h3>
         
-        <script>
-            
-            
+        <script>            
             function update(){
                 var ui_val = e("ui").value;
+                
                 e("d1").innerHTML = ui_val;
-                /*e("d2").innerHTML = "Words : "+ wordcount(ui_val)+"<br>Characters : " + ui_val.length  ; */
-                /*e("d2").innerHTML = "Words : "+ nonSpacesCount(ui_val)+"<br>Characters : " + ui_val.length  ;*/ 
+                
                 e("d2").innerHTML = "Words : "+ wordcount(ui_val)+"<br>Characters : " + ui_val.length  + "<br>Nonspaces: "+ nonSpacesCount(ui_val) ;
-                /*e("d2").innerHTML = "Words : "+ mysplit.length +"<br>Characters : " + ui_val.length  + "<br>Nonspaces: "+ nonSpacesCount(ui_val) ;*/
-            }
-            
+            }            
             function nonSpacesCount(txt){
                 return (txt.match(/\S/g)||[]).length;
-            }
-            
+            }            
             function wordcount(txt){
                 return mysplit(txt).length;
-            }
-            
+            }            
             function mysplit(txt){
                 txt = txt.replace(/^\s+/,"");
                 if(""==txt)return [];
                 txt = txt.replace(/\s+$/,"");
                 return txt.split(/\s+/);
-            }
-            
+            }            
             function e(id){
                 return document.getElementById(id);
             }
         </script>
+        
         <footer>
-			Made by Soumen - v.01 April 2018<br>
-			<!--<a href="index.html">Home</a>-->
-		
+			Made by Soumen <br> Version-1.0    April 2018<br>		
 		</footer>
     </body>
 </html>
