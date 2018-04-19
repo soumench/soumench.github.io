@@ -71,7 +71,7 @@
                 
                 default:myText = txt;   
             }
-            return myText;
+            return myText.toLowerCase();
         }
 
         function objToSub(txt) {
@@ -87,7 +87,7 @@
                 
                 
             }
-            return myText;
+            return myText.toLowerCase();
         }
 
        
