@@ -14,11 +14,10 @@
             update();
         }
         function update() {
-            //subActive.value=subActive.value;
+            
             e("subPassive").value = subToObj(subActive.value);
             e("objPassive").value = objToSub(objActive.value);
-            /*e("subPassive").value = subToObj(subActive.value);
-            e("objPassive").value = firstUpperCase(objToSub(objActive.value));*/
+           
             e("vrbActive").value=e("vrbActive").value.toLowerCase();
             e("punc2").value = punc1.value;
             
@@ -70,8 +69,7 @@
                 case "She":myText = "her";break;
                 case "They":myText = "them";break;
                 
-                default:myText = txt; /*-a name should not change the capitalization--*/
-                /*default:myText = firstLowerCase(txt); -a name should not change the capitalization--  */  
+                default:myText = txt;   
             }
             return myText;
         }
@@ -87,20 +85,12 @@
                 case "them":myText = "they";break;
                 default:myText = txt;    
                 
-                /*case "me":myText = "I";break;
-                case "us":myText = firstUpperCase("we");break;
-                case "you":myText = firstUpperCase("you");break;
-                case "him":myText = firstUpperCase("he");break;
-                case "her":myText = firstUpperCase("she");break;
-                case "them":myText = firstUpperCase("they");break;
-                default:myText = txt;*/
+                
             }
             return myText;
         }
 
-        /*function firstUpperCase(txt) {
-            return txt.substr(0, 1).toUpperCase() + txt.substr(1);
-        }*/
+       
         
         function firstLowerCase(txt) {
             return txt.substr(0, 1).toLowerCase() + txt.substr(1);
