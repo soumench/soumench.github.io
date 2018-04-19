@@ -1,4 +1,4 @@
-   /* <script>*/
+   
         /*Made by Soumen Chakraborty 18-April-2018  this is tempV
         Only for Educational, Research and strictly Non-commercial Purpose.*/
         var number; 
@@ -109,4 +109,4 @@
         function e(id) {
             return document.getElementById(id);
         }
-    /*</script>*/
+    
