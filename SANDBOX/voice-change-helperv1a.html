@@ -1,0 +1,52 @@
+<!DOCTYPE html> <!--this is tempV-->
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Voice Change Helper.</title>
+    <link rel="stylesheet" href="voice-change-helperv1a.css"> 
+</head>
+
+<body>
+    <h4>Voice Change Helper V-0.1</h4>
+    <p>Write the active voice <br>( in SVO format ):</p>
+    <!--Active voice section-->
+    <div class="ActiveVoiceInput">
+        <input type="text" class="active" id="subActive" onkeyup="update()" placeholder="subject">
+        <input type="text" class="active" id="vrbActive" onkeyup="" placeholder="verb">
+        <input type="text" class="active" id="objActive" onkeyup="update()" placeholder="object">
+        <input type="text" class="active" id="punc1" onkeyup="update()" placeholder=".">
+    </div>
+    <!--Ask for user input : singular || plural , past || present || future-->
+    <p>Provide the following information:</p>
+    <div class="askUser">       
+        <legend><b>1.</b> Is the Object a Singular or a plural Number? </legend>
+        <input type="radio" name="Number" class="rad" onclick="selectNumber(this.value)" value="singular">Singular
+        <input type="radio" name="Number" class="rad" onclick="selectNumber(this.value)" value="plural">Plural
+        
+        <legend><b>2.</b> Is the Tense in Past, Present or Future? </legend>
+        <input type="radio" name="Tense" class="rad" onclick="selectTense(this.value)" value="past">Past
+        <input type="radio" name="Tense" class="rad" onclick="selectTense(this.value)" value="present">Present
+        <!--<input type="radio" name="Tense" onclick="selectTense(this.value)" value="future">Future-->
+        
+        <legend><b>3.</b> What is the Past Participle of the main verb?</legend>
+        <input type="text" class="3rdFormInput" id="3rdForm1" onkeyup="update()" placeholder="Write the third form here.">
+    </div>
+    
+    <button type="text" class="btn" onclick="buttonUpdate()">Change the voice</button><br> 
+    
+    <!--Passive Voice Section--   no user input -->
+    <p>Passive voice:</p>
+    <div class="passiveDisplay">
+        <input type="text" class="passive" id="objPassive" placeholder="Subject" readonly>
+        <input type="text" class="passive" id="aux-verb" placeholder="aux verb" readonly>
+        <input type="text" class="passive" id="3rdForm2" placeholder="3rd form" readonly><br><br>
+        <input type="text" class="passive" id="by" placeholder="by" readonly>
+        <input type="text" class="passive" id="subPassive" placeholder="Object"> <!--to fix a Name capitalization-->
+        <input type="text" class="passive" id="punc2"  placeholder="." readonly>
+    </div>
+    <!--<script> PLACE FOR LOCAL SCRIPT </script>-->
+    <script src="voice-change-helperv1a.js"></script>
+    <footer> &copy; Made by Soumen Chakraborty - April 2018<br> For Educational and Non-commercial purpose only.</footer>
+    </body>
+</html>
