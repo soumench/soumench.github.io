@@ -14,7 +14,7 @@
             update();
         }
         function update() {
-            subActive.value=subActive.value;
+            //subActive.value=subActive.value;
             e("subPassive").value = subToObj(subActive.value);
             e("objPassive").value = objToSub(objActive.value);
             /*e("subPassive").value = subToObj(subActive.value);
@@ -70,7 +70,8 @@
                 case "She":myText = "her";break;
                 case "They":myText = "them";break;
                 
-                default:myText = firstLowerCase(txt); /*-a name should not change the capitalization--*/
+                default:myText = txt; /*-a name should not change the capitalization--*/
+                /*default:myText = firstLowerCase(txt); -a name should not change the capitalization--  */  
             }
             return myText;
         }
