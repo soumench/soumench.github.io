@@ -35,7 +35,7 @@
             
             var msg;
             if(number == "singular" && tense == "present"){
-                if(objPassive.value=="I"){msg="am";}
+                if(objPassive.value=="i"){msg="am";}
                 else if(objPassive.value==="You"){msg="are";}
                 else{msg="is";}                
             }else if(number == "plural" && tense == "present"){
@@ -63,7 +63,7 @@
         function subToObj(txt) {
             var myText;
             switch (txt) {
-                case "I" || "i": myText = "me"; break;
+                case "i": myText = "me"; break;
                 case "We":myText = "us";break;
                 case "He":myText = "him";break;
                 case "She":myText = "her";break;
