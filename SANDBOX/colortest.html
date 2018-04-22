@@ -22,13 +22,18 @@
   <input type="text" id="verbInputBox" onkeyup="displayActiveVerb()" placeholder="Type in here.">
   
   <p id="verbDisplayActive">Verb Display Area</p>
-
+  
+  <span id="participle">আপনি কি বাংলা লেখা দেখতে পাচ্ছেন ? </span><span><---<<< participle display</span>
+  
+   
  
  <script>
      e("verbInputBox").style.visibility = "hidden"; // verbInputTextBox is hidden at first
      
   function displayActiveVerb(){
       e("verbDisplayActive").innerHTML = e("verbInputBox").value;
+      
+      e("participle").innerHTML = e("verbInputBox").value;
   }
   
   function changeVerb(){
