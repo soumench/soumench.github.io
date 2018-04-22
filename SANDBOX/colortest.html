@@ -11,13 +11,14 @@
   <h1>Please select a color</h1>
   
   <select id = "selColor" onchange="changeColor()">
-   <option value = "#FFFFFF">White</option>
-   <option value = "#FF0000">Red</option>
-   <option value = "#FFCC00">Orange</option>
+   <option value = "White">White</option>
+   <option value = "Red">Red</option>
+   <option value = "Orance">Orange</option>
   </select>
   
   
   <input type="text" id="ui" placeholder="enter">
+  <p id="display">Display Area</p>
  </form>
  
  
@@ -27,9 +28,13 @@
       var selColor = document.getElementById("selColor");
       var color = selColor.value;
       document.body.style.backgroundColor = color;
-      document.getElementById("ui").value = color;
+      e("ui").value = color;
+      e("display").innerHTML = color;
       
-  } 
+  }
+  function e(id){
+      return document.getElementById(id);
+  }     
  </script>
  </body>
 
