@@ -23,20 +23,28 @@
   
   <p id="verbDisplayActive">Verb Display Area</p>
   
-  <span id="participle">আপনি কি বাংলা লেখা দেখতে পাচ্ছেন ? </span><span><---<<< participle display</span>
+  <span id="participle">আপনি কি বাংলা লেখা দেখতে পাচ্ছেন ? </span><span><---<<< participle display</span><br>
+  
+  <span id="however">যা খুশি লিখুন</span>
   
    
  
  <script>
      e("verbInputBox").style.visibility = "hidden"; // verbInputTextBox is hidden at first
      
-  function displayActiveVerb(){
+    function updateHoweverDisplayArea(){
+        e("however").innerHTML = e("participle").value.replace(/^(.*)y$/,"$1ied");
+    }
+     
+    function displayActiveVerb(){
       e("verbDisplayActive").innerHTML = e("verbInputBox").value;
       
       e("participle").innerHTML = e("verbInputBox").value;
-  }
+     
+      updateHoweverDisplayArea();
+    }
   
-  function changeVerb(){
+    function changeVerb(){
       var selectedVerb = verbList.value;
       if(selectedVerb==="Type your verb >>"){
          e("verbInputBox").style.visibility='visible';
@@ -48,9 +56,9 @@
       e("verbInputBox").value = selectedVerb;
       
       displayActiveVerb();
-  }
+    }
      
-  function e(id){return document.getElementById(id);}     
+    function e(id){return document.getElementById(id);}     
  </script>
  </body>
 
