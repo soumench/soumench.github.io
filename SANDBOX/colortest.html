@@ -7,34 +7,45 @@
 </head>
   
 <body>
- <form action = "">
-  <h1>Please select a color</h1>
+ 
+  <span>Please select a verb</span>
   
-  <select id = "selColor" onchange="changeColor()">
-   <option value = "White">White</option>
-   <option value = "Red">Red</option>
-   <option value = "Orange">Orange</option>
+  <select id = "verbList" onchange="changeVerb()">
+   <option value = "Choose a verb">Choose a verb</option>
+   <option value = "go">go</option>
+   <option value = "eat">eat</option>
+   <option value = "went">went</option>
+   <option value = "ate">ate</option>
+   <option value = "Type your verb >>">Type your verb >></option>
   </select>
   
   
-  <input type="text" id="ui" placeholder="enter">
-  <p id="display">Display Area</p>
- </form>
+  <input type="text" id="verbInputBox" onkeyup="displayActiveVerb()" placeholder="Type in here.">
+  <p id="verbDisplayActive">Verb Display Area</p>
+
  
  
  <script>
-  
-  function changeColor(){
-      var selColor = e("selColor");
-      var color = selColor.value;
-      /*document.body.style.backgroundColor = color;*/
-      e("ui").value = color;
-      e("display").innerHTML = color;
-      
+     e("verbInputBox").style.visibility = "hidden"; // verbInputTextBox is hidden at first
+     
+  function displayActiveVerb(){
+      e("verbDisplayActive").innerHTML = e("verbInputBox").value;
   }
-  function e(id){
-      return document.getElementById(id);
-  }     
+  
+  function changeVerb(){
+      var selectedVerb = verbList.value;
+      if(selectedVerb==="Type your verb >>"){
+         e("verbInputBox").style.visibility='visible';
+         selectedVerb = "";
+      }
+      else{
+         e("verbInputBox").style.visibility = "hidden"; 
+      }
+      e("verbInputBox").value = selectedVerb;
+      
+      displayActiveVerb();
+  }
+  function e(id){return document.getElementById(id);}     
  </script>
  </body>
 
