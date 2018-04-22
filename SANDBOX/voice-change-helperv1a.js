@@ -1,13 +1,17 @@
    
         /*Made by Soumen Chakraborty 18-April-2018  this is tempV
         Only for Educational, Research and strictly Non-commercial Purpose.*/
+        var participles = {"go" : "gone", "goes": "gone", "went": "gone",
+                           "eat": "eaten", "eats": "eaten", "ate":"eaten",
+                           "speak":"spoken","speaks":"spoken","spoke":"spoken"
+                          }
         var number; 
         var tense ;
         function buttonUpdate(){
             var ppInput = e("3rdForm1");
             if(ppInput.value===""|| number===undefined|| tense===undefined){
                 alert("Please provide all the following information\n 1. Number\n 2. Tense \n 3. Past Paticiple Form of the main verb!");
-                ppInput.style.backgroundColor="red";
+                ppInput.style.backgroundColor="rgba(255, 8, 8, 0.3)";
                 return;
             }
             ppInput.style.backgroundColor="white";
@@ -84,8 +88,6 @@
                 case "her":myText = "she";break;
                 case "them":myText = "they";break;
                 default:myText = txt;    
-                
-                
             }
             return myText.toLowerCase();
         }
@@ -94,9 +96,25 @@
         
         function firstLowerCase(txt) {
             return txt.substr(0, 1).toLowerCase() + txt.substr(1);
+        }        
+        
+        function selectSubAct(){
+            e("subActive").value = eName("subject")[0].value;
+        }
+        function selectVerbAct(){
+            var myText = e("subActive").value;
+                        
+            if(myText==="He" || myText==="She"){
+               e("vrbActive").value = eName("verb")[0].value +"s"; 
+            }
+            else{
+               e("vrbActive").value = eName("verb")[0].value; 
+            }
+        }
+        function selectObjAct(){
+            e("objActive").value = eName("object")[0].value;
         }
 
-        function e(id) {
-            return document.getElementById(id);
-        }
+        function eName(name){return document.getElementsByName(name);}
+        function e(id) {return document.getElementById(id);}
     

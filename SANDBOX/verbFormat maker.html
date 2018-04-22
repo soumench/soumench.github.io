@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <div id="myDiv">
+       <p id="d1"></p>
+       <p id="d"></p>
+    </div>
+    <script>
+        
+        
+        let vPresent; // "go"
+        let vPresent3S; //"goes"
+        let vPast; // "went"
+        let vPastP; // "gone"
+        let vPresentP; // "going"
+        
+        var v1 = mA("put","put","put");
+        var v2 = mA("cut","cut","cut");
+        var v3 = mA("set","set","set");
+        var v4 = mA("let","let","let");
+        var v5 = mA("read","read","read");
+        var v6 = mA("bet","bet","bet");
+        var v7 = mA("burst","burst","burst");
+        var v8 = mA("cost","cost","cost");
+        var v9 = mA("feel","felt","felt");
+        var v10 = mA("hit","hit","hit");
+        var v11 = mA("shut","shut","shut");
+        var v12 = mA("hurt","hurt","hurt");
+        var v13 = mA("shed","shed","shed");
+        var v14 = mA("slit","slit","slit");
+        var v15 = mA("spread","spread","spread");
+        var v16 = mA("thrust","thrust","thrust");
+        var v17 = mA("wet","wet","wet");
+        var v18 = mA("lead","led","led");
+                
+        var v19 = mA("do","did","done");
+        var v20 = mA("go","went","gone");
+        
+        var v21 = mA("take","took","taken");
+        var v22 = mA("shake","shook","shaken");
+        
+        var v23 = mA("give","gave","given");
+        var v24 = mA("drive","drove","driven");
+        
+        var v25 = mA("say","said","said");
+        var v26 = mA("pay","paid","paid");
+        
+        var v27 = mA("know","knew","known");
+        var v28 = mA("grow","grew","grown");
+        var v29 = mA("fly","flu","flown");
+        
+                
+        var v30 = mA("buy","bought","bought");
+        var v31 = mA("bring","brought","brought");
+        
+        var v32 = mA("catch","caught","caught");
+        var v33 = mA("think","thought","thought");
+        
+        var v34 = mA("make","made","made");
+        var v35 = mA("say","said","said");
+        
+        var v36 = mA("come","came","come");
+        var v37 = mA("see","saw","seen");
+        
+        var v38 = mA("give","gave","given");
+        var v39 = mA("drive","drove","driven");
+        
+        var v40 = mA("get","got","got/gotten");
+        var v41 = mA("write","wrote","written");
+        
+        var v42 = mA("wear","wore","worn");
+        var v43 = mA("tear","tore","torn");
+        var v44 = mA("bear","bore","borne/ born");
+        
+        var v45 = mA("find","found","found");
+        var v46 = mA("bind","bound","bound");
+        
+        var v47 = mA("choose","chose","chosen");
+        var v48 = mA("speak","spoke","spoken");
+                
+        var v49 = mA("draw","drew","drawn");
+        var v50 = mA("show","showed","shown");
+        
+        var v51 = mA("rise","rose","risen");
+        var v52 = mA("fall","fell","fallen");
+        var v53 = mA("break","broke","broken");
+        
+        var v54 = mA("ring","rang","rung");
+        var v55 = mA("spring","sprang","sprung");
+        
+        var v56 = mA("send","sent","sent");
+        var v57 = mA("spend","spent","spent");
+        
+        var v58 = mA("sell","sold","sold");
+        var v59 = mA("tell","told","told");
+        
+        var v60 = mA("feel","felt","felt");
+        var v61 = mA("deal","dealt","dealt");
+        
+        var v62 = mA("stand","stood","stood");
+        var v63 = mA("understand","understood","understood");
+        
+        var v64 = mA("lose","lost","lost");
+        
+        var v65 = mA("meet","met","met");
+        
+        var v66 = mA("run","ran","run");
+        
+        var v67 = mA("lie","lay","lain");
+        var v68 = mA("lay","laid","laid");
+        
+        var v69 = mA("mean","meant","meant");
+        
+        var v70 = mA("keep","kept","kept");
+        var v71 = mA("hold","held","held");
+        
+        var v72 = mA("build","built","built");
+        
+        var v73 = mA("hear","heard","heard");
+        
+        var v74 = mA("sit","sat","sat");
+        
+        var v75 = mA("begin","began","begun");
+        
+        var v76 = mA("beat","beat","beaten");
+        var v77 = mA("eat","ate","eaten");
+        
+        var v78 = mA("become","became","become");
+        var v79 = mA("blow","blew","blown");
+        var v80 = mA("drink","drank","drunk");
+        var v81 = mA("feed","fed","fed");
+        var v82 = mA("hang","hung","hung");
+        var v83 = mA("hide","hid","hidden");
+        
+        var v84 = mA("leave","left","left");
+        var v85 = mA("light","lit","lit");
+        
+        var v86 = mA("steal","stolen","stolen");
+        var v87 = mA("shoot","shot","shot");
+        var v88 = mA("shine","shone","shone");
+        
+        var v89 = mA("sleep","slept","slept");
+        
+        var v90 = mA("stick","stuck","stuck");
+        var v91 = mA("teach","taught","taught");
+        
+        var v92 = mA("weave","wove","woven");
+        var v93 = mA("win","won","won");
+        
+        var v94 = mA("sweep","swept","swept");
+        var v95 = mA("throw","threw","thrown");
+        
+        var v96 = mA("swing","swung","swung");
+        var v97 = mA("swear","swore","sworn");
+        
+        var v98 = mA("slide","slid","slid");
+        var v99 = mA("sink","sank","sunk");
+        
+        var v100 = mA("ride","rode","ridden");
+        var v101 = mA("lend","lent","lent");
+        
+        var v102 = mA("freeze","froze","frozen");
+        
+        var v103 = mA("fight","fought","fought");
+        
+        var v104 = mA("forget","forgot","forgotten");
+        
+        var v105 = mA("sing","sang","sung");
+        
+        var v106 = mA("swim","swam","swum");
+        
+        var v107 = mA("learn","learnt","learnt/ learned");
+        
+        var v108 = mA("burn","burned","burnt");
+        
+        var v109 = mA("wake","woke","woken");
+        
+        var v110 = mA("bite","bit","bitten");
+        
+        var v111 = mA("breed","bred","bred");
+        var v112 = mA("bleed","bled","bled");
+        
+        var v113 = mA("broadcast","broadcast","broadcast");
+        var v114 = mA("forecast","forecast","forecast");
+        
+        
+        var v115 = mA("cast","cast","cast");
+        
+        var v116 = mA("dug","dug","dug");
+        var v117 = mA("forbid","forbade","forbidden");
+        
+        var v118 = mA("flee","fled","fled");
+        
+        var v119 = mA("fling","flung","flung");
+        var v120 = mA("forsake","forsook","forsaken");
+        
+        var v121 = mA("grind","ground","ground");
+        
+        var v122 = mA("overtake","overtook","overtaken");
+        
+        var v123 = mA("prove","proved","proven");
+        
+        var v124 = mA("seek","sought","sought");
+        
+        var v125 = mA("slay","slew","slain");
+        
+        var v126 = mA("slink","slunk","slunk");
+        
+        var v127 = mA("sow","sowed","sown");
+        
+         var v128 = mA("spin","spun","spun");
+        
+         var v129 = mA("stink","stank/stunk","stunk");
+        
+         var v130 = mA("stride","strode","stridden");
+        
+         var v131 = mA("strike","struck","struck");
+        
+         var v132 = mA("strive","strove","striven");
+        
+         var v133 = mA("swear","swore","sworn");
+        
+         var v134 = mA("swell","swelled","swollen");
+        
+         var v135 = mA("wind","wound","wound");
+        
+         var v136 = mA("tread","trod","trodden");
+        
+         var v137 = mA("weep","wept","wept");
+        
+         var v138 = mA("wring","wrung","wrung");
+        
+         var v139 = mA("string","stung","stung");
+        
+        for( var i = 1; i <140; ++i){ // a loop is used to add all the "v"s
+            var txt = "v"+i+"+";
+            
+            document.getElementById("d1").innerHTML+= txt;
+        }
+        
+                
+        var verbOutput = v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12+v13+v14+v15+v16+v17+v18+v19+v20+v21+v22+v23+v24+v25+v26+v27+v28+v29+v30+v31+v32+v33+v34+v35+v36+v37+v38+v39+v40+v41+v42+v43+v44+v45+v46+v47+v48+v49+v50+v51+v52+v53+v54+v55+v56+v57+v58+v59+v60+v61+v62+v63+v64+v65+v66+v67+v68+v69+v70+v71+v72+v73+v74+v75+v76+v77+v78+v79+v80+v81+v82+v83+v84+v85+v86+v87+v88+v89+v90+v91+v92+v93+v94+v95+v96+v97+v98+v99+v100+v101+v102+v103+v104+v105+v106+v107+v108+v109+v110+v111+v112+v113+v114+v115+v116+v117+v118+v119+v120+v121+v122+v123+v124+v125+v126+v127+v128+v129+v130+v131+v132+v133+v134+v135+v136+v137+v138+v139;
+        document.getElementById("d").innerHTML= verbOutput;
+        
+        
+        function mA(vPresent,vPast,vPastP){   // make array
+            return  '\"'+ vPresent +'\":"'+ vPastP +'\",\"'+ vPresent +'s\":"'+ vPastP +'\","'+vPast+'\":"'+vPastP+'\",'
+            ;
+           
+        }
+        
+    </script>
+    
+
+</body>
+</html>

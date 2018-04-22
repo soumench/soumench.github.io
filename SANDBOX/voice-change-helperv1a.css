@@ -9,14 +9,19 @@ body {
 }
 
 h4 {
-    box-shadow: 5px 10px #888888;
+    box-shadow: 5px 10px #888888; margin: 0.25em 0px;
+}
+
+datalist{
+    size: 10px;
 }
 
 p {
     font-size: 82%;
     font-weight: bolder;
     color: rgba(190, 20, 20, 0.95);
-}
+    margin: 0.175em;
+}  
 
 .ActiveVoiceInput {
     border: 1px solid red;
