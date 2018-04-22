@@ -11,7 +11,6 @@
   <span>Please select a verb</span>
   
   <select id = "verbList" onchange="changeVerb()">
-   <option value = "Choose a verb">Choose a verb</option>
    <option value = "go">go</option>
    <option value = "eat">eat</option>
    <option value = "went">went</option>
@@ -21,9 +20,9 @@
   
   
   <input type="text" id="verbInputBox" onkeyup="displayActiveVerb()" placeholder="Type in here.">
+  
   <p id="verbDisplayActive">Verb Display Area</p>
 
- 
  
  <script>
      e("verbInputBox").style.visibility = "hidden"; // verbInputTextBox is hidden at first
@@ -45,6 +44,7 @@
       
       displayActiveVerb();
   }
+     
   function e(id){return document.getElementById(id);}     
  </script>
  </body>
