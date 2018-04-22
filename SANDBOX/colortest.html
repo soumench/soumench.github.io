@@ -13,7 +13,7 @@
   <select id = "selColor" onchange="changeColor()">
    <option value = "White">White</option>
    <option value = "Red">Red</option>
-   <option value = "Orance">Orange</option>
+   <option value = "Orange">Orange</option>
   </select>
   
   
@@ -25,9 +25,9 @@
  <script>
   
   function changeColor(){
-      var selColor = document.getElementById("selColor");
+      var selColor = e("selColor");
       var color = selColor.value;
-      document.body.style.backgroundColor = color;
+      /*document.body.style.backgroundColor = color;*/
       e("ui").value = color;
       e("display").innerHTML = color;
       
