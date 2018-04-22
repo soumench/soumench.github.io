@@ -34,13 +34,17 @@
  <script>
      e("verbInputBox").style.visibility = "hidden"; // verbInputTextBox is hidden at first
      
+     function getParticiple(txt){
+         var participleof = {wake:"woken",   wakes:"woken"};// huge array
+         
+         e("pastParticipleDisplay").innerHTML = participleof[txt];
+         if(e("pastParticipleDisplay").innerHTML==="undefined"){
+           e("pastParticipleDisplay").innerHTML = "I don't know!";  
+         }
+     }
+     
     function updateHoweverDisplayArea(){
         e("however").innerHTML = e("verbDisplayActive").innerHTML.replace(/^(.*)y$/,"$1ied");
-        
-         var participleof = {wake:"woken",   wakes:"woken"};
-        
-         e("pastParticipleDisplay").innerHTML = participleof[e("however").innerHTML];
-        /*e("pastParticipleDisplay").innerHTML = participleof[e("verbDisplayActive").innerHTML];*/
     }
      
     function displayActiveVerb(){
@@ -49,6 +53,7 @@
       e("participle").innerHTML = e("verbInputBox").value;
      
       updateHoweverDisplayArea();
+      getParticiple(e("however").innerHTML); // update participle from the array
     }
   
     function changeVerb(){
