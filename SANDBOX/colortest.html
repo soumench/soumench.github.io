@@ -34,6 +34,14 @@
  <script>
      e("verbInputBox").style.visibility = "hidden"; // verbInputTextBox is hidden at first
      
+      function getParticipleOf(verb){ 
+          if(verb=="go")return "gone"; 
+          if(verb=="awake")return "awoken"; 
+          else   return undefined;
+      }
+     
+     
+     /*
      function getParticiple(txt){
          var participleof = {wake:"woken",   wakes:"woken"};// huge array
          
@@ -42,6 +50,7 @@
            e("pastParticipleDisplay").innerHTML = "I don't know!";  
          }
      }
+     */
      
     function updateHoweverDisplayArea(){
         e("however").innerHTML = e("verbDisplayActive").innerHTML.replace(/^(.*)y$/,"$1ied");
@@ -53,7 +62,10 @@
       e("participle").innerHTML = e("verbInputBox").value;
      
       updateHoweverDisplayArea();
-      getParticiple(e("however").innerHTML); // update participle from the array
+      
+      e("pastParticipleDisplay").innerHTML = getParticipleOf( e("however").innerHTML );
+        
+      /*getParticipleOf(e("however").innerHTML); // update participle from the array*/
     }
   
     function changeVerb(){
