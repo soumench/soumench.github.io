@@ -33,7 +33,7 @@
      e("verbInputBox").style.visibility = "hidden"; // verbInputTextBox is hidden at first
      
     function updateHoweverDisplayArea(){
-        e("however").innerHTML = e("participle").value.replace(/^(.*)y$/,"$1ied");
+        e("however").innerHTML = e("verbInputBox").value.replace(/^(.*)y$/,"$1ied");
     }
      
     function displayActiveVerb(){
