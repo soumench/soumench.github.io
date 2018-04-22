@@ -34,11 +34,24 @@
  <script>
      e("verbInputBox").style.visibility = "hidden"; // verbInputTextBox is hidden at first
      
-      function getParticipleOf(verb){ 
+      function getParticipleOf(verb){  
+          var participleof={go:"gone"};
+          var x= participleof[verb]; 
+          if(x)return x;   
+          if(verb=="go")return "gone"; 
+          if(verb=="awake")return "awoken"; 
+          else return undefined;
+     }
+     
+     
+     
+     
+     
+      /*function getParticipleOf(verb){  /// frist version
           if(verb=="go")return "gone"; 
           if(verb=="awake")return "awoken"; 
           else   return undefined;
-      }
+      }*/
      
      
      /*
@@ -85,6 +98,4 @@
     function e(id){return document.getElementById(id);}     
  </script>
  </body>
-
-
 </html>
