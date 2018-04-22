@@ -25,7 +25,9 @@
   
   <span id="participle">আপনি কি বাংলা লেখা দেখতে পাচ্ছেন ? </span><span><---<<< participle display</span><br>
   
-  <span id="however">যা খুশি লিখুন</span>
+  <span id="however">যা খুশি লিখুন</span> <br>
+  
+  <span id="pastParticipleDisplay">পাস্ট participle ডিসপ্লে</span>
   
    
  
@@ -34,6 +36,11 @@
      
     function updateHoweverDisplayArea(){
         e("however").innerHTML = e("verbDisplayActive").innerHTML.replace(/^(.*)y$/,"$1ied");
+        
+         var participleof = {wake:"woken",   wakes:"woken"};
+        
+         e("pastParticipleDisplay").innerHTML = participleof[e("however").innerHTML];
+        /*e("pastParticipleDisplay").innerHTML = participleof[e("verbDisplayActive").innerHTML];*/
     }
      
     function displayActiveVerb(){
