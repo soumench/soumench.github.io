@@ -26,12 +26,51 @@ said:"said",pay:"paid",paid:"paid",know:"known",knew:"known",grow:"grown",grew:"
             e("displayparticiple").innerHTML = makeparticiple(e("verb").value);
 
         }
-
-        function makeparticiple(x) {
+        
+        function makeparticiple(verb) {
+            
+            e("displaytrace").innerHTML = " -- ";
+            var trace = `verb is ${verb} and participleof[verb] is ${participleof[verb]}`;
+            if(participleof[verb])
+            {
+                   trace =trace + " -- <br/> we found "+verb+" in the list so we took the first branch";
+                    e("displaytrace").innerHTML = trace;
+                    return participleof[verb];
+            }
+            
+             if( /y$/.test(verb) ) {
+                   trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in y so we took the y branch";
+                e("displaytrace").innerHTML = trace;
+                 return verb.replace (/y$/, "ied" );
+             }
+           trace = trace + " -- <br/> we dont know yet what to do with this verb"; 
+            e("displaytrace").innerHTML = trace;
+            return "start" + verb + "end";
+        }
+        
+        
+        
+        
+        
+        
+        
+       /* function makeparticiple(verb) {
+             if( /y$/.test(verb) ) {
+                 return verb.replace (/y$/, "ied" );
+             }
+            
+            e("displaytrace").innerHTML = " -- ";
+            var trace = `verb is ${verb} and participleof[verb] is ${participleof[verb]}`;
+            if(participleof[verb]){return participleof[verb];}
+            e("displaytrace").innerHTML = trace;
+            return "start" + verb + "end";
+        }
+*/
+        /*function makeparticiple(x) {
             var trace = `x is ${x} and participleof[x] is ${participleof[x]}`;
             e("displaytrace").innerHTML = trace;
             return "start" + x + "end";
-        }
+        }*/
 
         function e(id) {
             return document.getElementById(id);
