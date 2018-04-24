@@ -4,59 +4,13 @@
 	   <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>A Simple Custom Timer Example</title>
-		<style>
-            body{
-                font-size: 1.25em;
-                text-align: center;
-                background-color: #c19a7d;
-            }
-            h3{
-              box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
-              background-color: #FFAF72; margin-top:0px;
-            }
-            .presetBtn{
-                font-size: 100%;
-            }
-            .presetBtn:hover{font-size: 130%;background-color: rgba(220, 20, 60, 0.35);}
-            .presetBtnBox{
-                border: 1px solid red; border-radius: 8px;padding: 0.2em;
-                background-color: antiquewhite;
-                box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
-            }
-            .writeYourOwn{font-size: 100%;color: antiquewhite; font-weight: bolder;}
-            .setNum{
-                box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
-                margin: 0.1em 0.75em; padding:0px;
-                font-size: 250%; font-weight: bolder; 
-                width: 3em; height: 12%;
-                text-align: center;
-                color: #de701b;
-            }
-            #secondsID{
-                font-size: 180%; font-weight: bolder;
-            }
-           .btn{
-                font-size: 150%;
-                padding: 0.2em; margin: 0.02em;
-                box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
-            }
-            #timeDurationMsg{
-                color: #241103; border: 1px solid red; border-radius: 8px;
-            }
-            #d{
-                border: 10px groove #855531;
-                width:30%; height: 2.25em;
-                padding: 0.1em; margin: 0.5em auto;
-                background-color: beige;
-                font-size: 120%;
-            }
-            
-        </style>
+		<link rel="stylesheet" href="css/custom-timer.css">
 	</head>
 
 	<body>
 		<h3>A Custom Timer</h3>
 		<div class="presetBtnBox">
+            <span class="writeYourOwn">Select a Preset below:</span><br>
 		    <button class="presetBtn" onclick="preset(60)">1 min</button>
 		    <button class="presetBtn" onclick="preset(120)">2 min</button>
 		    <button class="presetBtn" onclick="preset(180)">3 min</button>
@@ -84,96 +38,9 @@
 		<span id = "d" > Timer Display</span>
 		
 
-		<p>&copy Made by Soumen. V- 0.1 <br>April-2018</p>
+		<footer>&copy Made by Soumen. V- 0.1a <br>April-2018</footer>
 		<!--<a href="index.html">Home</a>-->
-		
-
-		<script>
-            /*var sound = new Audio("sounds/ting-16bit.mp3");*/
-            const sound = new Audio("sounds/ting-128kbps.ogg");
-			let i = 0;  
-            let time = 0; // time variable
-            let trigger;
-            
-            initialDisplay();
-            
-            function initialDisplay(){
-                trigger = 3 ; i = 0;
-                e("timeDurationMsg").innerHTML= "Current Timer duration: "+ trigger +" seconds";
-                e("setTime").value = trigger; // the textbox to enter time in senconds
-                e("progressBar").max = trigger;
-                e("progressBar").value=0;
-            }
-            
-            function update(){
-                i=0;
-                e("progressBar").value=i;
-                trigger = e("setTime").value;
-                e("progressBar").max = trigger;
-                let msg;
-                if(trigger <=1){
-                    msg = "Set a different value."
-                }else{
-                    msg = "Timer is set to "+trigger+" seconds";
-                }
-                e("timeDurationMsg").innerHTML= msg;
-            }
-            
-            function preset(num){
-                reset();
-                e("setTime").value = num;
-                update();
-                start_timer();
-                write();
-            }
-            
-            
-
-            button_state("stop_btn", 1, "start_btn", 0);            
-
-			function stop_timer(){
-                clearInterval(time);
-                button_state("stop_btn", 1,"start_btn", 0);
-            }			
-
-			function start_timer(){
-                time = setInterval(write,1000);
-                button_state("stop_btn", 0, "start_btn", 1);
-            }
-			
-			function reset(){
-				stop_timer(); 
-				
-                timeUp();
-                
-               // i = 0;
-                initialDisplay();
-            }
-            
-            function timeUp(){
-                e("d").innerHTML ="<<----Time Up!---->>";
-            }
-
-            function button_state(id1, state1, id2, state2){
-                e(id1).disabled = state1;
-                e(id2).disabled = state2;
-            } 
-					
-			function write(){
-				e("d").innerHTML =(i++)+1 ;
-                e("progressBar").value= i;
-				// Just a check point here to do stuff
-				if(i >= trigger){ 
-                   // e("progressBar").value= 0;
-                    sound.play();                    
-                    reset();
-                }
-			}
-			function e(id){
-				return document.getElementById(id);
-			}
-		</script>
-
+		<script src="script/custom-timer.js"></script>		
 	</body>
 
 </html>
