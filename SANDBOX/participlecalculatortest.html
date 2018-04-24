@@ -28,7 +28,8 @@
   </div>
   <span>I think the participle is: </span><span id="pastParticipleDisplay">Display participle here.</span>
   <br>
-  <input type="text" id="tempVerbTest" placeholder="tempVerbTest area">
+    <p type="text" id="tempVerbTest" placeholder="tempVerbTest area" style="color: red"></p> <..... failed text area></.....>
+  
    
  
  <script>
@@ -53,11 +54,13 @@ see:"seen",saw:"seen",give:"given",gave:"given",drive:"driven",drove:"driven",ge
                 var x=participleof(nos); 
                 if (x) return x;
             }
-            if( /es$/.test(verb) ){ 
+             if( /es$/.test(verb) ){ 
                 var noes=verb.replace(/es$/,""); 
-                var x=participleof(noes); 
+                 e("tempVerbTest").innerHTML = "we are in the if branch";
+                 var x=participleof(noes); 
                 if (x) return x;
-            }  
+                
+            } else {  e("tempVerbTest").innerHTML = "we are in the else branch"; }
             if ( /e$/. test(verb) ){
                 return verb +"d";
             }
@@ -104,7 +107,6 @@ see:"seen",saw:"seen",give:"given",gave:"given",drive:"driven",drove:"driven",ge
       
       e("pastParticipleDisplay").innerHTML = getParticipleOf( e("however").innerHTML );
         
-      
       e("tempVerbTest").value = getParticipleOf( e("however").innerHTML ); // temp test area
     }
   
