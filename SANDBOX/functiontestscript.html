@@ -10,15 +10,19 @@
    
    <input type="text" onkeyup='update()' id="verb"><br>
    <span id="displayparticiple"></span><br>
+   <span id="displayarray"></span><br>
    <span id="error"></span>
    
    <script>
+       var participleof={ go:"gone",awake:"awoken"};
        
        function update(){
+           
           e("displayparticiple").innerHTML = makeparticiple(e("verb").value); 
        }
         
        function makeparticiple(x) {
+           var trace = `x is ${x} and participleof[x] is ${participleof[x]}`; 
             return "start" + x + "end";
        }       
        
