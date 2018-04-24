@@ -8,12 +8,22 @@
             body{
                 font-size: 1.25em;
                 text-align: center;
-                background-color: #A37450;
+                background-color: #c19a7d;
             }
             h3{
               box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
-              background-color: #FFAF72;  
+              background-color: #FFAF72; margin-top:0px;
             }
+            .presetBtn{
+                font-size: 100%;
+            }
+            .presetBtn:hover{font-size: 130%;background-color: rgba(220, 20, 60, 0.35);}
+            .presetBtnBox{
+                border: 1px solid red; border-radius: 8px;padding: 0.2em;
+                background-color: antiquewhite;
+                box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
+            }
+            .writeYourOwn{font-size: 100%;color: antiquewhite; font-weight: bolder;}
             .setNum{
                 box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
                 margin: 0.1em 0.75em; padding:0px;
@@ -21,18 +31,21 @@
                 width: 3em; height: 12%;
                 text-align: center;
                 color: #de701b;
-            }           
+            }
+            #secondsID{
+                font-size: 180%; font-weight: bolder;
+            }
            .btn{
                 font-size: 150%;
                 padding: 0.2em; margin: 0.02em;
                 box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
             }
-            #timeValue{
-                color: #EFCDB3;
+            #timeDurationMsg{
+                color: #241103; border: 1px solid red; border-radius: 8px;
             }
             #d{
                 border: 10px groove #855531;
-                width:30%; height: 2.25em; 
+                width:30%; height: 2.25em;
                 padding: 0.1em; margin: 0.5em auto;
                 background-color: beige;
                 font-size: 120%;
@@ -42,51 +55,79 @@
 	</head>
 
 	<body>
-		<h3>A Simple Timer Project</h3>
-		<p>Write the time in the box below <br>and press the start button.</p>
+		<h3>A Custom Timer</h3>
+		<div class="presetBtnBox">
+		    <button class="presetBtn" onclick="preset(60)">1 min</button>
+		    <button class="presetBtn" onclick="preset(120)">2 min</button>
+		    <button class="presetBtn" onclick="preset(180)">3 min</button>
+		    <button class="presetBtn" onclick="preset(300)">5 min</button><br>
+		    <button class="presetBtn" onclick="preset(600)">10 min</button>
+		    <button class="presetBtn" onclick="preset(900)">15 min</button>
+		    <button class="presetBtn" onclick="preset(1800)">30 min</button>
+		    <button class="presetBtn" onclick="preset(3600)">1 hour</button>
+		</div>
+		<p class="writeYourOwn"> Or<br> Write your own time in the box below.</p>
 		
-		<input type="number" class="setNum" id="setTime" onkeyup="update()" onchange="update()" value="3" min="1";> <span>Seconds</span>
-        <h4 id="timeValue">.................... </h4>
+		<input type="number" class="setNum" id="setTime" onkeyup="update()" onchange="update()" value="3" min="1";> <span id="secondsID">Seconds</span>
+        <h4 id="timeDurationMsg">.................... </h4>
         
         <div>
-            <button class="btn" id = "start_btn" onclick= "start_timer()" > Start </button>
+            <button class="btn" id = "start_btn" onclick= "start_timer()" > Start Timer</button>
             <button class="btn" id = "stop_btn" onclick= "stop_timer()" > Stop </button>
             <button class="btn" onclick= "reset()" > Reset </button><br><br>
             
             <progress id="progressBar" value="0" max="100"></progress>
 
-		</div>
+		</div><br>
 		
 		
-		<h1 id = "d" > Timer Display</h1>
+		<span id = "d" > Timer Display</span>
 		
 
-		<p>Made by Soumen. V- 0.1 <br>April-2018</p>
-		<a href="index.html">Home</a>
+		<p>&copy Made by Soumen. V- 0.1 <br>April-2018</p>
+		<!--<a href="index.html">Home</a>-->
 		
 
 		<script>
             /*var sound = new Audio("sounds/ting-16bit.mp3");*/
-            var sound = new Audio("sounds/ting-128kbps.ogg");
-			var i = 0;  var time;
-            var trigger = 3 ;
-            e("timeValue").innerHTML= "Current Timer duration: "+ trigger +" seconds";
+            const sound = new Audio("sounds/ting-128kbps.ogg");
+			let i = 0;  
+            let time = 0; // time variable
+            let trigger;
             
-            e("progressBar").max = trigger;
-            e("progressBar").value=0;
+            initialDisplay();
+            
+            function initialDisplay(){
+                trigger = 3 ; i = 0;
+                e("timeDurationMsg").innerHTML= "Current Timer duration: "+ trigger +" seconds";
+                e("setTime").value = trigger; // the textbox to enter time in senconds
+                e("progressBar").max = trigger;
+                e("progressBar").value=0;
+            }
+            
             function update(){
                 i=0;
                 e("progressBar").value=i;
                 trigger = e("setTime").value;
                 e("progressBar").max = trigger;
-                var msg;
+                let msg;
                 if(trigger <=1){
                     msg = "Set a different value."
                 }else{
                     msg = "Timer is set to "+trigger+" seconds";
                 }
-                e("timeValue").innerHTML= msg;
+                e("timeDurationMsg").innerHTML= msg;
             }
+            
+            function preset(num){
+                reset();
+                e("setTime").value = num;
+                update();
+                start_timer();
+                write();
+            }
+            
+            
 
             button_state("stop_btn", 1, "start_btn", 0);            
 
@@ -103,9 +144,15 @@
 			function reset(){
 				stop_timer(); 
 				
-                write("Time Up!");
-                i = 0;
-            }           
+                timeUp();
+                
+               // i = 0;
+                initialDisplay();
+            }
+            
+            function timeUp(){
+                e("d").innerHTML ="<<----Time Up!---->>";
+            }
 
             function button_state(id1, state1, id2, state2){
                 e(id1).disabled = state1;
@@ -113,11 +160,11 @@
             } 
 					
 			function write(){
-				e("d").innerHTML =i++ ;
+				e("d").innerHTML =(i++)+1 ;
                 e("progressBar").value= i;
 				// Just a check point here to do stuff
-				if(i > trigger){ 
-                    e("progressBar").value= 0;
+				if(i >= trigger){ 
+                   // e("progressBar").value= 0;
                     sound.play();                    
                     reset();
                 }
