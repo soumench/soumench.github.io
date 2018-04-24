@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	   <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>A Simple Custom Timer Example</title>
+		<style>
+            body{
+                font-size: 1.25em;
+                text-align: center;
+                background-color: #A37450;
+            }
+            h3{
+              box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
+              background-color: #FFAF72;  
+            }
+            .setNum{
+                box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
+                margin: 0.1em 0.75em; padding:0px;
+                font-size: 250%; font-weight: bolder; 
+                width: 3em; height: 12%;
+                text-align: center;
+                color: #de701b;
+            }           
+           .btn{
+                font-size: 150%;
+                padding: 0.2em; margin: 0.02em;
+                box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
+            }
+            #timeValue{
+                color: #EFCDB3;
+            }
+            #d{
+                border: 10px groove #855531;
+                width:30%; height: 2.25em; 
+                padding: 0.1em; margin: 0.5em auto;
+                background-color: beige;
+                font-size: 120%;
+            }
+            
+        </style>
+	</head>
+
+	<body>
+		<h3>A Simple Timer Project</h3>
+		<p>Write the time in the box below <br>and press the start button.</p>
+		
+		<input type="number" class="setNum" id="setTime" onkeyup="update()" onchange="update()" value="3" min="1";> <span>Seconds</span>
+        <h4 id="timeValue">.................... </h4>
+        
+        <div>
+            <button class="btn" id = "start_btn" onclick= "start_timer()" > Start </button>
+            <button class="btn" id = "stop_btn" onclick= "stop_timer()" > Stop </button>
+            <button class="btn" onclick= "reset()" > Reset </button><br><br>
+            
+            <progress id="progressBar" value="0" max="100"></progress>
+
+		</div>
+		
+		
+		<h1 id = "d" > Timer Display</h1>
+		
+
+		<p>Made by Soumen. V- 0.1 <br>April-2018</p>
+		<a href="index.html">Home</a>
+		
+
+		<script>
+            /*var sound = new Audio("sounds/ting-16bit.mp3");*/
+            var sound = new Audio("sounds/ting-128kbps.ogg");
+			var i = 0;  var time;
+            var trigger = 3 ;
+            e("timeValue").innerHTML= "Current Timer duration: "+ trigger +" seconds";
+            
+            e("progressBar").max = trigger;
+            e("progressBar").value=0;
+            function update(){
+                i=0;
+                e("progressBar").value=i;
+                trigger = e("setTime").value;
+                e("progressBar").max = trigger;
+                var msg;
+                if(trigger <=1){
+                    msg = "Set a different value."
+                }else{
+                    msg = "Timer is set to "+trigger+" seconds";
+                }
+                e("timeValue").innerHTML= msg;
+            }
+
+            button_state("stop_btn", 1, "start_btn", 0);            
+
+			function stop_timer(){
+                clearInterval(time);
+                button_state("stop_btn", 1,"start_btn", 0);
+            }			
+
+			function start_timer(){
+                time = setInterval(write,1000);
+                button_state("stop_btn", 0, "start_btn", 1);
+            }
+			
+			function reset(){
+				stop_timer(); 
+				
+                write("Time Up!");
+                i = 0;
+            }           
+
+            function button_state(id1, state1, id2, state2){
+                e(id1).disabled = state1;
+                e(id2).disabled = state2;
+            } 
+					
+			function write(){
+				e("d").innerHTML =i++ ;
+                e("progressBar").value= i;
+				// Just a check point here to do stuff
+				if(i > trigger){ 
+                    e("progressBar").value= 0;
+                    sound.play();                    
+                    reset();
+                }
+			}
+			function e(id){
+				return document.getElementById(id);
+			}
+		</script>
+
+	</body>
+
+</html>
