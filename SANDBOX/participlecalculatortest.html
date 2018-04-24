@@ -62,11 +62,12 @@ see:"seen",saw:"seen",give:"given",gave:"given",drive:"driven",drove:"driven",ge
                 
             } else {  
                 e("tempVerbTest").innerHTML =  `we are in the else branch, verb is (${verb})`; 
-                /*e("tempVerbTest").innerHTML = "we are in the else branch"; */
+                
             }
             if ( /e$/. test(verb) ){
                 return verb +"d";
             }
+             if( /y$/.test(verb) ) {return verb.replace (/y$/, "ied" );}
             return verb +"ed";
             return undefined;
      }
