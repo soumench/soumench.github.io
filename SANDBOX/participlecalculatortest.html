@@ -21,17 +21,17 @@
   
   <input type="text" id="verbInputBox" onkeyup="displayActiveVerb()" placeholder="Type in here.">
   
-  <p id="verbDisplayActive">Verb Display Area</p>
-  
-  <span id="participle">আপনি কি বাংলা লেখা দেখতে পাচ্ছেন ? </span><span><---<<< participle display</span><br>
-  
-  <span id="however">যা খুশি লিখুন</span> <br>
-  
-  <span id="pastParticipleDisplay">পাস্ট participle ডিসপ্লে</span>
+  <div id="hide"> <!--hide this section-->
+      <span id="verbDisplayActive">Verb Display Area</span>
+      <span id="participle"></span><span><---<<< participle display</span>
+      <span id="however">যা খুশি লিখুন</span> 
+  </div>
+  <span>I think the participle is:</span><span id="pastParticipleDisplay">Display participle here.</span>
   
    
  
  <script>
+     e("hide").style.visibility="hidden";
      e("verbInputBox").style.visibility = "hidden"; // verbInputTextBox is hidden at first
      
         function getParticipleOf(verb){
@@ -71,19 +71,12 @@ stride:"stridden",strode:"stridden",strike:"struck",struck:"struck",strive:"stri
           if(verb=="go")return "gone"; 
           if(verb=="awake")return "awoken"; 
           else return undefined;
-     }*/
-     
-     
-     
-     
-     
+     }*/    
       /*function getParticipleOf(verb){  /// first version
           if(verb=="go")return "gone"; 
           if(verb=="awake")return "awoken"; 
           else   return undefined;
-      }*/
-     
-     
+      }*/   
      /*
      function getParticiple(txt){
          var participleof = {wake:"woken",   wakes:"woken"};// huge array
@@ -118,7 +111,7 @@ stride:"stridden",strode:"stridden",strike:"struck",struck:"struck",strive:"stri
          selectedVerb = "";
       }
       else{
-         e("verbInputBox").style.visibility = "hidden"; 
+         /*e("verbInputBox").style.visibility = "hidden";*/  /*No re-hide once appeared*/
       }
       e("verbInputBox").value = selectedVerb;
       
@@ -129,3 +122,16 @@ stride:"stridden",strode:"stridden",strike:"struck",struck:"struck",strive:"stri
  </script>
  </body>
 </html>
+
+<!--
+first part
+    rename the pageto participlecalculatortest.html
+second part
+    there are four lines appearing below now
+    i want only ONE line and that line has at the left "i think thatthe participle is: "
+third part
+    the input box NEVER dissapears
+it only appears once, the furst timethe user chooses "type your own"
+-->
+
+
