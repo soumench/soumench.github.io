@@ -51,13 +51,13 @@ see:"seen",saw:"seen",give:"given",gave:"given",drive:"driven",drove:"driven",ge
             if(x)return x;                   
             if ( /s$/. test(verb) ){ 
                 var nos=verb.replace(/s$/,""); 
-                var x=participleof(nos); 
+                var x=participleof[nos]; 
                 if (x) return x;
             }
              if( /es$/.test(verb) ){ 
                 var noes=verb.replace(/es$/,""); 
                  e("tempVerbTest").innerHTML = "we are in the if branch";
-                 var x=participleof(noes); 
+                 var x=participleof[noes]; 
                 if (x) return x;
                 
             } else {  
