@@ -60,7 +60,10 @@ see:"seen",saw:"seen",give:"given",gave:"given",drive:"driven",drove:"driven",ge
                  var x=participleof(noes); 
                 if (x) return x;
                 
-            } else {  e("tempVerbTest").innerHTML = "we are in the else branch"; }
+            } else {  
+                e("tempVerbTest").innerHTML =  `we are in the else branch, verb is (${verb})`; 
+                /*e("tempVerbTest").innerHTML = "we are in the else branch"; */
+            }
             if ( /e$/. test(verb) ){
                 return verb +"d";
             }
