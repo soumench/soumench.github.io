@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+   
+   <input type="text" onkeyup='update()' id="verb"><br>
+   <span id="displayparticiple"></span><br>
+   <span id="error"></span>
+   
+   <script>
+       
+       function update(){
+          e("displayparticiple").innerHTML = makeparticiple(e("verb").value); 
+       }
+        
+       function makeparticiple(x) {
+            return "start" + x + "end";
+       }       
+       
+       function e(id){return document.getElementById(id);}
+    </script>
+    
+</body>
+</html>
