@@ -71,32 +71,7 @@ see:"seen",saw:"seen",give:"given",gave:"given",drive:"driven",drove:"driven",ge
             return verb +"ed";
             return undefined;
      }
-     
-     
-     
-     /*function getParticipleOf(verb){  // second version
-          var participleof={go:"gone"};
-          var x= participleof[verb]; 
-          if(x)return x;   
-          if(verb=="go")return "gone"; 
-          if(verb=="awake")return "awoken"; 
-          else return undefined;
-     }*/    
-      /*function getParticipleOf(verb){  /// first version
-          if(verb=="go")return "gone"; 
-          if(verb=="awake")return "awoken"; 
-          else   return undefined;
-      }*/   
-     /*
-     function getParticiple(txt){
-         var participleof = {wake:"woken",   wakes:"woken"};// huge array
-         
-         e("pastParticipleDisplay").innerHTML = participleof[txt];
-         if(e("pastParticipleDisplay").innerHTML==="undefined"){
-           e("pastParticipleDisplay").innerHTML = "I don't know!";  
-         }
-     }
-     */
+      
      
     function updateHoweverDisplayArea(){
         e("however").innerHTML = e("verbDisplayActive").innerHTML.replace(/^(.*)y$/,"$1ied");
@@ -133,15 +108,5 @@ see:"seen",saw:"seen",give:"given",gave:"given",drive:"driven",drove:"driven",ge
  </body>
 </html>
 
-<!--
-first part
-    rename the pageto participlecalculatortest.html
-second part
-    there are four lines appearing below now
-    i want only ONE line and that line has at the left "i think thatthe participle is: "
-third part
-    the input box NEVER dissapears
-it only appears once, the furst timethe user chooses "type your own"
--->
 
 
