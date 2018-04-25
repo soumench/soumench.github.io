@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <input type="text" name="example" list="exampleList" id="input" >
+    <datalist id="exampleList">
+    <option value="A">
+    <option value="B">
+</datalist>
+
+<p id="display"> The selected or user typed in value will be displayed here! </p>
+
+<script>
+        e('input').addEventListener('change', function() {
+            e("display").innerHTML =  e("input").value;
+        });
+        
+    function e(id){
+        return document.getElementById(id);
+    }
+</script>
+</body>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
