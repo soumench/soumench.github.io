@@ -10,8 +10,8 @@
 <body>
 
     <input type="text" onkeyup='update()' id="verb"><br>
-    <span id="displayparticiple"></span><br>
-    <span id="displaytrace"></span><br>
+    <span id="displayparticiple"></span><span style="color:red">display participle</span><br>
+    <span id="displaytrace"></span> <span style="color:red">display trace</span><br>
     <span id="error"></span>
 
     <script>
@@ -31,8 +31,8 @@ said:"said",pay:"paid",paid:"paid",know:"known",knew:"known",grow:"grown",grew:"
             
             e("displaytrace").innerHTML = " -- ";
             var trace = `verb is ${verb} and participleof[verb] is ${participleof[verb]}`;
-            if(participleof[verb])
-            {
+            
+            if(participleof[verb]){
                    trace =trace + " -- <br/> we found "+verb+" in the list so we took the first branch";
                     e("displaytrace").innerHTML = trace;
                     return participleof[verb];
@@ -43,6 +43,14 @@ said:"said",pay:"paid",paid:"paid",know:"known",knew:"known",grow:"grown",grew:"
                 e("displaytrace").innerHTML = trace;
                  return verb.replace (/y$/, "ied" );
              }
+            
+            if(/ies$/.test(verb) ){   // my addition start
+                trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in ies so we took the ies branch";
+                e("displaytrace").innerHTML = trace;
+                return verb.replace (/ies$/, "ied" );  // my addition end
+            }
+            
+            
            trace = trace + " -- <br/> we dont know yet what to do with this verb"; 
             e("displaytrace").innerHTML = trace;
             return "start" + verb + "end";
