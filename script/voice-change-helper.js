@@ -22,8 +22,8 @@
             
             detectNumberTense();
             
-            var pastParticiple= e("3rdForm1").value;
-            e("3rdForm2").value= pastParticiple.toLowerCase();
+            var pastParticiple= e("3rdForm1").value.toLowerCase();
+            e("3rdForm2").value= pastParticiple;
             
             if(pastParticiple==="known"){/*exception*/
                 e("by").value="to";      /*exception*/
