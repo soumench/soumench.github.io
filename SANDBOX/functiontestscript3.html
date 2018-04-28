@@ -76,12 +76,17 @@ said:"said",pay:"paid",paid:"paid",know:"known",knew:"known",grow:"grown",grew:"
                 return verb.replace (/ies$/, "ied" );  // my addition end
             }
            
+            if(/ss$/.test(verb) ){   // my addition start
+                trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in ss so we took the ies branch";
+                e("displaytrace").innerHTML = trace;
+                return verb.replace (/ss$/, "ssed" );  // my addition end
+            }
             
             
-            
-           trace = trace + " -- <br/> we dont know yet what to do with this verb"; 
+           trace = trace + " -- <br/> all branches failed, so adding ed"; 
             e("displaytrace").innerHTML = trace;
-            return "start" + verb + "end";
+           // return "start" + verb + "end";
+            return verb+"ed";
         }
         
         
