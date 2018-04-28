@@ -29,11 +29,11 @@ said:"said",pay:"paid",paid:"paid",know:"known",knew:"known",grow:"grown",grew:"
             }
             comment(`we did not find ${verb} in the list` );
             
-             if(/s$/.test(verb) ){   
+              if(/s$/.test(verb) ){   
                 var k = verb.replace(/s$/,"");
-                if( participleof(k) ){   
+                if( participleof[k] ){   
                     comment('we took the irregular + s branch');
-                    return participleof(k);  
+                    return participleof[k];  
                 }
             }
             
