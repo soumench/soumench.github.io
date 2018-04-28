@@ -67,7 +67,7 @@ said:"said",pay:"paid",paid:"paid",know:"known",knew:"known",grow:"grown",grew:"
                 return verb.replace (/s$/, "ed" );  
             }
             
-            if(/^(.+)([aeiou])(.)$/.test(verb) ){   
+            if(/^(.+)([aeiou])(.)$/.test(verb) ){   // not working
                 comment("we took the tip branch");
                 return $1+$2+$3+$3+"ed";  
             }
