@@ -44,6 +44,12 @@ said:"said",pay:"paid",paid:"paid",know:"known",knew:"known",grow:"grown",grew:"
                 return verb.replace (/ay$/, "ayed" );  // my addition end
             }
             
+            if(/ys$/.test(verb) ){   // my addition start
+                trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in ys so we took the ys branch";
+                e("displaytrace").innerHTML = trace;
+                return verb.replace (/ys$/, "yed" );  // my addition end
+            }
+            
              if( /y$/.test(verb) ) {
                    trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in y so we took the y branch";
                 e("displaytrace").innerHTML = trace;
