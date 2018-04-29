@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+   <p id="display"></p>
+   
+   <script>
+       
+       test();
+       
+       function test(){
+         
+         var testverbs = ["grab", "bomb", "comb", "rob", "rub", "scrub", "head"];
+         var el =document.getElementById("display");
+         for(var i = 0; i < testverbs.length;++i){
+             
+             var verb =  testverbs[i];
+             el.innerHTML += el.innerHTML  + verb+"<br>"+": "+ makeparticiple;
+         }
+       }
+       
+        var makeparticiple = function (verb) {return verb + verb ; }
+       
+       
+       
+    
+    </script>
+    
+</body>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">

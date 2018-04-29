@@ -75,8 +75,8 @@ said:"said",pay:"paid",paid:"paid",know:"known",knew:"known",grow:"grown",grew:"
                 return verb.replace (/s$/, "ed" );  
             }
             
-            if(/x$/.test(verb)){
-                comment("we took the fix branch");
+            if(/[wx]$/.test(verb)){
+                comment("we took the fix/ mew branch");
                 return verb+"ed";
             }
             

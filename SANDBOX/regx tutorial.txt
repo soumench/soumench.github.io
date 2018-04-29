@@ -1,0 +1,5 @@
+[aeiou]  matches any vowel
+[^aeiou] matches no vowels ( only consonants)
+. ( dot ) means any character
+^ ( caret) beginning of a string  /^a/
+/e$/  $ indicates the last character of a string
