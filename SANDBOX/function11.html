@@ -87,7 +87,7 @@ said:"said",pay:"paid",paid:"paid",know:"known",knew:"known",grow:"grown",grew:"
             }
             
                 
-            if(/^(.+)([aeiou])(.)$/.test(verb) ){   // not working                
+            if(/^(.+)([aeiou])(.)$/.test(verb) ){   // new branch 30-04-2018                
                 comment(`we took the VVC branch ${verb}`);
                 /*return verb.replace(/^(.+)([aeiou])(.)$/,"$1$2$3$3ed");*/
                 return verb+"ed";
