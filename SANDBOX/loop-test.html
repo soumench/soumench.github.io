@@ -10,7 +10,70 @@
    <p id="display"></p>
    
    <script>
-       var makeparticiple = function (verb) {return verb + verb ; }
+       /*var makeparticiple = function (verb) {return verb + verb ; }*/
+        function makeparticiple(verb) {
+            
+            e("displaytrace").innerHTML = " -- ";
+            var trace = `verb is ${verb} and participleof[verb] is ${participleof[verb]}`;
+            
+            if(participleof[verb]){
+                   trace =trace + " -- <br/> we found "+verb+" in the list so we took the first branch";
+                    e("displaytrace").innerHTML = trace;
+                    return participleof[verb];
+            }
+            
+             if(/ay$/.test(verb) ){   // my addition start
+                trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in ay so we took the ay branch";
+                e("displaytrace").innerHTML = trace;
+                return verb.replace (/ay$/, "ayed" );  // my addition end
+            }
+            
+            if(/ys$/.test(verb) ){   // my addition start
+                trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in ys so we took the ys branch";
+                e("displaytrace").innerHTML = trace;
+                return verb.replace (/ys$/, "yed" );  // my addition end
+            }
+            
+             if( /y$/.test(verb) ) {
+                   trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in y so we took the y branch";
+                e("displaytrace").innerHTML = trace;
+                 return verb.replace (/y$/, "ied" );
+             }
+            
+            if( /e$/.test(verb) ) {
+                   trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in e so we took the e branch";
+                e("displaytrace").innerHTML = trace;
+                 return verb.replace (/e$/, "ed" );
+             }
+            
+            if( /es$/.test(verb) ) {
+                   trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in es so we took the es branch";
+                e("displaytrace").innerHTML = trace;
+                 return verb.replace (/es$/, "ed" );
+             }
+            
+            
+            
+            if(/ies$/.test(verb) ){   // my addition start
+                trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in ies so we took the ies branch";
+                e("displaytrace").innerHTML = trace;
+                return verb.replace (/ies$/, "ied" );  // my addition end
+            }
+           
+            if(/ss$/.test(verb) ){   // my addition start
+                trace =trace + " --  <br/> we did not find "+verb+" in the list but it ends in ss so we took the ies branch";
+                e("displaytrace").innerHTML = trace;
+                return verb.replace (/ss$/, "ssed" );  // my addition end
+            }
+            
+            
+           trace = trace + " -- <br/> all branches failed, so adding ed"; 
+            e("displaytrace").innerHTML = trace;
+           // return "start" + verb + "end";
+            return verb+"ed";
+        }
+        
+        
        
        
        test();
@@ -30,7 +93,8 @@
          }
        }
        
-        
+       
+      
        
        
        
