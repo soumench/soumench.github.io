@@ -13,6 +13,8 @@
        
        test();
        
+       var makeparticiple = function (verb) {return verb + verb ; }
+       
        function test(){
          
          var testverbs = ["grab", "bomb", "comb", "rob", "rub", "scrub", "head"];
@@ -20,11 +22,11 @@
          for(var i = 0; i < testverbs.length;++i){
              
              var verb =  testverbs[i];
-             el.innerHTML += el.innerHTML  + verb+"<br>"+": "+ makeparticiple;
+             el.innerHTML += el.innerHTML  + verb+"<br>"+": "+ makeparticiple(verb);
          }
        }
        
-        var makeparticiple = function (verb) {return verb + verb ; }
+        
        
        
        
