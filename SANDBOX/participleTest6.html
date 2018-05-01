@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <input type="text" onkeyup='update()' id="verb"><br>
+    <span id="displayparticiple"></span><span style="color:red">display participle</span><br>
+    <span style="color:green" id="displaytrace"></span> <span style="color:red">display trace</span><br>
+    <span id="error"></span>
+   <p id="display"></p>
+   <script>
+         var testverbs = [
+"grab", "bomb", "comb", "rob", "rub", "scrub", "head", "load", "add", "succeed", "need", "avoid", "scold", "fold", "hand", "land", "command", "expand", "end", "offend", "mend", "depend", "suspend", "pretend", "intend", "attend", "extend", "blind", "remind", "found", "surround", "sound", "nod", "flood", "guard", "record", "afford", "applaud", "describe", "face", "place", "replace", "race", "trace", "rejoice", "practice", "notice", "dance", "balance", "fence", "influence", "bounce", "announce", "force", "reduce", "produce", "reproduce", "introduce", "fade", "shade", "trade", "precede", "decide", "guide", "divide", "provide", "explode", "include", "agree", "disagree", "guarantee", "damage", "manage", "encourage", "judge", "change", "arrange", "challenge", "charge", "bathe", "breathe", "soothe", "lie", "tie", "bake", "brake", "like", "dislike", "choke", "joke", "smoke", "poke", "stroke", "scribble", "wobble", "bubble", "tremble", "tumble", "double", "trouble", "cycle", "paddle", "meddle", "muddle", "handle", "wriggle", "juggle", "file", "smile", "tickle", "sparkle", "wrestle", "whistle", "battle", "settle", "rule", "name", "frame", "tame", "time", "welcome", "rhyme", "imagine", "whine", "mine", "examine", "pine", "phone", "telephone", "escape", "scrape", "wipe", "hope", "type", "bare", "care", "scare", "dare", "share", "prepare", "compare", "spare", "stare", "interfere", "fire", "admire", "tire", "retire", "bore", "ignore", "snore", "store", "cure", "injure", "measure", "puncture", "release", "please", "increase", "grease", "tease", "chase", "raise", "exercise", "apologise", "realise", "promise", "recognise", "memorise", "surprise", "practise", "bruise", "advise", "license", "rinse", "close", "suppose", "use", "cause", "pause", "excuse", "refuse", "confuse", "amuse", "analyse", "communicate", "educate", "hate", "appreciate", "radiate", "calculate", "mate", "separate", "grate", "decorate", "concentrate", "irritate", "complete", "compete", "excite", "unite", "invite", "note", "paste", "taste", "waste", "rescue", "queue", "argue", "glue", "continue", "behave", "shave", "save", "wave", "deceive", "receive", "live", "arrive", "love", "move", "remove", "improve", "approve", "disapprove", "carve", "serve", "observe", "deserve", "preserve", "curve", "owe", "gaze", "sneeze", "squeeze", "analyze", "sniff", "stuff", "drag", "beg", "bang", "hang", "long", "belong", "jog", "hug", "plug", "mug", "shrug", "tug", "bleach", "reach", "preach", "coach", "attach", "branch", "pinch", "launch", "punch", "search", "march", "scorch", "match", "snatch", "scratch", "watch", "fetch", "stretch", "itch", "stitch", "switch", "touch", "weigh", "sigh", "laugh", "cough", "flash", "smash", "crash", "squash", "wash", "polish", "vanish", "punish", "wish", "blush", "push", "rush", "brush", "crush", "ski", "squeak", "soak", "back", "pack", "unpack", "crack", "sack", "attack", "check", "peck", "wreck", "kick", "lick", "pick", "prick", "trick", "tick", "shock", "lock", "unlock", "knock", "rock", "suck", "talk", "walk", "milk", "thank", "blink", "wink", "book", "hook", "look", "mark", "park", "spark", "work", "ask", "risk", "pedal", "heal", "seal", "squeal", "signal", "label", "kneel", "peel", "travel", "level", "fail", "jail", "nail", "sail", "wail", "boil", "coil", "spoil", "call", "smell", "spell", "yell", "fill", "kill", "spill", "roll", "pull", "fool", "whirl", "curl", "crawl", "dam", "beam", "scream", "dream", "jam", "program", "claim", "film", "zoom", "harm", "disarm", "warm", "form", "inform", "perform", "hum", "drum", "ban", "clean", "plan", "man", "moan", "groan", "strengthen", "open", "happen", "lighten", "frighten", "fasten", "unfasten", "listen", "reign", "sign", "complain", "explain", "remain", "rain", "drain", "train", "obtain", "contain", "entertain", "stain", "join", "grin", "sin", "ruin", "question", "earn", "learn", "warn", "concern", "burn", "mourn", "turn", "return", "yawn", "own", "drown", "heap", "clap", "flap", "slap", "trap", "strap", "wrap", "tap", "peep", "step", "whip", "skip", "clip", "slip", "drip", "grip", "trip", "strip", "sip", "tip", "zip", "help", "camp", "stamp", "bump", "jump", "pump", "hop", "chop", "shop", "develop", "pop", "drop", "stop", "fear", "clear", "appear", "disappear", "remember", "number", "consider", "wander", "wonder", "order", "murder", "cheer", "steer", "prefer", "offer", "suffer", "gather", "hammer", "whisper", "water", "shelter", "enter", "scatter", "matter", "shiver", "deliver", "cover", "discover", "hover", "flower", "answer", "repair", "stir", "moor", "occur", "colour", "pour", "tour", "pass", "harass", "embarrass", "confess", "bless", "mess", "dress", "undress", "press", "impress", "possess", "guess", "kiss", "miss", "cross", "bat", "heat", "cheat", "repeat", "treat", "float", "pat", "doubt", "subtract", "attract", "object", "reject", "inject", "reflect", "collect", "connect", "suspect", "expect", "correct", "detect", "protect", "instruct", "greet", "regret", "delight", "wait", "fit", "admit", "permit", "knit", "visit", "suit", "melt", "bolt", "plant", "want", "present", "prevent", "invent", "paint", "point", "print", "haunt", "hunt", "count", "blot", "knot", "spot", "rot", "trot", "accept", "tempt", "attempt", "interrupt", "part", "start", "alert", "desert", "report", "support", "transport", "last", "boast", "suggest", "nest", "interest", "arrest", "test", "request", "list", "consist", "twist", "exist", "post", "dust", "trust", "sprout", "thaw", "saw", "chew", "screw", "bow", "flow", "overflow", "glow", "allow", "follow", "slow", "snow", "borrow", "tow", "fax", "relax", "fix", "mix", "box", "decay", "delay", "play", "x-ray", "pray", "spray", "stay", "fancy", "untidy", "obey", "terrify", "identify", "satisfy", "rely", "reply", "multiply", "supply", "enjoy", "employ", "annoy", "destroy", "copy", "cry", "dry", "fry", "carry", "marry", "worry", "hurry", "try", "bury", "empty", "buzz"];
+       var participleof = {
+       go: "gone", awake: "awoken", burn: "burnt", burned: "burnt", wake: "woken",
+       woke: "woken", bite: "bitten", bit: "bitten",  put: "put", cut: "cut", 
+       set: "set", let: "let", read: "read", bet: "bet", burst: "burst", 
+       burst: "burst", cost: "cost", feel: "felt", felt: "felt", hit: "hit", 
+       shut: "shut", hurt: "hurt", hurt: "hurt", shed: "shed", shed: "shed", 
+       slit: "slit", spread: "spread", thrust: "thrust", wet: "wet", lead: "led", 
+       led: "led", do: "done", did: "done", go: "gone", went: "gone", take: "taken", 
+       took: "taken", shake: "shaken", shook: "shaken", give: "given", gave: "given", 
+       drive: "driven", drove: "driven", say: "said", said: "said", pay: "paid", 
+       paid: "paid", know: "known", knew: "known", grow: "grown", grew: "grown", 
+       fly: "flown", do: "done", did: "done",  does: "done", go: "gone", goes: "gone", 
+       breed: "bred", bred: "bred", split: "split", 
+        /*some regular verbs exceptions*/ 
+    refer: "referred", prefer: "preferred", defer: "deferred",  pen: "penned",  
+    visit: "visited",  offer:  "offered", suffer:  "suffered", gather: "gathered", 
+    hammer:  "hammered", whisper: "whispered",  water: "watered", shelter:  "sheltered",
+    enter:  "entered", scatter:  "scattered", matter:  "mattered",   shiver:  "shivered",
+    deliver: "delivered", cover: "covered", discover: "discovered", hover:  "hovered",
+    flower: "flowered", answer:  "answered", lower: "lowered", higher: "highered"
+        };
+ function update() {e("displayparticiple").innerHTML = makeparticiple(e("verb").value);    }       
+        function makeparticiple(verb) { var withouts; var part;
+            e("displaytrace").innerHTML = " -- ";
+            var trace = `verb is ${verb} and participleof[verb] is ${participleof[verb]}`;
+            if(participleof[verb]){                    
+                comment(' -- <br/> we found '+verb+' in the list so we took the first branch');
+                return participleof[verb];
+            }                           
+            if(/s$/.test(verb) ){   
+                withouts = verb.replace(/s$/,"");
+                part=participleof[k] ;
+                if( part ){   
+                    branch('irregular + s');
+                    return part;  
+                }
+            }
+            if(/[^aeiou][aeiou][^aeiou]s$/.test(verb) ){ branch("CVCs");
+                return verb.replace(/(.)s$/,"$1$1ed");}                        
+            if(/[^aeiuo]er$/.test(verb) ){ branch("consonant + er");
+                return verb + "ed" ; }            
+            if(/en$/.test(verb) ){ branch("en");
+                 return verb+"ed";}                    
+             if(/[aeiou]y$/.test(verb) ){branch("[aeiou]y$");
+                return verb + "ed" ;  }            
+            if(/ay$/.test(verb) ){branch("ay");
+                return verb.replace (/ay$/, "ayed" );  }
+            if(/ys$/.test(verb) ){ branch("ys");
+                return verb.replace (/ys$/, "yed" );  }
+            if( /y$/.test(verb) ) { branch("y");
+                 return verb.replace (/y$/, "ied" );}            
+            if( /e$/.test(verb) ) { branch('e');
+                 return verb.replace (/e$/, "ed" );}            
+            if( /es$/.test(verb) ) { branch('es');
+                 return verb.replace (/es$/, "ed" );}                     
+            if(/ies$/.test(verb) ){   branch('ies');
+                return verb.replace (/ies$/, "ied" );  }            
+            if(/ss$/.test(verb) ){    branch('ss');
+                return verb.replace (/ss$/, "ssed" );  }
+            if(/s$/.test(verb) ){ branch('s');
+                return verb.replace (/s$/, "ed" );  }            
+            if(/[wx]$/.test(verb)){ branch("fix/ mew");
+                return verb+"ed";}            
+            if(/[^aeiou][aeiou][^aeiou]$/.test(verb) ){ branch("CVC");
+                return verb.replace(/(.)$/,"$1$1ed");}            
+            if(/^(.+)([aeiou])(.)$/.test(verb) ){ branch(`VVC`);
+                return verb+"ed";}
+            comment('all branches failed, so adding ed');
+            return verb+"ed";
+        }        
+       test();
+       function test(){
+         var el =document.getElementById("display");
+         for(var i = 0; i < testverbs.length;++i){
+             var verb =  testverbs[i];
+             el.innerHTML += verb+": "+ makeparticiple(verb)+"<br>";
+         }
+       }
+       function comment(message){
+            e("displaytrace").innerHTML = e("displaytrace").innerHTML + "<br/>" + message;    
+       }  
+       function branch(message){
+            e("displaytrace").innerHTML = e("displaytrace").innerHTML + "<br/>We took the " + message+" branch.";    
+       }  
+       function e(id) {return document.getElementById(id);}
+    </script>
+</body>
+</html>
