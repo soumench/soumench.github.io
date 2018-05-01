@@ -20,7 +20,10 @@
         
                            
                            
-        /*some regular verbs exceptions*/                   
+        /*some regular verbs exceptions*/ 
+        
+        prefer:"preferred",defer:"deferred",
+                           
         offer: "offered",suffer: "suffered",gather:"gathered",hammer: "hammered",whisper:"whispered",water:"watered",shelter: "sheltered",enter: "entered",scatter: "scattered",matter: "mattered",shiver: "shivered",deliver:"delivered",cover:"covered",discover:"discovered",hover: "hovered",flower:"flowered",answer: "answered",lower:"lowered",higher:"highered"                  
         
                           
@@ -46,6 +49,15 @@
                     return participleof[k];  
                 }
             }
+            
+            if(/[^aeiuo]er$/.test(verb) ){ /*added 30-04-2018*/
+                comment("we took the consonant + er  branch");
+                return verb + "ed" ; 
+            }
+            
+            
+            
+            
             
              if(/[aeiou]y$/.test(verb) ){   
                 comment("we took the vy branch");// v stands for vowels
