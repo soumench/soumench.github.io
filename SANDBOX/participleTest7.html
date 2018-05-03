@@ -55,12 +55,12 @@
     if(/[^aeiuo]er$/.test(verb) ){ branch("consonant + er");return verb + "ed" ; }            
     if(/en$/.test(verb) ){ branch("en");  return verb+"ed";}                    
     if(/[aeiou]y$/.test(verb) ){branch("[aeiou]y$");return verb + "ed" ;  }            
-    if(/ay$/.test(verb) ){branch("ay"); return verb.replace (/ay$/, "ayed" );  }
+    
     if(/ys$/.test(verb) ){ branch("ys");  return verb.replace (/ys$/, "yed" );  }
     if(/y$/.test(verb) ) { branch("y");  return verb.replace (/y$/, "ied" );}            
     if(/e$/.test(verb) ) { branch("e"); return verb.replace (/e$/, "ed" );}            
     if(/es$/.test(verb) ) { branch("es"); return verb.replace (/es$/, "ed" );}                     
-    if(/ies$/.test(verb) ){branch("ies"); return verb.replace (/ies$/, "ied" );  }            
+    
     if(/ss$/.test(verb) ){ branch("ss"); return verb.replace (/ss$/, "ssed" );  }
     if(/s$/.test(verb) ){ branch("s"); return verb.replace (/s$/, "ed" );  }            
     if(/[wx]$/.test(verb)){ branch("fix/ mew");  return verb+"ed";}            
