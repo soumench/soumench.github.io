@@ -3,35 +3,34 @@ var participleof = {
         };
        
         function makeparticiple(verb) { var withouts; var part;
-            e("displaytrace").innerHTML = " -- ";
-            // var trace = `verb is ${verb} and participleof[verb] is ${participleof[verb]}`;
+           
             if(participleof[verb]){                    
-                comment(' -- <br/> we found '+verb+' in the list so we took the first branch');
+                
                 return participleof[verb];
             }                           
     if(/s$/.test(verb) ){   
         withouts = verb.replace(/s$/,"");
         part=participleof[withouts] ;
         if( part ){   
-            branch("irregular + s");
+           
             return part;  
         }
     }
-    if(/ed$/.test(verb) ) { branch("ed"); return verb;}
-    if(/ys$/.test(verb) ){ branch("ys");  return verb.replace (/ys$/, "yed" );}
-    if(/[^aeiou][aeiou][^aeiou]s$/.test(verb) ){ branch("CVCs");return verb.replace(/(.)s$/,"$1$1ed");}           
-    if(/[^aeiuo]er$/.test(verb) ){ branch("consonant + er");return verb + "ed" ; }            
-    if(/en$/.test(verb) ){ branch("en");  return verb+"ed";}                    
-    if(/[aeiou]y$/.test(verb) ){branch("[aeiou]y$");return verb + "ed" ;  }   
-    if(/y$/.test(verb) ) { branch("y");  return verb.replace (/y$/, "ied" );}            
-    if(/e$/.test(verb) ) { branch("e"); return verb.replace (/e$/, "ed" );}            
-    if(/es$/.test(verb) ) { branch("es"); return verb.replace (/es$/, "ed" );}    
-    if(/ss$/.test(verb) ){ branch("ss"); return verb.replace (/ss$/, "ssed" );  }
-    if(/s$/.test(verb) ){ branch("s"); return verb.replace (/s$/, "ed" );  }            
-    if(/[wx]$/.test(verb)){ branch("fix/ mew");  return verb+"ed";}            
-    if(/[^aeiou][aeiou][^aeiou]$/.test(verb) ){ branch("CVC");return verb.replace(/(.)$/,"$1$1ed");}            
-    if(/^(.+)([aeiou])(.)$/.test(verb) ){ branch(`VVC`);  return verb+"ed";}
-            comment('all branches failed, so adding ed');
+    if(/ed$/.test(verb) ) {  return verb;}
+    if(/ys$/.test(verb) ){  return verb.replace (/ys$/, "yed" );}
+    if(/[^aeiou][aeiou][^aeiou]s$/.test(verb) ){ return verb.replace(/(.)s$/,"$1$1ed");}           
+    if(/[^aeiuo]er$/.test(verb) ){ return verb + "ed" ; }            
+    if(/en$/.test(verb) ){  return verb+"ed";}                    
+    if(/[aeiou]y$/.test(verb) ){return verb + "ed" ;  }   
+    if(/y$/.test(verb) ) {  return verb.replace (/y$/, "ied" );}            
+    if(/e$/.test(verb) ) {  return verb.replace (/e$/, "ed" );}            
+    if(/es$/.test(verb) ) {  return verb.replace (/es$/, "ed" );}    
+    if(/ss$/.test(verb) ){ return verb.replace (/ss$/, "ssed" );  }
+    if(/s$/.test(verb) ){  return verb.replace (/s$/, "ed" );  }            
+    if(/[wx]$/.test(verb)){   return verb+"ed";}            
+    if(/[^aeiou][aeiou][^aeiou]$/.test(verb) ){ return verb.replace(/(.)$/,"$1$1ed");}            
+    if(/^(.+)([aeiou])(.)$/.test(verb) ){ return verb+"ed";}
+           
             return verb+"ed";
     }        
     
