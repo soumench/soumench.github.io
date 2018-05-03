@@ -35,19 +35,4 @@ var participleof = {
             return verb+"ed";
     }        
     
-       test();
-       
-       function test(){
-         var el =document.getElementById("display");
-         for(var i = 0; i < testverbs.length;++i){
-             var verb =  testverbs[i];
-             el.innerHTML += verb+": "+ makeparticiple(verb)+"<br>";
-         }
-       }
-       function comment(message){
-            e("displaytrace").innerHTML = e("displaytrace").innerHTML + "<br/>" + message;    
-       }  
-       function branch(message){
-            e("displaytrace").innerHTML = e("displaytrace").innerHTML + "<br/>We took the " + message+" branch.";   
-       }  
-       function e(id) {return document.getElementById(id);}
+      
