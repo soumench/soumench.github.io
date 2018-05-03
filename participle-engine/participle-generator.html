@@ -7,8 +7,11 @@
 </head>
 
 <body>
-   <input type="text" id="verb" onkeyup="update()" placeholder="enter a verb">
-    <p id="displayParticiple">text area</p>
+    <span>Past Participle Generator</span><br>
+    
+    <input type="text" id="verb" onkeyup="update()" placeholder="enter a verb">
+    
+    <p id="displayParticiple">...</p>
     
     
    
@@ -17,11 +20,9 @@
         function update(){
             let msg;
             if(e("verb").value ===""){msg="";}
-            else{ msg =  makeparticiple( e("verb").value );}
+            else{msg =  makeparticiple( e("verb").value );}
             e("displayParticiple").innerHTML = msg;
-        }
-        
-    
+        }    
         function e(id){return document.getElementById(id);}
     </script>
 </body>
