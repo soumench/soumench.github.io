@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Voice Change Helper Version 2</title>
 </head>
 
 <body>
@@ -41,11 +41,18 @@
             else{msg =  makeparticiple( e("verb").value );}
             e("displayParticiple").value = msg;
 			
+			
 			e("subject2").value = e("subject1").value;
 			
 			e("object2").value = e("object1").value;
 			
 			e("auxP").value = e("auxA").value;
+			
+			
+			if(e("displayParticiple").value.toLowerCase() ==="known"){
+				e("prep").value = "to";
+			}else e("prep").value = "by";
+				
         }    
         function e(id){return document.getElementById(id);}
     </script>
