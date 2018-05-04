@@ -7,14 +7,16 @@
 </head>
 
 <body>
-    <span>Subject ---- Aux ----- Verb ----- Object</span><br>
-    <div class="activeInput">    
-		<input type="text" id="subject1" onkeyup="update()" placeholder="enter a subject">
+    
+    <div class="activeInput"> 
+    <span>Subject : Doer (such as Soumen, I, We, You, He, She, They) </span><br>   
+	<input type="text" id="subject1" onkeyup="update()" placeholder="enter a subject"><br>
 		   
+	<span>Verb: action words (such as "sees", "eat") </span><br>   
+	<input type="text" id="verb" onkeyup="update()" placeholder="enter a main verb(part gen)"><br>
 
-		<input type="text" id="verb" onkeyup="update()" placeholder="enter a main verb(part gen)">
-
-		<input type="text" id="object1" onkeyup="update()" placeholder="enter an object">
+	<span>Object (such as "elephant", "Peter") </span><br>  
+	<input type="text" id="object1" onkeyup="update()" placeholder="enter an object">
     </div>
     <br>
     
@@ -25,7 +27,7 @@
 
 		<input type="text" id="displayParticiple">
 		
-		<input type="text" id="prep" placeholder="by">
+		<span id="prep">by</span>
 
 		<input type="text" id="subject2" >
     </div>
@@ -49,8 +51,8 @@
 						
 			
 			if(e("displayParticiple").value.toLowerCase() ==="known"){
-				e("prep").value = "to";
-			}else e("prep").value = "by";
+				e("prep").innerHTML = "to";
+			}else e("prep").innerHTML = "by";
 				
         }    
         function e(id){return document.getElementById(id);}
