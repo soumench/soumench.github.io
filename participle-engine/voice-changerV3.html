@@ -42,11 +42,9 @@
     <script src="participle-engine-script/participle-engine.js"></script> 
     <script>
         function update(){
-            let msg;
-            if(e("verb").value ===""){msg="";}
-            else{msg =  makeparticiple( e("verb").value.toLowerCase() );}
-            e("displayParticiple").innerHTML = msg;
-			
+            
+			let msg=   e("verb").value.toLowerCase().replace(/^\s+/,"").replace(/\s+$/,"");
+			e("displayParticiple").innerHTML =  msg? makeparticiple( msg ): " (...) ";
 			
 			e("subject2").innerHTML = e("subject1").value;
 			
