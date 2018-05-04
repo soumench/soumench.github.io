@@ -3,19 +3,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voice Change Helper Version 2</title>
+    <title>Voice Change Helper Version 3</title>
+    <style>
+		body{text-align: center;}
+		.activeHelp{ color: blue;}
+	</style>
 </head>
 
 <body>
     
     <div class="activeInput"> 
-    <span>Subject : Doer (such as Soumen, I, We, You, He, She, They) </span><br>   
+    <span class="activeHelp">Subject : Doer (such as Soumen, I, We, You, He, She, They) </span><br>   
 	<input type="text" id="subject1" onkeyup="update()" placeholder="enter a subject"><br>
 		   
-	<span>Verb: action words (such as "sees", "eat") </span><br>   
+	<span class="activeHelp">Verb: action words (such as "sees", "eat") </span><br>   
 	<input type="text" id="verb" onkeyup="update()" placeholder="enter a main verb(part gen)"><br>
 
-	<span>Object (such as "elephant", "Peter") </span><br>  
+	<span class="activeHelp">Object (such as "elephant", "Peter") </span><br>  
 	<input type="text" id="object1" onkeyup="update()" placeholder="enter an object">
     </div>
     <br>
