@@ -7,6 +7,7 @@
     <style>
 		body{text-align: left;}
 		.activeHelp{ color: blue;}
+		.passiveOutput{color: rebeccapurple;}
 	</style>
 </head>
 
@@ -24,16 +25,15 @@
     </div>
     <br>
     
-    <span>Passive Output</span><br>
+    <span >Passive Output</span><br>
     <div class="passiveOutput">    
-		<input type="text" id="object2" >
-		 
+		<span id="object2" > </span>		 
 
-		<input type="text" id="displayParticiple">
+		<span  id="displayParticiple"> </span>
 		
 		<span id="prep">by</span>
 
-		<input type="text" id="subject2" >
+		<span id="subject2"> </span>
     </div>
     
     
@@ -44,13 +44,13 @@
         function update(){
             let msg;
             if(e("verb").value ===""){msg="";}
-            else{msg =  makeparticiple( e("verb").value );}
-            e("displayParticiple").value = msg;
+            else{msg =  makeparticiple( e("verb").value.toLowerCase() );}
+            e("displayParticiple").innerHTML = msg;
 			
 			
-			e("subject2").value = e("subject1").value;
+			e("subject2").innerHTML = e("subject1").value;
 			
-			e("object2").value = e("object1").value;
+			e("object2").innerHTML = e("object1").value;
 			
 						
 			
