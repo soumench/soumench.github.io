@@ -46,13 +46,13 @@
 		
         function update(){
 			e("numbertest").innerHTML = guessNumber(e("object1").value.toLowerCase() ); /*find number*/
-			if( e("numbertest").innerHTML === "singular"){
+			if( e("numbertest").innerHTML === "SINGULAR"){
 				e("numbertest").innerHTML = "<span style='color:green'>SINGULAR</span>";
 			}
-			else if ( e("numbertest").innerHTML === "plural"){
+			else if ( e("numbertest").innerHTML === "PLURAL"){
 				e("numbertest").innerHTML = "<span style='color:red'>PLURAL</span>";
 			}
-			else if ( e("numbertest").innerHTML === "idk"){
+			else if ( e("numbertest").innerHTML === "IDK"){
 				e("numbertest").innerHTML = "<span style='color:#484806'>IDK</span>";
 			}
 			/*----------------------------------------------------------*/
