@@ -21,7 +21,7 @@
 	<input type="text" id="verb" onkeyup="update()" ><br>
 
 	<span class="activeHelp">Object (such as elephant, Peter) </span><br>  
-	<input type="text" id="object1" onkeyup="guessNumber()" >
+	<input type="text" id="object1" onkeyup="update()" >
     </div>
     <br>
     
@@ -42,30 +42,21 @@
     <script src="participle-engine-script/participle-engine.js"></script> 
     <script>
 		
-		function guessNumber(){
-			
-			let numbers = e("object1").value.toLowerCase();
-			let text;
-			
-			let plurals = ["mice","men","people","children","geese","teeth","oxen"];
-			
-			if(/^a\s/.test(numbers) ) { text="it's a singular";}
-			if(/^an\s/.test(numbers) ){ text="it's a singular too"; }
-			if(/s$/.test(numbers) ){ text="it's a plural";}
-			
-			if( plurals.indexOf(numbers) != -1){ text="it's a plural";}
-			
-			if( numbers === "elephant"){ text = "singular"; }
-			if( numbers === "fish" ||numbers === "shrimp" ){ text = "IDK"; }
-			
-			e("numbertest").innerHTML = text;
-			}
-			
-		
-		
 		
 		
         function update(){
+			e("numbertest").innerHTML = guessNumber(e("object1").value.toLowerCase() ); /*find number*/
+			if( e("numbertest").innerHTML === "SINGULAR"){
+				e("numbertest").innerHTML = "<span style='color:green'>SINGULAR</span>";
+			}
+			else if ( e("numbertest").innerHTML === "PLURAL"){
+				e("numbertest").innerHTML = "<span style='color:red'>PLURAL</span>";
+			}
+			else if ( e("numbertest").innerHTML === "IDK"){
+				e("numbertest").innerHTML = "<span style='color:#484806'>IDK</span>";
+			}
+			/*----------------------------------------------------------*/
+			
             
 			let msg=   e("verb").value.toLowerCase().replace(/^\s+/,"").replace(/\s+$/,"");
 			e("displayParticiple").innerHTML =  msg? makeparticiple( msg ): " (...) ";
@@ -80,6 +71,23 @@
 				e("prep").innerHTML = "to";
 			}else e("prep").innerHTML = "by";
 		} 
+		
+		function guessNumber(num){
+								
+			let plurals = {mice:1,men:1,people:1,children:1,geese:1,teeth:1,oxen:1};
+			let IDK = {deer:1, moose:1, series:1, swine:1, salmon:1, means:1, aircraft:1, offspring:1, species:1, grapefruit:1,sheep:1,fish:1,shrimp:1};
+			
+			
+			if(/^a\s/.test(num) ) { return "SINGULAR";}
+			if(/^an\s/.test(num) ){ return "SINGULAR"; }
+			if(/s$/.test(num) ){return "PLURAL";}
+			
+			if( plurals[num]){return "PLURAL";}
+			if( IDK[num]){return "IDK";}
+			if( num === "elephant"){return "SINGULAR"; }
+			
+			return "SINGULAR";
+		}
 		
         function e(id){return document.getElementById(id);}
     </script>
