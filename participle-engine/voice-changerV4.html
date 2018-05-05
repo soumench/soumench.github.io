@@ -36,7 +36,9 @@
 		<span id="subject2"> </span>
     </div>
     
-    <span id="numbertest">Number test</span>
+    <span id="numbertest">Number test</span><br>
+    
+    <span id="whatever">sub to obj</span>
     
    
     <script src="participle-engine-script/participle-engine.js"></script> 
@@ -59,7 +61,7 @@
 			let msg=   e("verb").value.toLowerCase().replace(/^\s+/,"").replace(/\s+$/,"");
 			e("displayParticiple").innerHTML =  msg? makeparticiple( msg ): " (...) ";
 			
-			e("subject2").innerHTML = e("subject1").value;
+			/*e("subject2").innerHTML = e("subject1").value;*/
 			
 			e("object2").innerHTML = e("object1").value;
 			
@@ -69,7 +71,7 @@
 				e("prep").innerHTML = "to";
 			}else e("prep").innerHTML = "by";
 			
-			e("subject2").innerHTML = subToObj(e("subject1").value );  /*subject to object conversion */
+			e("subject2").innerHTML = subToObj(e("subject1").value.toLowerCase() );  /*subject to object conversion */
 		} /* -----update end --------*/
 		
 		function guessNumber(word){
@@ -100,14 +102,15 @@
 		 function subToObj(txt) {
             var myText;
             switch (txt) {
-                case "I" || "i": myText = "me"; break;
-                case "We":myText = "us";break;
-                case "He":myText = "him";break;
-                case "She":myText = "her";break;
-                case "They":myText = "them";break;
+                case "i": myText = "me"; break;
+                case "we":myText = "us";break;
+                case "he":myText = "him";break;
+                case "she":myText = "her";break;
+                case "they":myText = "them";break;
                 
                 default:myText = firstLowerCase(txt); /*-a name should not change the capitalization--*/
             }
+			e("whatever").innerHTML = "my input was "+txt+ " and my output is "+myText; 
             return myText;
         }
 		
