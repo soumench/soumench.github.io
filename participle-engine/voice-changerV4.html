@@ -43,19 +43,16 @@
     <script>
 		
 		const SINGULAR=1; const PLURAL=2; const IDK=3;
-		
+		 let currentnumber=SINGULAR;
 		
         function update(){
-			e("numbertest").innerHTML = guessNumber(e("object1").value.toLowerCase() ); /*find number*/
-			if( e("numbertest").innerHTML === SINGULAR){
-				e("numbertest").innerHTML = "<span style='background:green'>SINGULAR</span>";
-			}
-			else if ( e("numbertest").innerHTML === PLURAL){
-				e("numbertest").innerHTML = "<span style='background:red'>PLURAL</span>";
-			}
-			else if ( e("numbertest").innerHTML === IDK){
-				e("numbertest").innerHTML = "<span style='background:#e6e611'>IDK</span>";
-			}
+			
+			/*currentnumber = guessNumber(e("object1").value.toLowerCase() );*/
+			currentnumber = guessNumber(cleaninput( e("object1").value.toLowerCase() ) );
+			if( currentnumber === SINGULAR){e("numbertest").style.backgroundColor= "green";}
+			if ( currentnumber === PLURAL)   {e("numbertest").style.backgroundColor= "red";}
+			if ( currentnumber === IDK)   {e("numbertest").style.backgroundColor= "yellow";}
+				
 			/*----------------------------------------------------------*/
 			
             
@@ -95,6 +92,8 @@
 			
 			return SINGULAR;
 		}
+		
+		function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
 		
         function e(id){return document.getElementById(id);}
     </script>
