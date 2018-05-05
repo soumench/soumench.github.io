@@ -43,22 +43,25 @@
     <script>
 		
 		function guessNumber(){
-			let numbers;
-			switch(e("object1").value.toLowerCase() ) {
-				case (/^a\s/.test(numbers) ): numbers="it's a singular"; break;
-				case (/^an\s/.test(numbers) ): numbers="it's a singular too"; break;
-				case (/s$/.test(numbers) ): numbers="it's a plural"; break;
-					
-				case "elephant": numbers="SINGULAR"; break;
-				case "elephants": numbers="PLURAL"; break;
-				case "mice": numbers="PLURAL"; break;
-					
-				case "fish": numbers="--IDK--"; break;
-					
-				default: numbers = "IDK";
+			
+			let numbers = e("object1").value.toLowerCase();
+			let text;
+			
+			let plurals = ["mice","men","people","children","geese","teeth","oxen"];
+			
+			if(/^a\s/.test(numbers) ) { text="it's a singular";}
+			if(/^an\s/.test(numbers) ){ text="it's a singular too"; }
+			if(/s$/.test(numbers) ){ text="it's a plural";}
+			
+			if( plurals.indexOf(numbers) != -1){ text="it's a plural";}
+			
+			if( numbers === "elephant"){ text = "singular"; }
+			if( numbers === "fish" ||numbers === "shrimp" ){ text = "IDK"; }
+			
+			e("numbertest").innerHTML = text;
 			}
-			e("numbertest").innerHTML = numbers;
-		}
+			
+		
 		
 		
 		
