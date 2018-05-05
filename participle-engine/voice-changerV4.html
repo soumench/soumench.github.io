@@ -14,14 +14,14 @@
 <body>
     
     <div class="activeInput"> 
-    <span class="activeHelp">Subject : (such as Soumen, You) </span><br>   
-	<input type="text" id="subject1" onkeyup="update()" ><br>
-		   
-	<span class="activeHelp">Verb: (such as sees, eat) </span><br>   
-	<input type="text" id="verb" onkeyup="update()" ><br>
+		<span class="activeHelp">Subject : (such as Soumen, You) </span><br>   
+		<input type="text" id="subject1" onkeyup="update()" ><br>
 
-	<span class="activeHelp">Object (such as elephant, Peter) </span><br>  
-	<input type="text" id="object1" onkeyup="update()" >
+		<span class="activeHelp">Verb: (such as sees, eat) </span><br>   
+		<input type="text" id="verb" onkeyup="update()" ><br>
+
+		<span class="activeHelp">Object (such as elephant, Peter) </span><br>  
+		<input type="text" id="object1" onkeyup="update()" >
     </div>
     <br>
     
@@ -45,7 +45,7 @@
 		const SINGULAR=1; const PLURAL=2; const IDK=3;
 		 let currentnumber=SINGULAR;
 		
-        function update(){
+        function update(){  /* -----update start --------*/
 			
 			currentnumber = guessNumber(cleaninput( e("object1").value.toLowerCase() ) );
 			
@@ -68,7 +68,9 @@
 			if(e("displayParticiple").value.toLowerCase() ==="known"){
 				e("prep").innerHTML = "to";
 			}else e("prep").innerHTML = "by";
-		} 
+			
+			e("subject2").innerHTML = subToObj(e("subject1").value );  /*subject to object conversion */
+		} /* -----update end --------*/
 		
 		function guessNumber(word){
 								
@@ -92,6 +94,45 @@
 			
 			return SINGULAR;
 		}
+		
+		/*--------------------------------------------------------------------------*/
+		
+		 function subToObj(txt) {
+            var myText;
+            switch (txt) {
+                case "I" || "i": myText = "me"; break;
+                case "We":myText = "us";break;
+                case "He":myText = "him";break;
+                case "She":myText = "her";break;
+                case "They":myText = "them";break;
+                
+                default:myText = firstLowerCase(txt); /*-a name should not change the capitalization--*/
+            }
+            return myText;
+        }
+		
+		function objToSub(txt) {
+            var myText;
+            switch (txt) {
+                case "me":myText = "I";break;
+                case "us":myText = firstUpperCase("we");break;
+                case "you":myText = firstUpperCase("you");break;
+                case "him":myText = firstUpperCase("he");break;
+                case "her":myText = firstUpperCase("she");break;
+                case "them":myText = firstUpperCase("they");break;
+                default:myText = txt;
+            }
+            return myText;
+        }
+        function firstUpperCase(txt) {
+            return txt.substr(0, 1).toUpperCase() + txt.substr(1);
+        }        
+        function firstLowerCase(txt) {
+            return txt.substr(0, 1).toLowerCase() + txt.substr(1);
+        }
+		
+		
+		
 		
 		function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
 		
