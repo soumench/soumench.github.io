@@ -82,6 +82,8 @@
 			if(/^an\s/.test(num) ){ return "SINGULAR"; }
 			if(/s$/.test(num) ){return "PLURAL";}
 			if(/^many\s/.test(num) ){return "PLURAL";}
+			if(/^most\s/.test(num) ){return "PLURAL";}
+			if(/^some\s/.test(num) ){return "PLURAL";}
 			if(/^all\s/.test(num) ){return "PLURAL";}
 			
 			if( plurals[num]){return "PLURAL";}
