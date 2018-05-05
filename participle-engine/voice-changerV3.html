@@ -42,18 +42,19 @@
     <script src="participle-engine-script/participle-engine.js"></script> 
     <script>
 		
+		const SINGULAR=1; const PLURAL=2; const IDK=3;
 		
 		
         function update(){
 			e("numbertest").innerHTML = guessNumber(e("object1").value.toLowerCase() ); /*find number*/
 			if( e("numbertest").innerHTML === "SINGULAR"){
-				e("numbertest").innerHTML = "<span style='color:green'>SINGULAR</span>";
+				e("numbertest").innerHTML = "<span style='background:green'>SINGULAR</span>";
 			}
 			else if ( e("numbertest").innerHTML === "PLURAL"){
-				e("numbertest").innerHTML = "<span style='color:red'>PLURAL</span>";
+				e("numbertest").innerHTML = "<span style='background:red'>PLURAL</span>";
 			}
 			else if ( e("numbertest").innerHTML === "IDK"){
-				e("numbertest").innerHTML = "<span style='color:#484806'>IDK</span>";
+				e("numbertest").innerHTML = "<span style='background:#e6e611'>IDK</span>";
 			}
 			/*----------------------------------------------------------*/
 			
@@ -74,7 +75,7 @@
 		
 		function guessNumber(num){
 								
-			let plurals = {mice:1,men:1,people:1,children:1,geese:1,teeth:1,oxen:1};
+			let plurals = {mice:1,men:1,women:1,people:1,children:1,geese:1,teeth:1,oxen:1};
 			let IDK = {deer:1, moose:1, series:1, swine:1, salmon:1, means:1, aircraft:1, offspring:1, species:1, grapefruit:1,sheep:1,fish:1,shrimp:1};
 			
 			if(/^a\sfew/.test(num) ){return "PLURAL";}
