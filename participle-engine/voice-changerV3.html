@@ -81,6 +81,8 @@
 			if(/^a\s/.test(num) ) { return "SINGULAR";}
 			if(/^an\s/.test(num) ){ return "SINGULAR"; }
 			if(/s$/.test(num) ){return "PLURAL";}
+			if(/^many\s/.test(num) ){return "PLURAL";}
+			if(/^all\s/.test(num) ){return "PLURAL";}
 			
 			if( plurals[num]){return "PLURAL";}
 			if( IDK[num]){return "IDK";}
