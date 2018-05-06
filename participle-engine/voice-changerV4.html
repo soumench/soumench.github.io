@@ -17,16 +17,17 @@
     <div class="activeInput"> 
         <span class="activeHelp">Subject : (such as Soumen, You) </span><br>   
         <input type="text" id="subjectinbox" onkeyup="update()" ><br>
-
         <span class="activeHelp">Verb: (such as sees, eat) </span><br>   
         <input type="text" id="verbinbox" onkeyup="update()" ><br>
-
         <span class="activeHelp">Object (such as elephant, Peter) </span><br>  
         <input type="text" id="objectinbox" onkeyup="update()" >
     </div>
-    <br>
     
-    <span >Passive Output</span><br>
+    <br>
+    <span >Active sentence: </span><br>
+    <span id="copyofinput" > </span><br>
+    <span>Passive sentence: </span>
+    
     <div class="passiveOutput">    
         <span id="objectoutput" > </span>         
         <span  id="displayParticiple"> participle</span>
@@ -40,11 +41,14 @@ trace here  --  <span id="whatever">sub to obj</span>
    
     <script src="participle_engine.js"></script> 
     <script>
-        e("agentoutput").contentEditable = true;// to manually capitalize a proper noun e.g. takni >> Takni
+        e("agentoutput").contentEditable = true; /*to manually capitalize a proper noun e.g. takni >> Takni*/
+				
         const SINGULAR=1; const PLURAL=2; const IDK=3;
         let currentnumber=SINGULAR;
         
         function update(){  /* -----update start --------*/
+			
+			e("copyofinput").innerHTML = e("subjectinbox").value+" "+ e("verbinbox").value+ " "+ e("objectinbox").value;
             
             currentnumber = guessNumber(cleaninput( e("objectinbox").value.toLowerCase() ) );
             
@@ -60,8 +64,8 @@ trace here  --  <span id="whatever">sub to obj</span>
             
                         
             e("agentoutput").innerHTML = subToObj ( e("subjectinbox").value.toLowerCase() );
-            e("objectoutput").innerHTML = e("objectinbox").value;                        
-            
+            e("objectoutput").innerHTML = e("objectinbox").value; 
+			
             if(e("displayParticiple").value.toLowerCase() ==="known"){
                 e("prep").innerHTML = "to";
             }else e("prep").innerHTML = "by";
@@ -114,8 +118,11 @@ trace here  --  <span id="whatever">sub to obj</span>
 
         
         function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
+		
+		
         
         function e(id){return document.getElementById(id);}
+		
     </script>
 </body>
 </html>
