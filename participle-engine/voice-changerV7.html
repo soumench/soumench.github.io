@@ -30,14 +30,17 @@
     <div class="passive">
        	<span style='color:#d91111'>Passive:</span>
       	     	    
-        <span id="objectoutput"></span>         
-        <span id="displayVerb"></span>
+        <span id="objectoutput"></span> 
+        <span id="thisisfortesting"></span> 
+               
+       
         <span id="prep">by</span>
         <span id="agentoutput"></span><br>
         
         <span style='color:#d91111'>participle with things added in front</span>      
-      	<span id="thisisfortesting"></span>
+      	<span id="thisisfortesting"></span><br>
         
+        participle: <span id="displayVerb"></span>
     </div>
     
     
@@ -69,13 +72,13 @@
             let aux;
 			if( currentnumber === SINGULAR){
 				e("numbertest").style.backgroundColor= "green";
-				aux = "am/is ";
+				aux = "is ";
 			}
-            if ( currentnumber === PLURAL)   {
+            else if ( currentnumber === PLURAL)   {
 				e("numbertest").style.backgroundColor= "red";
 				aux = "are ";
 			}
-            if ( currentnumber === IDK)   {
+            else if ( currentnumber === IDK)   {
 				e("numbertest").style.backgroundColor= "yellow";
 				aux = "is/are ";
 			}
