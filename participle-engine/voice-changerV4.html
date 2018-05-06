@@ -16,22 +16,22 @@
     
     <div class="activeInput"> 
         <span class="activeHelp">Subject : (such as Soumen, You) </span><br>   
-        <input type="text" id="subject1" onkeyup="update()" ><br>
+        <input type="text" id="subjectinbox" onkeyup="update()" ><br>
 
         <span class="activeHelp">Verb: (such as sees, eat) </span><br>   
-        <input type="text" id="verb" onkeyup="update()" ><br>
+        <input type="text" id="verbinbox" onkeyup="update()" ><br>
 
         <span class="activeHelp">Object (such as elephant, Peter) </span><br>  
-        <input type="text" id="object1" onkeyup="update()" >
+        <input type="text" id="objectinbox" onkeyup="update()" >
     </div>
     <br>
     
     <span >Passive Output</span><br>
     <div class="passiveOutput">    
-        <span id="object2" > </span>         
+        <span id="objectoutput" > </span>         
         <span  id="displayParticiple"> participle</span>
         <span id="prep">by</span>
-        <span id="subject2"> </span>
+        <span id="agentoutput"> </span>
     </div>
     
         <span id="numbertest">Number test</span><br>
@@ -40,13 +40,13 @@ trace here  --  <span id="whatever">sub to obj</span>
    
     <script src="participle_engine.js"></script> 
     <script>
-        
+        e("agentoutput").contentEditable = true;// to manually capitalize a proper noun e.g. takni >> Takni
         const SINGULAR=1; const PLURAL=2; const IDK=3;
         let currentnumber=SINGULAR;
         
         function update(){  /* -----update start --------*/
             
-            currentnumber = guessNumber(cleaninput( e("object1").value.toLowerCase() ) );
+            currentnumber = guessNumber(cleaninput( e("objectinbox").value.toLowerCase() ) );
             
             if( currentnumber === SINGULAR){e("numbertest").style.backgroundColor= "green";}
             if ( currentnumber === PLURAL)   {e("numbertest").style.backgroundColor= "red";}
@@ -55,20 +55,18 @@ trace here  --  <span id="whatever">sub to obj</span>
             /*----------------------------------------------------------*/
             
             
-            let msg=   e("verb").value.toLowerCase().replace(/^\s+/,"").replace(/\s+$/,"");
+            let msg=   e("verbinbox").value.toLowerCase().replace(/^\s+/,"").replace(/\s+$/,"");
             e("displayParticiple").innerHTML =  msg? makeparticiple( msg ): " (...) ";
             
-             e("subject2").innerHTML = e("subject1").value; 
-            
-            e("object2").innerHTML = subToObj ( e("subject1").value );
-            
                         
+            e("agentoutput").innerHTML = subToObj ( e("subjectinbox").value.toLowerCase() );
+                                    
             
             if(e("displayParticiple").value.toLowerCase() ==="known"){
                 e("prep").innerHTML = "to";
             }else e("prep").innerHTML = "by";
             
-        //    e("subject2").innerHTML = subToObj(e("subject1").value);  /*subject to object conversion */
+        
         } /* -----update end --------*/
         
         function guessNumber(word){
@@ -106,8 +104,8 @@ trace here  --  <span id="whatever">sub to obj</span>
                 
                 default:myText =  txt; /*-a name should not change the capitalization--*/
             }
-            e("whatever").innerHTML = "my input was "+txt+ " and my output is "+myText; 
-            return myText;
+            e("whatever").innerHTML = "my input was "+txt+ " and my output is "+myText;
+			return myText;
         }
         
  
