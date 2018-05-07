@@ -37,7 +37,7 @@
         <span id="prep">by</span>
         <span id="agentoutput"></span><br>
         
-        <span style='color:#d91111'>participle with things added in front</span>      
+            
       	<span id="thisisfortesting"></span><br>
         
         participle: <span id="displayVerb"></span>
@@ -45,8 +45,8 @@
     
     
     
-    <span id="numbertest">Number test</span><br>
-	<!--trace here  --  <span id="whatever">sub to obj</span>-->
+    <!--<span id="numbertest">Number test</span><br>
+	trace here  --  <span id="whatever">sub to obj</span>-->
    <span id="numbertest2">Number test2</span><br>
     
    
@@ -73,17 +73,17 @@
             
             let aux;
 			if( currentnumber === SINGULAR){
-				e("numbertest").style.backgroundColor= "green";
+				/*e("numbertest").style.backgroundColor= "green";*/
 				aux = "is ";
 				e("numbertest2").innerHTML = e("objectinbox").value+" is SINGULAR";
 			}
             else if ( currentnumber === PLURAL)   {
-				e("numbertest").style.backgroundColor= "red";
+				/*e("numbertest").style.backgroundColor= "red";*/
 				aux = "are ";
 				e("numbertest2").innerHTML = e("objectinbox").value+" is PLURAL";
 			}
             else if ( currentnumber === IDK)   {
-				e("numbertest").style.backgroundColor= "yellow";
+				/*e("numbertest").style.backgroundColor= "yellow";*/
 				aux = "is/are ";
 				e("numbertest2").innerHTML = e("objectinbox").value+" is IDK";
 			}
@@ -104,7 +104,7 @@
             
             /*---------------sub to obj and obj to sub conversion----------------------*/
                         
-            e("agentoutput").innerHTML = subToObj (  cleaninput( e("subjectinbox").value.toLowerCase() )  );
+            e("agentoutput").innerHTML = subToObj (  cleaninput( e("subjectinbox").value.toLowerCase() )  ) +".";
 			
             e("objectoutput").innerHTML = firstUpperCase( objToSub(e("objectinbox").value) ); 
 			
@@ -134,4 +134,4 @@
 </html>
 
 
-i see grass. does not work 
+<!--i see grass. does not work -->
