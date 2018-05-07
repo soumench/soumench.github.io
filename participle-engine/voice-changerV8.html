@@ -79,7 +79,7 @@
 			
             /*---------------------------- participle display------------------------------*/
                         
-            let msg=   VERB.replace(/^\s+/,"").replace(/\s+$/,"");
+            let msg= VERB.replace(/^\s+/,"").replace(/\s+$/,"");
 			
 			if(/[aeiouy]/.test(msg) ){
 				e("displayVerb").innerHTML =  msg? makeparticiple( msg ): " (...) ";
@@ -90,7 +90,7 @@
             
             /*---------------sub to obj and obj to sub conversion----------------------*/
                         
-            e("agentoutput").innerHTML = subToObj ( cleaninput( SUBJECT ) ) +".";
+            e("agentoutput").innerHTML = subToObj ( SUBJECT ) +".";
 			
             e("objectoutput").innerHTML =  objToSub(OBJECT) ; 
 			
