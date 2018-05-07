@@ -53,7 +53,8 @@
    
     <script src="participle_engine.js"></script>
     <script src="guess_number.js"></script>
-    <script src="sub_to_obj.js"></script>  
+    <script src="sub_to_obj.js"></script>
+    <script src="obj_to_sub.js"></script>  
     <script>
         e("agentoutput").contentEditable = true; /*to manually capitalize a proper noun e.g. takni >> Takni*/
 				
@@ -67,7 +68,7 @@
 			
 			/*-----------------------------Number Detection------------------------------*/
             
-            currentnumber = guessNumber(cleaninput( e("objectinbox").value.toLowerCase() ) );
+            currentnumber = guessNumber(cleaninput( e("objectinbox").value.toLowerCase() )    );
             
             let aux;
 			if( currentnumber === SINGULAR){
@@ -100,7 +101,8 @@
             /*-------------------------------------------------------------------------*/
                         
             e("agentoutput").innerHTML = subToObj ( e("subjectinbox").value.toLowerCase() );
-            e("objectoutput").innerHTML = e("objectinbox").value; 
+			
+            e("objectoutput").innerHTML = firstUpperCase( objToSub(e("objectinbox").value) ); 
 			
             if(e("displayParticiple").value.toLowerCase() ==="known"){
                 e("prep").innerHTML = "to";
@@ -112,6 +114,14 @@
                 
         
         function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
+		
+		function firstUpperCase(txt) {
+            return txt.substr(0, 1).toUpperCase() + txt.substr(1);
+        }
+        
+        function firstLowerCase(txt) {
+            return txt.substr(0, 1).toLowerCase() + txt.substr(1);
+        }
 		       
         function e(id){return document.getElementById(id);}
 		
