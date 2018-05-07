@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voice Change Helper Version 3</title>
+    <title>Voice Change Helper Version 8</title>
     <style>
         body{text-align: left;}
         .activeHelp{ color: blue;}
@@ -61,13 +61,14 @@
         
         function update(){  /* -----update start --------*/
 			
-			let SUBJECT=e("subjectinbox").value;
-		 	let OBJECT=e("objectinbox").value;
+			let SUBJECT=cleaninput( e("subjectinbox").value.toLowerCase() );
+		 	let OBJECT=cleaninput( e("objectinbox").value.toLowerCase() );
+			let VERB = cleaninput( e("verbinbox").value.toLowerCase() );
 			
-			e("copyofinput").innerHTML = SUBJECT+" "+ e("verbinbox").value+ " "+ OBJECT+".";
+			e("copyofinput").innerHTML = SUBJECT+" "+ VERB+ " "+ OBJECT+".";
 					
             
-            currentnumber = guessNumber(cleaninput( OBJECT.toLowerCase() )    );
+            currentnumber = guessNumber( OBJECT ) ;
 			
 			 let aux = ( currentnumber === SINGULAR)? "is ":( currentnumber === PLURAL) ?"are ":"is/are " ;
 			
@@ -78,19 +79,18 @@
 			
             /*---------------------------- participle display------------------------------*/
                         
-            let msg=   e("verbinbox").value.toLowerCase().replace(/^\s+/,"").replace(/\s+$/,"");
+            let msg=   VERB.replace(/^\s+/,"").replace(/\s+$/,"");
 			
 			if(/[aeiouy]/.test(msg) ){
 				e("displayVerb").innerHTML =  msg? makeparticiple( msg ): " (...) ";
 				
 				e("thisisfortesting").innerHTML= aux + makeparticiple( msg );  /*testing*/ 
-				
 			}
 			else {e("displayVerb").innerHTML="(...)";}
             
             /*---------------sub to obj and obj to sub conversion----------------------*/
                         
-            e("agentoutput").innerHTML = subToObj (  cleaninput( SUBJECT.toLowerCase() )  ) +".";
+            e("agentoutput").innerHTML = subToObj ( cleaninput( SUBJECT ) ) +".";
 			
             e("objectoutput").innerHTML =  objToSub(OBJECT) ; 
 			
