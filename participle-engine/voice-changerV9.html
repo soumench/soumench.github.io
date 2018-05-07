@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voice Change Helper Version 8</title>
+    <title>Voice Change Helper Version 9</title>
     <style>
         body{text-align: left;}
         .activeHelp{ color: blue;}
@@ -85,9 +85,9 @@
 			e("objectoutput").innerHTML =  objToSub(OBJECT) ; 
 			
 			
-            if(e("displayParticiple").value.toLowerCase() ==="known"){
-                e("prep").innerHTML = "to";
-            }else e("prep").innerHTML = "by";
+            
+			if(/^knows?$/.test(VERB)){e("prep").innerHTML = "to";}
+			else e("prep").innerHTML = "by";
         }     
             
         function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
