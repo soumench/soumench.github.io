@@ -106,7 +106,8 @@
                         
             e("agentoutput").innerHTML = subToObj (  cleaninput( e("subjectinbox").value.toLowerCase() )  ) +".";
 			
-            e("objectoutput").innerHTML = firstUpperCase( objToSub(e("objectinbox").value) ); 
+            e("objectoutput").innerHTML =  objToSub(e("objectinbox").value) ; 
+			/* e("objectoutput").innerHTML = firstUpperCase( objToSub(e("objectinbox").value) ); */
 			
             if(e("displayParticiple").value.toLowerCase() ==="known"){
                 e("prep").innerHTML = "to";
