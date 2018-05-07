@@ -68,9 +68,13 @@
 					
             
             currentnumber = guessNumber(cleaninput( OBJECT.toLowerCase() )    );
+			
+			 let aux = ( currentnumber === SINGULAR)? "is ":( currentnumber === PLURAL) ?"are ":"is/are " ;
+			
+			 e("numbertest2").innerHTML = "\""+ OBJECT + "\""+  ( ( currentnumber === SINGULAR)? " is singular":( currentnumber === PLURAL) ?" is plural ":" is IDK " ) ;
             
-            let aux;
-			if( currentnumber === SINGULAR){
+            
+			/*if( currentnumber === SINGULAR){
 				
 				aux = "is ";
 				e("numbertest2").innerHTML = OBJECT+" is SINGULAR";
@@ -84,7 +88,7 @@
 				
 				aux = "is/are ";
 				e("numbertest2").innerHTML = OBJECT+" is IDK";
-			}
+			}*/
 			
             e("thisisfortesting").innerHTML = aux + e("thisisfortesting").textContent; /*testing*/
 			
