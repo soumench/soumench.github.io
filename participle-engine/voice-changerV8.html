@@ -36,8 +36,7 @@
        
         <span id="prep">by</span>
         <span id="agentoutput"></span><br>
-        
-            
+                    
       	<span id="thisisfortesting"></span><br>
         
         participle: <span id="displayVerb"></span>
@@ -66,9 +65,7 @@
 		 	let OBJECT=e("objectinbox").value;
 			
 			e("copyofinput").innerHTML = SUBJECT+" "+ e("verbinbox").value+ " "+ OBJECT+".";
-			
-			
-			
+					
             
             currentnumber = guessNumber(cleaninput( OBJECT.toLowerCase() )    );
             
@@ -108,7 +105,7 @@
             e("agentoutput").innerHTML = subToObj (  cleaninput( SUBJECT.toLowerCase() )  ) +".";
 			
             e("objectoutput").innerHTML =  objToSub(OBJECT) ; 
-			/* e("objectoutput").innerHTML = firstUpperCase( objToSub(e("objectinbox").value) ); */
+			
 			
             if(e("displayParticiple").value.toLowerCase() ==="known"){
                 e("prep").innerHTML = "to";
@@ -120,15 +117,7 @@
                 
         
         function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
-		
-		function firstUpperCase(txt) {
-            return txt.substr(0, 1).toUpperCase() + txt.substr(1);
-        }
-        
-        function firstLowerCase(txt) {
-            return txt.substr(0, 1).toLowerCase() + txt.substr(1);
-        }
-		       
+				       
         function e(id){return document.getElementById(id);}
 		
     </script>
