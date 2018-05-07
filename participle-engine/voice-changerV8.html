@@ -104,7 +104,7 @@
             
             /*---------------sub to obj and obj to sub conversion----------------------*/
                         
-            e("agentoutput").innerHTML = subToObj ( e("subjectinbox").value.toLowerCase() );
+            e("agentoutput").innerHTML = subToObj (  cleaninput( e("subjectinbox").value.toLowerCase() )  );
 			
             e("objectoutput").innerHTML = firstUpperCase( objToSub(e("objectinbox").value) ); 
 			
