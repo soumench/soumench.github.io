@@ -42,14 +42,10 @@
         
         participle: <span id="displayVerb"></span>
     </div>
+       
     
-    
-    
-    <!--<span id="numbertest">Number test</span><br>
-	trace here  --  <span id="whatever">sub to obj</span>-->
    <span id="numbertest2">Number test2</span><br>
-    
-   
+     
    
    
     <script src="participle_engine.js"></script>
@@ -63,27 +59,27 @@
         let currentnumber=SINGULAR;
         
         function update(){  /* -----update start --------*/
-			/*---------------------------------input copy in a single line----------------------*/
+			
 			e("copyofinput").innerHTML = e("subjectinbox").value+" "+ e("verbinbox").value+ " "+ e("objectinbox").value+".";
 			
 			
-			/*-----------------------------Number Detection------------------------------*/
+			
             
             currentnumber = guessNumber(cleaninput( e("objectinbox").value.toLowerCase() )    );
             
             let aux;
 			if( currentnumber === SINGULAR){
-				/*e("numbertest").style.backgroundColor= "green";*/
+				
 				aux = "is ";
 				e("numbertest2").innerHTML = e("objectinbox").value+" is SINGULAR";
 			}
             else if ( currentnumber === PLURAL)   {
-				/*e("numbertest").style.backgroundColor= "red";*/
+				
 				aux = "are ";
 				e("numbertest2").innerHTML = e("objectinbox").value+" is PLURAL";
 			}
             else if ( currentnumber === IDK)   {
-				/*e("numbertest").style.backgroundColor= "yellow";*/
+				
 				aux = "is/are ";
 				e("numbertest2").innerHTML = e("objectinbox").value+" is IDK";
 			}
@@ -135,4 +131,4 @@
 </html>
 
 
-<!--i see grass. does not work -->
+
