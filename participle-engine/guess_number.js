@@ -8,7 +8,7 @@ function guessNumber(word){
 	
 	if(/ass$\s/.test(word) ) { return SINGULAR;}
 
-	if(/^(few|a few|the few)\s/.test(word) ) {return PLURAL;}
+	if(/^(few|a few|the few|a group of)\s/.test(word) ) {return PLURAL;}
 
 	if(/^an?\s/.test(word) ) { return SINGULAR;}
 
