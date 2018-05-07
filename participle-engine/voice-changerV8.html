@@ -57,31 +57,36 @@
 				
         const SINGULAR=1; const PLURAL=2; const IDK=3;
         let currentnumber=SINGULAR;
+		
+		
         
         function update(){  /* -----update start --------*/
 			
-			e("copyofinput").innerHTML = e("subjectinbox").value+" "+ e("verbinbox").value+ " "+ e("objectinbox").value+".";
+			let SUBJECT=e("subjectinbox").value;
+		 	let OBJECT=e("objectinbox").value;
+			
+			e("copyofinput").innerHTML = SUBJECT+" "+ e("verbinbox").value+ " "+ OBJECT+".";
 			
 			
 			
             
-            currentnumber = guessNumber(cleaninput( e("objectinbox").value.toLowerCase() )    );
+            currentnumber = guessNumber(cleaninput( OBJECT.toLowerCase() )    );
             
             let aux;
 			if( currentnumber === SINGULAR){
 				
 				aux = "is ";
-				e("numbertest2").innerHTML = e("objectinbox").value+" is SINGULAR";
+				e("numbertest2").innerHTML = OBJECT+" is SINGULAR";
 			}
             else if ( currentnumber === PLURAL)   {
 				
 				aux = "are ";
-				e("numbertest2").innerHTML = e("objectinbox").value+" is PLURAL";
+				e("numbertest2").innerHTML = OBJECT+" is PLURAL";
 			}
             else if ( currentnumber === IDK)   {
 				
 				aux = "is/are ";
-				e("numbertest2").innerHTML = e("objectinbox").value+" is IDK";
+				e("numbertest2").innerHTML = OBJECT+" is IDK";
 			}
 			
             e("thisisfortesting").innerHTML = aux + e("thisisfortesting").textContent; /*testing*/
@@ -100,9 +105,9 @@
             
             /*---------------sub to obj and obj to sub conversion----------------------*/
                         
-            e("agentoutput").innerHTML = subToObj (  cleaninput( e("subjectinbox").value.toLowerCase() )  ) +".";
+            e("agentoutput").innerHTML = subToObj (  cleaninput( SUBJECT.toLowerCase() )  ) +".";
 			
-            e("objectoutput").innerHTML =  objToSub(e("objectinbox").value) ; 
+            e("objectoutput").innerHTML =  objToSub(OBJECT) ; 
 			/* e("objectoutput").innerHTML = firstUpperCase( objToSub(e("objectinbox").value) ); */
 			
             if(e("displayParticiple").value.toLowerCase() ==="known"){
