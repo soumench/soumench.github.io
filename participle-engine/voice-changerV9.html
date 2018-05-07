@@ -85,8 +85,8 @@
 			e("objectoutput").innerHTML =  objToSub(OBJECT) ; 
 			
 			
-            
-			if(/^knows?$/.test(VERB)){e("prep").innerHTML = "to";}
+            if(/^kn[o|e]ws?$/.test(VERB)){e("prep").innerHTML = "to";}
+			/*if(/^knows?$/.test(VERB)){e("prep").innerHTML = "to";} */
 			else e("prep").innerHTML = "by";
         }     
             
