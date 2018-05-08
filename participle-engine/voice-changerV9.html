@@ -63,12 +63,21 @@
 			let VERB = cleaninput( e("verbinbox").value.toLowerCase() );
 			
 			e("copyofinput").innerHTML = SUBJECT+" "+ VERB+ " "+ OBJECT+".";
+			
+			
+			e("agentoutput").innerHTML = subToObj ( SUBJECT ) +".";    /*shifted upward*/
+			e("objectoutput").innerHTML =  objToSub(OBJECT) ;          /*shifted upward*/
+			
+			
+			
 					
             currentnumber = guessNumber( OBJECT ) ;
 			
 		    let aux = ( currentnumber === SINGULAR)? "is ":( currentnumber === PLURAL) ?"are ":"is/are " ;
 			
 			e("numbertest2").innerHTML = "\""+ OBJECT + "\""+  ( ( currentnumber === SINGULAR)? " is singular":( currentnumber === PLURAL) ?" is plural ":" is IDK " ) ;
+			
+			if(OBJECT === "me"){ aux = "am ";}     /*made change here*/
             
             e("thisisfortesting").innerHTML = aux + e("thisisfortesting").textContent; 
 			
@@ -81,8 +90,8 @@
 			}
 			else {e("displayVerb").innerHTML="(...)";}
                                     
-            e("agentoutput").innerHTML = subToObj ( SUBJECT ) +".";
-			e("objectoutput").innerHTML =  objToSub(OBJECT) ; 
+            
+			
 			
 			
             if(/^kn[o|e]ws?$/.test(VERB)){e("prep").innerHTML = "to";}
