@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voice Change Helper</title>
     <style>
-        body{text-align: left;}
+        body{text-align: left;font-size: 22px;}
         .activeHelp{ color: blue;}
+		footer{text-align: center; position:fixed;bottom: 1em;left: 50%;}
     </style>
 </head>
 <body>    
@@ -29,6 +30,7 @@
         participle: <span id="displayVerb"></span><br>
         <span id="numbertest2">Number test2</span>
     </div>
+      
        
     <script src="participle_engine.js"></script>
     <script src="guess_number.js"></script>
@@ -67,5 +69,6 @@
         function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
 		function e(id){return document.getElementById(id);}
 	</script>
+	<footer><a href="index.html">Home</a></footer>
 </body>
 </html>
