@@ -55,11 +55,11 @@
 			
 			if(OBJECT === "me"){ aux = "am ";}     /*made change here*/
             
-            e("auxandparticiple").innerHTML = (aux + e("auxandparticiple").textContent).toUpperCase(); 
+            e("auxandparticiple").innerHTML = aux + e("auxandparticiple").textContent; 
 			
             if(/[aeiouy]/.test(VERB) ){
 				e("displayVerb").innerHTML =  makeparticiple( VERB );
-				e("auxandparticiple").innerHTML= aux + makeparticiple( VERB );   
+				e("auxandparticiple").innerHTML= (aux + makeparticiple( VERB ) ).toUpperCase();   
 			}
 			else {e("displayVerb").innerHTML="(...)";}
 						
