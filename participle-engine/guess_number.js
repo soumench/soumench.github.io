@@ -1,4 +1,6 @@
 function guessNumber(word){
+	
+	word = word.replace(/^the\s/,"");
                                 
 	let singulars = {geas:1,bias:1,virus:1,nucleus:1,iris:1,focus:1,gas:1,stress:1,bus:1,glass:1,mass:1,series:1,lens:1,ms:1,os:1,axis:1,basis:1,boss:1,species:1,brass:1,cross:1,necrosis:1,analysis:1,hypothesis:1,epidermis:1,locus:1,atlas:1,electrolysis:1,fungus:1,radius:1,arthritis:1,ethics:1,loss:1,meiosis:1,alias:1,genus:1,grass:1,gross:1,hepatitis:1,pancreas:1,witness:1,abscess:1,anus:1,census:1,compass:1,metastasis:1};
 	
