@@ -23,7 +23,7 @@
     <div class="passive">
        	<span style='color:#d91111'>Passive:</span>
       	<span id="objectoutput"></span> 
-        <span id="thisisfortesting"></span> 
+        <span id="auxandparticiple"></span> 
         <span id="prep">by</span>
         <span id="agentoutput"></span><br>
         participle: <span id="displayVerb"></span><br>
@@ -55,11 +55,11 @@
 			
 			if(OBJECT === "me"){ aux = "am ";}     /*made change here*/
             
-            e("thisisfortesting").innerHTML = (aux + e("thisisfortesting").textContent).toUpperCase(); 
+            e("auxandparticiple").innerHTML = (aux + e("auxandparticiple").textContent).toUpperCase(); 
 			
             if(/[aeiouy]/.test(VERB) ){
-				e("displayVerb").innerHTML =  VERB? makeparticiple( VERB ): " (...) ";
-				e("thisisfortesting").innerHTML= aux + makeparticiple( VERB );   
+				e("displayVerb").innerHTML =  makeparticiple( VERB );
+				e("auxandparticiple").innerHTML= aux + makeparticiple( VERB );   
 			}
 			else {e("displayVerb").innerHTML="(...)";}
 						
