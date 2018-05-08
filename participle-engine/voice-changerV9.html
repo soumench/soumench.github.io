@@ -1,18 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voice Change Helper Version 9</title>
+    <title>Voice Change Helper</title>
     <style>
         body{text-align: left;}
         .activeHelp{ color: blue;}
     </style>
 </head>
-
-<body>
-    
+<body>    
     <div class="active"> 
         <span class="activeHelp">Subject : (such as Soumen, You)</span><br>   
         <input type="text" id="subjectinbox" onkeyup="update()">(subjectinbox)<br>
@@ -20,59 +17,39 @@
         <input type="text" id="verbinbox" onkeyup="update()" >(verbinbox)<br>
         <span class="activeHelp">Object (such as elephant, Peter)</span><br>  
         <input type="text" id="objectinbox" onkeyup="update()">(objectinbox)<br>
-        
         <span style='color:brown'>Active:</span>
     	<span id="copyofinput"></span><br>
-    </div>  
-          
-           
+    </div>          
     <div class="passive">
        	<span style='color:#d91111'>Passive:</span>
-      	     	    
-        <span id="objectoutput"></span> 
+      	<span id="objectoutput"></span> 
         <span id="thisisfortesting"></span> 
-              
         <span id="prep">by</span>
-        <span id="agentoutput"></span>
-                    
-      	<!--<span id="thisisfortesting"></span><br>-->
-        <br>
-        participle: <span id="displayVerb"></span>
+        <span id="agentoutput"></span><br>
+        participle: <span id="displayVerb"></span><br>
+        <span id="numbertest2">Number test2</span>
     </div>
        
-    
-   <span id="numbertest2">Number test2</span><br>
-     
-   
-   
     <script src="participle_engine.js"></script>
     <script src="guess_number.js"></script>
     <script src="sub_to_obj.js"></script>
     <script src="obj_to_sub.js"></script>  
     <script>
-        				
         const SINGULAR=1; const PLURAL=2; const IDK=3;
         let currentnumber=SINGULAR;
-		
-				       
+					       
         function update(){  
-			
 			let SUBJECT=cleaninput( e("subjectinbox").value.toLowerCase() );
 		 	let OBJECT=cleaninput( e("objectinbox").value.toLowerCase() );
 			let VERB = cleaninput( e("verbinbox").value.toLowerCase() );
 			
 			e("copyofinput").innerHTML = SUBJECT+" "+ VERB+ " "+ OBJECT+".";
 			
-			
-			e("agentoutput").innerHTML = subToObj ( SUBJECT ).toUpperCase() +".";    /*shifted upward*/
-			e("objectoutput").innerHTML =  objToSub(OBJECT).toUpperCase() ;          /*shifted upward*/
-			
-			
-			
-					
+			e("objectoutput").innerHTML =  objToSub(OBJECT).toUpperCase() ;
+			e("agentoutput").innerHTML = subToObj ( SUBJECT ).toUpperCase() +".";    
+											
             currentnumber = guessNumber( OBJECT ) ;
-			
-		    let aux = ( currentnumber === SINGULAR)? "is ":( currentnumber === PLURAL) ?"are ":"is/are " ;
+			let aux = ( currentnumber === SINGULAR)? "is ":( currentnumber === PLURAL) ?"are ":"is/are " ;
 			
 			e("numbertest2").innerHTML = "\""+ OBJECT + "\""+  ( ( currentnumber === SINGULAR)? " is singular":( currentnumber === PLURAL) ?" is plural ":" is IDK " ) ;
 			
@@ -80,22 +57,17 @@
             
             e("thisisfortesting").innerHTML = (aux + e("thisisfortesting").textContent).toUpperCase(); 
 			
-             
-			if(/[aeiouy]/.test(VERB) ){
+            if(/[aeiouy]/.test(VERB) ){
 				e("displayVerb").innerHTML =  VERB? makeparticiple( VERB ): " (...) ";
 				e("thisisfortesting").innerHTML= aux + makeparticiple( VERB );   
 			}
 			else {e("displayVerb").innerHTML="(...)";}
-			
-			
+						
 			e("prep").innerHTML = (/^kn[o|e]ws?$/.test(VERB)?"to":"by").toUpperCase();   /*known to fix*/
-        }     
-            
+        }
+		
         function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
 		function e(id){return document.getElementById(id);}
 	</script>
 </body>
 </html>
-
-
-
