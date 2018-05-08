@@ -35,8 +35,8 @@
         <span id="prep">by</span>
         <span id="agentoutput"></span>
                     
-      	<span id="thisisfortesting"></span><br>
-        
+      	<!--<span id="thisisfortesting"></span><br>-->
+        <br>
         participle: <span id="displayVerb"></span>
     </div>
        
@@ -50,8 +50,7 @@
     <script src="sub_to_obj.js"></script>
     <script src="obj_to_sub.js"></script>  
     <script>
-        e("agentoutput").contentEditable = true; 
-				
+        				
         const SINGULAR=1; const PLURAL=2; const IDK=3;
         let currentnumber=SINGULAR;
 		
@@ -65,8 +64,8 @@
 			e("copyofinput").innerHTML = SUBJECT+" "+ VERB+ " "+ OBJECT+".";
 			
 			
-			e("agentoutput").innerHTML = subToObj ( SUBJECT ) +".";    /*shifted upward*/
-			e("objectoutput").innerHTML =  objToSub(OBJECT) ;          /*shifted upward*/
+			e("agentoutput").innerHTML = subToObj ( SUBJECT ).toUpperCase() +".";    /*shifted upward*/
+			e("objectoutput").innerHTML =  objToSub(OBJECT).toUpperCase() ;          /*shifted upward*/
 			
 			
 			
@@ -79,26 +78,17 @@
 			
 			if(OBJECT === "me"){ aux = "am ";}     /*made change here*/
             
-            e("thisisfortesting").innerHTML = aux + e("thisisfortesting").textContent; 
+            e("thisisfortesting").innerHTML = (aux + e("thisisfortesting").textContent).toUpperCase(); 
 			
-                                    
-            let msg= VERB.replace(/^\s+/,"").replace(/\s+$/,"");
-			
-			if(/[aeiouy]/.test(msg) ){
-				e("displayVerb").innerHTML =  msg? makeparticiple( msg ): " (...) ";
-				e("thisisfortesting").innerHTML= aux + makeparticiple( msg );   
+             
+			if(/[aeiouy]/.test(VERB) ){
+				e("displayVerb").innerHTML =  VERB? makeparticiple( VERB ): " (...) ";
+				e("thisisfortesting").innerHTML= aux + makeparticiple( VERB );   
 			}
 			else {e("displayVerb").innerHTML="(...)";}
-                                    
-            
 			
 			
-			
-            if(/^kn[o|e]ws?$/.test(VERB)){e("prep").innerHTML = "to";}
-			/*if(/^knows?$/.test(VERB)){e("prep").innerHTML = "to";} */
-			else e("prep").innerHTML = "by";
-			
-						
+			e("prep").innerHTML = (/^kn[o|e]ws?$/.test(VERB)?"to":"by").toUpperCase();   /*known to fix*/
         }     
             
         function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
