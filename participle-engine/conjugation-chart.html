@@ -98,6 +98,29 @@
 			/*---------------PAST TENSE END-------------------------*/
 			
 			/*---------------FUTURE TENSE BEGIN-------------------------*/
+			if(tenseindicator === "futureind"){    /*FUTURE INDEFINITE*/
+				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = " will " + VERB;
+										
+				e("tpsnverb").innerHTML = " will " + VERB; ;
+			}
+			
+			else if(tenseindicator === "futureperf"){ /*FUTURE PERFECT*/
+				let pastparticiple = makeparticiple(VERB);
+				
+				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = e("tpsnverb").innerHTML = " will have "+ pastparticiple;
+			}
+			
+			else if(tenseindicator === "futurecont"){ /*FUTURE CONTINUOUS*/
+				let continuous = addING(VERB);
+				e("fpsnverb").innerHTML = " will be "+ continuous;
+				e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = e("tpsnverb").innerHTML = " will be "+continuous;
+				
+			}
+			
+			else if(tenseindicator === "futureperfcon"){ /*FUTURE PERFECT CONTINUOUS*/
+				let continuous = addING(VERB);
+				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML =  e("tpsnverb").innerHTML = " will have been "+ continuous;
+			}
 			/*---------------FUTURE TENSE END-------------------------*/
 			
 					 
@@ -108,6 +131,10 @@
 		}
 		
 		function addING(word){
+			/*let doubleconsonants = {begin:"beginning",rub:"rubbing",hop:"hopping",sit:"sitting",let:"letting",pet:"petting",get:"getting",snif:"sniffing",knit:"knitting",set:"setting",trip:"tripping"};*/
+			if(/y$/.test (word) ){ return word.replace(/y$/,"ying" ); }
+			if(/[aeiou][^aeiou]$/.test(word) ){return word.replace( /(.)$/,"$1$1ing" );}
+			/*if(doubleconsonants[word]){return doubleconsonants[word];}*/ 
 			return word+"ing";
 		}
 		

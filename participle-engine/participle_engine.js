@@ -10,25 +10,25 @@ let participleof = {
        
     function makeparticiple(verb) { let withouts; let part;
            
-        if(participleof[verb]){return participleof[verb];}                           
-        if(/s$/.test(verb) ){   
+        if(participleof[verb]){return participleof[verb];}
+        if(/s$/.test(verb) ){
             withouts = verb.replace(/s$/,"");
             part=participleof[withouts] ;
             if( part ){return part;}
         }
         if(/ed$/.test(verb) ){return verb;}
         if(/ys$/.test(verb) ){return verb.replace (/ys$/,"yed");}
-        if(/[^aeiou][aeiou][^aeiou]s$/.test(verb) ){return verb.replace(/(.)s$/,"$1$1ed");}           
-        if(/[^aeiuo]er$/.test(verb) ){return verb + "ed";}            
-        if(/en$/.test(verb) ){return verb+"ed";}                    
-        if(/[aeiou]y$/.test(verb) ){return verb + "ed";}   
-        if(/y$/.test(verb) ){return verb.replace (/y$/,"ied");}            
-        if(/e$/.test(verb) ){return verb.replace (/e$/,"ed");}            
-        if(/es$/.test(verb) ){return verb.replace (/es$/,"ed");}    
+        if(/[^aeiou][aeiou][^aeiou]s$/.test(verb) ){return verb.replace(/(.)s$/,"$1$1ed");}
+        if(/[^aeiuo]er$/.test(verb) ){return verb + "ed";}
+        if(/en$/.test(verb) ){return verb+"ed";}
+        if(/[aeiou]y$/.test(verb) ){return verb + "ed";}
+        if(/y$/.test(verb) ){return verb.replace (/y$/,"ied");}
+        if(/e$/.test(verb) ){return verb.replace (/e$/,"ed");}
+        if(/es$/.test(verb) ){return verb.replace (/es$/,"ed");}
         if(/ss$/.test(verb) ){return verb.replace (/ss$/,"ssed");}
-        if(/s$/.test(verb) ){return verb.replace (/s$/,"ed" );}            
-        if(/[wx]$/.test(verb)){return verb+"ed";}            
-        if(/[^aeiou][aeiou][^aeiou]$/.test(verb) ){return verb.replace(/(.)$/,"$1$1ed");}            
+        if(/s$/.test(verb) ){return verb.replace (/s$/,"ed" );}
+        if(/[wx]$/.test(verb)){return verb+"ed";}
+        if(/[^aeiou][aeiou][^aeiou]$/.test(verb) ){return verb.replace(/(.)$/,"$1$1ed");}
         if(/^(.+)([aeiou])(.)$/.test(verb) ){return verb+"ed";}
 
         return verb+"ed";
