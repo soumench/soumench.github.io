@@ -131,9 +131,15 @@
 		}
 		
 		function addING(word){
-			if(/hope$/.test (word) ){ return "hoping" ; }
-						
-			if(/[wxy]$/.test (word) ){ return word+"ing" ; }
+		   
+		   if(/[aeiou][aeiou]$/.test(word) ){return word+"ing" ;}
+		   if(/e$/.test(word) ) {return word.replace( /e$/,"ing" );}
+		   if(/panic$/.test(word) ) { return word+ "king" ; }
+			/*if(/hope$/.test (word) ){ return "hoping" ; }
+						*/
+			if(/[wxyr]$/.test (word) ){ return word+"ing" ; }
+		   
+		   if(/[aeiou][aeiou][^aeiou]$/.test(word) ){ return word+"ing" ; }
 			
 			if(/[aeiou][^aeiou]$/.test(word) ){return word.replace( /(.)$/,"$1$1ing" );}
 			
