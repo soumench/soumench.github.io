@@ -131,16 +131,18 @@
 		}
 		
 		function addING(word){
-			/*let doubleconsonants = {begin:"beginning",rub:"rubbing",hop:"hopping",sit:"sitting",let:"letting",pet:"petting",get:"getting",snif:"sniffing",knit:"knitting",set:"setting",trip:"tripping"};*/
-			if(/y$/.test (word) ){ return word.replace(/y$/,"ying" ); }
+			if(/hope$/.test (word) ){ return "hoping" ; }
+						
+			if(/[wxy]$/.test (word) ){ return word+"ing" ; }
+			
 			if(/[aeiou][^aeiou]$/.test(word) ){return word.replace( /(.)$/,"$1$1ing" );}
-			/*if(doubleconsonants[word]){return doubleconsonants[word];}*/ 
+			
 			return word+"ing";
 		}
 		
 		function addSorES(word){
 				if(/ay$/.test(word) ){return word+"s";}
-				if(/o$/.test(word) ){return word+"es";}
+				if(/[ox]$/.test(word) ){return word+"es";}
 				if(/y$/.test(word) ){return word.replace (/y$/,"ies");} 
 				return word+"s";
 		}
