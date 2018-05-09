@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+  
+    <input type="text" onkeyup='update()' id="verb"><br>
+    <span id="displayING"></span><span style="color:red">display INGword</span><br>
+    <span style="color:green" id="displaytrace"></span> <span style="color:red">display trace</span><br>
+    <span id="error"></span>
+    
+   <p id="display"></p>
+   
+   <script>
+	   
+	   function update(){
+		   let ingword = e("verb").value;
+		   e("displayING").innerHTML = addING(ingword);
+	   }
+	   
+       function addING(word){
+		   
+		   if(/[aeiou][aeiou]$/.test(word) ){return word+"ing" ;}
+		   if(/e$/.test(word) ) {return word.replace( /e$/,"ing" );}
+		   if(/panic$/.test(word) ) { return word+ "king" ; }
+			/*if(/hope$/.test (word) ){ return "hoping" ; }
+						*/
+			if(/[wxyr]$/.test (word) ){ return word+"ing" ; }
+		   
+		   if(/[aeiou][aeiou][^aeiou]$/.test(word) ){ return word+"ing" ; }
+			
+			if(/[aeiou][^aeiou]$/.test(word) ){return word.replace( /(.)$/,"$1$1ing" );}
+			
+			return word+"ing";
+		}
+       
+       
+       test();
+              
+       
+       function test(){
+         
+         var testverbs = ["type","time","tail","tip","tick","tin","top","tag","tender","tap","term","tone","test","track","tar","thread","transfer","table","target","trust","turn","trace","trade","trap","tariff","tie","tongue","title","tree","tack","take","tape","taste","traffic","twist","tank","tax","trim","tee","tide","touch","tube","trigger","tan","temper","toe","trend","truss","throw","thrust","trip","tunnel","tell","train","truncate","team","thin","thunder","talc","thumb","till","tool","total","truck","tenure","ticket","tissue","trail","tat","tenant","tense","tent","tilt","tow","tower","panic"];
+           
+         var el =document.getElementById("display");
+           
+         for(var i = 0; i < testverbs.length;++i){
+             
+             var verb =  testverbs[i];
+             el.innerHTML += verb+": "+ addING(verb)+"<br>";
+         }
+       }
+       
+       
+      
+        
+       function e(id) {return document.getElementById(id);}
+       
+    
+    </script>
+    
+</body>
+</html>
