@@ -7,32 +7,37 @@
 </head>
 
 <body>
-	<h1>Conjugation Chart</h1>
-	<h2>Enter a verb and Select a Tense below:</h2>
-	<input type="text" id="verbinbox" onkeyup="update()">verbinbox<br><br>
-	
+	<h2>Conjugation Chart</h2>
+	<h3>Enter a verb and Select a Tense:</h3>
+	<input type="text" id="verbinbox" onkeyup="update()">
 	<select name="tenses" id="tense" onchange="update()">
-		<option value="presentind">Present Inefinite</option>
-		<option value="presentperf">Present Perfect</option>
-		<option value="presentcont">Present Continuous</option>
-		<option value="presentperfcon">Present Perfect Continuous</option>
-		<option value="">--------------------</option>
-		<option value="pastind">Past Inefinite</option>
-		<option value="pastperf">Past Perfect</option>
-		<option value="pastcont">Past Continuous</option>
-		<option value="pastperfcon">Past Perfect Continuous</option>
-		<option value="">--------------------</option>
-		<option value="futureind">Future Inefinite</option>
-		<option value="futureperf">Future Perfect</option>
-		<option value="futurecont">Future Continuous</option>
-		<option value="futureperfcon">Future Perfect Continuous</option>
-    </select><br><br>
+		<option value="present">PRESENT</option>
+		<option value="past">PAST</option>
+		<option value="future">FUTURE </option>
+	</select>
+	<h3>INDEFINITE</h3>
+	<span id="indefinite" style="color:blueviolet">উদাহরণ: </span>  <br>
+	<span>I</span> <span id="fpsnind"> </span>. || <span>We</span> <span id="fppnind"></span>.<br>
+	<span>You</span> <span id="spsnind"> </span>. || <span>You</span> <span id="sppnind"> </span>.<br>
+	<span>He</span> <span id="tpsnind"> </span>. || <span>They</span> <span id="tppnind"></span>.
 	
-	<span>I</span> <span id="fpsnverb"> FPSPVERB</span>. || <span>We</span> <span id="fppn"> FPSPVERB</span>.<br>
-	<span>You</span> <span id="spsn"> FPSPVERB</span>. || <span>You</span> <span id="sppn"> FPSPVERB</span>.<br>
-	<span>He</span> <span id="tpsnverb"> FPSPVERB</span>. || <span>They</span> <span id="tppn"> FPSPVERB</span>.<br><br>
+	<h3>PERFECT</h3>
+	<span id="perfect" style="color:blueviolet">উদাহরণ: </span>  <br>
+	<span>I</span> <span id="fpsnperf"> </span>. || <span>We</span> <span id="fppnperf"> </span>.<br>
+	<span>You</span> <span id="spsnperf"> </span>. || <span>You</span> <span id="sppnperf"></span>.<br>
+	<span>He</span> <span id="tpsnperf"> </span>. || <span>They</span> <span id="tppnperf"> </span>.
+	<h3>CONTINUOUS</h3>
+	<span id="continuous" style="color:blueviolet">উদাহরণ: </span>  <br>
+	<span>I</span> <span id="fpsncont"> </span>. || <span>We</span> <span id="fppncont"> </span>.<br>
+	<span>You</span> <span id="spsncont"> </span>. || <span>You</span> <span id="sppncont"></span>.<br>
+	<span>He</span> <span id="tpsncont"></span>. || <span>They</span> <span id="tppncont"></span>.
+	<h3>PERFECT CONTINUOUS</h3>
+	<span id="perfectcontinuous" style="color:blueviolet">উদাহরণ: </span>  <br>
+	<span>I</span> <span id="fpsnperfcont"></span>. || <span>We</span> <span id="fppnperfcont"></span>.<br>
+	<span>You</span> <span id="spsnperfcont"></span>. || <span>You</span> <span id="sppnperfcont"> </span>.<br>
+	<span>He</span> <span id="tpsnperfcont"> </span>. || <span>They</span> <span id="tppnperfcont"> </span>.
 	
-	<span id="d" style="color:red"></span> trace --- Selected Tense
+	
 	
 	<script src="participle_engine.js"></script>
 	<script>
@@ -43,83 +48,81 @@
 			
 			/*---------------PRESENT TENSE BEGIN-------------------------*/
 			
-			if(tenseindicator === "presentind"){    /*PRESENT INDEFINITE*/
-				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = VERB;
-										
-				e("tpsnverb").innerHTML = addSorES(VERB) ;
-			}
-			
-			else if(tenseindicator === "presentperf"){ /*PRESENT PERFECT*/
-				let pastparticiple = makeparticiple(VERB);
+			if(tenseindicator === "present"){ 
+				e("indefinite").innerHTML = "উদাহরণ: I make.(আমি তৈরী করি)|";
+				e("perfect").innerHTML = "উদাহরণ: I have make.(আমি তৈরী করেছি)|";
+				e("continuous").innerHTML = "উদাহরণ: I am make.(আমি তৈরী করছি / করিতেছি )|";
+				e("perfectcontinuous").innerHTML = "উদাহরণ: I have been making.(আমি তৈরী করে আসছি / করিয়া আসিতেছি )|";
 				
-				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = "have "+ pastparticiple;
+				e("fpsnind").innerHTML = e("fppnind").innerHTML = e("spsnind").innerHTML = e("sppnind").innerHTML = e("tppnind").innerHTML = VERB;
+				e("tpsnind").innerHTML = addSorES(VERB) ;
+						
+				let pastparticiple = makeparticiple(VERB);
+				e("fpsnperf").innerHTML = e("fppnperf").innerHTML = e("spsnperf").innerHTML = e("sppnperf").innerHTML = e("tppnperf").innerHTML = "have "+ pastparticiple;
 														
-				e("tpsnverb").innerHTML = "has "+ pastparticiple; 
-			}
+				e("tpsnperf").innerHTML = "has "+ pastparticiple; 
 			
-			else if(tenseindicator === "presentcont"){ /*PRESENT CONTINUOUS*/
+						
 				let continuous = addING(VERB);
-				e("fpsnverb").innerHTML = " am "+ continuous;
-				e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = " are "+ continuous;
-				e("tpsnverb").innerHTML = " is "+continuous;
-			}
-			
-			else if(tenseindicator === "presentperfcon"){ /*PRESENT PERFECT CONTINUOUS*/
-				let continuous = addING(VERB);
-				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = " have been "+ continuous;
-				e("tpsnverb").innerHTML = " has been "+continuous;
+				
+				e("fpsncont").innerHTML = " am "+ continuous;
+				e("fppncont").innerHTML = e("spsncont").innerHTML = e("sppncont").innerHTML = e("tppncont").innerHTML = " are "+ continuous;
+				e("tpsncont").innerHTML = " is "+continuous;
+				
+				
+				e("fpsnperfcont").innerHTML = e("fppnperfcont").innerHTML = e("spsnperfcont").innerHTML = e("sppnperfcont").innerHTML = e("tppnperfcont").innerHTML = " have been "+ continuous;
+				e("tpsnperfcont").innerHTML = " has been "+continuous;
 			}
 			/*---------------PRESENT TENSE END-------------------------*/
 			
 			/*---------------PAST TENSE BEGIN-------------------------*/
-			if(tenseindicator === "pastind"){    /*PAST INDEFINITE*/
-				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = VERB;
+			if(tenseindicator === "past"){ 
+				e("indefinite").innerHTML = "উদাহরণ: I made.(আমি তৈরী করেছিলাম / করিয়াছিলাম )|";
+				e("perfect").innerHTML = "উদাহরণ: I had made.(আমি আগে তৈরী করেছিলাম / করিয়াছিলাম  )|";
+				e("continuous").innerHTML = "উদাহরণ: I was making.(আমি তৈরী করছিলাম / করিতেছিলাম)|";
+				e("perfectcontinuous").innerHTML = "উদাহরণ: I had been making.(আমি আগে থেকে তৈরী করে আসছিলাম / করিয়া আসিতেছিলাম )|";
+				
+				e("fpsnind").innerHTML = e("fppnind").innerHTML = e("spsnind").innerHTML = e("sppnind").innerHTML = e("tppnind").innerHTML = VERB;
 										
-				e("tpsnverb").innerHTML = addSorES(VERB) ;
-			}
+				e("tpsnind").innerHTML = addSorES(VERB) ;  /*need to add make past function*/
 			
-			else if(tenseindicator === "pastperf"){ /*PAST PERFECT*/
+			
+			
 				let pastparticiple = makeparticiple(VERB);
 				
-				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = e("tpsnverb").innerHTML = "had "+ pastparticiple;
-			}
+				e("fpsnperf").innerHTML = e("fppnperf").innerHTML = e("spsnperf").innerHTML = e("sppnperf").innerHTML = e("tppnperf").innerHTML = "had "+ pastparticiple;
 			
-			else if(tenseindicator === "pastcont"){ /*PAST CONTINUOUS*/
-				let continuous = addING(VERB);
-				e("fpsnverb").innerHTML = " was "+ continuous;
-				e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = " were "+ continuous;
-				e("tpsnverb").innerHTML = " was "+continuous;
-			}
 			
-			else if(tenseindicator === "pastperfcon"){ /*PAST PERFECT CONTINUOUS*/
+			
 				let continuous = addING(VERB);
-				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML =  e("tpsnverb").innerHTML = " had been "+ continuous;
+				e("fpsncont").innerHTML = " was "+ continuous;
+				e("fppncont").innerHTML = e("spsncont").innerHTML = e("sppncont").innerHTML = e("tppncont").innerHTML =  " were "+ continuous;
+				e("tpsncont").innerHTML = " was "+continuous;
+			
+			
+			
+				e("fpsnperfcont").innerHTML = e("fppnperfcont").innerHTML = e("spsnperfcont").innerHTML = e("sppnperfcont").innerHTML = e("tppnperfcont").innerHTML=e("tpsnperfcont").innerHTML = " had been "+ continuous;
 			}
 			/*---------------PAST TENSE END-------------------------*/
 			
 			/*---------------FUTURE TENSE BEGIN-------------------------*/
-			if(tenseindicator === "futureind"){    /*FUTURE INDEFINITE*/
-				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = " will " + VERB;
+			if(tenseindicator === "future"){    
+				e("fpsnind").innerHTML = e("fppnind").innerHTML = e("spsnind").innerHTML = e("sppnind").innerHTML = e("tppnind").innerHTML = e("tpsnind").innerHTML=" will " + VERB;
 										
-				e("tpsnverb").innerHTML = " will " + VERB; ;
-			}
+						
 			
-			else if(tenseindicator === "futureperf"){ /*FUTURE PERFECT*/
 				let pastparticiple = makeparticiple(VERB);
 				
-				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = e("tpsnverb").innerHTML = " will have "+ pastparticiple;
-			}
+				e("fpsnperf").innerHTML = e("fppnperf").innerHTML = e("spsnperf").innerHTML = e("sppnperf").innerHTML = e("tppnperf").innerHTML = " will have "+ pastparticiple;
 			
-			else if(tenseindicator === "futurecont"){ /*FUTURE CONTINUOUS*/
+			
+			
 				let continuous = addING(VERB);
-				e("fpsnverb").innerHTML = " will be "+ continuous;
-				e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML = e("tpsnverb").innerHTML = " will be "+continuous;
+				e("fpsncont").innerHTML = " will be "+ continuous;
+				e("fppncont").innerHTML = e("spsncont").innerHTML = e("sppncont").innerHTML = e("tppncont").innerHTML  = " will be "+continuous;
 				
-			}
 			
-			else if(tenseindicator === "futureperfcon"){ /*FUTURE PERFECT CONTINUOUS*/
-				let continuous = addING(VERB);
-				e("fpsnverb").innerHTML = e("fppn").innerHTML = e("spsn").innerHTML = e("sppn").innerHTML = e("tppn").innerHTML =  e("tpsnverb").innerHTML = " will have been "+ continuous;
+				e("fpsnperfcont").innerHTML = e("fppnperfcont").innerHTML = e("spsnperfcont").innerHTML = e("sppnperfcont").innerHTML = e("tppnperfcont").innerHTML=e("tpsnperfcont").innerHTML= " will have been "+ continuous;
 			}
 			/*---------------FUTURE TENSE END-------------------------*/
 			
