@@ -28,12 +28,16 @@
         }
         let pastverbs = {went:1,did:1,came:1,had:1,was:1,heard:1,sawed:1,hopped:1,hoped:1, knew:1, got:1, made:1, thought:1};
         
-		let presentverbs = {go:1,do:1,come:1,have:1,costs:1,reads:1,sees:1,look:1,hear:1,goes:1,does:1,is:1,comes:1,has:1, eats:1,eat:1,hears:1, saws:1, hopes:1,hops:1, know:1,knows:1, get:1, uses:1, think:1, want:1, find:1,
+		let presentverbs = {
+		speed:1, bed:1, seed:1, feed:1, weed:1, bleed:1, shed:1, need:1, sled:1, breed:1, succeed:1, 
+		proceed:1, wed:1, heed:1, embed:1, exceed:1, shred:1, 	
+			
+		go:1,do:1,come:1,have:1,costs:1,reads:1,sees:1,look:1,hear:1,goes:1,does:1,is:1,comes:1,has:1, eats:1,eat:1,hears:1, saws:1, hopes:1,hops:1, know:1,knows:1, get:1, uses:1, think:1, want:1, find:1,
 		tell:1, work:1, call:1, ask:1, need:1, feel:1, keep:1, let:1, help:1, talk:1, turn:1, show:1, play:1,
 		bring:1, sit:1, pay:1, stand:1, meet:1, lead:1, watch:1, add:1, grow:1, open:1, walk:1, learn:1,
 		understand:1, follow:1, stop:1, win:1, offer:1, remember:1, consider:1, appear:1, buy:1, wait:1,
 		expect:1, build:1, stay:1, fall:1, reach:1, kill:1, remain:1, suggest:1, pass:1, sell:1, report:1,
-		pull:1, push:1
+		pull:1, push:1, finds:1, send:1
 		};
         
 		let both = {hit:1,cost:1,saw:1,read:1,cut:1,hurt:1,spread:1};
@@ -48,11 +52,13 @@
             
             if( pastverbs[word]){return PAST;}
             if(presentverbs[word]){return PRESENT;}
+			if(/s$/.test(word) ) {return PRESENT;}
+			if(/ed$/.test(word) ) {return PAST;}
             if(both[word]){ return BOTH;}
             if(word.length<=2){ return IDK;}
             if(/\d/.test(word) ) {return IDK;}
             if(/[^aeiou]$/.test(word) ) {return IDK;}
-            if(/ed$/.test(word) ) {return PAST;}
+            
             if(/[^ed]$/.test(word) ) {return PRESENT;}
                     
             return PRESENT;
@@ -61,6 +67,7 @@
         function e(id){return document.getElementById(id);}
              
         let testverbs = {
+			
         /*went:1, "":1, goes:1, does:1, is:1, are:1, 
         was:1, were:1, did:1, came:1, had:1, 
         go:1, "do":1, come:1, have:1,  goes:1, 
@@ -69,7 +76,7 @@
         sawed:1,  reads:1, read:1, hit:1, cost:1, 
         hopes:1, hops:1, hopped:1,  hoped:1, know:1, 
 		knew:1, get:1, got:1, made:1, think:1, thought:1,
-		want:1, uses:1,*/ find:1, give:1, tell:1, work:1, 
+		want:1, uses:1, find:1, give:1, tell:1, work:1, 
 		call:1, ask:1, need:1, feel:1, become:1, leave:1,
 		keep:1, let:1, help:1, talk:1, turn:1, show:1,
 		play:1, move:1, like:1, live:1, believe:1, bring:1,
@@ -80,7 +87,9 @@
 		add:1, win:1, offer:1, remember:1, love:1, consider:1, appear:1,
 		buy:1, wait:1, serve:1, die:1, expect:1, build:1, stay:1, fall:1,
 		reach:1, kill:1, remain:1, suggest:1, raise:1, pass:1, sell:1,
-		require:1, report:1, decide:1, pull:1, push:1 };
+		require:1, report:1, decide:1, pull:1, push:1 
+		*/
+		};
        
         for(var index in testverbs) {          
           let tense=tensedetector(index);
