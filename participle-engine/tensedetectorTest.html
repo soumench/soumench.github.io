@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<input type=text id="verb" onkeyup="update()">
+	<br>
+	detected tense:  <span id="display"></span>
+			
+			
+	<script>
+		
+		function update(){
+			let VERB = e("verb").value;
+			
+			e("display").innerHTML = tensedetector(VERB);
+		}
+		
+		function tensedetector(word){
+			let pastverbs = {went:1,did:1,came:1};
+			let presentverbs = {go:1,do:1,come:1}; 
+			
+			if(/ed$/.test(word) ) {return "PASTVERB";}
+			if( pastverbs[word]){return "PASTVERB";}
+			if(presentverbs[word]){return "PRESENTVERB";}
+			return "IDK";
+		}
+		
+		
+		function e(id){return document.getElementById(id);}
+	</script>
+				
+</body>
+</html>

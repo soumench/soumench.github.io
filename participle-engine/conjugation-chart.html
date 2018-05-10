@@ -43,6 +43,7 @@
 	
 	
 	<script src="participle_engine.js"></script>
+	<script src="addING.js"></script>
 	<script>
 		function update(){
 			let VERB = cleaninput( e("verbinbox").value.toLowerCase() );
@@ -136,8 +137,8 @@
 			
 		}
 		
-		function addING(word){
-		   let exceptions = {recur:"recurring",slur:"slurring",bar:"barring",par:"parring",star:"starring",tar:"tarring",war:"warring",jar:"jarring",occur:"occurring",pur:"purring"/*,guess:"guessing",bash:"bashing"*/};
+		/*function addING(word){
+		   let exceptions = {recur:"recurring",slur:"slurring",bar:"barring",par:"parring",star:"starring",tar:"tarring",war:"warring",jar:"jarring",occur:"occurring",pur:"purring"};
 		   
 		   if( exceptions[word]){return exceptions[word];}
 		   		   
@@ -151,10 +152,10 @@
 			
 			if(/[aeiou][^aeiou]$/.test(word) ){return word.replace( /(.)$/,"$1$1ing" );}
 		    	   
-		    /*if(/[^aeiouy]/.test(word) ){return "(...ing)" ;}*/
+		    if(/[^aeiouy]/.test(word) ){return "(...ing)" ;}
 			
 			return word+"ing";
-		}
+		}*/
 		
 		function addSorES(word){
 				if(/ay$/.test(word) ){return word+"s";}
