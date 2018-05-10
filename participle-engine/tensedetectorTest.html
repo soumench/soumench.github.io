@@ -23,13 +23,15 @@
 		function tensedetector(word){
 			let pastverbs = {went:1,did:1,came:1};
 			let presentverbs = {go:1,do:1,come:1}; 
-			if(word.length<=1){ return "IDK";}
+			if(presentverbs[word]){return "PRESENTVERB";}
+			if(word.length<=2){ return "IDK";}
 			if(/\d/.test(word) ) {return "IDK";}
 			if(/[^aeiou]$/.test(word) ) {return "IDK";}
 			if(/ed$/.test(word) ) {return "PASTVERB";}
 			if(/[^ed]$/.test(word) ) {return "PRESENTVERB";}
 			if( pastverbs[word]){return "PASTVERB";}
-			if(presentverbs[word]){return "PRESENTVERB";}
+			
+			
 			return "PRESENTVERB";
 		}
 		
