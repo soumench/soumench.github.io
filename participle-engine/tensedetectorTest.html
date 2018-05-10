@@ -22,6 +22,11 @@
 		let pastverbs = {went:1,did:1,came:1,had:1};
 		let presentverbs = {go:1,do:1,come:1,have:1};
 		
+		let IDK=0;
+		let BOTH=3;
+		let PRESENT=1;
+		let PAST=2;
+		
 		function tensedetector(word){
 			
 			if( pastverbs[word]){return "PASTVERB";}
