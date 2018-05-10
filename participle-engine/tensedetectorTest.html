@@ -20,7 +20,8 @@
 			e("display").innerHTML = tensedetector(VERB);
 		}
 		let pastverbs = {went:1,did:1,came:1,had:1};
-		let presentverbs = {go:1,do:1,come:1,have:1};
+		let presentverbs = {go:1,do:1,come:1,have:1,costs:1,reads:1};
+		let both = {hit:1,cost:1,saw:1,read:1};
 		
 		let IDK=0;
 		let BOTH=3;
@@ -31,14 +32,13 @@
 			
 			if( pastverbs[word]){return "PASTVERB";}
 			if(presentverbs[word]){return "PRESENTVERB";}
+			if(both[word]){ return "BOTH";}
 			if(word.length<=2){ return "IDK";}
 			if(/\d/.test(word) ) {return "IDK";}
 			if(/[^aeiou]$/.test(word) ) {return "IDK";}
 			if(/ed$/.test(word) ) {return "PASTVERB";}
 			if(/[^ed]$/.test(word) ) {return "PRESENTVERB";}
-			
-			
-			
+					
 			return "PRESENTVERB";
 		}
 		
