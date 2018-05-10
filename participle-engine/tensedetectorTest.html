@@ -25,6 +25,7 @@
 			let presentverbs = {go:1,do:1,come:1}; 
 			
 			if(/ed$/.test(word) ) {return "PASTVERB";}
+			if(/[^ed]$/.test(word) ) {return "PRESENTVERB";}
 			if( pastverbs[word]){return "PASTVERB";}
 			if(presentverbs[word]){return "PRESENTVERB";}
 			return "IDK";
