@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <input type=text id="verb" onkeyup="update()">
+    <br>
+    detected tense:  <span id="display"></span>
+            
+            
+    <script>
+        
+        function update(){
+            let VERB = e("verb").value;
+            
+            e("display").innerHTML = pretty[tensedetector(VERB)];
+        }
+        let pastverbs = {went:1,did:1,came:1,had:1};
+        let presentverbs = {go:1,do:1,come:1,have:1,costs:1,reads:1,sees:1,look:1,hear:1};
+        let both = {hit:1,cost:1,saw:1,read:1,cut:1,hurt:1,spread:1};
+        
+        let IDK=0;
+        let PRESENT=1;
+        let PAST=2;
+        let BOTH=3;
+        let pretty=["IDK","PRESENT","PAST","BOTH"];
+        
+        function tensedetector(word){
+            
+            if( pastverbs[word]){return PAST;}
+            if(presentverbs[word]){return PRESENT;}
+            if(both[word]){ return BOTH;}
+            if(word.length<=2){ return IDK;}
+            if(/\d/.test(word) ) {return IDK;}
+            if(/[^aeiou]$/.test(word) ) {return IDK;}
+            if(/ed$/.test(word) ) {return PAST;}
+            if(/[^ed]$/.test(word) ) {return PRESENT;}
+                    
+            return PRESENT;
+        }
+        
+        function e(id){return document.getElementById(id);}
+             
+        let testverbs = {
+        went:1, "":1, goes:1, does:1, is:1, are:1, 
+        was:1, were:1, did:1, came:1, had:1, 
+        go:1, "do":1, come:1, have:1,  goes:1, 
+        comes:1, has:1, eats:1, ate:1, eat:1, 
+        hear:1, heard:1, hears:1, saw:1, saws:1, 
+        sawed:1,  reads:1, read:1, hit:1, cost:1, 
+        hopes:1, hops:1, hopped:1,  hoped:1};
+       
+        for(var index in testverbs) {          
+          let tense=tensedetector(index);
+          document.write( "<br/>"+ index + " : " + pretty[tense] );
+        }
+
+        
+    </script>
+                
+</body>
+</html>
