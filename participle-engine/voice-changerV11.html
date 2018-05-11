@@ -87,8 +87,8 @@
 			else if ( currentnumber=== PLURAL && tensedetected === 2){
 				auxiliary = "were";
 			}
-			e("auxpassive").innerHTML = objToSub(OBJECT).toUpperCase()+ " "+auxiliary+" "
-				+ displayedverb + " "
+			e("auxpassive").innerHTML = objToSub(OBJECT).toUpperCase()+ " "+auxiliary.toUpperCase()+" "
+				+ displayedverb.toUpperCase() + " "
 				+ (/^kn[oe]ws?$/.test(VERB)?"to":"by").toUpperCase()+ " "
 				+ " "+subToObj ( SUBJECT ).toUpperCase() +".";
         }
