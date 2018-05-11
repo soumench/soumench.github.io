@@ -33,7 +33,8 @@
         <span id="numbertest2">Number test2</span>
     </div><br>
     
-    past display: <span id="pastdisplay" style="color: red"> past display</span>
+    past display: <span id="pastdisplay" style="color: red"> past display</span><br>
+    PAST PASSIVE: <span id="auxpassive">pastpassive display</span>
         
        
     <script src="participle_engine.js"></script>
@@ -73,7 +74,18 @@
 			
 			/*--------------------- TENSE DETECTOR--------------------------------*/
 			
-			e("pastdisplay").innerHTML = tensedetector(VERB)===1 ? "present tense" :(tensedetector(VERB)===2 ?  "past tense":(tensedetector(VERB)===3 ?"both":"idk") );
+			let tensedetected = tensedetector(VERB);
+			e("pastdisplay").innerHTML = tensedetected;
+			/*e("pastdisplay").innerHTML = tensedetected===1 ? "PR" :(tensedetected===2 ?  "PA":(tensedetected===3 ?"BO":"ID") );*/
+			
+			let auxiliary="";
+			if(currentnumber=== SINGULAR && tensedetected === 2){
+				auxiliary = "was";
+			}
+			else if ( currentnumber=== PLURAL && tensedetected === 2){
+				auxiliary = "were";
+			}
+			e("auxpassive").innerHTML = auxiliary;
         }
 		
 		/*function findpast(word){
