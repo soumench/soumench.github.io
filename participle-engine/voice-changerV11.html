@@ -72,8 +72,12 @@
 			
 			/*--------------------- TENSE DETECTOR--------------------------------*/
 			
-			e("pastdisplay").innerHTML = pretty[tensedetector(VERB)]=== "PAST" ? VERB: "***";
+			e("pastdisplay").innerHTML = tensedetector(VERB);
         }
+		
+		/*function findpast(word){
+			return tensedetector(word);
+		}*/
 		
         function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
 		function e(id){return document.getElementById(id);}
