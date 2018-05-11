@@ -19,23 +19,25 @@ let pastverbs = {went:1,did:1,came:1,had:1,was:1,heard:1,sawed:1,hopped:1,hoped:
         
 		let both = {hit:1,cost:1,saw:1,read:1,cut:1,hurt:1,spread:1, cast:1, quit:1, shed:1, set:1};
         
-        let IDK=0;
+        /*let IDK=0;
         let PRESENT=1;
         let PAST=2;
         let BOTH=3;
-        let pretty=["IDK","PRESENT","PAST","BOTH"];
-        
+        let pretty=["IDK","PRESENT","PAST","BOTH"];*/
+		
+		const ID=0; const PR = 1; const PA=2; const BO=3;
+		let pretty=["ID","PR","PA","BO"];        
         function tensedetector(word){
             
-            if(/^aeiou$/.test(word) ) {return IDK;}
-            if(presentverbs[word]){return PRESENT;}
-			 if(word.length<=2){ return IDK;}
-			if( pastverbs[word]){return PAST;}
-			if(/s$/.test(word) ) {return PRESENT;}
-			if(/ed$/.test(word) ) {return PAST;}
-            if(both[word]){ return BOTH;}
+            if(/^aeiou$/.test(word) ) {return ID;}
+            if(presentverbs[word]){return PR;}
+			 if(word.length<=2){ return ID;}
+			if( pastverbs[word]){return PA;}
+			if(/s$/.test(word) ) {return PR;}
+			if(/ed$/.test(word) ) {return PA;}
+            if(both[word]){ return BO;}
                        
-            if(/[^ed]$/.test(word) ) {return PRESENT;}
+            if(/[^ed]$/.test(word) ) {return PR;}
                     
-            return PRESENT;
+            return PR;
         }

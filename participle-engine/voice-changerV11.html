@@ -39,7 +39,8 @@
     <script src="participle_engine.js"></script>
     <script src="guess_number.js"></script>
     <script src="sub_to_obj.js"></script>
-    <script src="obj_to_sub.js"></script>  
+    <script src="obj_to_sub.js"></script>
+    <script src="tense-detector.js"></script>  
     <script>
         const SINGULAR=1; const PLURAL=2; const IDK=3;
         let currentnumber=SINGULAR;
@@ -72,7 +73,7 @@
 			
 			/*--------------------- TENSE DETECTOR--------------------------------*/
 			
-			e("pastdisplay").innerHTML = tensedetector(VERB);
+			e("pastdisplay").innerHTML = tensedetector(VERB)===1 ? "present tense" :(tensedetector(VERB)===2 ?  "past tense":(tensedetector(VERB)===3 ?"both":"idk") );
         }
 		
 		/*function findpast(word){
