@@ -34,8 +34,10 @@
     </div><br>
     
     past display: <span id="pastdisplay" style="color: red"> past display</span><br>
-    PAST PASSIVE: <span id="auxpassive">pastpassive display</span>
-        
+    PAST PASSIVE: 
+       
+       <span id="auxpassive">pastpassive display</span>
+       
        
     <script src="participle_engine.js"></script>
     <script src="guess_number.js"></script>
@@ -85,7 +87,10 @@
 			else if ( currentnumber=== PLURAL && tensedetected === 2){
 				auxiliary = "were";
 			}
-			e("auxpassive").innerHTML = auxiliary;
+			e("auxpassive").innerHTML = objToSub(OBJECT).toUpperCase()+ " "+auxiliary+" "
+				+ displayedverb + " "
+				+ (/^kn[oe]ws?$/.test(VERB)?"to":"by").toUpperCase()+ " "
+				+ " "+subToObj ( SUBJECT ).toUpperCase() +".";
         }
 		
 		/*function findpast(word){
