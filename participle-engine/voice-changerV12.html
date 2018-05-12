@@ -36,7 +36,7 @@
     TENSE DISPLAY: <span id="tensedisplay" style="color: red"> tense display </span> <br>
     PAST PASSIVE: <span id="pastpassivedisplay">pastpassive display</span><br>
     
-    PRESENT PASSIVE: <span id="presentpassivedisplay">presentpassive display</span>
+    <span id="presentpassivedisplay">presentpassive display</span>
        
        
     <script src="participle_engine.js"></script>
@@ -79,7 +79,7 @@
 				+ aux.toUpperCase() +" "
 				+ pastparticiple + " "
 			    + prep + " "
-			    + passiveobject +".";
+			    + passiveobject +"." +"(PRESENT PASSIVE )";
 			e("temp_present_passive").innerHTML = present_passive;
 			
 			e("presentpassivedisplay").innerHTML = present_passive;
@@ -111,8 +111,8 @@
 			}
 			else if ( tensedetected === BO){
 				e("tensedisplay").innerHTML = "MAY BE BOTH";
-				e("presentpassivedisplay").innerHTML = present_passive;
-				e("pastpassivedisplay").innerHTML = past_passive;
+				/*e("presentpassivedisplay").innerHTML = present_passive;*/
+				/*e("pastpassivedisplay").innerHTML = past_passive;*/
 			}
 				
 		/*	else auxiliary  = "***";*/
