@@ -36,7 +36,7 @@
     past display: <span id="pastdisplay" style="color: red"> past display</span><br>
     PAST PASSIVE: <span id="auxpassive">pastpassive display</span><br>
     
-    PRESENT PASSIVE: <span id="auxpassive">presentpassive display</span>
+    PRESENT PASSIVE: <span id="presentdisplay">presentpassive display</span>
        
        
     <script src="participle_engine.js"></script>
@@ -73,7 +73,11 @@
 			// TEST LINES:
 			e("numbertest2").innerHTML = "\""+ OBJECT + "\""+  ( ( currentnumber === SINGULAR)? " is singular":( currentnumber === PLURAL) ?" is plural ":" is IDK " ) ;
 			
-			
+			e("presentdisplay").innerHTML = 
+				objToSub(OBJECT).toUpperCase()+ " "
+				+ (aux +  displayedverb ).toUpperCase() + " "
+			    + (/^kn[oe]ws?$/.test(VERB)?"to":"by").toUpperCase() + " "
+			    +  subToObj ( SUBJECT ).toUpperCase() +".";
 			/*--------------------- TENSE DETECTOR--------------------------------*/
 			
 			let tensedetected = tensedetector(VERB);
