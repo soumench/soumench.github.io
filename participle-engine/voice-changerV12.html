@@ -24,7 +24,7 @@
     	<span id="copyofinput"></span><br>
     </div>          
     <div class="passive">
-       	<!--<span style='color:#d91111'>Passive:</span>-->
+       	Passive:<span id="temp_present_passive" style='color:#d91111'></span>
       	<span id="objectoutput"></span> 
         <span id="auxandparticiple"></span> 
         
@@ -74,13 +74,15 @@
 			
 			
 						
-			e("presentdisplay").innerHTML =    /* PRESENT PASSIVE OUTPUT*/
-				passivesubject + " "   
+			    /* PRESENT PASSIVE OUTPUT*/
+			let present_passive = 	passivesubject + " "   
 				+ aux.toUpperCase() +" "
 				+ pastparticiple + " "
 			    + prep + " "
 			    + passiveobject +".";
+			e("temp_present_passive").innerHTML = present_passive;
 			
+			e("presentdisplay").innerHTML = present_passive;
 			/*--------------------- TENSE DETECTOR--------------------------------*/
 			
 			let tensedetected = tensedetector(VERB);
@@ -91,12 +93,13 @@
 			else if ( currentnumber=== PLURAL && tensedetected === 2){auxiliary = "were";}
 			else auxiliary  = "***";
 			
-			e("auxpassive").innerHTML =  /* past PASSIVE OUTPUT*/
-				passivesubject + " "
+			  /* past PASSIVE OUTPUT*/
+			let past_passive = 	passivesubject + " "
 				+ auxiliary.toUpperCase() + " "    /*notice the change here*/
 				+ pastparticiple + " "
 				+ prep + " "
 				+ passiveobject +".";
+			e("auxpassive").innerHTML = past_passive;
         }
 		
 		
