@@ -104,6 +104,17 @@
 				e("presentpassivedisplay").innerHTML = present_passive;
 				e("pastpassivedisplay").innerHTML = "";
 			}
+			else if ( tensedetected === ID){
+				e("tensedisplay").innerHTML = "NOTHING YET";
+				e("presentpassivedisplay").innerHTML = "";
+				e("pastpassivedisplay").innerHTML = "";
+			}
+			else if ( tensedetected === BO){
+				e("tensedisplay").innerHTML = "MAY BE BOTH";
+				e("presentpassivedisplay").innerHTML = present_passive;
+				e("pastpassivedisplay").innerHTML = past_passive;
+			}
+				
 		/*	else auxiliary  = "***";*/
 			
 			/*let past_passive = (tensedetected==PR)?     passivesubject +  ... : "(verb is not present)";*/
