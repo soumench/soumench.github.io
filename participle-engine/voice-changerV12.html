@@ -27,10 +27,10 @@
        	<!--<span style='color:#d91111'>Passive:</span>-->
       	<span id="objectoutput"></span> 
         <span id="auxandparticiple"></span> 
-        <span id="prep">by</span>
+        
         <span id="agentoutput"></span><br>
-        participle: <span id="displayVerb"></span><br>
-        <span id="numbertest2">Number test2</span>
+        Past participle: <span id="pp"></span><br>
+        <span id="numbertest">Number test2</span>
     </div><br>
     
     past display: <span id="pastdisplay" style="color: red"> past display</span><br>
@@ -61,6 +61,7 @@
 			let aux = (OBJECT=="me")?"am " : ( currentnumber === SINGULAR)? "is ":( currentnumber === PLURAL) ?"are ":"is/are " ;
 						
 			let pastparticiple = (/[aeiouy]/.test(VERB)? makeparticiple( VERB ):"(...)").toUpperCase();
+			e("pp").innerHTML = pastparticiple;
 						
 			let passivesubject = objToSub(OBJECT).toUpperCase();
 			let passiveobject =  subToObj ( SUBJECT ).toUpperCase();
@@ -68,7 +69,7 @@
 			let prep = (/^kn[oe]ws?$/.test(VERB)?"to":"by").toUpperCase();
 			
 			// TEST LINES:
-			e("numbertest2").innerHTML = "\""+ OBJECT + "\""+  ( ( currentnumber === SINGULAR)? " is singular":( currentnumber === PLURAL) ?" is plural ":" is IDK " ) ;
+			e("numbertest").innerHTML = "\""+ OBJECT + "\""+  ( ( currentnumber === SINGULAR)? " is singular":( currentnumber === PLURAL) ?" is plural ":" is IDK " ) ;
 			
 			
 						
@@ -82,16 +83,12 @@
 			
 			let tensedetected = tensedetector(VERB);
 			e("pastdisplay").innerHTML = tensedetected;
-			
-			
-			let auxiliary="";
-			if(currentnumber=== SINGULAR && tensedetected === 2){
-				auxiliary = "was";
-			}
-			else if ( currentnumber=== PLURAL && tensedetected === 2){
-				auxiliary = "were";
-			}
+						
+			let auxiliary;
+			if(currentnumber=== SINGULAR && tensedetected === 2){auxiliary = "was";}
+			else if ( currentnumber=== PLURAL && tensedetected === 2){auxiliary = "were";}
 			else auxiliary  = "***";
+			
 			e("auxpassive").innerHTML =  /* past PASSIVE OUTPUT*/
 				passivesubject + " "
 				+ auxiliary.toUpperCase() + " "    /*notice the change here*/
