@@ -43,7 +43,8 @@
     <script src="guess_number.js"></script>
     <script src="sub_to_obj.js"></script>
     <script src="obj_to_sub.js"></script>
-    <script src="tense-detector.js"></script>  
+    <script src="tense-detector.js"></script>
+      
     <script>
         const SINGULAR=1; const PLURAL=2; const IDK=3;
         let currentnumber=SINGULAR;
@@ -61,7 +62,7 @@
 			let aux = (OBJECT=="me")?"am " : ( currentnumber === SINGULAR)? "is ":( currentnumber === PLURAL) ?"are ":"is/are " ;
 						
 			let pastparticiple = (/[aeiouy]/.test(VERB)? makeparticiple( VERB ):"(...)").toUpperCase();
-			e("pp").innerHTML = pastparticiple;
+			e("pp").innerHTML = pastparticiple;  /*debug line*/
 						
 			let passivesubject = objToSub(OBJECT).toUpperCase();
 			let passiveobject =  subToObj ( SUBJECT ).toUpperCase();
@@ -75,7 +76,8 @@
 						
 			e("presentdisplay").innerHTML =    /* PRESENT PASSIVE OUTPUT*/
 				passivesubject + " "   
-				+ aux.toUpperCase() + pastparticiple + " "
+				+ aux.toUpperCase() +" "
+				+ pastparticiple + " "
 			    + prep + " "
 			    + passiveobject +".";
 			
