@@ -34,9 +34,10 @@
     </div><br>
     
     TENSE DISPLAY: <span id="tensedisplay" style="color: red"> tense display </span> <br>
-    PAST PASSIVE: <span id="pastpassivedisplay">pastpassive display</span><br>
-    
-    <span id="presentpassivedisplay">presentpassive display</span>
+       
+    PRESENT PASSIVE DISPLAT: <span id="presentpassivedisplay">presentpassive display</span>
+      
+    PAST PASSIVE DISPLAY: <span id="pastpassivedisplay">pastpassive display</span><br>
        
        
     <script src="participle_engine.js"></script>
@@ -75,11 +76,11 @@
 			
 						
 			    /* PRESENT PASSIVE OUTPUT*/
-			let present_passive = 	passivesubject + " "   
+			let present_passive = " " +	passivesubject + " "   
 				+ aux.toUpperCase() +" "
 				+ pastparticiple + " "
 			    + prep + " "
-			    + passiveobject +"." +"(PRESENT PASSIVE )";
+			    + passiveobject +".";
 			e("temp_present_passive").innerHTML = present_passive;
 			
 			e("presentpassivedisplay").innerHTML = present_passive;
@@ -115,9 +116,7 @@
 				/*e("pastpassivedisplay").innerHTML = past_passive;*/
 			}
 				
-		/*	else auxiliary  = "***";*/
-			
-			/*let past_passive = (tensedetected==PR)?     passivesubject +  ... : "(verb is not present)";*/
+		
 			
 			
 			
@@ -126,7 +125,7 @@
 			
 			
 			/* past PASSIVE OUTPUT*/
-			let past_passive = 	passivesubject + " "
+			let past_passive = " "+	passivesubject + " "
 				+ auxiliary.toUpperCase() + " "    /*notice the change here*/
 				+ pastparticiple + " "
 				+ prep + " "
