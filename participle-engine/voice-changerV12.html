@@ -56,7 +56,7 @@
 		 	let OBJECT=cleaninput( e("objectinbox").value.toLowerCase() );
 			let VERB = cleaninput( e("verbinbox").value.toLowerCase() );
 			
-			e("copyofinput").innerHTML = SUBJECT+" "+ VERB+ " "+ OBJECT+".";
+			e("copyofinput").innerHTML = (SUBJECT+" "+ VERB+ " "+ OBJECT).toUpperCase();
 																	
             currentnumber = guessNumber( OBJECT ) ;
 			
