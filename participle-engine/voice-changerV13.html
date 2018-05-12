@@ -93,12 +93,12 @@
 			if(currentnumber=== SINGULAR && tensedetected === PA){
 				auxiliary = "was";
 				e("tensedisplay").innerHTML = "DETECTED PAST";
-				e("presentpassivedisplay").innerHTML = "";
+				
 			}
 			else if ( currentnumber=== PLURAL && tensedetected === PA){
 				auxiliary = "were";
 				e("tensedisplay").innerHTML = "DETECTED PAST";
-				e("presentpassivedisplay").innerHTML = "";
+				
 				
 			}
 			else if ( tensedetected === PR){
@@ -108,7 +108,7 @@
 			}
 			else if ( tensedetected === ID){
 				e("tensedisplay").innerHTML = "NOTHING YET";
-				e("presentpassivedisplay").innerHTML = "";
+				
 				
 			}
 			else if ( tensedetected === BO){
