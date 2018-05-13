@@ -48,7 +48,7 @@
       
     <script>
         const SINGULAR=1; const PLURAL=2; const IDK=3;
-        let currentnumber=SINGULAR;
+        let numberdetected=SINGULAR;
         
                                    
         function update(){  
@@ -58,9 +58,9 @@
             
             e("copyofinput").innerHTML = (SUBJECT+" "+ VERB+ " "+ OBJECT).toUpperCase();
                                                                     
-            currentnumber = guessNumber( OBJECT ) ;
+            numberdetected = guessNumber( OBJECT ) ;
             
-            let aux = (OBJECT=="me")?"am " : ( currentnumber === SINGULAR)? "is ":( currentnumber === PLURAL) ?"are ":"is/are " ;
+            let aux = (OBJECT=="me")?"am " : ( numberdetected === SINGULAR)? "is ":( numberdetected === PLURAL) ?"are ":"is/are " ;
                         
             let pastparticiple = (/[aeiouy]/.test(VERB)? makeparticiple( VERB ):"(...)").toUpperCase();
             e("pp").innerHTML = pastparticiple;  /*debug line*/
@@ -70,7 +70,7 @@
             let prep = (/^kn[oe]ws?$/.test(VERB)?"to":"by").toUpperCase();
             let tensedetected = tensedetector(VERB);
             e("tensedisplay").innerHTML = ["nothing","present","past","both"] [tensedetected] ;
-            e("numbertest").innerHTML = "\""+ OBJECT + "\""+  ( ( currentnumber === SINGULAR)? " is singular":( currentnumber === PLURAL) ?" is plural ":" is IDK " ) ;
+            e("numbertest").innerHTML = "\""+ OBJECT + "\""+  ( ( numberdetected === SINGULAR)? " is singular":( numberdetected === PLURAL) ?" is plural ":" is IDK " ) ;
             let present_passive = " " +    passivesubject + " "   
                 + aux.toUpperCase() +" "
                 + pastparticiple + " "
@@ -82,8 +82,8 @@
             let auxiliary="(bad auxiliary)";
             if(tensedetected === PA){
                 auxiliary = 
-                (currentnumber=== SINGULAR) ? "was"
-                :  (currentnumber==PLURAL) ? "were"
+                (numberdetected=== SINGULAR) ? "was"
+                :  (numberdetected==PLURAL) ? "were"
                 :"was/were";
             }else if ( tensedetected === PR){
                 e("presentpassivedisplay").innerHTML = present_passive;
