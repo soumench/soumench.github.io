@@ -71,7 +71,7 @@
 			
 			
             e("tensedisplay").innerHTML = [VERB+" doesn't look like a verb.","present","past","both"] [tensedetected] ;
-			if(VERB.length <=1){ e("tensedisplay").innerHTML = "Please type in a verb.";}
+			if(VERB.length <=1){ e("tensedisplay").innerHTML = "Please type a verb into Verb inbox.";}
 			
             e("numberdisplay").innerHTML = "\""+ OBJECT + "\""+  ( ( numberdetected === SINGULAR)? "  appears to be a singular ":( numberdetected === PLURAL) ?" appears to be a plural ":" is IDK " ) ;
             let present_passive = " " + passivesubject + " "   
