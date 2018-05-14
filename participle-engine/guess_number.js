@@ -8,6 +8,9 @@ function guessNumber(word){
 	
 	let AMBIGUOUS = {deer:1, moose:1, series:1, swine:1, salmon:1, means:1, aircraft:1, offspring:1, species:1, grapefruit:1,sheep:1,fish:1,shrimp:1};
 	
+	if (word=="i")return SINGULAR;
+	 if(word.length < 2) return IDK;
+	
 	if( plurals[word]){return PLURAL;}
 	if( singulars[word]){return SINGULAR;}
 		
