@@ -66,7 +66,7 @@
             let passiveobject =  subToObj ( SUBJECT ).toUpperCase();
             let prep = (/^kn[oe]ws?$/.test(VERB)?"to":"by").toUpperCase();
             let tensedetected = tensedetector(VERB);
-            e("tensedisplay").innerHTML = ["nothing","present","past","both"] [tensedetected] ;
+            e("tensedisplay").innerHTML = [VERB+" doesn't look like a verb.","present","past","both"] [tensedetected] ;
             e("numberdisplay").innerHTML = "\""+ OBJECT + "\""+  ( ( numberdetected === SINGULAR)? "  appears to be a singular ":( numberdetected === PLURAL) ?" appears to be a plural ":" is IDK " ) ;
             let present_passive = " " + passivesubject + " "   
                 + aux.toUpperCase() +" "
