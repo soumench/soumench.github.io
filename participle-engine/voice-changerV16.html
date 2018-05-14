@@ -22,22 +22,21 @@
         <input type="text" id="objectinbox" onkeyup="update()">(objectinbox)<br>
         <span style='color:brown'>Active:</span>
         <span id="copyofinput"></span>
-    </div>          
-    <div class="passive">
+    
+    <span id="ppdisplay" style="color: blue"></span><br>
+    <span id="numberdisplay"></span>
+    
         <span id="objectoutput"></span> 
         <span id="auxandparticiple"></span> 
         <span id="agentoutput"></span><br>
-        <span id="ppdisplay" style="color: blue"></span><br>
-        <span id="numberdisplay"></span>
+        
+        
     </div>
     
     TENSE DISPLAY: <span id="tensedisplay" style="color: red"> tense display </span> <br>
-       
     <span id="presentpassivedisplay">presentpassive display</span><br>
-      
     <span id="pastpassivedisplay">pastpassive display</span><br>
-       
-       
+           
     <script src="participle_engine.js"></script>
     <script src="guess_number.js"></script>
     <script src="sub_to_obj.js"></script>
@@ -56,7 +55,7 @@
             
             e("copyofinput").innerHTML = (SUBJECT+" "+ VERB+ " "+ OBJECT).toUpperCase();
                                                                     
-            numberdetected = guessNumber( OBJECT ) ;
+            numberdetected = guessNumber( OBJECT );
             
             let aux = (OBJECT=="me")?"am " : ( numberdetected === SINGULAR)? "is ":( numberdetected === PLURAL) ?"are ":"is/are " ;
                         
@@ -69,7 +68,7 @@
             let tensedetected = tensedetector(VERB);
             e("tensedisplay").innerHTML = ["nothing","present","past","both"] [tensedetected] ;
             e("numberdisplay").innerHTML = "\""+ OBJECT + "\""+  ( ( numberdetected === SINGULAR)? "  appears to be a plural ":( numberdetected === PLURAL) ?" appears to be a plural ":" is IDK " ) ;
-            let present_passive = " " +    passivesubject + " "   
+            let present_passive = " " + passivesubject + " "   
                 + aux.toUpperCase() +" "
                 + pastparticiple + " "
                 + prep + " "
@@ -90,6 +89,7 @@
             }
             else if ( tensedetected === BO){
 				 auxiliary = numberdetected=== SINGULAR ?"was": "were";
+				 e("tensedisplay").innerHTML = "("+VERB+ ") appears to be either a present verb or a past verb";
             }
              e("pastpassivedisplay").innerHTML = (tensedetected == PA || tensedetected==BO) ? (" "+    passivesubject + " "
                 + auxiliary.toUpperCase() + " "    /*notice the change here*/
