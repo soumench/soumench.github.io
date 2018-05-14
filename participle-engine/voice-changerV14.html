@@ -24,10 +24,8 @@
         <span id="copyofinput"></span><br>
     </div>          
     <div class="passive">
-           Passive:<span id="temp_present_passive" style='color:#d91111'></span>
-          <span id="objectoutput"></span> 
+        <span id="objectoutput"></span> 
         <span id="auxandparticiple"></span> 
-        
         <span id="agentoutput"></span><br>
         Past participle Display: <span id="ppdisplay"></span><br>
         Number Display:<span id="numberdisplay"></span>
@@ -76,7 +74,6 @@
                 + pastparticiple + " "
                 + prep + " "
                 + passiveobject +".";
-            e("temp_present_passive").innerHTML = present_passive;
             e("presentpassivedisplay").innerHTML = (tensedetected == PR||tensedetected == BO) ? present_passive:"(no present needs to be displayed)";
             
             let auxiliary="(bad auxiliary)";
