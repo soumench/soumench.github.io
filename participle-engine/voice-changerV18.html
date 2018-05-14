@@ -67,7 +67,7 @@
             let prep = (/^kn[oe]ws?$/.test(VERB)?"to":"by").toUpperCase();
             let tensedetected = tensedetector(VERB);
             e("tensedisplay").innerHTML = ["nothing","present","past","both"] [tensedetected] ;
-            e("numberdisplay").innerHTML = "\""+ OBJECT + "\""+  ( ( numberdetected === SINGULAR)? "  appears to be a plural ":( numberdetected === PLURAL) ?" appears to be a plural ":" is IDK " ) ;
+            e("numberdisplay").innerHTML = "\""+ OBJECT + "\""+  ( ( numberdetected === SINGULAR)? "  appears to be a singular ":( numberdetected === PLURAL) ?" appears to be a plural ":" is IDK " ) ;
             let present_passive = " " + passivesubject + " "   
                 + aux.toUpperCase() +" "
                 + pastparticiple + " "
@@ -88,8 +88,14 @@
 				
             }
             else if ( tensedetected === BO){
-				 auxiliary = numberdetected=== SINGULAR ?"was": "were";
-				 e("tensedisplay").innerHTML = "("+VERB+ ") appears to be either a present verb or a past verb";
+				 if(numberdetected=== SINGULAR){
+					 auxiliary = "was";
+				 }
+				else if ( numberdetected === PLURAL){
+					auxiliary = "were";
+				}
+				e("tensedisplay").innerHTML = "("+VERB+ ") appears to be either a present verb or a past verb";
+				 
             }
              e("pastpassivedisplay").innerHTML = (tensedetected == PA || tensedetected==BO) ? (" "+    passivesubject + " "
                 + auxiliary.toUpperCase() + " "    /*notice the change here*/
