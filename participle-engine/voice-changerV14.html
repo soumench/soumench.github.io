@@ -92,7 +92,7 @@
 				
             }
             else if ( tensedetected === BO){
-				 auxiliary = (tensedetected === PA && numberdetected=== SINGULAR) ?"was": "were";
+				 auxiliary = numberdetected=== SINGULAR ?"was": "were";
             }
              e("pastpassivedisplay").innerHTML = (tensedetected == PA || tensedetected==BO) ? (" "+    passivesubject + " "
                 + auxiliary.toUpperCase() + " "    /*notice the change here*/
