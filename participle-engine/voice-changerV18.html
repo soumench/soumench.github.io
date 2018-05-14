@@ -52,6 +52,7 @@
             let SUBJECT=cleaninput( e("subjectinbox").value.toLowerCase() );
              let OBJECT=cleaninput( e("objectinbox").value.toLowerCase() );
             let VERB = cleaninput( e("verbinbox").value.toLowerCase() );
+			
             
             e("copyofinput").innerHTML = (SUBJECT+" "+ VERB+ " "+ OBJECT).toUpperCase();
                                                                     
@@ -66,7 +67,12 @@
             let passiveobject =  subToObj ( SUBJECT ).toUpperCase();
             let prep = (/^kn[oe]ws?$/.test(VERB)?"to":"by").toUpperCase();
             let tensedetected = tensedetector(VERB);
+			
+			
+			
             e("tensedisplay").innerHTML = [VERB+" doesn't look like a verb.","present","past","both"] [tensedetected] ;
+			if(VERB.length <=1){ e("tensedisplay").innerHTML = "Please type in a verb.";}
+			
             e("numberdisplay").innerHTML = "\""+ OBJECT + "\""+  ( ( numberdetected === SINGULAR)? "  appears to be a singular ":( numberdetected === PLURAL) ?" appears to be a plural ":" is IDK " ) ;
             let present_passive = " " + passivesubject + " "   
                 + aux.toUpperCase() +" "
