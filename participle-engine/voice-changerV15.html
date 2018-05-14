@@ -27,7 +27,7 @@
         <span id="objectoutput"></span> 
         <span id="auxandparticiple"></span> 
         <span id="agentoutput"></span><br>
-        Past participle Display: <span id="ppdisplay"></span><br>
+        Past participle Display: <span id="ppdisplay" style="color: blue"></span><br>
         Number Display:<span id="numberdisplay"></span>
     </div><br>
     
@@ -61,7 +61,7 @@
             let aux = (OBJECT=="me")?"am " : ( numberdetected === SINGULAR)? "is ":( numberdetected === PLURAL) ?"are ":"is/are " ;
                         
             let pastparticiple = (/[aeiouy]/.test(VERB)? makeparticiple( VERB ):"(...)").toUpperCase();
-            e("ppdisplay").innerHTML = pastparticiple;  /*debug line*/
+            e("ppdisplay").innerHTML = "<br> Pastparticiple of ("+ VERB+") is ("+ pastparticiple.toLowerCase() +")";  /*debug line*/
                         
             let passivesubject = objToSub(OBJECT).toUpperCase();
             let passiveobject =  subToObj ( SUBJECT ).toUpperCase();
