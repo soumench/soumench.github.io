@@ -29,8 +29,8 @@
         <span id="auxandparticiple"></span> 
         
         <span id="agentoutput"></span><br>
-        Past participle: <span id="pp"></span><br>
-        <span id="numbertest">Number Test</span>
+        Past participle Display: <span id="ppdisplay"></span><br>
+        Number Display:<span id="numberdisplay"></span>
     </div><br>
     
     TENSE DISPLAY: <span id="tensedisplay" style="color: red"> tense display </span> <br>
@@ -63,14 +63,14 @@
             let aux = (OBJECT=="me")?"am " : ( numberdetected === SINGULAR)? "is ":( numberdetected === PLURAL) ?"are ":"is/are " ;
                         
             let pastparticiple = (/[aeiouy]/.test(VERB)? makeparticiple( VERB ):"(...)").toUpperCase();
-            e("pp").innerHTML = pastparticiple;  /*debug line*/
+            e("ppdisplay").innerHTML = pastparticiple;  /*debug line*/
                         
             let passivesubject = objToSub(OBJECT).toUpperCase();
             let passiveobject =  subToObj ( SUBJECT ).toUpperCase();
             let prep = (/^kn[oe]ws?$/.test(VERB)?"to":"by").toUpperCase();
             let tensedetected = tensedetector(VERB);
             e("tensedisplay").innerHTML = ["nothing","present","past","both"] [tensedetected] ;
-            e("numbertest").innerHTML = "\""+ OBJECT + "\""+  ( ( numberdetected === SINGULAR)? " is singular":( numberdetected === PLURAL) ?" is plural ":" is IDK " ) ;
+            e("numberdisplay").innerHTML = "\""+ OBJECT + "\""+  ( ( numberdetected === SINGULAR)? " is singular":( numberdetected === PLURAL) ?" is plural ":" is IDK " ) ;
             let present_passive = " " +    passivesubject + " "   
                 + aux.toUpperCase() +" "
                 + pastparticiple + " "
