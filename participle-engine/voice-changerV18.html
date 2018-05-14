@@ -81,8 +81,10 @@
                 (numberdetected=== SINGULAR) ? "was"
                 :  (numberdetected==PLURAL) ? "were"
                 :"was/were";
+				e("tensedisplay").innerHTML = "("+VERB+") appears to be a past verb.";
             }else if ( tensedetected === PR){
                 e("presentpassivedisplay").innerHTML = present_passive;
+				e("tensedisplay").innerHTML = "("+VERB+") appears to be a present verb.";
             }
             else if ( tensedetected === ID){
 				
