@@ -51,6 +51,12 @@
             let SUBJECT=cleaninput( e("subjectinbox").value.toLowerCase() );
              let OBJECT=cleaninput( e("objectinbox").value.toLowerCase() );
             let VERB = cleaninput( e("verbinbox").value.toLowerCase() );
+			
+			if(VERB.length <=1){
+				VERB = "(...)";
+				e("tensedisplay").innerHTML = "Please type a verb into Verb inbox.";
+			}
+			
 			            
             e("copyofinput").innerHTML = (SUBJECT+" "+ VERB+ " "+ OBJECT).toUpperCase();
                                                                     
@@ -59,7 +65,8 @@
             let aux = (OBJECT=="me")?"am " : ( numberdetected === SINGULAR)? "is ":( numberdetected === PLURAL) ?"are ":"is/are " ;
                         
             let pastparticiple = (/[aeiouy]/.test(VERB)? makeparticiple( VERB ):"(...)").toUpperCase();
-            e("ppdisplay").innerHTML = "<br> Past participle of ("+ VERB+") is ("+ pastparticiple.toLowerCase() +")";  /*debug line*/
+			
+            e("ppdisplay").innerHTML = (pastparticiple === "(...)".toUpperCase() )?"": "<br> Past participle of ("+ VERB+") is ("+ pastparticiple.toLowerCase() +")";  /*debug line*/
                         
             let passivesubject = objToSub(OBJECT).toUpperCase();
             let passiveobject =  subToObj ( SUBJECT ).toUpperCase();
@@ -68,7 +75,13 @@
 					
 			
             e("tensedisplay").innerHTML = [VERB+" doesn't look like a verb.","present","past","both"] [tensedetected] ;
-			if(VERB.length <=1){ e("tensedisplay").innerHTML = "Please type a verb into Verb inbox.";}
+			
+			
+			
+			
+			
+			
+			
 			
             e("numberdisplay").innerHTML = "("+ OBJECT + ") "+  ( ( numberdetected === SINGULAR)? "  appears to be a singular number ":( numberdetected === PLURAL) ?" appears to be a plural number":" is IDK " ) ;
             let present_passive = " " + passivesubject + " "   
@@ -87,10 +100,11 @@
 				e("tensedisplay").innerHTML = "("+VERB+") appears to be a past verb.";
             }else if ( tensedetected === PR){
                 e("presentpassivedisplay").innerHTML = present_passive;
-				e("tensedisplay").innerHTML = "("+VERB+") appears to be a present verb.";
+				
+				e("tensedisplay").innerHTML = (VERB==="(...)")? "":"("+VERB+") appears to be a present verb.";
             }
             else if ( tensedetected === ID){
-				 e("numberdisplay").innerHTML = "I don't know if ("+ OBJECT +") is singular of plural.";
+				 e("numberdisplay").innerHTML = "I don't know if ("+ OBJECT +") is singular or plural.";
             }
             else if ( tensedetected === BO){
 				 if(numberdetected=== SINGULAR){
