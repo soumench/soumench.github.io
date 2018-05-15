@@ -62,7 +62,7 @@
                                                                     
             numberdetected = guessNumber( OBJECT );
             
-            let aux = (OBJECT=="me")?"am " : ( numberdetected === SINGULAR)? "is ":( numberdetected === PLURAL) ?"are ":"is/are " ;
+            let aux = (OBJECT=="me")?"am " : ( numberdetected === SINGULAR)? "is ":( numberdetected === PLURAL) ?"are ":"is / are " ;
                         
             let pastparticiple = (/[aeiouy]/.test(VERB)? makeparticiple( VERB ):"(...)").toUpperCase();
 			
@@ -83,7 +83,7 @@
 			
 			
 			
-            e("numberdisplay").innerHTML = "("+ OBJECT + ") "+  ( ( numberdetected === SINGULAR)? "  appears to be a singular number ":( numberdetected === PLURAL) ?" appears to be a plural number":" is IDK " ) ;
+            e("numberdisplay").innerHTML = "("+ OBJECT + ") "+  ( ( numberdetected === SINGULAR)? "  appears to be a singular number ":( numberdetected === PLURAL) ?" appears to be a plural number": "("+OBJECT +") may be SINGULAR or PLURAL." ) ;
             let present_passive = " " + passivesubject + " "   
                 + aux.toUpperCase() +" "
                 + pastparticiple + " "
