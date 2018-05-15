@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Change Helper</title>
+    <style>
+        body{text-align: left;font-size: 25px; background-color: bisque;}
+        .activeHelp{ color: blue;}
+		.analysis{font-size: 80%; color:rgb(255, 0, 255);}
+        footer{text-align: left; position:fixed;bottom: 1em; font-size: 1em;
+            color: white;text-shadow: 1px 1px 1px black, 0 0 0.1px blue, 0 0 1px darkblue;
+        }
+    </style>
+</head>
+<body>    
+    <div class="active"> 
+        <span class="activeHelp">Subject : (such as Soumen, You)</span><br>   
+        <input type="text" id="subjectinbox" onkeyup="update()" placeholder="enter a subject"><!--(subjectinbox)--><br>
+        <span class="activeHelp">Verb: (such as sees, eat)</span><br>   
+        <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb"><!--(verbinbox)--><br>
+        <span class="activeHelp">Object (such as elephant, Peter)</span><br>  
+        <input type="text" id="objectinbox" onkeyup="update()" placeholder="enter an object"><!--(objectinbox)--><br>
+        <span style='color:brown'>Active:</span>
+        <span id="copyofinput"></span><br>
+    Passive:   
+    <span id="presentpassivedisplay" style="color: blue"></span><br>
+    <span id="pastpassivedisplay" style="color: blue"></span><br>
+    
+    <span class="analysis" id="tensedisplay" ></span>
+    <span class="analysis" id="ppdisplay" ></span><br>
+    <span class="analysis" id="numberdisplay" ></span>
+    
+      
+        <span id="objectoutput"></span>
+        <span id="auxandparticiple"></span>
+        <span id="agentoutput"></span><br>
+    
+    
+    </div>
+      
+           
+    <script src="participle_engine.js"></script>
+    <script src="guess_number.js"></script>
+    <script src="sub_to_obj.js"></script>
+    <script src="obj_to_sub.js"></script>
+    <script src="tense-detector.js"></script>
+      
+    <script>
+        const SINGULAR=1; const PLURAL=2; const IDK=3;
+        let numberdetected=SINGULAR;
+                                           
+        function update(){  
+            let SUBJECT=cleaninput( e("subjectinbox").value.toLowerCase() );
+             let OBJECT=cleaninput( e("objectinbox").value.toLowerCase() );
+            let VERB = cleaninput( e("verbinbox").value.toLowerCase() );
+			
+			if(VERB.length <=1){
+				VERB = "(...)";
+				e("tensedisplay").innerHTML = "Please type a verb into Verb inbox.";
+			}
+			
+			            
+            e("copyofinput").innerHTML = (SUBJECT+" "+ VERB+ " "+ OBJECT).toUpperCase();
+                                                                    
+            numberdetected = guessNumber( OBJECT );
+            
+            let aux = (OBJECT=="me")?"am " : ( numberdetected === SINGULAR)? "is ":( numberdetected === PLURAL) ?"are ":"is / are " ;
+                        
+            let pastparticiple = (/[aeiouy]/.test(VERB)? makeparticiple( VERB ):"(...)").toUpperCase();
+			
+            e("ppdisplay").innerHTML = (pastparticiple === "(...)".toUpperCase() )?"": "<br> Past participle of ("+ VERB+") is ("+ pastparticiple.toLowerCase() +")";  /*debug line*/
+                        
+            let passivesubject = objToSub(OBJECT).toUpperCase();
+            let passiveobject =  subToObj ( SUBJECT ).toUpperCase();
+            let prep = (/^kn[oe]ws?$/.test(VERB)?"to":"by").toUpperCase();
+            let tensedetected = tensedetector(VERB);
+					
+			
+            e("tensedisplay").innerHTML = [VERB+" doesn't look like a verb.","present","past","both"] [tensedetected] ;
+			
+			
+			
+			
+			
+			
+			
+			
+            e("numberdisplay").innerHTML = "("+ OBJECT + ") "+  ( ( numberdetected === SINGULAR)? "  appears to be singular":( numberdetected === PLURAL) ?" appears to be plural": "("+OBJECT +") may be singular or plural." ) ;
+            let present_passive = " " + passivesubject + " "   
+                + aux.toUpperCase() +" "
+                + pastparticiple + " "
+                + prep + " "
+                + passiveobject +".";
+            e("presentpassivedisplay").innerHTML = (tensedetected == PR||tensedetected == BO) ? present_passive:""; /*(no present needs to be displayed)*/
+            
+            let auxiliary="(bad auxiliary)";
+            if(tensedetected === PA){
+                auxiliary = 
+                (numberdetected=== SINGULAR) ? "was"
+                :  (numberdetected==PLURAL) ? "were"
+                :"was/were";
+				e("tensedisplay").innerHTML = "("+VERB+") appears to be a past verb.";
+            }else if ( tensedetected === PR){
+                e("presentpassivedisplay").innerHTML = present_passive;
+				
+				e("tensedisplay").innerHTML = (VERB==="(...)")? "":"("+VERB+") appears to be a present verb.";
+            }
+            else if ( tensedetected === ID){
+				 e("numberdisplay").innerHTML = "I don't know if ("+ OBJECT +") is singular or plural.";
+            }
+            else if ( tensedetected === BO){
+				 if(numberdetected=== SINGULAR){
+					 auxiliary = "was";
+				 }
+				else if ( numberdetected === PLURAL){
+					auxiliary = "were";
+				}
+				e("tensedisplay").innerHTML = "("+VERB+ ") appears to be either a present verb or a past verb";
+			}
+             e("pastpassivedisplay").innerHTML = (tensedetected == PA || tensedetected==BO) ? (" "+    passivesubject + " "
+                + auxiliary.toUpperCase() + " "    /*notice the change here*/
+                + pastparticiple + " "
+                + prep + " "
+                + passiveobject ) : " "; /*no past passive display needed*/
+        }
+        function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
+        function e(id){return document.getElementById(id);}
+    </script>
+    <footer><a href="index.html">Home</a></footer>
+</body>
+</html>
