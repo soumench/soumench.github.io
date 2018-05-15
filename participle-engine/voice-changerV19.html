@@ -70,7 +70,7 @@
             e("tensedisplay").innerHTML = [VERB+" doesn't look like a verb.","present","past","both"] [tensedetected] ;
 			if(VERB.length <=1){ e("tensedisplay").innerHTML = "Please type a verb into Verb inbox.";}
 			
-            e("numberdisplay").innerHTML = "\""+ OBJECT + "\""+  ( ( numberdetected === SINGULAR)? "  appears to be a singular number ":( numberdetected === PLURAL) ?" appears to be a plural number":" is IDK " ) ;
+            e("numberdisplay").innerHTML = "("+ OBJECT + ") "+  ( ( numberdetected === SINGULAR)? "  appears to be a singular number ":( numberdetected === PLURAL) ?" appears to be a plural number":" is IDK " ) ;
             let present_passive = " " + passivesubject + " "   
                 + aux.toUpperCase() +" "
                 + pastparticiple + " "
