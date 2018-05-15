@@ -23,6 +23,9 @@
         <input type="text" id="objectinbox" onkeyup="update()" placeholder="enter an object"><!--(objectinbox)--><br>
         <span style='color:brown'>Active:</span>
         <span id="copyofinput"></span><br>
+    Passive:   
+    <span id="presentpassivedisplay" style="color: blue"></span><br>
+    <span id="pastpassivedisplay" style="color: blue"></span><br>
     
     <span class="analysis" id="tensedisplay" ></span>
     <span class="analysis" id="ppdisplay" ></span><br>
@@ -33,8 +36,7 @@
         <span id="auxandparticiple"></span>
         <span id="agentoutput"></span><br>
     
-    <span id="presentpassivedisplay" style="color: blue"></span><br>
-    <span id="pastpassivedisplay" style="color: blue"></span><br>
+    
     </div>
       
            
@@ -84,7 +86,7 @@
 			
 			
 			
-            e("numberdisplay").innerHTML = "("+ OBJECT + ") "+  ( ( numberdetected === SINGULAR)? "  appears to be singular":( numberdetected === PLURAL) ?" appears to be plural": "("+OBJECT +") may be SINGULAR or PLURAL." ) ;
+            e("numberdisplay").innerHTML = "("+ OBJECT + ") "+  ( ( numberdetected === SINGULAR)? "  appears to be singular":( numberdetected === PLURAL) ?" appears to be plural": "("+OBJECT +") may be singular or plural." ) ;
             let present_passive = " " + passivesubject + " "   
                 + aux.toUpperCase() +" "
                 + pastparticiple + " "
