@@ -86,7 +86,7 @@
 			
 			
 			
-            e("numberdisplay").innerHTML = "("+ OBJECT + ") "+  ( ( numberdetected === SINGULAR)? "  appears to be singular":( numberdetected === PLURAL) ?" appears to be plural": "("+OBJECT +") may be singular or plural." ) ;
+            e("numberdisplay").innerHTML =  ( ( numberdetected === SINGULAR)? "("+ OBJECT+ ") appears to be singular":( numberdetected === PLURAL) ?" appears to be plural": "("+OBJECT +") may be singular or plural." ) ;
             let present_passive = " " + passivesubject + " "   
                 + aux.toUpperCase() +" "
                 + pastparticiple + " "
