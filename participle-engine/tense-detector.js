@@ -17,7 +17,7 @@ let pastverbs = {went:1,did:1,came:1,had:1,was:1,heard:1,saw:1,sawed:1,hopped:1,
 		pull:1, push:1, finds:1, send:1, throw:1, 
 		};
         
-		let both = {hit:1,cost:1,read:1,cut:1,hurt:1,spread:1, cast:1, quit:1, shed:1, set:1, put:1};
+		let both = {hit:1,cost:1,read:1,cut:1,hurt:1,spread:1, cast:1, quit:1, shed:1, set:1, put:1,moose:1, sheep:1};
         
         /*let IDK=0;
         let PRESENT=1;
