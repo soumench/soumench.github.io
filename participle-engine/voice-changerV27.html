@@ -13,7 +13,8 @@
         }
     </style>
 </head>
-<body>    
+<body>
+   <h1>Voice Change helper V.01</h1>    
     <div class="active"> 
         <span class="activeHelp">Subject : (such as Soumen, You)</span><br>   
         <input type="text" id="subjectinbox" onkeyup="update()" placeholder="enter a subject"><!--(subjectinbox)--><br>
@@ -39,13 +40,17 @@
     
           
             
-    HOW THIS WORKS: this page turns very simple active sentences into the passive voice.<br>
+    HOW THIS WORKS: কিভাবে এটি কাজ করে? <br>
+    This page turns very simple active sentences into the passive voice.<br>এই পেজটি খুব সহজ বাক্যগুলিকে প্যাসিভ ভয়েসএ রুপান্তরিত করে |<br>
     type in the Subject: box something like ....<br>
 	type in the Verb box box something like ....<br>
 	type in the Object box box something like ....<br> 
-    This script is not finished and sometimes fails,<br> 
-    but it appears to work good with most common words.<br> 
-    Email me if you find failures. 
+    This script is not finished and sometimes fails,<br>
+    এই প্রোগ্রামটি এখনো সম্পূর্ণ তৈরী হয়নি | <br> 
+    But it appears to work good with most common words.<br>
+    তবে প্রচলিত সাধারণ শব্দগুলিনিয়ে তৈরী বাক্যগুলির সঙ্গে ভালই কাজ করে | <br> 
+    Email me if you find failures.<br>
+    যদি কোনো সমস্যা অথবা বাগ পান, আমাকে ইমেল করতে পারেন|  
            
     <script src="participle_engine.js"></script>
     <script src="guess_number.js"></script>
@@ -71,7 +76,7 @@
             
             if ( ""===OBJECT){OBJECT="SOMETHING"};
                         
-            e("copyofinput").innerHTML = (SUBJECT+" "+ VERB+ " "+ OBJECT).toUpperCase();
+            e("copyofinput").innerHTML = (SUBJECT+" "+ VERB+ " "+ OBJECT).toUpperCase()+".";
                                                                     
             numberdetected = guessNumber( OBJECT );
             
