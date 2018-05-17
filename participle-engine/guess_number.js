@@ -15,12 +15,14 @@ function guessNumber(word){
 	if( singulars[word]){return SINGULAR;}
 	
 	if(/^(a\s|the\s)?group\sof\s/.test(word) ) return IDK;
+	
+	if(/^an?\s/.test(word) ) { return SINGULAR;}
 		
 	if(/[aieou]ss$/.test(word) ) {return SINGULAR;}
 
 	if(/^(few|a few|the few|a group of)\s/.test(word) ) {return PLURAL;}
 
-	if(/^an?\s/.test(word) ) { return SINGULAR;}
+	
 
 	if( AMBIGUOUS[word]){return IDK;}
 
