@@ -6,13 +6,15 @@ function guessNumber(word){
 	
 	let plurals = {mice:1,men:1,women:1,people:1,children:1,geese:1,teeth:1,oxen:1,you:1, "a few":1, them:1,fungi:1,loci:1,radii:1};
 	
-	let AMBIGUOUS = {deer:1, moose:1, series:1, swine:1, salmon:1, means:1, aircraft:1, offspring:1, species:1, grapefruit:1,sheep:1,fish:1,shrimp:1, all:1, "a group of":1};
+	let AMBIGUOUS = {deer:1, moose:1, series:1, swine:1, salmon:1, means:1, aircraft:1, offspring:1, species:1, grapefruit:1,sheep:1,fish:1,shrimp:1, all:1};
 	
 	if (word=="i")return SINGULAR;
 	 if(word.length < 2) return IDK;
 	
 	if( plurals[word]){return PLURAL;}
 	if( singulars[word]){return SINGULAR;}
+	
+	if(/^(a\s|the\s)?group\sof\s/.test(word) ) return IDK;
 		
 	if(/[aieou]ss$/.test(word) ) {return SINGULAR;}
 
