@@ -2,7 +2,7 @@
 
 let pastverbs = {went:1,did:1,came:1,had:1,was:1,heard:1,saw:1,sawed:1,hopped:1,hoped:1, knew:1, got:1, made:1, thought:1, sang:1, slept:1, arose:1, awoke:1, bore:1, became:1, began:1, bound:1, bought:1, could:1,
 		chose:1, dug:1, ate:1, fell:1, fought:1, found:1, fled:1, got:1, grew:1, paid:1, ran:1, sold:1, said:1,
-		shook:1, sat:1, spoke:1, told:1, wore:1, wrote:1, wound:1, won:1, stood:1, understood:1, sent:1
+		shook:1, sat:1, spoke:1, told:1, wore:1, wrote:1, wound:1, won:1, stood:1, understood:1, sent:1,caught:1, drove:1,gave:1, built:1
 		};
         
 		let presentverbs = {
