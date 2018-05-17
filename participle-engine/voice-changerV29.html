@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Change Helper</title>
+    <style>
+        body{text-align: left;font-size: 25px; background-color: bisque;}
+        .activeHelp{ color: blue;}
+        .analysis{font-size: 80%; color:rgb(255, 0, 255);}
+		p{ font-size: 0.5em;}
+        footer{text-align: left;  font-size: 1em;
+            color: white;text-shadow: 1px 1px 1px black, 0 0 0.1px blue, 0 0 1px darkblue;
+        }
+    </style>
+</head>
+<body>
+   <h1>Voice Change helper V.01</h1>    
+    <div class="active"> 
+        <span class="activeHelp">Subject : (such as Soumen, You)</span><br>   
+        <input type="text" id="subjectinbox" onkeyup="update()" placeholder="enter a subject"><!--(subjectinbox)--><br>
+        <span class="activeHelp">Verb: (such as sees, eat)</span><br>   
+        <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb"><!--(verbinbox)--><br>
+        <span class="activeHelp">Object (such as elephant, Peter)</span><br>  
+        <input type="text" id="objectinbox" onkeyup="update()" placeholder="enter an object"><!--(objectinbox)--><br>
+        <span style='color:brown'>Active:</span>
+        <span id="copyofinput"></span><br>
+    Passive:   
+    <span id="presentpassivedisplay" style="color: blue"></span><br>
+    <!--<span id="pastpassivedisplay" style="color: blue"></span><br>-->
+    
+    <span class="analysis" id="tensedisplay" ></span>
+    <span class="analysis" id="ppdisplay" ></span><br>
+    <span class="analysis" id="numberdisplay" ></span>
+    
+      
+        <span id="objectoutput"></span>
+        <span id="auxandparticiple"></span>
+        <span id="agentoutput"></span><br>
+    </div>
+    
+          
+    <p>    
+    HOW THIS WORKS: কিভাবে এটি কাজ করে? <br>
+    <br>এই পেজটি খুব সহজ active voice গুলিকে passive voice-এ রূপান্তরিত করে |<br>
+    এই প্রোগ্রামটি এখনো সম্পূর্ণ তৈরী হয়নি | মাঝে মাঝে ফেইল করে|  <br> 
+    তবে প্রচলিত সাধারণ শব্দগুলিনিয়ে তৈরী বাক্যগুলির সঙ্গে ভালই কাজ করে | <br> 
+    যদি কোনো সমস্যা অথবা বাগ পান, আমাকে ইমেল করতে পারেন|  
+    
+    </p>    
+                  
+    <script src="participle_engine.js"></script>
+    <script src="guess_number.js"></script>
+    <script src="sub_to_obj.js"></script>
+    <script src="obj_to_sub.js"></script>
+    <script src="tense-detector.js"></script>
+      
+    <script>
+        const SINGULAR=1; const PLURAL=2; const IDK=3;
+        let numberdetected=SINGULAR;
+                                           
+        function update(){  
+            let isubj= e("subjectinbox").value;
+            let iobj=e("objectinbox").value;
+            let iverb=e("verbinbox").value;
+            
+            let SUBJECT = cleaninput( isubj.toLowerCase() );
+            let OBJECT = cleaninput( iobj.toLowerCase() );
+            let VERB = cleaninput( iverb.toLowerCase() );
+            
+            if(SUBJECT != "i" && SUBJECT.length < 2){SUBJECT = "(...)";}
+            numberdetected = guessNumber( OBJECT );
+ 
+           let tensedetected = tensedetector(VERB);
+            let tensedisplayed="xxx";
+            if(VERB.length == 0){
+                VERB = "(...)";
+                tensedisplayed = "Please type a verb into Verb inbox.";
+            }
+            else if(tensedetected === PA){
+                tensedisplayed =  "("+VERB+") appears to be a past verb.";
+            }else if ( tensedetected === PR){
+                tensedisplayed =  "("+VERB+") appears to be a present verb.";
+            }
+            else if ( tensedetected === ID){
+                tensedisplayed =  "("+VERB+") doesn't look like a verb.";                 
+            }
+            else if ( tensedetected === BO){                  
+                tensedisplayed ="("+VERB+ ") appears to be either a present verb or a past verb";
+            }
+            e("tensedisplay").innerHTML = tensedisplayed;
+                      
+            if (""===OBJECT){OBJECT="SOMETHING"};
+                        
+            e("copyofinput").innerHTML = (SUBJECT+" "+ VERB+ " "+ OBJECT);
+                                                                    
+            let aux = (OBJECT=="me")?"am " : ( numberdetected === SINGULAR)? "is ":( numberdetected === PLURAL) ?"are ":"is / are " ;
+                        
+            let pastparticiple = (/[aeiouy]/.test(VERB)? makeparticiple( VERB ):"(...)");
+            
+            e("ppdisplay").innerHTML = (pastparticiple === "(...)")?"": "<br> Past participle of ("+ VERB+") is ("+ pastparticiple +")";  /*debug line*/
+                        
+            let passivesubject = objToSub(OBJECT);
+            let passiveobject =  subToObj ( SUBJECT );
+            
+            if("i"==passivesubject)passivesubject="I";
+            
+            let prep = (/^kn[oe]ws?$/.test(VERB)?"to":"by");
+            
+            
+            e("numberdisplay").innerHTML =  ( ( numberdetected === SINGULAR)? "("+ OBJECT+ ") appears to be singular":( numberdetected === PLURAL) ? "("+ OBJECT+") appears to be plural": "("+OBJECT +") may be singular or plural." ) ;
+            let present_passive = "";
+            if ( tensedetected == PR||tensedetected == BO) 
+            {
+                present_passive = " " + passivesubject + " "   
+                    + aux +" "
+                    + pastparticiple + " "
+                    + prep + " "
+                    + passiveobject +".";            
+            }            
+            e("presentpassivedisplay").innerHTML = present_passive;
+            let auxiliary="(bad auxiliary)";
+            if(tensedetected === PA){
+                auxiliary=["was / were","was","were","was / were"][numberdetected];
+            }else if ( tensedetected === PR){
+                e("presentpassivedisplay").innerHTML = present_passive;
+            }
+            else if ( tensedetected === ID){
+                 e("numberdisplay").innerHTML = "I don't know if ("+ OBJECT +") is singular or plural.";
+            }
+            else if ( tensedetected === BO) {
+                  auxiliary=["was / were","was","were","was / were"][numberdetected];
+            }
+                let passivizedpast = "";
+                if (tensedetected == PA || tensedetected==BO) passivizedpast = passivesubject + " " + auxiliary + 
+               " " + pastparticiple + 
+               " " + prep + " "  + passiveobject  ;
+             if(passivizedpast)e("presentpassivedisplay").innerHTML += (  (tensedetected == BO) ? " <br/> " : " " ) + passivizedpast;
+        }
+        function cleaninput(input){return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ");}
+        function e(id){return document.getElementById(id);}
+    </script>
+    
+    <p>Disclaimer: যদি তুমি bad English লেখ ( যেমন "the cat see the mice" অথবা  "the cats sees the mice"), এই প্রোগ্রামটি কিন্তু বলবে না যে তুমি bad English লিখেছো কারন কম্পিউটার হলো গাধা | তাই খারাপ ইনপুট দিলে খারাপ আউটপুট পাবে | </p>
+    <footer><a href="index.html">Home</a>
+    
+    </footer>
+</body>
+</html>
+
+
+
+
+<!--"if you write bad english like "the cat see the mice" or "the cats sees the mice", the script will not tell you that it is BAD english, because it is a stupid script and does not do that. (insert apologies here, but dont promise you will fix that in the futuire) . If you do that , what the program says as answer will likrely be bad too"-->
+
