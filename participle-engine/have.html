@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+<h3>Voice Change helper perfect tense V.0.02</h3>    
+    
+        <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb"><br>
+        
+        <span id="hvhspart" onkeyup="update()" placeholder="have/has+a participle detected" style="color:rgba(162, 38, 38, 0.69)">have/has</span><br>
+        
+        <span id="hadpart" onkeyup="update()" placeholder="had+a participle detected">had</span><br>
+        
+        <span id="willpart" onkeyup="update()" placeholder="will + have +a participle detected">will have </span><br>
+        
+    <script>
+		function update(){
+			let VERB =  e("verbinbox").value;
+			e("hvhspart").innerHTML = detecthvhs(VERB);
+		}	
+		
+		function detecthvhs(word){
+			if(/have/.test(word) ){return "have detected";}
+			if(/has/.test(word) ){return "has detected";}
+		}
+		
+		
+	function cleaninput(input){
+		return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ").toLowerCase();
+	}
+        function e(id){return document.getElementById(id);}
+	</script>
+        
+</body>
+
+</html>
