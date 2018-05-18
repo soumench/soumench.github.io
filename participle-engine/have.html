@@ -13,9 +13,9 @@
         <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb"><br>
         have/has + participle detected:
         <span id="hvhspart" onkeyup="update()" placeholder="have/has+a participle detected" style="background-color: rgba(162, 38, 38, 0.2)"></span><br>
-        
+        had+a participle detected:
         <span id="hadpart" onkeyup="update()" placeholder="had+a participle detected"></span><br>
-        
+        will + have +a participle detected:
         <span id="willpart" onkeyup="update()" placeholder="will + have +a participle detected"> </span><br>
         
     <script>
@@ -23,17 +23,17 @@
 			let VERB =  e("verbinbox").value;
 			e("hvhspart").innerHTML = detecthvhs(VERB);
 		}	
-		
+
 		function detecthvhs(word){
 			if(/have/.test(word) ){return "have detected";}
 			if(/has/.test(word) ){return "has detected";}
 		}
-		
-		
-	function cleaninput(input){
-		return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ").toLowerCase();
-	}
-        function e(id){return document.getElementById(id);}
+
+
+		function cleaninput(input){
+			return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ").toLowerCase();
+		}
+		function e(id){return document.getElementById(id);}
 	</script>
         
 </body>
