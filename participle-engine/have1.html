@@ -27,9 +27,10 @@
 
 		function detecthvhs(word){
 			if(/have/.test(word) ||/has/.test(word) ){
-				e("hvhspart").style.backgroundColor = "rgba(165, 42, 42, 0.44)";
-				return "has / have detected";
+				e("hvhspart").style.backgroundColor = "pink";
+				return ;
 			}
+			if(/^behave/.test(word) ){return ;}
 			else{
 				e("hvhspart").style.backgroundColor = "white";
 			}
