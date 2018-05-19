@@ -26,7 +26,7 @@
 		}	
 
 		function detecthvhs(word){
-			if(/^have/.test(word) ||/^has/.test(word) ){
+			if(/^ha(s|ve)/.test(word) ) {
 				e("hvhspart").style.backgroundColor = "pink";
 				return ;
 			}
