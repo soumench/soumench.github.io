@@ -18,9 +18,7 @@
         
         <span id="willpart" > will + have +a participle detected:</span><br>
         
-        Full Input: <span id="fullinput"></span>
-        
-        Trace: <span id="trace"></span> 
+        User Input: <span id="userinput"></span>
         
     <script>
 		function update(){
@@ -30,6 +28,8 @@
 			let remainder = VERB;
 			
 			detecthvhs(VERB);
+			
+			e("userinput").innerHTML = "("+ VERB + ")";
 		}	
 
 		function detecthvhs(word){
