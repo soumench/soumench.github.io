@@ -20,7 +20,7 @@
         
         User Input: <span id="userinput"></span><br>
         
-        Replacement: <span id="replacing"></span>
+        <span id="replacing"></span>
         
         
     <script>
@@ -36,7 +36,7 @@
 			
 			let replaced = VERB.replace(/ha(s|ve)/,"" );
 			
-			e("replacing").innerHTML = replaced;
+			e("replacing").innerHTML = "userinputwithreplacement("+ replaced + ")";
 		}	
 
 		function detecthvhs(word){
