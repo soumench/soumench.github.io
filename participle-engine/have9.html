@@ -16,7 +16,8 @@
         <span id="willpart" > will + have +a participle detected:</span><br>
         <span id="userinput"></span><br>
         <span id="replaced"></span><br>
-        <span id="ispart"></span>
+        <span id="ispart"></span><br>
+        <span id="hdpart">element9 for test</span>
     <script src="isparticiple.js"></script>    
     <script>
         function update(){
@@ -28,7 +29,13 @@
             e("replaced").innerHTML = "userinputwithreplacement("+ replaced + ")";
             let ispart = isparticiple(replaced);
             e("ispart").innerHTML = ispart;
-        }    
+			
+			detecthd(VERB);
+        }
+		function detecthd(word){
+			e("hdpart").style.backgroundColor = /^h/.test(word) ? "blue" :"yellow";
+		}
+		
         function detecthvhs(word){
            e("hvhspart").style.backgroundColor = /^ha(s|ve)/.test(word) ? "pink" :"white";
         }
