@@ -31,7 +31,12 @@
             e("ispart").innerHTML = ispart;
 			
 			detecthd(VERB);
+			detectwillpart(VERB);
         }
+		function detectwillpart(word){
+			e("willpart").style.backgroundColor = /^had\s/.test(word) ? "orange" :"white";
+		}
+		
 		function detecthd(word){
 			e("hdpart").style.backgroundColor = /^h/.test(word) ? "blue" :"yellow";
 		}
