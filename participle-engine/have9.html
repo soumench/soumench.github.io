@@ -11,13 +11,18 @@
 <h3>Voice Change helper perfect tense V.0.02</h3>    
     
         <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb"><br>
-        <span id="hvhspart">have/has + participle detected:</span><br>
-        <span id="hadpart" >had+a participle detected:</span><br>
-        <span id="willpart" > will + have +a participle detected:</span><br>
+        <span id="hvhspart">have/has + participle detected:</span> e2<br>
+        <span id="hadpart" >had+a participle detected:</span> e3<br>
+        <span id="willpart" > will + have +a participle detected:</span> e4<br>
         <span id="userinput"></span><br>
         <span id="replaced"></span><br>
         <span id="ispart"></span><br>
-        <span id="hdpart">element9 for test</span>
+        <span id="hdpart">element9 for test</span><br>
+        
+          element 2 should be pink whenever input starts with 'have plus space' or 'has plus space'<br>
+          but not when there is no space<br>
+		  if it starts with had AND  A SPACE, element 4 should be pink <br>
+		otherwise it should be not pink
     <script src="isparticiple.js"></script>    
     <script>
         function update(){
@@ -34,7 +39,7 @@
 			detectwillpart(VERB);
         }
 		function detectwillpart(word){
-			e("willpart").style.backgroundColor = /^had\s/.test(word) ? "orange" :"white";
+			e("willpart").style.backgroundColor = /^had\s/.test(word) ? "pink" :"white";
 		}
 		
 		function detecthd(word){
@@ -42,7 +47,7 @@
 		}
 		
         function detecthvhs(word){
-           e("hvhspart").style.backgroundColor = /^ha(s|ve)/.test(word) ? "pink" :"white";
+           e("hvhspart").style.backgroundColor = /^ha(s|ve)\s/.test(word) ? "pink" :"white";
         }
         function cleaninput(input){
             return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ").toLowerCase();
