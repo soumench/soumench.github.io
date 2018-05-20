@@ -39,13 +39,13 @@
 			detectwillpart(VERB);
         }
 		function detectwillpart(word){
-			e("willpart").style.backgroundColor = /^had\s/.test(word) ? "pink" :"white";
+			e("willpart").style.backgroundColor = /^(will|shall)\shave\s/.test(word) ? "pink" :"white";
 		}
 		
 		function detecthd(word){
-			e("hdpart").style.backgroundColor = /^h/.test(word) ? "blue" :"yellow";
-		}
-		
+			e("hadpart").style.backgroundColor = /^had\s/.test(word) ? "pink" :"white";
+		}	
+				
         function detecthvhs(word){
            e("hvhspart").style.backgroundColor = /^ha(s|ve)\s/.test(word) ? "pink" :"white";
         }
