@@ -16,9 +16,9 @@
         <span id="willpart" >userinput has "will + have +" &lt; space ></span> e4<br>
         <span id="userinput"></span><br>
         <span id="replaced"></span><br>
-        <span id="ispart"></span><br>
-        
-        <span id="e10"> userinput starts with has or have and userinputwithreplacemtn is a participle</span>
+               
+        <span id="e10"> userinput starts with has or have and userinputwithreplacemtn is a participle</span> &lt;&lt;&lt;e10<br>
+        <span id="detectpresentperfect"></span>
         
          
     <script src="isparticiple.js"></script>    
@@ -32,19 +32,20 @@
 			
 			
 					
-            e("userinput").innerHTML = "userinput("+ VERB + ")";
+            /*e("userinput").innerHTML = "userinput("+ VERB + ")";*/
+			e("userinput").innerHTML = "variable VERB contains now ("+ VERB + ")";
             let replaced = VERB.replace(/ha(s|ve)\s/,"" );
             e("replaced").innerHTML = "userinputwithreplacement("+ replaced + ") is a participle";
             let ispart = isparticiple(replaced);
-            e("ispart").innerHTML = ispart;
+           
 			
 			
 			
 			e("replaced").innerHTML = ispart===1?"("+replaced+") is a participle" :"("+replaced+") is not a participle";
 			
-			if(/^ha(s|ve)\s/.test(VERB) && ispart === 1 ){
-				e("e10").style.backgroundColor = "pink";
-			}else e("e10").style.backgroundColor = "white";
+			let aux = /^ha(s|ve)\s/.test(VERB);			
+			e("e10").style.backgroundColor = aux && ispart === 1 ? "pink" : "white";
+			e("detectpresentperfect").innerHTML = aux && ispart === 1 ?"("+ aux +" "+ replaced+") is ppt":"not a ppt";
 			
 			detecthad(VERB);
 						
@@ -63,7 +64,10 @@
         function detecthvhs(word){
            	e("hvhspart").style.backgroundColor = /^ha(s|ve)\s/.test(word) ? "pink" :"white";
 			
-        }
+				/*e("detectpresentperfect").innerHTML = ispart === 1 ? "it appears to be a present perfect tense": "i am not sure what is the tense of";*/
+			}
+			
+        
         function cleaninput(input){
             return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ").toLowerCase();
         }
