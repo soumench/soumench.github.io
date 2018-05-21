@@ -32,8 +32,7 @@
 			
 			
 					
-            /*e("userinput").innerHTML = "userinput("+ VERB + ")";*/
-			e("userinput").innerHTML = "variable VERB contains now ("+ VERB + ")";
+            
             let replaced = VERB.replace(/ha(s|ve)\s/,"" );
             e("replaced").innerHTML = "userinputwithreplacement("+ replaced + ") is a participle";
             let ispart = isparticiple(replaced);
@@ -46,6 +45,10 @@
 			let aux = /^ha(s|ve)\s/.test(VERB);			
 			e("e10").style.backgroundColor = aux && ispart === 1 ? "pink" : "white";
 			e("detectpresentperfect").innerHTML = aux && ispart === 1 ?"("+ aux +" "+ replaced+") is ppt":"not a ppt";
+			
+			
+			
+			 e("userinput").innerHTML = "variable VERB contains now ("+ VERB + ") and <br/> variable aux contains now ("+aux+") and <br/> variable remainder contains now ("+remainder+")";
 			
 			detecthad(VERB);
 						
