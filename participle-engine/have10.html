@@ -26,9 +26,12 @@
     <script src="isparticiple.js"></script>    
     <script>
         function update(){
+			
+			
             let VERB =  e("verbinbox").value;
             let remainder = VERB;
             detecthvhs(VERB);
+			
 			
 					
             e("userinput").innerHTML = "userinput("+ VERB + ")";
@@ -37,6 +40,8 @@
             let ispart = isparticiple(replaced);
             e("ispart").innerHTML = ispart;
 			
+			
+			e("e9").style.backgroundColor = (/^ha(s|ve)\s/.test(VERB) )? "green":"red"; /*debugger*/
 			
 			detecthad(VERB);
 						
@@ -53,7 +58,8 @@
 		}	
 				
         function detecthvhs(word){
-           e("hvhspart").style.backgroundColor = /^ha(s|ve)\s/.test(word) ? "pink" :"white";
+           	e("hvhspart").style.backgroundColor = /^ha(s|ve)\s/.test(word) ? "pink" :"white";
+			
         }
         function cleaninput(input){
             return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ").toLowerCase();
