@@ -29,14 +29,20 @@
             let VERB =  e("verbinbox").value;
             let remainder = VERB;
             detecthvhs(VERB);
+			
+					
             e("userinput").innerHTML = "userinput("+ VERB + ")";
             let replaced = VERB.replace(/ha(s|ve)\s/,"" );
             e("replaced").innerHTML = "userinputwithreplacement("+ replaced + ")";
             let ispart = isparticiple(replaced);
             e("ispart").innerHTML = ispart;
 			
+			
 			detecthd(VERB);
+						
 			detectwillpart(VERB);
+			
+			
         }
 		function detectwillpart(word){
 			e("willpart").style.backgroundColor = /^(will|shall)\shave\s/.test(word) ? "pink" :"white";
