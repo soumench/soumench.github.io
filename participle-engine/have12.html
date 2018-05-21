@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+<h3>Voice Change helper perfect tense V.0.02</h3>    
+    
+        <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb"><br>
+        <span id="hvhspart">userinput has "have|has" &lt; space ></span> e2<br>
+        <span id="hadpart" >userinput has "had" &lt; space ></span> e3<br>
+        <span id="willpart" >userinput has "will + have +" &lt; space ></span> e4<br>
+        <span id="userinput"></span><br>
+        <span id="replaced"></span><br>
+        <span id="ispart"></span><br>
+        <span id="e9">element9 for test</span><br>
+        
+          element 2 should be pink whenever input starts with 'have plus space' or 'has plus space'<br>
+          but not when there is no space<br>
+		  if it starts with had AND  A SPACE, element 4 should be pink <br>
+		otherwise it should be not pink
+    <script src="isparticiple.js"></script>    
+    <script>
+        function update(){
+			
+			
+            let VERB =  e("verbinbox").value;
+            let remainder = VERB;
+            detecthvhs(VERB);
+			
+			
+					
+            e("userinput").innerHTML = "userinput("+ VERB + ")";
+            let replaced = VERB.replace(/ha(s|ve)\s/,"" );
+            e("replaced").innerHTML = "userinputwithreplacement("+ replaced + ")";
+            let ispart = isparticiple(replaced);
+            e("ispart").innerHTML = ispart;
+			
+			
+			e("e9").style.backgroundColor = (/^ha(s|ve)\s/.test(VERB) )? "green":"red"; /*debugger*/
+			
+			detecthad(VERB);
+						
+			detectwillpart(VERB);
+			
+			
+        }
+		function detectwillpart(word){
+			e("willpart").style.backgroundColor = /^(will|shall)\shave\s/.test(word) ? "pink" :"white";
+		}
+		
+		function detecthad(word){
+			e("hadpart").style.backgroundColor = /^had\s/.test(word) ? "pink" :"white";
+		}	
+				
+        function detecthvhs(word){
+           	e("hvhspart").style.backgroundColor = /^ha(s|ve)\s/.test(word) ? "pink" :"white";
+			
+        }
+        function cleaninput(input){
+            return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ").toLowerCase();
+        }
+        function e(id){return document.getElementById(id);}
+    </script>
+        
+</body>
+
+</html>
