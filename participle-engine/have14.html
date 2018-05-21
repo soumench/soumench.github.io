@@ -40,7 +40,7 @@
 			
 			
 			e("e9").style.backgroundColor = (/^ha(s|ve)\s/.test(VERB) )? "green":"red"; /*debugger*/
-			e("replaced").style.backgroundColor = ispart===1?"pink":"white";
+			e("replaced").innerHTML = ispart===1?"("+replaced+") is a participle" :"("+replaced+") not a participle";
 			
 			if(/^ha(s|ve)\s/.test(VERB) && ispart === 1 ){
 				e("e10").style.backgroundColor = "pink";
