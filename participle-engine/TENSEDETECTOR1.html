@@ -8,7 +8,7 @@
 
 <body>
 <h3>Tense Detector</h3>
- <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb"><br>
+ <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb phrase"><br>
  <!--<span id="showuserinput"></span><br>-->
  <!--<span id="aux"></span><br>-->
  <span id="pastparticiple" style="color:red"></span><br>
@@ -18,11 +18,12 @@
 <script>
 	function update(){
 		let ispart;
+		let pastparticiple;
         let VERB =  e("verbinbox").value;
 		/*e("showuserinput").innerHTML = `User typed (${VERB})`;*/
 		
 		if(/^ha(s|ve)\s/.test(VERB) ){
-			let pastparticiple = VERB.replace(/ha(s|ve)\s/,"" );
+			pastparticiple = VERB.replace(/ha(s|ve)\s/,"" );
 			ispart = isparticiple(pastparticiple);
 			e("pastparticiple").innerHTML = ispart===1 ?`(${pastparticiple}) is a Past Participle Form `:`Tense of (${VERB}) verb phrase is not detected`;
 			
@@ -31,7 +32,7 @@
 		}
 		
 		if(/^had\s/.test(VERB) ){
-			let pastparticiple = VERB.replace(/had\s/,"" );
+			pastparticiple = VERB.replace(/had\s/,"" );
 			ispart = isparticiple(pastparticiple);
 			e("pastparticiple").innerHTML = ispart===1 ?`(${pastparticiple}) is a Past Participle Form`:`Tense of (${VERB}) verb phrase is not detected`;
 			
@@ -40,7 +41,7 @@
 		}
 		
 		if(/^(shall|will)\shave\s/.test(VERB) ){
-			let pastparticiple = VERB.replace(/(shall|will)\shave\s/,"" );
+			pastparticiple = VERB.replace(/(shall|will)\shave\s/,"" );
 			ispart = isparticiple(pastparticiple);
 			e("pastparticiple").innerHTML = ispart===1 ?`(${pastparticiple}) is a Past Participle Form`:`Tense of (${VERB}) verb phrase is not detected`;
 			
@@ -48,8 +49,6 @@
 			e("whichtense").innerHTML = startswithshallwill && ispart ?`(${VERB}) is a Future Perfect Tense`: ``;
 		}
 	}
-			
-	
 		
 		
 	function cleaninput(input){
