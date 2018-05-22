@@ -27,25 +27,25 @@
 			e("pastparticiple").innerHTML = ispart===1 ?`(${pastparticiple}) is a Past Participle Form `:`Tense of (${VERB}) verb phrase is not detected`;
 			
 			let startswithhashave = /^ha(s|ve)\s/.test(VERB);
-			e("whichtense").innerHTML = startswithhashave && ispart ?  `(${VERB}) is a Present Perfect Tense `: ` `;
+			e("whichtense").innerHTML = startswithhashave && ispart ? `(${VERB}) is a Present Perfect Tense`:``;
 		}
 		
 		if(/^had\s/.test(VERB) ){
 			let pastparticiple = VERB.replace(/had\s/,"" );
 			ispart = isparticiple(pastparticiple);
-			e("pastparticiple").innerHTML = ispart===1 ?`(${pastparticiple}) is a Past Participle Form `:`Tense of (${VERB}) verb phrase is not detected`;
+			e("pastparticiple").innerHTML = ispart===1 ?`(${pastparticiple}) is a Past Participle Form`:`Tense of (${VERB}) verb phrase is not detected`;
 			
 			let startswithhad = /^had\s/.test(VERB);
-			e("whichtense").innerHTML = startswithhad && ispart ?  `(${VERB}) is a Past Perfect Tense `: ``;
+			e("whichtense").innerHTML = startswithhad && ispart ?`(${VERB}) is a Past Perfect Tense`:``;
 		}
 		
 		if(/^(shall|will)\shave\s/.test(VERB) ){
 			let pastparticiple = VERB.replace(/(shall|will)\shave\s/,"" );
 			ispart = isparticiple(pastparticiple);
-			e("pastparticiple").innerHTML = ispart===1 ?`(${pastparticiple}) is a Past Participle Form `:`Tense of (${VERB}) verb phrase is not detected`;
+			e("pastparticiple").innerHTML = ispart===1 ?`(${pastparticiple}) is a Past Participle Form`:`Tense of (${VERB}) verb phrase is not detected`;
 			
 			let startswithshallwill = /^(shall|will)\shave\s/.test(VERB);
-			e("whichtense").innerHTML = startswithshallwill && ispart ?  `(${VERB}) is a Future Perfect Tense `: ``;
+			e("whichtense").innerHTML = startswithshallwill && ispart ?`(${VERB}) is a Future Perfect Tense`: ``;
 		}
 	}
 			
