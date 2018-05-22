@@ -9,8 +9,8 @@
 <body>
 <h3>Tense Detector</h3>
  <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb phrase"><br>
- <!--<span id="showuserinput"></span><br>-->
- <!--<span id="aux"></span><br>-->
+ 
+ <span id="aux"></span><br>
  <span id="pastparticiple" style="color:red"></span><br>
  <span id="whichtense" style="color:purple"></span><br>
 
@@ -20,15 +20,17 @@
 		let ispart;
 		let pastparticiple;
         let VERB =  e("verbinbox").value;
-		/*e("showuserinput").innerHTML = `User typed (${VERB})`;*/
+		let userinput = VERB;
+		
 		
 		if(/^ha(s|ve)\s/.test(VERB) ){
 			pastparticiple = VERB.replace(/ha(s|ve)\s/,"" );
 			ispart = isparticiple(pastparticiple);
 			e("pastparticiple").innerHTML = ispart===1 ?`(${pastparticiple}) is a Past Participle Form `:`Tense of (${VERB}) verb phrase is not detected`;
 			
-			let startswithhashave = /^ha(s|ve)\s/.test(VERB);
-			e("whichtense").innerHTML = startswithhashave && ispart ? `(${VERB}) is a Present Perfect Tense`:``;
+			e("aux").innerHTML = "auxiliary verb is ("+ userinput.replace(pastparticiple,"")+")";
+			
+			e("whichtense").innerHTML = /^ha(s|ve)\s/.test(VERB) && ispart ? `(${VERB}) is a Present Perfect Tense`:``;
 		}
 		
 		if(/^had\s/.test(VERB) ){
@@ -36,8 +38,9 @@
 			ispart = isparticiple(pastparticiple);
 			e("pastparticiple").innerHTML = ispart===1 ?`(${pastparticiple}) is a Past Participle Form`:`Tense of (${VERB}) verb phrase is not detected`;
 			
-			let startswithhad = /^had\s/.test(VERB);
-			e("whichtense").innerHTML = startswithhad && ispart ?`(${VERB}) is a Past Perfect Tense`:``;
+			e("aux").innerHTML = "auxiliary verb is ("+ userinput.replace(pastparticiple,"")+")";
+			
+			e("whichtense").innerHTML = /^had\s/.test(VERB) && ispart ?`(${VERB}) is a Past Perfect Tense`:``;
 		}
 		
 		if(/^(shall|will)\shave\s/.test(VERB) ){
@@ -45,8 +48,9 @@
 			ispart = isparticiple(pastparticiple);
 			e("pastparticiple").innerHTML = ispart===1 ?`(${pastparticiple}) is a Past Participle Form`:`Tense of (${VERB}) verb phrase is not detected`;
 			
-			let startswithshallwill = /^(shall|will)\shave\s/.test(VERB);
-			e("whichtense").innerHTML = startswithshallwill && ispart ?`(${VERB}) is a Future Perfect Tense`: ``;
+			e("aux").innerHTML = "auxiliary verb is ("+ userinput.replace(pastparticiple,"")+")";
+			
+			e("whichtense").innerHTML = /^(shall|will)\shave\s/.test(VERB) && ispart ?`(${VERB}) is a Future Perfect Tense`:``;
 		}
 	}
 		
