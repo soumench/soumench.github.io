@@ -17,6 +17,7 @@
 <script src="isparticiple.js"></script>
 <script>
 	function update(){
+		let auxiliary;
 		let ispart;
 		let pastparticiple;
         let VERB =  e("verbinbox").value;
@@ -28,7 +29,8 @@
 			ispart = isparticiple(pastparticiple);
 			e("pastparticiple").innerHTML = ispart===1 ?`Past Participle Form is (${pastparticiple})`:`Tense of (${VERB}) verb phrase is not detected`;
 			
-			e("aux").innerHTML = "auxiliary verb is ("+ userinput.replace(pastparticiple,"")+")";
+			auxiliary = userinput.replace(pastparticiple,"");
+			e("aux").innerHTML = "auxiliary verb is ("+ auxiliary +")";
 			
 			e("whichtense").innerHTML = /^ha(s|ve)\s/.test(VERB) && ispart ? `(${VERB}) is a Present Perfect Tense`:``;
 		}
@@ -38,7 +40,8 @@
 			ispart = isparticiple(pastparticiple);
 			e("pastparticiple").innerHTML = ispart===1 ?`Past Participle Form is (${pastparticiple})`:`Tense of (${VERB}) verb phrase is not detected`;
 			
-			e("aux").innerHTML = "auxiliary verb is ("+ userinput.replace(pastparticiple,"")+")";
+			auxiliary = userinput.replace(pastparticiple,"");
+			e("aux").innerHTML = "auxiliary verb is ("+ auxiliary +")";
 			
 			e("whichtense").innerHTML = /^had\s/.test(VERB) && ispart ?`(${VERB}) is a Past Perfect Tense`:``;
 		}
@@ -48,7 +51,8 @@
 			ispart = isparticiple(pastparticiple);
 			e("pastparticiple").innerHTML = ispart===1 ?`Past Participle Form is (${pastparticiple})`:`Tense of (${VERB}) verb phrase is not detected`;
 			
-			e("aux").innerHTML = "auxiliary verb is ("+ userinput.replace(pastparticiple,"")+")";
+			auxiliary = userinput.replace(pastparticiple,"");
+			e("aux").innerHTML = "auxiliary verb is ("+ auxiliary +")";
 			
 			e("whichtense").innerHTML = /^(shall|will)\shave\s/.test(VERB) && ispart ?`(${VERB}) is a Future Perfect Tense`:``;
 		}
