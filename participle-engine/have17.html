@@ -14,7 +14,7 @@
         <span id="hvhspart">userinput has "have|has" &lt; space ></span> e2<br>
         <span id="hadpart" >userinput has "had" &lt; space ></span> e3<br>
         <span id="willpart" >userinput has "will + have +" &lt; space ></span> e4<br>
-        <span id="userinput"></span><br>
+        <span id="userinput" style="color:red"></span><br>
         <span id="replaced"></span><br>
                
         <span id="e10"> </span> &lt;&lt;&lt;e10<br>
@@ -44,7 +44,7 @@
 			e("detectpresentperfect").innerHTML = startswithhashave && ispart ?  `(${VERB}) is a ppt `: `(${VERB}) is not a ppt `;
 			
 			
-			 e("userinput").innerHTML = "variable VERB contains now ("+ VERB + ") and <br/> variable startswithhashave contains now ("+startswithhashave+") and <br/> variable remainder contains now ("+remainder+") and <br> variable replaced contains now ("+replaced+") and <br> variable ispart contains now ("+ ispart+ ")";
+			 e("userinput").innerHTML = "variable VERB --&gt;&gt; ("+ VERB + ") and <br/> variable startswithhashave --&gt;&gt; ("+startswithhashave+") and <br/> variable remainder --&gt;&gt; ("+remainder+") and <br> variable replaced --&gt;&gt; ("+replaced+") and <br> variable ispart --&gt;&gt; ("+ ispart+ ")";
 			
 			e("e10").innerHTML =  `${VERB} starts with has or have and ${replaced} is a participle`;
 			
