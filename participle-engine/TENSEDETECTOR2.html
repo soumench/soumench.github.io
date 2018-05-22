@@ -13,6 +13,7 @@
  <span id="aux"></span><br>
  <span id="pastparticiple" style="color:red"></span><br>
  <span id="whichtense" style="color:purple"></span><br>
+ <span id="status"></span>
 
 <script src="isparticiple.js"></script>
 <script>
@@ -33,6 +34,7 @@
 			e("aux").innerHTML = "auxiliary verb is ("+ auxiliary +")";
 			
 			e("whichtense").innerHTML = /^ha(s|ve)\s/.test(VERB) && ispart ? `(${VERB}) is a Present Perfect Tense`:``;
+			e("status").innerHTML = `${VERB} starts with have /has.`;
 		}
 		
 		else if(/^had\s/.test(VERB) ){
@@ -44,6 +46,7 @@
 			e("aux").innerHTML = "auxiliary verb is ("+ auxiliary +")";
 			
 			e("whichtense").innerHTML = /^had\s/.test(VERB) && ispart ?`(${VERB}) is a Past Perfect Tense`:``;
+			e("status").innerHTML = `${VERB} starts with had.`;
 		}
 		
 		else if(/^(shall|will)\shave\s/.test(VERB) ){
@@ -55,6 +58,7 @@
 			e("aux").innerHTML = "auxiliary verb is ("+ auxiliary +")";
 			
 			e("whichtense").innerHTML = /^(shall|will)\shave\s/.test(VERB) && ispart ?`(${VERB}) is a Future Perfect Tense`:``;
+			e("status").innerHTML = `${VERB} starts with shall /will have.`;
 		}
 		
 		else{
