@@ -29,8 +29,23 @@
 			e("whichtense").innerHTML= `(${VERB}) STARTS WITH a.`;
 		}
 		*/
-		ispart = isparticiple(VERB);
-		e("pastparticiple").innerHTML= ispart===1 ?`(${pastparticiple}) IS JUST A PARTICIPLE, not a tense`:`(${VERB}) NOTHING DETECTED.`;
+		if(isparticiple(VERB)===1){
+			e("whichtense").innerHTML=`(${pastparticiple}) IS JUST A PARTICIPLE, not a tense`;
+		}
+		
+		
+		else if(/^ha(s|ve)\s/.test(VERB) ){
+			pastparticiple= VERB.replace(/ha(s|ve)\s/,"" );
+			ispart= isparticiple(pastparticiple);
+			
+			e("whichtense").innerHTML= ispart===1 ?`(${pastparticiple}) IS has + space + PARTICIPLE:`:'';
+			
+		}
+		
+		else{
+			e("whichtense").innerHTML= `(${VERB}) NOTHING DETECTED.`;
+		}
+		
 		
 		/*if(/^ha(s|ve)\s/.test(VERB) ){
 			pastparticiple= VERB.replace(/ha(s|ve)\s/,"" );
