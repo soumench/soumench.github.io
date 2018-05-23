@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+<h3>Tense Detector</h3>
+ <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb phrase"><br>
+ 
+ <span id="status" style="color:purple"></span><br>
+ <span id="whichtense" style="color:purple"></span><br>
+ 
+ <span id="aux"></span><br>
+ <span id="pastparticiple" style="color:red"></span><br>
+
+<script src="isparticiple.js"></script>
+<script>
+	update();
+	
+	function update(){
+		let auxiliary;	let ispart;	let pastparticiple;
+        let VERB =  e("verbinbox").value;
+		
+		if(isparticiple(VERB)===1){
+			e("whichtense").innerHTML=`(${VERB}) IS JUST A PARTICIPLE, not a tense`;
+		}
+		
+		
+		else if(/^(am|is|are)\s/.test(VERB) ){
+			pastparticiple= VERB.replace(/(am|is|are)\s/,"" );
+			ispart= isparticiple(pastparticiple);
+			
+			e("whichtense").innerHTML= ispart===1 ?`(${VERB}) IS am/is/are + space + PARTICIPLE:`:`(${VERB}) NOTHING DETECTED.`;
+		}
+		
+		else if(/^had\s/.test(VERB) ){
+			pastparticiple= VERB.replace(/had\s/,"" );
+			ispart= isparticiple(pastparticiple);
+			
+			e("whichtense").innerHTML= ispart===1 ?`(${VERB}) IS had + space + PARTICIPLE:`:`(${VERB}) NOTHING DETECTED.`;
+		}
+		
+		else if(/^(will|shall)\shave\s/.test(VERB) ){
+			pastparticiple= VERB.replace(/(will|shall)\shave\s/,"" );
+			ispart= isparticiple(pastparticiple);
+			
+			e("whichtense").innerHTML= ispart===1 ?`(${VERB}) IS will|shall + have + space + PARTICIPLE:`:`(${VERB}) NOTHING DETECTED.`;
+		}
+		
+		else{
+			e("whichtense").innerHTML= `(${VERB}) NOTHING DETECTED.`;
+		}
+	}
+		
+		
+	function cleaninput(input){
+		return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ").toLowerCase();
+	}
+	function e(id){return document.getElementById(id);}
+</script>
+</body>
+</html>
