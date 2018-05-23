@@ -30,7 +30,7 @@
 		}
 		*/
 		if(isparticiple(VERB)===1){
-			e("whichtense").innerHTML=`(${pastparticiple}) IS JUST A PARTICIPLE, not a tense`;
+			e("whichtense").innerHTML=`(${VERB}) IS JUST A PARTICIPLE, not a tense`;
 		}
 		
 		
@@ -38,7 +38,7 @@
 			pastparticiple= VERB.replace(/ha(s|ve)\s/,"" );
 			ispart= isparticiple(pastparticiple);
 			
-			e("whichtense").innerHTML= ispart===1 ?`(${pastparticiple}) IS has + space + PARTICIPLE:`:'';
+			e("whichtense").innerHTML= ispart===1 ?`(${VERB}) IS has + space + PARTICIPLE:`:'';
 			
 		}
 		
