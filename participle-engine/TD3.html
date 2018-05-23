@@ -38,7 +38,7 @@
 			pastparticiple= VERB.replace(/ha(s|ve)\s/,"" );
 			ispart= isparticiple(pastparticiple);
 			
-			e("whichtense").innerHTML= ispart===1 ?`(${VERB}) IS has + space + PARTICIPLE:`:'';
+			e("whichtense").innerHTML= ispart===1 ?`(${VERB}) IS has + space + PARTICIPLE:`:`(${VERB}) NOTHING DETECTED.`;
 			
 		}
 		
