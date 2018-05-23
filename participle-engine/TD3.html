@@ -23,12 +23,7 @@
 	function update(){
 		let auxiliary;	let ispart;	let pastparticiple;
         let VERB =  e("verbinbox").value;
-		/*let userinput = VERB;*/
 		
-		/*if(/^a/.test(VERB) ){
-			e("whichtense").innerHTML= `(${VERB}) STARTS WITH a.`;
-		}
-		*/
 		if(isparticiple(VERB)===1){
 			e("whichtense").innerHTML=`(${VERB}) IS JUST A PARTICIPLE, not a tense`;
 		}
@@ -38,33 +33,26 @@
 			pastparticiple= VERB.replace(/ha(s|ve)\s/,"" );
 			ispart= isparticiple(pastparticiple);
 			
-			e("whichtense").innerHTML= ispart===1 ?`(${VERB}) IS has + space + PARTICIPLE:`:`(${VERB}) NOTHING DETECTED.`;
-			
+			e("whichtense").innerHTML= ispart===1 ?`(${VERB}) IS has / have + space + PARTICIPLE:`:`(${VERB}) NOTHING DETECTED.`;
 		}
 		
-		else{
-			e("whichtense").innerHTML= `(${VERB}) NOTHING DETECTED.`;
-		}
-		
-		
-		/*if(/^ha(s|ve)\s/.test(VERB) ){
-			pastparticiple= VERB.replace(/ha(s|ve)\s/,"" );
+		else if(/^had\s/.test(VERB) ){
+			pastparticiple= VERB.replace(/had\s/,"" );
 			ispart= isparticiple(pastparticiple);
 			
-			
-			auxiliary= VERB.replace(pastparticiple,"");
-			e("aux").innerHTML= "auxiliary verb is ("+ auxiliary +")";
-			
-			e("whichtense").innerHTML= /^ha(s|ve)\s/.test(VERB) && ispart ? `TENSE OF (${VERB}) IS PRESENT PERFECT TENSE`:``;
-			e("status").innerHTML= `(${VERB}) STARTS WITH HAVE.`;
+			e("whichtense").innerHTML= ispart===1 ?`(${VERB}) IS had + space + PARTICIPLE:`:`(${VERB}) NOTHING DETECTED.`;
 		}
 		
+		else if(/^(will|shall)\shave\s/.test(VERB) ){
+			pastparticiple= VERB.replace(/(will|shall)\shave\s/,"" );
+			ispart= isparticiple(pastparticiple);
+			
+			e("whichtense").innerHTML= ispart===1 ?`(${VERB}) IS will|shall + have + space + PARTICIPLE:`:`(${VERB}) NOTHING DETECTED.`;
+		}
 		
 		else{
 			e("whichtense").innerHTML= `(${VERB}) NOTHING DETECTED.`;
-			e("status").innerHTML= `TENSE OF (${VERB}) NOT DETECTED.`;
-			e("aux").innerHTML= "";
-		}*/
+		}
 	}
 		
 		
