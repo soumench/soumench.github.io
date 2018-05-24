@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+<h3>Tense Detector</h3>
+ <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb phrase"><br>
+ 
+ <span id="status" style="color:purple"></span><br>
+ <span id="whichtense" style="color:purple"></span><br>
+ 
+ <span id="aux"></span><br>
+ <span id="pastparticiple" style="color:red"></span><br>
+ <span id="vardisplay" style="color:red"></span><br>
+ <span id="temp"></span>
+
+<script src="isparticiple.js"></script>
+<script>
+    update();
+    
+    function update(){
+        let auxiliary;    let ispart;    let pastparticiple;
+        let VERB =  e("verbinbox").value;
+        VERB=cleaninput(VERB);
+        let FIRSTHALF="";
+        let LASTHALF=""; 
+        if(VERB){
+            FIRSTHALF=VERB.replace(/\s*\S+$/,"");
+            pastparticiple=VERB.replace(/^.*?\s*(\S+)$/,"$1");
+        }
+        auxiliary=FIRSTHALF;
+        ispart= isparticiple(pastparticiple);
+        e("whichtense").innerHTML= `(${VERB})  ` + (
+         ispart  ? "good participle ("+pastparticiple+") <br/> "+ (
+             (auxiliary === "have" || auxiliary === "has")?
+                `has / have + space + PARTICIPLE`:
+              "had" == auxiliary  ?
+               `had + space + PARTICIPLE`:
+              "will have" == auxiliary ?
+               `(will|shall) + have + PARTICIPLE`:
+              "shall have" == auxiliary ?
+               `(will|shall) + have + PARTICIPLE`:
+             ` but bad auxiliary (${auxiliary}), so <br/> NOTHING DETECTED.`
+        ) : 
+             `does not end with a participle, so <br/> NOTHING DETECTED` ) ;
+             
+        e("vardisplay").innerHTML=`
+VERB: (${VERB}) <br/> 
+FIRSTHALF: (${FIRSTHALF})  <br/> 
+LASTHALF: (${LASTHALF})  <br/> 
+ispart: (${ispart}) <br/>
+auxiliary: (${auxiliary}) <br/> 
+pastparticiple: (${pastparticiple})  `;
+    }
+    function cleaninput(input){
+        return input.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\s\s+$/g," ").toLowerCase();
+    }
+    function e(id){return document.getElementById(id);}
+</script>
+</body>
+</html>
+
