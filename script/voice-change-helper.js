@@ -7,7 +7,7 @@
             var ppInput = e("3rdForm1");
             if(ppInput.value===""|| number===undefined|| tense===undefined){
                 alert("Please provide all the following information\n 1. Number\n 2. Tense \n 3. Past Paticiple Form of the main verb!");
-                ppInput.style.backgroundColor="red";
+                ppInput.style.backgroundColor="#eb8a8a";
                 return;
             }
             ppInput.style.backgroundColor="white";
