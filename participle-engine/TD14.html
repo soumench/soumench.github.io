@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+<h3>Tense Detector</h3>
+ <input type="text" id="verbinbox" onkeyup="update()" placeholder="enter a verb phrase"><br>
+ 
+ <span id="whichtense" style="color:purple"></span><br>
+ 
+ <span id="vardisplay" style="color:red"></span><br>
+
+<script src="isparticiple.js"></script>
+<script src="eclean.js"></script>
+<script>
+    const goodauxiliaries={"": 1,has:2,have:2,had:3,"will have":4,"shall have":4, 
+                           "am":5, "is":5, "are":5, "was":6, "were":6};
+
+    const testmessages=["NOTHING DETECTED (by bad auxiliary)",
+         "just a participle",
+         "(has|have) + participle",
+         "had +  participle",
+         "(will|shall) + have + participle",
+         "(am|is|are) + participle",
+         "(was|were) + participle"         
+        ];
+        
+    const BARE_P=1;
+    const HASHAVE_P=2;
+    const HAD_P=3;
+    const WILLSHALLHAVE_P=4;
+    const AMISARE_P=5;
+    const WASWERE_P=6;
+    
+    let lastauxiliary;
+    let lastparticiple;
+    
+    function detectP(userinput)
+    {
+        let auxiliary="";    
+        let ispart=0;    
+        let lastword="";        
+        if(userinput){
+            auxiliary=userinput.replace(/\s*\S+$/,"");
+            lastword=userinput.replace(/^.*?\s*(\S+)$/,"$1");
+        }
+        let auxnumber= goodauxiliaries[auxiliary];
+        if(!auxnumber)return 0; 
+        ispart= isparticiple(lastword);
+        if(!ispart)return 0;
+        lastparticiple=lastword;
+        lastauxiliary=auxiliary;
+        /*
+        e("vardisplay").innerHTML=`
+${auxnumber?"good":"bad"}  auxiliary (${auxiliary}) <br/> 
+${ispart?"good":"bad"}  participle (${lastword}) <br/>         
+auxiliary: (${auxiliary}) <br/> 
+auxnumber: (${auxnumber}) <br/> 
+lastword: (${lastword}) <br/>
+ispart: (${ispart}) <br/>
+`; */
+        return auxnumber;
+    }
+    
+    update();
+
+    function update(){
+        let USERINPUT = cleaninput( e("verbinbox").value );
+        let auxnumber=detectP(USERINPUT);        
+        e("whichtense").innerHTML=`userinput (${USERINPUT}) --> ` +
+        ( auxnumber==0 ? "NOTHING DETECTED":`message is (${testmessages[auxnumber]}) participle is (${lastparticiple}), auxiliary is (${lastauxiliary}) ` );
+
+    }
+   
+</script>
+</body>
+</html>
