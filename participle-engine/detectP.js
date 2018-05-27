@@ -2,7 +2,11 @@ function detectP(userinput)
     {
         let auxiliary="";    
         let ispart=0;    
-        let lastword="";        
+        let lastword="";   
+		
+		let lastauxiliary;
+    	let lastparticiple;
+		
         if(userinput){
             auxiliary=userinput.replace(/\s*\S+$/,"");
             lastword=userinput.replace(/^.*?\s*(\S+)$/,"$1");
