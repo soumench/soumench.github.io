@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	Enter your weight on Earth in kilogram and <br>findout your weight on other planets:<br>
+	<input type = "number" id="ui" onkeyup="update()"><br>
+	Jupiter: <span id="Jupiter"></span><br>
+	Neptune: <span id="Neptune"></span><br>
+	Saturn: <span id="Saturn"></span><br>
+	Uranus: <span id="Uranus"></span><br>
+	Venus: <span id="Venus"></span><br>
+	Mars: <span id="Mars"></span><br>
+	Mercury: <span id="Mercury"></span><br>
+	Pluto: <span id="Pluto"></span><br>
+	Moon: <span id="Moon"></span><br>
+	
+	<script src="script/eclean.js"></script>
+	<Script>
+		update();
+		
+		
+		function update(){
+			let weight = e("ui").value;
+			e("Jupiter").innerHTML = Math.round(weight * 2.36) ;
+			e("Neptune").innerHTML = Math.round(weight * 1.14) ;
+			e("Saturn").innerHTML = Math.round(weight * 1.07) ;
+			e("Uranus").innerHTML = Math.round(weight * 0.91) ;
+			e("Venus").innerHTML = Math.round(weight * 0.91) ;
+			e("Mars").innerHTML = Math.round(weight * 0.38) ;
+			e("Mercury").innerHTML = Math.round(weight * 0.38) ;
+			e("Pluto").innerHTML = Math.round(weight * 0.10) ;
+			e("Moon").innerHTML = Math.round(weight * 0.17) ;
+			
+		}
+		
+	
+	</Script>
+</body>
+
+</html>
