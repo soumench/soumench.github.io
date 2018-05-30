@@ -8,8 +8,8 @@
 </head>
 
 <body>
-	Enter your weight on Earth in kilogram and <br>findout your weight on other planets:<br>
-	<input type = "number" id="ui" onkeyup="update()"><br>
+	Enter your weight on Earth in kilogram and <br>find out your weight on other planets:<br>
+	<input type = "number" id="ui" onkeyup="update()"> kg<br>
 	Jupiter: <span id="Jupiter"></span><br>
 	Neptune: <span id="Neptune"></span><br>
 	Saturn: <span id="Saturn"></span><br>
@@ -27,15 +27,15 @@
 		
 		function update(){
 			let weight = e("ui").value;
-			e("Jupiter").innerHTML = (weight * 2.36).toFixed(2);
-			e("Neptune").innerHTML = (weight * 1.12).toFixed(2);
-			e("Saturn").innerHTML = (weight * 0.916).toFixed(2);
-			e("Uranus").innerHTML = (weight * 0.889).toFixed(2);
-			e("Venus").innerHTML = (weight * 0.907).toFixed(2);
-			e("Mars").innerHTML = (weight * 0.378).toFixed(2);
-			e("Mercury").innerHTML = (weight * 0.378).toFixed(2);
-			e("Pluto").innerHTML = (weight * 0.071).toFixed(2);
-			e("Moon").innerHTML = (weight * 0.166).toFixed(2);
+			e("Jupiter").innerHTML = (weight * 2.36).toFixed(2) +" kg";
+			e("Neptune").innerHTML = (weight * 1.12).toFixed(2) +" kg";
+			e("Saturn").innerHTML = (weight * 0.916).toFixed(2) +" kg";
+			e("Uranus").innerHTML = (weight * 0.889).toFixed(2)+" kg";
+			e("Venus").innerHTML = (weight * 0.907).toFixed(2)+" kg";
+			e("Mars").innerHTML = (weight * 0.378).toFixed(2)+" kg";
+			e("Mercury").innerHTML = (weight * 0.378).toFixed(2)+" kg";
+			e("Pluto").innerHTML = (weight * 0.071).toFixed(2)+" kg";
+			e("Moon").innerHTML = (weight * 0.166).toFixed(2)+" kg";
 		}
 	</Script>
 </body>
