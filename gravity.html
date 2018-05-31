@@ -8,18 +8,21 @@
 	<style>
 		body{text-align: center; font-size: 21px;background-color: antiquewhite;}
 		input{text-align: center; width:5em;font-size: 100%;}
-		div{border: 4px solid; width:12.5em; border-radius: 8px; padding:0.5em; margin: 0.15em;
+		div{border: 5px solid #4040f0; width:13em; border-radius: 8px; padding:0.55em;
+			margin-top: 0.35em; margin-left: auto; margin-right: auto;
 			background-color: rgba(127, 255, 212, 0.23);
 			box-shadow:10px 10px 10px grey;  
 		}
-		footer{margin-top: 1em;color: blueviolet;}
+		footer{margin-top: 0.5em;color: blueviolet; border: 1px solid red;
+			box-shadow:3px 3px 10px grey; background-color: #ffffff;
+		}
 	</style>
 </head>
 
 <body>
 	<div>
-	Enter your weight on Earth<br> in kilogram <br>and <br>find out your weight <br>on <br>other planets:<br>
-	<input type = "number" id="ui" onkeyup="update()" onchange="update()" min="0"> kg
+		Enter your weight on Earth<br> in kilogram <br>and <br>find out your weight <br>on <br>other planets:<br>
+		<input type = "number" id="ui" onkeyup="update()" onchange="update()" min="0"> kg
 	</div>
 	<div>
 		চন্দ্র / Moon: <span id="Moon"></span><br>
@@ -30,7 +33,7 @@
 		শনি / Saturn: <span id="Saturn"></span><br>
 		ইউরেনাস / Uranus: <span id="Uranus"></span><br>
 		নেপচুন / Neptune: <span id="Neptune"></span><br>
-		প্লূটো Pluto: <span id="Pluto"></span><br>
+		প্লূটো / Pluto: <span id="Pluto"></span><br>
 	</div>
 	<footer>Made by Soumen -- May-2018</footer>
 	<script src="script/eclean.js"></script>
@@ -47,7 +50,6 @@
 			e("Mars").innerHTML = (weight * 0.378).toFixed(2)+" kg";
 			e("Mercury").innerHTML = (weight * 0.378).toFixed(2)+" kg";
 			e("Pluto").innerHTML = (weight * 0.071).toFixed(2)+" kg";
-			
 		}
 	</Script>
 </body>
