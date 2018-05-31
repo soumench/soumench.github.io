@@ -6,39 +6,39 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Your body-weight on different planets.</title>
 	<style>
-		div{border: 4px solid; width:11em; border-radius: 8px; padding:0.5em; margin: 0.5em;
+		body{font-size: 21px;background-color: antiquewhite;}
+		input{text-align: center; width:5em;font-size: 100%;}
+		div{border: 4px solid; width:12.5em; border-radius: 8px; padding:0.5em; margin: 0.15em;
 			background-color: rgba(127, 255, 212, 0.23);
-			box-shadow:10px 10px 10px grey;  
+			box-shadow:10px 10px 10px grey;  text-align: center;
 		}
-		
+		footer{text-align: center;margin-top: 1em;color: blueviolet;}
 	</style>
 </head>
 
 <body>
-	Enter your weight on Earth in kilogram and <br>find out your weight on other planets:<br>
-	<input type = "number" id="ui" onkeyup="update()" onchange="update()" min="0"> kg<br>
 	<div>
-		Jupiter: <span id="Jupiter"></span><br>
-		Neptune: <span id="Neptune"></span><br>
-		Saturn: <span id="Saturn"></span><br>
-		Uranus: <span id="Uranus"></span><br>
-		Venus: <span id="Venus"></span><br>
-		Mars: <span id="Mars"></span><br>
-		Mercury: <span id="Mercury"></span><br>
-		Pluto: <span id="Pluto"></span><br>
-		Moon: <span id="Moon"></span><br>
+	Enter your weight on Earth<br> in kilogram <br>and <br>find out your weight <br>on <br>other planets:<br>
+	<input type = "number" id="ui" onkeyup="update()" onchange="update()" min="0"> kg
 	</div>
-	
+	<div>
+		চন্দ্র / Moon: <span id="Moon"></span><br>
+		মঙ্গল/ Mars: <span id="Mars"></span><br>
+		বুধ / Mercury: <span id="Mercury"></span><br>
+		বৃহস্পতি / Jupiter: <span id="Jupiter"></span><br>
+		শুক্র / Venus: <span id="Venus"></span><br>
+		শনি / Saturn: <span id="Saturn"></span><br>
+		ইউরেনাস / Uranus: <span id="Uranus"></span><br>
+		নেপচুন / Neptune: <span id="Neptune"></span><br>
+		প্লূটো Pluto: <span id="Pluto"></span><br>
+	</div>
+	<footer>Made by Soumen -- May-2018</footer>
 	<script src="script/eclean.js"></script>
-	<Script>
-		
-		
-		update();
-		
-		
-		function update(){
-			
+	<Script>		
+		update();		
+		function update(){			
 			let weight = e("ui").value;
+			e("Moon").innerHTML = (weight * 0.166).toFixed(2)+" kg";
 			e("Jupiter").innerHTML = (weight * 2.36).toFixed(2) +" kg";
 			e("Neptune").innerHTML = (weight * 1.12).toFixed(2) +" kg";
 			e("Saturn").innerHTML = (weight * 0.916).toFixed(2) +" kg";
@@ -47,7 +47,7 @@
 			e("Mars").innerHTML = (weight * 0.378).toFixed(2)+" kg";
 			e("Mercury").innerHTML = (weight * 0.378).toFixed(2)+" kg";
 			e("Pluto").innerHTML = (weight * 0.071).toFixed(2)+" kg";
-			e("Moon").innerHTML = (weight * 0.166).toFixed(2)+" kg";
+			
 		}
 	</Script>
 </body>
