@@ -73,11 +73,8 @@
             let VERB = cleaninput( iverb  );
 			
 			
-			let checkPassive = hasnopassive(VERB);
-			if(checkPassive){
-				e("x").style.backgroundColor="red";
-			}else {e("x").style.backgroundColor="green";}
-			
+				/*--------------bad input indicator----------------*/
+			hasnopassive(VERB) ? e("x").style.backgroundColor="red":e("x").style.backgroundColor="green";
 			
 			
 			
