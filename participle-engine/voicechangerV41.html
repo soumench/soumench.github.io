@@ -60,6 +60,8 @@
     <script src="detectP.js"></script>
     <script src="isparticiple.js"></script>
     <script src="eclean.js"></script>
+    <script src="firstUpperCase.js"></script>
+    <script src="firstLowerCase.js"></script>
       
     <script>
 		
@@ -151,19 +153,8 @@
 			let tensenumber = detectP(VERB);
 			if (tensenumber===2){
 				e("whichtense").innerHTML = `(${VERB}) is a PRESENT PERFECT TENSE`;
-			}
-			
-			
-        }
-      
-        
-        function firstUpperCase(txt) {
-            return txt.substr(0, 1).toUpperCase() + txt.substr(1);
-        }
-        
-        function firstLowerCase(txt) {
-            return txt.substr(0, 1).toLowerCase() + txt.substr(1);
-        }
+			}			
+        }        
     </script>
     
     <p>মনে রেখো, যদি তুমি ভূল ইংলিশ লেখো ( যেমন "the cat see the mice" অথবা  "the cats sees the mice"), এই প্রোগ্রামটি কিন্তু বলবে না যে তুমি ভূল ইংলিশ লিখেছো কারন কম্পিউটার হলো গাধা | তাই খারাপ ইনপুট দিলে খারাপ আউটপুট পাবে | </p>
