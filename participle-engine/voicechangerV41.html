@@ -36,7 +36,8 @@
         <span id="objectoutput"></span>
         <span id="auxandparticiple"></span>
         <span id="agentoutput"></span><br>
-        <!--<span id="x">X</span><br>-->
+        
+        <span id="whichtense"></span><br>
         
     </div>
     
@@ -56,6 +57,8 @@
     <script src="obj_to_sub.js"></script>
     <script src="tense-detector.js"></script>
     <script src="nopassive.js"></script>
+    <script src="detectP.js"></script>
+    <script src="isparticiple.js"></script>
     <script src="eclean.js"></script>
       
     <script>
@@ -75,17 +78,12 @@
 			
 				/*--------------bad input indicator----------------*/
 			 let nogood = hasnopassive(VERB) || SUBJECT==="" || OBJECT==="" || VERB==="" ;
-			 /* e("x").style.backgroundColor= nogood ?"red":"green";*/
 			e("presentpassivedisplay").style.backgroundColor = nogood ?"red":"bisque";
 			e("passive").style.backgroundColor = nogood ?"red":"bisque";
-			 
-			
-			
+						
             
             if(SUBJECT != "i" && SUBJECT.length < 2){SUBJECT = "(...)";}
-					
-			
-            
+			            
  
            let tensedetected = tensedetector(VERB);
             let tensedisplayed="xxx";
@@ -102,8 +100,7 @@
                 tensedisplayed =  "("+VERB+") doesn't look like a verb."; 
 				/*e("x").style.backgroundColor="red";*/ /*BAD INPUT DFETECTOR*/
 				e("presentpassivedisplay").style.backgroundColor="red";
-				
-            }
+			}
             else if ( tensedetected === BO){                  
                 tensedisplayed ="("+VERB+ ") appears to be either a present verb or a past verb.";
             }
@@ -149,6 +146,12 @@
             e("presentpassivedisplay").innerHTML += (  (tensedetected == BO) ? " <br/> " : " " ) + passivizedpast;
             }
 			
+			
+			/*------------------- tense detection ---------------------------*/
+			let tensenumber = detectP(VERB);
+			if (tensenumber===2){
+				e("whichtense").innerHTML = `(${VERB}) is a PRESENT PERFECT TENSE`;
+			}
 			
 			
         }
