@@ -25,7 +25,7 @@
         <input type="text" id="objectinbox" onkeyup="update()" placeholder="enter an object"><!--(objectinbox)--><br>
         <span >Active:</span>
         <span id="copyofinput" contenteditable="true"></span><br>
-    Passive:   
+    <span id="passive" >Passive: </span>  
     <span id="presentpassivedisplay"  contenteditable="true"></span><br>
     <!--<span id="pastpassivedisplay" style="color: blue"></span><br>-->
     
@@ -77,6 +77,7 @@
 			 let nogood = hasnopassive(VERB) || SUBJECT==="" || OBJECT==="" || VERB==="" ;
 			  e("x").style.backgroundColor= nogood ?"red":"green";
 			e("presentpassivedisplay").style.backgroundColor = nogood ?"red":"bisque";
+			e("passive").style.backgroundColor = nogood ?"red":"bisque";
 			 
 			
 			
