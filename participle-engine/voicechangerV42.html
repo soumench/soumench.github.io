@@ -80,7 +80,9 @@
 			/*------------------- tense detection ---------------------------*/
 			let tensenumber = detectP(VERB);
 			if (tensenumber===2){
-				e("whichtense").innerHTML = `(${VERB}) is a PRESENT PERFECT TENSE`;
+				e("whichtense").innerHTML = `(${VERB}) is a PRESENT PERFECT TENSE <br> 
+					and the lastauxiliary is (${lastauxiliary}) <br>
+					and the lastword is (${lastparticiple})`;
 			}
 			else e("whichtense").innerHTML = "";
 			
