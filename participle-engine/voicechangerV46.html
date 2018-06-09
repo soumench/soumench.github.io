@@ -77,8 +77,9 @@
             }else if ( tensedetected === ID){
                 tensedisplayed =  "("+VERB+") doesn't look like a verb.";
 				/*e("presentpassivedisplay").style.backgroundColor="red";*/  /*----debug----*/
-				e("passive").style.backgroundColor="red";   
-				/*return;*/                 /*----debug----*/
+				e("passive").style.backgroundColor="red"; 
+				e("tensedisplay").innerHTML = tensedisplayed;
+				return;                 /*----debug----*/
 			}
             e("tensedisplay").innerHTML = tensedisplayed;
                       
