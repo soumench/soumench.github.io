@@ -56,12 +56,10 @@
         let numberdetected=SINGULAR;
                                            
         function update(){  
-           
-			let SUBJECT = cleaninput(  e("subjectinbox").value  );
+  			let SUBJECT = cleaninput(  e("subjectinbox").value  );
 			let OBJECT = cleaninput(e("objectinbox").value );
             let VERB = cleaninput( e("verbinbox").value  );
-						
-			            
+						            
             if(SUBJECT != "i" && SUBJECT.length < 2){SUBJECT = "(...)";}
 			       
             let tensedetected = tensedetector(VERB);
