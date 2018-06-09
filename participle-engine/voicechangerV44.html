@@ -56,16 +56,11 @@
         let numberdetected=SINGULAR;
                                            
         function update(){  
-            /*let isubj= e("subjectinbox").value; */
-			let iobj=e("objectinbox").value;
-			let iverb=e("verbinbox").value;
-            
-			/*let SUBJECT = cleaninput( isubj );*/
+           
 			let SUBJECT = cleaninput(  e("subjectinbox").value  );
-            let OBJECT = cleaninput( iobj );
-            let VERB = cleaninput( iverb  );
-			
-			
+			let OBJECT = cleaninput(e("objectinbox").value );
+            let VERB = cleaninput( e("verbinbox").value  );
+						
 			            
             if(SUBJECT != "i" && SUBJECT.length < 2){SUBJECT = "(...)";}
 			       
