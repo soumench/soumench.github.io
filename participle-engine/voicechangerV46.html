@@ -56,9 +56,9 @@
         let numberdetected=SINGULAR;
                                            
         function update(){  
-  			let SUBJECT = cleaninput(  e("subjectinbox").value  );
-			let OBJECT = cleaninput(e("objectinbox").value );
-            let VERB = cleaninput( e("verbinbox").value  );
+  			let SUBJECT = cleaninput( e("subjectinbox").value );
+			let OBJECT = cleaninput( e("objectinbox").value );
+            let VERB = cleaninput( e("verbinbox").value );
 						            
             if(SUBJECT != "i" && SUBJECT.length < 2){SUBJECT = "(...)";}
 			       
@@ -72,13 +72,14 @@
                 tensedisplayed =  "("+VERB+") appears to be a past verb.";
             }else if ( tensedetected === PR){
                 tensedisplayed =  "("+VERB+") appears to be a present verb.";
+            }else if ( tensedetected === BO){                  
+                tensedisplayed ="("+VERB+ ") appears to be either a present verb or a past verb.";
             }else if ( tensedetected === ID){
                 tensedisplayed =  "("+VERB+") doesn't look like a verb.";
 				/*e("presentpassivedisplay").style.backgroundColor="red";*/  /*----debug----*/
-				e("passive").style.backgroundColor="red";   return;                 /*----debug----*/
-			}else if ( tensedetected === BO){                  
-                tensedisplayed ="("+VERB+ ") appears to be either a present verb or a past verb.";
-            }
+				e("passive").style.backgroundColor="red";   
+				/*return;*/                 /*----debug----*/
+			}
             e("tensedisplay").innerHTML = tensedisplayed;
                       
             if (""===OBJECT){OBJECT="SOMETHING"}else if ("i"===OBJECT){OBJECT="me"};
