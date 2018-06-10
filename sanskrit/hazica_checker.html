@@ -1,0 +1,172 @@
+<!-Takni Mistwalker: .... make a page where misio can type azvas+dravati and get azvodravati->
+<html> 
+    <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <style>
+            body{
+                display: block;text-align: center;background: linear-gradient(#89D6F1,#FF00FF);
+            }
+            #sutra{
+                color: blueviolet; background-color: antiquewhite;
+            }
+            #inputs{
+                margin-bottom: 1em;
+            }
+            #OUTPUT_SECTION{
+                display: block;
+                border: 3px solid; padding: 0em; width:90%; 
+                margin: auto;
+                background: linear-gradient(red,yellow);
+            }
+            #OUTPUT_SECTION p{
+                display: inline-block;
+                border: 2px solid; padding: 1em; width: 90%; height: 10%;
+                
+                background-color: aliceblue;
+            }
+            #combo_display{
+                display: block; width: 60%; padding: 1em;height: 20%; border-style: inset;
+            }
+            #display_header{
+                
+            }
+            table, th, td {
+                border-style: inset; 
+            }
+            footer{
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id= "sutra">
+            <h2>hazi ca </h2>
+            <audio controls> <source src ="http://www.sanskritdictionary.com/audio/panini/61114.mp3"></audio> 
+            <h4>ru becomes u after a, before haz letters</h4>
+        </div>
+        <script>
+            function myfunction() { 
+                var first = document.getElementById("firstWord").value; // azvas 
+                var second = document.getElementById("lastWord").value; // dravati > sasa > hazi ca > ad gunaH
+                            
+                var LastLetterOfFirstWord = first.substr(-1); 
+                var FirstLetterOfSecondWord = second.substr(0,1);
+                
+                function find_haz_letter(letter){ 
+                    var haz = ["h", "y","v","r","l","J","m","G","N","n","j","b","g","D","d"];
+                    if(haz.indexOf(letter)> -1) return true; else return false;
+                }
+                function find_khara_letter(letter){ 
+                    var khara = ["k", "p","c","T","t","c","z","s","S"];
+                    if(khara.indexOf(letter)> -1) return true; else return false;
+                }
+                
+                
+              
+//initialize output user-input
+                write("display_info", "User Input: "+ first + " + "+ second +",<br> (Now let's apply the rules.)");
+//step one   remove wordfinal from FW and add ru
+                modded_first = first.slice(0,-1);
+                middle = "ru";
+                output_1 = modded_first+ " + "+ middle+ " + "+second;
+                sutra_1 = " <<  sasajuSoruH" ;
+                action_1 = "<< It removes s and adds ru.";
+             //   write("step_one", output_1); write("sutra_one",sutra_1); write("action_one", action_1);
+                
+
+                if(find_haz_letter(FirstLetterOfSecondWord) == false){
+                  // write("combo_display"," No haz letter found in the Second Word");
+                    /*
+                    user input : azvas + tsarukasya                    
+                    step1: azvaru + tsarukasya ( sasajuSoruH)  ( wordfinal s >  ru)
+                    step2: azvaH +tsarukasya ( khara ) ( r > H before khar)
+                    step 3 : azvaH+ tsarukasya  ( by zarpare ) H > H as zar followed by a khar
+                    final result : azvaH tsarukasya
+                    */
+                    output_1 = modded_first+ " + "+ middle+ " + "+second;
+                    middle = "H";                    
+                    output_2 = modded_first+ middle + " + "+second;
+                    output_3 = modded_first+middle + " + "+second;
+                    write("combo_display",
+                                    output_1+ " << sasajuSoruH << wordfinal s > ru"
+                          +"<br>" + output_2+" << kharavasAnayor visarjanIyaH  <<  r > H before khar"
+                          +"<br>" + output_3+" << by zar-pare visarjanIyaH  << H > H as zar followed by a khar"             
+                         );
+                    return;
+                }
+ //step two  ru will become u if haz               
+                else if (find_haz_letter(FirstLetterOfSecondWord) == true){             
+                    middle = middle.substr(1);
+
+                    output_2 = first+ " + "+ middle+ " + "+ second;
+                    sutra_2 = " <<  hazi ca ";
+                    action_2 = "<<  a + ru => a + u";
+//step three  remove a from FW, add o
+                    first = first = first.slice(0,-1);
+                    middle = "o";
+                    output_3 = first+ " + "+ middle+ " + "+second ;
+                    sutra_3 = "<<  Ad guNaH";
+                    action_3 = "<<  a + u = o";
+// final output concat
+                    final_output = "The final output is : "+ first + middle + second;
+                    write("step_four", final_output);
+
+                    write("combo_display",
+                                    output_1+"  "+ sutra_1+ " "+ action_1
+                          +"<br>" + output_2+"  "+ sutra_2+ " "+ action_2
+                          +"<br>" + output_3+"  "+ sutra_3+ " "+ action_3                     
+                         );
+                }
+            
+                function write( element_id, txt ){
+                    document.getElementById(element_id).innerHTML = txt; 
+                }
+            }
+            
+        </script>      
+
+        <div id = "inputs">
+            <input type="text" name="firstWord" id="firstWord" placeholder="Click to enter First word"/> 
+            + <input type="text" name="lastWord" id="lastWord" placeholder="Click to enter Last word"/> 
+            <input type="submit" name="button" id="button1" onclick="myfunction()" value=" Check " />
+            <br><br>
+            Hint : type azvas+dravati
+        </div>
+        <br>
+        <p id = "display_info"></p>
+        <div id = "OUTPUT_SECTION">
+            <h3>sUtra Checker</h3>
+            <div> <p id = "combo_display"> all in one </p></div>
+            
+            
+    <!--  temporarily disabled
+            <div id = "display_header">
+                <p>Modification</p><p>sUtra applied</p><p>What sUtra does</p>
+            </div>
+            
+            <div id = "display_data">
+                <p id = "step_one"></p><p id = "sutra_one"></p><p id = "action_one"></p>
+                <p id = "step_two"></p><p id = "sutra_two"></p><p id = "action_two"></p>
+                <p id = "step_three"></p><p id = "sutra_three"></p><p id = "action_three"></p>
+            </div>
+    -->
+        </div>
+        <p id = "step_four"><span></span></p>
+        
+       
+        <footer>Hold control and use mouse scroll wheel to maximize/ minimize the page.</footer>
+    </body>
+ </html>
+
+
+<!--User input:  azvas + tarati
+first rule that aplies:   sasa ( azvaru + tarati) 
+second rule : khara ( azvaH tarati )
+ next rule:  visarjanIyasya saH (: "replace H with s before a chav letter (unless the chav is followed by a zar )" (azvas tarati)
+ 
+ 
+ 
+ [13:59] Takni Mistwalker: azvaru tarati
+[13:59] Takni Mistwalker: azvaH tarati
+[13:59] Takni Mistwalker: azvas tarati -->
+
