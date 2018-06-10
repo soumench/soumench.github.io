@@ -17,6 +17,10 @@
                 margin: auto;
                 background: linear-gradient(red,yellow);
             }
+			#kharaletters{
+				color: crimson; font-weight: bolder; font-size: 1.5em;
+				
+			}
             footer{
                 color: white;
             }
@@ -25,13 +29,17 @@
     <body>
         <div id= "sutra">
             <h2>kharavasAnayor visarjanIyaH </h2>
-            <audio controls> <source src ="http://www.sanskritdictionary.com/audio/panini/83015.mp3"></audio> 
+            <audio controls> <source src ="http://www.sanskritdictionary.com/audio/panini/83015.mp3"></audio> <br>
+            <span onclick="show_khara()">Click here to see the khara letters</span><br>
+            <span id = "kharaletters"></span>
+            
             <h4>Replace r with H before khar letter and before pause.</h4>
         </div>
+        <script src="eclean.js"></script>
         <script>
             function myfunction() { 
-                var first = document.getElementById("firstWord").value;
-                var second = document.getElementById("lastWord").value;
+                var first = e("firstWord").value;
+                var second = e("lastWord").value;
 
                 var LastLetterOfFirstWord = first.substr(-1);
                 var FirstLetterOfSecondWord = second.substr(0,1);
@@ -63,7 +71,13 @@
                     khara_text= "khara rule is not applicable here.";
                 }
                 document.getElementById("display_khara_info").innerHTML = khara_text;
-            } 
+            }
+			
+			let bool;
+			function show_khara(){
+				e("kharaletters").innerHTML = (bool= bool^1) ? "kh, ph, ch,Th,th,c,T,t,k,p,z,S,s": "";
+			}
+			
         </script>      
 
         <div id = "inputs">
