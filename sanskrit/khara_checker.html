@@ -1,0 +1,83 @@
+<html> 
+    <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <style>
+            body{
+                display: block;text-align: center;background: linear-gradient(#89D6F1,#FF00FF);
+            }
+            #sutra{
+                color: blueviolet; background-color: antiquewhite;
+            }
+            #inputs{
+                margin-bottom: 1em;
+            }
+            #khara{
+                display: block;
+                border: 3px solid; padding: 1em; width: 40%; 
+                margin: auto;
+                background: linear-gradient(red,yellow);
+            }
+            footer{
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id= "sutra">
+            <h2>kharavasAnayor visarjanIyaH </h2>
+            <audio controls> <source src ="http://www.sanskritdictionary.com/audio/panini/83015.mp3"></audio> 
+            <h4>Replace r with H before khar letter and before pause.</h4>
+        </div>
+        <script>
+            function myfunction() { 
+                var first = document.getElementById("firstWord").value;
+                var second = document.getElementById("lastWord").value;
+
+                var LastLetterOfFirstWord = first.substr(-1);
+                var FirstLetterOfSecondWord = second.substr(0,1);
+
+                function find_khara_letter(letter){
+                    khar = ["kh", "ph","ch","Th","th","c","T","t","k","p","z","S","s"];//from c to s
+                    if(khar.indexOf(letter)> -1) return true; else return false;
+                }
+                var khara_found = find_khara_letter(FirstLetterOfSecondWord);
+                var khara_text;
+
+                if(khara_found == true  && LastLetterOfFirstWord == "r"){
+                    first = first.slice(0,-1)+"H";
+                    khara_text = "The first word-final is r, <br>" 
+                                + "The first letter of the second word is "+ FirstLetterOfSecondWord
+                                +". <br>So it is replaced with H as per khara rule. <br> "
+                                +"<br>And the new word is "+ first + " + " + second ; 
+                }else if(LastLetterOfFirstWord == "r"  && FirstLetterOfSecondWord == ""){
+                    first = first.slice(0,-1)+"H";
+                    khara_text = "The first word-final is r, <br>" 
+                                + "Either there is no second word or it is a pause."
+                                +". <br>So it is replaced with H as per khara rule. <br> "
+                                +"<br>And the new word is "+ first  ; 
+                }else if (LastLetterOfFirstWord != "r" && khara_found == true){
+                    khara_text= FirstLetterOfSecondWord + " is a khara letter.<br>"
+                                + "But the word final of the First Word  is not r.<br>"
+                                + " So khara rule is not applicable!"; 
+                }else{
+                    khara_text= "khara rule is not applicable here.";
+                }
+                document.getElementById("display_khara_info").innerHTML = khara_text;
+            } 
+        </script>      
+
+        <div id = "inputs">
+            <input type="text" name="firstWord" id="firstWord" placeholder="Click to enter First word"/> 
+            + <input type="text" name="lastWord" id="lastWord" placeholder="Click to enter Last word"/> 
+            <input type="submit" name="button" id="button1" onclick="myfunction()" value=" Check " />
+            <br><br>           
+        </div>
+        <br>
+        <div id = "khara">
+            <h3>sUtra Checker</h3>
+            <p id = "display_khara_info">INFO PANEL</p>        
+        </div>
+        <footer>Hold control and use mouse scroll wheel to maximize/ minimize the page.</footer>
+    </body>
+ </html>
+
