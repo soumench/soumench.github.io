@@ -41,13 +41,15 @@
     <body>
         <div id= "sutra">
             <h2>hazi ca </h2>
-            <audio controls> <source src ="http://www.sanskritdictionary.com/audio/panini/61114.mp3"></audio> 
+            <audio controls> <source src ="http://www.sanskritdictionary.com/audio/panini/61114.mp3"></audio> <br>
+                      
             <h4>ru becomes u after a, before haz letters</h4>
         </div>
+        <script src="eclean.js"></script>
         <script>
             function myfunction() { 
-                var first = document.getElementById("firstWord").value; // azvas 
-                var second = document.getElementById("lastWord").value; // dravati > sasa > hazi ca > ad gunaH
+                var first = e("firstWord").value; // azvas 
+                var second = e("lastWord").value; // dravati > sasa > hazi ca > ad gunaH
                             
                 var LastLetterOfFirstWord = first.substr(-1); 
                 var FirstLetterOfSecondWord = second.substr(0,1);
@@ -119,7 +121,7 @@
                 }
             
                 function write( element_id, txt ){
-                    document.getElementById(element_id).innerHTML = txt; 
+                    e(element_id).innerHTML = txt; 
                 }
             }
             
