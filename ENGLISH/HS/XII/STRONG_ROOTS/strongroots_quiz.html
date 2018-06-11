@@ -16,7 +16,7 @@
             margin-bottom: 0.5em; margin-top: 0.5em;
         }
         footer{font-size: 75%;box-shadow:3px 3px 5px 6px #ccc;
-            margin-top: 2em; /*position: fixed;*/ bottom: .1em; right: 10%; left: 10%;
+            margin-top: 2em; /*position: fixed;*/ /*bottom: .1em; right: 10%; left: 10%;*/
         }
     </style>
 </head>
@@ -54,10 +54,20 @@
 		e("A-display").style.display = "none";
         /*------------------------------------------------------------*/
 		
-		let t=1;
+		/*let t;
         function toggle(){
-			e("A-display").style.display = (t=t^1)?"block":"none";
-		}
+			e("A-display").style.display = (t=t^1)? "none":"block";
+		}*/
+		
+		function toggle(){
+            var x = e("A-display");
+            if( x.style.display === "none"){
+               x.style.display = "block"; 
+            }
+            else{
+                x.style.display = "none";
+            }
+        }
         
         function forward(){
             ++i;
