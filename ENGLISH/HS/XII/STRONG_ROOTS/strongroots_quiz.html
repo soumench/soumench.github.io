@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Quiz on Strong Roots</title>
+    <style>
+        body{font-size: 20px; display: block;text-align: center; background-color: rgba(0, 100, 0, 0.06);}
+        h2{margin: 0px;box-shadow:3px 3px 5px 6px #ccc; }
+        #btn-box{  }
+        .btn{font-size:110%; margin:0.3em 0.5em 0.05em 0.5em;padding: 0px; 
+            color: rgba(69, 5, 80, 0.97);font-weight: bolder;}
+        .quiz-section{font-size: 130%; margin-bottom: 1em; padding: 0.2em;} /*index and question gap*/
+        #userWriteArea{font-size:100%;background-color:#dbe6f5; 
+            font-weight:bolder;box-shadow:3px 3px 5px 6px #ccc;
+            margin-bottom: 0.5em; margin-top: 0.5em;
+        }
+        footer{font-size: 75%;box-shadow:3px 3px 5px 6px #ccc;
+            margin-top: 2em; position: fixed; bottom: .1em; right: 10%; left: 10%;
+        }
+    </style>
+</head>
+
+<body>
+   <h2>A Quiz on Strong Roots</h2>
+   <div id="btn-box">
+       <button class="btn" onclick="backward()">Prev</button>
+       <button class="btn" onclick="forward()">Next</button>
+    </div>
+   <br>
+   <span class="quiz-section" id="Index-display">Index display</span> 
+   <span class="quiz-section" id="Q-display" onclick="toggle()">Question display</span> 
+   <p class="quiz-section" id="A-display"> ...</p><br>
+   <textarea id="userWriteArea" rows="10" cols="28" placeholder="Write your answer here." onkeyup="countWords()"></textarea><br>
+   <span id="words">Word-Count:</span>
+           
+    
+         
+        
+    <script>
+		const sound = new Audio("ting-128kbps.ogg");
+        
+        var i = 0;
+        var qa = [ 
+            1,"What is your name? ", "My name is Soumen.",            
+            2,"Where do you live? ", "I live in Kolkata.",
+            3,"q2", "a2",
+            4,"q3", "a3",
+            5,"q4", "a4",
+            "6a","q5a", "a5a",
+            "6b","q5b", "a5b"
+        ];
+        var length = qa.length;
+        
+		/*----------------- initial display parameters -------------*/
+		write("Index-display","Q."+ qa[0])+"- ";
+		write("Q-display", qa[1]); 
+		write("A-display", qa[2]); 
+		e("A-display").style.display = "none";
+        /*------------------------------------------------------------*/
+		
+		let bool=1;
+        function toggle(){
+			e("A-display").style.display = (bool=bool^1)?"none":"block";
+		}
+        
+        function forward(){
+            ++i;
+            if( i >= length/3){i = 0;}
+            displayAll(); 
+			sound.play();
+        }
+        
+        function backward(){
+            --i;
+            if(i<0){ i= length/3-1; }
+            displayAll(); 
+			sound.play();
+        }
+        
+        function displayAll(){
+           e("A-display").style.display = "none";    
+            
+           write("Index-display","Q."+ qa[i*3])+"- ";            
+           write("Q-display", qa[i*3+1]);            
+           write("A-display", qa[i*3+2]); 
+        }
+       /* wordcounter begin*/
+        function countWords(){
+            var writtenWords = e("userWriteArea").value;
+           e("words").innerHTML = "Word-count: "+ wordcount(writtenWords);
+        }
+        function wordcount(txt){
+                return mysplit(txt).length;
+            }            
+        function mysplit(txt){
+                txt = txt.replace(/^\s+/,"");
+                if(""==txt)return [];
+                txt = txt.replace(/\s+$/,"");
+                return txt.split(/\s+/);
+        }     
+        /*wordcounter end*/
+        
+        function write(id, txt){e(id).innerHTML = txt;}
+        function e(id){return document.getElementById(id);}
+    </script>
+    <footer>    &copy Soumen Chakraborty April 2018<br>
+        For Educational and Noncommercial Usage only.
+    </footer>
+</body>
+</html>
