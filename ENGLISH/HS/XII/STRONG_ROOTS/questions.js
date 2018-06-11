@@ -14,7 +14,7 @@ const qa = [
 			13, "As a child, did Kalam understand the meaning of the Arabic prayers?","no",
 			14, "Who used to wait for Kalam's father after the evening prayer is over?","People of different religions",
 			15,"Whom did Kalam's father ask the people to thank?", " Allah, the merciful",
-			16,"Who was the high priest of Rameswaram Temple?", "pakshi Lakshmana Sastry",
+			16,"Who was the high priest of Rameswaram Temple?", "Pakshi Lakshmana Sastry",
 			17,"Who was able to convey complex spiritual concepts in very simple, down-to-earth Tamil?","Kalam's father, Jainulabdeen",
 			18,"When did Kalam's father use to start his day?", "at 4 am",
 			19,"How far was the coconut grove from Kalam's house?","about four miles away",
