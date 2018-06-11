@@ -23,35 +23,29 @@
 
 <body>
    <h2>A Quiz on Strong Roots</h2>
+   <span style="color:brown">Answer in complete sentences.</span>
    <div id="btn-box">
        <button class="btn" onclick="backward()">Prev</button>
        <button class="btn" onclick="forward()">Next</button>
     </div>
    <br>
-   <span class="quiz-section" id="Index-display">Index display</span> 
+   <span class="quiz-section" id="Index-display" style="color:red">Index display</span> 
    <span class="quiz-section" id="Q-display" >Question display</span><br>
    <button onclick="toggle()">Click here to show the hint !</button> 
-   <p class="quiz-section" id="A-display"> ...</p><br>
-   <textarea id="userWriteArea" rows="10" cols="28" placeholder="Write your answer here." onkeyup="countWords()"></textarea><br>
+   <p class="quiz-section" id="A-display" style="color: blue"> ...</p><br>
+   <textarea id="userWriteArea" rows="6" cols="28" placeholder="Write your answer here." onkeyup="countWords()"></textarea><br>
    <span id="words">Word-Count:</span>
            
     
          
-    <script src="eclean.js"></script>    
+    <script src="eclean.js"></script>
+    <script src="questions.js"></script>    
     <script>
 		const sound = new Audio("ting-128kbps.ogg");
         
-        var i = 0;
-        var qa = [ 
-            1,"What is your name? ", "My name is Soumen.",            
-            2,"Where do you live? ", "I live in Kolkata.",
-            3,"q2", "a2",
-            4,"q3", "a3",
-            5,"q4", "a4",
-            "6a","q5a", "a5a",
-            "6b","q5b", "a5b"
-        ];
-        var length = qa.length;
+        let i = 0;
+        /*----
+		----*/
         
 		/*----------------- initial display parameters -------------*/
 		write("Index-display","Q."+ qa[0])+"- ";
@@ -60,23 +54,21 @@
 		e("A-display").style.display = "none";
         /*------------------------------------------------------------*/
 		
-		let bool=1;
+		let t=1;
         function toggle(){
-			e("A-display").style.display = (bool=bool^1)?"none":"block";
+			e("A-display").style.display = (t=t^1)?"block":"none";
 		}
         
         function forward(){
             ++i;
             if( i >= length/3){i = 0;}
-            displayAll(); 
-			sound.play();
+            displayAll(); sound.play();
         }
         
         function backward(){
             --i;
             if(i<0){ i= length/3-1; }
-            displayAll(); 
-			sound.play();
+            displayAll(); sound.play();
         }
         
         function displayAll(){
@@ -91,9 +83,7 @@
             var writtenWords = e("userWriteArea").value;
            e("words").innerHTML = "Word-count: "+ wordcount(writtenWords);
         }
-        function wordcount(txt){
-                return mysplit(txt).length;
-            }            
+        function wordcount(txt){ return mysplit(txt).length;}            
         function mysplit(txt){
                 txt = txt.replace(/^\s+/,"");
                 if(""==txt)return [];
@@ -104,7 +94,7 @@
         
     </script>
     <footer>    &copy Soumen Chakraborty June 2018<br>
-        For Educational and Non-commercial Usage only.
+        Strictly for Educational, Non-profit and Non-commercial Usage only.
     </footer>
 </body>
 </html>
