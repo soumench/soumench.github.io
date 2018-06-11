@@ -31,13 +31,14 @@
    <span class="quiz-section" id="Index-display">Index display</span> 
    <span class="quiz-section" id="Q-display" onclick="toggle()">Question display</span> 
    <p class="quiz-section" id="A-display"> ...</p><br>
-   <textarea id="userWriteArea" rows="10" cols="28" placeholder="Write your answer here." onkeyup="countWords()"></textarea><br> 
+   <textarea id="userWriteArea" rows="10" cols="28" placeholder="Write your answer here." onkeyup="countWords()"></textarea><br>
    <span id="words">Word-Count:</span>
            
     
          
         
     <script>
+		
         
         var i = 0;
         var qa = [ 
@@ -51,16 +52,17 @@
         ];
         var length = qa.length;
         
-        
+		/*----------------- initial display parameters -------------*/
+		write("Index-display","Q."+ qa[0])+"- ";
+		write("Q-display", qa[1]); 
+		write("A-display", qa[2]); 
+		e("A-display").style.display = "none";
+        /*------------------------------------------------------------*/
+		
+		let bool=1;
         function toggle(){
-            var x = e("A-display");
-            if( x.style.display === "none"){
-               x.style.display = "block"; 
-            }
-            else{
-                x.style.display = "none";
-            }
-        }
+			e("A-display").style.display = (bool=bool^1)?"none":"block";
+		}
         
         function forward(){
             ++i;
