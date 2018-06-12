@@ -26,6 +26,24 @@
 				c: "Jainulabdeen",
 			 },
 			  correctAnswer: "c"
+			},
+			{
+			  question: "Who bestowed the title of \"Bahadur\" upon one of Ashiamma's forbears?",
+			  answers: {
+				a: "The French",
+				b: "The British",
+				c: "The German",
+			 },
+			  correctAnswer: "b"
+			},
+			{
+			  question: "Kalam was ",
+			  answers: {
+				a: "a short boy with rather undistinguished look",
+				b: "a handsome boy",
+				c: "a pretty boy",
+			 },
+			  correctAnswer: "a"
 			}
 		  ];
 
@@ -142,4 +160,4 @@
 		  previousButton.addEventListener("click", showPreviousSlide);
 		  nextButton.addEventListener("click", showNextSlide);
 		})();
-	
+	/*Adapted from https://www.sitepoint.com/simple-javascript-quiz/*/
