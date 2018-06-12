@@ -28,7 +28,7 @@
 			  correctAnswer: "c"
 			},
 			{
-			  question: "Who bestowed the title of \"Bahadur\" upon one of Ashiamma's forbears?",
+			  question: "Who bestowed the title of \"Bahadur\" upon one of Ashiamma's forebears?",
 			  answers: {
 				a: "The French",
 				b: "The British",
@@ -160,4 +160,4 @@
 		  previousButton.addEventListener("click", showPreviousSlide);
 		  nextButton.addEventListener("click", showNextSlide);
 		})();
-	/*Adapted from https://www.sitepoint.com/simple-javascript-quiz/*/
+	/*Acknowledgement: https://www.sitepoint.com/simple-javascript-quiz/*/
