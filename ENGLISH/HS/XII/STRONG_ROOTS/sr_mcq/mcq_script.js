@@ -1,4 +1,6 @@
 (function() {
+		 const sound = new Audio("ting-128kbps.ogg");
+			
 		  const myQuestions = [
 			{
 			  question: "Rameswaram is ",
@@ -135,10 +137,11 @@
 
 		  function showNextSlide() {
 			showSlide(currentSlide + 1);
+			sound.play();
 		  }
 
 		  function showPreviousSlide() {
-			showSlide(currentSlide - 1);
+			showSlide(currentSlide - 1); sound.play();
 		  }
 
 		  const quizContainer = document.getElementById("quiz");
