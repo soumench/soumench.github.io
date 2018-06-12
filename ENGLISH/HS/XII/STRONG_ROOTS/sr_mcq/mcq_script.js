@@ -271,4 +271,4 @@
 		  previousButton.addEventListener("click", showPreviousSlide);
 		  nextButton.addEventListener("click", showNextSlide);
 		})();
-	/*Acknowledgement: www.sitepoint.com*/
+	/*Sincere acknowledgement: www.sitepoint.com*/
