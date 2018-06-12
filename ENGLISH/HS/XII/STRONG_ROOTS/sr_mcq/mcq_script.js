@@ -12,11 +12,11 @@
 			  correctAnswer: "a"
 			},
 			{
-			  question: "Ashiamma was",
+			  question: "Ashiamma was Kalam's",
 			  answers: {
-				a: "Kalam's sister",
-				b: "Kalam's mother",
-				c: "Kalam's brother"
+				a: "sister",
+				b: "mother",
+				c: "brother"
 			  },
 			  correctAnswer: "b"
 			},
@@ -39,11 +39,11 @@
 			  correctAnswer: "b"
 			},
 			{
-			  question: "Kalam was ",
+			  question: "Kalam was a",
 			  answers: {
-				a: "a short boy with rather undistinguished look.",
-				b: "a handsome boy.",
-				c: "a pretty boy.",
+				a: "short boy with rather undistinguished look.",
+				b: "tall and handsome boy.",
+				c: "pretty boy.",
 			 },
 			  correctAnswer: "a"
 			},
@@ -57,7 +57,7 @@
 			  correctAnswer: "c"
 			},
 			{
-			  question: "The locality  of Kalam was ",
+			  question: "The locality of Kalam was ",
 			  answers: {
 				a: "full of Hindus.",
 				b: "full of Christians.",
@@ -97,7 +97,7 @@
 			  answers: {
 				a: "a difference of spirit between people.",
 				b: "a difference of opinion between people.",
-				c: " a communion of the spirit between people.",
+				c: "a communion of the spirit between people.",
 			 },
 			  correctAnswer: "c"
 			},
@@ -111,11 +111,11 @@
 			  correctAnswer: "c"
 			},
 			{
-			  question: "impasse stands for",
+			  question: "Impasse stands for a situation",
 			  answers: {
-				a: "a situation in which no progress is possible.",
-				b: "a situation  which is amicable.",
-				c: "a situation which is advantageous.",
+				a: "in which no progress is possible.",
+				b: "which is amicable.",
+				c: "which is advantageous.",
 			 },
 			  correctAnswer: "a"
 			},
@@ -129,29 +129,29 @@
 			  correctAnswer: "b"
 			},
 			{
-			  question: "Kalam tried to emulate his his father ",
+			  question: "Kalam tried to emulate his his father in his own world of ",
 			  answers: {
-				a: "in his own world of religion.",
-				b: "in his own world of sociology.",
-				c: "in his own world of science and technology.",
+				a: "religion.",
+				b: "sociology.",
+				c: "science and technology.",
 			 },
 			  correctAnswer: "c"
 			},
 			{
-			  question: "Kalam firmly believed that ",
+			  question: "Kalam firmly believed that there exists ",
 			  answers: {
-				a: "there exists a divine power.",
-				b: "there exists a mechanical power.",
-				c: "there exists a logical power.",
+				a: "a divine power.",
+				b: "a mechanical power.",
+				c: "a logical power.",
 			 },
 			  correctAnswer: "a"
 			},
 			{
-			  question: " A person is on the road to freedom, happiness and peace of mind ",
+			  question: "A person gets freedom, happiness and peace of mind once",
 			  answers: {
-				a: "once an individual studies well.",
-				b: "once an individual severs his emotional and physical bond.",
-				c: "once an individual does physical exercise.",
+				a: "studies well.",
+				b: "severs his emotional and physical bond.",
+				c: "does physical exercise.",
 			 },
 			  correctAnswer: "b"
 			}
