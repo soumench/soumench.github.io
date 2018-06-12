@@ -271,4 +271,4 @@
 		  previousButton.addEventListener("click", showPreviousSlide);
 		  nextButton.addEventListener("click", showNextSlide);
 		})();
-	/*Acknowledgement: https://www.sitepoint.com/simple-javascript-quiz/*/
+	/*Acknowledgement: www.sitepoint.com*/
