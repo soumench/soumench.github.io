@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<span id="Q_index">Question 1 of 10</span><br>
+	<button id="right_answer" onclick="update()"> Right answer</button><br>
+	<button id="wrong_answer" onclick="update()">Wrong answer</button><br>
+	<button id="i_forgot" onclick="update()">I forgot.</button><br>
+	<button id="next_question" onclick="score()">NEXT</button><br>
+	
+	<script>
+		e("next_question").disabled = true;
+		
+		
+	function update(){
+		e("next_question").disabled = false;
+		
+	}
+	
+	function score(){
+		
+	}
+		
+	function e(id){
+		return document.getElementById(id);
+	}
+	</script>
+	
+	
+
+</body>
+
+</html>
