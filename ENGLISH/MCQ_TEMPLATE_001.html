@@ -8,13 +8,15 @@
 </head>
 
 <body>
-	<span id="Q_index">Question 1 of 10</span><br>
-	<button id="right_answer" onclick="update()" style="width:150px"> Right answer</button><br><br>
-	<button id="wrong_answer" onclick="update()" style="width:150px">Wrong answer</button><br><br>
-	<button id="i_forgot" onclick="update()" style="width:150px">I forgot</button><br><br>
+	<div id="quiz_board">
+		<span id="Q_index">Question 1 of 10</span><br>
+		<button id="right_answer" onclick="update()" style="width:150px"> Right answer</button><br><br>
+		<button id="wrong_answer" onclick="update()" style="width:150px">Wrong answer</button><br><br>
+		<button id="i_forgot" onclick="update()" style="width:150px">I forgot</button><br><br>
+	</div>
 	
-	
-	<input type="button" onclick="score()"  value="NEXT" id="next_question" style="width:150px" />
+	<input type="button" onclick="score()"  value="NEXT" id="next_question" style="width:150px" /><br>
+	<input type="button" onclick="show_result()"  value="FINISH" id="finish_question" style="width:150px" />
 	
 	
 	
@@ -26,8 +28,9 @@
 		e("Q_index").innerHTML = `Question ${counter} of 5`;
 		
 		e("next_question").style.visibility = "hidden";
+		e("finish_question").style.visibility = "hidden";
 		
-		let w ; 
+		let wr ; 
 		let rt;
 		let idk;
 		
@@ -39,6 +42,7 @@
 		}
 	
 		function score(){
+			e("quiz_board").style.visibility = "visible";
 			sound.play();
 			counter++;
 			e("Q_index").innerHTML = `Question ${counter} of 5`;
@@ -47,10 +51,19 @@
 			
 			
 			if( counter == total_questions){
-				e("next_question").style.visibility = "visible";
+				e("finish_question").style.visibility = "visible";
 				counter=0;
-				e("next_question").value = "FINISH";
 			}
+		}
+		
+		function show_result(){
+			counter = 0;
+			e("quiz_board").style.visibility = "hidden";
+			e("Q_index").innerHTML =`Total Score = ${(rt - 2* wr)} out of ${total_questions}`; 
+			
+			e("finish_question").style.visibility = "hidden";
+			
+			e("next_question").style.visibility = "visible";
 		}
 		
 		function e(id){
