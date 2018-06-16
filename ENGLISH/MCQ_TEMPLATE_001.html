@@ -68,6 +68,7 @@
 		
 	
 		function score(){
+			e("next_question").style.visibility = "hidden";
 			e("quiz_board").style.visibility = "visible";
 			counter++;
 			e("Q_index").innerHTML = `Question ${counter} of 5`;
