@@ -15,21 +15,38 @@
 	<button id="next_question" onclick="score()">NEXT</button><br>
 	
 	<script>
-		e("next_question").disabled = true;
+		const sound = new Audio("ting-128kbps.ogg");
+		const click_sound = new Audio("my_click_sound.oga");
+		let counter = 1;
+		const total_questions = 5;
+		e("Q_index").innerHTML = `Question ${counter} of 5`;
+		next_disabled(true);
 		
 		
-	function update(){
-		e("next_question").disabled = false;
-		
-	}
+		function update(){
+			next_disabled(false);
+			click_sound.play();
+
+		}
 	
-	function score(){
+		function score(){
+			sound.play();
+			counter++;
+			e("Q_index").innerHTML = `Question ${counter} of 5`;
+			next_disabled(true);
+			if( counter == total_questions){
+				counter=0;
+			}
+		}
 		
-	}
+		function next_disabled(cond){
+			e("next_question").disabled = cond;
+		}
 		
-	function e(id){
-		return document.getElementById(id);
-	}
+		
+		function e(id){
+			return document.getElementById(id);
+		}
 	</script>
 	
 	
@@ -37,3 +54,23 @@
 </body>
 
 </html>
+
+<!--[10:55] Takni Mistwalker: now listen
+[10:56] Takni Mistwalker: the first timethe user clicks next
+[10:56] Takni Mistwalker: there is some nice special effect
+[10:56] Takni Mistwalker: and the text in the first element changes to "question 2 of 5"
+[10:56] Takni Mistwalker: ah btw
+[10:56] Takni Mistwalker: we'll do only 5 questions not 10
+[10:57] Takni Mistwalker: after that chnge all 3 radio buttins are unsekected
+[10:57] Takni Mistwalker: and the next button is grayed out
+[10:57] Takni Mistwalker: and we start again doing the same thing
+
+[10:58] Takni Mistwalker: if you just change the text from "question 1 of 5" to "question 2 of 5"
+[10:59] Takni Mistwalker: the user will not notice that anything has changed
+[10:59] Takni Mistwalker: the user will not notice that anything has changed
+[10:59] Takni Mistwalker: so you need to do somethjing flasy or some sound
+[10:59] Takni Mistwalker: or some color changing idk
+[10:59] Takni Mistwalker: so that the user notices that his answer has registered
+[11:00] Takni Mistwalker: when i said radio buttons
+[11:00] Takni Mistwalker: i should have said
+[11:00] Takni Mistwalker: elements 2 3 and 4-->
