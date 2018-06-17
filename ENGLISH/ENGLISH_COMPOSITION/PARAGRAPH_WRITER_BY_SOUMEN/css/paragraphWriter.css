@@ -10,8 +10,12 @@ body{
 		}
 		#q{font-size:1.5em; color:#6a076a;}
 		#bangla_q{font-size:1em; color:#07af27;}
-		#ui{font-size:1.15em; width:55%; color:blue;}
-		#gobtn{font-size:1.15em; }
+		#ui{font-size:1.15em; width:50%; color:blue;}
+		#gobtn{
+			font-size:1.2em; background-color: #008CBA; color:white;border-radius: 12px;
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+			width:20%;
+		}
 		
 		
 		#result_box{font-size:1.5em; width="90%"; }

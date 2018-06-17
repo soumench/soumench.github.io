@@ -58,8 +58,12 @@
 				generate_paragraph();
 			}
 			changeIMG();			
-			sound.play();
-		}		
+			sound.play();			
+		}
+		
+		function changeIMG(){
+				e("thepic").src= images[Math.floor(Math.random()*images.length)];
+		}
 	</script>
 	<footer> &copy Made by Soumen Chakraborty - Strictly for Educational and Non-Commercial purpose only.</footer>
 

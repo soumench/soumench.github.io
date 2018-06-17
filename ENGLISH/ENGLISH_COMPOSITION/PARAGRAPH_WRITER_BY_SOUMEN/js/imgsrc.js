@@ -12,10 +12,3 @@ const images = ['img/1-min.jpg',
 
 
 
-function changeIMG(){
-			e("thepic").src= images[Math.floor(Math.random()*images.length)];
-			/*if(imgcount < images.length){
-				e("thepic").src=images[imgcount++];
-				if(imgcount===images.length){imgcount = 0;}
-			}*/
-		}
