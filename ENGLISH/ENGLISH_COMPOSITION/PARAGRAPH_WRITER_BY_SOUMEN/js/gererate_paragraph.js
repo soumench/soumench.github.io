@@ -11,7 +11,7 @@ function generate_paragraph(){
 			const paragraph = `My name is ${name}. 
 							I live at ${place} which is a beautiful place.
 							I love and respect my parents very much.
-							I read in class ${cls}.
+							I am studying in class ${cls}.
 							My favourite subject is ${fav_sub}.
 							I love all my classmates. 
 							${best_friend} is my best friend. 
