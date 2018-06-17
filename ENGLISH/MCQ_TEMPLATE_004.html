@@ -34,18 +34,18 @@
         e("next_question").style.visibility = "hidden";
         
         
-        let wr; 
-        let rt;
-        let idk;
+        let wr=0; let wrtoggle;
+        let rt=0; let rttoggle;
+        let idk=0; let idktoggle;
         
         
         function updateRT(){
             e("next_question").value = "NEXT";
             e("next_question").style.visibility = "visible";
             click_sound.play();
-            
-            rt++;
-                
+			
+            /*rttoggle=rttoggle^1 ? rt++ : rt--;*/
+            rt++;    
             /*score();*/
             /*buttons_disabled(true);*/
             
@@ -56,7 +56,7 @@
             e("next_question").value = "NEXT";
             e("next_question").style.visibility = "visible";
             click_sound.play();
-            
+            /*wrtoggle=wrtoggle^1 ? wr++ : wr--;*/
             wr++;
             /*buttons_disabled(true);    */
             /*score();*/
@@ -69,7 +69,8 @@
             e("next_question").style.visibility = "visible";
             click_sound.play();
             
-            idk++;
+            /*idktoggle=idktoggle^1 ? idk++ : idk--;*/
+			idk++;
             /*buttons_disabled(true);*/
             /*score();*/
             showvariables();
@@ -109,7 +110,7 @@
             counter = 0;
             let total_score = rt - 2* wr;
             e("Q_index").innerHTML =`Total Score = ${total_score} out of ${total_questions}`; 
-            
+            rt=0; wr=0; idk=0;
             e("next_question").value = "START";            
         }
         

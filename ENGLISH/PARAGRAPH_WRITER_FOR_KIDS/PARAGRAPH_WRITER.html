@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Paragraph Writer</title>
+	 <link rel="stylesheet" type="text/css" href="css/paragraphWriter.css">
+</head>
+
+<body>
+	<h2 style="color:blue">Paragraph Writer:</h2> 
+	<div id="quiz_box">
+		<h2 style="color:red">Answer the questions:</h2> 
+		<span id="q"></span><br>
+		<span id="bangla_q"></span><br>
+		<img id="thepic" width="240px" height="200px"/><br>
+		<input type="text" id="ui" maxlength="25" placeholder="write here...">
+		<input type="button" id="gobtn" value = "NEXT" onclick="add()"/>
+	</div>
+	<div id="result_box">
+		<span id="paragraph"></span><br>
+		<button type="button" id="refresh" onClick="window.location.reload();">Let's start again. <br> চলো আবার শুরু করি</button>
+	</div>
+	
+	<script src="js/eclean.js"></script>
+	<script src="js/ui.js"></script>
+	<script src="js/imgsrc.js"></script>
+	<script src="js/gererate_paragraph.js"></script>
+	<script>
+		const sound = new Audio("my_click_sound.oga");
+		const ting = new Audio("ting-128kbps.ogg");
+		const error = new Audio("error_sound.oga");
+		let imgcount=0; let i=0;
+		changeIMG();
+		e("result_box").style.visibility = "hidden";
+				
+		e("q").innerHTML = questions[i];
+		e("bangla_q").innerHTML = questions[i+1];
+		let answers = [];
+		
+		function add(){
+			e("ui").focus();
+			if( e("ui").value ===""){error.play();return;} 
+			i+=2;
+			let answer = cleaninput(e("ui").value);
+			answers.push(answer);
+			e("ui").value ="";			
+			
+			e("q").innerHTML = questions[i];
+			e("bangla_q").innerHTML = questions[i+1];
+			if(i === questions.length){
+				ting.play();
+				e("result_box").style.visibility = "visible";
+								
+				e("quiz_box").parentNode.removeChild(e("quiz_box"));
+				
+				generate_paragraph();
+			}
+			changeIMG();			
+			sound.play();
+		}		
+	</script>
+	<footer> &copy Made by Soumen Chakraborty - Strictly for Educational and Non-Commercial purpose only.</footer>
+
+</body>
+
+</html>
