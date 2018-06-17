@@ -22,3 +22,4 @@ function generate_paragraph(){
 			e("paragraph").innerHTML = paragraph;			
 		}
 
+/*&copy Made by Soumen Chakraborty - Strictly for Educational and Non-Commercial purpose only.*/

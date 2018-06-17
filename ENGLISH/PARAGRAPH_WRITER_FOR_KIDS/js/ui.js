@@ -7,3 +7,5 @@ const questions = [
 			"What is your hobby?", "তোমার হবি কী ?",
 			"What are you going to be?","তুমি বড় হয়ে কী হতে চাও ?"
 		];
+
+/*&copy Made by Soumen Chakraborty - Strictly for Educational and Non-Commercial purpose only.*/
