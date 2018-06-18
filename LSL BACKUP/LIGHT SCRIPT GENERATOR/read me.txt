@@ -1,0 +1,10 @@
+
+Light Script Generator for SL and Opensim
+Rez 12 prims and link. Paste the following script.
+Drag your mouse up and down over the color bars to change the various parameters.
+When done, touch the ball/light above to generate the script.
+Use the script in a new prim.
+It is both touch and chat operated ( say "on" or "off" on channel 1) .
+
+
+https://youtu.be/I4Bcl5FbADw
