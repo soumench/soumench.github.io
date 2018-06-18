@@ -65,6 +65,8 @@
         
     
         function score(){
+			if (counter===0){rt=0; wr=0; idk=0;}
+			
             if( lastbuttonclicked==="i_forgot"){idk++;}
 			else if(lastbuttonclicked==="wrong_answer"){wr++;}
 			else if(lastbuttonclicked==="right_answer"){rt++;}
@@ -88,7 +90,7 @@
                 e("quiz_board").style.visibility = "hidden";
                 
                 show_result();
-				/*rt=0; wr=0; idk=0;*/
+				
             }
             showvariables();
            
