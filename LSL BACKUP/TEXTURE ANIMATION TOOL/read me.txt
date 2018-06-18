@@ -1,0 +1,35 @@
+BUILD YOUR OWN TEXTURE ANIMATION TOOL USING MY FREE SCRIPT
+Very easily make your custom GIF like animation with the help of this tool.
+There is an update. The latest version is now 1.2. Please update your script in your old tool.
+REZ 17 PRIMS and LINK then drop this script.
+
+The Video below shows how you can make the tool instantly right from the scratch.
+No coding experience required.
+Just follow the on screen instructions and you are done.
+
+https://youtu.be/WLVfg_lUS64
+
+To change a Texture :
+1. Make a Tiled texture extracting frames from a video or by drawing.
+Note the number of X ( horizontal) and Y ( vertical) tiles.
+2. Upload the texture to Osgrid/Opensim.
+3.Right click on the uploaded texture and copy Asset UUID.
+4. Touch the centre of the display prim.
+5. A pop up will appear.
+6. Paste the copied Texture Asset UUID and press the submit button.
+Your texture will be displayed on the display prim.
+7. Adjust the number of X and Y tiles as per the pattern of the texture.
+8. Press the AUTO_CALCULATE button
+9. Play with the buttons and see the effect in real time.
+10. When satisfied, press the GENERATE CODE button to obtain the code that can be used in your project.
+11. Study this page for further information http://wiki.secondlife.com/wiki/LlSetTextureAnim
+
+
+SAMPLE OF A 4 X 4 TILED TEXTURE (x = 4(Number of Horizontal Tiles), y = 4(Number of Vertical tiles))
+OSGRID UUID : "85d266e0-16f3-444f-a520-0109d44f420b"
+
+SAMPLE OF A 8 X 2 TILED TEXTURE ( x = 8, y = 2)
+OSGRID UUID :"e2ad243f-4485-4ba8-92a3-3acd88c8b3d8"
+
+Copy the code below and use it in a linkset of 17 prims. 
+
