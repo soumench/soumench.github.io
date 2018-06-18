@@ -77,7 +77,6 @@
             counter++;
             e("Q_index").innerHTML = `Question ${counter} of 5`;
                         
-                        
             if( counter === total_questions){
                 e("next_question").style.visibility = "visible";
                 e("next_question").value = "FINISH";
@@ -90,8 +89,7 @@
                 e("quiz_board").style.visibility = "hidden";
                 
                 show_result();
-				
-            }
+			}
             showvariables();
            
             lastbuttonclicked="none";
