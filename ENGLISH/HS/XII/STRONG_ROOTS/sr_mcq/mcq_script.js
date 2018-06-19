@@ -129,7 +129,7 @@
 			  correctAnswer: "b"
 			},
 			{
-			  question: "Kalam tried to emulate his his father in his own world of ",
+			  question: "Kalam tried to emulate his father in his own world of ",
 			  answers: {
 				a: "religion.",
 				b: "sociology.",
