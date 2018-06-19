@@ -1,0 +1,20 @@
+
+	
+		body{ background-color: #555; text-align: center;
+			  
+		}
+		h1{ color: white;
+			text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+			background-color: antiquewhite;
+			border-radius: 16px;
+			width: 50%; margin: auto;
+			box-shadow: 10px 10px 8px #2e2929;
+		}
+		
+		p{ color: white; 
+		   border: 2px solid white; border-radius: 16px;
+		   padding: 10px;
+		   background-color: #6c5c48;
+		   box-shadow: 10px 10px 8px #2e2929;
+		}
+	
