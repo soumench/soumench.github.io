@@ -9,7 +9,7 @@
 </head>
 
 <body> 
-   	<span id=""> From "The Rainbow" </span>  <br>
+   	<span id="topic"> From "The Rainbow" </span>  <br>
     <span id="heading">Is the Statement True of False? </span>  <br>
     <span id="question" style="color:blue"></span>  <br> 
     
@@ -44,7 +44,7 @@
 		let question = q[i];
 		let condition =q[i+1];
 		        
-		e("question").innerHTML=  `<span style="color:green">Question </span> <span style="color:red">${i+1}</span> of <span style="color:red">${length}</span> <br> 
+		e("question").innerHTML=  ` <span style="color:red">${i+1}</span> of <span style="color:red">${length}</span> <br> 
 <span style="font-size:130%">${question} </span>` ;
         e("trace").innerHTML = "";		
         
@@ -56,14 +56,16 @@
             if(i>=length){
                 i=-1;
 				score_sound.play();
+				e("heading").style.visibility="hidden";
+				e("topic").style.visibility="hidden";
 				if(truecount<=8){
-					e("question").innerHTML="Not bad but try again!<br> You can do better! <br> Your scrore is "+ truecount + " !";
+					e("question").innerHTML="Not bad but try again!<br> You can do better! <br> Your score is "+ truecount + " !";
 				}
 				else if(truecount>9 && truecount <=11){
-					e("question").innerHTML="Impressive!<br> You are good! <br> Your scrore is "+ truecount + " !";
+					e("question").innerHTML="Impressive!<br> You are good! <br> Your score is "+ truecount + " !";
 				}
 				else if(truecount === 12){
-					e("question").innerHTML="Excellent!!<br>You are a genius! <br> Your scrore is "+ truecount + " !";
+					e("question").innerHTML="Excellent!!<br>You are a genius! <br> Your score is "+ truecount + " !";
 				}
 				
 				e("trace").innerHTML = "";
@@ -77,7 +79,7 @@
             e("wrongbtn").style.visibility="visible";
             e("nextbtn").style.visibility="hidden";
 			e("trace").innerHTML = "";
-			e("question").innerHTML=  `<span style="color:green">Question </span> <span style="color:red">${i+1}</span> of <span style="color:red">${length}</span> <br> 
+			e("question").innerHTML=  `<span style="color:red">${i+1}</span> of <span style="color:red">${length}</span> <br> 
 <span style="font-size:130%">${question} </span>` ;
         }
 		
