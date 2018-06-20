@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		div {
+			 position:relative;
+			}
+
+			.a {
+			  position:absolute;
+			  z-index:1;
+			  top:0; left:0;
+			}
+
+			.b {
+			  position:absolute;
+			  z-index:2;
+			  top:0; left:0;
+			}
+	</style>
+</head>
+
+<body>
+	Is it right? 
+	<img id="pic1"  src="1-min.jpg" onclick="right()" width="200px" height="180px"/><br>
+	Is it wrong? 
+	<img id="pic2"  src="1-min.jpg" onclick="wrong()" width="200px" height="180px"/><br>
+	
+	
+
+	<script>
+		const sound = new Audio("my_click_sound.oga");
+		
+		function right(){
+			e("pic1").src="test animation.gif";
+			sound.play();
+		}
+		
+		function wrong(){
+			e("pic2").src="no-no-no.gif";
+			sound.play();
+		}
+		
+		function e(id){
+			return document.getElementById(id);
+		}
+	
+	</script>
+
+</body>
+
+</html>
