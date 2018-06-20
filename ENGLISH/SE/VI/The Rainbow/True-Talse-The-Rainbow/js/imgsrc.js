@@ -9,9 +9,8 @@ const nxtimages = ['pic/nxtimg/1-min.jpg',
 					'pic/nxtimg/5-min.jpg',
 					'pic/nxtimg/6-min.jpg',
 					'pic/nxtimg/7-min.jpg',
-					'pic/nxtimg/8-min.jpg',
-					'pic/nxtimg/9-min.jpg',
-					'pic/nxtimg/10-min.jpg'
+					'pic/nxtimg/8-min.jpg'
+					
 	   ];
 
   
