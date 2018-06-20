@@ -1,15 +1,36 @@
- body{ font-size: 24px; text-align: center; margin: auto;}
-		#question{
-			font-size: 110%;
+ body{ 
+	 font-size: 22px; 
+	 text-align: center; 
+	 margin: auto;
+}
+#heading{ 
+	color:white;
+	background-color: #6c5c48;
+	box-shadow: 4px 4px 5px #413b3b;
+	border: 1px solid Yellow;
+}
+#question{
+	font-size: 100%; 
+}
+.btn, footer{
+	box-shadow: 10px 10px 8px #413b3b;
+	border-radius: 8px;
+	
 }
 .btn{ 
 	font-size: 110%;
-	background-color: white; color: black; border: 2px solid red; 
-	border-radius: 8px;
-	box-shadow: 10px 10px 8px #413b3b;
+	background-color: white; 
+	color: black;
+	border: 2px solid red; 
 }
 footer{
-	font-size: 50%; color: red; width: 80%; margin: auto; margin-top: 10px;
-	border: 1px solid red; border-radius: 16px;box-shadow: 10px 10px 8px #413b3b;
-	background-color: #6c5c48; color:white; padding:4px;
+	font-size: 50%; 
+	color: red; 
+	width: 94%; 
+	margin: auto; 
+	margin-top: 10px;
+	background-color: #6c5c48; 
+	color:white; 
+	padding:4px;
+	border: 1px solid Yellow;
 }

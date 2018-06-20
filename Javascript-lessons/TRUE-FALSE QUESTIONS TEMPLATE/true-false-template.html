@@ -9,7 +9,8 @@
 </head>
 
 <body> 
-    <span id="">Is the Statement True of False? </span>  <br>
+   	<span id=""> From "The Rainbow" </span>  <br>
+    <span id="heading">Is the Statement True of False? </span>  <br>
     <span id="question" style="color:blue"></span>  <br> 
     
     <img src="" id="pic" width="240px" height="240px"/> <br>
@@ -55,7 +56,16 @@
             if(i>=length){
                 i=-1;
 				score_sound.play();
-				e("question").innerHTML="You are done! <br> Your scrore is "+ truecount + " !";
+				if(truecount<=8){
+					e("question").innerHTML="Not bad but try again!<br> You can do better! <br> Your scrore is "+ truecount + " !";
+				}
+				else if(truecount>9 && truecount <=11){
+					e("question").innerHTML="Impressive!<br> You are good! <br> Your scrore is "+ truecount + " !";
+				}
+				else if(truecount === 12){
+					e("question").innerHTML="Excellent!!<br>You are a genius! <br> Your scrore is "+ truecount + " !";
+				}
+				
 				e("trace").innerHTML = "";
 				button_display_hide();
 				e("nextbtn").parentNode.removeChild(e("nextbtn"));
