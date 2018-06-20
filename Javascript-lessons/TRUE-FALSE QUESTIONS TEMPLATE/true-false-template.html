@@ -5,23 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <style>
-        body{ font-size: 24px; text-align: center; margin: auto;}
-		#question{
-			font-size: 110%;
-		}
-		.btn{ 
-			font-size: 110%;
-			background-color: white; color: black; border: 2px solid red; 
-			border-radius: 8px;
-			box-shadow: 10px 10px 8px #413b3b;
-		}
-		footer{
-			font-size: 50%; color: red; width: 80%; margin: auto; margin-top: 10px;
-			border: 1px solid red; border-radius: 16px;box-shadow: 10px 10px 8px #413b3b;
-			background-color: #6c5c48; color:white; padding:4px;
-		}
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/tfq_style.css">
 </head>
 
 <body> 
@@ -40,37 +24,20 @@
     	&copy Soumen Chakraborty - June 2018  <br> Strictly for Educational and Non-commercial purpose only.
     </footer>
     
+    <script src="js/e.js"></script>
+    <script src="js/imgsrc.js"></script>
+    <script src="js/imgfunc.js"></script>
+    <script src="js/audiosrc.js"></script>
+    <script src="js/tfq.js"></script>
+    <script src="js/answer_action.js"></script>
     <script>
-		const trueFX = new Audio("sound/ting-128kbps.ogg");
-		const falseFX = new Audio("sound/nope_sound.oga");
-		const next_sound =  new Audio("sound/click_fx1.oga");
-		const score_sound = new Audio("sound/result_sound.oga");
-		
-		const trueimages = ["pic/1r.png","pic/2r.png","pic/3r.png"];
-		const falseimages = ["pic/1w.png","pic/2w.png","pic/3w.png","pic/4w.png"];
-		const nxtimages = ['pic/nxtimg/1-min.jpg',
-							'pic/nxtimg/2-min.jpg',
-							'pic/nxtimg/3-min.jpg',
-							'pic/nxtimg/4-min.jpg',
-							'pic/nxtimg/5-min.jpg',
-							'pic/nxtimg/6-min.jpg',
-							'pic/nxtimg/7-min.jpg',
-							'pic/nxtimg/8-min.jpg',
-							'pic/nxtimg/9-min.jpg',
-							'pic/nxtimg/10-min.jpg'
-			   ];
+				
 		changenextIMG();
 		e("nextbtn").style.visibility="hidden";
 		e("refresh").style.visibility="hidden";
 			
 		let truecount=0;
-		
-        const q=[
-			"Any name is noun.", true, 
-			"A verb describes a thing.", false,
-			"Pronoun stands in place of noun.", true,
-			"How things are done, the adjectives tell.", false
-		];
+		       
         const length=q.length/2; 
 		let i= 0; 
 		let question = q[i];
@@ -118,31 +85,7 @@
 			e("rightbtn").style.visibility="hidden";
             e("wrongbtn").style.visibility="hidden";
             e("nextbtn").style.visibility="visible";
-		}
-		
-		function correct_answer_action(){
-			changetrueIMG(); trueFX.play();
-			e("trace").innerHTML = "You are right!";
-			truecount++;
-		}
-		
-		function wrong_answer_action(){
-			changefalseIMG(); falseFX.play();
-			e("trace").innerHTML = "You are wrong!";
-		}
-		
-		function changetrueIMG(){
-				e("pic").src= trueimages[Math.floor(Math.random()*trueimages.length)];
-		}
-		function changefalseIMG(){
-				e("pic").src= falseimages[Math.floor(Math.random()*falseimages.length)];
-		}		
-		function changenextIMG(){
-				e("pic").src= nxtimages[Math.floor(Math.random()*nxtimages.length)];
-		}       
-        function e(id){
-            return document.getElementById(id);
-        }
+		}        
     </script>
 </body>
 
