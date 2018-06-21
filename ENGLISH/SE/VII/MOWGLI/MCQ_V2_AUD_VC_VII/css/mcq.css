@@ -1,0 +1,71 @@
+body{
+	font-size: 20px;
+	text-align: center; 
+	margin: auto;
+}
+#topic{
+	border: 1px solid red;
+	border-radius: 15px;
+	background-color: darkolivegreen;
+	color: white;
+}
+#quiz_board{
+	border: 1px solid red;
+	border-radius: 15px;
+	padding: 5px;
+	margin: 1%;
+	height: 6em;
+	background-color: cornsilk;
+}
+#question{
+	font-size: 125%;
+	color: blue;
+
+}
+#option_board{
+	text-align: left;
+	margin: 1%;
+	height: 6em;
+	border: 1px solid red;
+	border-radius: 15px;
+	padding: 5px;
+}
+
+#btn_board{
+	border: 1px solid red;
+	border-radius: 15px;
+	padding: 10px;
+	background-color: cornsilk;
+}
+.nav{			
+  padding: 5px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #f72a2a; /*#4CAF50;*/
+  border: 2px solid #2575f5;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.nav:hover {background-color: #5ba8a3}
+.nav:active{
+	background-color: #f26262;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+#message_box{
+	border: 2px solid #2575f5;
+	border-radius: 15px;
+	padding: 5px;
+	background-color: aqua;
+}
+#check{
+	font-size: 110%;
+	text-align: center;
+}
+footer{
+	font-size: 80%; color: crimson;
+}
