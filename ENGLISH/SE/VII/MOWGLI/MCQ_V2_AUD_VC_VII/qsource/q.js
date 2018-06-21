@@ -1,5 +1,5 @@
  const list=[
-            "who wrote \"The Jungle Book\"?",
+            "Who wrote \"The Jungle Book\"?",
 	 		"Wordsworth.",
 	 		"Rudyard Kipling.",
 	 		"Shakespeare.",
