@@ -29,7 +29,7 @@
 	
 	<input type="number" id="topv" style="width:80px; height:25px;"  onchange="trans()">
 	<input type="number" id="leftv" style="width:80px; height:25px;"  onchange="trans()"><br>
-	<span id="trace"></span>
+	<span id="trace" onclick="changecol(this)"></span>
 	
 	<script>
 		e("bg_pic").style.zIndex=-1;
@@ -70,7 +70,15 @@
 		}
 		/*---------------------MOVE DIAGONAL END -----------------------*/
 		
-		
+		function changecol(elem){
+			if( elem.id==="trace"){
+				e("trace").style.backgroundColor="yellow";
+			}
+			if(elem.id==="topv"){
+				e("topv").style.backgroundColor="yellow";
+			}
+			
+		}
 		
 		function sendtoback(){
 			e("frame").style.zIndex=1;
