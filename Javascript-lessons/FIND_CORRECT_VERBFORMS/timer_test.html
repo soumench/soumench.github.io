@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<span id="one" onclick="count(this)">Hmmmmmm</span><br><br>
+	<span id="two" onclick="count(this)">gggggggg</span>
+	
+	<script>
+	
+	let time; let i=0;
+		
+	function count(el){
+		const eid = el.id;
+		if(eid==="one"){
+			
+			animate(eid);
+		}
+		
+		if(eid==="two"){
+			animate(el.id);
+		}
+	}
+	let t; let l;	
+	function animate(eid){
+		
+		t = e(eid).offsetTop;
+		l = e(eid).offsetLeft;		
+		
+		
+		clearInterval(time);
+		time= setInterval(function(){ i++;
+									 
+				t+=i;
+				move(eid, t+"px", l+"px");
+				if(t>=556){
+					clearInterval(time); del(eid); i=0;
+				}	
+									 
+				eid.innerHTML=`counting i = ${i}`;
+				/*if(i>10){i=0; clearInterval(time); }*/
+			}, 10);
+	}
+		
+		
+	function move(id, t, l){
+			e(id).style.position="absolute";
+			e(id).style.top=t;
+			e(id).style.left=l;
+    }
+	function del(id){e(id).parentNode.removeChild(e(id));}	
+	function e(id){return document.getElementById(id);}
+	</script>
+
+</body>
+
+</html>

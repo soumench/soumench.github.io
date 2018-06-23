@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<span id="one" onclick="fallDown(this)">ONEEEEE</span><br><br>
+	<span id="two" onclick="fallDown(this)">TWOOOOO</span> <br><br>
+	<span id="three" onclick="fallDown(this)">THREEE</span> <br><br>
+	<img src="480X640_grid3.png" id="pic" width="240px" height="60px" onclick="fallDown(this)">
+	
+	<script src="animate_fall.js"></script>
+	<script>
+		let time; let i=0; let t; let l;
+		function fallDown(el){
+			const eid = el.id;
+			if(eid==="one"){animate_fall(eid);}
+			if(eid==="two"){animate_fall(eid);}
+			if(eid==="three"){animate_fall(eid);}
+			if(eid==="pic"){animate_fall(eid);}
+		}		
+		
+	</script>
+
+</body>
+
+</html>
