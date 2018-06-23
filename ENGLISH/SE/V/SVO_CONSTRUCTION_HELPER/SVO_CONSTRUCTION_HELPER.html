@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+		body{font-size: 16px;}
+		#contents{display:block;}
+	</style>
+</head>
+  <h3 id="topic" onClick="window.location.reload()">SVO Construction Helper</h3>
+  <span id="direction">Click and put the words into the proper columns.</span>
+   <div id="contents">
+		<!--<img id="bg_pic" alt="" width="480" height="640" src="480X640_grid.png" z-index="-1";>-->
+		<img id="bg_pic2" alt="" width="480" height="640" src="img/480X640_grid4.png" z-index="0";>
+		<span id="subject" onclick="move_subjects()" >SUBJECT</span>
+		<span id="verb" onclick="move_verbs()">VERB</span>
+		<span id="object" onclick="move_objects()">OBJECT</span>
+
+		<span id="soumen" onclick="place(this)">Soumen<br>(সৌমেন)</span>
+		<span id="i" onclick="place(this)">I<br> (আমি)</span> 
+		<span id="we" onclick="place(this)">We<br>(আমরা)</span> 
+		<span id="you" onclick="place(this)">You<br>(তুমি,তোমরা)</span>
+		<span id="he" onclick="place(this)">He/She<br> (সে)</span>
+		<span id="they" onclick="place(this)">They<br>(তারা)</span>
+
+		<span id="plays" onclick="place(this)">plays<br>(খেলে)</span>
+		<span id="wrote" onclick="place(this)">wrote (লিখেছিলে<br>অথবা লিখিয়াছিলে)</span> 
+		<span id="eating" onclick="place(this)">was eating<br>(খাচ্ছিল, খাইতেছিল)</span> 
+		<span id="love" onclick="place(this)">love<br>(ভালোবাসি)</span>
+		<span id="buy" onclick="place(this)">will buy<br> (কিনবো)</span> 
+		<span id="made" onclick="place(this)">made<br> (তৈরী করেছিল)</span>
+
+		<span id="chess" onclick="place(this)">chess.<br>(দাবা)</span>
+		<span id="icecream" onclick="place(this)">icecream.<br>(আইসক্রিম)</span> 
+		<span id="computer" onclick="place(this)">a computer.<br>(কম্পিউটার)</span> 
+		<span id="poem" onclick="place(this)">a poem.<br>(কবিতা)</span>
+		<span id="biryani" onclick="place(this)">Biriyani.<br>(বিরিয়ানী)</span> 
+		<span id="toy" onclick="place(this)">a toy.<br>(একটি খেলনা)</span>
+    </div>
+    	<span id="credit" > &copy Made by Soumen Chakraborty - 2018 <br> Strictly for Educational and Non-commercial usage only</span>
+    	
+    	
+    <script src="js/e.js"></script>
+    <script src="js/move.js"></script>
+    <script src="js/mass_move.js"></script>
+    <script>
+		const ting = new Audio("sound/ting-128kbps.ogg");
+        e("bg_pic2").style.zIndex=-1;
+		e("topic").style.zIndex=0;
+		e("direction").style.zIndex=1;
+		e("credit").style.zIndex=2;
+		move("topic", "1px","100px");
+		move("credit", "600px","70px");
+		
+		const header_height = "75px";
+		move("direction", "45px","100px");
+        move("subject", header_height,"40px");
+        move("verb", header_height,"225px");
+        move("object", header_height,"380px");
+		
+		const r1 = "100px"; const r2 = "150px";	const r3 = "200px";
+		const r4 = "250px"; const r5 = "300px"; const r6 = "350px";
+		const col1 = "40px"; const col2="190px"; const col3="360px";
+        
+		/*----- word arrangement start -----*/
+		const wrow1 = "400px"; const wcol1 = "20px";
+		const wrow2 = "450px"; const wcol2 = "100px";
+		const wrow3 = "500px"; const wcol3 = "188px";
+		const wrow4 = "550px"; const wcol4 = "285px";
+		const wrow5 = "600px"; const wcol5 = "425px";
+        move("soumen", wrow1, wcol1);
+        move("i", wrow1,wcol4);
+        move("we", wrow3,wcol5);
+        move("you", wrow4, wcol4);
+        move("he", wrow1,wcol5);
+        move("they", wrow2,wcol1);
+		
+		move("plays", wrow2, wcol2);
+		move("love", wrow1, wcol3);         
+		move("buy", wrow4,wcol1);
+		move("wrote", wrow2, wcol3);
+		move("eating", wrow3, wcol4);
+		move("made", wrow3, wcol1);
+		
+		move("chess",wrow1, col3);
+		move("icecream", wrow1,wcol2);        
+		move("computer",wrow4, wcol3);
+		move("poem", wrow4, wcol2);
+		move("biryani",wrow3,wcol3);
+		move("toy", wrow2, "350px");
+		/*----- word arrangement end -----*/
+		
+        
+        function place(el){
+			ting.play();
+            if(el.id === "soumen"){move(el.id, r1, col1);}
+            if(el.id === "i"){move(el.id, r2, col1);}         
+            if(el.id === "we"){move(el.id, r3, col1);}
+            if(el.id === "you"){move(el.id, r4, col1);}
+            if(el.id === "he"){move(el.id, r5, col1);}
+            if(el.id === "they"){move(el.id, r6, col1);}
+            
+            if(el.id === "plays"){move(el.id, r1, col2);}
+            if(el.id === "love"){move(el.id, r2, col2);}         
+            if(el.id === "buy"){move(el.id, r3, col2);}
+            if(el.id === "wrote"){move(el.id, r4, col2);}
+            if(el.id === "eating"){move(el.id, r5, col2);}
+            if(el.id === "made"){move(el.id, r6, col2);}
+			
+			if(el.id === "chess"){move(el.id, r1, col3);}
+            if(el.id === "icecream"){move(el.id, r2, col3);}         
+            if(el.id === "computer"){move(el.id,  r3, col3);}
+            if(el.id === "poem"){move(el.id, r4, col3);}
+            if(el.id === "biryani"){move(el.id, r5, col3);}
+            if(el.id === "toy"){move(el.id, r6, col3);}
+        }       
+    </script>
+<body>
+
+</body>
+
+</html>
