@@ -43,32 +43,29 @@
 		move("leftv","50px","280px");
 		move("trace", "680px","150px");
 		
-		
 		e("topv").value = "320";
 		e("leftv").value = "240";
 		
-		/*---------------------MOVE DIAGONAL START -----------------------*/
+		/*------MOVE DIAGONAL START ---------*/
 		
 		let time;
 		function move_diagonal(){
-			time = setInterval( trans2, 10);	
+			time = setInterval( trans2, 10);
 		}
-		
-		let tv= parseInt( e("topv").value); 
+		let tv= parseInt( e("topv").value);
 		let lv = parseInt(e("leftv").value);
 		
 		function trans2(){
-			tv+=2; 
+			tv+=2;
 			lv+=1;
 			move("myBtn", tv+"px", lv+"px");
 			if(tv>=556){
 				clearInterval(time);
-				move("myBtn", "556px", "400px"); /*final tweak*/
+				move("myBtn", "556px", "400px");/*final tweak*/
 			}
-						
 			e("trace").innerHTML=`top = ${tv} and left = ${lv}`;
 		}
-		/*---------------------MOVE DIAGONAL END -----------------------*/
+		/*---------------------MOVE DIAGONAL END --------------*/
 		
 		function changecol(elem){
 			if( elem.id==="trace"){
@@ -77,9 +74,7 @@
 			if(elem.id==="topv"){
 				e("topv").style.backgroundColor="yellow";
 			}
-			
 		}
-		
 		function sendtoback(){
 			e("frame").style.zIndex=1;
 			e("frame").style.width="100px";
@@ -89,19 +84,14 @@
 			move("frame",newt-5+"px", newl-10+"px" );
 			e("trace").innerHTML=`btn offset top = ${newt} and left = ${newl}`;
 		}
-		
-		
-		
+				
 		function trans(){
-			let tv= e("topv").value+"px"; 
+			let tv= e("topv").value+"px";
 			let lv = e("leftv").value+"px";
 			move("myBtn", tv, lv);
-						
 			e("trace").innerHTML=`top = ${tv} and left = ${lv}`;
 		}
-		
-		
-		
+				
 		function move(id, t, l){
 			e(id).style.position="absolute";
 			e(id).style.top=t;
