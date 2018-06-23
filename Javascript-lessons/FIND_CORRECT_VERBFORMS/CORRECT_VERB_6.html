@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		.c{color: blue;}
+	</style>
+</head>
+
+<body>
+	<h3>Click on the correct verb form.</h3>
+	1. He <span id="w1" onclick="wa1(this)" class="c">read / </span>
+		 <span id="a1" onclick="ra(this)" class="c">reads</span> 
+	  a story book.
+	<br>  
+	2. We <span id="a2" onclick="ra(this)" class="c">have eaten </span>
+		 <span id="w2" onclick="wa2(this)" class="c">/ has eaten</span> 
+	 a plate of Biryani.
+	<br>
+	<img src="" width="240px" height="60px" id="pic">
+	<br>
+	<span id="trace"></span>	
+	
+	<script>
+		let ea1=e("a1"); let ew1=e("w1");
+		let ea2=e("a2"); let ew2=e("w2");
+		let etrace=e("trace");
+		
+		function ra(el){
+			if(el===ea1){ make_green(ea1); make_red(ew1);/*del("w1");*/	}
+			if(el===ea2){ make_green(ea2);  make_red(ew2); /*del("w2");*/}
+			e("pic").src ="correct_240X60_150ms.gif";
+		}
+		
+		function wa1(el){
+			if(el===ew1){ 
+				make_green("a1");
+				make_red(el.id);
+				get_offset1("w1");
+			}
+		}		
+			
+				
+		let i= 0; let time;
+		let t;    let l;
+		
+		function get_offset1(id){
+			t = e(id).offsetTop;
+			l = e(id).offsetLeft;
+			time = setInterval( fall1, 10);
+		}		
+		function fall1(){
+			t+=2;
+			move(ew1, t+"px", l+"px");
+			if(t>=556){
+				clearInterval(time);
+				del("w1");
+			}
+			 etrace.innerHTML=`t = ${t} and l= ${l}`;
+		}		
+		
+		function get_offset2(id){
+			t = e(id).offsetTop;
+			l = e(id).offsetLeft;
+			time = setInterval( fall2, 10);
+		}		
+		function fall2(){
+			t+=2;
+			move(ew2, t+"px", l+"px");
+			if(t>=556){
+				clearInterval(time);
+				del("w2");
+			}
+			 etrace.innerHTML=`t = ${t} and l= ${l}`;
+		}
+		
+		function move(eid, t, l){
+			eid.style.position="absolute";
+			eid.style.top=t;
+			eid.style.left=l;
+    	}		
+		function make_green(eid){
+			eid.style.color="green"; 
+			eid.style.textDecoration="underline";
+		}
+		function make_red(eid){
+			eid.style.color="red"; 
+			eid.style.textDecoration='line-through';
+		}
+		function del(id){e(id).parentNode.removeChild(e(id));}		
+		function e(id){return document.getElementById(id);}
+	</script>
+</body>
+
+</html>
