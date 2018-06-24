@@ -47,6 +47,8 @@
 		const WITHAUDIO=false;
 		const total_q = list.length/5;
 		e("progressBar").value=1; e("progressBar").max = total_q ;
+		let time;
+		
 		
         let i=0;
         let q = list[0];
@@ -62,11 +64,22 @@
 			    button.id === "bbtn" && ans==="b" ||
 		        button.id === "cbtn" && ans==="c"){
 				hide_buttons();
+				time = setTimeout(show, 3000);
 			}
 			
-           else{ e("check").innerHTML=wrong_message(); wrong_audio();}
+           else{ 
+			   e("check").innerHTML=wrong_message(); 
+			    wrong_audio();
+		   		time= setTimeout(show, 5000);
+		   }
+			 e("check").innerHTML=`The correct answer is : ${ans}`; 
          }		
 		function show(){
+			i++;
+			if(i>=list.length/5){
+				i=0;
+			}		
+						
 			if(WITHAUDIO){nxt_audio.play();}
             q = list[i*5];
             a = list[i*5+1]; b = list[i*5+2]; c = list[i*5+3];
