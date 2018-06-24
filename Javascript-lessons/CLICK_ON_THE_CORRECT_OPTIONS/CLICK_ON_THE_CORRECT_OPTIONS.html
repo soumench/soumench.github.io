@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		body{font-size: 24px; text-align: center;}
+		#topic{font-size:100%; font-weight:bolder;}
+		#questions{text-align:left;}
+		.option{ color: blue; font-size: 90%;}
+		.option:hover{cursor: pointer;}
+		#pic{margin:auto;}
+		footer{font-size: 60%; color: crimson;}
+	</style>
+</head>
+
+<body>
+	<span id="topic">Click on the correct options.</span>
+	<hr>
+	<div id="questions">
+		1. He 
+		 	<span id="w1" onclick="wa(this)" class="option">reading / </span>
+			<span id="a1" onclick="ra(this)" class="option">reads</span> 
+		   a story book.<br>  
+		
+		2. We 
+			 <span id="a2" onclick="ra(this)" class="option">have eaten </span>
+			 <span id="w2" onclick="wa(this)" class="option">/ has eaten</span> 
+			 a plate of Biryani.<br>
+	    
+		3. Ravi is 
+		 	<span id="a3" onclick="ra(this)" class="option">stronger </span>
+			<span id="w3" onclick="wa(this)" class="option">/ strong</span> 
+		 than Arun.<br>
+		4. Soumen did the work 
+			 <span id="w4" onclick="wa(this)" class="option">tomorrow / </span> 
+			 <span id="a4" onclick="ra(this)" class="option">yesterday</span>.
+		<br>
+		5. He 
+		 	<span id="a5" onclick="ra(this)" class="option">likes</span> 
+			<span id="w5" onclick="wa(this)" class="option">/ like</span>
+			to play football. 
+		<br>
+		6. May I
+	   		<span id="w6" onclick="wa(this)" class="option">coming /</span>	
+		   <span id="a6" onclick="ra(this)" class="option">come in</span> ?
+		<br>
+		7. Aftab is 
+	   		<span id="w7" onclick="wa(this)" class="option">a /</span>	
+		   <span id="a7" onclick="ra(this)" class="option">an</span> 
+		   early riser.
+		<br>
+		8.One of the  
+   			<span id="a8" onclick="ra(this)" class="option">students</span>
+	   		<span id="w8" onclick="wa(this)" class="option">/student</span>	
+		  saw the incident.
+		<br>
+		9.Mother forbade me 
+  			<span id="w9" onclick="wa(this)" class="option">not to run/</span> 
+   			<span id="a9" onclick="ra(this)" class="option">to run</span>
+	   	  in the sun.
+		<br>
+		10. Father requested me 
+  			<span id="w10" onclick="wa(this)" class="option"> to gave /</span> 
+   			<span id="a10" onclick="ra(this)" class="option">to give</span>
+	   	  him a glass of water.
+		<br>
+	</div>
+	<span id="trace"></span>
+	<hr>
+	<img src="" id="pic" width="240px" height="60px">
+	<hr>
+	<footer>
+		&copy Made by Soumen Chakraborty - 2018 <br>
+		Strictly for Educational, Non-commercial and Non-Profit purpose.
+	</footer>
+	<button onclick="window.location.reload()">Try Again.</button>	
+	
+	<script src="js/animate_fall.js"></script>
+	<script src="js/right_sound.js"></script>
+	<script src="js/make_color.js"></script>
+	<script src="js/move.js"></script>
+	<script src="js/triggers.js"></script>
+	<script src="js/del.js"></script>
+	<script src="js/e.js"></script>
+	<script>
+		e("pic").src="img/intro_anim.gif";
+		function ra(el){
+			trigger_right();
+			const eid = el.id;
+			make_green(eid);
+			let ll = "w"+ eid.substr(-1);
+			if(eid==="a1" ||eid==="a2" ||eid==="a3" ||eid==="a4"
+			  ||eid==="a5" ||eid==="a6" ||eid==="a7" ||eid==="a8"
+			  ||eid==="a9" ||eid==="a10"){
+				make_red(ll);
+			}
+		}		
+		function wa(el){
+			const eid = el.id;
+			if(eid==="w1" ||eid==="w2"||eid==="w3"||eid==="w4" 
+			  ||eid==="w5" ||eid==="w6" ||eid==="w7" ||eid==="w8"
+			  ||eid==="w9" ||eid==="w10"){
+			   trigger_wrong(eid);
+			}	
+		}		
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		.option{ color: blue;}
+	</style>
+</head>
+
+<body>
+	<h3>Click to select the correct verb form.</h3>
+	1. He <span id="w1" onclick="wa(this)" class="option">reading / </span>
+		 <span id="a1" onclick="ra(this)" class="option">reads</span> 
+	  a story book.
+	<br>  
+	2. We <span id="a2" onclick="ra(this)" class="option">have eaten </span>
+		 <span id="w2" onclick="wa(this)" class="option">/ has eaten</span> 
+	 a plate of Biryani.
+	<br>
+	<span id="trace"></span>
+	<img src="" id="r_pic" width="240px" height="60px">	
+	
+	<script src="animate_fall.js"></script>
+	<script src="right_sound.js"></script>
+	<script>
+		function ra(el){
+			trigger_right();
+			
+			if(el.id==="a1"){ make_green(el.id); make_red("w1");}
+			else if(el.id==="a2"){ make_green(el.id);  make_red("w2");}
+			
+		}
+		
+		function wa(el){
+			if(el.id==="w1" ||el.id==="w2" ){
+			   trigger_wrong(el.id);
+			}	
+		}
+		
+		let time; let i=0; let t; let l;
+		
+		function trigger_right(){
+			right_sound.play();
+			e("r_pic").src="correct_240X60_150ms.gif";
+		}
+		
+		function trigger_wrong(id){
+			make_red(id);
+			animate_fall(id);
+		}
+		
+		function move(id, t, l){
+			e(id).style.position="absolute";
+			e(id).style.top=t;
+			e(id).style.left=l;
+    	}
+		function make_green(id){
+			e(id).style.color="green"; 
+			e(id).style.textDecoration="underline";
+		}
+		function make_red(id){
+			e(id).style.color="red"; 
+			e(id).style.textDecoration='line-through';
+		}
+		function del(id){e(id).parentNode.removeChild(e(id));}		
+		function e(id){return document.getElementById(id);}
+	</script>
+</body>
+
+</html>
