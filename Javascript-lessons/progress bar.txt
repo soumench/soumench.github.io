@@ -1,0 +1,5 @@
+ <progress id="progressBar" value="0" max="100"></progress>
+
+e("progressBar").value=0;
+
+e("progressBar").max = 100;
