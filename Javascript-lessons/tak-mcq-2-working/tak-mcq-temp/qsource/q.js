@@ -12,8 +12,8 @@ const list=[
 	 		"Himalayas.",
 	 		"Seeonee.",
 	 		"c",
-	 
-            "Mother Wolf had",
+	
+	        "Mother Wolf had",
 	 		"three cubs",
 	 		"four cubs",
 	 		"no cubs",
@@ -85,9 +85,11 @@ const list=[
 	 		"very wise.",
 	 		"c",
 	 
-	 		"Who was cunning as a jackal, bold as a buffalo and reckless as a wounded elphant?",
+	 		"Who was cunning as a jackal, bold as a buffalo and reckless as a wounded elephant?",
 	 		"Baloo.",
 	 		"Bagheera.",
 	 		"Father Wolf.",
-	 		"b"
+	 		"b"         
+			
+	
         ];

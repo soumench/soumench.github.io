@@ -1,4 +1,5 @@
- const list=[
+const topic_name =" M.C.Q. on \"Mowgli Among The Wolves\""; 
+const list=[
             "Who wrote \"The Jungle Book\"?",
 	 		"Wordsworth.",
 	 		"Rudyard Kipling.",
@@ -11,8 +12,8 @@
 	 		"Himalayas.",
 	 		"Seeonee.",
 	 		"c",
-	 
-            "Mother Wolf had",
+	
+	        "Mother Wolf had",
 	 		"three cubs",
 	 		"four cubs",
 	 		"no cubs",
@@ -84,9 +85,11 @@
 	 		"very wise.",
 	 		"c",
 	 
-	 		"Who was cunning as a jackal, bold as a buffalo and reckless as a wounded elphant?",
+	 		"Who was cunning as a jackal, bold as a buffalo and reckless as a wounded elephant?",
 	 		"Baloo.",
 	 		"Bagheera.",
 	 		"Father Wolf.",
-	 		"b"
+	 		"b"         
+			
+	
         ];
