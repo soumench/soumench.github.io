@@ -21,17 +21,19 @@
 		<span id="a" class="quiz"></span><br>
 		<span id="b" class="quiz"></span><br>
 		<span id="c" class="quiz"></span><br>
-   </div>    
+   </div> 
+   <div id="message_box">
+    	<span id="check"></span><br>
+    </div>   
     <div id="btn_board">
+    	<img id="bar2" src="img/progressbar_10stepsX350ms.gif" id="pic" width="400px" height="20px" > <br>
 		<button id="abtn" class="nav" onclick="check(this)">A</button>
 		<button id="bbtn" class="nav" onclick="check(this)">B</button>
 		<button id="cbtn" class="nav" onclick="check(this)">C</button><br>
 		<!--<button id="prev" class="nav" onclick="decreament()">PREV</button>-->
-		<button id="next" class="nav" onclick="increament()">NEXT</button>
+		<!--<button id="next" class="nav" onclick="increament()">NEXT</button>-->
     </div>
-    <div id="message_box">
-    	<span id="check"></span><br>
-    </div>
+    
     <footer>
     	&copy Made by Soumen Chakraborty - 2018 <br>
     	Strictly for Educational and Non-commercial purpose only.
@@ -47,6 +49,7 @@
 		const WITHAUDIO=false;
 		const total_q = list.length/5;
 		e("progressBar").value=1; e("progressBar").max = total_q ;
+		e("bar2").src = "img/progressbar_Blank_400X20.png";
 		let time; let pictime;  e("pic").style.zIndex = 2;
 		
 		let i=0;
@@ -54,7 +57,7 @@
         let a = list[1]; let b = list[2]; let c = list[3];
         let ans = list[4];
         
-        e("question").innerHTML=`Question ${i+1} of ${total_q}<br> ${q} `;
+		show_question();
         choice_display();
         e("next").style.visibility=e("prev").style.visibility ="hidden";
              
@@ -65,6 +68,7 @@
 				hide_buttons();
 				show_correct_pic();
 				time = setTimeout(show, 3000);
+				
 			}
 			
            else{ 
@@ -72,10 +76,12 @@
 			    wrong_audio();
 			   	show_wrong_pic();
 		   		time= setTimeout(show, 5000);
+			    
 		   }
 			 e("check").innerHTML=`The correct answer is : ${ans}`; 
          }		
 		function show(){
+			e("bar2").src = "img/progressbar_Blank_400X20.png";
 			i++;
 			if(i>=list.length/5){
 				i=0;
@@ -86,7 +92,7 @@
             a = list[i*5+1]; b = list[i*5+2]; c = list[i*5+3];
             ans = list[i*5+4];
 			
-            e("question").innerHTML=`Question ${i+1} of ${total_q}<br> ${q} `;
+            show_question();
 			e("progressBar").value=i;
 			
             choice_display();
@@ -97,15 +103,20 @@
             e("cbtn").style.visibility="visible";
 			
             e("check").innerHTML="";
-            e("next").style.visibility=/*e("prev").style.visibility=*/"hidden";
+            /*e("next").style.visibility=e("prev").style.visibility="hidden";*/
         }
 		
+		function show_question(){
+			e("question").innerHTML=`<span style="color:red;">Question ${i+1} of ${total_q}</span><br> ${q} `;
+		}
+		
 		function show_wrong_pic(){
-			
 			e("pic").src = "img/wrong.gif";
+			e("bar2").src="img/progressbar_RED-5s-500X10steps_400X20_.gif";
 		}
 		function show_correct_pic(){
 			e("pic").src = "img/correct.gif";
+			e("bar2").src = "img/progressbar_green_400X20_3s_300X10steps.gif";
 		}
     </script>
 </body>

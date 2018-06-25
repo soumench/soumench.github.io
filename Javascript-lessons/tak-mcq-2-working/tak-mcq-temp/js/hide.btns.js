@@ -3,7 +3,7 @@ function hide_buttons(){
 	
 	e("a").style.color=e("b").style.color=e("c").style.color="white";
 	
-	e("next").style.visibility=/*e("prev").style.visibility =*/"visible";
+	/*e("next").style.visibility=e("prev").style.visibility ="visible";*/
 	
 	e("check").innerHTML=correct_message();
 	

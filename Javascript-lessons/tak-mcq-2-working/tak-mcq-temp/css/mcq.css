@@ -24,12 +24,13 @@ body{
 }
 #option_board{
 	text-align: left;
-	margin: 1%;
+	margin: %;
 	height: 6em;
 	border: 1px solid red;
 	border-radius: 15px;
 	padding: 5px;
 }
+
 
 #btn_board{
 	border: 1px solid red;
@@ -37,6 +38,7 @@ body{
 	padding: 10px;
 	background-color: cornsilk;
 }
+#bbtn{margin-left:10%;margin-right:10%;}
 .nav{			
   padding: 5px 25px;
   font-size: 24px;
