@@ -1,6 +1,6 @@
 function increament(){
 	i++;
-	if(i>=list.length/5){i=0;}           
+	if(i>=(list.length/5)+2){i=0;}           
 	/*show();*/
 }
 

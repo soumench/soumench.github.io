@@ -10,7 +10,7 @@
 
 <body>
     <div id="topic">
-    	<span id="Topic">M.C.Q. Template</span><br>
+    	<span id="topic_name"></span><br>
     	<progress id="progressBar" value="0" max="15"></progress> 
     </div>
     <div id="quiz_board">
@@ -49,6 +49,7 @@
     <script src="js/image_disp.js"></script>
     <script>
 		const WITHAUDIO=false;
+		e("topic_name").innerHTML=topic_name;
 		const total_q = list.length/5;
 		e("progressBar").value=1; e("progressBar").max = total_q ;
 		show_default_pic();
@@ -59,6 +60,8 @@
         let q = list[0];
         let a = list[1]; let b = list[2]; let c = list[3];
         let ans = list[4];
+		
+		let score;
         
 		show_question();
         choice_display();
@@ -73,7 +76,8 @@
 				/*e(ans).style.color="green";*/
 				if(WITHAUDIO){correct_audio();}
 				show_correct_pic();
-				time = setTimeout(show, 3000);				
+				time = setTimeout(show, 3000);
+				score++;
 			}			
            	else{ 
 				hide_buttons();
@@ -86,14 +90,15 @@
 			e("check").innerHTML=`The correct answer is : ${ans}`; 
          }		
 		function show(){
-			e("bar2").src = "img/progressbar_Blank_400X20.png";
+			clear_bar2();
 			if(WITHAUDIO){nxt_audio.play();}
-			
-			increament();
+						
+			i++;
+			if(i>=list.length/5){i=0;}  
 				
-            q = list[i*5];
-            a = list[i*5+1]; b = list[i*5+2]; c = list[i*5+3];
-            ans = list[i*5+4];
+            q=list[i*5];
+            a=list[i*5+1]; b=list[i*5+2]; c=list[i*5+3];
+            ans=list[i*5+4];
 			
             show_question();
 			choice_display();
@@ -111,7 +116,12 @@
 		function show_question(){
 			e("index").innerHTML =`Question ${i+1} of ${total_q}`;
 			e("question").innerHTML=`${q}`;
-		}		
+		}
+		function show_result(){
+			e("check").innerHTML=`Your score is ${score} out of ${total_q}`;
+			e("index").innerHTML="";
+			e("question").innerHTML="";
+		}
     </script>
 </body>
 

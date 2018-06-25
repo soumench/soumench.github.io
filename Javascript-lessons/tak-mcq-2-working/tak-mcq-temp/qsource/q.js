@@ -1,4 +1,5 @@
- const list=[
+const topic_name =" M.C.Q. on \"Mowgli Among The Wolves\""; 
+const list=[
             "Who wrote \"The Jungle Book\"?",
 	 		"Wordsworth.",
 	 		"Rudyard Kipling.",
