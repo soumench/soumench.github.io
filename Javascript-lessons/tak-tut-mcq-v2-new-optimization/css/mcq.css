@@ -40,12 +40,16 @@ body{
 	border-radius: 15px;
 	padding: 1%;
 	background-color: white;
+	box-shadow:5px 5px 15px grey; 
 }
 #btn_board{
 	border: 1px solid red;
 	border-radius: 15px;
 	padding: 10px;
 	background-color: cornsilk;
+}
+#bar2,#progressBar{
+	box-shadow:15px 5px 25px grey; 
 }
 /*#bbtn{margin-left:10%;margin-right:10%;}*/
 /*
