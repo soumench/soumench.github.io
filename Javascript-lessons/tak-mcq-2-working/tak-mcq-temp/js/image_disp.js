@@ -2,6 +2,7 @@ function show_default_pic(){
 	e("pic").src="img/blank_210X165.png";
 	e("bar2").src = "img/progressbar_Blank_400X20.png";
 	e("quiz_board").style.backgroundImage="url('img/quiz_bg_img_480X200.jpg')";
+	e("message_box").style.backgroundImage="url('img/LCD_BACKGROUND-min.jpg')";
 }
 function show_wrong_pic(){
 	e("pic").src = "img/wrong.gif";

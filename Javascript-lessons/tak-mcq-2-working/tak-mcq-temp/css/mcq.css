@@ -61,14 +61,15 @@ body{
 }
 
 #message_box{
-	border: 2px solid #2575f5;
-	border-radius: 15px;
-	padding: 5px;
-	background-color: aqua;
+	/*margin: auto;*/
+	
+	
+	width: 460px; height: 60px;
 }
 #check{
 	font-size: 110%;
 	text-align: center;
+	
 }
 footer{
 	font-size: 80%; color: crimson;
