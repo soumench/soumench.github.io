@@ -42,15 +42,14 @@ body{
 	background-color: white;
 	box-shadow:5px 5px 15px grey; 
 }
-#a:hover{cursor:pointer;}
-#b:hover{cursor:pointer;}
-#c:hover{cursor:pointer;}
-#btn_board{
+#a,#b,#c:hover{cursor:pointer;}
+
+/*#btn_board{
 	border: 1px solid red;
 	border-radius: 15px;
 	padding: 10px;
 	background-color: cornsilk;
-}
+}*/
 #bar2,#progressBar{
 	box-shadow:15px 5px 25px grey; 
 }
