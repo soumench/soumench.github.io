@@ -1,5 +1,5 @@
 function hide_buttons(){
-	e("abtn").style.visibility=e("bbtn").style.visibility=e("cbtn").style.visibility="hidden";
+	/*e("abtn").style.visibility=e("bbtn").style.visibility=e("cbtn").style.visibility="hidden";*/
 	
 	e("a").style.color=e("b").style.color=e("c").style.color="white";
 	
