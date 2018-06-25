@@ -15,7 +15,7 @@
     </div>
     <div id="quiz_board">    
 		<span id="question" ></span><br>
-		 
+		<img src="img/blank_210X165.png" id="pic" width="210px" height="165px" > 
 	</div>	
 	<div id="option_board">
 		<span id="a" class="quiz"></span><br>
@@ -47,10 +47,9 @@
 		const WITHAUDIO=false;
 		const total_q = list.length/5;
 		e("progressBar").value=1; e("progressBar").max = total_q ;
-		let time;
+		let time; let pictime;  e("pic").style.zIndex = 2;
 		
-		
-        let i=0;
+		let i=0;
         let q = list[0];
         let a = list[1]; let b = list[2]; let c = list[3];
         let ans = list[4];
@@ -64,12 +63,14 @@
 			    button.id === "bbtn" && ans==="b" ||
 		        button.id === "cbtn" && ans==="c"){
 				hide_buttons();
+				show_correct_pic();
 				time = setTimeout(show, 3000);
 			}
 			
            else{ 
 			   e("check").innerHTML=wrong_message(); 
 			    wrong_audio();
+			   	show_wrong_pic();
 		   		time= setTimeout(show, 5000);
 		   }
 			 e("check").innerHTML=`The correct answer is : ${ans}`; 
@@ -97,7 +98,15 @@
 			
             e("check").innerHTML="";
             e("next").style.visibility=/*e("prev").style.visibility=*/"hidden";
-        }		
+        }
+		
+		function show_wrong_pic(){
+			
+			e("pic").src = "img/wrong.gif";
+		}
+		function show_correct_pic(){
+			e("pic").src = "img/correct.gif";
+		}
     </script>
 </body>
 
