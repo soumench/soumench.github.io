@@ -2,15 +2,18 @@ body{
 	font-size: 20px;
 	text-align: center; 
 	margin: auto;
+	width: 480px; height: auto;
 }
 #topic{
-	border: 1px solid red;
+	border: 3px solid red;
 	border-radius: 15px;
 	background-color: darkolivegreen;
 	color: white;
+	padding: 5px;
+	font-size: 120%;
 }
 #quiz_board{
-	border: 1px solid red;
+	border: 3px solid red;
 	border-radius: 15px;
 	padding: 5px;
 	margin: 1%;

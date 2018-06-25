@@ -10,7 +10,7 @@
 
 <body>
     <div id="topic">
-    	<h3 id="Topic">M.C.Q. Template</h3>
+    	<span id="Topic">M.C.Q. Template</span><br>
     	<progress id="progressBar" value="0" max="15"></progress> 
     </div>
     <div id="quiz_board">    
@@ -68,17 +68,15 @@
 				hide_buttons();
 				show_correct_pic();
 				time = setTimeout(show, 3000);
-				
 			}
 			
-           else{ 
-			   e("check").innerHTML=wrong_message(); 
+           	else{ 
+				e("check").innerHTML=wrong_message(); 
 			    wrong_audio();
 			   	show_wrong_pic();
 		   		time= setTimeout(show, 5000);
-			    
-		   }
-			 e("check").innerHTML=`The correct answer is : ${ans}`; 
+		   	}
+			e("check").innerHTML=`The correct answer is : ${ans}`; 
          }		
 		function show(){
 			e("bar2").src = "img/progressbar_Blank_400X20.png";
