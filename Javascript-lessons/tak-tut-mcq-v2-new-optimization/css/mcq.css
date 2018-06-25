@@ -42,6 +42,9 @@ body{
 	background-color: white;
 	box-shadow:5px 5px 15px grey; 
 }
+#a:hover{cursor:pointer;}
+#b:hover{cursor:pointer;}
+#c:hover{cursor:pointer;}
 #btn_board{
 	border: 1px solid red;
 	border-radius: 15px;

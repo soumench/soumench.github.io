@@ -43,7 +43,7 @@
 		const total_q = list.length/5;
 		e("progressBar").value=0; e("progressBar").max=total_q-1 ;
 		show_default_pic();
-		
+		e("a").style.visibility=e("b").style.visibility=e("c").style.visibility="visible";
 		let time; let pictime;  e("pic").style.zIndex = 2;
 		
 		let i=0;
@@ -89,6 +89,7 @@
 		function show(){
 			clear_bar2();
 			e("a").style.border=e("b").style.border=e("c").style.border="3px solid grey";
+			e("a").style.visibility=e("b").style.visibility=e("c").style.visibility="visible";
 			e(ans).style.backgroundColor="white";
 			if(WITHAUDIO){nxt_audio.play();}
 						
@@ -121,7 +122,8 @@
 		function show_result(){
 			e("check").innerHTML=`Your score is ${score} out of ${total_q}`;
 			e("index").innerHTML=e("question").innerHTML=
-			e("a").innerHTML=e("b").innerHTML=e("c").innerHTML="";			
+			e("a").innerHTML=e("b").innerHTML=e("c").innerHTML="";	
+			e("a").style.visibility=e("b").style.visibility=e("c").style.visibility="hidden";	
 		}
 		function delay(){
 			i=-1; score=0;
