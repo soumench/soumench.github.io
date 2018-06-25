@@ -89,11 +89,8 @@
 			e("bar2").src = "img/progressbar_Blank_400X20.png";
 			if(WITHAUDIO){nxt_audio.play();}
 			
-			i++;
-			if(i>=list.length/5){
-				i=0;
-			}					
-			
+			increament();
+				
             q = list[i*5];
             a = list[i*5+1]; b = list[i*5+2]; c = list[i*5+3];
             ans = list[i*5+4];
