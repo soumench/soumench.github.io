@@ -19,10 +19,10 @@ body{
 	margin: 1%;
 	height: 6em;
 }
+#index{color:red; font-size:70%;}
 #question{
 	font-size: 125%;
 	color: blue;
-
 }
 #option_board{
 	text-align: left;
@@ -32,8 +32,6 @@ body{
 	border-radius: 15px;
 	padding: 5px;
 }
-
-
 #btn_board{
 	border: 1px solid red;
 	border-radius: 15px;
