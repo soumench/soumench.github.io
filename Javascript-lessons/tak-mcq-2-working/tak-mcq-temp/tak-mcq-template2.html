@@ -13,9 +13,10 @@
     	<span id="Topic">M.C.Q. Template</span><br>
     	<progress id="progressBar" value="0" max="15"></progress> 
     </div>
-    <div id="quiz_board">    
+    <div id="quiz_board">
+    	<span id="index" ></span><br>    
 		<span id="question" ></span><br>
-		<img src="img/blank_210X165.png" id="pic" width="210px" height="165px" > 
+		<img src="" id="pic" width="210px" height="165px" > 
 	</div>	
 	<div id="option_board">
 		<span id="a" class="quiz"></span><br>
@@ -45,11 +46,13 @@
     <script src="js/count.js"></script>
     <script src="js/choice_disp.js"></script>
     <script src="js/hide.btns.js"></script>
+    <script src="js/image_disp.js"></script>
     <script>
 		const WITHAUDIO=false;
 		const total_q = list.length/5;
 		e("progressBar").value=1; e("progressBar").max = total_q ;
-		e("bar2").src = "img/progressbar_Blank_400X20.png";
+		show_default_pic();
+		
 		let time; let pictime;  e("pic").style.zIndex = 2;
 		
 		let i=0;
@@ -59,41 +62,45 @@
         
 		show_question();
         choice_display();
-        e("next").style.visibility=e("prev").style.visibility ="hidden";
+        /*e("next").style.visibility=e("prev").style.visibility ="hidden";*/
              
         function check(button){
 			if( button.id === "abtn" && ans==="a" || 
 			    button.id === "bbtn" && ans==="b" ||
 		        button.id === "cbtn" && ans==="c"){
 				hide_buttons();
+				e("check").innerHTML=correct_message();
+				/*e(ans).style.color="green";*/
+				if(WITHAUDIO){correct_audio();}
 				show_correct_pic();
-				time = setTimeout(show, 3000);
-			}
-			
+				time = setTimeout(show, 3000);				
+			}			
            	else{ 
-				e("check").innerHTML=wrong_message(); 
-			    wrong_audio();
+				hide_buttons();
+				e("check").innerHTML=wrong_message();
+			    if(WITHAUDIO){wrong_audio();}
 			   	show_wrong_pic();
 		   		time= setTimeout(show, 5000);
 		   	}
+			e(ans).style.color="green";
 			e("check").innerHTML=`The correct answer is : ${ans}`; 
          }		
 		function show(){
 			e("bar2").src = "img/progressbar_Blank_400X20.png";
+			if(WITHAUDIO){nxt_audio.play();}
+			
 			i++;
 			if(i>=list.length/5){
 				i=0;
-			}		
-						
-			if(WITHAUDIO){nxt_audio.play();}
+			}					
+			
             q = list[i*5];
             a = list[i*5+1]; b = list[i*5+2]; c = list[i*5+3];
             ans = list[i*5+4];
 			
             show_question();
-			e("progressBar").value=i;
-			
-            choice_display();
+			choice_display();
+			e("progressBar").value=i;            
 			
             e("a").style.color= e("b").style.color= e("c").style.color="black";
 			
@@ -105,17 +112,9 @@
         }
 		
 		function show_question(){
-			e("question").innerHTML=`<span style="color:red;">Question ${i+1} of ${total_q}</span><br> ${q} `;
-		}
-		
-		function show_wrong_pic(){
-			e("pic").src = "img/wrong.gif";
-			e("bar2").src="img/progressbar_RED-5s-500X10steps_400X20_.gif";
-		}
-		function show_correct_pic(){
-			e("pic").src = "img/correct.gif";
-			e("bar2").src = "img/progressbar_green_400X20_3s_300X10steps.gif";
-		}
+			e("index").innerHTML =`Question ${i+1} of ${total_q}`;
+			e("question").innerHTML=`${q}`;
+		}		
     </script>
 </body>
 
