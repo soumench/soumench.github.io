@@ -81,6 +81,7 @@
 						
 			i++;
 			if(i>=list.length/5){i=0;}
+			
 				
             q=list[i*5];
             a=list[i*5+1]; b=list[i*5+2]; c=list[i*5+3];
@@ -94,6 +95,8 @@
 			e("abtn").style.visibility= e("bbtn").style.visibility=
             e("cbtn").style.visibility="visible";
 			e("check").innerHTML="";
+			
+			
         }
 		function show_question(){
 			e("index").innerHTML=`Question ${i+1} of ${total_q}`;

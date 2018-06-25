@@ -12,7 +12,6 @@ function show_correct_pic(){
 	e("pic").src = "img/correct.gif";
 	e("bar2").src = "img/progressbar_green_400X20_3s_300X10steps.gif";
 }
-
 function clear_bar2(){
 	e("bar2").src = "img/progressbar_Blank_400X20.png";
 }
