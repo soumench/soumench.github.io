@@ -5,7 +5,7 @@ function show_default_pic(){
 	e("message_box").style.backgroundImage="url('img/LCD_BACKGROUND-min.jpg')";
 }
 function show_wrong_pic(){
-	e("pic").src = "img/wrong.gif";
+	/*e("pic").src = "img/wrong.gif";*/
 	e("bar2").src="img/progressbar_RED-5s-500X10steps_400X20_.gif";
 }
 function show_correct_pic(){

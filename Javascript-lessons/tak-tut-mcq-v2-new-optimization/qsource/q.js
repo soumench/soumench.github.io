@@ -19,7 +19,7 @@ const list=[
 	 		"no cubs",
 	 		"b",
 	 		
-	 		"Tabaqui was a ",
+	 		/*"Tabaqui was a ",
 	 		"dog",
 	 		"jackal",
 	 		"bear",
@@ -91,5 +91,5 @@ const list=[
 	 		"Father Wolf.",
 	 		"b"         
 			
-	
+	*/
         ];
