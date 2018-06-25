@@ -1,0 +1,8 @@
+<div id="quiz_board">
+    	<span id="index" ></span><br>
+	<img src="" id="pic" width="210px" height="165px" > 
+</div>
+
+e("quiz_board").style.backgroundImage="url('img/my_img.jpg')";
+
+e("quiz_board").style.backgroundSize = "300px 300px"; 
