@@ -44,15 +44,18 @@ body{
 }
 #a,#b,#c:hover{cursor:pointer;}
 
+#bar2,#progressBar{
+	margin-top: 4%;
+	box-shadow:15px 5px 25px grey; 
+}
+
 /*#btn_board{
 	border: 1px solid red;
 	border-radius: 15px;
 	padding: 10px;
 	background-color: cornsilk;
 }*/
-#bar2,#progressBar{
-	box-shadow:15px 5px 25px grey; 
-}
+
 /*#bbtn{margin-left:10%;margin-right:10%;}*/
 /*
 .nav{			
@@ -75,13 +78,13 @@ body{
 }
 */
 
-#message_box{
+/*#message_box{
 	margin: auto;	
 	width: 460px; height: 60px;
-}
-#check{
+}*/
+/*#check{
 	font-size: 135%;
-}
+}*/
 footer{
 	font-size: 82%; color: crimson;
 }
