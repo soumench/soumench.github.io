@@ -45,7 +45,7 @@ body{
 #a,#b,#c:hover{cursor:pointer;}
 
 #bar2,#progressBar{
-	margin-top: 4%;
+	margin-top: 2%;
 	box-shadow:15px 5px 25px grey; 
 }
 
