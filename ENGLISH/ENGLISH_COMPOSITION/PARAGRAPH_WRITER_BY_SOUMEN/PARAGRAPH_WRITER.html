@@ -22,11 +22,13 @@
 		<span id="paragraph"></span><br>
 		<button type="button" id="refresh" onClick="window.location.reload();">Let's start again. <br> চলো আবার শুরু করি</button>
 	</div>
+	<footer> &copy Made by Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.</footer>
 	
 	<script src="js/eclean.js"></script>
 	<script src="js/ui.js"></script>
 	<script src="js/imgsrc.js"></script>
 	<script src="js/gererate_paragraph.js"></script>
+	<script src="../../year.js"></script>
 	<script>
 		const sound = new Audio("audio/my_click_sound.oga");
 		const ting = new Audio("audio/ting-128kbps.ogg");
@@ -64,8 +66,9 @@
 		function changeIMG(){
 				e("thepic").src= images[Math.floor(Math.random()*images.length)];
 		}
+		e("year").innerHTML = creation_year;
 	</script>
-	<footer> &copy Made by Soumen Chakraborty - Strictly for Educational and Non-Commercial purpose only.</footer>
+	
 
 </body>
 
