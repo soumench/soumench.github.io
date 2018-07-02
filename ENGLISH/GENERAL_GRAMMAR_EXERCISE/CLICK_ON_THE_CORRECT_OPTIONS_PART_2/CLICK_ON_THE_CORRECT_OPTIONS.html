@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		body{font-size: 24px; text-align: center;}
+		#topic{font-size:100%; font-weight:bolder;}
+		#questions{text-align:left;}
+		.option{ color: blue; font-size: 90%;}
+		.option:hover{cursor: pointer;}
+		#pic{margin:auto;}
+		footer{font-size: 60%; color: crimson;}
+	</style>
+</head>
+
+<body>
+	<span id="topic">Click on the correct options.</span>
+	<hr>
+	<div id="questions">
+		1. Shankar gave me a wrong
+		 	<span id="w1" onclick="wa(this)" class="option">informations / </span>
+			<span id="a1" onclick="ra(this)" class="option">information</span>.<br>  
+		
+		2.  
+			 <span id="a2" onclick="ra(this)" class="option">We </span>
+			 <span id="w2" onclick="wa(this)" class="option">/ we</span> 
+			 all enjoyed the movie.<br>
+	    
+		3.  
+		 	<span id="a3" onclick="ra(this)" class="option">It's </span>
+			<span id="w3" onclick="wa(this)" class="option">/ Its</span> 
+		 not good to tell lies.<br>
+		 
+		4. The day before yesterday, my parents went to visit 
+			 <span id="w4" onclick="wa(this)" class="option">there / </span> 
+			 <span id="a4" onclick="ra(this)" class="option">their</span>
+			 old house.	<br>
+			 
+		5. Come 
+		 	<span id="a5" onclick="ra(this)" class="option">here</span> 
+			<span id="w5" onclick="wa(this)" class="option">/ hare</span>
+			as soon as possible. <br>
+		
+		6. Soumen and his friends went to 
+	   		<span id="w6" onclick="wa(this)" class="option">see /</span>	
+		   <span id="a6" onclick="ra(this)" class="option">watch</span>
+		   a movie.	<br>
+		   
+		7. We all love our 
+	   		<span id="w7" onclick="wa(this)" class="option">india /</span>	
+		   <span id="a7" onclick="ra(this)" class="option">India</span> 
+		   which is a big country.
+		<br>
+		8. The Tajmahal is among one of the seven   
+   			<span id="a8" onclick="ra(this)" class="option">wonders</span>
+	   		<span id="w8" onclick="wa(this)" class="option">/ wonder</span>	
+		  of the world.
+		<br>
+		9. 
+  			<span id="w9" onclick="wa(this)" class="option">Come one /</span> 
+   			<span id="a9" onclick="ra(this)" class="option">Come on</span>, 
+   			let's go for a picnic.
+		<br>
+		10. He  
+  			<span id="w10" onclick="wa(this)" class="option"> do not /</span> 
+   			<span id="a10" onclick="ra(this)" class="option">does not </span>
+	   	  know how to solve Rubik's Cube.
+		<br>
+	</div>
+	<hr>
+	<img src="" id="pic" width="240px" height="60px">
+	<hr>
+	<footer>
+		&copy Made by Soumen Chakraborty - 2018 <br>
+		Strictly for Educational, Non-commercial and Non-Profit purpose.
+	</footer>
+	<button onclick="window.location.reload()">Try Again.</button>	
+	
+	<script src="js/animate_fall.js"></script>
+	<script src="js/right_sound.js"></script>
+	<script src="js/make_color.js"></script>
+	<script src="js/move.js"></script>
+	<script src="js/triggers.js"></script>
+	<script src="js/del.js"></script>
+	<script src="js/e.js"></script>
+	<script>
+		e("pic").src="img/intro_anim.gif";
+		function ra(el){
+			trigger_right();
+			const eid = el.id;
+			make_green(eid);
+			let ll = "w"+ eid.substr(-1);
+			if(eid==="a1" ||eid==="a2" ||eid==="a3" ||eid==="a4"
+			  ||eid==="a5" ||eid==="a6" ||eid==="a7" ||eid==="a8"
+			  ||eid==="a9" ||eid==="a10"){
+			   make_red(ll);
+			}
+		}		
+		function wa(el){
+			const eid = el.id;
+			if(eid==="w1" ||eid==="w2"||eid==="w3"||eid==="w4" 
+			  ||eid==="w5" ||eid==="w6" ||eid==="w7" ||eid==="w8"
+			  ||eid==="w9" ||eid==="w10"){
+			  trigger_wrong(eid);
+			}	
+		}		
+	</script>
+</body>
+</html>
