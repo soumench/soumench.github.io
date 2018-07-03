@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style> 
+		#trans {
+			border: 1px solid black;
+			background-color: lightblue;
+			width: 270px;
+			height: 200px;
+			overflow: auto;
+		}
+
+		#trans:hover {
+			background-color: coral;
+			width: 570px;
+			height: 500px;
+			padding: 100px;
+			border-radius: 50px;
+		}
+</style>
+</head>
+
+<body>
+	<span id="trans" onclick="tr()">HI! HARE KRISHANA!</span>
+	<script>
+		
+	function tr(){
+		e("trans").style.transition = "all 2s"; 
+	}
+	function e(id){
+		return document.getElementById(id);
+	}
+	</script>
+</body>
+
+</html>
