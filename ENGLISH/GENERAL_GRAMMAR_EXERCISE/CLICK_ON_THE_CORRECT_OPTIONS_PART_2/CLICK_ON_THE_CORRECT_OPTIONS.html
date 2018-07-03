@@ -95,8 +95,11 @@
 			let ll = "w"+ eid.substr(-1);
 			if(eid==="a1" ||eid==="a2" ||eid==="a3" ||eid==="a4"
 			  ||eid==="a5" ||eid==="a6" ||eid==="a7" ||eid==="a8"
-			  ||eid==="a9" ||eid==="a10"){
+			  ||eid==="a9" /*||eid==="a10"*/){
 			   make_red(ll);
+			}
+			else if (eid === "a10"){
+				make_red("w10");
 			}
 		}		
 		function wa(el){

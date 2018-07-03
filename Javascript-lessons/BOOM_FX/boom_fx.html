@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+
+<body id="mybody">
+	1. This is <span id="b1" onclick="boom(this)"> boom </span>.
+	
+	<script>
+		let f_size = "2.5rem";
+		e("mybody").style.fontSize = f_size;
+		
+		function boom(el){
+			if(el.id === "b1" ){
+				e(el.id).style.fontSize = f_size;
+			}
+		}
+			
+		
+	
+	</script>
+	<script src="e.js"></script>
+	<script src="del.js"></script>
+	<script src="move.js"></script>
+</body>
+
+</html>
