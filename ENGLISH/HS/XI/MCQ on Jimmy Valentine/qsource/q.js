@@ -15,14 +15,14 @@ const list=[
 	
 	        "Where is this short story taken from?",
 	 		"David Copperfield.",
-	 		"Roads of destiny.",
+	 		"Roads of Destiny.",
 	 		"Strong Roots.",
 	 		"b",
 	 		
 	 		"At first, Jimmy was in a ",
-	 		"Shop.",
-	 		"Prison.",
-	 		"Saloon.",
+	 		"shop.",
+	 		"prison.",
+	 		"saloon.",
 	 		"b",
 	 		
 	 		"Who escorted Jimmy to the front office?",
@@ -127,7 +127,7 @@ const list=[
 	 		"Polly Simpson.",
 	 		"a", 
 			
-			"At planter's Hotel, Jimmy registered as ",
+			"At Planter's Hotel, Jimmy registered as ",
 	 		"a cab driver.",
 	 		"shoe seller.",
 	 		"Ralph D. Spencer.",
