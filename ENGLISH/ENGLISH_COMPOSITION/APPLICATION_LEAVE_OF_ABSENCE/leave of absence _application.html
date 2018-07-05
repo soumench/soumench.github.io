@@ -5,76 +5,121 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
 	<style>
-		.txt{color: blue;}
+		body{ text-align: center;
+			width: 480px; height: 680px;
+			border: 2px solid red;
+			display: block;
+			font-size:18px;
+		}
+		#topic{ font-size:100%;}
+		#ui{background-color:#f5deb3; text-align:left; margin-left: 0%; margin-right: auto;}
+		.txt{color: blue; }
+		#opt_group{display:block; text-align:left; margin-left:5%;}
+		#letter{text-align: left;}
 	</style>
 </head>
 
 <body>
+	<span id="topic"><b>Write an application for a leave of absence.</b></span>
+	<hr>
 	<div id="ui">
-		<span class="txt">What is your name? / তোমার নাম :</span>
-		<input type="text" id="applicant_name" onchange="update()" ><br>
-		<span class="txt">What class do you read in? / তোমার ক্লাস :</span>
-		<input type="text" id="class_name" onchange="update()"><br>
-		<span class="txt">What is your Roll No? / তোমার ক্রমিক নং :</span>
-		<input type="number" id="roll" onchange="update()">
+		<span class="txt">1.Your name/তোমার নাম:</span>&ensp;&ensp;&ensp;
+		<input type="text" id="applicant_name" onchange="update()" placeholder="Enter your name here.." size="29"><br>
+		<span class="txt">2.The class you read in/তুমি যে ক্লাসে পড়:</span>&ensp;
+		<input type="text" id="class_name" onchange="update()" placeholder="Your class and section" size=15><br>
+		<span class="txt">3.Your Roll No/তোমার ক্রমিক নং:</span>&ensp;&ensp;&ensp;
+		<input type="number" id="roll" onchange="update()" placeholder="Enter your Roll No." size="15">
 	</div>
-	<div>
-	<legend><b>1.</b> What was the reason behind your absence?<br>
-   	তোমার অনুপস্থিতির কারন কী? </legend>
-    	<input type="radio" name="disease" onclick="choose(this.value)" value="fever">Fever<br>
-        <input type="radio" name="disease" onclick="choose(this.value)" value="upsetStomach">Upset stomach<br>
+	<hr>
+	<div id="opt_group">
+	<legend class="txt">4.The reason behind your absence/তোমার অনুপস্থিতির কারন: </legend>
+    	<input type="radio" name="disease" onclick="choose(this.value)" value="fever">Fever &ensp;
+        <input type="radio" name="disease" onclick="choose(this.value)" value="upset Stomach">Upset stomach &ensp;
         <input type="radio" name="disease" onclick="choose(this.value)" value="diarrhoea">Diarrhoea<br>
-        <input type="radio" name="disease" onclick="choose(this.value)" value="allergy">Allergy<br>
+        <input type="radio" name="disease" onclick="choose(this.value)" value="allergy">Allergy &ensp;
+        <input type="radio" name="disease" onclick="choose(this.value)" value="chest infection">Chest Infection<br>
 	</div>
+	<hr>
 	<div>
+		তোমার অনুপস্থিতির দিনগুলি :<br>
 		You were absent from <input type="date" id="startDate" onchange="update()"> to <input type="date" id="endDate" onchange="update()">
 	</div>
-	
-	<span id="trace"></span><br>
-	<span id="trace1"></span><br>
-	<span id="trace2"></span><br>
-	<span id="trace3"></span><br>
-	<span id="trace4"></span><br>
+	<button id="btn" onclick="show()">Click me to show the application.</button>
+	<hr>
+	<div id="letter">
+		<span id="display_letter"></span><br>
+	</div>
+	<footer>
+		&copy; Soumen Chakraborty - 2018 <br>
+		Strictly for Educational, non-profit and non-commercial purpose only.
+	</footer>
 	
 	<script src="eclean.js"></script>
 	<script src="firstUpperCase.js"></script>
+	<script src="del.js"></script>
+	
 	<script>
 		let name; let standard;	let roll;
-		let today = new Date().toISOString().slice(0, 10);
+		/*let today = new Date().toISOString().slice(0, 10);*/
+		let today;		
+		let fromDate; let alteredFromDate;
+		let toDate; let alteredToDate;
+		let daysAbsent; let illness;
 		
-		let fromDate;
-		let toDate;
+		e("display_letter").style.color="white";
+		
 		function update(){
-			name=e("applicant_name").value; standard=e("class_name").value; roll=e("roll").value;
+			name=firstUpperCase( e("applicant_name").value ); standard=e("class_name").value; roll=e("roll").value;
+			today = getCurrentDate();
 			
-			fromDate = buildDate( e("startDate").value.toString() );
-			toDate = buildDate( e("endDate").value.toString() );
-			e("trace1").innerHTML = fromDate;
-			e("trace2").innerHTML = toDate;
-			 dateDiff();
+			fromDate =  e("startDate").value.toString();
+			toDate =  e("endDate").value.toString() ;
 			
+			alteredFromDate = buildDate(fromDate);
+			alteredToDate = buildDate(toDate);
+			
+			dateDiff();			
 					
-			e("trace4").innerHTML =`
+			e("display_letter").innerHTML =`
+				To<br>
+				The Headmaster,<br>
+				C.S.R.K.A.A. Vidyalaya<br>
+				_________________________<br><br>
+			
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Subject: <u>Leave of absence</u> <br><br>
+				
 				Dear Sir,<br>
-				With due respect, I wish to inform you that I, ${name}, a student of your school, 
+				&ensp;	With due respect, I beg to inform you that I, ${name}, a student of your school, 
 				bearing Roll number ${roll} of class ${standard} was absent on account of ${illness} 
-				from ${fromDate} to ${toDate}. <br>
-				I shall be highly obliged if you kindly grant me a leave of absence for those days only.<br>
-				Thanking you,<br>
-				Yours obediently,<br>
-				${name}<br>
-				Dated: ${today}.		
+				from ${alteredFromDate} to ${alteredToDate}. <br>
+				&ensp; I shall be highly obliged if you kindly grant me a leave of absence for those ${daysAbsent} days only.<br>
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  Thanking you,<br>
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Yours obediently,<br>
+				Dated: ${today}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${name}<br>
+				<hr>
+				.		
 			`;
 		}
+		
+		function show(){
+			e("display_letter").style.color="black";
+			del("btn");
+		}
+		
+		function getCurrentDate(){
+			let dd = new Date().getUTCDate();
+			let mm = new Date().getUTCMonth()+1;
+			let yy = new Date().getUTCFullYear();
+			return dd+"/"+mm+"/"+yy;
+		}
 			
-		let daysAbsent;
+		
 		function dateDiff(){
 			let date1 = new Date( fromDate );
 			let date2 = new Date( toDate );
-			return diff =  parseInt((date2 - date1) / (1000 * 60 * 60 * 24));
-			
-			daysAbsent = diff;
-			e("trace3").innerHTML = diff;
+			/*let diff=  ( date1.getTime() - date2. getTime() ) / (1000 * 60 * 60 * 24);*/
+			let diff=  ( date2.getTime() - date1. getTime() ) / 86400000.0;
+			daysAbsent = diff+1;
 		}
 		
 		function buildDate(DD){
@@ -84,10 +129,10 @@
 			return  dd+mm+"-"+yy; // a problem I couldn't fix
 		}
 		
-		let illness;
+		
 		function choose(disease){/*called at radio buttton check event*/
-			e("trace").innerHTML = disease;
 			illness = disease;
+			update();
         }	
 	</script>
 	
