@@ -1,0 +1,34 @@
+
+		body{ text-align: center;
+			width: 480px; height: 680px;
+			border: 2px solid red;
+			display: block;
+			font-size:18px;
+			background-color: #5d5c5c;
+		}
+		#topic{ font-size:100%;
+			border: 2px solid black; border-radius: 20px; 
+			background-color: #433e3e; color: white;
+		}
+		#ui{
+			background-color:#f5deb3; text-align:left; margin-left: 0%; margin-right: auto;
+			background-color: #5d5c5c;
+			color: aliceblue;
+		}
+		.txt{color: white; }
+		#opt_group{ 
+			text-align:left; margin-left:1%;
+			background-color: #5d5c5c;
+			color:white;
+		}
+		#absent_days{
+			background-color: #5d5c5c;
+			color: aliceblue;
+		}
+		#letter{text-align: left; background-color:white;}
+		footer{
+			font-size: 85%;
+			border: 2px solid black; border-radius: 20px; background-color: #433e3e;
+			color: white;
+		}
+	
