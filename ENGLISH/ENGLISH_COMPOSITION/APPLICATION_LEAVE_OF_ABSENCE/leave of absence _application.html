@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		.txt{color: blue;}
+	</style>
+</head>
+
+<body>
+	<div id="ui">
+		<span class="txt">What is your name? / তোমার নাম :</span>
+		<input type="text" id="applicant_name" onchange="update()" ><br>
+		<span class="txt">What class do you read in? / তোমার ক্লাস :</span>
+		<input type="text" id="class_name" onchange="update()"><br>
+		<span class="txt">What is your Roll No? / তোমার ক্রমিক নং :</span>
+		<input type="number" id="roll" onchange="update()">
+	</div>
+	<div>
+	<legend><b>1.</b> What was the reason behind your absence?<br>
+   	তোমার অনুপস্থিতির কারন কী? </legend>
+    	<input type="radio" name="disease" onclick="choose(this.value)" value="fever">Fever<br>
+        <input type="radio" name="disease" onclick="choose(this.value)" value="upsetStomach">Upset stomach<br>
+        <input type="radio" name="disease" onclick="choose(this.value)" value="diarrhoea">Diarrhoea<br>
+        <input type="radio" name="disease" onclick="choose(this.value)" value="allergy">Allergy<br>
+	</div>
+	<div>
+		You were absent from <input type="date" id="startDate" onchange="update()"> to <input type="date" id="endDate" onchange="update()">
+	</div>
+	
+	<span id="trace"></span><br>
+	<span id="trace1"></span><br>
+	<span id="trace2"></span><br>
+	<span id="trace3"></span><br>
+	<span id="trace4"></span><br>
+	
+	<script src="eclean.js"></script>
+	<script src="firstUpperCase.js"></script>
+	<script>
+		let name; let standard;	let roll;
+		let today = new Date().toISOString().slice(0, 10);
+		
+		let fromDate;
+		let toDate;
+		function update(){
+			name=e("applicant_name").value; standard=e("class_name").value; roll=e("roll").value;
+			
+			fromDate = buildDate( e("startDate").value.toString() );
+			toDate = buildDate( e("endDate").value.toString() );
+			e("trace1").innerHTML = fromDate;
+			e("trace2").innerHTML = toDate;
+			 dateDiff();
+			
+					
+			e("trace4").innerHTML =`
+				Dear Sir,<br>
+				With due respect, I wish to inform you that I, ${name}, a student of your school, 
+				bearing Roll number ${roll} of class ${standard} was absent on account of ${illness} 
+				from ${fromDate} to ${toDate}. <br>
+				I shall be highly obliged if you kindly grant me a leave of absence for those days only.<br>
+				Thanking you,<br>
+				Yours obediently,<br>
+				${name}<br>
+				Dated: ${today}.		
+			`;
+		}
+			
+		let daysAbsent;
+		function dateDiff(){
+			let date1 = new Date( fromDate );
+			let date2 = new Date( toDate );
+			return diff =  parseInt((date2 - date1) / (1000 * 60 * 60 * 24));
+			
+			daysAbsent = diff;
+			e("trace3").innerHTML = diff;
+		}
+		
+		function buildDate(DD){
+			let dd = DD.substr(8, 10);
+			let mm = DD.substr(4, 3);
+			let yy = DD.substr(0, 4);
+			return  dd+mm+"-"+yy; // a problem I couldn't fix
+		}
+		
+		let illness;
+		function choose(disease){/*called at radio buttton check event*/
+			e("trace").innerHTML = disease;
+			illness = disease;
+        }	
+	</script>
+	
+</body>
+
+</html>
