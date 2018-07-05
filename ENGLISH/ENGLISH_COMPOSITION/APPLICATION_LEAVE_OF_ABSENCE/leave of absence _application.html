@@ -59,6 +59,8 @@
 	<script src="del.js"></script>
 	
 	<script>
+		let snd = new Audio("snd/twaing.oga");
+		let optsnd = new Audio("snd/click_fx1.oga");
 		let name; let standard;	let roll;
 		/*let today = new Date().toISOString().slice(0, 10);*/
 		let today;		
@@ -102,6 +104,7 @@
 		}
 		
 		function show(){
+			snd.play();
 			e("display_letter").style.color="black";
 			del("btn");
 		}
@@ -127,10 +130,10 @@
 			let mm = DD.substr(4, 3);
 			let yy = DD.substr(0, 4);
 			return  dd+mm+"-"+yy; // a problem I couldn't fix
-		}
-		
+		}	
 		
 		function choose(disease){/*called at radio buttton check event*/
+			optsnd.play();
 			illness = disease;
 			update();
         }	
