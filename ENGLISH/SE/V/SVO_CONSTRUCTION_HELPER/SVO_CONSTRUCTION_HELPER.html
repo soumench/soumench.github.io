@@ -40,12 +40,13 @@
 		<span id="biryani" onclick="place(this)">Biriyani.<br>(বিরিয়ানী)</span> 
 		<span id="toy" onclick="place(this)">a toy.<br>(একটি খেলনা)</span>
     </div>
-    	<span id="credit" > &copy Made by Soumen Chakraborty - 2018 <br> Strictly for Educational and Non-commercial usage only</span>
+    	<span id="credit" > Copyright &copy; Made by Soumen Chakraborty <span id="year">year</span> <br> Strictly for Educational and Non-commercial usage only</span>
     	
     	
     <script src="js/e.js"></script>
     <script src="js/move.js"></script>
     <script src="js/mass_move.js"></script>
+    <script src="../../../year.js"></script>
     <script>
 		const ting = new Audio("sound/ting-128kbps.ogg");
         e("bg_pic2").style.zIndex=-1;
@@ -117,7 +118,8 @@
             if(el.id === "poem"){move(el.id, r4, col3);}
             if(el.id === "biryani"){move(el.id, r5, col3);}
             if(el.id === "toy"){move(el.id, r6, col3);}
-        }       
+        }
+		e("year").innerHTML = creation_year;
     </script>
 <body>
 

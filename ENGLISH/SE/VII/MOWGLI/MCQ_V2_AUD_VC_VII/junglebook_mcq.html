@@ -32,10 +32,11 @@
 		<button id="cbtn" class="nav" onclick="check(this)">C</button><br>
 	</div>
     <footer>
-    	&copy Made by Soumen Chakraborty - 2018 <br>
+    	Copyright &copy; Soumen Chakraborty  <span id="year">year</span>  <br>
     	Strictly for Educational and Non-commercial purpose only.
     </footer>
     <script src="js/aud.js"></script> <script src="qsource/q.js"></script> <script src="js/msg_disp.js"></script> <script src="js/e.js"></script> <script src="js/count.js"></script> <script src="js/choice_disp.js"></script> <script src="js/hide.btns.js"></script> <script src="js/image_disp.js"></script>
+    <script src="../../../../year.js"></script>
     <script>
 		const WITHAUDIO=true;
 		e("topic_name").innerHTML=topic_name;
@@ -115,6 +116,7 @@
 			i=-1; score=0;
 			show();
 		}
+		e("year").innerHTML = creation_year;
     </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Quiz on "Strong Roots"</title>
+	<title>Quiz on "Thank You Ma'am"</title>
 	
 	<link rel="stylesheet" type="text/css" href="mcq_style.css" />
 </head>
@@ -20,12 +20,18 @@
 	<button id="submit">Submit Quiz</button>
 	<div id="results"></div>
 	
-	<script src="mcq_script.js"></script>
+	<footer>Copyright &copy; Soumen Chakraborty <span id="year">year</span> <br>
+	Strictly for Educational, Non-profit and Non-commercial Usage only.
+	</footer>
 	
+	
+	<script src="mcq_script.js"></script>
+	<script src="../../../../year.js"></script>
+	<script>
+		e("year").innerHTML = creation_year;
+		function e(id){return document.getElementById(id);}
+	</script>
 </body>
-<footer>Made by Soumen Chakraborty June-2018<br>
-Strictly for Educational, Non-profit and Non-commercial Usage only.
 
-</footer>
 
 </html>

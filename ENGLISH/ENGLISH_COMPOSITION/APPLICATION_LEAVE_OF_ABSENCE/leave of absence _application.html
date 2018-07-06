@@ -41,7 +41,7 @@
 		<span id="display_letter"></span><br>
 	</div>
 	<footer>
-		&copy; Soumen Chakraborty - 2018 <br>
+		Copyright &copy; Soumen Chakraborty -<span id="year">creation_year</span> <br>
 		Strictly for Educational, non-profit and non-commercial purpose only.
 	</footer>
 	
@@ -49,6 +49,7 @@
 	<script src="js/firstUpperCase.js"></script>
 	<script src="js/del.js"></script>
 	<script src="js/cur_date.js"></script>
+	<script src="../../year.js"></script>
 	
 	<script>
 		e("applicant_name").focus();
@@ -120,7 +121,8 @@
 			optsnd.play();
 			illness = disease;
 			update();
-        }	
+        }
+		e("year").innerHTML = creation_year;
 	</script>
 	
 </body>

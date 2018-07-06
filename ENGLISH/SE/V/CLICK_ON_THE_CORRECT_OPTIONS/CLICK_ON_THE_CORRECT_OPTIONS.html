@@ -72,7 +72,7 @@
 	<img src="" id="pic" width="240px" height="60px">
 	<hr>
 	<footer>
-		&copy Made by Soumen Chakraborty - 2018 <br>
+		Copyright &copy; Soumen Chakraborty <span id="year">year</span>  <br>
 		Strictly for Educational, Non-commercial and Non-Profit purpose.
 	</footer>
 	<button onclick="window.location.reload()">Try Again.</button>	
@@ -82,6 +82,7 @@
 	<script src="js/make_color.js"></script>
 	<script src="js/move.js"></script>
 	<script src="js/triggers.js"></script>
+	<script src="../../../year.js"></script>
 	<script src="js/del.js"></script>
 	<script src="js/e.js"></script>
 	<script>
@@ -108,7 +109,8 @@
 			  ||eid==="w9" ||eid==="w10"){
 			  trigger_wrong(eid);
 			}	
-		}		
+		}
+		e("year").innerHTML = creation_year;
 	</script>
 </body>
 </html>

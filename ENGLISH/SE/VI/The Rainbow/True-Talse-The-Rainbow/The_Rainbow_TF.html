@@ -22,7 +22,7 @@
     <span id="trace"></span>
     
     <footer>
-    	&copy Soumen Chakraborty - June 2018  <br> Strictly for Educational and Non-commercial purpose only.
+    	Copyright &copy; Soumen Chakraborty <span id="year">year</span>  <br> Strictly for Educational and Non-commercial purpose only.
     </footer>
     
     <script src="js/e.js"></script>
@@ -31,6 +31,7 @@
     <script src="js/audiosrc.js"></script>
     <script src="js/tfq.js"></script>
     <script src="js/answer_action.js"></script>
+    <script src="../../../../year.js"></script>
     <script>
 				
 		changenextIMG();
@@ -97,7 +98,8 @@
 			e("rightbtn").style.visibility="hidden";
             e("wrongbtn").style.visibility="hidden";
             e("nextbtn").style.visibility="visible";
-		}        
+		}
+		e("year").innerHTML = creation_year;
     </script>
 </body>
 

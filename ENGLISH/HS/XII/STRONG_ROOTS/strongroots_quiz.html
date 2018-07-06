@@ -35,11 +35,15 @@
    <p class="quiz-section" id="A-display" style="color: blue"> ...</p><br>
    <textarea id="userWriteArea" rows="6" cols="28" placeholder="Write your answer here." onkeyup="countWords()"></textarea><br>
    <span id="words">Word-Count:</span>
-           
+   
+   <footer>   Copyright &copy; Soumen Chakraborty  <span id="year">year</span><br>
+        Strictly for Educational, Non-profit and Non-commercial Usage only.
+   </footer>         
     
          
     <script src="eclean.js"></script>
-    <script src="questions.js"></script>    
+    <script src="questions.js"></script>
+    <script src="../../../year.js"></script>    
     <script>
 		const sound = new Audio("ting-128kbps.ogg");
         
@@ -101,10 +105,8 @@
                 return txt.split(/\s+/);
         }     
         /*wordcounter end*/    
-        
+        e("year").innerHTML = creation_year;
     </script>
-    <footer>    &copy Soumen Chakraborty - June 2018<br>
-        Strictly for Educational, Non-profit and Non-commercial Usage only.
-    </footer>
+    
 </body>
 </html>

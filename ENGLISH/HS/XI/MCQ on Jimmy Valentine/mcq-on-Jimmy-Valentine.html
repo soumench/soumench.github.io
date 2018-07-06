@@ -29,10 +29,10 @@
     	<img id="bar2" src="img/progressbar_10stepsX350ms.gif" id="pic" width="400px" height="20px" > 		
 	</div>
     <footer>
-    	&copy Made by Soumen Chakraborty - 2018 <br>
+    	Copyright &copy; Soumen Chakraborty  <span id="year">year</span> <br>
     	Strictly for Educational and Non-commercial purpose only.
     </footer>
-    <script src="js/aud.js"></script> <script src="qsource/q.js"></script> <script src="js/msg_disp.js"></script> <script src="js/e.js"></script> <script src="js/count.js"></script> <script src="js/choice_disp.js"></script> 
+    <script src="js/aud.js"></script> <script src="qsource/q.js"></script> <script src="js/msg_disp.js"></script> <script src="js/e.js"></script> <script src="js/count.js"></script> <script src="js/choice_disp.js"></script> <script src="../../../year.js"></script>
     <script src="js/image_disp.js"></script>
     <script>
 		const WITHAUDIO=true;
@@ -113,6 +113,7 @@
 			i=-1; score=0;
 			show();
 		}
+		e("year").innerHTML = creation_year;
     </script>
 </body>
 </html>
