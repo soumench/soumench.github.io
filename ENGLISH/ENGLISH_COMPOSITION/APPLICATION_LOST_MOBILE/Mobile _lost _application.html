@@ -77,6 +77,7 @@
 		/*let daysAbsent; */let phone_type; let mob_serial_no;
 		
 		let mob_maker; let mob_no; let mob_IMEI_no;
+		let mob_model;
 		
 		e("display_letter").style.color="white";
 		
@@ -88,6 +89,7 @@
 			mob_maker=e("mob_maker").value;
 			mob_IMEI_no = e("mob_IMEI_no").value;
 			mob_serial_no = e("mob_serial_no").value;
+			mob_model = e("mob_model").value;
 			today = getCurrentDate();
 			
 			fromDate =  e("startDate").value.toString();
@@ -110,7 +112,7 @@
 				&ensp;	This is for your kind perusal that I, ${name}, a resident of ${address}, 
 				, lost my mobile phone near ${lost_address}, on ${alteredFromDate}, as far as I can remember.
 				 <br>
-				&ensp; It is ${phone_type} made by ${mob_maker} and the IMEI of the device is ${mob_IMEI_no} and the serial number is ${mob_serial_no}<br>
+				&ensp; It is ${phone_type}, made by ${mob_maker}(model no - ${mob_model}). The IMEI of the device is ${mob_IMEI_no} and the serial number is ${mob_serial_no}<br>
 				&ensp; I shall be highly obliged if you kindly register a complaint and give me an attested copy so that I can block the phone number to prevent any possible misuse of my SIM Card No ${mob_no} and do the requisite to recover my lost phone as early as possible. <br>
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  Thanking you,<br>
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Yours faithfully,<br>
