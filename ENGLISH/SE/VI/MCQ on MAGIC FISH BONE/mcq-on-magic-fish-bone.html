@@ -19,9 +19,9 @@
 		<!--<img src="" id="pic" width="210px" height="165px" >--> 
 	</div>	
 	<div id="option_board">
-		<span id="a" class="quiz" onclick="check(this)"></span><br>
-		<span id="b" class="quiz" onclick="check(this)"></span><br>
-		<span id="c" class="quiz" onclick="check(this)"></span><br>
+		<button id="a" class="quiz" onclick="check(this)"></button><br>
+		<button id="b" class="quiz" onclick="check(this)"></button><br>
+		<button id="c" class="quiz" onclick="check(this)"></button><br>
    </div> 
   
     <div id="btn_board">
@@ -70,10 +70,13 @@
 		   	}
 			e(ans).style.color="#000aff";
 			e(ans).style.backgroundColor="#ffff8e";
-			e(ans).style.border="thick solid green"; 
+			e(ans).style.border="thick solid green";
+			
+			e("a").disabled = e("b").disabled = e("c").disabled = true;
 		}
 		
 		function show(){
+			e("a").disabled = e("b").disabled = e("c").disabled = false;
 			clear_bar2();
 			resize_pic();
 			e("a").style.border=e("b").style.border=e("c").style.border="3px solid grey";
