@@ -12,26 +12,26 @@
 	<hr>
 	<div id="ui">
 		<span class="txt">1. Your name:</span>&ensp;&ensp;&ensp;
-		<input type="text" id="applicant_name" onchange="update()" placeholder="Enter your name here.." size="45"><br>
+		<input type="text" id="applicant_name" onchange="update()" placeholder="Enter your name here.." size="40"><br>
 		<span class="txt">2. Your Address:</span>&ensp;
-		<input type="text" id="address" onchange="update()" placeholder="Your address" size=45><br>
+		<input type="text" id="address" onchange="update()" placeholder="Your address" size=40><br>
 		
 		<span class="txt">3. The place where you lost the phone:</span>&ensp;
-		<input type="text" id="lost_address" onchange="update()" placeholder="The place where you lost" size=25><br>
+		<input type="text" id="lost_address" onchange="update()" placeholder="The place where you lost" size=18><br>
 		
 		<span class="txt">4. Your Mobile No:</span>&ensp;&ensp;&ensp;
 		<input type="number" id="mob_no" onchange="update()" placeholder="Enter Mobile No." size="45"><br>
 		
 		<span class="txt">5. Maker of your phone:</span>&ensp;
-		<input type="text" id="mob_maker" onchange="update()" placeholder="Samsung, Apple, Asus, Redmi etc." size=35><br>
+		<input type="text" id="mob_maker" onchange="update()" placeholder="Samsung, Apple, Asus, Redmi etc." size=25><br>
 		<span class="txt">6. Model No. of your phone:</span>&ensp;
-		<input type="text" id="mob_model" onchange="update()" placeholder="J7, note pro etc." size=35><br>
+		<input type="text" id="mob_model" onchange="update()" placeholder="J7, note pro etc." size=20><br>
 		
 		<span class="txt">7. Mobile IMEI No:</span>&ensp;&ensp;&ensp;
-		<input type="number" id="mob_IMEI_no" onchange="update()" placeholder="Enter IMEI No." size="45"><br>
+		<input type="number" id="mob_IMEI_no" onchange="update()" placeholder="IMEI No of the handset." size="15"><br>
 		
 		<span class="txt">8. Mobile Serial No:</span>&ensp;&ensp;&ensp;
-		<input type="number" id="mob_serial_no" onchange="update()" placeholder="Enter Mobile Serial No." size="45"><br>
+		<input type="text" id="mob_serial_no" onchange="update()" placeholder="Serial No of the handset." size="20"><br>
 		
 	</div>
 	<hr>
@@ -50,7 +50,7 @@
 	</div>
 	<hr>
 	<button id="btn" onclick="show()">Click me to show the application.</button>
-	<hr>
+	<hr id="del_hr">
 	<div id="letter">
 		<span id="display_letter"></span><br>
 	</div>
@@ -110,7 +110,7 @@
 				
 				Dear Sir,<br>
 				&ensp;	This is for your kind perusal that I, ${name}, a resident of ${address}, 
-				, lost my mobile phone near ${lost_address}, on ${alteredFromDate}, as far as I can remember.
+				lost my mobile phone near ${lost_address}, on ${alteredFromDate}, as far as I can remember.
 				 <br>
 				&ensp; It is ${phone_type}, made by ${mob_maker}(model no - ${mob_model}). The IMEI of the device is ${mob_IMEI_no} and the serial number is ${mob_serial_no}<br>
 				&ensp; I shall be highly obliged if you kindly register a complaint and give me an attested copy so that I can block the phone number to prevent any possible misuse of my SIM Card No ${mob_no} and do the requisite to recover my lost phone as early as possible. <br>
@@ -125,6 +125,7 @@
 			snd.play();
 			e("display_letter").style.color="black";
 			del("btn");
+			del("del_hr");
 		}			
 		
 		/*function dateDiff(){
