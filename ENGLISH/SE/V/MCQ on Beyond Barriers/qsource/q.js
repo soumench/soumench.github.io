@@ -1,6 +1,6 @@
 const topic_name =" M.C.Q. on \"Beyond Barriers\""; 
 const list=[
-            "Who was first Indian Space Traveller?",
+            "Who was the first Indian Space Traveller?",
 	 		"Rakesh Khanna.",
 	 		"Rakesh Roshan.",
 	 		"Rakesh Sharma.",
@@ -25,13 +25,13 @@ const list=[
 	 		"4th April,1984.",
 	 		"b",
 	 		
-	 		"Rakesh went to space on ",
+	 		"Rakesh went to space on",
 	 		"Soyuz T-11",
 	 		"Suraj T-11.",
 	 		"Swaraj T-11.",
 	 		"a",
 	 		
-	 		"How long did Rakesh spend in space? ",
+	 		"How long did Rakesh spend in space?",
 	 		"Seven days, twenty one hours and forty minutes.",
 	 		"Seventeen days, twenty one hours and forty minutes.",
 	 		"Six days, twenty one hours and forty minutes.",
@@ -61,7 +61,7 @@ const list=[
 	 		"mission STS-89.",
 	 		"b",
 	 
-	 		"From Space, Kalpana spoke with  the then prime minister ",
+	 		"From Space, Kalpana spoke with  the then prime minister",
 	 		"Mrs. Indira Gandhi.",
 	 		"Mr. Rajib Gandhi.",
 	 		"Mr. I.K. Gujral.",
@@ -91,19 +91,19 @@ const list=[
 	 		"a captain.",
 	 		"b",
 			
-			"Kalpana studied  ",
+			"Kalpana studied",
 	 		"Computer Engineering.",
 	 		"Aeronautical Engineering.",
 	 		"Political Science.",
 	 		"b",  
 			
-			"Kalpana went to the USA to study   ",
+			"Kalpana went to the USA to study",
 	 		"at Yale University.",
 	 		"at the University of Texas.",
 	 		"at Columbia University.",
 	 		"b",
 	
-			"Kalpana's story reminds us of   ",
+			"Kalpana's story reminds us of",
 	 		"her wealth.",
 	 		"the value of hard work and sincerity.",
 	 		"her gregarious nature.",
