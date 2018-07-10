@@ -137,6 +137,5 @@ const list=[
 	 		"in destruction.",
 	 		"in domains other than destruction.",
 	 		"in killing trees.",
-	 		"b"
-			
+	 		"b"			
         ];
