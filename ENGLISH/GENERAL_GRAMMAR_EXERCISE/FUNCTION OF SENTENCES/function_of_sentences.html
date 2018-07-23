@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> </title>
+    <style>
+        body{ font-size: 16px;}
+        table, th, td {
+            border: 1px solid black;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+        th,td {
+        text-align: center;
+        }
+        table {
+            border-spacing: 5px;
+        }
+        .click{font-weight: bolder;}
+        .click:hover{
+            font-size: 100%; color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    
+  <table style="width:100%">
+      <caption>KINDS OF SENTENCES</caption>
+ <tr>
+    <th colspan= "1">Kinds</th>
+    <th colspan= "1">Function</th> 
+    <th colspan= "1">Example</th>
+  </tr>
+  <tr>
+    <td id="ass-one">Assertive</td>
+    <td>Any statement/কোনো বর্ণনা <br> হ্যাঁ বাচক হলে Affirmative এবং<br> না-বাচক হলে Negative</td> 
+    <td> <span class="click" id="ass" onclick="update(this)">Click here.</span></td>
+  </tr>
+      
+  <tr>
+    <td id="imp-two">Imperative</td>
+    <td>Request( অনুরোধ) বা command (আদেশ) বোঝায়</td> 
+    <td><span class="click" id="imp" onclick="update(this)">Click here.</span></td>
+  </tr>
+        
+  <tr>
+    <td id="int-three">Interrogative</td>
+    <td>প্রশ্নবোধক বাক্য / question</td> 
+    <td><span class="click" id="int" onclick="update(this)">Click here.</span></td>
+  </tr>
+        
+  <tr>
+    <td id="opt-four">Optative</td>
+    <td>আশী্বাদ বা ইচ্ছাসূচক বাক্য / blessings,wish,prayer</td> 
+    <td><span class="click" id="opt" onclick="update(this)">Click here.</span></td>
+  </tr>
+        
+  <tr>
+    <td id="excl-five">Exclamatory</td>
+    <td>আনন্দ, বিস্ময়,দু:খ, কষ্ট ইত্যাদি <br>আবেগসূচক বাক্য( exclamation)</td> 
+    <td><span class="click" id="excl" onclick="update(this)">Click here.</span></td>
+  </tr>
+</table>
+    Example:<span id="trace">-----</span>
+    
+    <script>
+    const assertive = ["He loves his classmates.", "The earth moves round the sun."];
+    const imperative = ["Respect your elders.", "Open the door."];
+    const interrogative = ["What is your name?", "When did you come?"];
+    const optative = ["May God bless you."];
+    const exclamatory = ["Wow! That's great!", "Hurrah! We have won the game."];
+    
+    colorless();    
+        
+    function update(el){
+        colorless();
+        let example;
+        if(el.id=="ass"){
+            example = assertive[Math.floor(Math.random()*assertive.length)];
+            e("ass-one").style.backgroundColor = "yellow";
+        }
+        else if(el.id=="imp"){
+            example = imperative[Math.floor(Math.random()*imperative.length)];
+            e("imp-two").style.backgroundColor = "yellow";
+        }
+        else if(el.id=="int"){
+            example = interrogative[Math.floor(Math.random()*interrogative.length)];
+            e("int-three").style.backgroundColor = "yellow";
+        }
+        else if(el.id=="opt"){
+            example = optative[Math.floor(Math.random()*optative.length)];
+            e("opt-four").style.backgroundColor = "yellow";
+        }
+        else if(el.id=="excl"){
+            example = exclamatory[Math.floor(Math.random()*exclamatory.length)];
+            e("excl-five").style.backgroundColor = "yellow";
+        }
+        
+        e("trace").innerHTML = example;
+        e(el.id).innerHTML = "Click again"; 
+    }
+        
+    function colorless(){
+        const color = "white";
+        e("ass-one").style.backgroundColor=e("imp-two").style.backgroundColor=e("int-three").style.backgroundColor=
+        e("opt-four").style.backgroundColor=e("excl-five").style.backgroundColor=color;
+    }
+        
+    function e(id){return document.getElementById(id);}
+    </script>
+
+</body>
+</html>
