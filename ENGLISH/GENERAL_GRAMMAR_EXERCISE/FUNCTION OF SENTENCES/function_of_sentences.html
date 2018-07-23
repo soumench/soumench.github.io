@@ -28,6 +28,8 @@
             font-size: 100%; color: red;
             cursor: pointer;
         }
+        h2{text-align: center;}
+        .kinds{font-weight: 900; font-size: 115%;}
     </style>
 </head>
 
@@ -41,36 +43,37 @@
     <th colspan= "1">Example</th>
   </tr>
   <tr>
-    <td id="ass-one">Assertive</td>
+    <td id="ass-one" width="50px" height="50px" class="kinds">Assertive</td>
     <td>Any statement/কোনো বর্ণনা <br> হ্যাঁ বাচক হলে Affirmative এবং<br> না-বাচক হলে Negative</td> 
     <td> <span class="click" id="ass" onclick="update(this)">Click here.</span></td>
   </tr>
       
   <tr>
-    <td id="imp-two">Imperative</td>
-    <td>Request( অনুরোধ) বা command (আদেশ) বোঝায়</td> 
+    <td id="imp-two" width="50px" height="50px" class="kinds">Imperative</td>
+    <td>Request(অনুরোধ) বা command (আদেশ) বোঝায়</td> 
     <td><span class="click" id="imp" onclick="update(this)">Click here.</span></td>
   </tr>
         
   <tr>
-    <td id="int-three">Interrogative</td>
+    <td id="int-three" width="50px" height="50px" class="kinds">Interrogative</td>
     <td>প্রশ্নবোধক বাক্য / question</td> 
     <td><span class="click" id="int" onclick="update(this)">Click here.</span></td>
   </tr>
         
   <tr>
-    <td id="opt-four">Optative</td>
+    <td id="opt-four" width="50px" height="50px" class="kinds">Optative</td>
     <td>আশী্বাদ বা ইচ্ছাসূচক বাক্য / blessings,wish,prayer</td> 
     <td><span class="click" id="opt" onclick="update(this)">Click here.</span></td>
   </tr>
         
   <tr>
-    <td id="excl-five">Exclamatory</td>
+    <td id="excl-five" width="50px" height="50px" class="kinds">Exclamatory</td>
     <td>আনন্দ, বিস্ময়,দু:খ, কষ্ট ইত্যাদি <br>আবেগসূচক বাক্য( exclamation)</td> 
     <td><span class="click" id="excl" onclick="update(this)">Click here.</span></td>
   </tr>
 </table>
-    Example:<span id="trace">-----</span>
+    
+    Example:<h2 id="trace">-----</h2>
     
     <script>
     const assertive = ["He loves his classmates.", "The earth moves round the sun."];
@@ -79,38 +82,37 @@
     const optative = ["May God bless you."];
     const exclamatory = ["Wow! That's great!", "Hurrah! We have won the game."];
     
+    /*let img = "url('gradient50X50box.gif')";
+    e("ass-one").style.backgroundImage=e("imp-two").style.backgroundImage=e("int-three").style.backgroundImage=
+    e("opt-four").style.backgroundImage=e("excl-five").style.backgroundImage=img;*/
+        
     colorless();    
         
     function update(el){
-        colorless();
-        let example;
-        if(el.id=="ass"){
+        colorless();    let example;   let myid;
+        if(el.id=="ass"){ myid = "ass-one";
             example = assertive[Math.floor(Math.random()*assertive.length)];
-            e("ass-one").style.backgroundColor = "yellow";
         }
-        else if(el.id=="imp"){
+        else if(el.id=="imp"){ myid = "imp-two";
             example = imperative[Math.floor(Math.random()*imperative.length)];
-            e("imp-two").style.backgroundColor = "yellow";
         }
-        else if(el.id=="int"){
+        else if(el.id=="int"){ myid ="int-three";
             example = interrogative[Math.floor(Math.random()*interrogative.length)];
-            e("int-three").style.backgroundColor = "yellow";
         }
-        else if(el.id=="opt"){
+        else if(el.id=="opt"){ myid = "opt-four";
             example = optative[Math.floor(Math.random()*optative.length)];
-            e("opt-four").style.backgroundColor = "yellow";
         }
-        else if(el.id=="excl"){
+        else if(el.id=="excl"){ myid ="excl-five";
             example = exclamatory[Math.floor(Math.random()*exclamatory.length)];
-            e("excl-five").style.backgroundColor = "yellow";
         }
         
+        e(myid).style.backgroundColor=e("trace").style.backgroundColor=  "yellow";
         e("trace").innerHTML = example;
         e(el.id).innerHTML = "Click again"; 
     }
         
     function colorless(){
-        const color = "white";
+        const color = "#eef9fa";
         e("ass-one").style.backgroundColor=e("imp-two").style.backgroundColor=e("int-three").style.backgroundColor=
         e("opt-four").style.backgroundColor=e("excl-five").style.backgroundColor=color;
     }

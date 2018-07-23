@@ -13,3 +13,30 @@ function correct_audio(){
 	
 	cur_a.play();
 }
+
+**************************************************************************
+const images = ['img/1-min.jpg',
+				'img/2-min.jpg',
+				'img/3-min.jpg',
+				'img/4-min.jpg',
+				'img/5-min.jpg',
+				'img/6-min.jpg',
+				'img/7-min.jpg',
+				'img/8-min.jpg',
+				'img/9-min.jpg',
+				'img/10-min.jpg'
+			   ];
+
+
+function changeIMG(){
+			e("thepic").src= images[Math.floor(Math.random()*images.length)];
+}
+
+
+***************************************************************
+
+let img = "url('gradient50X50box.gif')";
+    e("ass-one").style.backgroundImage=e("imp-two").style.backgroundImage=e("int-three").style.backgroundImage=
+    e("opt-four").style.backgroundImage=e("excl-five").style.backgroundImage=img;
+
+
