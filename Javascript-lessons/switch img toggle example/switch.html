@@ -9,28 +9,56 @@
 </head>
 
 <body>
-    <img id="switch" src="switch-off-state.png" width="100px" height="100px" onclick="update(this)">
-    
-    <img id="bulb" src="LED_OFF.png" width="150px" height="200px" onclick="update(this)"><br>
-    <img id="battery1" src="battery.png"><br><img id="battery2" src="battery.png">
+    <img src="img/board-bg.jpg" width="480px" height="640px">
+    <img id="switch1" src="img/switch-off-state.png" width="80px" height="80px" onclick="coo()">
+    <img id="switch2" src="img/switch-off-state.png" width="80px" height="80px" onclick="update(this)">
+    <img id="bulb" src="img/LED_OFF.png" width="105px" height="140px" onclick="update(this)"><br>
     
     <script>
-        const sound = new Audio("switch-sound.oga");
-        let bool;
+        move("switch1","55px","135px");
+        move("switch2","55px","290px");
+        move("bulb","175px","340px");
+        const sound = new Audio("audio/switch-sound.oga");
+        const tone = new Audio("audio/onekhzTone.oga");
+        let bool; let bool1;
         function update(el){
-            if(el.id === "switch"){
+            if(el.id === "switch2"){
                 if(bool=bool^1){
-                    e("switch").src="switch-on.png";
-                    e("bulb").src="LED_ON.png";
+                    e(el.id).src="img/switch-on.png";
+                    e("bulb").src="img/LED_ON.png";
                 }else{
-                    e("switch").src="switch-off-state.png";
-                    e("bulb").src="LED_OFF.png";
+                    e(el.id).src="img/switch-off-state.png";
+                    e("bulb").src="img/LED_OFF.png";
                 } 
             }
+           /* else if(el.id === "switch1"){
+                if(bool1=bool1^1){
+                    e(el.id).src="img/switch-on.png";
+                    tone.play();
+                }
+                else{
+                    e(el.id).src="img/switch-off-state.png";
+                }
+            }*/
             sound.play();
         }
         
+        function coo(){
+            setTimeout(stop, 2100);
+            e("switch1").src="img/switch-on.png";
+            tone.play();
+        }
+        
+        function stop(){
+           e("switch1").src="img/switch-off-state.png";
+        }
+        
         function e(id){return document.getElementById(id);}
+        function move(id, t, l){
+            e(id).style.position="absolute";
+            e(id).style.top=t;
+            e(id).style.left=l;
+        }
     </script>
 
 </body>
