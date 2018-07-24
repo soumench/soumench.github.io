@@ -71,7 +71,7 @@
             }else if(el.id=="excl"){ myid="excl-five"; tdisplay="Exclamatory";
                 example=exclamatory[Math.floor(Math.random()*exclamatory.length)];
             }       e(myid).style.backgroundColor=e("trace").style.backgroundColor=e("displayPanel").style.backgroundColor="#f5f57e";
-            e("typeDisplay").innerHTML = `This is an example of ${tdisplay} Sentence`;
+            e("typeDisplay").innerHTML = `This is an example of ${tdisplay} Sentence.`;
             e("trace").innerHTML = example; e("trace").style.color="blue";
             e(el.id).innerHTML = "Click again";
             setTimeout(panelClear, 1000);
