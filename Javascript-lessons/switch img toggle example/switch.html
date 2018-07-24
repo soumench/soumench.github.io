@@ -15,7 +15,6 @@
         const sound = new Audio("switch-sound.oga");
         let bool;
         function update(el){
-            sound.play();
             if(el.id === "switch"){
                 if(bool=bool^1){
                     e("switch").src="switch-on.png";
@@ -23,6 +22,7 @@
                     e("switch").src="switch-off-state.png";
                 } 
             }
+            sound.play();
         }
         
         function e(id){return document.getElementById(id);}
