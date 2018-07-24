@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <img id="switch" src="switch-off-state.png" width="150px" height="150px" onclick="update(this)">
+    
+    <script>
+        const sound = new Audio("switch-sound.oga");
+        let bool;
+        function update(el){
+            sound.play();
+            if(el.id === "switch"){
+                if(bool=bool^1){
+                    e("switch").src="switch-on.png";
+                }else{
+                    e("switch").src="switch-off-state.png";
+                } 
+            }
+        }
+        
+        function e(id){return document.getElementById(id);}
+    </script>
+
+</body>
+
+</html>
