@@ -15,7 +15,7 @@
             border-collapse: collapse;
         }
         th, td {
-            padding: 10px;
+            padding: 8px;
         }
         th,td {
         text-align: center;
@@ -27,98 +27,101 @@
         .click:hover{
             font-size: 100%; color: red;
             cursor: pointer;
-        }
-        h2{text-align: center;}
+        }        
         .kinds{font-weight: 900; font-size: 115%;}
+        #displayPanel{
+            text-align: center;
+            border: 2px solid red;
+            border-radius: 30px; 
+            box-shadow:2px 10px 15px 5px grey;  
+        }
+        footer{
+            margin-top: 3%;
+            text-align: center;
+            color: crimson;
+            border: 3px solid red;
+            border-radius: 30px; 
+            box-shadow:2px 5px 5px 5px grey; 
+            background-color: #cfffef;
+        }
     </style>
 </head>
-
-<body>
-    
-  <table style="width:100%">
-      <caption>KINDS OF SENTENCES</caption>
- <tr>
-    <th colspan= "1">Kinds</th>
-    <th colspan= "1">Function</th> 
-    <th colspan= "1">Example</th>
+<body>    
+ <table style="width:100%">
+   <caption><h2>KINDS OF SENTENCES AND FUNCTIONS</h2></caption>
+  <tr>
+    <th >Type</th>
+    <th >Function</th> 
+    <th >Example</th>
   </tr>
   <tr>
     <td id="ass-one" width="50px" height="50px" class="kinds">Assertive</td>
-    <td>Any statement/কোনো বর্ণনা <br> হ্যাঁ বাচক হলে Affirmative এবং<br> না-বাচক হলে Negative</td> 
+    <td>Any statement/কোনো বর্ণনা<br>হ্যাঁ বাচক (Affirmative)/না-বাচক(Negative)</td> 
     <td> <span class="click" id="ass" onclick="update(this)">Click here.</span></td>
-  </tr>
-      
+  </tr>      
   <tr>
     <td id="imp-two" width="50px" height="50px" class="kinds">Imperative</td>
     <td>Request(অনুরোধ) বা command (আদেশ) বোঝায়</td> 
     <td><span class="click" id="imp" onclick="update(this)">Click here.</span></td>
-  </tr>
-        
+  </tr>        
   <tr>
     <td id="int-three" width="50px" height="50px" class="kinds">Interrogative</td>
     <td>প্রশ্নবোধক বাক্য / question</td> 
     <td><span class="click" id="int" onclick="update(this)">Click here.</span></td>
-  </tr>
-        
+  </tr>        
   <tr>
     <td id="opt-four" width="50px" height="50px" class="kinds">Optative</td>
-    <td>আশী্বাদ বা ইচ্ছাসূচক বাক্য / blessings,wish,prayer</td> 
+    <td>আশীর্বাদ বা ইচ্ছাসূচক বাক্য / blessings,wish,prayer,desire</td> 
     <td><span class="click" id="opt" onclick="update(this)">Click here.</span></td>
-  </tr>
-        
+  </tr>        
   <tr>
     <td id="excl-five" width="50px" height="50px" class="kinds">Exclamatory</td>
-    <td>আনন্দ, বিস্ময়,দু:খ, কষ্ট ইত্যাদি <br>আবেগসূচক বাক্য( exclamation)</td> 
+    <td>আনন্দ,বিস্ময়,দু:খ,কষ্ট ইত্যাদি<br>আবেগসূচক বাক্য(exclamation)</td> 
     <td><span class="click" id="excl" onclick="update(this)">Click here.</span></td>
   </tr>
 </table>
-    
-    Example:<h2 id="trace">-----</h2>
-    
-    <script>
-    const assertive = ["He loves his classmates.", "The earth moves round the sun."];
-    const imperative = ["Respect your elders.", "Open the door."];
-    const interrogative = ["What is your name?", "When did you come?"];
-    const optative = ["May God bless you."];
-    const exclamatory = ["Wow! That's great!", "Hurrah! We have won the game."];
-    
-    /*let img = "url('gradient50X50box.gif')";
-    e("ass-one").style.backgroundImage=e("imp-two").style.backgroundImage=e("int-three").style.backgroundImage=
-    e("opt-four").style.backgroundImage=e("excl-five").style.backgroundImage=img;*/
-        
-    colorless();    
-        
-    function update(el){
-        colorless();    let example;   let myid;
-        if(el.id=="ass"){ myid = "ass-one";
-            example = assertive[Math.floor(Math.random()*assertive.length)];
+<div id="displayPanel">  
+    <h2 id="trace">-</h2>
+    <span id="typeDisplay"></span><br>
+</div> 
+<footer>
+    Copyright &copy; Soumen Chakraborty  - <span id="year">year</span> <br>
+	Strictly for Educational, Non-commercial and Non-Profit purpose.
+</footer>    
+    <script src="js/assertive.js"></script>
+    <script src="js/imperative.js"></script>
+    <script src="js/interrogative.js"></script>
+    <script src="js/optative.js"></script>
+    <script src="js/exclamatory.js"></script>
+    <script src="../../year.js"></script>
+    <script>    
+        const sfx = new Audio("sound/ting-128kbps.ogg");   
+        colorless(); e("trace").style.color="white";
+        function update(el){
+            sfx.play();   colorless();    let example;   let myid; let tdisplay;
+            if(el.id=="ass"){ myid="ass-one"; tdisplay="Assertive";
+                example=assertive[Math.floor(Math.random()*assertive.length)];
+            }else if(el.id=="imp"){ myid= "imp-two"; tdisplay="Imperative";
+                example=imperative[Math.floor(Math.random()*imperative.length)];
+            }else if(el.id=="int"){ myid="int-three"; tdisplay="Interrogative";
+                example=interrogative[Math.floor(Math.random()*interrogative.length)];
+            }else if(el.id=="opt"){ myid="opt-four"; tdisplay="Optative";
+                example=optative[Math.floor(Math.random()*optative.length)];
+            }else if(el.id=="excl"){ myid="excl-five"; tdisplay="Exclamatory";
+                example=exclamatory[Math.floor(Math.random()*exclamatory.length)];
+            }       e(myid).style.backgroundColor=e("trace").style.backgroundColor=e("displayPanel").style.backgroundColor="#f5f57e";
+            e("typeDisplay").innerHTML = `This is an example of ${tdisplay} Sentence`;
+            e("trace").innerHTML = example; e("trace").style.color="blue";
+            e(el.id).innerHTML = "Click again";
+            setTimeout(panelClear, 1000);
         }
-        else if(el.id=="imp"){ myid = "imp-two";
-            example = imperative[Math.floor(Math.random()*imperative.length)];
+        function panelClear(){e("displayPanel").style.backgroundColor="white";}
+        function colorless(){
+            const color = "#eef9fa";
+            e("ass-one").style.backgroundColor=e("imp-two").style.backgroundColor=e("int-three").style.backgroundColor=e("opt-four").style.backgroundColor=e("excl-five").style.backgroundColor=color;
         }
-        else if(el.id=="int"){ myid ="int-three";
-            example = interrogative[Math.floor(Math.random()*interrogative.length)];
-        }
-        else if(el.id=="opt"){ myid = "opt-four";
-            example = optative[Math.floor(Math.random()*optative.length)];
-        }
-        else if(el.id=="excl"){ myid ="excl-five";
-            example = exclamatory[Math.floor(Math.random()*exclamatory.length)];
-        }
-        
-        e(myid).style.backgroundColor=e("trace").style.backgroundColor=  "yellow";
-        e("trace").innerHTML = example;
-        e(el.id).innerHTML = "Click again"; 
-    }
-        
-    function colorless(){
-        const color = "#eef9fa";
-        e("ass-one").style.backgroundColor=e("imp-two").style.backgroundColor=e("int-three").style.backgroundColor=
-        e("opt-four").style.backgroundColor=e("excl-five").style.backgroundColor=color;
-    }
-        
-    function e(id){return document.getElementById(id);}
+        function e(id){return document.getElementById(id);}
+        e("year").innerHTML = creation_year;
     </script>
-
 </body>
 </html>
