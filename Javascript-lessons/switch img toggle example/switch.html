@@ -9,7 +9,9 @@
 </head>
 
 <body>
-    <img id="switch" src="switch-off-state.png" width="150px" height="150px" onclick="update(this)">
+    <img id="switch" src="switch-off-state.png" width="100px" height="100px" onclick="update(this)">
+    
+    <img id="bulb" src="bulb-off.png" width="150px" height="250px" onclick="update(this)">
     
     <script>
         const sound = new Audio("switch-sound.oga");
@@ -18,8 +20,10 @@
             if(el.id === "switch"){
                 if(bool=bool^1){
                     e("switch").src="switch-on.png";
+                    e("bulb").src="bulb-on.png";
                 }else{
                     e("switch").src="switch-off-state.png";
+                    e("bulb").src="bulb-off.png";
                 } 
             }
             sound.play();
