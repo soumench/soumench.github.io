@@ -24,7 +24,8 @@
         move("trace","460px", "40px");
         move("fanFrame","9px", "9px");  move("fanBlade","10px", "10px");
         e("fanFrame").style.zIndex=1;  e("fanBlade").style.zIndex=-1;
-        let i=0; let time; let increment=3; let bool;
+        let i=0; let time; const initialSpeed=3;
+        let increment=initialSpeed; let bool;
         function start_timer(){
             if(bool=bool^1){
                 stop_timer();
@@ -37,7 +38,8 @@
             e("trace").innerHTML=`i is ${i} and increment is ${increment}`;
         }        
         function changeSpeed(el){
-            if(el.id==="slow"){increment=3;}
+            bool=1;
+            if(el.id==="slow"){increment=initialSpeed;}
             else if(el.id==="mid"){increment=5;}
             else if(el.id==="high"){increment=8;}
             stop_timer();
