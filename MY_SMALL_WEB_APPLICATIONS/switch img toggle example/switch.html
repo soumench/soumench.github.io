@@ -19,22 +19,18 @@
     <script src="js/e.js"></script> <script src="js/move.js"></script>
     <script src="../../ENGLISH/year.js"></script>
     <script>
-        move("switch1","55px","135px");
-        move("switch2","55px","290px");
-        move("bulb","175px","340px");
-        const sound = new Audio("audio/switch-sound.oga");
-        const tone = new Audio("audio/onekhzTone.oga");
-        let bool; let bool1;
+        move("switch1","55px","135px"); move("switch2","55px","290px"); move("bulb","175px","340px");
+        const sound = new Audio("audio/switch-sound.oga"); const tone = new Audio("audio/onekhzTone.oga");
+        let bool; 
         function update(el){
             if(el.id === "switch2"){
                 if(bool=bool^1){e(el.id).src="img/switch-on.png";e("bulb").src="img/LED_ON.png";
                 }else{e(el.id).src="img/switch-off-state.png";e("bulb").src="img/LED_OFF.png";
                 } 
-            }
-            sound.play();
+            }sound.play();
         }        
         function coo(){sound.play();setTimeout(stop, 2100);e("switch1").src="img/switch-on.png";tone.play();}       function stop(){e("switch1").src="img/switch-off-state.png";sound.play();}
-        e("year").innerHTML = creation_year;
+        e("year").innerHTML=creation_year;
     </script>
 </body>
 </html>
