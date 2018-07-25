@@ -10,31 +10,52 @@
 <body>
     <button id="btnOn" onclick="start_timer()">ON</button> 
     <button id="btnOff" onclick="stop_timer()">OFF</button>
+    
+    <button id="slow" onclick="changeSpeed(this)">SLOW</button>
+    <button id="mid" onclick="changeSpeed(this)">MID</button>
+    <button id="high" onclick="changeSpeed(this)">HIGH</button>
+    
     <img src="frame300X300.png" id="fanFrame" width="300px" height="300px" >
     <img src="blade300X300.png" id="fanBlade" width="300px" height="300px" >
+    
+    <span id="trace">-----</span>
     
     <script src="../js/eclean.js"></script> 
     <script src="../js/move.js"></script>
     <script>
-        move("btnOn","300px", "300px"); move("btnOff","300px", "350px");
-        move("fanFrame","9px", "9px");
-        move("fanBlade","10px", "10px");
-        e("fanFrame").style.zIndex=1;
-        e("fanBlade").style.zIndex=-1;
+        const btnlocX1 = "400px"; const btnlocX2 = "430px";
+        move("btnOn",btnlocX1, "100px"); move("btnOff",btnlocX1, "190px");
+        move("slow",btnlocX2, "100px");move("mid",btnlocX2, "150px"); move("high",btnlocX2, "190px");
+        move("trace","460px", "100px");
+        move("fanFrame","9px", "9px");  move("fanBlade","10px", "10px");
+        e("fanFrame").style.zIndex=1;  e("fanBlade").style.zIndex=-1;
+        
         let i=0; let time;
+        
+        let increment=3 ;
+        
+        
         function start_timer(){
             stop_timer();
-            time = setInterval(rot, 10);
-           
-           function rot(){
-                i+=10;
-                e("fanBlade").style = 'transform: rotate(' + i+ 'deg)';  
-            }
+            time = setInterval(rot, 20);
         }
         
-        function stop_timer(){
-            clearInterval(time);
+        function rot(){
+            i+=increment;
+            e("fanBlade").style = 'transform: rotate(' + i+ 'deg)'; 
+            
+            e("trace").innerHTML=`i is ${i} and increment is ${increment}`;
         }
+        
+        function changeSpeed(el){
+            if(el.id==="slow"){increment=3;}
+            else if(el.id==="mid"){increment=5;}
+            else if(el.id==="high"){increment=8;}
+            start_timer();
+        }
+        
+        function stop_timer(){clearInterval(time);}
+        
         
         /*rotate("pic",-10);
         function rotate(id, degree){
