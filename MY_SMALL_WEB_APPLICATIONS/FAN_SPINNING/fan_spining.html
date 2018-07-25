@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+</head>
+
+<body>
+    <button id="btnOn" onclick="start_timer()">ON</button> 
+    <button id="btnOff" onclick="stop_timer()">OFF</button>
+    <img src="frame300X300.png" id="fanFrame" width="300px" height="300px" >
+    <img src="blade300X300.png" id="fanBlade" width="300px" height="300px" >
+    
+    <script src="../js/eclean.js"></script> 
+    <script src="../js/move.js"></script>
+    <script>
+        move("btnOn","300px", "300px"); move("btnOff","300px", "350px");
+        move("fanFrame","9px", "9px");
+        move("fanBlade","10px", "10px");
+        e("fanFrame").style.zIndex=1;
+        e("fanBlade").style.zIndex=-1;
+        let i=0; let time;
+        function start_timer(){
+            stop_timer();
+            time = setInterval(rot, 10);
+           
+           function rot(){
+                i+=10;
+                e("fanBlade").style = 'transform: rotate(' + i+ 'deg)';  
+            }
+        }
+        
+        function stop_timer(){
+            clearInterval(time);
+        }
+        
+        /*rotate("pic",-10);
+        function rotate(id, degree){
+           e(id).style = 'transform: rotate(' + degree + 'deg)'; 
+        }*/
+    
+    </script>
+
+</body>
+</html>
