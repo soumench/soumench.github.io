@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title> Title </title>
+	<title> </title>
 </head>
 
 <body>
     <img src="frame300X300.png" id="fanFrame" width="300px" height="300px" >
     <img src="blade300X300.png" id="fanBlade" width="300px" height="300px" >
-    <button id="btnOn" onclick="start_timer()" >ON/OFF</button> 
+    <button id="btnOnOff" onclick="start_timer()" >ON/OFF</button> 
     <button id="slow" onclick="changeSpeed(this)">SLOW</button>
     <button id="mid" onclick="changeSpeed(this)">MID</button>
     <button id="high" onclick="changeSpeed(this)">HIGH</button>
@@ -19,7 +19,7 @@
     <script src="../js/eclean.js"></script> <script src="../js/move.js"></script>
     <script>
         const btnlocX1 = "400px"; const btnlocX2 = "430px";
-        move("btnOn",btnlocX1, "35px"); 
+        move("btnOnOff",btnlocX1, "35px"); 
         move("slow",btnlocX1, "100px");move("mid",btnlocX1, "150px"); move("high",btnlocX1, "190px");
         move("trace","460px", "40px");
         move("fanFrame","9px", "9px");  move("fanBlade","10px", "10px");
