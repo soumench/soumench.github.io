@@ -6,3 +6,10 @@
 e("quiz_board").style.backgroundImage="url('img/my_img.jpg')";
 
 e("quiz_board").style.backgroundSize = "300px 300px"; 
+
+
+
+*********************************************
+
+normal image change
+ e("slow").src=e("mid").src=e("high").src="push-button-off.png";
