@@ -9,25 +9,30 @@
 
 <body>
     <h2>Sandhi Drill by Takni</h2>
-    <button id="btn">Click Here to Fetch New Sandhi</button><br><br>
-    
-    <input type="text" id="firstword">
-    <input type="text" id="lastword"><br><br>
-    Write Your Answer here: <input type="text" id="ui">
+    <input type="text" id="firstword" onkeyup="sandhi()"> +
+    <input type="text" id="lastword" onkeyup="sandhi()">
+    <button id="btn" onkeyup="sandhi()">Make Sandhi</button><br><br>
+    Result:<span id="r"> </span>
     
     <script>
-        const TIMEOUT=90; const TIMEOUTBASE=90; const MAXTIME=120;
         
-        const ZAPFIRST=10001; const ZAPSECOND=10002; 
-        const ADDFIRST=10003; const ADDSECOND=10004;
-        const SENDMENU=10005;
-        const ZAPPIE=10006;
-        const SENDCHEATSHEET=10007;
-        
-        const lastfirst=-1; const lastsecond=-1;
-        
-        let CHEATSHEETNAME;
-    
+        function sandhi(){
+            let fw = cleaninput( e("firstword").value);
+            let lw = cleaninput( e("lastword").value);
+            let join;
+            
+            if(fw==="mahA" && lw==="indra"){
+                join="mahendra";
+            }
+            else{
+                join = "idk";
+            }
+            e("r").innerHTML=join;  
+        }
+        function cleaninput(input) {
+	       return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ").toLowerCase();
+        }
+        function e(id){return document.getElementById(id);}
     </script>
     
 
