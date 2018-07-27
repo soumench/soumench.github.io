@@ -5,30 +5,96 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> Title </title>
+    <style>
+        body{ 
+            width="480px"; height="640px";
+            border: 1px solid red;
+        }
+    </style>
 </head>
 
 <body>
-    <img src="arrow.png" id="arrow" alt="" width="300px" height="300px" onclick="update()">
-    <img src="traffic_light.png" alt="" width="" height="">
+    <span>Prefix----------------------------------------Suffix</span><br>
+    <img src="arrow-off.png" id="arrow" alt="" width="300px" height="300px" onclick="update()"><br>
+    
+    <input type="button" id="select" onclick="load()" value="CLICK ME" ><br><br>
+    <button id="check" onclick="checkFix()">CHECK</button><br>
+    
+    <span id="fixWord">--</span><br>
+    <span id="mainWord">--</span><br>
+        
     <script src="../js/move.js"></script>
     <script>
+        let activate = 0;
+        e("check").disabled=true;
+        e("mainWord").style.visibility="hidden"; 
+        let fixknobSet; let result;
         let i=1;
-        const rots = [45,0,-45,0];
-        rotate("arrow",45);
-        
-        function update(){
+        const rots = [130,-130];
+        let c=0;
+        const list = [
+            "un","unhappy","prefix",
             
-            rotate("arrow",rots[i]);
-            ++i;
-            if(i>=rots.length){
-                i=0;
-            }
+            "less","tasteless","suffix",
+            
+            "able","presentable", "suffix"
+        ];
+        const length = list.length;
+        let fixCheck;
+        rotate("arrow",180);
+        hide();
+        function load(){
+            e("arrow").src="arrow-on.png";
+            e("select").value="---";
+            activate=1;
+            e("select").disabled=true;
+            rotate("arrow",180);
+            c++;
+            if( c >= length/3){c = 0;}
+            e("fixWord").innerHTML=list[c*3];
+            e("mainWord").innerHTML=list[c*3+1];
+            fixCheck = list[c*3+2];
+            e("mainWord").style.visibility= "hidden";
         }
         
+        function checkFix(){
+            e("arrow").src="arrow-off.png";
+            if(fixCheck==="prefix" && fixknobSet === "prefix" || fixCheck==="suffix" && fixknobSet === "suffix"){
+               result = "CORRECT ANSWER !";
+            }
+           
+            else{
+                e("mainWord").style.color="red";
+                result = "WRONG! BOOM!"
+            }
+            e("fixWord").innerHTML= result;
+            e("mainWord").style.visibility= "visible";
+            e("check").disabled=true;
+            e("select").disabled=false;
+            activate=0;
+            e("select").value="NEXT";
+        }
         
+        function hide(){
+            e("mainWord").style.visibility= "hidden";
+        }
+        
+        function update(){
+            if(activate){
+                rotate("arrow",rots[i]);
+                ++i;
+                if(i>=rots.length){
+                    i=0;
+                }
+                if(i===1){fixknobSet="prefix";}
+                else if(i===0){fixknobSet="suffix";}
+                e("check").disabled=false;
+            }
+            else return;
+        }     
         
         function rotate(id, degree){
-           e(id).style = 'transform: rotate(' + degree + 'deg)'; 
+           e(id).style = 'transform: rotate(' + degree + 'deg)';
         }
         function e(id){return document.getElementById(id);}
     </script>
