@@ -27,10 +27,11 @@
             else{
                 join = "idk";
             }
-            e("r").innerHTML=join;  
+            e("r").innerHTML=fw + "--"+ lw+ "---"+ join;  
         }
         function cleaninput(input) {
-	       return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ").toLowerCase();
+	       /*return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ").toLowerCase();*/
+           return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ");
         }
         function e(id){return document.getElementById(id);}
     </script>

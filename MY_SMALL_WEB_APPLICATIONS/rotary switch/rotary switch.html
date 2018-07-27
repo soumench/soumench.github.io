@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+</head>
+
+<body>
+    <img src="arrow.png" id="arrow" alt="" width="300px" height="300px" onclick="update()">
+    <img src="traffic_light.png" alt="" width="" height="">
+    <script src="../js/move.js"></script>
+    <script>
+        let i=1;
+        const rots = [45,0,-45,0];
+        rotate("arrow",45);
+        
+        function update(){
+            
+            rotate("arrow",rots[i]);
+            ++i;
+            if(i>=rots.length){
+                i=0;
+            }
+        }
+        
+        
+        
+        function rotate(id, degree){
+           e(id).style = 'transform: rotate(' + degree + 'deg)'; 
+        }
+        function e(id){return document.getElementById(id);}
+    </script>
+</body>
+</html>
