@@ -21,22 +21,24 @@
             let lw = cleaninput( e("lastword").value);
             let join;
             
-            if(fw==="mahA" && lw==="indra"){
+            if(/[aAi]$/.test(fw)==="a" || /^[iI]/.test(lw)==="i"){
+                e("r").innerHTML="found";
+                return;
+            }
+            else if(fw==="mahA" && lw==="indra"){
                 join="mahendra";
             }
             else{
                 join = "idk";
             }
-            e("r").innerHTML=fw + "--"+ lw+ "---"+ join;  
+            e("r").innerHTML=fw + "--"+ lw+ "---"+ join;
         }
-        function cleaninput(input) {
+        function cleaninput(input){
 	       /*return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ").toLowerCase();*/
            return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ");
         }
         function e(id){return document.getElementById(id);}
     </script>
-    
-
 </body>
 </html>
 
