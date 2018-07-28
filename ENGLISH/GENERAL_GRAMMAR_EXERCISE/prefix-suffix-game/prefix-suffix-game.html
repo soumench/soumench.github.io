@@ -76,13 +76,13 @@
             let result;
             
             if(fixCheck==="prefix" && fixknobSet === "prefix" || fixCheck==="suffix" && fixknobSet === "suffix"){
+                rotate("arrow",0); e("arrow").src="img/clapping.png"; 
                 result = "CORRECT ANSWER !";
-                e("arrow").src="img/clapping.png"; rotate("arrow",0);
                 clap.play();
             }           
             else{
+                rotate("arrow",0); e("arrow").src="img/boom.png";
                 result = "WRONG! BOOM!"
-                e("arrow").src="img/boom.png"; rotate("arrow",0);
                 explosion.play();
             }
             e("fixWord").innerHTML= answerWord ;
@@ -91,7 +91,6 @@
         }
                         
         function knobUpdate(){
-            knob_sound.play();
             if(!activate){return;}
             else{
                 e("check").style.visibility="visible";
@@ -103,6 +102,7 @@
                 if(i===1){fixknobSet="prefix";}
                 else if(i===0){fixknobSet="suffix";}
             }
+            knob_sound.play();
         }     
         e("year").innerHTML = creation_year;        
     </script>
