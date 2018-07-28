@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+    <link rel="stylesheet" type="text/css" href="css/ps.css">
+</head>
+
+<body>
+    <h3>Play the Prefix Suffix Game </h3>
+    
+    <img src="img/prefix.png" id="p" alt="" width="60px" height="60px">
+    <img src="img/suffix.png" id="s" alt="" width="60px" height="60px">
+    
+    <img src="img/blank1.png" id="arrow" alt="" width="300px" height="300px" onclick="knobUpdate()"><br>
+    
+    <div id="display">
+        <span id="fixWord">***</span><br>
+    </div>
+    
+    <input type="button" id="select" onclick="load()" value="START" class="btn"><br><br>
+    <button id="check" onclick="checkFix()" class="btn">CHECK</button><br>
+    
+    <footer id="foot">
+		Copyright &copy; Made by Soumen Chakraborty  - <span id="year">year</span> <br>
+		Strictly for Educational, Non-commercial and Non-Profit purpose.
+	</footer>
+                
+    <script src="../js/move.js"></script> <script src="js/move.js"></script> <script src="js/ps.js"></script>
+    <script src="js/rot.js"></script> <script src="js/e.js"></script> <script src="../../year.js"></script>
+    <script>
+        move("p","70px","9px"); e("p").style.zIndex=e("s").style.zIndex=2;
+        move("s","70px","249px");
+        move("arrow","10px","10px"); rotate("arrow",0);
+        move("select","435px","100px"); 
+        move("check","435px","100px"); 
+        
+        /*move("fixWord","385px", "120px");*/
+        move("display","385px", "120px");
+        move("foot","500px","0px");       
+        e("check").style.visibility="hidden";
+        const clap=new Audio("audio/clapping.oga");
+        const explosion=new Audio("audio/explosion.oga");
+        const switch_sound=new Audio("audio/switch-sound.oga");
+        const knob_sound=new Audio("audio/knob_sound.oga");
+        let activate = 0;        
+        let fixknobSet; let fixCheck; let answerWord;
+        let i=1; let c=0;
+        const rots = [130,-130];
+        
+        const length = list.length;        
+        
+        function load(){
+            switch_sound.play();
+            e("select").style.visibility=e("check").style.visibility="hidden";
+                       
+            e("arrow").src="img/arrow-on.png";  rotate("arrow",180);         
+                                
+            ++c;
+            if( c >= length/3){c = 0;}
+            e("fixWord").innerHTML=list[c*3];
+            
+            answerWord = list[c*3+1];
+            fixCheck = list[c*3+2];
+            
+            activate=1;
+        }
+        
+        function checkFix(){
+            e("select").style.visibility="visible";
+            e("select").value="NEXT>";
+            e("check").style.visibility="hidden";
+            e("arrow").src="img/arrow-off.png";                       
+            let result;
+            
+            if(fixCheck==="prefix" && fixknobSet === "prefix" || fixCheck==="suffix" && fixknobSet === "suffix"){
+                result = "CORRECT ANSWER !";
+                e("arrow").src="img/clapping.png"; rotate("arrow",0);
+                clap.play();
+            }           
+            else{
+                result = "WRONG! BOOM!"
+                e("arrow").src="img/boom.png"; rotate("arrow",0);
+                explosion.play();
+            }
+            e("fixWord").innerHTML= answerWord ;
+                    
+            activate=0;
+        }
+                        
+        function knobUpdate(){
+            knob_sound.play();
+            if(!activate){return;}
+            else{
+                e("check").style.visibility="visible";
+                rotate("arrow",rots[i]);
+                ++i;
+                if(i>=rots.length){
+                    i=0;
+                }
+                if(i===1){fixknobSet="prefix";}
+                else if(i===0){fixknobSet="suffix";}
+            }
+        }     
+        e("year").innerHTML = creation_year;        
+    </script>
+</body>
+</html>
