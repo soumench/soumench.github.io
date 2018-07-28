@@ -21,7 +21,7 @@
             let lw = cleaninput( e("lastword").value);
             let join;
             
-            if(/[aAi]$/.test(fw)==="a" || /^[iI]/.test(lw)==="i"){
+             if( /[aA]$/.test(fw) && /^[iI]/.test(lw) )
                 e("r").innerHTML="found";
                 return;
             }
