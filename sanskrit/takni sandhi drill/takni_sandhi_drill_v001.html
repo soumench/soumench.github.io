@@ -32,11 +32,14 @@
             }
             e("r").innerHTML=fw + "--"+ lw+ "---"+ join;
         }
+        
         function cleaninput(input){
 	       /*return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ").toLowerCase();*/
            return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ");
         }
-        function e(id){return document.getElementById(id);}
+        function e(id){
+            return document.getElementById(id);
+        }
     </script>
 </body>
 </html>
