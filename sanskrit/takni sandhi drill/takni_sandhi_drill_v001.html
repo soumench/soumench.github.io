@@ -22,10 +22,7 @@
             let join;
             
             if( /[aA]$/.test(fw) && /^[iI]/.test(lw) ){
-                join="found";
-            }
-            else if(fw==="mahA" && lw==="indra"){
-                join="mahendra";
+                join= fw.replace(/(.)$/,"") + "e" + lw.replace(/^(.)/,"");
             }
             else{
                 join = "idk";
