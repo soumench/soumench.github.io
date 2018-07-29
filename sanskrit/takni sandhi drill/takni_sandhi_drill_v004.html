@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+</head>
+
+<body>
+    <h2>Sandhi Drill by Takni</h2>
+    <input type="text" id="firstword" onkeyup="sandhi()"> +
+    <input type="text" id="lastword" onkeyup="sandhi()">
+    <button id="btn" onkeyup="sandhi()">Make Sandhi</button><br><br>
+    Result:<span id="r"> </span>
+    
+    <script>
+        
+        function sandhi(){
+           /* let fw = cleaninput( e("firstword").value);*/
+            let fw = shrink(  cleaninput( e("firstword").value) );
+            /*let lw = cleaninput( e("lastword").value);*/
+            let lw = shrink ( cleaninput( e("lastword").value) );
+            let join;
+            
+            if( /[aA]$/.test(fw) && /^[iI]/.test(lw) ){
+                /*join= fw.replace(/(.)$/,"") + "e" + lw.replace(/^(.)/,"");*/
+                join= fw.slice(0,-1) + "e" + lw.slice(1) ; 
+            }
+            else{
+                join = "idk";
+            }
+            e("r").innerHTML=fw + "--"+ lw+ "---"+ join;
+        }
+        
+        
+        function embiggen( x ){
+           /* x=x.replace (/[aA]+/,"A").replace(/[iI]+/,"I").replace(/[uU]+/,"U").replace(/[Rq]+/,"q");*/
+             x=x.replace (/I/g,"ii"); 
+            return x;
+        }
+        
+        function shrink( x ){
+           /* x=x.replace (/[aA]+/,"A").replace(/[iI]+/,"I").replace(/[uU]+/,"U").replace(/[Rq]+/,"q");*/
+            x=x.replace (/[aA]+/g,"A").replace(/[iI]+/g,"I").replace(/[uU]+/g,"U").replace(/[Rq]+/g,"q");
+            return x;
+        }
+        
+        function cleaninput(input){
+	       /*return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ").toLowerCase();*/
+           return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ");
+        }
+        function e(id){
+            return document.getElementById(id);
+        }
+    </script>
+</body>
+</html>
+
+<!--
+
+[11:50] Takni Mistwalker: it is okay because you can look at the scripts that we made a few months ago
+
+[11:50] Takni Mistwalker: those scripts did the same thing
+[11:50] Takni Mistwalker: they checked if a verb ended in "ed"
+[11:50] Takni Mistwalker: then shaved off the edd and added something else
+[11:51] Takni Mistwalker: so you can do that again
+
+[11:51] Takni Mistwalker: here you tst for endings in a or A
+[11:51] Takni Mistwalker: and beginnings in i or I
+[11:51] Takni Mistwalker: if both tests are positive
+[11:51] Takni Mistwalker: you cut one letter from the end of first word
+[11:51] Takni Mistwalker: cut one letter form start of second word
+[11:52] Takni Mistwalker: and assemble those with an e in th emiddle
+[11:52] Takni Mistwalker: not hard really if you go step a by step
+
+[11:52] Takni Mistwalker: it has no other secret than doing it one thing at a time
+[11:52] Takni Mistwalker: after you get the atheha and mahendra to work
+[11:52] Takni Mistwalker: then you ass some other branch in the same style
+
+[11:53] Takni Mistwalker: looking at my script will show you which branches you need
+[11:53] Takni Mistwalker: do not hurry
+
+[11:53] Takni Mistwalker: we need to have this finished before one year
+
+[11:53] Takni Mistwalker: i am right now giving you my guidance
+[11:53] Takni Mistwalker: which is basically
+[11:53] Takni Mistwalker: do the same thign we did with the past-present-partiviple thingies for verbs
+[11:54] Takni Mistwalker: and keep increasing version numbers just in case you screw upyou can go back to a previous version
+-->
