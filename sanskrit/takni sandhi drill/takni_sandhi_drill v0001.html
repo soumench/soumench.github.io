@@ -21,9 +21,9 @@
             let lw = cleaninput( e("lastword").value);
             let join;
             
-             if( /[aA]$/.test(fw) && /^[iI]/.test(lw) )
-                e("r").innerHTML="found";
-                return;
+            if( /[aA]$/.test(fw) && /^[iI]/.test(lw) ){
+                join="found";
+                
             }
             else if(fw==="mahA" && lw==="indra"){
                 join="mahendra";
