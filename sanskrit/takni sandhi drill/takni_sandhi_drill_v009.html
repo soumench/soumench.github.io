@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+</head>
+
+<body>
+    <h2>Sandhi Drill Tester</h2>
+    <input type="text" id="firstword" onkeyup="sandhi()"> +
+    <input type="text" id="lastword" onkeyup="sandhi()">
+    <button id="btn" onkeyup="sandhi()">Make Sandhi</button><br><br>
+    Result:<span id="r"> </span>
+    
+    <script>
+        function sandhi(){           
+            let fw = shrink(  cleaninput( e("firstword").value) );
+            
+            let lw = shrink ( cleaninput( e("lastword").value) );
+            let join;
+            
+            if( /[aA]$/.test(fw) && /^[iI]/.test(lw) ){
+                
+                join= fw.slice(0,-1) + "e" + lw.slice(1) ; 
+            }
+            else if( /[aA]$/.test(fw) && /^[uU]/.test(lw) ){ 
+                join= fw.slice(0,-1) + "o" + lw.slice(1) ; 
+            }
+             else if( /as$/.test(fw) && /^a/.test(lw) ){ 
+                join= fw.slice(0,-2) + "o" + lw.slice(1) ; 
+             }
+            else if( /as$/.test(fw) && /^[AiIuURqYWeo]/.test(lw) ){                
+                join= fw.slice(0,-1) + "::" + lw ;         
+            }
+            else{
+                join = fw+" + "+lw;
+            }            
+            e("r").innerHTML=fw + "--"+ lw+ "---"+ embiggen(join);
+        }        
+        
+        function embiggen( x ){
+            /*x=x.replace (/I/g,"ii");*/
+            x=x.replace (/I/g,"ii").replace (/Y/g,"ai").replace (/W/g,"au"); 
+            return x;
+        }
+        
+        function shrink( x ){
+            x=x.replace (/aa+/g,"A").replace (/ii+/g,"I").replace (/uu+/g,"U").replace (/RR+/g,"q").replace (/ai/g,"Y").replace (/au/g,"W");
+            return x;
+        }
+        
+        function cleaninput(input){
+	      return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ");
+        }
+        function e(id){
+            return document.getElementById(id);
+        }
+    </script>
+</body>
+</html>
