@@ -5,14 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> Title </title>
+    <style>
+        body{font-size: 24px; text-align: center;}
+        input {text-align: center;}
+        
+    </style>
 </head>
 
 <body>
     <h2>Sandhi Drill Tester</h2>
-    <input type="text" id="firstword" onkeyup="sandhi()"> +
+    <input type="text" id="firstword" onkeyup="sandhi()" autofocus> +
     <input type="text" id="lastword" onkeyup="sandhi()">
     <button id="btn" onkeyup="sandhi()">Make Sandhi</button><br><br>
-    Result:<span id="r">--- </span>
+    Result: <span id="trace">--- </span>
     
     <script>
         function sandhi(){           
@@ -37,7 +42,7 @@
             else{
                 join = fw+" + "+lw;
             }            
-            e("r").innerHTML=fw + "--"+ lw+ "---"+ embiggen(join);
+            e("trace").innerHTML=fw + "--"+ lw+ "---"+ embiggen(join);
         }        
         
         function embiggen( x ){
