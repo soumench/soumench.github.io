@@ -15,7 +15,7 @@
 <body>
     <input type="button" value="Shuffle the Word." id="sfl" onclick="update()"><br>
     <span id="sflDisplay"></span><br>
-    <input type="text" id="ui">
+    <input type="text" id="ui" placeholder="type your guess here.">
     <input type="button" value="check" id="chk" onclick="compare()"><br>
     <span id="cmpDisplay"></span><br>
     <input type="button" value="I don't know." id="idk" onclick="show()"><br>
@@ -26,9 +26,13 @@
         const list = ["start","play","beautiful","secret"];
         let original;
         function compare(){
-            let myword = e("ui").value;
             let msg;
-            if(myword===original){
+            let myword = e("ui").value;
+            if(myword===""){
+               msg="no user input"; 
+            }
+            
+            else if(myword===original){
                 msg="Congratulations!";
             }
             else {
@@ -46,6 +50,7 @@
                 i=0;
             }
             e("hintDisplay").innerHTML="";
+            e("cmpDisplay").innerHTML="";
         }
         
         function show(){
