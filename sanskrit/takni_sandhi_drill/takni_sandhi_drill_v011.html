@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sandhi Drill Tester</title>
+    <style>
+        body{font-size: 24px; text-align: left;}
+    </style>
+</head>
+
+<body>
+    <h2>Sandhi Drill Tester</h2>
+    <input type="text" id="firstword" onkeyup="sandhi()" autofocus> 
+    <!-- input type="text" id="lastword" onkeyup="sandhi()" -->
+    <!--button id="btn" onkeyup="sandhi()">Make Sandhi</button><br><br-->
+    <br>
+    <span id="trace">--- </span>
+    
+    <script>
+        function embiggen( te ){
+            return te.replace(/([aAiIuURqLeoYW])([aAiIuURqLeoYW])/,"$1::$2").replace (/Y/g,"ai").replace (/W/g,"au").replace (/I/g,"ii");
+        }        
+        function sandhi(){
+            let inp=shrink(  cleaninput( e("firstword").value) );
+            let join=""; let fw=""; let lw="";
+            if(! (/ /.test(inp))){join = inp;}else{
+                let fw = inp.replace(/ .*/,"").replace(/H$/,"s");
+                let lw = inp.replace(/^.* /,"");
+                if (lw.slice(0,2)=="ch" && /[aiuRL]$/.test(fw) ) join=fw+"c"+lw;
+                else if( /a$/i.test(fw) ){
+                    if( /^i/i.test(lw) ) join= fw.slice(0,-1) + "e" + lw.slice(1) ; 
+                    else if (/^u/i.test(lw) )    join= fw.slice(0,-1) + "o" + lw.slice(1) ; 
+                    else if (/^[Rq]/.test(lw) )    join= fw.slice(0,-1) + "ar" + lw.slice(1) ; 
+                    else if (/^[eY]/.test(lw) )    join= fw.slice(0,-1) + "Y" + lw.slice(1) ; 
+                    else if (/^[oW]/.test(lw) )    join= fw.slice(0,-1) + "W" + lw.slice(1) ; 
+                    else join= fw  + " " + lw ; 
+                }
+                else if( /as$/.test(fw) ){
+                    if( /^a/.test(lw) )join= fw.slice(0,-2) + "o" + lw.slice(1) ; 
+                    else if( /^[AiIuURqYWeo]/.test(lw) ) join= fw.slice(0,-1) + lw ;         
+                    else join= fw  + " YY " + lw ; 
+                }
+                else if( /As$/.test(fw) ){
+                    if( /^[st]/.test(lw) )join= fw.slice(0,-1) + "s" + lw ; 
+                    else if( /^[zc]/.test(lw) )join= fw.slice(0,-1) + "z" + lw ; 
+                    else if( /^[ST]/.test(lw) )join= fw.slice(0,-1) + "S" + lw ; 
+                    else if( /^[pk]/.test(lw) )join= fw.slice(0,-1) + "H" + lw ;                     
+                    else if( /^[AiIuURqYWeo]/.test(lw) ) join= fw.slice(0,-1) + lw ;         
+                    else join= fw.slice(0,-1) + lw ; 
+                }
+                else if( /[eo]$/.test(fw) ){
+                    if( /^[AiIuURqYWeo]/.test(lw) ) join= fw.slice(0,-1) + "a " + lw ;         
+                    else join= fw + lw ; 
+                }
+                else if( /Y$/.test(fw) ){
+                    if( /^[AiIuURqYWeo]/.test(lw) ) join= fw.slice(0,-1) + "A " + lw ;         
+                    else join= fw + lw ; 
+                }
+                else if( /[eo]$/.test(fw) ){
+                    if( /^[AiIuURqYWeo]/.test(lw) ) join= fw.slice(0,-1) + "Av " + lw ;         
+                    else join= fw + lw ; 
+                }
+                else {join = fw+" + "+lw; }            
+            }
+            e("trace").innerHTML=embiggen(fw) + " + " + embiggen(lw)+
+            " --> "+ embiggen(join);
+        }        
+
+        function shrink( x ){
+            x=x.replace(/E/g,"e").replace(/O/g,"o").replace (/aa+/g,"A").replace (/ii+/g,"I").replace (/uu+/g,"U").replace (/RR+/g,"q").replace (/ai/g,"Y").replace (/au/g,"W");
+            return x;
+        }
+        
+        function cleaninput(input){
+          return input.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s\s+$/g, " ");
+        }
+        function e(id){
+            return document.getElementById(id);
+        }
+    </script>
+</body>
+</html>
