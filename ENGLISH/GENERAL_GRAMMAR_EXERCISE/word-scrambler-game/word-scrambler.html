@@ -4,30 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title> Title </title>
-    <style>
-        body{font-size: 24px; text-align: center;}
-        #sfl{font-size: 100%;}
-        #sflDisplay{font-size: 180%;}
-        #wordBoard,#checkBox,#hintBox,footer{
-            border: 4px solid #1f30f7;
-            border-radius: 32px;
-            margin: auto;
-            padding: 10px;
-            background: #f5d6f4;
-        }
-        .btn{
-            border: 2px solid red;
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 10px;
-        }
-        footer{
-            font-size: 60%;
-            background-color: aquamarine;
-        }
-        
-    </style>
+	<title>  </title>
+    <link rel="stylesheet" type="text/css" href="css/mycss.css">
 </head>
 
 <body>
@@ -50,68 +28,46 @@
 	   <br> 
 		Strictly for Educational and Non-Commercial purpose only.
     </footer>
-    <script src="../../year.js"></script>
+    <script src="../../year.js"></script> <script src="js/list.js"></script> <script src="js/e.js"></script>
+    <script src="js/shuffleword.js"></script> <script src="js/shuffle_array.js"></script>
     <script>
-        const sflsnd = new Audio("audio/ting-128kbps.ogg");
-        const chksnd = new Audio("audio/knob_sound.oga");
+        const sflsnd = new Audio("audio/ting-128kbps.ogg"); const chksnd = new Audio("audio/knob_sound.oga");
         const btnsnd = new Audio("audio/switch-sound.oga");
-        let i=0;
-        const list = ["start","play","beautiful","secret"];
-        let original="";
+        let i=0; let original="";
+        fisherYates( list);
         function compare(){
             let msg;
-            let myword = e("ui").value;
+            let myword = cleaninput (e("ui").value);
             if(myword===""){
                msg="First write then press."; 
-            }            
-            else if(myword===original){
+            }else if(myword===original){
                 msg="You are right!";
-            }
-            else {
+            }else {
                 msg = "Sorry! Try Again.";
             }
             e("cmpDisplay").innerHTML=msg;
             chksnd.play();
-        }
-        
+        }        
         function update(){
             e("sfl").value = "Next Word";
             original= list[i];
             let modword = shuffelWord(original);
             e("sflDisplay").innerHTML = modword;
             ++i;
-            if(i>=list.length){
-                i=0;
-            }
-            clear();
-            sflsnd.play();
-        }
-        
-        function clear(){
-            e("hintDisplay").innerHTML=e("cmpDisplay").innerHTML="*-*-*";
-        }
-        
+            if(i>=list.length){i=0;}
+            clear(); sflsnd.play();
+        }        
+        function clear(){ e("hintDisplay").innerHTML=e("cmpDisplay").innerHTML="*-*-*"; }        
         function show(){
             let m;
             if(original===""){
                 m="Press the Start Button!";
-            }
-            else{
+            }else{
                 m=original;
             }
             e("hintDisplay").innerHTML=m;
             btnsnd.play();
-        }
-        
-        function shuffelWord (word){
-            let shuffledWord = '';
-            word = word.split('');
-            while (word.length > 0) {
-              shuffledWord +=  word.splice(word.length * Math.random() << 0, 1);
-            }
-            return shuffledWord;
-        }
-        function e(id){return document.getElementById(id);}
+        }           
         e("year").innerHTML = creation_year;
     </script>
 </body>
