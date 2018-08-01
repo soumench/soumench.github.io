@@ -6,42 +6,76 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> Title </title>
     <style>
-        body{font-size: 24px;}
+        body{font-size: 24px; text-align: center;}
         #sfl{font-size: 100%;}
         #sflDisplay{font-size: 180%;}
+        #wordBoard,#checkBox,#hintBox,footer{
+            border: 4px solid #1f30f7;
+            border-radius: 32px;
+            margin: auto;
+            padding: 10px;
+            background: #f5d6f4;
+        }
+        .btn{
+            border: 2px solid red;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 10px;
+        }
+        footer{
+            font-size: 60%;
+            background-color: aquamarine;
+        }
+        
     </style>
 </head>
 
 <body>
-    <input type="button" value="Shuffle the Word." id="sfl" onclick="update()"><br>
-    <span id="sflDisplay"></span><br>
-    <input type="text" id="ui" placeholder="type your guess here.">
-    <input type="button" value="check" id="chk" onclick="compare()"><br>
-    <span id="cmpDisplay"></span><br>
-    <input type="button" value="I don't know." id="idk" onclick="show()"><br>
-    <span id="hintDisplay"></span><br>
-    
+    <h2>Word Scrambler</h2>
+    <div id="wordBoard">
+        <input type="button" value="Start" id="sfl" onclick="update()" class="btn"><br>
+        <span id="sflDisplay">*-*-*</span>
+    </div>
+    <div id="checkBox">
+        <input type="text" id="ui" placeholder="Write your guess here.">
+        <input type="button" value="Check" id="chk" onclick="compare()" class="btn"><br>
+        <span id="cmpDisplay">*-*-*</span><br>
+    </div>
+    <div id="hintBox">    
+    <input type="button" value="I don't know. Show me the answer." id="idk" onclick="show()" class="btn"><br>
+    <span id="hintDisplay">*-*-*</span><br>
+    </div>
+    <footer> 
+		Copyright &copy; Made by Soumen Chakraborty     - <span id="year">year</span> 
+	   <br> 
+		Strictly for Educational and Non-Commercial purpose only.
+    </footer>
+    <script src="../../year.js"></script>
     <script>
+        const sflsnd = new Audio("audio/ting-128kbps.ogg");
+        const chksnd = new Audio("audio/knob_sound.oga");
+        const btnsnd = new Audio("audio/switch-sound.oga");
         let i=0;
         const list = ["start","play","beautiful","secret"];
-        let original;
+        let original="";
         function compare(){
             let msg;
             let myword = e("ui").value;
             if(myword===""){
-               msg="no user input"; 
-            }
-            
+               msg="First write then press."; 
+            }            
             else if(myword===original){
-                msg="Congratulations!";
+                msg="You are right!";
             }
             else {
                 msg = "Sorry! Try Again.";
             }
             e("cmpDisplay").innerHTML=msg;
+            chksnd.play();
         }
         
         function update(){
+            e("sfl").value = "Next Word";
             original= list[i];
             let modword = shuffelWord(original);
             e("sflDisplay").innerHTML = modword;
@@ -49,12 +83,24 @@
             if(i>=list.length){
                 i=0;
             }
-            e("hintDisplay").innerHTML="";
-            e("cmpDisplay").innerHTML="";
+            clear();
+            sflsnd.play();
+        }
+        
+        function clear(){
+            e("hintDisplay").innerHTML=e("cmpDisplay").innerHTML="*-*-*";
         }
         
         function show(){
-            e("hintDisplay").innerHTML=original;
+            let m;
+            if(original===""){
+                m="Press the Start Button!";
+            }
+            else{
+                m=original;
+            }
+            e("hintDisplay").innerHTML=m;
+            btnsnd.play();
         }
         
         function shuffelWord (word){
@@ -66,6 +112,7 @@
             return shuffledWord;
         }
         function e(id){return document.getElementById(id);}
+        e("year").innerHTML = creation_year;
     </script>
 </body>
 </html>
