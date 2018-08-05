@@ -10,9 +10,14 @@
 <body>
     <img src="doorframe.png" width="480px" height="640px" id="df" onclick="operate()">
     <img src="doorpane.png" width="225px" height="390px" id="dp" >
+    <img src="interior.png" width="450px" height="500px" id="int">
     <span id="trace"></span>
     
     <script>
+        e("int").style.zIndex=-3;
+        move("int","100px", "0px");
+        
+        
         e("df").style.zIndex=-1;
         e("dp").style.zIndex=-2; 
         
