@@ -25,8 +25,8 @@
         let doorPosX="155px";
         let doorClosedPos=145;
         let doorOpenPos=380;
-        let posYclosed = doorClosedPos;
-        let step=1;
+        let posY = doorClosedPos;
+        let step=15;
         let duration=50;
         let i=0; let time;
         let doorState=0; 
@@ -40,25 +40,23 @@
         }
         
         function open(){              
-            posYclosed=posYclosed+i;
-            i+=step; 
-            if(posYclosed >doorOpenPos){
-                posYclosed=doorOpenPos;
+            posY+=step;
+            if(posY >doorOpenPos){
+                posY=doorOpenPos;
                 clearInterval(time);                    
             }
-            move("dp",doorPosX, posYclosed+"px");
-            e("trace").innerHTML=posYclosed;
+            move("dp",doorPosX, posY+"px");
+            e("trace").innerHTML=posY;
         }
         
         function close(){
-            posYclosed=posYclosed-i;
-            i-=step;
-            if(posYclosed < doorClosedPos){
-                posYclosed=doorClosedPos;
+            posY-=step;
+            if(posY < doorClosedPos){
+                posY=doorClosedPos;
                 clearInterval(time);                    
             }
-            move("dp",doorPosX, posYclosed+"px");
-            e("trace").innerHTML=posYclosed;
+            move("dp",doorPosX, posY+"px");
+            e("trace").innerHTML=posY;
         }
         
         function e(id){return document.getElementById(id);}
