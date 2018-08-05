@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <img src="doorframe.png" width="480px" height="640px" id="df" onclick="operate()">
+    <img src="doorpane.png" width="225px" height="390px" id="dp" >
+    <span id="trace"></span>
+    
+    <script>
+        e("df").style.zIndex=-1;
+        e("dp").style.zIndex=-2; 
+        
+        
+        let doorPosX="155px";
+        let doorClosedPos=145;
+        let doorOpenPos=380;
+        let posYclosed = doorClosedPos;
+        let posYopen = doorOpenPos;
+        let step=1;
+        let duration=50;
+        let i=0; let time;
+        let doorState=0; 
+        move("dp", doorPosX, doorClosedPos+"px");
+        const doorsound = new Audio("doorsound.oga");
+               
+        function operate(){
+            if(doorState=doorState^1){time=setInterval(open, duration);}
+            else{time=setInterval(close, duration);}
+            doorsound.play();
+        }
+        
+        function open(){              
+            posYclosed=posYclosed+i;
+            i+=step; 
+            if(posYclosed >doorOpenPos){
+                posYclosed=doorOpenPos;
+                clearInterval(time);                    
+            }
+            move("dp",doorPosX, posYclosed+"px");
+            e("trace").innerHTML=posYclosed;
+        }
+        
+        function close(){
+            posYclosed=posYclosed-i;
+            i-=step;
+            if(posYclosed < doorClosedPos){
+                posYclosed=doorClosedPos;
+                clearInterval(time);                    
+            }
+            move("dp",doorPosX, posYclosed+"px");
+            e("trace").innerHTML=posYclosed;
+        }
+        
+        function e(id){return document.getElementById(id);}
+        function move(id, t, l){
+            e(id).style.position="absolute";
+            e(id).style.top=t;
+            e(id).style.left=l;
+        }
+    </script>
+</body>
+</html>
