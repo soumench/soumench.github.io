@@ -57,7 +57,10 @@
             if(i>=list.length){i=0;}
             clear(); sflsnd.play();
         }        
-        function clear(){ e("hintDisplay").innerHTML=e("cmpDisplay").innerHTML="*-*-*"; }        
+        function clear(){ 
+            e("hintDisplay").innerHTML=e("cmpDisplay").innerHTML="*-*-*"; 
+            e("ui").value="";
+        }        
         function show(){
             let m;
             if(original===""){
