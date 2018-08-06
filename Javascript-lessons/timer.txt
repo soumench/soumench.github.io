@@ -16,3 +16,19 @@ function myFunction() {
     alert('Hello');
 }
 </script>
+
+
+***************************
+ https://stackoverflow.com/questions/457826/pass-parameters-in-setinterval-function
+
+By far the most practical answer is the one given by tvanfosson, all i can do is give you an updated version with ES6:
+
+setInterval( ()=>{ funca(10,3); }, 500);
+
+**********************************************
+now with ES5, bind method Function prototype :
+
+setInterval(funca.bind(null,10,3),500);
+**********************************************************
+
+
