@@ -14,17 +14,17 @@
 <body>
     <canvas width="480px" height="440px"></canvas>
     <img src="pic.jpg" width="100px" height="100px" id="pic" onclick="climbup()"><br>
-    <input type="button" value="Climb up/down" id="btn1" onclick="climb()">
+    <input type="button" value="Climb up/down" id="btn" onclick="climb()">
     <span id="trace"></span>
     
  <script>
     e("pic").style.zIndex=1; 
-    move("pic", "300px","100px");
+    move("pic", "300px","5px");
            
      
      let posx=300;
-     let posy=100;
-     let step=10;     
+     let posy=50;
+     let step=15;     
      let climbspeed=50;
      let toggle=false;
      let time;
@@ -33,9 +33,11 @@
      function climb(){
          if(toggle=toggle^1){
              time=setInterval(up,climbspeed);
+             e("btn").value="Climb Down.";
          }
          else{
              time=setInterval(down,climbspeed);
+             e("btn").value="Climb Up.";
          }
      }
         
