@@ -14,54 +14,43 @@
 <body>
     <canvas width="480px" height="440px"></canvas>
     <img src="pic.jpg" width="100px" height="100px" id="pic" onclick="climbup()"><br>
-    <input type="button" value="up" id="btn1" onclick="climbup()">
-    <input type="button" value="down" id="btn2" onclick="climbdown()">
+    <input type="button" value="Climb up/down" id="btn1" onclick="climb()">
     <span id="trace"></span>
     
  <script>
     e("pic").style.zIndex=1; 
     move("pic", "300px","100px");
-      
+           
      
-     let c = 0;
-     let step=10;
-     let time;
      let posx=300;
      let posy=100;
-     let movelock=true;
-     function climbup(){
-         time=setInterval(up,100);
-     }
+     let step=10;     
+     let climbspeed=50;
+     let toggle=false;
+     let time;
+     let c = 0;
      
-     function climbdown(){
-         time=setInterval(down,100);
-         c=15;
-     }
-     
-     function down(){
-         movelock=1;         
-         c--;
-         posx+=step;
-         posy-=step;
-         if(c<=0){
-            clearInterval(time);
-            
+     function climb(){
+         if(toggle=toggle^1){
+             time=setInterval(up,climbspeed);
          }
+         else{
+             time=setInterval(down,climbspeed);
+         }
+     }
+        
+     function down(){
+         c--;
+         posx+=step;  posy-=step;
+         if(c<=0){ clearInterval(time);}
          move("pic",posx+"px",posy+"px");
      }
      
      function up(){
-         if(movelock){
-             c++;
-             posx-=step;
-             posy+=step;
-             if(c===15){
-                 c=0;
-                clearInterval(time);
-                 movelock=false;
-             }
-             move("pic",posx+"px",posy+"px");
-         }
+         c++;
+         posx-=step;  posy+=step;
+         if(c===15){clearInterval(time);}
+         move("pic",posx+"px",posy+"px");
      }   
     
 
