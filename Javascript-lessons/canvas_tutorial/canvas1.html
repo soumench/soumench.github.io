@@ -21,6 +21,13 @@ Your browser does not support the HTML5 canvas tag.</canvas>
         ctx.beginPath();
         ctx.arc(100, 50, 40, 0, 2 * Math.PI);
         ctx.stroke(); 
+        
+        
+        ctx.moveTo(0, 0);
+        let angle;
+        for(angle=0; angle<=360; angle+=2){
+             ctx.lineto(100+30*Math.cos(angle), 50+30*Math.sin(angle) ) ; 
+        }
     </script>
 
 </body>

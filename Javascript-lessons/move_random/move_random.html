@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style>
+        canvas{border: 1px solid red;}
+    </style>
+</head>
+
+<body>
+    <canvas width="480px" height="640px"></canvas>
+    <img src="pic.jpg" width="100px" height="100px" id="pic" onclick="stepUp()">
+    <span id="trace"></span>
+    
+ <script>
+    e("pic").style.zIndex=1; 
+    move("pic", "300px","100px");
+      
+     function up(){
+         let i;
+         for(i=0; i<=100; i+=0.0025){
+             move("pic", 300-i+"px",10+i+"px");
+             e("trace").innerHTML=i;
+         }
+     }
+     
+     let time;
+     function stepUp(){
+         move("pic", "300px","100px");
+         time=setInterval(up1,1000);
+     }
+     function up1(){
+         move("pic","250px","150px");
+         clearInterval(time);
+         time=setInterval(up2,1000);
+     }
+     function up2(){
+         move("pic","200px","200px");
+         clearInterval(time);
+         time=setInterval(up3,1000);
+     }
+     function up3(){
+         move("pic","150px","250px");
+         clearInterval(time);
+     }
+
+    function move(id, t, l){
+        e(id).style.position="absolute";
+        e(id).style.top=t;
+        e(id).style.left=l;
+    }
+     function e(id){return document.getElementById(id);}
+</script>
+</body>
+
+</html>
