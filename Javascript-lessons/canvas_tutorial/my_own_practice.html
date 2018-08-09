@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+    <style>
+        canvas{border: 1px solid red;}
+    </style>
+</head>
+
+<body>
+    <canvas id="can" width="480px" height="480px">
+     </canvas><br>
+    SELECT
+    <select id="s" onchange="update()">
+        <option value=""></option>
+        <option value="I">I</option>
+        <option value="We">We</option>
+        <option value="You">You</option>
+        <option value="He">He</option>
+        <option value="They">They</option>
+    </select>
+    <span id="trace"></span><br>
+    <input type="button" value="click" onclick="rot()"><br>
+    <span id="trace2"></span>
+    
+   <script>
+       let i=10;
+       
+       function rot(){
+           let c=e("can");
+           let ctx= c.getContext("2d");
+           
+           ctx.lineTo(i+=45,0);
+           ctx.moveTo(0,i);           
+           ctx.stroke();
+           e("trace2").innerHTML=i;
+       }
+       
+       function update(){
+            let val= e("s").value;
+            let m;
+            if(val===""){
+                m = "";
+            }else if(val==="I"){
+                m = "FPSP";
+            }else if(val==="We"){
+                m = "FPPP";
+            }else if(val==="You"){
+                m = "SPSP/ SPPP";
+            }else if(val==="He"){
+                m = "TPSP";
+            }else if(val==="They"){
+                m = "TPPP";
+            }
+            e("trace").innerHTML= m;
+        }
+        
+        function e(id){return document.getElementById(id);}
+    </script>
+
+</body>
+</html>
