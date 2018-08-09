@@ -13,40 +13,38 @@
 
 <body>
     <canvas width="480px" height="640px"></canvas>
-    <img src="pic.jpg" width="100px" height="100px" id="pic" onclick="stepUp()">
+    <img src="pic.jpg" width="100px" height="100px" id="pic" onclick="climbup()">
     <span id="trace"></span>
     
  <script>
     e("pic").style.zIndex=1; 
     move("pic", "300px","100px");
       
-     function up(){
-         let i;
-         for(i=0; i<=100; i+=0.0025){
-             move("pic", 300-i+"px",10+i+"px");
-             e("trace").innerHTML=i;
-         }
+     
+     let c = 0;
+     let step=10;
+     let time;
+     let posx=300;
+     let posy=100;
+     let movelock=true;
+     function climbup(){
+         time=setInterval(up,100);
      }
      
-     let time;
-     function stepUp(){
-         move("pic", "300px","100px");
-         time=setInterval(up1,1000);
-     }
-     function up1(){
-         move("pic","250px","150px");
-         clearInterval(time);
-         time=setInterval(up2,1000);
-     }
-     function up2(){
-         move("pic","200px","200px");
-         clearInterval(time);
-         time=setInterval(up3,1000);
-     }
-     function up3(){
-         move("pic","150px","250px");
-         clearInterval(time);
-     }
+     function up(){
+         if(movelock){
+             c++;
+             posx-=step;
+             posy+=step;
+             if(c===15){
+                 c=0;
+                clearInterval(time);
+                 movelock=false;
+             }
+             move("pic",posx+"px",posy+"px");
+         }
+     }   
+    
 
     function move(id, t, l){
         e(id).style.position="absolute";
