@@ -12,8 +12,10 @@
 </head>
 
 <body>
-    <canvas width="480px" height="640px"></canvas>
-    <img src="pic.jpg" width="100px" height="100px" id="pic" onclick="climbup()">
+    <canvas width="480px" height="440px"></canvas>
+    <img src="pic.jpg" width="100px" height="100px" id="pic" onclick="climbup()"><br>
+    <input type="button" value="up" id="btn1" onclick="climbup()">
+    <input type="button" value="down" id="btn2" onclick="climbdown()">
     <span id="trace"></span>
     
  <script>
@@ -29,6 +31,23 @@
      let movelock=true;
      function climbup(){
          time=setInterval(up,100);
+     }
+     
+     function climbdown(){
+         time=setInterval(down,100);
+         c=15;
+     }
+     
+     function down(){
+         movelock=1;         
+         c--;
+         posx+=step;
+         posy-=step;
+         if(c<=0){
+            clearInterval(time);
+            
+         }
+         move("pic",posx+"px",posy+"px");
      }
      
      function up(){
