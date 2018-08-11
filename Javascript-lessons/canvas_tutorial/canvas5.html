@@ -9,7 +9,7 @@
     <script>
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
-                
+        ctx.strokeStyle="#FF0000";        
         ctx.moveTo(0, 0);
         ctx.lineTo(c.width, c.height);
         ctx.stroke();
@@ -31,13 +31,13 @@
         /*for(angle=0; angle<=13; angle+=2.513){ // for 5 point star*/
         
         var k; var angle=2; 
-        for(k=0;k<13;k++, angle+=2){
+        for(k=0;k<13;k++, angle+=1.93){
             ctx.lineTo(centerx+radius*Math.cos(angle), centery+radius*Math.sin(angle) ) ; 
             ctx.stroke(); 
         }
          ctx.moveTo(400,300);
          ctx.lineTo(600,300);
-         ctx.lineTo(400,500);
+         /*ctx.lineTo(400,500);*/
         ctx.stroke();
     </script>
 
