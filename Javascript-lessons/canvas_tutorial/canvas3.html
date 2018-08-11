@@ -3,29 +3,32 @@
 
 <body>
 
-    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+    <!--<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">-->
+    <canvas id="myCanvas"  style="border:1px solid #d3d3d3;">    
 Your browser does not support the HTML5 canvas tag.</canvas>
 
     <script>
         var c = document.getElementById("myCanvas");
+        c.width="800"; c.height="600"; 
         var ctx = c.getContext("2d");
         ctx.moveTo(0, 0);
-        ctx.lineTo(200, 100);
+        ctx.lineTo(c.width, c.height);
         ctx.stroke();
 
-        ctx.moveTo(200, 0);
-        ctx.lineTo(0, 100);
+        ctx.moveTo(c.width, 0);
+        ctx.lineTo(0, c.height);
         ctx.stroke();
                 
         ctx.beginPath();
-        ctx.arc(100, 50, 40, 0, 2 * Math.PI);
+        ctx.arc(c.width/2, c.height/2, 300, 0, 2 * Math.PI);
         ctx.stroke(); 
                 
         /*ctx.moveTo(0, 0);*/
         let angle;
+        let radius = 300;
         /*for(angle=0; angle<=13; angle+=2.513){ // for 5 point star*/
         for(angle=0; angle<=40; angle+=2){
-             ctx.lineTo(100+30*Math.cos(angle), 50+30*Math.sin(angle) ) ; 
+             ctx.lineTo(400+radius*Math.cos(angle), 300+radius*Math.sin(angle) ) ; 
             ctx.stroke(); 
         }
     </script>
