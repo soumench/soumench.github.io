@@ -8,7 +8,6 @@
 
     <script>
         var c = document.getElementById("myCanvas");
-       /* c.width="200"; c.height="100"; */
         var ctx = c.getContext("2d");
                 
         ctx.moveTo(0, 0);
@@ -27,8 +26,7 @@
         ctx.beginPath();
         ctx.arc(c.width/2, c.height/2, radius, 0, 2 * Math.PI);
         ctx.stroke(); 
-                
-               
+                               
         /*for(angle=0; angle<=13; angle+=2.513){ // for 5 point star*/
         
         var k; var angle=0; 
