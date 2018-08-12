@@ -30,9 +30,9 @@
                                
         /*for(angle=0; angle<=13; angle+=2.513){ // for 5 point star*/
         
-        var k; var angle=2; 
-        for(k=0;k<13;k++, angle+=1.93){
-            ctx.lineTo(centerx+radius*Math.cos(angle), centery+radius*Math.sin(angle) ) ; 
+        var k; var angle=1.933; 
+        for(k=0;k<13;k++, angle+=1.933){
+            ctx.lineTo(centerx+radius*Math.cos(angle), centery-radius*Math.sin(angle) ) ; 
             ctx.stroke(); 
         }
          ctx.moveTo(400,300);
