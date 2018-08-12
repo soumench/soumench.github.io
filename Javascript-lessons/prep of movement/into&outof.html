@@ -20,7 +20,7 @@
     <img src="img/archgateright.png" width="400px" height="320px" id="bgpic2">
     <input type="button" value="Go into / Come out of" id="btn" onclick="action()">
     <a href="index.html">Click here to go back.</a>
-    <span id="trace"></span>
+    <span id="trace">Golu went into the room.(ভিতরে গেল)<br>Golu came out of the room.(ভিতর থেকে বাইরে এলো)</span>
     <footer id="foot">
     Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
     </footer>
@@ -32,6 +32,7 @@
      move("bgpic1","80px", "20px");
      move("bgpic2","80px", "20px");
      move("foot","600px", "85px");
+     move("trace","20px","15px");
      e("bg").style.zIndex=-2;
       move("bg","80px", "25px");
      const moveGolu = "img/GOLU-MOVE.gif";

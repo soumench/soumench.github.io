@@ -16,8 +16,9 @@
     <canvas width="480px" height="440px"></canvas>
     <img src="img/alongthestreet.png" width="440px" height="300px" id="bgpic">
     <img src="pic.gif" width="100px" height="100px" id="pic" onclick="climb()"><br>
-    <input type="button" value="MOVE FROM ONE PLACE TO ANOTHER " id="btn" onclick="action()"><br><br>
+    <input type="button" value="FROM ONE PLACE TO ANOTHER " id="btn" onclick="action()"><br><br>
     <a href="index.html">Click here to go back.</a>
+    <span id="trace">Golu is going from one place to another<br>গোলু এক জায়গা থেকে আরেক জায়গায় যাচ্ছে |</span>
     <footer id="foot">
     Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
     </footer>
@@ -28,6 +29,8 @@
     e("bgpic").style.zIndex=-1;
      move("bgpic","80px", "20px");
      move("foot","600px", "85px");
+     
+     move("trace","20px","30px");
      const moveGolu = "img/GOLU-MOVE.gif";
      const stopGolu = "img/GOLU-FRONT.gif";
      const btnsnd = new Audio("audio/my_click_sound.oga");

@@ -20,7 +20,7 @@
     <img src="img/GOLU-FRONT.gif" width="100px" height="100px" id="pic"><br>
     <input type="button" value="MOVE ACROSS" id="btn" onclick="action()">
     <a href="index.html">Click here to go back.</a>
-    
+    <span id="trace">Golu is walking across the street.(আড়াআড়ি)</span>
    <footer id="foot">
     Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
    </footer>
@@ -32,10 +32,11 @@
      e("bgpic").style.zIndex=-1; 
      move("pic", "300px","5px");
      move("bgpic","200px","40px");
+     move("trace","80px","30px");
      e("bg").style.zIndex=-2;
      move("bg","30px", "10px");
     
-    move("foot","600px", "85px");
+     move("foot","600px", "85px");
      const moveGolu = "img/GOLU-MOVE.gif";
      const stopGolu = "img/GOLU-FRONT.gif";
      const btnsnd = new Audio("audio/my_click_sound.oga");

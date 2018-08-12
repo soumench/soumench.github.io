@@ -18,16 +18,19 @@
     <img src="pic.gif" width="100px" height="100px" id="pic" ><br>
     <input type="button" value="PAST" id="btn" onclick="action()">
     <a href="index.html">Click here to go back.</a>
-    <span id="trace"></span>
+    <span id="trace">Golu is walking past the large blue house.<br>(অতিক্রম করে )</span>
     <footer id="foot">
     Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
     </footer>
  <script src="js/e.js"></script>   <script src="js/move.js"></script> <script src="../../ENGLISH/year.js"></script>  
  <script>
-    e("pic").style.zIndex=1; 
-    e("bgpic").style.zIndex=-1;
-    move("bgpic", "150px","10px");
-    move("foot","600px", "85px"); 
+     e("pic").style.zIndex=1; 
+     e("bgpic").style.zIndex=-1;
+     move("bgpic", "150px","10px");
+     move("foot","600px", "85px");
+     
+     move("trace","40px","30px");
+     
      const moveGolu = "img/GOLU-MOVE.gif";
      const stopGolu = "img/GOLU-FRONT.gif";
      const btnsnd = new Audio("audio/my_click_sound.oga");

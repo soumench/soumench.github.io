@@ -18,7 +18,7 @@
     <img src="pic.gif" width="100px" height="100px" id="pic"><br>
     <input type="button" value="Go up/Come down" id="btn" onclick="action()">
     <a href="index.html">Click here to go back.</a>
-    <span id="trace"></span>
+    <span id="trace">Golu walked up the stairs.<br>Golu went down the stairs.</span>
     <footer id="foot">
     Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
     </footer>
@@ -27,6 +27,7 @@
     e("pic").style.zIndex=1; 
     e("bgpic").style.zIndex=-1;
      move("bgpic", "70px", "20px");
+     move("trace","40px","30px");
      const moveGolu = "img/GOLU-MOVE.gif";
      const stopGolu = "img/GOLU-FRONT.gif";
      const btnsnd = new Audio("audio/my_click_sound.oga");

@@ -18,7 +18,7 @@
     <img src="pic.gif" width="100px" height="100px" id="pic" onclick="climb()"><br>
     <input type="button" value="MOVE ROUND/AROUND" id="btn" onclick="action()">
     <a href="index.html">Click here to go back.</a>
-    <span id="trace"></span>
+    <span id="trace">Golu is spinning around the tree.<br>(গোল হয়ে ঘোরা)</span>
     <footer id="foot">
     Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
     </footer>
@@ -28,6 +28,9 @@
      e("bgpic").style.zIndex=0;
      move("bgpic", "100px","150px");
      move("foot","600px", "85px");
+     
+     move("trace","30px","30px");
+     
      const moveGolu = "img/GOLU-MOVE.gif";
      const stopGolu = "img/GOLU-FRONT.gif";
      const btnsnd = new Audio("audio/my_click_sound.oga");
