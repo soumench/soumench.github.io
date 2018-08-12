@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style>
+        canvas{border: 1px solid red;}
+    </style>
+</head>
+
+<body>
+    <canvas width="480px" height="440px"></canvas>
+    <img src="pic.jpg" width="100px" height="100px" id="pic" onclick="climbup()"><br>
+    <input type="button" value="Climb up/down" id="btn" onclick="climb()">
+    <span id="trace"></span>
+    
+ <script>
+    e("pic").style.zIndex=1; 
+    move("pic", "300px","5px");
+     
+           
+     let man= "pic";
+     let posx=300;
+     let posy=50;
+     let btnID = "btn";
+     
+     let climbspeed=50;
+     let step=15; let height=15;
+     let toggle=false;
+     let time; let c = 0;
+          
+     function climb(){
+         if(toggle=toggle^1){ time=setInterval(up,climbspeed); }
+         else{ time=setInterval(down,climbspeed); }
+     }        
+     function down(){
+         c--;
+         posx+=step;  posy-=step;
+         if(c<=0){ clearInterval(time);  e(btnID).value="Climb Up.";}
+         move(man, posx+"px",posy+"px");
+     }     
+     function up(){
+         c++;
+         posx-=step;  posy+=step;
+         if(c===height){clearInterval(time); e(btnID).value="Climb Down.";}
+         move(man, posx+"px",posy+"px");
+     }   
+    
+    function move(id, t, l){
+        e(id).style.position="absolute";
+        e(id).style.top=t;
+        e(id).style.left=l;
+    }
+     function e(id){return document.getElementById(id);}
+</script>
+</body>
+
+</html>
