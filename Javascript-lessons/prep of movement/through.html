@@ -13,39 +13,60 @@
 
 <body>
     <canvas width="480px" height="440px"></canvas>
-    <img src="pic.jpg" width="100px" height="100px" id="pic" onclick="climbup()"><br>
-    <input type="button" value="Climb up/down" id="btn" onclick="climb()">
+    <img src="img/tree.png" width="300px" height="320px" id="bgpic1">
+    <img src="img/tree.png" width="150px" height="220px" id="bgpic">
+    <img src="pic.gif" width="100px" height="100px" id="pic" onclick="climbup()"><br>
+    <img src="img/tree.png" width="300px" height="320px" id="bgpic2">
+    <img src="img/tree.png" width="200px" height="220px" id="bgpic3">
+    <input type="button" value="THROUGH" id="btn" onclick="action()">
     <span id="trace"></span>
     
  <script>
-    e("pic").style.zIndex=1; 
-    move("pic", "300px","5px");
-     
-           
+    e("pic").style.zIndex=1;
+      e("bgpic").style.zIndex=-2;
+     e("bgpic1").style.zIndex=-1;
+     e("bgpic2").style.zIndex=2;
+     e("bgpic3").style.zIndex=2;
+     move("bgpic","150px", "0px");
+     move("bgpic1","80px", "10px");
+     move("bgpic2","20px", "180px");
+     move("bgpic3","150px", "290px");
+               
      let man= "pic";
-     let posx=300;
-     let posy=50;
-     let btnID = "btn";
+     const iniposx=300;
+     const iniposy=50;
+     let posx=iniposx;
+     let posy=iniposy;
+     const btnID = "btn";
      
-     let climbspeed=50;
-     let step=15; let height=15;
+     const climbspeed=50;
+     const step=15; const height=14;
      let toggle=false;
      let time; let c = 0;
-          
-     function climb(){
-         if(toggle=toggle^1){ time=setInterval(up,climbspeed); }
-         else{ time=setInterval(down,climbspeed); }
-     }        
-     function down(){
+     move(man, posx+"px",posy+"px");     
+     function action(){
+         posx=iniposx;
+         posy=iniposy;
+         move(man, posx+"px",posy+"px");
+         time=setInterval(straight,climbspeed);
+         e(btnID).disabled=true;
+     } 
+     function straight(){
+         c++;
+         /*posx+=step;*/  posy+=step;
+         if(c>=10){ clearInterval(time); time=setInterval(backward,climbspeed);c=0; }
+         move(man, posx+"px",posy+"px");
+     }
+     function backward(){
          c--;
-         posx+=step;  posy-=step;
-         if(c<=0){ clearInterval(time);  e(btnID).value="Climb Up.";}
+         posx-=step;  posy-=step;
+         if(c<=5){ clearInterval(time); time=setInterval(up,climbspeed);c=0;}
          move(man, posx+"px",posy+"px");
      }     
-     function up(){
+     function up(){ 
          c++;
          posx-=step;  posy+=step;
-         if(c===height){clearInterval(time); e(btnID).value="Climb Down.";}
+         if(c===height){clearInterval(time); e(btnID).disabled=false; c=0;}
          move(man, posx+"px",posy+"px");
      }   
     

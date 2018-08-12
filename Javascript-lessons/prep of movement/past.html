@@ -13,27 +13,30 @@
 
 <body>
     <canvas width="480px" height="440px"></canvas>
-    <img src="pic.jpg" width="100px" height="100px" id="pic" onclick="climb()"><br>
-    <input type="button" value="ALONG" id="btn" onclick="climb()">
+    <img src="img/cityscape.png" id="bgpic" width="480px" height="200px">
+    <img src="pic.gif" width="100px" height="100px" id="pic" onclick="climb()"><br>
+    <input type="button" value="PAST" id="btn" onclick="action()">
     <span id="trace"></span>
     
  <script>
     e("pic").style.zIndex=1; 
-    move("pic", "300px","5px");
-     
+    e("bgpic").style.zIndex=-1;
+    move("bgpic", "150px","10px"); 
            
      let man= "pic";
-     let posx=250;
-     let posy=50;
-     let btnID = "btn";
+     const iniposx = 250;
+     const iniposy = 50;
+     let posx=iniposx;
+     let posy=iniposy;
+     const btnID = "btn";
      
-     let climbspeed=100;
-     let step=15; let height=5;
+     const climbspeed=100;
+     const step=15; const height=5;
      let toggle=false;
      let time; let c = 0;
      move(man, posx+"px",posy+"px");     
-     function climb(){
-         posx=250; posy=50;
+     function action(){
+         posx=iniposx; posy=iniposy;
          move(man, posx+"px",posy+"px");
          time=setInterval(straight,climbspeed);
          e(btnID).disabled=true;
@@ -50,7 +53,7 @@
      }*/
      
      function straight(){
-          c++;
+         c++;
          posy+=step;
          if(c===height+15){
              clearInterval(time);

@@ -13,39 +13,44 @@
 
 <body>
     <canvas width="480px" height="440px"></canvas>
-    <img src="pic.jpg" width="100px" height="100px" id="pic" onclick="climbup()"><br>
-    <input type="button" value="Climb up/down" id="btn" onclick="climb()">
+    <img src="img/stair.png" width="400px" height="380px" id="bgpic">
+    <img src="pic.gif" width="100px" height="100px" id="pic" onclick="climbup()"><br>
+    <input type="button" value="Go up/Come down" id="btn" onclick="climb()">
     <span id="trace"></span>
     
  <script>
     e("pic").style.zIndex=1; 
-    move("pic", "300px","5px");
+    e("bgpic").style.zIndex=-1;
+     move("bgpic", "70px", "20px");
      
            
      let man= "pic";
-     let posx=300;
-     let posy=50;
-     let btnID = "btn";
+     const iniposx=300;
+     const iniposy=5;
+     let posx=iniposx;
+     let posy=iniposy;
+     const btnID = "btn";
      
-     let climbspeed=50;
-     let step=15; let height=15;
+     const climbspeed=50;
+     const step=15; const height=15;
      let toggle=false;
      let time; let c = 0;
-          
+     move(man, posx+"px",posy+"px");     
      function climb(){
          if(toggle=toggle^1){ time=setInterval(up,climbspeed); }
          else{ time=setInterval(down,climbspeed); }
+         e(btnID).disabled=true;
      }        
      function down(){
          c--;
          posx+=step;  posy-=step;
-         if(c<=0){ clearInterval(time);  e(btnID).value="Climb Up.";}
+         if(c<=0){ clearInterval(time);  e(btnID).value="Go Up."; e(btnID).disabled=false;}
          move(man, posx+"px",posy+"px");
      }     
      function up(){
          c++;
          posx-=step;  posy+=step;
-         if(c===height){clearInterval(time); e(btnID).value="Climb Down.";}
+         if(c===height){clearInterval(time); e(btnID).value="Come Down.";e(btnID).disabled=false;}
          move(man, posx+"px",posy+"px");
      }   
     

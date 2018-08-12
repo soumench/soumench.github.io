@@ -13,22 +13,22 @@
 
 <body>
     <canvas width="480px" height="440px"></canvas>
-    <img src="img/alongthestreet.png" width="440px" height="300px" id="bgpic">
+    <img src="img/tree.png" width="250px" height="300px" id="bgpic">
     <img src="pic.gif" width="100px" height="100px" id="pic" onclick="climb()"><br>
-    <input type="button" value="ALONG" id="btn" onclick="action()">
+    <input type="button" value="MOVE ROUND/AROUND" id="btn" onclick="action()">
     <span id="trace"></span>
     
  <script>
-    e("pic").style.zIndex=1; 
-    e("bgpic").style.zIndex=-1;
-     move("bgpic","80px", "20px");
+    e("pic").style.zIndex=1;
+    e("bgpic").style.zIndex=0;
+    move("bgpic", "100px","150px");
      
            
      let man= "pic";
-     const iniposx=250;
+     const iniposx=265;
      const iniposy=50;
      let posx=iniposx;
-     let posy=iniposy;
+     let posy=50;
      const btnID = "btn";
      
      const climbspeed=100;
@@ -39,11 +39,12 @@
      function action(){
          posx=iniposx; posy=iniposy;
          move(man, posx+"px",posy+"px");
-         time=setInterval(straight,climbspeed);
          e(btnID).disabled=true;
+         e(man).style.zIndex=-1;
+         time=setInterval(up,climbspeed);
      } 
      
-     /*function up(){
+     function up(){
          c++;
          posx-=step;  posy+=step;
          if(c===height){
@@ -51,30 +52,63 @@
              time=setInterval(straight,climbspeed); 
          }
          move(man, posx+"px",posy+"px");
-     }*/
+     }
      
      function straight(){
           c++;
          posy+=step;
-         if(c===height+15){
+         if(c===height+10){
              clearInterval(time);
-             /*time=setInterval(down,climbspeed);*/
-             c=0;
-             e(btnID).disabled=false;
+             time=setInterval(down,climbspeed);
+             c=height;
          }
          move(man, posx+"px",posy+"px");
      }
      
-     /*function down(){
+     function down(){
          c--;
          posx+=step;  posy+=step;
          if(c<=0){ 
              clearInterval(time);
+             time=setInterval(downrev,climbspeed);
              c=0;
+             e(man).style.zIndex=1;
          }
          move(man, posx+"px",posy+"px");
-     }    */ 
+     }
+     
+     function downrev(){
+         c--;
+         posx+=step;  posy-=step;
+         if(c===-5){ 
+            clearInterval(time);
+             c=0;
+             time=setInterval(backward,climbspeed);
+         }
+         move(man, posx+"px",posy+"px");
+     }
       
+     function backward(){
+         c--;
+         posy-=step;
+         if(c===-10){
+             clearInterval(time);
+             c=0;
+             time=setInterval(upward,climbspeed);
+         }
+         move(man, posx+"px",posy+"px");
+     }
+    function upward(){
+         c++;
+         posx-=step;  posy-=step;
+         if(c===height){
+             c=0;
+             clearInterval(time);
+             e(btnID).disabled=false;
+         }
+         move(man, posx+"px",posy+"px");
+    } 
+     
     
     function move(id, t, l){
         e(id).style.position="absolute";
