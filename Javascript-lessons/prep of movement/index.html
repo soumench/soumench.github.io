@@ -8,9 +8,13 @@
     <title> Title </title>
     <link rel="stylesheet" type="text/css" href="css/btn.css">
     <style>
-        canvas{border: 1px solid red;}
-        h2{text-align: center; border: 2px solid green; background-color: yellow;
-        border-radius: 16px; width: 80%; margin-left: 7%;}
+        /*canvas{border: 1px solid red;}*/
+        h3{text-align: center; border: 2px solid green; 
+            background-color: yellow;
+            padding: 1%;
+            border-radius: 16px; width: 80%; margin-left: 7%;
+            margin-top: 2%; margin-bottom: 1%;
+        }
         body{
             text-align: center;
             font-size: 24px;
@@ -36,7 +40,7 @@
     </style>
 </head>
 <body>
-    <h2> Preposition of movement</h2>
+    <h3 id="header"> Preposition of movement</h3>
     <!--<canvas width="480px" height="640px"></canvas>-->
  
     <img src="img/GOLU-FRONT.gif" id="pic" height="200px" width="200px">
@@ -66,9 +70,9 @@
     <script>
      e("pic").style.zIndex=1;
      move("pic","280px","50px");
-    
-     move("board","240px","280px");
-     move("foot","580px", "35px");
+     
+     move("board","230px","280px");
+     move("foot","570px", "35px");
      e("year").innerHTML = creation_year;
     </script>   
 </body>
