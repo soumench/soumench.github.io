@@ -32,9 +32,7 @@
         
         var k; var angle=1.933; 
         for(k=0;k<13;k++, angle+=1.933){
-            if(k<=5){ctx.strokeStyle="#000000"; }
-            else{ctx.strokeStyle="#FF0000";}
-            ctx.lineTo(centerx+radius*Math.cos(angle), centery-radius*Math.sin(angle) ) ;
+            ctx.lineTo(centerx+radius*Math.cos(angle), centery-radius*Math.sin(angle) ) ; 
             ctx.stroke(); 
         }
          ctx.moveTo(400,300);
