@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <link rel="stylesheet" type="text/css" href="css/btn.css">
+    <style>
+        canvas{border: 1px solid red;}
+        h2{text-align: center; border: 2px solid green; background-color: yellow;
+        border-radius: 16px; width: 80%; margin-left: 7%;}
+        body{
+            text-align: center;
+            font-size: 24px;
+            width:480px; height: 640px;
+            border: 1px solid red;
+            
+        }
+        #msg{font-size: 100%; border: 2px solid green; border-radius: 26px;
+            width: 85%;  background-color:chartreuse;
+            margin-left: 7%;
+        }
+        .prep{
+            font-size: 70%; 
+             padding: 1%; margin-bottom: 4%; margin-top: 3%;
+        }
+        #board{border: 2px solid red;padding: 1%; border-radius: 16px;
+                background-color: blanchedalmond;
+        }
+        footer{
+            font-size: 70%; border: 2px solid red; border-radius: 16px;
+            background-color: yellow; padding: 1%;
+        }
+    </style>
+</head>
+<body>
+    <h2> Preposition of movement</h2>
+    <!--<canvas width="480px" height="640px"></canvas>-->
+ 
+    <img src="img/GOLU-FRONT.gif" id="pic" height="200px" width="200px">
+    <div id="msg">
+    <span >Hi! <br>I am Golu.<br> I am here to help you understand <br>the preposition of movement.</span>
+    </div>
+    
+    
+    <div id="board">
+        <a href="across.html" class="prep">ACROSS</a> <br>
+        <a href="along.html" class="prep">ALONG</a>    <br>
+        <a href="fromTo.html" class="prep">FROM/TO</a> <br>
+        <a href="into&outof.html" class="prep">INTO/OUT OF</a><br>
+        <a href="move%20round-around.html" class="prep">ROUND/AROUND</a> <br>
+        <a href="over.html" class="prep">OVER</a>     <br>
+        <a href="past.html" class="prep">PAST</a><br>
+        <a href="through.html" class="prep">THROUGH</a><br>
+        <a href="under.html" class="prep">UNDER</a>    <br>
+        <a href="up&down.html" class="prep">UP/DOWN</a>
+    
+    </div>
+    
+    <footer id="foot">
+    Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
+    </footer>
+    <script src="js/e.js"></script>   <script src="js/move.js"></script>  <script src="../../ENGLISH/year.js"></script> 
+    <script>
+     e("pic").style.zIndex=1;
+     move("pic","280px","50px");
+    
+     move("board","240px","280px");
+     move("foot","550px", "35px");
+     e("year").innerHTML = creation_year;
+    </script>   
+</body>

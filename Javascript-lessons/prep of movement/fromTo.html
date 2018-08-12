@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
+    <link rel="stylesheet" type="text/css" href="css/btn.css">
     <style>
         canvas{border: 1px solid red;}
     </style>
@@ -15,17 +16,25 @@
     <canvas width="480px" height="440px"></canvas>
     <img src="img/alongthestreet.png" width="440px" height="300px" id="bgpic">
     <img src="pic.gif" width="100px" height="100px" id="pic" onclick="climb()"><br>
-    <input type="button" value="FROM-TO" id="btn" onclick="action()">
-    <span id="trace"></span>
-    
+    <input type="button" value="MOVE FROM ONE PLACE TO ANOTHER " id="btn" onclick="action()"><br><br>
+    <a href="index.html">Click here to go back.</a>
+    <footer id="foot">
+    Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
+    </footer>
+ 
+ <script src="js/e.js"></script>   <script src="js/move.js"></script>  <script src="../../ENGLISH/year.js"></script>
  <script>
     e("pic").style.zIndex=1; 
     e("bgpic").style.zIndex=-1;
      move("bgpic","80px", "20px");
-     
+     move("foot","600px", "85px");
+     const moveGolu = "img/GOLU-MOVE.gif";
+     const stopGolu = "img/GOLU-FRONT.gif";
+     const btnsnd = new Audio("audio/my_click_sound.oga");
            
      let man= "pic";
-     const iniposx=250;
+     e(man).src=stopGolu;
+     const iniposx=270;
      const iniposy=50;
      let posx=iniposx;
      let posy=iniposy;
@@ -41,17 +50,10 @@
          move(man, posx+"px",posy+"px");
          time=setInterval(straight,climbspeed);
          e(btnID).disabled=true;
+         btnsnd.play();
+         e(man).src=moveGolu;
      } 
      
-     /*function up(){
-         c++;
-         posx-=step;  posy+=step;
-         if(c===height){
-             clearInterval(time);
-             time=setInterval(straight,climbspeed); 
-         }
-         move(man, posx+"px",posy+"px");
-     }*/
      
      function straight(){
           c++;
@@ -61,27 +63,11 @@
              /*time=setInterval(down,climbspeed);*/
              c=0;
              e(btnID).disabled=false;
+             e(man).src=stopGolu;
          }
          move(man, posx+"px",posy+"px");
-     }
-     
-     /*function down(){
-         c--;
-         posx+=step;  posy+=step;
-         if(c<=0){ 
-             clearInterval(time);
-             c=0;
-         }
-         move(man, posx+"px",posy+"px");
-     }    */ 
-      
-    
-    function move(id, t, l){
-        e(id).style.position="absolute";
-        e(id).style.top=t;
-        e(id).style.left=l;
-    }
-    function e(id){return document.getElementById(id);}
+     }   
+    e("year").innerHTML = creation_year;
 </script>
 </body>
 

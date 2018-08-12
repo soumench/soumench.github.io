@@ -1,0 +1,12 @@
+#btn{
+    font-size: 24px;
+    border: 1px solid green;
+    background-color: aliceblue;
+    padding: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+footer{
+    font-size: 85%; border: 2px solid red; border-radius: 16px;
+    background-color: yellow; padding: 1%;
+}

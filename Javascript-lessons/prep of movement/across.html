@@ -5,25 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Title </title>
+    <title> </title>
+    <link rel="stylesheet" type="text/css" href="css/btn.css">
     <style>
         canvas{border: 1px solid red;}
+        
     </style>
 </head>
 
 <body>
     <canvas width="480px" height="440px"></canvas>
+    <img src="img/nature.png" width="480px" height="250px" id="bg">
     <img src="img/road.png" width="440px" height="200px" id="bgpic">
-    <img src="pic.gif" width="100px" height="100px" id="pic" onclick="climbup()"><br>
+    <img src="img/GOLU-FRONT.gif" width="100px" height="100px" id="pic"><br>
     <input type="button" value="MOVE ACROSS" id="btn" onclick="action()">
-    <span id="trace"></span>
+    <a href="index.html">Click here to go back.</a>
     
- <script>
-    e("pic").style.zIndex=1; 
-    e("bgpic").style.zIndex=-1; 
-    move("pic", "300px","5px");
-    move("bgpic","200px","40px");
-     
+   <footer id="foot">
+    Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
+   </footer>
+    
+ <script src="js/e.js"></script>   <script src="js/move.js"></script> 
+    <script src="../../ENGLISH/year.js"> </script>
+    <script>
+     e("pic").style.zIndex=1; 
+     e("bgpic").style.zIndex=-1; 
+     move("pic", "300px","5px");
+     move("bgpic","200px","40px");
+     e("bg").style.zIndex=-2;
+     move("bg","30px", "10px");
+    
+    move("foot","600px", "85px");
+     const moveGolu = "img/GOLU-MOVE.gif";
+     const stopGolu = "img/GOLU-FRONT.gif";
+     const btnsnd = new Audio("audio/my_click_sound.oga");
            
      let man= "pic";
      const iniposx=300;
@@ -33,34 +48,30 @@
      const btnID = "btn";
      
      const climbspeed=50;
-     const step=15; const height=5;
+     const step=5; const height=15;
      let toggle=false;
      let time; let c = 0;
           
      function action(){
+         e(man).src=moveGolu;
          if(toggle=toggle^1){ time=setInterval(up,climbspeed); }
          else{ time=setInterval(down,climbspeed); }
          e(btnID).disabled=true;
+         btnsnd.play();
      }        
      function down(){
          c--;
          posx+=step;  posy-=step;
-         if(c<=0){ clearInterval(time); e(btnID).disabled=false;}
+         if(c<=0){ clearInterval(time); e(btnID).disabled=false;e(man).src=stopGolu;}
          move(man, posx+"px",posy+"px");
      }     
      function up(){
          c++;
          posx-=step;  posy+=step;
-         if(c===height){clearInterval(time); e(btnID).disabled=false;}
+         if(c===height){clearInterval(time); e(btnID).disabled=false;e(man).src=stopGolu;}
          move(man, posx+"px",posy+"px");
      }   
-    
-    function move(id, t, l){
-        e(id).style.position="absolute";
-        e(id).style.top=t;
-        e(id).style.left=l;
-    }
-     function e(id){return document.getElementById(id);}
+     e("year").innerHTML = creation_year;   
 </script>
 </body>
 

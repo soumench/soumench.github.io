@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
+    <link rel="stylesheet" type="text/css" href="css/btn.css">
     <style>
         canvas{border: 1px solid red;}
     </style>
@@ -19,8 +20,12 @@
     <img src="img/tree.png" width="300px" height="320px" id="bgpic2">
     <img src="img/tree.png" width="200px" height="220px" id="bgpic3">
     <input type="button" value="THROUGH" id="btn" onclick="action()">
+    <a href="index.html">Click here to go back.</a>
     <span id="trace"></span>
-    
+    <footer id="foot">
+    Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
+    </footer>
+ <script src="js/e.js"></script>   <script src="js/move.js"></script> <script src="../../ENGLISH/year.js"></script>  
  <script>
     e("pic").style.zIndex=1;
       e("bgpic").style.zIndex=-2;
@@ -31,15 +36,20 @@
      move("bgpic1","80px", "10px");
      move("bgpic2","20px", "180px");
      move("bgpic3","150px", "290px");
+     move("foot","600px", "85px");
+     const moveGolu = "img/GOLU-MOVE.gif";
+     const stopGolu = "img/GOLU-FRONT.gif";
+     const btnsnd = new Audio("audio/my_click_sound.oga");
                
      let man= "pic";
+     e(man).src=stopGolu;
      const iniposx=300;
      const iniposy=50;
      let posx=iniposx;
      let posy=iniposy;
      const btnID = "btn";
      
-     const climbspeed=50;
+     const climbspeed=60;
      const step=15; const height=14;
      let toggle=false;
      let time; let c = 0;
@@ -50,6 +60,8 @@
          move(man, posx+"px",posy+"px");
          time=setInterval(straight,climbspeed);
          e(btnID).disabled=true;
+         btnsnd.play();
+         e(man).src=moveGolu;
      } 
      function straight(){
          c++;
@@ -60,22 +72,16 @@
      function backward(){
          c--;
          posx-=step;  posy-=step;
-         if(c<=5){ clearInterval(time); time=setInterval(up,climbspeed);c=0;}
+         if(c<=2){ clearInterval(time); time=setInterval(up,climbspeed);c=0;}
          move(man, posx+"px",posy+"px");
      }     
      function up(){ 
          c++;
          posx-=step;  posy+=step;
-         if(c===height){clearInterval(time); e(btnID).disabled=false; c=0;}
+         if(c===height){clearInterval(time); e(btnID).disabled=false; c=0;e(man).src=stopGolu;}
          move(man, posx+"px",posy+"px");
      }   
-    
-    function move(id, t, l){
-        e(id).style.position="absolute";
-        e(id).style.top=t;
-        e(id).style.left=l;
-    }
-     function e(id){return document.getElementById(id);}
+     e("year").innerHTML = creation_year;
 </script>
 </body>
 

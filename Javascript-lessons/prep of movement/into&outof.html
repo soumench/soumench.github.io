@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
+    <link rel="stylesheet" type="text/css" href="css/btn.css">
     <style>
         canvas{border: 1px solid red;}
     </style>
@@ -13,27 +14,39 @@
 
 <body>
     <canvas width="480px" height="440px"></canvas>
+    <img src="img/gradientbg.png" width="390px" height="320px" id="bg">
     <img src="img/archgateleft.png" width="400px" height="320px" id="bgpic1">
     <img src="pic.gif" width="100px" height="100px" id="pic" onclick="climbup()"><br>
     <img src="img/archgateright.png" width="400px" height="320px" id="bgpic2">
     <input type="button" value="Go into / Come out of" id="btn" onclick="action()">
+    <a href="index.html">Click here to go back.</a>
     <span id="trace"></span>
-    
+    <footer id="foot">
+    Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
+    </footer>
+ <script src="js/e.js"></script>   <script src="js/move.js"></script> <script src="../../ENGLISH/year.js"></script>  
  <script>
     e("pic").style.zIndex=1;
      e("bgpic1").style.zIndex=-1;
      e("bgpic2").style.zIndex=2;
      move("bgpic1","80px", "20px");
      move("bgpic2","80px", "20px");
+     move("foot","600px", "85px");
+     e("bg").style.zIndex=-2;
+      move("bg","80px", "25px");
+     const moveGolu = "img/GOLU-MOVE.gif";
+     const stopGolu = "img/GOLU-FRONT.gif";
+     const btnsnd = new Audio("audio/my_click_sound.oga");
                
      let man= "pic";
+     e(man).src=stopGolu;
      const iniposx=300;
      const iniposy=50;
      let posx=iniposx;
      let posy=iniposy;
      const btnID = "btn";
      
-     const climbspeed=50;
+     const climbspeed=90;
      const step=15; const height=14;
      let toggle=false;
      let time; let c = 0;
@@ -42,11 +55,16 @@
          if(toggle=toggle^1){ time=setInterval(up,climbspeed); }
          else{ time=setInterval(down,climbspeed); }
          e(btnID).disabled=true;
+         e(man).src=moveGolu;
+         btnsnd.play();
      }        
      function down(){
          c--;
          posx+=step;  posy-=step;
-         if(c<=0){ clearInterval(time);  e(btnID).value="Go into";e(btnID).disabled=false;}
+         if(c<=0){ 
+             clearInterval(time);  e(btnID).value="Go into";e(btnID).disabled=false;
+             e(man).src=stopGolu;   
+        }
          move(man, posx+"px",posy+"px");
      }     
      function up(){
@@ -55,13 +73,7 @@
          if(c===height){clearInterval(time); e(btnID).value="Come out.";e(btnID).disabled=false;}
          move(man, posx+"px",posy+"px");
      }   
-    
-    function move(id, t, l){
-        e(id).style.position="absolute";
-        e(id).style.top=t;
-        e(id).style.left=l;
-    }
-     function e(id){return document.getElementById(id);}
+     e("year").innerHTML = creation_year; 
 </script>
 </body>
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
+    <link rel="stylesheet" type="text/css" href="css/btn.css">
     <style>
         canvas{border: 1px solid red;}
     </style>
@@ -16,15 +17,24 @@
     <img src="img/tree.png" width="250px" height="300px" id="bgpic">
     <img src="pic.gif" width="100px" height="100px" id="pic" onclick="climb()"><br>
     <input type="button" value="MOVE ROUND/AROUND" id="btn" onclick="action()">
+    <a href="index.html">Click here to go back.</a>
     <span id="trace"></span>
-    
+    <footer id="foot">
+    Copyright &copy;Soumen Chakraborty - <span id="year">year</span> <br> Strictly for Educational and Non-Commercial purpose only.
+    </footer>
+ <script src="js/e.js"></script>   <script src="js/move.js"></script>  <script src="../../ENGLISH/year.js"></script> 
  <script>
-    e("pic").style.zIndex=1;
-    e("bgpic").style.zIndex=0;
-    move("bgpic", "100px","150px");
+     e("pic").style.zIndex=1;
+     e("bgpic").style.zIndex=0;
+     move("bgpic", "100px","150px");
+     move("foot","600px", "85px");
+     const moveGolu = "img/GOLU-MOVE.gif";
+     const stopGolu = "img/GOLU-FRONT.gif";
+     const btnsnd = new Audio("audio/my_click_sound.oga");
      
            
      let man= "pic";
+     e(man).src=stopGolu;
      const iniposx=265;
      const iniposy=50;
      let posx=iniposx;
@@ -42,6 +52,8 @@
          e(btnID).disabled=true;
          e(man).style.zIndex=-1;
          time=setInterval(up,climbspeed);
+         btnsnd.play();
+         e(man).src=moveGolu;
      } 
      
      function up(){
@@ -105,17 +117,11 @@
              c=0;
              clearInterval(time);
              e(btnID).disabled=false;
+             e(man).src=stopGolu;
          }
          move(man, posx+"px",posy+"px");
-    } 
-     
-    
-    function move(id, t, l){
-        e(id).style.position="absolute";
-        e(id).style.top=t;
-        e(id).style.left=l;
     }
-    function e(id){return document.getElementById(id);}
+    e("year").innerHTML = creation_year;
 </script>
 </body>
 
