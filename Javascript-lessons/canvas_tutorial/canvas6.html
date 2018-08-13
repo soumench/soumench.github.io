@@ -17,7 +17,7 @@
         ctx.moveTo(c.width, 0);
         ctx.lineTo(0, c.height);
         ctx.stroke();
-                
+        
         let radius = c.height*0.4;
         let centerx = c.width / 2;
         let centery = c.height / 2;
@@ -28,19 +28,19 @@
         ctx.arc(c.width/2, c.height/2, radius, 0, 2 * Math.PI);
         ctx.stroke(); 
                                
-        /*for(angle=0; angle<=13; angle+=2.513){ // for 5 point star*/
         
-        var k; var angle=1.933; 
-        for(k=0;k<13;k++, angle+=1.933){
-            if(k<=5){ctx.strokeStyle="#000000"; }
-            else{ctx.strokeStyle="#FF0000";}
+        const antturns=7;
+        const corners = 13;
+        let k; 
+        const step = 2*Math.PI*antturns/corners;
+        let angle= step;
+        for(k=0;k<corners;k++, angle+=step){
             ctx.lineTo(centerx+radius*Math.cos(angle), centery-radius*Math.sin(angle) ) ;
             ctx.stroke(); 
         }
          ctx.moveTo(400,300);
-         ctx.lineTo(600,300);
-         /*ctx.lineTo(400,500);*/
-        ctx.stroke();
+         ctx.lineTo(650,300);
+         ctx.stroke();
     </script>
 
 </body>
