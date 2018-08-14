@@ -2,14 +2,22 @@
 <html>
 
 <body>
-
-    <canvas id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;">
-            Your browser does not support the HTML5 canvas tag.</canvas>
+    <div id ="container">
+        <div>
+            <canvas id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;" >
+            Your browser does not support the HTML5 canvas tag.
+            </canvas>
+            <img src="GOLU-MOVE.gif" width="20px" height="20px" id="pic">
+        </div>
+    </div>
     <input type="button" value="start" id="btn" onclick="action()">
     <input type="button" value="reset" id="btn1" onClick="window.location.reload()">
-    <img src="GOLU-MOVE.gif" width="20px" height="20px" id="pic">
-
+    
+   
     <script>
+        e("myCanvas").style.position="relative"; 
+        
+        
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
         ctx.strokeStyle="#FF0000";        
@@ -44,7 +52,8 @@
             time = setInterval(draw,1000);
         }
         
-        e("pic").style.zIndex=1;
+        e("pic").style.zIndex=9;
+        e("pic").style.position="absolute"; 
         move("pic", centerx-100+"px", centery+100+radius+"px");
         
         function draw(){
@@ -72,9 +81,9 @@
          ctx.lineTo(640,300);
          ctx.stroke();
         
-               
+             
         function move(id, t, l){
-           e(id).style.position="absolute";
+           /*e(id).style.position="absolute";*/
            e(id).style.top=t;
            e(id).style.left=l;
         }
