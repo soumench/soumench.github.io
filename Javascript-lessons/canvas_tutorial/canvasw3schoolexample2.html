@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> Title </title>
+</head>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: #f8d9d9;
+}
+</style>
+<body>
+
+<p>
+<button onclick="myMove()">Click Me</button>
+</p> 
+
+<div id ="container">
+    <canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML5 canvas tag.</canvas>
+<div id ="animate"><img src="GOLU-MOVE.gif" width="50px" height="50px"/></div>
+</div>
+
+<script>
+
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");        
+        ctx.moveTo(0, 0);
+        ctx.lineTo(c.width, c.height);
+        ctx.stroke();
+        
+        let r = c.height*0.4;
+        let cx = c.width / 2;
+        let cy = c.height / 2;
+        
+        ctx.moveTo(cx, cy); 
+        ctx.lineTo(cx+r, cy); 
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+        ctx.stroke(); 
+
+  var elem = document.getElementById("animate");   
+  var steps=100;
+  var step=Math.PI*2/steps;
+
+   function myMove(){
+  var id = setInterval(frame, 50 );
+
+  var count=steps;
+  var angle=0;
+
+  elem.style.top=cy;
+  elem.style.left=cx+r;
+  
+  function frame() {
+    if (count--<0) {
+      clearInterval(id);
+    } else {
+      angle+=step;      
+      elem.style.top = ( cy - r* Math.sin(angle) ) + 'px'; 
+      elem.style.left = ( cx + r* Math.cos(angle) ) + 'px'; 
+    }
+  }
+}
+</script>
+
+</body>
+</html>
