@@ -38,13 +38,11 @@
     <script>
         let elem = e("animate");
         let time;
-        elem.style.top=e("myCanvas").width/2+"px";
-        elem.style.left=e("myCanvas").height/2+"px";
-        
-        
-        let targetposx;  let targetposy;
+        let elem2 = e("myCanvas");
+        move(elem2.width/2, elem2.height/2);
+            
         let posx;   let posy;
-        initialpos();  
+        /*initialpos();*/  
                 
         function gumballgo(posx, posy){
             e("trace").innerHTML=`The user wants the ball to move to (${posx} , ${posy})`;
@@ -53,8 +51,7 @@
                 
         
         function myMove(){
-            posx=200; posy=300; 
-            move(posx,posy);
+            move(200,300);
             time=setInterval(stay,5000);
             e("trace").innerHTML=""; 
         }
@@ -68,16 +65,9 @@
             initialpos();
         }
         function initialpos(){
-            posx=100; posy=100;
-            move(posx,posy);  
+            move(100,100);  
         }
         
-        /*function report(){
-            targetposx=e("animate").offsetLeft;
-            targetposy=e("animate").offsetTop;
-            e("trace").innerHTML=`The user clicked on one of the buttons.<br>
-            The current pos is ${targetposx} and ${targetposy}`;
-        }*/
         function e(id){return document.getElementById(id);}
     </script>
     
