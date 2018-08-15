@@ -47,25 +47,29 @@
         initialpos();  
                 
         function gumballgo(posx, posy){
-           e("trace").innerHTML=`The user wants the ball to move to (${posx} , ${posy})`;
+            e("trace").innerHTML=`The user wants the ball to move to (${posx} , ${posy})`;
+            move(posx, posy);
         }
                 
         
         function myMove(){
             posx=200; posy=300; 
-            elem.style.left=posx+"px";
-            elem.style.top=posy+"px";
+            move(posx,posy);
             time=setInterval(stay,5000);
             e("trace").innerHTML=""; 
-        }               
+        }
+        
+        function move(posx,posy){
+            elem.style.left=posx+"px";
+            elem.style.top=posy+"px";
+        }
         function stay(){
             clearInterval(time);
             initialpos();
         }
         function initialpos(){
             posx=100; posy=100;
-            elem.style.left=posx+"px";
-            elem.style.top=posy+"px";  
+            move(posx,posy);  
         }
         
         /*function report(){
