@@ -49,18 +49,16 @@
             currentposy = e("animate").offsetLeft;
             
             
-           /* targetposx=Math.floor(Math.random() * range);
-            targetposy=Math.floor(Math.random() * range);*/
-            
+                    
             elem.style.top=200+"px";
             elem.style.left=300+"px";
             
             time=setInterval(stay,5000);
             
            
-            /*let distance = Math.sqrt( Math.pow((currentposx - targetposx),2) 
-                                     + Math.pow((currentposy - targetposy),2 ) );*/
-            
+          
+            targetposx=e("animate").offsetTop;
+            targetposy=e("animate").offsetLeft;
             e("trace").innerHTML=
                 `The current pos is ${currentposx} and ${currentposy} <br>
                 The target pose is ${targetposx} and ${targetposy}<br>
@@ -71,6 +69,13 @@
             clearInterval(time);
             elem.style.top=currentposx+"px";
             elem.style.left=currentposy+"px";
+            
+            targetposx=e("animate").offsetTop;
+            targetposy=e("animate").offsetLeft;
+            e("trace").innerHTML=
+                `The current pos is ${currentposx} and ${currentposy} <br>
+                The target pose is ${targetposx} and ${targetposy}<br>
+               `;
         }
         function e(id){return document.getElementById(id);}
     </script>
