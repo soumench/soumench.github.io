@@ -51,8 +51,8 @@
         let posx; let posy;
             
                 
-        function gumballgo(el){
-                report();
+        function gumballgo(posx, posy){
+           e("trace").innerHTML=`The user wants the ball to move to (${posx} , ${posy})`;
         }
                 
         function move(){
@@ -73,12 +73,12 @@
             elem.style.top=currentposy+"px";
         }
         
-        function report(){
+        /*function report(){
             targetposx=e("animate").offsetLeft;
             targetposy=e("animate").offsetTop;
             e("trace").innerHTML=`The user clicked on one of the buttons.<br>
             The current pos is ${targetposx} and ${targetposy}`;
-        }
+        }*/
         function e(id){return document.getElementById(id);}
     </script>
     
