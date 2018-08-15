@@ -55,18 +55,17 @@
            e("trace").innerHTML=`The user wants the ball to move to (${posx} , ${posy})`;
         }
                 
-        function move(){
-            elem.style.left=posx+"px";
-            elem.style.top=posy+"px";
-        }
         
         function myMove(){
             posx=0; posy=300; 
             move();
-            time=setInterval(stay,1000);
+            time=setInterval(stay,5000);
             e("trace").innerHTML=""; 
         }
-        
+        function move(){
+            elem.style.left=posx+"px";
+            elem.style.top=posy+"px";
+        }        
         function stay(){
             clearInterval(time);
             elem.style.left=currentposx+"px";
