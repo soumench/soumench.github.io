@@ -6,9 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> hop.html </title>
+    <style>
+        #container {
+          width: 400px;
+          height: 400px;
+          position: relative;
+          background: yellow;
+        }
+        #animate {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          background-color: #f8d9d9;
+        }
+    </style>
 </head>
 
 <body>
+    <input type="button" value="click me" id="btn">
+    <div id ="container">
+        <canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML5 canvas tag.</canvas> <br><br>
+        <img id ="animate" src="GOLU-MOVE.gif" width="50px" height="50px" onclick="myMove()"/>
+    </div>
+    <span id="trace"></span>
+    <script>
+        let elem = e("animate");
+        
+        const range = 300;
+        let posx=Math.floor(Math.random() * range);   
+        let posy=Math.floor(Math.random() * range);   
+        elem.style.top=posx+"px";
+        elem.style.left=posy+"px";
+        
+        let currentposx; let currentposy;
+        function myMove(){
+           currentposx=getOffset("animate").top;
+           currentposy=getOffset("animate").left;
+        }
+        
+        function getOffset(el) {
+            const rect = el.getBoundingClientRect();
+            return {
+                left: rect.left + window.scrollX,
+                top: rect.top + window.scrollY
+            };
+        }
+        e("trace").innerHTML="current pos= "+currentposx+ "---"+currentposy+"<br>"+ posx+ "-----"+ posy;
+        function e(id){return document.getElementById(id);}
+    </script>
 
 
     
