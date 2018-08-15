@@ -36,7 +36,7 @@
     </div>
     <span id="trace"></span>
     <script>
-        let elem = e("animate");
+        let ball = e("animate");
         let time;
         let canvas = e("myCanvas");
         move(canvas.width/2, canvas.height/2);
@@ -55,8 +55,8 @@
             e("trace").innerHTML=""; 
         }        
         function move(posx,posy){
-            elem.style.left=posx+"px";
-            elem.style.top=posy+"px";
+            ball.style.left=posx+"px";
+            ball.style.top=posy+"px";
         }
         function stay(){
             clearInterval(time);
