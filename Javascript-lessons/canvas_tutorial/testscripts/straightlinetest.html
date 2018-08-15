@@ -23,11 +23,11 @@
 </head>
 
 <body>
-    <!--<input type="button" value="click me" id="btn" onclick="myMove(this)">-->
-    <input type="button" value="gumballgo(0,0)" id="btn1" onclick="myMove(this)">
-    <input type="button" value="gumballgo(0,300)" id="btn2" onclick="myMove(this)">
-    <input type="button" value="gumballgo(200,300)" id="btn3" onclick="myMove(this)">
-    <input type="button" value="gumballgo(400,0)" id="btn4" onclick="myMove(this)">
+    <input type="button" value="click me" id="btn0" onclick="gumballgo(this)">
+    <input type="button" value="gumballgo(0,0)" id="btn1" onclick="gumballgo(this)">
+    <input type="button" value="gumballgo(0,300)" id="btn2" onclick="gumballgo(this)">
+    <input type="button" value="gumballgo(200,300)" id="btn3" onclick="gumballgo(this)">
+    <input type="button" value="gumballgo(400,0)" id="btn4" onclick="gumballgo(this)">
     
     <div id ="container">
         <canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
@@ -46,62 +46,39 @@
         let targetposx;  let targetposy;
         
         let currentposx=100; let currentposy=100;
-        elem.style.left=currentposx+"px";
-        elem.style.top=currentposy+"px";
+        /*elem.style.left=currentposx+"px";
+        elem.style.top=currentposy+"px";*/
        
-        
-        /*function myMove(){
-            currentposx = e("animate").offsetLeft;
-            currentposy = e("animate").offsetTop;
-            
-            
-            
-            elem.style.left=0+"px";        
-            elem.style.top=300+"px";
-            
-            
-            time=setInterval(stay,5000);
-            
-           
-            targetposx=e("animate").offsetLeft;
-            targetposy=e("animate").offsetTop;
-            
-            e("trace").innerHTML=
-                `The current pos is ${currentposx} and ${currentposy} <br>
-                The target pose is ${targetposx} and ${targetposy}<br>
-               `;
-        } */
-        
-        function myMove(el){
+                
+        function gumballgo(el){
             const eid = el.id;
             let posx; let posy;
-            if(el.id==="btn1"){posx=0; posy=0;}
+            if(el.id==="btn0"){posx=0; posy=300; time=setInterval(stay,1000); }
+            else if(el.id==="btn1"){posx=0; posy=0;}
             else if(el.id==="btn2"){posx=0; posy=300;}
             else if(el.id==="btn3"){posx=200; posy=300;}
             else if(el.id==="btn4"){posx=400; posy=0;}
             
             elem.style.left=posx+"px";
             elem.style.top=posy+"px";
-            
+            report();
         }
         
-        /*function stay(){
+        function stay(){
             clearInterval(time);
             elem.style.left=currentposx+"px";
             elem.style.top=currentposy+"px";
-            
-            
+                        
+            report();
+        }
+        
+        function report(){
             targetposx=e("animate").offsetLeft;
             targetposy=e("animate").offsetTop;
-            e("trace").innerHTML=
-                `The current pos is ${currentposx} and ${currentposy} <br>
-                The target pose is ${targetposx} and ${targetposy}<br>
-               `;
-        }*/
+            e("trace").innerHTML=`The current pos is ${targetposx} and ${targetposy}`;
+        }
         function e(id){return document.getElementById(id);}
     </script>
-
-
     
     
     <br><br><br><br>
