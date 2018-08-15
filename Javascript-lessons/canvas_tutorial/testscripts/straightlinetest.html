@@ -42,14 +42,9 @@
         elem.style.left=e("myCanvas").height/2+"px";
         
         
-        
         let targetposx;  let targetposy;
-        
-        let currentposx=100; let currentposy=100;
-        /*elem.style.left=currentposx+"px";
-        elem.style.top=currentposy+"px";*/
-        let posx; let posy;
-            
+        let posx;   let posy;
+        initialpos();  
                 
         function gumballgo(posx, posy){
            e("trace").innerHTML=`The user wants the ball to move to (${posx} , ${posy})`;
@@ -57,19 +52,20 @@
                 
         
         function myMove(){
-            posx=0; posy=300; 
-            move();
-            time=setInterval(stay,5000);
-            e("trace").innerHTML=""; 
-        }
-        function move(){
+            posx=200; posy=300; 
             elem.style.left=posx+"px";
             elem.style.top=posy+"px";
-        }        
+            time=setInterval(stay,5000);
+            e("trace").innerHTML=""; 
+        }               
         function stay(){
             clearInterval(time);
-            elem.style.left=currentposx+"px";
-            elem.style.top=currentposy+"px";
+            initialpos();
+        }
+        function initialpos(){
+            posx=100; posy=100;
+            elem.style.left=posx+"px";
+            elem.style.top=posy+"px";  
         }
         
         /*function report(){
