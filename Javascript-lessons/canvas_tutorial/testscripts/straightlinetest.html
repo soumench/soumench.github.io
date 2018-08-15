@@ -41,24 +41,26 @@
         let targetposx;  let targetposy;
         
         let currentposx=100; let currentposy=100;
-        elem.style.top=currentposx+"px";
-        elem.style.left=currentposy+"px";
+        elem.style.left=currentposx+"px";
+        elem.style.top=currentposy+"px";
+       
         
         function myMove(){
-            currentposx = e("animate").offsetTop;
-            currentposy = e("animate").offsetLeft;
+            currentposx = e("animate").offsetLeft;
+            currentposy = e("animate").offsetTop;
             
             
-                    
-            elem.style.top=0+"px";
-            elem.style.left=300+"px";
+            
+            elem.style.left=0+"px";        
+            elem.style.top=50+"px";
+            
             
             time=setInterval(stay,5000);
             
            
-          
-            targetposx=e("animate").offsetTop;
-            targetposy=e("animate").offsetLeft;
+            targetposx=e("animate").offsetLeft;
+            targetposy=e("animate").offsetTop;
+            
             e("trace").innerHTML=
                 `The current pos is ${currentposx} and ${currentposy} <br>
                 The target pose is ${targetposx} and ${targetposy}<br>
@@ -67,11 +69,12 @@
         
         function stay(){
             clearInterval(time);
-            elem.style.top=currentposx+"px";
-            elem.style.left=currentposy+"px";
+            elem.style.left=currentposx+"px";
+            elem.style.top=currentposy+"px";
             
-            targetposx=e("animate").offsetTop;
-            targetposy=e("animate").offsetLeft;
+            
+            targetposx=e("animate").offsetLeft;
+            targetposy=e("animate").offsetTop;
             e("trace").innerHTML=
                 `The current pos is ${currentposx} and ${currentposy} <br>
                 The target pose is ${targetposx} and ${targetposy}<br>
