@@ -34,15 +34,22 @@
         let elem = e("animate");
         
         const range = 300;
-        let posx=Math.floor(Math.random() * range);   
-        let posy=Math.floor(Math.random() * range);   
-        elem.style.top=posx+"px";
-        elem.style.left=posy+"px";
+        
+        let targetposx;   
+        let targetposy;   
+        
         
         let currentposx; let currentposy;
+        
+        currentposx = getOffset("animate").top;
+        currentposy = getOffset("animate").left;
+        
         function myMove(){
-           currentposx=getOffset("animate").top;
-           currentposy=getOffset("animate").left;
+            targetposx=Math.floor(Math.random() * range);
+            targetposy=Math.floor(Math.random() * range);
+            
+            elem.style.top=targetposx+"px";
+            elem.style.left=targetposy+"px";
         }
         
         function getOffset(el) {
@@ -52,7 +59,7 @@
                 top: rect.top + window.scrollY
             };
         }
-        e("trace").innerHTML="current pos= "+currentposx+ "---"+currentposy+"<br>"+ posx+ "-----"+ posy;
+        e("trace").innerHTML="current pos= "+currentposx+ "---"+currentposy+"<br>targetpos="+ targetposx+ "-----"+ targetposy;
         function e(id){return document.getElementById(id);}
     </script>
 
