@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <input type="button" value="click me" id="btn0" onclick="gumballgo(this)">
+    <input type="button" value="click me" id="btn0" onclick="myMove()">
     <input type="button" value="gumballgo(0,0)" id="btn1" onclick="gumballgo(0,0)">
     <input type="button" value="gumballgo(0,300)" id="btn2" onclick="gumballgo(0,300)">
     <input type="button" value="gumballgo(200,300)" id="btn3" onclick="gumballgo(200,300)">
@@ -49,28 +49,22 @@
         /*elem.style.left=currentposx+"px";
         elem.style.top=currentposy+"px";*/
         let posx; let posy;
+            
                 
         function gumballgo(el){
-            const eid = el.id;
-            
-            if(el.id==="btn0"){
-                posx=0; posy=300; 
-                move();
-                time=setInterval(stay,1000);
-                e("trace").innerHTML=""; return;
-            }
-            /*else if(el.id==="btn1"){posx=0; posy=0;}
-            else if(el.id==="btn2"){posx=0; posy=300;}
-            else if(el.id==="btn3"){posx=200; posy=300;}
-            else if(el.id==="btn4"){posx=400; posy=0;}*/
-            
-            move();
-            report();
+                report();
         }
-        
+                
         function move(){
             elem.style.left=posx+"px";
             elem.style.top=posy+"px";
+        }
+        
+        function myMove(){
+            posx=0; posy=300; 
+            move();
+            time=setInterval(stay,1000);
+            e("trace").innerHTML=""; 
         }
         
         function stay(){
