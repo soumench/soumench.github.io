@@ -29,6 +29,8 @@
     <input type="button" value="gumballgo(200,300)" id="btn3" onclick="gumballgo(200,300)">
     <input type="button" value="gumballgo(400,0)" id="btn4" onclick="gumballgo(400,0)">
     
+    <input type="button" value="gumballgo(multi)" id="btn4" onclick="gumballgomulti(110,130)">
+    
     <div id ="container">
         <canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
             Your browser does not support the HTML5 canvas tag.</canvas> <br><br><br>
@@ -36,29 +38,39 @@
     </div>
     <span id="trace"></span>
     <script>
-        let ball = e("animate");
+        let ball = e("animate"); let canvas = e("myCanvas");
         let time;
-        let canvas = e("myCanvas");
+        
         move(canvas.width/2, canvas.height/2);
             
         let posx;   let posy;
                         
+        const interval = 1000;
+        function gumballgomulti(posx, posy){
+            move(posx, posy);
+            time = setTimeout(staythere1, interval);
+        }
+        function staythere1(){
+            move(120,150);
+            time = setTimeout(staythere2, interval);
+        }
+        function staythere2(){
+            move(100,300);
+        }
+        
         function gumballgo(posx, posy){
             e("trace").innerHTML=`The user wants the ball to move to (${posx} , ${posy})`;
             move(posx, posy);
         }
                 
-        
         function myMove(){
             move(200,300);
             time=setInterval(stay,5000);
             e("trace").innerHTML=""; 
-        }        
-        function move(posx,posy){
+        }function move(posx,posy){
             ball.style.left=posx+"px";
             ball.style.top=posy+"px";
-        }
-        function stay(){
+        }function stay(){
             clearInterval(time);
             move(100,100);  
         }
