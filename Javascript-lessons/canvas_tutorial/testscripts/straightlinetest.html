@@ -32,7 +32,7 @@
     <input type="button" value="gumballgo(400,400)" id="btn5" onclick="gumballgo(400,400)">
     
    <!-- <input type="button" value="gumballgo(multi)" id="btn4" onclick="gumballgomulti(110,130)">-->
-    <input type="button" value="gumballgo(multi)" id="btn4" onclick="trigger()">
+    <input type="button" value="gumballgo(multi)" id="btn6" onclick="trigger()">
     
     <div id ="container">
         <canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
@@ -61,7 +61,7 @@
             else if(3===i){move(120,140);}
             else if(4===i){move(130,160);clearInterval(time);i=0;}*/
             
-            if(i===10){
+            if(i===13){
                clearInterval(time);i=0; 
             }
             e("trace").innerHTML="i = "+ i+"----"+ball.style.left+"----"+ball.style.top;
@@ -86,6 +86,15 @@
             move(100,100);  
         }
        
+        /*ctx.canvas.addEventListener('click', function(event){
+            var mouseX = event.clientX - ctx.canvas.offsetLeft;
+            var mouseY = event.clientY - ctx.canvas.offsetTop;
+            ctx.fillStyle = "orange";
+            ctx.fillRect(mouseX-5, mouseY-5, 10, 10);
+            string message = "user clicked point " +mouseX+" , "+mouseY;        
+        });*/
+        
+        
         
         function e(id){return document.getElementById(id);}
     </script>
