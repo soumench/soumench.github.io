@@ -65,14 +65,13 @@
         }
             
         
-        
         function myMove(){
             move(200,300);
             time=setInterval(stay,5000);
             e("trace").innerHTML=""; 
         }function move(posx,posy){
-            ball.style.left=posx+"px";
-            ball.style.top=posy+"px";
+            ball.style.left=posx-25+"px";
+            ball.style.top=posy-17+"px";
         }function stay(){
             clearInterval(time);
             move(100,100);  
