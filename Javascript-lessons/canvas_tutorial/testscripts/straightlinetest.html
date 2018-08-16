@@ -64,7 +64,8 @@
             else if(3===i){move(120,140);}
             else if(4===i){move(130,160);clearInterval(time);i=0;}*/
             
-            if(i>=13){
+            /*if(i>=13){*/
+            if(posy>=300){
                clearInterval(time);i=0; 
             }
             e("trace").innerHTML="i = "+ i+"----"+ball.style.left+"----"+ball.style.top;
