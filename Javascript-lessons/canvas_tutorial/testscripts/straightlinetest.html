@@ -40,6 +40,7 @@
         <img id ="animate" src="GOLU-MOVE.gif" width="50px" height="50px" />
     </div>
     <span id="trace"></span>
+    <span id="trace2"></span>
     <script>
         const ctx = e('myCanvas').getContext('2d');
         
@@ -93,7 +94,8 @@
             var mouseY = event.clientY - ctx.canvas.offsetTop;
             ctx.fillStyle = "orange";
             ctx.fillRect(mouseX-5, mouseY-5, 10, 10);
-            string message = "user clicked point " +mouseX+" , "+mouseY;        
+            var message = "user clicked point " +mouseX+" , "+mouseY;
+            e("trace2").innerHTML=message;
         });
         
         
