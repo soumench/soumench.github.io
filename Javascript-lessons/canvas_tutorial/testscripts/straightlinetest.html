@@ -12,7 +12,7 @@
           height: 400px;
           position: relative;
           background: yellow;
-            margin: 50px;
+           /* margin: 50px;*/
         }
         #animate {
           width: 50px;
@@ -59,16 +59,13 @@
         }function gumballmultipos(){
             i++;
             move(posx+=stepx,posy+=stepy);
-            /*if(1===i){move(100,100);}
-            else if(2===i){move(110,120);}
-            else if(3===i){move(120,140);}
-            else if(4===i){move(130,160);clearInterval(time);i=0;}*/
-            
+                    
             /*if(i>=13){*/
             if(posy>=300){
                clearInterval(time);i=0; 
             }
-            e("trace").innerHTML="i = "+ i+"----"+ball.style.left+"----"+ball.style.top;
+            e("trace").innerHTML="i = "+ i+"----"+posx+"----"+posy;
+            /*e("trace").innerHTML="i = "+ i+"----"+ball.style.left+"----"+ball.style.top;*/
         }
         
         
