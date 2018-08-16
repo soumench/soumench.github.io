@@ -50,12 +50,11 @@
         function trigger(){
             e("trace").innerHTML="";
             time=setInterval(gumballmultipos,500);
-        }        
-        function gumballmultipos(){
+        }function gumballmultipos(){
             i++;
-            if(i===1){move(110,130);}
-            else if(i===2){move(120,150);}
-            else if(i===3){move(100,300);clearInterval(time);i=0;}
+            if(1===i){move(110,130);}
+            else if(2===i){move(120,150);}
+            else if(3===i){move(100,300);clearInterval(time);i=0;}
         }
         
         
