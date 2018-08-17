@@ -51,17 +51,18 @@
             
         let posx;   let posy;
                         
-        let i=0; const stepx=10; const stepy=20;
+        const stepx=10; const stepy=20;
         function trigger(){
             e("trace").innerHTML="";
             posx=100; posy=100;
-            time=setInterval(gumballmultipos,500);            
-            function gumballmultipos(){
+            time=setInterval(move_one_step,500);
+            let i=0; 
+            function move_one_step(){
                 i++;
                 move(posx+=stepx,posy+=stepy);
                         
                 if(i>=10){
-                   clearInterval(time);i=0; 
+                   clearInterval(time); 
                 }
                 e("trace").innerHTML="i = "+ i+"----"+posx+"----"+posy;
                 /*e("trace").innerHTML="i = "+ i+"----"+ball.style.left+"----"+ball.style.top;*/
