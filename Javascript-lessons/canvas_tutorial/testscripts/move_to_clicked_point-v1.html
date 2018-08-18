@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> straightline.html </title>
+    <style>
+        #container {
+          width: 400px;
+          height: 400px;
+          position: relative;
+          background: yellow;
+            margin: 50px;
+        }
+        #animate {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          background-color: #f8d9d9;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="moveball2point(0,0)" id="btn1" onclick="moveball2point(0,0)">
+    <input type="button" value="moveball2point(0,300)" id="btn2" onclick="moveball2point(0,300)">
+    <input type="button" value="moveball2point(200,300)" id="btn3" onclick="moveball2point(200,300)">
+    <input type="button" value="moveball2point(400,0)" id="btn4" onclick="moveball2point(400,0)">
+    <input type="button" value="moveball2point(400,400)" id="btn5" onclick="moveball2point(400,400)">
+      
+    <input type="button" value="stopTimer()" id="btn6" onclick="">
+    
+    <span id="trace"></span>
+    
+    <div id ="container">
+        <canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML5 canvas tag.</canvas> <br>
+        <img id ="animate" src="GOLU-MOVE.gif" width="50px" height="50px" />
+    </div>
+   
+    <script>
+        const ctx = e('myCanvas').getContext('2d');
+        
+        let ball = e("animate"); let canvas = e("myCanvas");
+                
+        move(canvas.width/2, canvas.height/2);
+            
+         let currentx=canvas.width/2; let currenty=canvas.height/2;
+                 
+         function moveball2point( destx, desty){
+           
+            const stepx = (destx-currentx)/10; const stepy=(desty-currenty)/10;
+            let posx=currentx; let posy = currenty;
+            const time=setInterval(move_one_step,200);
+            let i=0; 
+            function move_one_step(){
+                i++;
+                move(posx+=stepx,posy+=stepy);
+                        
+                if(i>=10){
+                   clearInterval(time); currentx=destx; currenty=desty;
+                }
+            }
+        }   
+            
+        
+        
+        function move(posx,posy){
+            ball.style.left=posx-25+"px";
+            ball.style.top=posy-17+"px";
+        }
+        
+        var canvasele=e("myCanvas");
+        var containerele=e("container");
+
+        ctx.canvas.addEventListener('click', function(event){
+        var mouseX = event.clientX - canvasele.offsetLeft- containerele.offsetLeft + window.scrollX;
+        var mouseY = event.clientY - canvasele.offsetTop - containerele.offsetTop + window.scrollY ;            ctx.fillStyle = "orange";
+        ctx.fillRect(mouseX-5, mouseY-5, 10, 10);
+        var message = "user clicked point " +mouseX+" , "+mouseY;
+        moveball2point( mouseX, mouseY);
+    
+        e("trace").innerHTML=message;
+        });
+        
+              
+        
+        
+        function e(id){return document.getElementById(id);}
+    </script>
+    
+    
+    <br><br><br><br>
+    <footer>
+        <a href="testscriptindex.html">Back to list of test scripts</a>
+    </footer>
+
+</body>
+
+</html>
