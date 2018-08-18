@@ -47,7 +47,7 @@ const list = [
 "literature", "living", "local", "locate", "location", "long-term", "loose", "lovely", 
 "lover", "lucky", "lunch", "machine", "manage", "manager", "married", "marry", "match", 
 "mechanism", "member", "memory", "mention", "merely", "message", "metal", "meter", 
-"might", "minister", "minor", "minority", "miracle", "mm-hmm", "model", "modern", 
+"might", "minister", "minor", "minority", "miracle", "model", "modern", 
 "month", "moral", "moreover", "motion", "mount", "mouth", "movement", "musician", 
 "mutual", "naturally", "nature", "nearby", "nearly", "necessarily", "necessary", 
 "negotiate", "neighbor", "neither", "nervous", "network", "noise", "north", "northern", 
