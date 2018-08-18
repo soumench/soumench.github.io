@@ -44,10 +44,15 @@
         const ctx = e('myCanvas').getContext('2d'); ctx.fillStyle = "orange";
         
         let ball = e("animate"); let canvas = e("myCanvas");
-                
+        
+        var canvasele=e("myCanvas");
+        var containerele=e("container");
+        
+        let currentx=canvas.width/2; let currenty=canvas.height/2; 
+        
         move(canvas.width/2, canvas.height/2);
             
-         let currentx=canvas.width/2; let currenty=canvas.height/2;
+         
          let time; 
         
          function moveball2point( destx, desty){
@@ -61,15 +66,13 @@
                 move(posx+=stepx,posy+=stepy);
                         
                 if(i>=10){
-                   clearInterval(time); /*currentx=destx; currenty=desty;*/
+                   clearInterval(time); 
                 }
             }
         }   
         
         
         
-        var canvasele=e("myCanvas");
-        var containerele=e("container");
         
         function move(posx,posy){
             ball.style.left=posx-25+"px";
