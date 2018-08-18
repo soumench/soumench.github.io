@@ -30,7 +30,7 @@
     <input type="button" value="moveball2point(400,0)" id="btn4" onclick="moveball2point(400,0)">
     <input type="button" value="moveball2point(400,400)" id="btn5" onclick="moveball2point(400,400)">
       
-    <input type="button" value="stopTimer()" id="btn6" onclick="">
+    <input type="button" value="stopTimer()" id="btn6" onclick="clearInterval(time)">
     
     <span id="trace"></span>
     
@@ -48,12 +48,12 @@
         move(canvas.width/2, canvas.height/2);
             
          let currentx=canvas.width/2; let currenty=canvas.height/2;
-                 
+         let time;       
          function moveball2point( destx, desty){
            
             const stepx = (destx-currentx)/10; const stepy=(desty-currenty)/10;
             let posx=currentx; let posy = currenty;
-            const time=setInterval(move_one_step,200);
+            time=setInterval(move_one_step,200);
             let i=0; 
             function move_one_step(){
                 i++;
