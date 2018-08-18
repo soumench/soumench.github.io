@@ -50,7 +50,7 @@ const list = [
 "might", "minister", "minor", "minority", "miracle", "model", "modern", 
 "month", "moral", "moreover", "motion", "mount", "mouth", "movement", "musician", 
 "mutual", "naturally", "nature", "nearby", "nearly", "necessarily", "necessary", 
-"negotiate", "neighbor", "neither", "nervous", "network", "noise", "north", "northern", 
+"negotiate", "neighbour", "neither", "nervous", "network", "noise", "north", "northern", 
 "nowhere", "nuclear", "numerous", "obligation", "obvious", "occasionally", "occur", 
 "offense", "offensive", "often", "opening", "operation", "operator", "orange", "order", 
 "ordinary", "organic", "organize", "origin", "original", "originally", "overcome", 
