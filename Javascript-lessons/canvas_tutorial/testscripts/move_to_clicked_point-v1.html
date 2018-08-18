@@ -41,16 +41,17 @@
     </div>
    
     <script>
-        const ctx = e('myCanvas').getContext('2d');
+        const ctx = e('myCanvas').getContext('2d'); ctx.fillStyle = "orange";
         
         let ball = e("animate"); let canvas = e("myCanvas");
                 
         move(canvas.width/2, canvas.height/2);
             
          let currentx=canvas.width/2; let currenty=canvas.height/2;
-         let time;       
+         let time; 
+        
          function moveball2point( destx, desty){
-           
+            if(time)clearInterval(time);
             const stepx = (destx-currentx)/10; const stepy=(desty-currenty)/10;
             let posx=currentx; let posy = currenty;
             time=setInterval(move_one_step,200);
@@ -60,7 +61,7 @@
                 move(posx+=stepx,posy+=stepy);
                         
                 if(i>=10){
-                   clearInterval(time); currentx=destx; currenty=desty;
+                   clearInterval(time); /*currentx=destx; currenty=desty;*/
                 }
             }
         }   
@@ -70,6 +71,7 @@
         function move(posx,posy){
             ball.style.left=posx-25+"px";
             ball.style.top=posy-17+"px";
+            
         }
         
         var canvasele=e("myCanvas");
@@ -77,7 +79,7 @@
 
         ctx.canvas.addEventListener('click', function(event){
         var mouseX = event.clientX - canvasele.offsetLeft- containerele.offsetLeft + window.scrollX;
-        var mouseY = event.clientY - canvasele.offsetTop - containerele.offsetTop + window.scrollY ;            ctx.fillStyle = "orange";
+        var mouseY = event.clientY - canvasele.offsetTop - containerele.offsetTop + window.scrollY ;            
         ctx.fillRect(mouseX-5, mouseY-5, 10, 10);
         var message = "user clicked point " +mouseX+" , "+mouseY;
         moveball2point( mouseX, mouseY);
