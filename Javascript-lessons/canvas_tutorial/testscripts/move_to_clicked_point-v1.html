@@ -65,17 +65,18 @@
                 }
             }
         }   
-            
         
+        
+        
+        var canvasele=e("myCanvas");
+        var containerele=e("container");
         
         function move(posx,posy){
             ball.style.left=posx-25+"px";
             ball.style.top=posy-17+"px";
             currentx=posx; currenty=posy;
         }
-        
-        var canvasele=e("myCanvas");
-        var containerele=e("container");
+            
 
         ctx.canvas.addEventListener('click', function(event){
         var mouseX = event.clientX - canvasele.offsetLeft- containerele.offsetLeft + window.scrollX;
