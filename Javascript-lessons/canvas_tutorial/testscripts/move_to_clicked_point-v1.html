@@ -91,8 +91,6 @@
         e("trace").innerHTML=message;
         });
         
-              
-        
         
         function e(id){return document.getElementById(id);}
     </script>
@@ -106,3 +104,8 @@
 </body>
 
 </html>
+
+<!--we have a mycanvas element inside a container element
+ the canvasele.offsetTop tells us how many pixels down is the canvas element corner from the container element
+ the containerele.offsetTop tells us how many pixels down is the container element corner from the PAGE TOP
+so we need the + window.scrollY ; in case the user has scrolled down th epage-->
