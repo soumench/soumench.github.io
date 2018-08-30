@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/ntw.css">
+   
+    <title></title>
+</head>
+
+<body>
+    <div id="canvas" >
+        <span id="heading"> Convert a number to words<br>কথায় লেখো </span><br>
+        <br>
+        <input  type="number" id="ui" autofocus
+        onchange="NumToWord(this.value);" onkeyup="NumToWord(this.value);"
+        maxlength="9"  min="1"; />  
+        <br>
+        <br>
+        
+        <div id="display">
+            <span id="trace">Write in the box above and words will appear here.</span>
+        </div>
+        <br><br>
+        
+        <footer> 
+		      Copyright &copy; Soumen Chakraborty     - <span id="year">year</span> 
+	       <br> 
+		      Strictly for Educational and Non-Commercial purpose only.
+        </footer>     
+    </div>
+    
+    <script src="js/toWord.js"></script>
+    <!--ACKNOWLEDGEMENT : 
+        script source: https://stackoverflow.com/questions/14766951/convert-digits-into-words-with-javascript
+    Modded by Soumen, September 2018-->
+    <script src="../../year.js"></script>
+    <script src="js/e.js"></script>
+    <script>
+        e("year").innerHTML = creation_year;
+    </script>
+</body>
+
+</html>
