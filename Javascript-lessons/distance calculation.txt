@@ -1,4 +1,0 @@
-dx = a.x - b.x;
-dy = a.y - b.y;
-
-distance = Math.sqrt(dx*dx + dy*dy);

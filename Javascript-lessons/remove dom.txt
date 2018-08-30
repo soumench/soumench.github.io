@@ -1,1 +1,0 @@
-e("quiz_box").parentNode.removeChild(e("quiz_box"));
