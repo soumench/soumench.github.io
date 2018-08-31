@@ -47,14 +47,14 @@
             border-collapse: collapse;
         }
         th, td {
-            padding: 2px;
+            padding: 1px;
         }
         th {
             text-align: center;
             background-color: cornsilk;
         }
         table {
-            border-spacing: 4px;
+            border-spacing: 2px;
         }
         #ref{
             color: #272727;

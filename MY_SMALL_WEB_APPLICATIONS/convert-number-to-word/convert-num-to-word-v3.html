@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/ntw.css">
+   
+    <title></title>
+</head>
+
+<body>
+    <div id="canvas" >
+        <span id="heading"> Convert a number to words<br>কোনো পূর্ণ সংখ্যাকে কথায় লেখো </span>
+        <br>
+        <input  type="number" id="ui" autofocus style="width: 7em"
+        onchange="NumToWord(this.value);" onkeyup="NumToWord(this.value);"
+        maxlength="5"  min="1" placeholder="Write here."/>
+        <img src="img/GOLU-FRONT.png" width="100px" height="100px">
+        <br>
+        
+        
+        <div id="display">
+            <b>Indian System:</b>
+            <span id="trace"></span><hr>
+            <b>International System:</b>
+            <span id="trace2"></span>
+        </div>
+        
+        <div id="ref">
+             <table style="width:100%">
+              <tr>
+                <th>Number</th>
+                <th>English</th>
+                <th>বাংলা চলিত ভাষা<br>(Colloqual Language)</th>
+                <th>বাংলা সাধু ভাষা<br>(Chaste Language)</th>
+              </tr>
+              <tr>
+                <td>100</td>
+                <td>One Hundred</td>
+                <td>এক শ   </td>
+                <td>এক শত</td>
+              </tr>
+              <tr>
+                <td>1000</td>
+                <td>One Thousand</td>
+                <td>এক হাজার</td>
+                <td>এক সহস্র</td>
+              </tr>
+
+             <tr>
+                <td>1,00,000</td>
+                <td>One Lakh / One Lac/<br> One Hundred Thousand </td>
+                <td>এক লাখ</td>
+                <td>এক লক্ষ</td>
+              </tr>
+            
+            <tr>
+                <td>10,00,000</td>
+                <td>Ten Lakh / Ten Lac/<br> One Million </td>
+                <td>দশ লাখ </td>
+                <td>দশ লক্ষ</td>
+              </tr>
+
+             <tr>
+                <td>1,00,00,000</td>
+                <td>One Crore/ Ten Million</td>
+                <td>এক কোটি</td>
+                <td>এক কোটি</td>
+              </tr>
+            
+             <tr>
+                <td>100,00,00,000</td>
+                <td>One Hundred Crore/ <br> One Billion</td>
+                <td>এক শ কোটি</td>
+                <td>এক শত কোটি</td>
+              </tr>
+            </table> 
+        </div>
+                
+        <footer> 
+		      Copyright &copy; Soumen Chakraborty     - <span id="year">year</span> 
+	       <br> 
+		      Strictly for Educational and Non-Commercial purpose only.
+        </footer>     
+    </div>
+        
+    <script src="../../ENGLISH/year.js"></script>
+    <script src="js/toTitleCase.js"></script>
+    <script src="js/e.js"></script>
+    <script src="js/toWord.js"></script>
+    <script>e("year").innerHTML = creation_year;</script>
+    <script>
+        
+    </script>
+</body>
+
+</html>
