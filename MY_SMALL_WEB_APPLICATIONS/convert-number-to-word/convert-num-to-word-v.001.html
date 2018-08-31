@@ -13,7 +13,7 @@
     <div id="canvas" >
         <span id="heading"> Convert a number to words<br>কোনো পূর্ণ সংখ্যাকে কথায় লেখো </span>
         <br>
-        <input  type="number" id="ui" autofocus style="width: 7em"
+        <input  type="number" id="ui" autofocus style="width: 6em"
         onchange="NumToWord(this.value);" onkeyup="NumToWord(this.value);"
         maxlength="5"  min="1" placeholder="Write here."/>
         <img src="img/GOLU-FRONT.png" width="100px" height="100px">
@@ -21,10 +21,7 @@
         
         
         <div id="display">
-            <b>Indian System:</b>
-            <span id="trace"></span><hr>
-            <b>International System:</b>
-            <span id="trace2"></span>
+            <span id="trace">Write in the box above <br>and<br> the words will appear here.</span>
         </div>
         
         <div id="ref">
@@ -82,9 +79,6 @@
     <script src="js/e.js"></script>
     <script src="js/toWord.js"></script>
     <script>e("year").innerHTML = creation_year;</script>
-    <script>
-        
-    </script>
 </body>
 
 </html>

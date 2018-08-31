@@ -1,5 +1,10 @@
+
 function NumToWord(inputNumber) {
             let str = new String(inputNumber);
+    
+            e("trace2").innerHTML= numToWords_int(str); // new addition
+    
+            str = new String(inputNumber);
             let splt = str.split("");
             let rev = splt.reverse();
             const once = ['ZERO', ' ONE', ' TWO', ' THREE', ' FOUR', ' FIVE', ' SIX', ' SEVEN', ' EIGHT', ' NINE'];
@@ -84,8 +89,69 @@ function NumToWord(inputNumber) {
             finalOutput = finalOutput + word[i];
         }
         e("trace").innerHTML = finalOutput;
+    
+        
+        
     }
 
 /*ACKNOWLEDGEMENT : 
         script source: https://stackoverflow.com/questions/14766951/convert-digits-into-words-with-javascript
 Modded by Soumen, August 2018*/
+
+
+const arr = x => Array.from(x);
+const num = x => Number(x) || 0;
+const str = x => String(x);
+const isEmpty = xs => xs.length === 0;
+const take = n => xs => xs.slice(0,n);
+const drop = n => xs => xs.slice(n);
+const reverse = xs => xs.slice(0).reverse();
+const comp = f => g => x => f (g (x));
+const not = x => !x;
+const chunk = n => xs =>
+  isEmpty(xs) ? [] : [take(n)(xs), ...chunk (n) (drop (n) (xs))];
+
+// numToWords :: (Number a, String a) => a -> String
+let numToWords_int = n => {
+  
+  let a = [    
+    '', 'ONE', 'TWO', 'THREE', 'FOUR',		
+    'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE',		
+    'TEN', 'ELEVEN', 'TWELVE', 'THIRTEEN', 'FOURTEEN',		
+    'FIFTEEN', 'SIXTEEN', 'SEVENTEEN', 'EIGHTEEN', 'NINETEEN'		
+  ];
+  
+  let b = [
+    '', '', 'TWENTY', 'THIRTY', 'FORTY',
+    'FIFTY', 'SIXTY', 'SEVENTY', 'EIGHTY', 'NINETY'
+  ];
+  
+  let g = [
+    '', 'THOUSAND', 'MILLION', 'BILLION', 'TRILLION', 'QUADRILLION',
+    'QUINTILLION', 'SEXTILLION', 'SEPTILLION', 'OCTILLION', 'NONILLION'
+  ];
+  
+  // this part is really nasty still
+  // i might edit this again later to show how Monoids could fix this up
+  let makeGroup = ([ones,tens,huns]) => {
+    return [
+      num(huns) === 0 ? '' : a[huns] + ' HUNDRED ',
+      num(ones) === 0 ? b[tens] : b[tens] && b[tens] + '-' || '',
+      a[tens+ones] || a[ones]
+    ].join('');
+  };
+  
+  let thousand = (group,i) => group === '' ? group : `${group} ${g[i]}`;
+  
+  if (typeof n === 'number')
+    return numToWords(String(n));
+  else if (n === '0')
+    return 'ZERO';
+  else
+    return comp (chunk(3)) (reverse) (arr(n))
+      .map(makeGroup)
+      .map(thousand)
+      .filter(comp(not)(isEmpty))
+      .reverse()
+      .join(' ');
+};
