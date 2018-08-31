@@ -19,8 +19,9 @@
             box-shadow: 5px 5px 5px grey;
         }
         #trace, #trace2{
-            font-size: 70%;
+            font-size: 80%;
             color: blue;
+            text-align: left;
         }
         #display{
             border: 2px solid black;
@@ -30,6 +31,7 @@
             background-color: aliceblue;
             margin: 1.5%;
             text-align: left;
+            font-size: 80%;
         }
         footer{
             font-size: 70%;

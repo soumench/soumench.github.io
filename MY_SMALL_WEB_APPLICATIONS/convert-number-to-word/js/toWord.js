@@ -88,11 +88,8 @@ function NumToWord(inputNumber) {
         for (i = 0; i < numLength; i++) {
             finalOutput = finalOutput + word[i];
         }
-        e("trace").innerHTML = finalOutput;
-    
-        
-        
-    }
+        e("trace").innerHTML = toTitleCase(finalOutput);
+  }
 
 /*ACKNOWLEDGEMENT : 
         script source: https://stackoverflow.com/questions/14766951/convert-digits-into-words-with-javascript
@@ -115,27 +112,27 @@ const chunk = n => xs =>
 let numToWords_int = n => {
   
   let a = [    
-    '', 'ONE', 'TWO', 'THREE', 'FOUR',		
-    'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE',		
-    'TEN', 'ELEVEN', 'TWELVE', 'THIRTEEN', 'FOURTEEN',		
-    'FIFTEEN', 'SIXTEEN', 'SEVENTEEN', 'EIGHTEEN', 'NINETEEN'		
+    '', 'One', 'Two', 'Three', 'Four',
+    'Five', 'Six', 'Seven', 'Eight', 'Nine',
+    'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen',
+    'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'
   ];
   
   let b = [
-    '', '', 'TWENTY', 'THIRTY', 'FORTY',
-    'FIFTY', 'SIXTY', 'SEVENTY', 'EIGHTY', 'NINETY'
+    '', '', 'Twenty', 'Thirty', 'Forty',
+    'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'
   ];
   
   let g = [
-    '', 'THOUSAND', 'MILLION', 'BILLION', 'TRILLION', 'QUADRILLION',
-    'QUINTILLION', 'SEXTILLION', 'SEPTILLION', 'OCTILLION', 'NONILLION'
+    '', 'Thousand', 'Million', 'Billion', 'Trillion', 'Quadrillion',
+    'Quintillion', 'Sextillion', 'Septillion', 'Octillion', 'Nonillion'
   ];
   
   // this part is really nasty still
   // i might edit this again later to show how Monoids could fix this up
   let makeGroup = ([ones,tens,huns]) => {
     return [
-      num(huns) === 0 ? '' : a[huns] + ' HUNDRED ',
+      num(huns) === 0 ? '' : a[huns] + ' Hundred ',
       num(ones) === 0 ? b[tens] : b[tens] && b[tens] + '-' || '',
       a[tens+ones] || a[ones]
     ].join('');
@@ -146,7 +143,7 @@ let numToWords_int = n => {
   if (typeof n === 'number')
     return numToWords(String(n));
   else if (n === '0')
-    return 'ZERO';
+    return 'Zero';
   else
     return comp (chunk(3)) (reverse) (arr(n))
       .map(makeGroup)
