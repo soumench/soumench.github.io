@@ -8,20 +8,19 @@
         #canvas{
             border: 4px solid red;
             border-radius: 16px;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
-            background-color: #fae9d3;
-            box-shadow: 10px 10px 5px grey;
+            background-color: #fff8f0;
+            /*box-shadow: 10px 10px 5px grey;*/
         }
         #ui{
-            background-color: #b9fffa; font-size: 120%;
+            background-color: #b9fffa; font-size: 110%;
             text-align: center;
-            box-shadow: 10px 10px 5px grey;
+            box-shadow: 5px 5px 5px grey;
         }
         #trace{
             font-size: 90%;
             color: blue;
-            
         }
         #display{
             border: 2px solid black;
@@ -29,13 +28,34 @@
             padding: 10px;
             box-shadow: 10px 10px 5px grey;
             background-color: aliceblue;
+            margin: 1.5%;
         }
         footer{
             font-size: 70%;
-            border: 2px solid green;
+            border: 2px solid #580198;
             border-radius: 10px;
             box-shadow: 10px 10px 5px grey;
             color: red;
             background-color: #fffefc;
+            margin: 1.5%;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 2px;
+        }
+        th {
+            text-align: center;
+            background-color: cornsilk;
+        }
+        table {
+            border-spacing: 4px;
+        }
+        #ref{
+            color: #272727;
+            background-color: #f1f6ff;
+            font-size: 55%;
         }
    /* </style>*/

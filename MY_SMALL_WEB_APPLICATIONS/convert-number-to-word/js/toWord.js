@@ -1,38 +1,4 @@
-<!--script source: https://stackoverflow.com/questions/14766951/convert-digits-into-words-with-javascript -->
-<html>
-
-<head>
-    
-    <style>
-        #canvas{
-            width="480px"; height="640px";
-            border: 1px solid red;
-        }
-        #ui{
-            background-color: #efefef; border: 2px solid #CCCCC; font-size: large"
-        }
-    </style>
-
-    <title>HTML - Convert numbers to words using JavaScript</title>
-
-   
-
-</head>
-
-<body>
-    <div id="canvas" >
-        <h1> Write a number in words</h1>
-        
-        <input  type="number" id="ui"
-        onchange="NumToWord(this.value);" onkeyup="NumToWord(this.value);"
-        maxlength="9"  minvalue=0;/>  
-        
-        <span id="trace"> </span>
-    </div> 
-    
-    <script >
-    	
-        function NumToWord(inputNumber) {
+function NumToWord(inputNumber) {
             let str = new String(inputNumber);
             let splt = str.split("");
             let rev = splt.reverse();
@@ -40,22 +6,19 @@
             const twos = ['TEN', ' ELEVEN', ' TWELVE', ' THIRTEEN', ' FOURTEEN', ' FIFTEEN', ' SIXTEEN', ' SEVENTEEN', ' EIGHTEEN', ' NINETEEN'];
             const tens = ['', 'TEN', ' TWENTY', ' THIRTY', ' FORTY', ' FIFTY', ' SIXTY', ' SEVENTY', ' EIGHTY', ' NINETY'];
 
-            numLength = rev.length;
+            let numLength = rev.length;
+            if(numLength>9){e("trace").innerHTML="Please enter a smaller number."; return;}
             let word = new Array();
             let j = 0;
-
             for (i = 0; i < numLength; i++) {
                 switch (i) {
-
                 case 0:
                     if ((rev[i] == 0) || (rev[i + 1] == 1)) {word[j] = '';}
                     else {word[j] = '' + once[rev[i]];}
                     word[j] = word[j];
                     break;
-
                 case 1:
                     aboveTens(); break;
-
                 case 2:
                     if (rev[i] == 0) {word[j] = '';}
                     else if ((rev[i - 1] == 0) || (rev[i - 2] == 0)) {
@@ -63,7 +26,6 @@
                     }
                     else {word[j] = once[rev[i]] + " HUNDRED AND";}
                     break;
-
                 case 3:
                     if (rev[i] == 0 || rev[i + 1] == 1) {word[j] = '';}
                     else {word[j] = once[rev[i]];}
@@ -71,11 +33,8 @@
                         word[j] = word[j] + " THOUSAND";
                     }
                     break;
-
-
                 case 4:
                     aboveTens(); break;
-
                 case 5:
                     if ((rev[i] == 0) || (rev[i + 1] == 1)) {word[j] = '';}
                     else {
@@ -84,12 +43,9 @@
                     if (rev[i + 1] !== '0' || rev[i] > '0') {
                         word[j] = word[j] + " LAKH";
                     }
-
                     break;
-
                 case 6:
                     aboveTens(); break;
-
                 case 7:
                     if ((rev[i] == 0) || (rev[i + 1] == 1)) {word[j] = '';}
                     else {
@@ -99,23 +55,18 @@
                         word[j] = word[j] + " CRORE";
                     }                
                     break;
-
                 case 8:
                     aboveTens(); break;
-
-                            /*This is optional. 
-
-                            case 9:
-                                if ((rev[i] == 0) || (rev[i + 1] == 1)){word[j] = '';}
-                                else {word[j] = once[rev[i]];}
-                                if (rev[i + 1] !== '0' || rev[i] > '0') {
-                                    word[j] = word[j] + " Arab";
-                                }
-                                break;
-
-                            case 10:
-                                aboveTens(); break;*/
-
+                /*Optional. 
+                case 9:
+                    if ((rev[i] == 0) || (rev[i + 1] == 1)){word[j] = '';}
+                    else {word[j] = once[rev[i]];}
+                    if (rev[i + 1] !== '0' || rev[i] > '0') {
+                        word[j] = word[j] + " Arab";
+                    }
+                    break;
+                case 10:
+                    aboveTens(); break;*/
                 default: break;
             }
             j++;
@@ -132,10 +83,9 @@
         for (i = 0; i < numLength; i++) {
             finalOutput = finalOutput + word[i];
         }
-        document.getElementById("trace").innerHTML = finalOutput;
+        e("trace").innerHTML = finalOutput;
     }
-    </script>
 
-</body>
-
-</html>
+/*ACKNOWLEDGEMENT : 
+        script source: https://stackoverflow.com/questions/14766951/convert-digits-into-words-with-javascript
+Modded by Soumen, August 2018*/
