@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <input type="button" id="btn1" value="click" onclick="print();">
+    <span id="trace"></span>
+    <span id="trace2"></span>
+    
+    <script src="js/wordlist.js"></script>
+    <script>
+        
+    
+     function print(){
+         let length = myWords.length;
+         e("trace").innerHTML=length+"<br>" ;
+    
+         let i=0;
+         let word;
+        
+         while(i<length){
+           word+="\""+myWords[i]+"\", ";
+           i++;
+         }
+         e("trace2").innerHTML=word ;
+         i=0;
+     }
+     
+     function e(id){return document.getElementById(id);}
+    </script>
+
+</body>
+
+</html>
