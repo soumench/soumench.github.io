@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <span>This page is a driller for most common English Words. It will ask the Bengali Translations of common English words.</span><br>
+    <input type="button" id="btn1" value="Click" onclick="ask()" style="font-size : 34px; height: 80px; width: 200px; background-color: red"; >
+    <span id="trace1"></span>
+    <span id="trace2"></span>
+    
+    <script src="js/wordlist.js"></script>
+    <script>
+     const listOne = [ 
+         "a","about","after","all","also",
+         "an","and","animal","any","as",
+         "ash","at","back","bad","bark",
+         "be","because","belly","big","bird",
+         "bite","black","blood","bone","breasts",
+         "brother","burn","but","by"
+     ]; 
+    fisherYates(listOne);
+    
+    let i=0;
+    function ask(){
+        if(i>listOne.length) i=0;
+        let word = listOne[i];
+        i++;
+        
+        e("trace1").innerHTML=word;
+    }    
+        
+    function fisherYates( array ){
+        var count = array.length,
+        randomnumber,
+        temp;
+        while( count ){
+          randomnumber = Math.random() * count-- | 0;
+          temp = array[count];
+          array[count] = array[randomnumber];
+          array[randomnumber] = temp
+        }
+    }  
+     /*function print(){
+         let length = myWords.length;
+         e("trace1").innerHTML=length+"<br>" ;
+    
+         let i=0;
+         let word = "" ;
+        
+         while(i<length){
+           word+="\""+myWords[i]+"\", ";
+          
+           i++;
+         }
+         e("trace2").innerHTML=word ;
+         i=0;
+     }*/
+     
+     function e(id){return document.getElementById(id);}
+    </script>
+
+</body>
+
+</html>
