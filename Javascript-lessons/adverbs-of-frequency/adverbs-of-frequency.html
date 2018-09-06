@@ -6,21 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
+    <style>
+        body{ text-align: center;}
+        #btnBox, #barBox{border: 2px solid red; padding: 10px; margin: 10px;}
+    </style>
 </head>
 
 <body>
 
 </body>
-    <span>Adverbs of Frequency</span><br>
-    <progress id="bar" value="22" max="100"></progress><br>
-    <button>Always</button>
-    <button>Usually</button>
-    <button>Frequently</button>
-    <button>Often</button>
-    <button>Sometimes</button>
-    <button>Seldom</button>
-    <button>Rarely</button>
-    <button>Never</button>
+    <div>
+        <span>Adverbs of Frequency</span><br>
+    </div>
+    <div id="barBox">
+        <progress id="bar" value="0" max="100" style="height:30px;width:300px"></progress><br>
+        <span id="trace">Never</span>
+    </div>
+    <div id="btnBox">
+        <button onclick="barVal(100)" style="height:30px;width:300px">Always </button><br>
+        <button onclick="barVal(90)" style="height:30px;width:250px">Usually</button><br>
+        <button onclick="barVal(80)" style="height:30px;width:200px">Frequently</button><br>
+        <button onclick="barVal(70)" style="height:30px;width:150px">Often</button><br>
+        <button onclick="barVal(50)" style="height:30px;width:100px">Sometimes</button><br>
+        <button onclick="barVal(10)" style="height:30px;width:80px">Seldom</button><br>
+        <button onclick="barVal(5)" style="height:30px;width:70px">Rarely</button><br>
+        <button onclick="barVal(0)" style="height:30px;width:50px">Never</button>
+    </div>
+    <script>
+        function barVal(x){
+            let i=0;
+            let time = setInterval(progress,20);
+            function progress(){
+                if(i>=x){
+                    clearInterval(time);
+                }
+                document.getElementById("bar").value=i;
+                i++;
+            }
+                        
+            switch (x) {
+            case 100:
+                text = "Always -সবসময়"; text+="  (He always wins.)";
+                break;
+            case 90:
+                text = "Usually - সাধারণতঃ";
+                break;
+            case 80:
+                text = "Frequently - মাঝেমাঝেই";
+                break;
+            case 70:
+                text = "Often - প্রায়ই";
+                break;
+            case 50:
+                text = "Sometimes - কখনো কখনো";
+                break;
+            case 10:
+                text = "Seldom - প্রায় না";
+                break;
+            case 5:
+                text = "Rarely - কচিৎ";
+                break;
+            default:
+                text = "Never - কখনও নয়";
+            } 
+            document.getElementById("trace").innerHTML=text;
+        }
+    </script>
     
 
 </html>
