@@ -31,7 +31,8 @@
     ];
     shuffle(englishWords);   
     trace2.innerHTML=englishWords.join("<br/>");
-    
+    trace2.innerHTML=englishWords.join();
+    trace1.innerHTML=bengaliWords.join();
             
     function shuffle(){
         var count = englishWords.length,
@@ -42,6 +43,10 @@
           temp = englishWords[count];
           englishWords[count] = englishWords[randomnumber];
           englishWords[randomnumber] = temp
+            
+          temp = bengaliWords[count];
+          bengaliWords[count] = bengaliWords[randomnumber];
+          bengaliWords[randomnumber] = temp;
         }
     }  
          
