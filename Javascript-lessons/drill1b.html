@@ -16,20 +16,15 @@
     
     <script src="js/wordlist.js"></script>
     <script>
-     const listOne = [ 
-         "a","about","after","all","also",
-         "an","and","animal","any","as",
-         "ash","at","back","bad","bark",
-         "be","because","belly","big","bird",
-         "bite","black","blood","bone","breasts",
-         "brother","burn","but","by"
-     ]; 
+     
     fisherYates(myWords);
+    let count= 20;
+    let randomnumber = Math.floor ( Math.random() * count-- | 0 );    
     e("trace2").innerHTML=myWords.join("<br/>");
     let i=0;
     function ask(){
         if(i>myWords.length) i=0;
-        let word = listOne[i];
+        let word = myWords[i];
         i++;
         
         e("trace1").innerHTML=word;
