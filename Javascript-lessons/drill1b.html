@@ -10,7 +10,7 @@
 
 <body>
     <span>This page is a driller for most common English Words. It will ask the Bengali Translations of common English words.</span><br>
-    <input type="button" id="btn1" value="Click" onclick="ask()" style="font-size : 34px; height: 80px; width: 200px; background-color: red"; >
+    <input type="button" id="btn1" value="Click" onclick="" style="font-size : 34px; height: 80px; width: 200px; background-color: red"; >
     <span id="trace1"></span><br>
     <span id="trace2"></span>
     
@@ -23,12 +23,7 @@
     trace2.innerHTML=myWords.join("<br/>");
     
     let i=0;
-    function ask(){
-        if(i>myWords.length) i=0;
-        let word = myWords[i];
-        i++;        
-        trace1.innerHTML=word;
-    }    
+    
         
     function shuffle( array ){
         var count = array.length,
