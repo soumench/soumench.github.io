@@ -19,7 +19,7 @@
      
     fisherYates(myWords);
     let count= 20;
-    let randomnumber = Math.floor ( Math.random() * count-- | 0 );    
+       
     e("trace2").innerHTML=myWords.join("<br/>");
     let i=0;
     function ask(){
@@ -35,7 +35,7 @@
         randomnumber,
         temp;
         while( count ){
-          randomnumber = Math.random() * count-- | 0;
+          randomnumber = Math.floor ( Math.random() * count-- | 0 ); 
           temp = array[count];
           array[count] = array[randomnumber];
           array[randomnumber] = temp
