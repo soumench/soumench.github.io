@@ -17,20 +17,20 @@
     <script src="js/wordlist.js"></script>
     <script>
      
-    fisherYates(myWords);
-    let count= 20;
+    shuffle(myWords);
+    const trace2=e("trace2"); const trace1=e("trace1");
        
-    e("trace2").innerHTML=myWords.join("<br/>");
+    trace2.innerHTML=myWords.join("<br/>");
+    
     let i=0;
     function ask(){
         if(i>myWords.length) i=0;
         let word = myWords[i];
-        i++;
-        
-        e("trace1").innerHTML=word;
+        i++;        
+        trace1.innerHTML=word;
     }    
         
-    function fisherYates( array ){
+    function shuffle( array ){
         var count = array.length,
         randomnumber,
         temp;
