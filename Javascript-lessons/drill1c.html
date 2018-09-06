@@ -14,10 +14,7 @@
     <span id="trace1"></span><br>
     <span id="trace2"></span>
     
-    <script src="js/wordlist.js"></script>
     <script>
-     
-    
     const trace2=e("trace2"); const trace1=e("trace1");
         
     const englishWords = [
@@ -36,15 +33,15 @@
     trace2.innerHTML=englishWords.join("<br/>");
     
             
-    function shuffle( array ){
-        var count = array.length,
+    function shuffle(){
+        var count = englishWords.length,
         randomnumber,
         temp;
-        while( count ){
+        while( count > 1 ){
           randomnumber = Math.floor ( Math.random() * count-- ); 
-          temp = array[count];
-          array[count] = array[randomnumber];
-          array[randomnumber] = temp
+          temp = englishWords[count];
+          englishWords[count] = englishWords[randomnumber];
+          englishWords[randomnumber] = temp
         }
     }  
          
