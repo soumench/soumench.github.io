@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <span> This page  will ask the Bengali Translations of twenty English words.</span><br>
+    <input type="button" id="btn1" value="Click" onclick="" style="font-size : 34px; height: 80px; width: 200px; background-color: red"; >
+    <span id="trace1"></span><br>
+    <span id="trace2"></span>
+    
+    <script src="js/wordlist.js"></script>
+    <script>
+     
+    shuffle(myWords);
+    const trace2=e("trace2"); const trace1=e("trace1");
+        
+    const englishWords = [
+        "eye","grease","over","warm","narrow",
+        "hair","thing", "small","earth","swim"
+        ,"brother","well","black","they","laugh",
+        "river","drink","fire","her","yellow"
+    ];
+    const bengaliWords = [
+        "cOkh", "cOrbi", "upar diye", "uSNO", "soGgkIrNa"
+        ,"cul","jiniS", "chOTO", "pRIthibI", "sAntAr kATA"
+        ,"bhAi", "bhAlO", "kAlO", "tArA", "hAnSi"
+        ,"nadI", "pAn karA", "Agun", "se", "halud"
+    ];
+       
+    trace2.innerHTML=myWords.join("<br/>");
+    
+    let i=0;
+    
+        
+    function shuffle( array ){
+        var count = array.length,
+        randomnumber,
+        temp;
+        while( count ){
+          randomnumber = Math.floor ( Math.random() * count-- | 0 ); 
+          temp = array[count];
+          array[count] = array[randomnumber];
+          array[randomnumber] = temp
+        }
+    }  
+         
+    function e(id){return document.getElementById(id);}
+    </script>
+
+</body>
+
+</html>
