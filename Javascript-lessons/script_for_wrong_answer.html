@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <span id="Q_index">Question 1 of 10</span><br>
+    <div id="quiz_board">        
+    </div>    
+    <input type="button" onclick="score()"  value="NEXT" id="next_question" style="width:150px" /><br>
+    
+    <p id="trace"> (trace messages appear here) </p>
+        
+    <script>
+        function makewronganswers(){
+            var N=20;
+            var i=0;
+            var wronganswers=[];        
+            for(i=0;i<N;++i){
+                var k=[];
+                var j;
+                for (j=0;j<3;++j)
+                {
+                    var u;
+                    do u=Math.floor(N*Math.random());
+                    while ( i==u ||  k.includes(u) );
+                    k.push(u);
+                }
+                wronganswers.push(k);
+            }
+            return wronganswers;
+        }
+        var wa=makewronganswers();
+        e("trace").innerHTML= wa.join("<br/>")  ;
+        
+        function e(id){
+            return document.getElementById(id);
+        }
+    </script>
+</body>
+</html>
