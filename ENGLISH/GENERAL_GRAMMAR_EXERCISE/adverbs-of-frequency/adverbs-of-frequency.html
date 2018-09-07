@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <link rel="stylesheet" type="text/css" href="css/adverb.css">
+</head>
+
+<body>
+
+</body>
+    <div id="heading">
+        <span id="header"><b>Comparison of the Adverbs of Frequency</b></span><br>
+    </div>
+    <div id="barBox">
+        <progress id="bar" value="0" max="100" style="height:30px;width:300px"></progress><br>
+        
+    </div>
+    <div id="txtDisplay">
+        <span id="trace">Never</span>
+    </div>
+    <div id="btnBox">
+        <span id="clickMsg">Click the buttons below.</span><br>
+        <button onclick="barVal(0)" style="height:30px;width:50px" class="btn">Never</button><br>
+        <button onclick="barVal(5)" style="height:30px;width:70px" class="btn">Rarely</button><br>
+        <button onclick="barVal(10)" style="height:30px;width:80px" class="btn">Seldom</button><br>
+        <button onclick="barVal(50)" style="height:30px;width:100px" class="btn">Sometimes</button><br>
+        <button onclick="barVal(70)" style="height:30px;width:150px" class="btn">Often</button><br>
+        <button onclick="barVal(80)" style="height:30px;width:200px" class="btn">Frequently</button><br>
+        <button onclick="barVal(90)" style="height:30px;width:250px" class="btn">Usually</button><br>
+        <button onclick="barVal(100)" style="height:30px;width:300px" class="btn">Always </button><br>        
+    </div>
+    <footer> 
+		Copyright &copy; Soumen Chakraborty  - <span id="year">year</span> <br> 	
+		Strictly for Educational and Non-Commercial purpose only.
+   </footer>
+    <script src="js/e.js"></script>
+    <script src="../../../ENGLISH/year.js"></script>
+    <script>
+        let text = "Never - কখনও নয় <br>(I will never shop at that store again.) <br>আমি আর কখনও ওই দোকানে কিনবো না ।";
+        const display = e("trace");
+        display.innerHTML=text;
+        const snd = new Audio("sound/knob_sound.oga");
+        function barVal(x){
+            snd.play();
+            let i=0;
+            let time = setInterval(progress,20);
+            function progress(){
+                if(i>=x){
+                    clearInterval(time);
+                }
+                e("bar").value=i;
+                i++;
+            }
+                        
+            switch (x) {
+            case 100:
+                text = "Always -সবসময় ; <br> (He always wins.) <br> সে সবসময় জেতে ।";
+                break;
+            case 90:
+                text = "  Usually - সাধারণতঃ <br> (Usually I get up at 6 a.m.)<br>সাধারনতঃ আমি সকাল ছটায় উঠি ।" ;
+                break;
+            case 80:
+                text = "Frequently - ঘনঘন <br>(The dog frequently comes for food.) <br>কুকুরটি খাবারের জন্যে ঘনঘন আসে ।";
+                break;
+            case 70:
+                text = "Often - প্রায়ই <br> (The poor man often starves.) <br>গরীব লোকটি প্রায়ই অনাহারে থাকে ।";
+                break;
+            case 50:
+                text = "Sometimes - কখনো কখনো <br> (Sometimes we all make mistakes.) <br>কখনও কখনও আমরা সবাই ভুল করি ।";
+                break;
+            case 10:
+                text = "Seldom - প্রায় না <br>( We seldom go to the movies.)<br>আমরা মুভি দেখতে প্রায় যাই না বললেই চলে ।";
+                break;
+            case 5:
+                text = "Rarely - কচিৎ/কালে ভদ্রে <br> (He rarely talks about his past.) <br> সে তার অতীত নিয়ে কালেভদ্রে কথা বলে ।";
+                break;
+            default:
+                text = "Never - কখনও নয় <br>(I will never shop at that store again.) <br>আমি আর কখনও ওই দোকানে কিনবো না ।";
+            } 
+            display.innerHTML=text;
+        }
+        e("year").innerHTML = creation_year;
+    </script>
+</html>

@@ -1,0 +1,28 @@
+/*<style>*/
+#header{font-size: 24px;}
+body{ text-align: center;}
+#btnBox, #barBox, #heading, #txtDisplay, footer{
+    border: 2px solid red; padding: 10px; margin: 10px;
+    border-radius: 10px;
+}
+#heading,footer{background-color: yellow;}
+#btnBox{
+    background-image: linear-gradient(red, yellow);
+}
+.btn{
+    color: black;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid red; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn:hover {
+    background-color: yellow; /* Green */
+    color: blue;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#bar{box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
+#clickMsg{font-size: 140%; font-weight: bolder; color: white;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+    /*</style>*/
