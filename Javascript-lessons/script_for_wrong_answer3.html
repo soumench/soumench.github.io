@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>    
+  
+    <p><input onclick="score()" value="START" id="next_question" style="width:150px" type="button"></p>
+    <p id="showenglish"> *** eng here *** </p>
+    <p>
+    <input onclick="usclick(this)" value="b0" id="b0" style="width:100px" type="button">
+    <input onclick="usclick(this)" value="b1" id="b1" style="width:100px" type="button">
+    <input onclick="usclick(this)" value="b2" id="b2" style="width:100px" type="button">
+    <input onclick="usclick(this)" value="b3" id="b3" style="width:100px" type="button">
+    <input onclick="usclick(this)" value="idk" id="b4" style="width:100px" type="button">
+    </p>
+    <p id="trace"> *** trace *** </p>        
+    <script>
+        var englishWords = [
+            "eye","grease","over","warm","narrow",
+            "hair","thing", "small","earth","swim"
+            ,"brother","well","black","they","laugh",
+            "river","drink","fire","her","yellow"
+        ];
+        var bengaliWords = [
+            "cOkh", "cOrbi", "upar diye", "uSNO", "soGgkIrNa"
+            ,"cul","jiniS", "chOTO", "pRIthibI", "sAntAr kATA"
+            ,"bhAi", "bhAlO", "kAlO", "tArA", "hAnsi"
+            ,"nadI", "pAn karA", "Agun", "se", "halud"
+        ];
+        var N=englishWords.length;
+        shuffleSynch();
+        
+        var wa=makewronganswers();
+        var trace=e("trace");
+        var showenglish=e("showenglish");
+        var b0=e("b0");var b1=e("b1");var b2=e("b2");var b3=e("b3");var b4=e("b4");
+        b4.attr="idk";
+        trace.innerHTML= wa.join("<br/>");
+        
+        var i=0;
+        
+        showenglish.innerHTML=englishWords[i];
+        var answers=wa[i];
+        answers.push(i);
+        shuff(answers);
+
+        b0.value=bengaliWords[answers[0]];
+        b1.value=bengaliWords[answers[1]];
+        b2.value=bengaliWords[answers[2]];
+        b3.value=bengaliWords[answers[3]];
+        b0.attr=answers[0];
+        b1.attr=answers[1];
+        b2.attr=answers[2];
+        b3.attr=answers[3];
+        
+        function usclick(ele)
+        {
+            if(ele.attr=="idk")
+            {
+                show("user clicked idk");
+                return;
+            }
+            var bn=ele.id.replace(/^b/,""); 
+            show(`user clicked a regular button ${bn} <br/> ele.value=${ele.value} ele.attr=${ele.attr}`);    
+        }
+        
+        function show( message ){
+          trace.innerHTML=message;
+        }
+        
+        function shuff( array ){
+            var count = array.length,
+            randomnumber,
+            temp;
+            while( count > 1 ){
+              randomnumber = choser (count--);
+              temp = array[count];
+              array[count] = array[randomnumber];
+              array[randomnumber] = temp
+            }
+        }
+        
+        function makewronganswers(){
+            var i=0;
+            var wronganswers=[];        
+            for(i=0;i<N;++i){
+                var k=[];
+                var j;
+                for (j=0;j<3;++j)
+                {
+                    var u;
+                    do u=choser( N );
+                    while ( i==u ||  k.includes(u) );
+                    k.push(u);
+                }
+                wronganswers.push(k);
+            }
+            return wronganswers;
+        }
+
+        function choser(range) {return Math.floor(range*Math.random())}
+
+        function e(id){
+            return document.getElementById(id);
+        }
+        
+        function shuffleSynch(){
+        var count = N, randomnumber, temp;
+        while( count > 1 ){
+          randomnumber = Math.floor ( Math.random() * count-- ); 
+          temp = englishWords[count];
+          englishWords[count] = englishWords[randomnumber];
+          englishWords[randomnumber] = temp
+          temp = bengaliWords[count];
+          bengaliWords[count] = bengaliWords[randomnumber];
+          bengaliWords[randomnumber] = temp;
+        }
+    }
+        
+    </script>
+
+
+</body></html>
