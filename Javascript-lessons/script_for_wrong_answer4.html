@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test of english drill</title>
+    <style>
+        input.ub {width:7em;font-size:1em;border:3px solid white;}
+        input.cb {width:10em;font-size:1em;border:3px solid green;}
+    </style>
+</head>
+<body>    
+    <h1>test of english drill</h1>  
+<!--
+  Important
+  this script will only work correctly
+  if all the twenty bengali translations are different
+-->    
+<!--    <p>
+    This is a DRILL, not a test. No one is going to give you bad marks when you make mistakes. Click the IDK button if you don't know, that's better than clicking an answer at random. </p>-->
+    
+    <p>
+    <input class="ub" onclick="askrandom()" value="ASK" id="start" class="cb" type="button">    
+    </p>
+    <p id="showenglish" style="font-size:150%;">  </p>
+    <p>
+    <input onclick="usclick(this)"  id="b0" class="ub" type="button">
+    <input onclick="usclick(this)"  id="b1" class="ub" type="button">
+    <input onclick="usclick(this)"  id="b2" class="ub" type="button">
+    <input onclick="usclick(this)"  id="b3" class="ub" type="button">
+    <input onclick="usclick(this)" value="IDK" id="idk" class="ub"type="button">
+    </p>
+    <p id="clock" style="font-size:300%;" >  </p>
+    <p id="score">  </p>        
+    <hr/>
+    <p id="rightanswer" > </p>
+    <p id="rbut">  </p>
+    <p id="uclic">  </p>
+    <p id="trace">  </p>        
+    <script>
+        var trace=e("trace");
+        var showenglish=e("showenglish");
+        var rightanswer=e("rightanswer");
+        var rbut=e("rbut");
+        var uclic=e("uclic");
+        var b0=e("b0");
+        var b1=e("b1");
+        var b2=e("b2");
+        var b3=e("b3");
+        var b4=e("b4");
+        var b5=e("b5");
+        var idk=e("idk");
+        var clock=e("clock");
+        var score=e("score");
+        var buttonlist=[b0,b1,b2,b3,b4,b5];
+        idk.attr="idk";
+        
+        var WRONGS=3; // number of wrong buttons
+        var BUTTONS=WRONGS+1; // number of answer buttons, not including IDK
+        var z; for(z=0;z<BUTTONS;++z)buttonlist[z].attr=z;        
+        var englishWords = [
+            "eye","grease","over","warm","narrow",
+            "hair","thing", "small","earth","swim"
+            ,"brother","well","black","they","laugh",
+            "river","drink","fire","her","yellow"
+        ];
+        var bengaliWords = [
+            "cOkh", "cOrbi", "upar diye", "uSNO", "soGgkIrNa"
+            ,"cul","jiniS", "chOTO", "pRIthibI", "sAntAr kATA"
+            ,"bhAi", "bhAlO", "kAlO", "tArA", "hAnSi"
+            ,"nadI", "pAn karA", "Agun", "se", "halud"
+        ];    
+        var N=englishWords.length;
+        shuffleSynch();    
+        
+//        var wa=makewronganswers();
+        //trace.innerHTML= wa.join("<br/>")  ;
+        var i=0;        
+        var rightbutton = 0;        
+        var good_chosen=false;
+        var idk_chosen=true;
+        var wrongbutton;
+        
+        var countdown_timer;
+        var cleanup_timer;
+        var cd;
+        
+        cleanup();
+    
+        function cleanup(){
+            // showenglish.innerHTML="click the askrandom() button";
+            //rightanswer.innerHTML="";    
+            buttonlist[rightbutton].style.border="3px solid white";
+if( ! idk_chosen && ! good_chosen ) wrongbutton.style.border = "3px solid white";
+            if(countdown_timer){clearTimeout(countdown_timer);countdown_timer=undefined;}
+            if(cleanup_timer){clearTimeout(cleanup_timer);cleanup_timer=undefined;}
+             var z; for(z=0;z<BUTTONS;++z){
+               buttonlist[z].value="";        
+               //  missing: make the buttons unclickable
+            }
+        }
+        
+        function askrandom(){
+            i=zeroto(N);
+            askquestion();
+        }
+
+        function askquestion(){            
+            cleanup();
+            
+            score.innerHTML="";            
+             showenglish.innerHTML=englishWords[i];            
+             var z; for(z=0;z<BUTTONS;++z){
+               // buttonlist[z].value="";        
+               //  missing: make the buttons clickable
+            }
+            
+            rightbutton=zeroto(BUTTONS);
+            var answers= choosewrongs(N,i);            
+            answers.splice(rightbutton,0,i);
+            var z=0;for(;z<BUTTONS;++z){
+                var btn=buttonlist[z];
+                var answer=answers[z];
+                btn.value=bengaliWords[answer];
+            }
+            cleanup_timer=setTimeout(cleanup, 10000);
+            cd=100;
+            clock.innerHTML=cd;
+            countdown_timer=setInterval(countdown, 100);
+        }
+
+        function countdown(){
+            --cd;
+            clock.innerHTML=cd;
+            if(cd<1){clearTimeout(countdown_timer);countdown_timer=undefined;}                    
+        }
+
+        function usclick(ele)
+        {
+            var usercchose=ele.attr;
+            idk_chosen = "idk"==usercchose ;
+            if(idk_chosen)
+            {
+                //uclic.innerHTML = "user clicked idk";
+                good_chosen = false;
+            }else{                
+                wrongbutton=ele;
+                good_chosen=(usercchose == rightbutton);
+        //        tr(`ele.id is (${ele.id})<br/>ele.attr is (${ele.attr})<br/>user clicked button ${usercchose}<br/>rightbutton ${rightbutton}<br/>good_chosen ${good_chosen}<br/>` );
+                if(good_chosen){
+                
+                }else{
+                       buttonlist[usercchose].style.border="3px solid red";
+                }
+                buttonlist[rightbutton].style.border="3px solid green";
+            }
+            score.innerHTML=idk_chosen?"":good_chosen?"score went up":"score went down";            
+            showenglish.innerHTML=englishWords[i] + " &rarr; " +bengaliWords[i];
+            if(countdown_timer){clearTimeout(countdown_timer);countdown_timer=undefined;clock.innerHTML="";
+}
+            if(cleanup_timer){clearTimeout(cleanup_timer);cleanup_timer=undefined;}
+            cleanup_timer=setTimeout(cleanup, 3000);
+        }
+        
+        function tr( message ){
+          trace.innerHTML=message;
+        }
+        
+        function choosewrongs(N,i){
+// disaster here if N is too small, make sure N >> WRONGS
+            var k=[], j, u;
+            for (j=0;j<WRONGS;++j){            
+                do u=zeroto( N );
+                while ( i==u ||  k.includes(u) );
+                k.push(u);
+            }
+            return k;
+        }
+
+        // zeroto(5) returns a random number between 0 and 4
+        function zeroto(range) {return Math.floor(range*Math.random())}
+    function e(id){ return document.getElementById(id);  }        
+    function shuffleSynch(){
+        var count = N, randomnumber, temp;
+        while( count > 1 ){
+            randomnumber = Math.floor ( Math.random() * count-- ); 
+            if(randomnumber != count){
+                swap(englishWords,count,randomnumber);
+                swap(bengaliWords,count,randomnumber);
+            }
+        }
+    }
+    function swap(array, a, b){
+       var temp=array[a];
+       array[a]=array[b];
+       array[b]=temp;
+    }
+    </script>
+
+
+</body></html>
