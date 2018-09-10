@@ -25,7 +25,7 @@
     <input class="ub" onclick="dostopquiz()" value="STOP QUIZ" id="stopquiz" class="cb" type="button">
     <span id="clock" style="font-size:150%;" >  </span>
     </p>
-    <p><progress id="bar" value="0" max="100" style="height:30px;width:300px"></progress></p>
+    <p><progress id="bar" value="100" max="100" style="height:30px;width:300px"></progress></p>
     <p id="quizcounter"> *** number of question will appear here ***</p>  
     <p><span id="score"> *** score will appear here *** </span></p> 
     <p><span id="showenglish" style="font-size:150%;">  *** </span> </p>
@@ -117,7 +117,8 @@ var bengaliWords = [
 
      cleanup();
     
-    function startquiz(){        
+    function startquiz(){ 
+        e("bar").value="100"; success.play();
         shuffleSynch();    
         score.innerHTML="GOOD 0 BAD 0 IDK 0<br>SCORE 0";            
         i=-1; // will become 0 when we enter asknextquestion()
@@ -126,7 +127,7 @@ var bengaliWords = [
         gray(quiz); 
         totalanswers=rightanswersc=    wronganswersc=    idkanswersc=0;
         // tr(englishWords.join()+ " count: "+englishWords.length);
-        stopcountdown();                 
+        stopcountdown();
         asknextquestion();
     }
     
@@ -134,13 +135,13 @@ var bengaliWords = [
         stopcountdown();
         clearTimeout(nextq);
         gray(stopquiz);
-        ungray(quiz); 
+        ungray(quiz);
         quizcounter.innerHTML="quiz stopped";
         cleanup();
         whiteanswerbuttons();
         showenglish.innerHTML="";
         tr("");
-        // now this needs some animation and some sound toshow that the drill is finished        
+        // now this needs some animation and some sound toshow that the drill is finished
     }
     
     function cleanup(){ // removes borders from buttons        
@@ -194,17 +195,18 @@ var bengaliWords = [
         idk_chosen = "idk"==userchose ;
         if(idk_chosen)
         {            
-            good_chosen = false;
+            good_chosen = false; 
         }else{                
             wrongbutton = ele;
             good_chosen = (userchose == rightbutton);
             buttons[rightbutton].style.border="3px solid green";
-            if( ! good_chosen )buttons[userchose].style.border="3px solid red";                
+            if( ! good_chosen )buttons[userchose].style.border="3px solid red";   
+            
         }
     // tracescore.innerHTML=idk_chosen?"":good_chosen?"score went up":"score went down";            
-        if(idk_chosen)user_answer("idk");
-        else if(good_chosen)user_answer("good");
-        else user_answer("bad");
+        if(idk_chosen){ user_answer("idk"); noIdea.play();} // sound added
+        else if(good_chosen){ user_answer("good"); success.play(); } // success sound added
+        else { user_answer("bad"); failure.play();}// sound added
     }
     
      function tr( message ){      trace.innerHTML+=message+"<br/>";    }
