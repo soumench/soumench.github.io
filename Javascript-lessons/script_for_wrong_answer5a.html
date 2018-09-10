@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test of english drill</title>
+    <style>
+        input.ub {width:7em;font-size:1em;border:3px solid white;}
+        input.cb {width:10em;font-size:1em;border:3px solid green;}
+    </style>
+</head>
+<body>    
+    <h1>test of english drill</h1>  
+<!--
+  Important
+  this script will only work correctly
+  if all the twenty bengali translations are different
+-->    
+<!--    <p>
+    This is a DRILL, not a test. No one is going to give you bad marks when you make mistakes. Click the IDK button if you don't know, that's better than clicking an answer at random. </p>-->
+    <p>After you click START QUIZ, English words will appear in purple. You have a few seconds to click the right bengali translation. If you don't know or don't remember the right one, click  IDK -- do not waste time looking it up, that's useless.</p>           
+    <p>
+    <!-- <input class="ub" onclick="askrandom()" value="askrandom()" id="start" class="cb" type="button">    -->
+    <input class="ub" onclick="startquiz()" value="START QUIZ" id="quiz" class="cb" type="button">    
+    <input class="ub" onclick="dostopquiz()" value="STOP QUIZ" id="stopquiz" class="cb" type="button">
+    <span id="clock" style="font-size:150%;" >  </span>
+    </p>
+    <p><progress id="bar" value="0" max="100" style="height:30px;width:300px"></progress></p>
+    <p id="quizcounter"> *** number of question will appear here ***</p>  
+    <p><span id="score"> *** score will appear here *** </span></p> 
+    <p><span id="showenglish" style="font-size:150%;">  *** </span> </p>
+    <p>
+    <input onclick="usclick(this)"  id="b0" class="ub" type="button">
+    <input onclick="usclick(this)"  id="b1" class="ub" type="button">
+    <br/>
+    <input onclick="usclick(this)"  id="b2" class="ub" type="button">
+    <input onclick="usclick(this)"  id="b3" class="ub" type="button">
+    <br><input onclick="usclick(this)" value="IDK" id="idk" class="ub"type="button" style="width:14em">
+    </p>    
+    <p id="trace">  *** trace messages *** <br/> </p>            
+    <script>
+        var trace=e("trace");
+        var showenglish=e("showenglish");
+        var b0=e("b0");
+        var b1=e("b1");
+        var b2=e("b2");
+        var b3=e("b3");
+        var b4=e("b4");
+        var b5=e("b5");
+        var idk=e("idk");
+        var clock=e("clock");
+        var score=e("score");
+     
+        var quiz=e("quiz");
+        var stopquiz=e("stopquiz");
+        gray(stopquiz);
+        var quizcounter=e("quizcounter");
+        var buttons=[b0,b1,b2,b3,b4,b5];
+        idk.attr="idk";
+        grayanswerbuttons();
+        
+        var WRONGS=3; // number of wrong buttons
+        var BUTTONS=WRONGS+1; // number of answer buttons, not including IDK
+        var z; for(z=0;z<BUTTONS;++z)buttons[z].attr=z;        
+                
+        var englishWords = [
+            "eye","grease","over","warm","narrow"
+//            ,"hair","thing", "small","earth","swim"
+//            ,"brother","well","black","they","laugh",
+//            "river","drink","fire","her","yellow"
+        ];
+        var bengaliWords = [
+            "cOkh", "cOrbi", "upar diye", "uSNO", "soGgkIrNa"
+//            ,"cul","jiniS", "chOTO", "pRIthibI", "sAntAr kATA"
+//            ,"bhAi", "bhAlO", "kAlO", "tArA", "hAnSi"
+//            ,"nadI", "pAn karA", "Agun", "se", "halud"
+        ];    
+    /*
+        var englishWords = [
+    "their", "kill", "who", "but", "sleep"
+    , "then", "first", "heart", "so", "name"
+    , "sit", "animal", "sharp", "more", "look"
+    , "moon", "because", "new", "us", "path"
+];
+var bengaliWords = [
+    "tAder", "hatyA karA", "ke", "kintu", "ghumAnO"
+    , "takhan", "pratham", "hRday", "sutarAG", "nAm"
+    , "basA", "jantu", "dhArAlO", "Aro", "tAkAnO"
+    , "cAnd", "kAran", "natun", "AmAderke", "rAstA/path"
+];
+        */    
+    var N=englishWords.length;    
+    
+    var i=0;        
+    var rightbutton = 0;        
+    var good_chosen=false;
+    var idk_chosen=true;
+    var wrongbutton;
+    var cd;
+    var countdown_timer;    
+    var nextq;    
+    
+    var rightanswersc;
+    var wronganswersc;
+    var idkanswersc;
+    var totalanswers;
+    
+    // it is very important to choose the right numbers here -->
+    const waitclick_timeout=10000; 
+    const delayafterrightanswer = 1500;
+    const delayafterwronganswer=5000;
+
+     cleanup();
+    
+    function startquiz(){        
+        shuffleSynch();    
+        score.innerHTML="GOOD 0 BAD 0 IDK 0<br>SCORE 0";            
+        i=-1; // will become 0 when we enter asknextquestion()
+        
+        ungray(stopquiz);
+        gray(quiz); 
+        totalanswers=rightanswersc=    wronganswersc=    idkanswersc=0;
+        // tr(englishWords.join()+ " count: "+englishWords.length);
+        stopcountdown();                 
+        asknextquestion();
+    }
+    
+    function dostopquiz(){
+        stopcountdown();
+        clearTimeout(nextq);
+        gray(stopquiz);
+        ungray(quiz); 
+        quizcounter.innerHTML="quiz stopped";
+        cleanup();
+        whiteanswerbuttons();
+        showenglish.innerHTML="";
+        tr("");
+        // now this needs some animation and some sound toshow that the drill is finished        
+    }
+    
+    function cleanup(){ // removes borders from buttons        
+        showenglish.innerHTML="";    
+        buttons[rightbutton].style.border="3px solid white";
+        if( ! idk_chosen && ! good_chosen ) wrongbutton.style.border = "3px solid white";
+        stopcountdown();
+        grayanswerbuttons();
+    }
+
+    function askquestion(){            
+        var z; 
+        cleanup();            
+        showenglish.innerHTML=englishWords[i];            
+        f=7; flashcontrol=setInterval(flashenglish, 100);
+        ungrayanswerbuttons();
+        rightbutton=zeroto(BUTTONS);
+        var answers= choosewrongs(N,i);            
+        answers.splice(rightbutton,0,i);
+        for(z=0;z<BUTTONS;++z)buttons[z].value=bengaliWords[answers[z]];        
+        idk.value="IDK";
+        cd=Math.round(waitclick_timeout/100);
+        clock.innerHTML=cd;
+        countdown_timer=setInterval(countdown, 200);
+// after this, either countdown will trigger because user timeouted 
+// or user will click and we get usclick
+// either way, function user_answer will work
+    }
+
+    function countdown(){
+      // this should show a progress bar or an hourglass anim, numbers just make people nervous;also we need  a timeout sound
+        cd -= 2;
+        clock.innerHTML=cd;
+        if(cd<1){
+            stopcountdown();
+            user_answer("timeout"); // same as if user had pressed idk button
+        }                    
+    }
+    
+    function stopcountdown(){
+       clearTimeout(countdown_timer);       
+       clock.innerHTML="";
+    }
+
+    function usclick(ele)
+    {
+        stopcountdown();            
+        var userchose=ele.attr;
+        idk_chosen = "idk"==userchose ;
+        if(idk_chosen)
+        {            
+            good_chosen = false;
+        }else{                
+            wrongbutton = ele;
+            good_chosen = (userchose == rightbutton);
+            buttons[rightbutton].style.border="3px solid green";
+            if( ! good_chosen )buttons[userchose].style.border="3px solid red";                
+        }
+    // tracescore.innerHTML=idk_chosen?"":good_chosen?"score went up":"score went down";            
+        if(idk_chosen)user_answer("idk");
+        else if(good_chosen)user_answer("good");
+        else user_answer("bad");
+    }
+    
+     function tr( message ){      trace.innerHTML+=message+"<br/>";    }
+    
+    function user_answer(ans){
+        grayanswerbuttons();                
+        showenglish.innerHTML=englishWords[i] + " &rarr; " +bengaliWords[i];
+        if("good"==ans){
+            rightanswersc++;
+            // here we need  a "good button" sound effect
+        }
+        else if("bad"==ans){ // user clicked a bad answer 
+           // here we need the "wrong button" sound effect
+               wronganswersc++;
+        }
+        else{ // user clicked idk or timeouted
+              idkanswersc++;
+           // here we need the "idk button" sound effect        
+        }
+        ++totalanswers;
+        score.innerHTML=`
+GOOD ${rightanswersc} 
+BAD ${wronganswersc} 
+IDK ${idkanswersc} <br/>
+SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalanswers}`;     
+// idea of this formuls is -- if user gets 5 rigths and 15 wrongs, deserves zero points, because that's what he'd get by random chance. Someone who knows 5 and says idk 15 times deserves 5 points.
+
+        nextq=setTimeout(asknextquestion, "good"==ans? delayafterrightanswer:        delayafterwronganswer);
+        greenon();
+    }
+    
+    function greenon(){showenglish.style.border="3px solid lime";}
+    function greenoff(){showenglish.style.border="3px solid white";}
+
+    function asknextquestion(){      
+        greenoff();
+        ++i;        
+        if(    i>=N ){ 
+            // tr("asknextquestion() calls dostopquiz()");
+            dostopquiz();            
+        }else{
+            quizcounter.innerHTML="asking "+(1+i)+" of "+N; // + " englishword is "+englishWords[i];
+            askquestion();
+        }
+    }
+
+    function shuffleSynch(){
+        var count = N, randomnumber, temp;
+        while( count > 1 ){
+            randomnumber = Math.floor ( Math.random() * count-- ); 
+            if(randomnumber != count){
+                swap(englishWords,count,randomnumber);
+                swap(bengaliWords,count,randomnumber);
+            }
+        }
+    }
+    
+    function swap(array, a, b){
+       var temp=array[a];
+       array[a]=array[b];
+       array[b]=temp;
+    }
+
+    // this makes some graphic effect in the english display, in order to make user notice that there is a new question
+    // maybe it should do a sound effect too
+    var f;
+    var flashcontrol;
+    function flashenglish(){
+        --f;
+        showenglish.style.backgroundColor = (f%2)?"purple":"white" ;
+        showenglish.style.color = (f%2)?"white":"purple" ;
+        if(f<1){
+            clearTimeout(flashcontrol);
+            showenglish.style.backgroundColor = "white"; 
+            showenglish.style.color = "black"; 
+        }
+    }
+    
+    function choosewrongs(N,i){
+// disaster here if N is too small, make sure that N >> WRONGS
+        var k=[], j, u;
+        for (j=0;j<WRONGS;++j){            
+            do u=zeroto( N );
+            while ( i==u ||  k.includes(u) );
+            k.push(u);
+        }
+        return k;
+    }
+    
+    function gray(ele){ // make button unclickable
+        ele.disabled=true;    
+    }
+    
+    function ungray(ele){ // make button clickable
+        ele.disabled=false;
+    }
+    
+    function grayanswerbuttons(){
+       var z; for(z=0;z<BUTTONS;++z){           
+       gray(buttons[z]);
+    }
+    gray(idk);}
+    
+    function whiteanswerbuttons(){
+        var z; for(z=0;z<BUTTONS;++z)   buttons[z].value="";            
+        gray(idk);
+        idk.value="";
+    }
+
+    function ungrayanswerbuttons(){
+        var z; for(z=0;z<BUTTONS;++z)   ungray(buttons[z]);            
+        ungray(idk);
+    }
+    
+    // zeroto(5) returns a random number between 0 and 4
+    function zeroto(range) {return Math.floor(range*Math.random())}
+    
+    function e(id){ return document.getElementById(id);  }            
+    </script>
+</body></html>
