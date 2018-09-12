@@ -244,6 +244,13 @@ var bengaliWords = [
                 dostopquiz();
                 stopcountdown();
                 timeoutCounter=0;//added from todo list
+                score.innerHTML=`
+                GOOD ${rightanswersc} 
+                BAD ${wronganswersc} 
+                IDK ${idkanswersc} 
+                TIMEOUTS ${timeoutCounter}<br/>
+                SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalanswers}`;
+                return;
             }
 ////  my addition end
         }
@@ -251,7 +258,8 @@ var bengaliWords = [
         score.innerHTML=`
 GOOD ${rightanswersc} 
 BAD ${wronganswersc} 
-IDK ${idkanswersc} <br/>
+IDK ${idkanswersc} 
+TIMEOUTS ${timeoutCounter}<br/>
 SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalanswers}`;     
 // idea of this formuls is -- if user gets 5 rigths and 15 wrongs, deserves zero points, because that's what he'd get by random chance. Someone who knows 5 and says idk 15 times deserves 5 points.
 
