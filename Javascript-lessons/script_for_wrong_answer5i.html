@@ -121,6 +121,7 @@ var bengaliWords = [
      cleanup();
     
     function startquiz(){ 
+        timeoutCounter=0;
         e("bar").value="100"; success.play();
         shuffleSynch();    
         score.innerHTML="GOOD 0 BAD 0 IDK 0<br>SCORE 0";            
@@ -174,13 +175,14 @@ var bengaliWords = [
 // after this, either countdown will trigger because user timeouted 
 // or user will click and we get usclick
 // either way, function user_answer will work
+        e("bar").style.visibility="visible";
     }
  
         
     
     function countdown(){
       // this should show a progress bar or an hourglass anim, numbers just make people nervous;also we need  a timeout sound
-        e("bar").style.visibility="visible";
+        
         e("bar").value=100-cd;  /// bar added 
         
         cd -= 2;
@@ -190,6 +192,22 @@ var bengaliWords = [
             user_answer("timeout"); // same as if user had pressed idk button
             noIdea.play(); // timeout sound added
             e("bar").style.visibility="hidden";
+            
+            ////  my addition start
+            timeoutCounter++;  // new addition
+            if(timeoutCounter>=3){
+                dostopquiz();
+                stopcountdown();
+            //    timeoutCounter=0;//added from todo list
+                score.innerHTML=`
+                GOOD ${rightanswersc} 
+                BAD ${wronganswersc} 
+                IDK ${idkanswersc} 
+                TIMEOUTS ${timeoutCounter}<br/>
+                SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalanswers}`;
+                return;
+            }
+////  my addition end
         }                    
     } 
     
@@ -238,21 +256,7 @@ var bengaliWords = [
               idkanswersc++;
            // here we need the "idk button" sound effect  
             noIdea.play();
-////  my addition start
-            timeoutCounter++;
-            if(timeoutCounter>=3){
-                dostopquiz();
-                stopcountdown();
-                timeoutCounter=0;//added from todo list
-                score.innerHTML=`
-                GOOD ${rightanswersc} 
-                BAD ${wronganswersc} 
-                IDK ${idkanswersc} 
-                TIMEOUTS ${timeoutCounter}<br/>
-                SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalanswers}`;
-                return;
-            }
-////  my addition end
+
         }
         ++totalanswers;
         score.innerHTML=`
@@ -263,7 +267,7 @@ TIMEOUTS ${timeoutCounter}<br/>
 SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalanswers}`;     
 // idea of this formuls is -- if user gets 5 rigths and 15 wrongs, deserves zero points, because that's what he'd get by random chance. Someone who knows 5 and says idk 15 times deserves 5 points.
 
-        nextq=setTimeout(asknextquestion, "good"==ans? delayafterrightanswer:        delayafterwronganswer);
+        nextq=setTimeout(asknextquestion, "good"==ans? delayafterrightanswer:       delayafterwronganswer);
         greenon();
     }
     
