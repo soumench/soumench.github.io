@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test of english drill</title>
+    <link rel="stylesheet" type="text/css" href="css/drill.css">
     <style>
         input.ub {width:7em;font-size:1em;border:3px solid white;}
         input.cb {width:10em;font-size:1em;border:3px solid green;}
+        
+        #btnboard, #startstop{border: 2px solid violet; width: auto; margin: auto;}
     </style>
 </head>
 <body>    
@@ -19,14 +22,14 @@
 <!--    <p>
     This is a DRILL, not a test. No one is going to give you bad marks when you make mistakes. Click the IDK button if you don't know, that's better than clicking an answer at random. </p>-->
     <!--<p>After you click START QUIZ, English words will appear in purple. You have a few seconds to click the right bengali translation. If you don't know or don't remember the right one, click  IDK -- do not waste time looking it up, that's useless.</p> -->          
-    <p>
+    <p id="startstop">
     <!-- <input class="ub" onclick="askrandom()" value="askrandom()" id="start" class="cb" type="button">    -->
     <input class="ub" onclick="startquiz()" value="START QUIZ" id="quiz" class="cb" type="button">    
     <input class="ub" onclick="dostopquiz()" value="STOP QUIZ" id="stopquiz" class="cb" type="button">
     
     </p>
     <p><span id="showenglish" style="font-size:150%;">  *** </span> </p>
-    <p>
+    <p id="btnboard">
     <input onclick="usclick(this)"  id="b0" class="ub" type="button">
     <input onclick="usclick(this)"  id="b1" class="ub" type="button">
     <br/>
@@ -34,8 +37,8 @@
     <input onclick="usclick(this)"  id="b3" class="ub" type="button">
     <br><input onclick="usclick(this)" value="IDK" id="idk" class="ub"type="button" style="width:14em">
     </p> 
-    <p id="quizcounter"> *** number of question will appear here ***</p>  
-    <p><span id="score"> *** score will appear here *** </span></p> 
+    <p id="quizcounter"> <!--*** number of question will appear here ***--></p>  
+    <p><span id="score"> <!--*** score will appear here *** --></span></p> 
  <!--   <p id="trace">  *** trace messages *** <br/> </p>         -->   
     <p><progress id="bar" value="100" max="100" style="height:30px;width:300px"></progress></p>
     <script>
@@ -226,6 +229,7 @@ var bengaliWords = [
     {
         stopcountdown();  
         e("bar").style.visibility="hidden"; // bar
+        quizcounter.innerHTML="";
         var userchose=ele.attr;
         idk_chosen = "idk"==userchose ;
         if(idk_chosen)
@@ -283,12 +287,15 @@ SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalansw
         if(    i>=N ){ 
             // tr("asknextquestion() calls dostopquiz()");
             dostopquiz();
-             
+             /*
                 score.innerHTML=`
                 GOOD ${rightanswersc} 
                 BAD ${wronganswersc} 
                 IDK ${idkanswersc} 
                 TIMEOUTS ${timeoutCounter}<br/>
+                SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalanswers}`;*/
+            
+                score.innerHTML=`
                 SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalanswers}`;
         }else{
             quizcounter.innerHTML="asking "+(1+i)+" of "+N; // + " englishword is "+englishWords[i];
