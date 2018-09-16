@@ -36,14 +36,13 @@
     <br/>
     <input onclick="usclick(this)"  id="b2" class="ub" type="button">
     <input onclick="usclick(this)"  id="b3" class="ub" type="button">
-    <br><input onclick="usclick(this)" value="IDK" id="idk" class="ub"type="button" style="width:14em">
+    <br><input onclick="usclick(this)" value="I don't know." id="idk" class="ub"type="button" style="width:14em">
     </p> 
     <!-- <p id="quizcounter"> *** number of question will appear here ****</p>  
     <p><span id="score">*** score will appear here ***</span></p>    <p id="trace">  *** trace messages *** <br/> </p>         -->   
     <p><progress id="bar" value="100" max="100" style="height:30px;width:300px"></progress></p>
     <script>
         let timeoutCounter=0;     
-        
         const success = new Audio("audio/success.oga");
         const failure = new Audio("audio/fail.oga");
         const noIdea = new Audio("audio/idk.oga");
@@ -75,16 +74,19 @@
                 
         var englishWords = [
             "eye","grease","over","warm","narrow"
-          //  ,"hair","thing", "small","earth","swim"
-          //  ,"brother","well","black","they","laugh",
-           // "river","drink","fire","her","yellow"
+           ,"hair","thing", "small","earth","swim"
+           ,"brother","well","black","they","laugh",
+            "river","drink","fire","her","yellow"
         ];
         var bengaliWords = [
-            "cOkh", "cOrbi", "upar diye", "uSNO", "soGgkIrNa"
-            
+         //   "cOkh", "cOrbi", "upar diye", "uSNO", "soGgkIrNa"
+            "চোখ", "চর্বি", "উ্পর দিয়ে", "উষ্ণ", "সঙ্কীর্ণ"            
           //  ,"cul","jiniS", "chOTO", "pRIthibI", "sAntAr kATA"
+            ,"চুল", "জিনিষ", "ছোটো", "পৃথিবী", "সাঁতার কাটা"
           //  ,"bhAi", "bhAlO", "kAlO", "tArA", "hAnSi"
+            ,"ভাই", "ভালো / বেশ", "কালো", "তারা", "হাসা"
            // ,"nadI", "pAn karA", "Agun", "tAr", "halud"
+            ,"নদী", "পান করা", "আগুন", "তার / তাহার", "হলুদ"
         ];    
     /*
         var englishWords = [
@@ -94,10 +96,14 @@
     , "moon", "because", "new", "us", "path"
 ];
 var bengaliWords = [
-    "tAder", "hatyA karA", "ke", "kintu", "ghumAnO"
-    , "takhan", "pratham", "hRday", "sutarAG", "nAm"
-    , "basA", "jantu", "dhArAlO", "Aro", "tAkAnO"
-    , "cAnd", "kAran", "natun", "AmAderke", "rAstA/path"
+//    "tAder", "hatyA karA", "ke", "kintu", "ghumAnO"
+    ,"তাদের", "হত্যাকরা", "কে", "কিন্তু", "ঘুমানো"
+//    , "takhan", "pratham", "hRday", "sutarAG", "nAm"
+    ,"তখন", "প্রথম", "হৃদয়","সুতরাং", "নাম"  
+//    , "basA", "jantu", "dhArAlO", "Aro", "tAkAnO"
+    ,"বসা", "জন্তু", "ধারালো", "আরও", "তাকানো"
+//    , "cAnd", "kAran", "natun", "AmAderke", "rAstA/path"
+    ,"চাঁদ", "কারন", "নতুন", "আমাদেরকে", "রাস্তা / পথ"
 ];
         */    
     var N=englishWords.length;    
@@ -179,7 +185,8 @@ var bengaliWords = [
         var answers= choosewrongs(N,i);            
         answers.splice(rightbutton,0,i);
         for(z=0;z<BUTTONS;++z)buttons[z].value=bengaliWords[answers[z]];        
-        idk.value="IDK";
+//        idk.value="IDK";
+        idk.value="I don't know.";
         cd=Math.round(waitclick_timeout/100);
         
         countdown_timer=setInterval(countdown, 200);
@@ -210,7 +217,7 @@ var bengaliWords = [
                 showenglish.style.border= "3px solid white";
             //    timeoutCounter=0;//added from todo list
                 
-                showenglish.innerHTML="you timeouted three times, so you don't get a score";
+                showenglish.innerHTML="You timeouted three times, so you don't get a score.";
                 /*
                 score.innerHTML=`
                 GOOD ${rightanswersc} 
