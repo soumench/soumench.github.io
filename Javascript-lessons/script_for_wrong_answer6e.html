@@ -390,17 +390,18 @@ SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalansw
     // zeroto(5) returns a random number between 0 and 4
     function zeroto(range) {return Math.floor(range*Math.random())}
      
+    let isBlink = false;
     let myBlinkTime;
     function blink(){
-        e("trace3").innerHTML="blinked";
-        e("indicator").style.backgroundColor="blue";
-        myBlinkTime= setTimeout(blinkReset, 500);
+        e("indicator").style.backgroundColor=isBlink?"green":"red";
+            e("trace3").innerHTML="blinked";
+            myBlinkTime= setTimeout(blinkReset, 500);
         
-        function blinkReset(){
+            function blinkReset(){
             clearTimeout(myBlinkTime);
             e("indicator").style.backgroundColor="white";
             e("trace3").innerHTML="no blinking";
-        }
+            }
     }
     
     function e(id){ return document.getElementById(id);  }            
