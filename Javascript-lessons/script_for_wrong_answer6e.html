@@ -395,14 +395,16 @@ SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalansw
     let isBlink = false;
     let myBlinkTime;
     function blink(){
+        if(!isBlink)return;
         e("indicator").style.backgroundColor=isBlink?"green":"red";
             e("trace3").innerHTML="blinked";
-            myBlinkTime= setTimeout(blinkReset, 500);
+            myBlinkTime= setTimeout(blinkReset, 1000);
         
             function blinkReset(){
             clearTimeout(myBlinkTime);
             e("indicator").style.backgroundColor="white";
             e("trace3").innerHTML="no blinking";
+                asknextquestion();
             }
     }
     
