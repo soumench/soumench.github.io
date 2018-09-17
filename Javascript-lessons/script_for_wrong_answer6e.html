@@ -264,12 +264,13 @@ var bengaliWords = [
 //    function tr( message ){      trace.innerHTML+=message+"<br/>";    }
     
     function user_answer(ans){
-        isBlink = true; ///////////////////////////
+        
         grayanswerbuttons();                
         showenglish.innerHTML=englishWords[i] + " &rarr; " +bengaliWords[i];
         if("good"==ans){
             rightanswersc++;
             success.play();
+            isBlink=true; ///////////////////
         }
         else if("bad"==ans){ // user clicked a bad answer 
             wronganswersc++;
