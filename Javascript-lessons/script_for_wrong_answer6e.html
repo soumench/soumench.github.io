@@ -264,6 +264,7 @@ var bengaliWords = [
 //    function tr( message ){      trace.innerHTML+=message+"<br/>";    }
     
     function user_answer(ans){
+        isBlink = true; ///////////////////////////
         grayanswerbuttons();                
         showenglish.innerHTML=englishWords[i] + " &rarr; " +bengaliWords[i];
         if("good"==ans){
@@ -296,6 +297,7 @@ SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalansw
     function greenoff(){showenglish.style.border="3px solid white";}
 
     function asknextquestion(){
+        isBlink = false; /////////////////////////////
         greenoff();
         ++i;
         if(    i>=N ){ 
