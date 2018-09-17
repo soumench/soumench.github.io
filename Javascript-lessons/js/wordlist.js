@@ -8,7 +8,7 @@ const myWords = [
 /*shuffled List
 
 eye
-grease
+grease <<< deleted
 over
 warm
 narrow
@@ -41,6 +41,7 @@ kill
 who?
 but
 sleep
+think
 then
 first
 heart
@@ -55,13 +56,10 @@ moon
 because
 new
 us
+********************************20
+
+
 path
-
-*************************************** 40
-
-
-
-think
 way
 red
 him
@@ -81,6 +79,9 @@ those
 child
 bad
 correct
+***********************************20
+
+
 them
 big
 mountain
@@ -102,6 +103,9 @@ stand
 heavy
 louse
 liver
+*********************************20
+
+
 or
 father
 bone
@@ -122,6 +126,10 @@ flesh
 leaf
 say
 wind
+
+*******************************20
+
+
 blood
 egg
 long
@@ -142,6 +150,9 @@ old
 sun
 ear
 knee
+
+********************************20
+
 not
 full
 many
@@ -162,6 +173,8 @@ head
 when
 bite
 lie
+*******************************20
+
 woman
 day
 mouth
@@ -182,6 +195,8 @@ worm
 hot
 ash
 mother
+*********************************20
+
 stone
 bark
 rope
@@ -202,6 +217,12 @@ could
 by
 from
 sea
+
+
+************************************20
+
+
+
 hunt
 rain
 she
@@ -223,6 +244,9 @@ belly
 tell
 do
 an
+*****************************20
+
+
 dance
 go
 dry
@@ -243,6 +267,8 @@ vomit
 with
 I
 wife
+*********************************20
+
 these
 get
 night
@@ -256,4 +282,7 @@ come
 cold
 wood
 some
-about*/
+about
+
+************************14
+*/
