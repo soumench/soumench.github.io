@@ -42,7 +42,8 @@
     <!-- <p id="quizcounter"> *** number of question will appear here ****</p>  
     <p><span id="score">*** score will appear here ***</span></p>    <p id="trace">  *** trace messages *** <br/> </p>         -->   
     <p><progress id="bar" value="100" max="100" style="height:8px;width:300px"></progress></p>
-    <input type="button" name="button" id="indicator">
+    <span  id="indicator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span id="trace3"></span>
     <script>
         let timeoutCounter=0;     
         const success = new Audio("audio/success.oga");
@@ -391,12 +392,14 @@ SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalansw
      
     let myBlinkTime;
     function blink(){
-        e("indicator").style.color="blue";
-        myBlinkTime= setTimeout(blinkReset, 1000);
+        e("trace3").innerHTML="blinked";
+        e("indicator").style.backgroundColor="blue";
+        myBlinkTime= setTimeout(blinkReset, 500);
         
         function blinkReset(){
             clearTimeout(myBlinkTime);
-            e("indicator").style.color="white";
+            e("indicator").style.backgroundColor="white";
+            e("trace3").innerHTML="no blinking";
         }
     }
     
