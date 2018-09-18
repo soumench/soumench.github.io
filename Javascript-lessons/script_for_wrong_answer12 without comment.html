@@ -3,7 +3,7 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test of english drill</title>
+    <title>English Lesson One</title>
     <link rel="stylesheet" type="text/css" href="css/drill.css">
     <style>
         body{text-align: center; background-color: antiquewhite;}
@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>    
-    <h1>Test of English Drill</h1>  
+    <h1>English Lesson One</h1>  
 <!--
   Important
   this script will only work correctly
@@ -45,6 +45,25 @@
     <script src="lessonjs/quiz1.js"></script>
     <script src="englishquizjs/englishquiz.js"></script>
     <script>
+        
+        const englishWords = [
+            "eye", "their", "over","warm","narrow"
+           ,"hair","thing", "small","earth","swim"
+           ,"brother","well","black","they","laugh"
+         //  , "river","drink","fire","her","yellow" 
+        ];
+        const bengaliWords = [
+         //   "cOkh", "cOrbi", "upar diye", "uSNO", "soGgkIrNa"
+            "চোখ", "তাদের", "উপর দিয়ে", "উষ্ণ", "সঙ্কীর্ণ"            
+          //  ,"cul","jiniS", "chOTO", "pRIthibI", "sAntAr kATA"
+            ,"চুল", "জিনিষ", "ছোটো", "পৃথিবী", "সাঁতার কাটা"
+          //  ,"bhAi", "bhAlO", "kAlO", "tArA", "hAnSi"
+            ,"ভাই", "ভালো / বেশ", "কালো", "তারা", "হাসা"
+           // ,"nadI", "pAn karA", "Agun", "tAr", "halud"
+         //   ,"নদী", "পান করা", "আগুন", "তার", "হলুদ"
+        ];
+            
+        
         let isBlink = false;
         const ebar= e("bar");
         let timeoutCounter=0;     
