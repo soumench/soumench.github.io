@@ -29,7 +29,7 @@
     <input class="ub" onclick="dostopquiz()" value="STOP QUIZ" id="stopquiz" class="cb" type="button">    
     </p>
     
-    <p><span onclick="blink()" id="showenglish"   style="font-size:150%;">  *** </span> </p>
+    <p><span onclick="blink()" id="showenglish"   style="font-size:150%;">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> </p>
     
     <p id="btnboard">  
     <input onclick="usclick(this)"  id="b0" class="ub" type="button">
@@ -78,8 +78,8 @@
         var englishWords = [
             "eye", "their", "over","warm","narrow"
            ,"hair","thing", "small","earth","swim"
-           ,"brother","well","black","they","laugh",
-            "river","drink","fire","her","yellow" 
+           ,"brother","well","black","they","laugh"
+         //  , "river","drink","fire","her","yellow" 
         ];
         var bengaliWords = [
          //   "cOkh", "cOrbi", "upar diye", "uSNO", "soGgkIrNa"
@@ -89,7 +89,7 @@
           //  ,"bhAi", "bhAlO", "kAlO", "tArA", "hAnSi"
             ,"ভাই", "ভালো / বেশ", "কালো", "তারা", "হাসা"
            // ,"nadI", "pAn karA", "Agun", "tAr", "halud"
-            ,"নদী", "পান করা", "আগুন", "তার", "হলুদ"
+         //   ,"নদী", "পান করা", "আগুন", "তার", "হলুদ"
         ];    
     /*
         var englishWords = [
@@ -162,7 +162,7 @@ var bengaliWords = [
         // quizcounter.innerHTML="quiz stopped";
         cleanup();
         whiteanswerbuttons();
-        showenglish.innerHTML="";
+        showenglish.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; ///
     //    tr("");
         // now this needs some animation and some sound toshow that the drill is finished
         e("bar").style.visibility="hidden";
