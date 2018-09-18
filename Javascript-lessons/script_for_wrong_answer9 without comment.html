@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test of english drill</title>
+    <link rel="stylesheet" type="text/css" href="css/drill.css">
+    <style>
+        body{text-align: center; background-color: antiquewhite;}
+        input.ub {width:7em;font-size:1em;border:3px solid white;}
+        input.cb {width:10em;font-size:1em;border:3px solid green;}
+        
+        
+    </style>
+</head>
+<body>    
+    <h1>Test of English Drill</h1>  
+<!--
+  Important
+  this script will only work correctly
+  if all the twenty bengali translations are different
+-->    
+<!--    <p>
+    This is a DRILL, not a test. No one is going to give you bad marks when you make mistakes. Click the IDK button if you don't know, that's better than clicking an answer at random. </p>-->
+    <!--<p>After you click START QUIZ, English words will appear in purple. You have a few seconds to click the right bengali translation. If you don't know or don't remember the right one, click  IDK -- do not waste time looking it up, that's useless.</p> -->          
+    <p id="startstop">
+    <input class="ub" onclick="startquiz()" value="START QUIZ" id="quiz" class="cb" type="button">    
+    <input class="ub" onclick="dostopquiz()" value="STOP QUIZ" id="stopquiz" class="cb" type="button">    
+    </p>
+    
+    <p><span  id="showenglish"   style="font-size:150%;">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> </p> 
+    
+    <p id="btnboard">  
+    <input onclick="usclick(this)"  id="b0" class="ub" type="button">
+    <input onclick="usclick(this)"  id="b1" class="ub" type="button">
+    <br/>
+    <input onclick="usclick(this)"  id="b2" class="ub" type="button">
+    <input onclick="usclick(this)"  id="b3" class="ub" type="button">
+    <br><input onclick="usclick(this)" value="" id="idk" class="ub"type="button" style="width:14em">
+    </p> 
+       
+    <p><progress id="bar" value="100" max="100" style="height:8px;width:300px"></progress></p>
+    <span  id="indicator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span id="trace3"></span>
+    <script>
+        let timeoutCounter=0;     
+        const success = new Audio("audio/success.oga");
+        const failure = new Audio("audio/fail.oga");
+        const noIdea = new Audio("audio/idk.oga");
+        e("bar").style.visibility="hidden";
+        
+        var showenglish=e("showenglish"); 
+        var b0=e("b0");
+        var b1=e("b1");
+        var b2=e("b2");
+        var b3=e("b3");
+        var b4=e("b4");
+        var b5=e("b5");
+        var idk=e("idk");
+        
+        var quiz=e("quiz");
+        var stopquiz=e("stopquiz");
+        gray(stopquiz);
+        
+        var buttons=[b0,b1,b2,b3,b4,b5];
+        idk.attr="idk";
+        grayanswerbuttons();
+        
+        var WRONGS=3; 
+        var BUTTONS=WRONGS+1; 
+        var z; for(z=0;z<BUTTONS;++z)buttons[z].attr=z;        
+                
+        var englishWords = [
+            "eye", "their", "over","warm","narrow"
+           ,"hair","thing", "small","earth","swim"
+           ,"brother","well","black","they","laugh"
+         //  , "river","drink","fire","her","yellow" 
+        ];
+        var bengaliWords = [
+         //   "cOkh", "cOrbi", "upar diye", "uSNO", "soGgkIrNa"
+            "চোখ", "তাদের", "উপর দিয়ে", "উষ্ণ", "সঙ্কীর্ণ"            
+          //  ,"cul","jiniS", "chOTO", "pRIthibI", "sAntAr kATA"
+            ,"চুল", "জিনিষ", "ছোটো", "পৃথিবী", "সাঁতার কাটা"
+          //  ,"bhAi", "bhAlO", "kAlO", "tArA", "hAnSi"
+            ,"ভাই", "ভালো / বেশ", "কালো", "তারা", "হাসা"
+           // ,"nadI", "pAn karA", "Agun", "tAr", "halud"
+         //   ,"নদী", "পান করা", "আগুন", "তার", "হলুদ"
+        ];    
+     
+    var N=englishWords.length;    
+    
+    var i=0;        
+    var rightbutton = 0;        
+    var good_chosen=false;
+    var idk_chosen=true;
+    var wrongbutton;
+    var cd;
+    var countdown_timer;    
+    var nextq;    
+    
+    var rightanswersc;
+    var wronganswersc;
+    var idkanswersc;
+    var totalanswers;
+    
+    const waitclick_timeout=15000; 
+    const delayafterrightanswer = 1500;
+    const delayafterwronganswer=5000;
+
+    cleanup();
+    stopquiz.style.visibility="hidden";
+    
+    function startquiz(){ 
+        quiz.style.visibility="hidden";  
+        stopquiz.style.visibility="visible";
+        timeoutCounter=0;
+        e("bar").value="100"; success.play();
+        shuffleSynch();    
+         
+        i=-1; 
+        
+        ungray(stopquiz);
+        gray(quiz); 
+        totalanswers=rightanswersc=    wronganswersc=    idkanswersc=0;
+        
+        stopcountdown();
+        asknextquestion();
+        
+    }
+    
+    function dostopquiz(){
+        quiz.style.visibility="visible"; 
+        stopquiz.style.visibility="hidden";
+        stopcountdown();
+        clearTimeout(nextq);
+        gray(stopquiz);
+        ungray(quiz);
+        
+        cleanup();
+        whiteanswerbuttons();
+        showenglish.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; 
+    
+        e("bar").style.visibility="hidden";
+        isBlink=false;
+    }
+    
+    function cleanup(){        
+        showenglish.innerHTML="";    
+        buttons[rightbutton].style.border="3px solid white";
+        if( ! idk_chosen && ! good_chosen ) wrongbutton.style.border = "3px solid white";
+        stopcountdown();
+        grayanswerbuttons();
+    }
+
+    function askquestion(){            
+        var z; 
+        cleanup();            
+        showenglish.innerHTML=englishWords[i];            
+        f=7; flashcontrol=setInterval(flashenglish, 100);
+        ungrayanswerbuttons();
+        rightbutton=zeroto(BUTTONS);
+        var answers= choosewrongs(N,i);            
+        answers.splice(rightbutton,0,i);
+        for(z=0;z<BUTTONS;++z)buttons[z].value=bengaliWords[answers[z]];        
+        idk.value="আমি জানি না";
+        cd=Math.round(waitclick_timeout/100);
+        
+        countdown_timer=setInterval(countdown, 200);
+        e("bar").style.visibility="visible";
+    }
+ 
+        
+    
+    function countdown(){
+       e("bar").value=150-cd;          
+        cd -= 2;
+ 
+        if(cd<1){
+            stopcountdown();
+            user_answer("timeout"); 
+            noIdea.play(); 
+            e("bar").style.visibility="hidden";
+            
+            
+            timeoutCounter++;  
+            if(timeoutCounter>=3){
+                dostopquiz();
+                showenglish.style.border= "3px solid white";
+           
+                
+                showenglish.innerHTML="You timeouted three times, so you don't get a score.";
+                
+                setTimeout(cleanup, 10000);  //// timeout msg clear
+               
+                return;
+            }
+
+        }                    
+    } 
+    
+    function stopcountdown(){
+       clearTimeout(countdown_timer);       
+    }
+
+    function usclick(ele)
+    {
+        stopcountdown();  
+        e("bar").style.visibility="hidden"; 
+        
+        var userchose=ele.attr;
+        idk_chosen = "idk"==userchose ;
+        if(idk_chosen)
+        {            
+            good_chosen = false;
+        }else{                
+            wrongbutton = ele;
+            good_chosen = (userchose == rightbutton);
+            buttons[rightbutton].style.border="3px solid green";
+            if( ! good_chosen )buttons[userchose].style.border="3px solid red";   
+        }
+              
+        if(idk_chosen){ user_answer("idk"); } // sound added
+        else if(good_chosen){ user_answer("good");  } // success sound added
+        else { user_answer("bad"); }// sound added
+    }
+    
+
+    
+    function user_answer(ans){
+        
+        grayanswerbuttons();                
+        showenglish.innerHTML=englishWords[i] + " &rarr; " +bengaliWords[i];
+        if("good"==ans){
+            rightanswersc++;
+            success.play();
+        }
+        else if("bad"==ans){ 
+            wronganswersc++;
+            failure.play();
+        }
+        else{ 
+            idkanswersc++;
+            noIdea.play();
+  //          isBlink=true;
+        }
+        ++totalanswers;
+  isBlink=true;      
+       
+        nextq=setTimeout(asknextquestion, "good"==ans? delayafterrightanswer:delayafterwronganswer);
+        greenon();
+    }
+    
+    function greenon(){showenglish.style.border="3px solid lime";}
+    function greenoff(){showenglish.style.border="3px solid white";}
+
+    function asknextquestion(){
+        isBlink=false; 
+        greenoff();
+        ++i;
+        if(    i>=N ){ 
+            
+            dostopquiz();
+            showenglish.innerHTML=`
+                ${Math.round(rightanswersc-wronganswersc/WRONGS)} points out of ${totalanswers}`;
+             
+            
+                score.innerHTML=`
+                SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalanswers}`;
+        }else{
+           
+            askquestion();
+        }
+    }
+
+    function shuffleSynch(){
+        var count = N, randomnumber, temp;
+        while( count > 1 ){
+            randomnumber = Math.floor ( Math.random() * count-- ); 
+            if(randomnumber != count){
+                swap(englishWords,count,randomnumber);
+                swap(bengaliWords,count,randomnumber);
+            }
+        }
+    }
+    
+    function swap(array, a, b){
+       var temp=array[a];
+       array[a]=array[b];
+       array[b]=temp;
+    }
+
+    
+    var f;
+    var flashcontrol;
+    function flashenglish(){
+        --f;
+        showenglish.style.backgroundColor = (f%2)?"purple":"white" ;
+        showenglish.style.color = (f%2)?"white":"purple" ;
+        if(f<1){
+            clearTimeout(flashcontrol);
+            showenglish.style.backgroundColor = "white"; 
+            showenglish.style.color = "black"; 
+        }
+    }
+    
+    function choosewrongs(N,i){
+
+        var k=[], j, u;
+        for (j=0;j<WRONGS;++j){            
+            do u=zeroto( N );
+            while ( i==u ||  k.includes(u) );
+            k.push(u);
+        }
+        return k;
+    }
+    
+    function gray(ele){ 
+        ele.disabled=true;    
+    }
+    
+    function ungray(ele){ 
+        ele.disabled=false;
+    }
+    
+    function grayanswerbuttons(){
+       var z; for(z=0;z<BUTTONS;++z){           
+       gray(buttons[z]);
+    }
+    gray(idk);}
+    
+    function whiteanswerbuttons(){
+        var z; for(z=0;z<BUTTONS;++z)   buttons[z].value="";            
+        gray(idk);
+        idk.value="";
+    }
+
+    function ungrayanswerbuttons(){
+        var z; for(z=0;z<BUTTONS;++z)   ungray(buttons[z]);            
+        ungray(idk);
+    }
+    
+    
+    function zeroto(range) {return Math.floor(range*Math.random())}
+     
+    let isBlink = false;
+    let myBlinkTime;
+    function blink(){
+        if(!isBlink)return;
+        isBlink=false;
+        e("indicator").style.backgroundColor=isBlink?"green":"red";
+            e("trace3").innerHTML="blinked";
+            myBlinkTime= setTimeout(blinkReset, 10);
+            
+            function blinkReset(){
+                clearTimeout(myBlinkTime);
+                e("indicator").style.backgroundColor="white";
+                e("trace3").innerHTML="no blinking";
+                asknextquestion();
+            }
+    }
+    
+    function e(id){ return document.getElementById(id);  }            
+    </script>
+</body></html>
