@@ -145,7 +145,7 @@
     }
     
     function cleanup(){        
-        showenglish.innerHTML="";    
+        showenglish.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";    
         buttons[rightbutton].style.border="3px solid white";
         if( ! idk_chosen && ! good_chosen ) wrongbutton.style.border = "3px solid white";
         stopcountdown();
@@ -241,10 +241,10 @@
         else{ 
             idkanswersc++;
             noIdea.play();
-  //          isBlink=true;
         }
         ++totalanswers;
-  isBlink=true;      
+        
+        isBlink=true;      
        
         nextq=setTimeout(asknextquestion, "good"==ans? delayafterrightanswer:delayafterwronganswer);
         greenon();
@@ -345,18 +345,16 @@
     let isBlink = false;
     let myBlinkTime;
     function blink(){
-        if(!isBlink)return;
-        isBlink=false;
         e("indicator").style.backgroundColor=isBlink?"green":"red";
-            e("trace3").innerHTML="blinked";
-            myBlinkTime= setTimeout(blinkReset, 10);
-            
-            function blinkReset(){
-                clearTimeout(myBlinkTime);
-                e("indicator").style.backgroundColor="white";
-                e("trace3").innerHTML="no blinking";
-                asknextquestion();
-            }
+        e("trace3").innerHTML="blinked";
+        myBlinkTime= setTimeout(blinkReset, 10);
+
+        function blinkReset(){
+            clearTimeout(myBlinkTime);
+            e("indicator").style.backgroundColor="white";
+            e("trace3").innerHTML="no blinking";
+            asknextquestion();
+        }
     }
     
     function e(id){ return document.getElementById(id);  }            
