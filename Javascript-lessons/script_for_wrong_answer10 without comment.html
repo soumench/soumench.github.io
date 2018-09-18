@@ -41,13 +41,15 @@
        
     <p><progress id="bar" value="100" max="100" style="height:8px;width:300px"></progress></p>
     <span  id="indicator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <span id="trace3"></span>
+   <!--<span id="trace3"></span>-->
     <script>
+        let isBlink = false;
+        const ebar= e("bar");
         let timeoutCounter=0;     
         const success = new Audio("audio/success.oga");
         const failure = new Audio("audio/fail.oga");
         const noIdea = new Audio("audio/idk.oga");
-        e("bar").style.visibility="hidden";
+        ebar.style.visibility="hidden";
         
         var showenglish=e("showenglish"); 
         var b0=e("b0");
@@ -86,7 +88,8 @@
            // ,"nadI", "pAn karA", "Agun", "tAr", "halud"
          //   ,"নদী", "পান করা", "আগুন", "তার", "হলুদ"
         ];    
-     
+    
+        
     var N=englishWords.length;    
     
     var i=0;        
@@ -106,7 +109,7 @@
     const waitclick_timeout=15000; 
     const delayafterrightanswer = 1500;
     const delayafterwronganswer=5000;
-
+            
     cleanup();
     stopquiz.style.visibility="hidden";
     
@@ -114,7 +117,7 @@
         quiz.style.visibility="hidden";  
         stopquiz.style.visibility="visible";
         timeoutCounter=0;
-        e("bar").value="100"; success.play();
+        ebar.value="100"; success.play();
         shuffleSynch();    
          
         i=-1; 
@@ -140,7 +143,7 @@
         whiteanswerbuttons();
         showenglish.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; 
     
-        e("bar").style.visibility="hidden";
+        ebar.style.visibility="hidden";
         isBlink=false;
     }
     
@@ -166,35 +169,28 @@
         cd=Math.round(waitclick_timeout/100);
         
         countdown_timer=setInterval(countdown, 200);
-        e("bar").style.visibility="visible";
+        ebar.style.visibility="visible";
     }
  
         
     
     function countdown(){
-       e("bar").value=150-cd;          
+       ebar.value=150-cd;          
         cd -= 2;
  
         if(cd<1){
             stopcountdown();
             user_answer("timeout"); 
             noIdea.play(); 
-            e("bar").style.visibility="hidden";
-            
-            
+            ebar.style.visibility="hidden";
             timeoutCounter++;  
             if(timeoutCounter>=3){
                 dostopquiz();
                 showenglish.style.border= "3px solid white";
-           
-                
                 showenglish.innerHTML="You timeouted three times, so you don't get a score.";
-                
                 setTimeout(cleanup, 10000);  //// timeout msg clear
-               
                 return;
             }
-
         }                    
     } 
     
@@ -205,8 +201,7 @@
     function usclick(ele)
     {
         stopcountdown();  
-        e("bar").style.visibility="hidden"; 
-        
+        ebar.style.visibility="hidden"; 
         var userchose=ele.attr;
         idk_chosen = "idk"==userchose ;
         if(idk_chosen)
@@ -219,15 +214,14 @@
             if( ! good_chosen )buttons[userchose].style.border="3px solid red";   
         }
               
-        if(idk_chosen){ user_answer("idk"); } // sound added
-        else if(good_chosen){ user_answer("good");  } // success sound added
-        else { user_answer("bad"); }// sound added
+        if(idk_chosen){ user_answer("idk"); } 
+        else if(good_chosen){ user_answer("good");  } 
+        else { user_answer("bad"); }
     }
     
 
     
     function user_answer(ans){
-        
         grayanswerbuttons();                
         showenglish.innerHTML=englishWords[i] + " &rarr; " +bengaliWords[i];
         if("good"==ans){
@@ -243,9 +237,7 @@
             noIdea.play();
         }
         ++totalanswers;
-        
- //       isBlink=true;      
-       
+                
         nextq=setTimeout(asknextquestion, "good"==ans? delayafterrightanswer:delayafterwronganswer);
         greenon();
     }
@@ -257,18 +249,12 @@
         isBlink=false; 
         greenoff();
         ++i;
-        if(    i>=N ){ 
-            
+        if( i>=N ){ 
             dostopquiz();
             showenglish.innerHTML=`
                 ${Math.round(rightanswersc-wronganswersc/WRONGS)} points out of ${totalanswers}`;
-             
-            
-                score.innerHTML=`
-                SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalanswers}`;
         }else{
-           
-            askquestion();
+           askquestion();
         }
     }
 
@@ -322,40 +308,22 @@
     }
     
     function grayanswerbuttons(){
-       var z; for(z=0;z<BUTTONS;++z){           
-       gray(buttons[z]);
+            var z; for(z=0;z<BUTTONS;++z){           
+            gray(buttons[z]);
+        }
+        gray(idk);
     }
-    gray(idk);}
     
     function whiteanswerbuttons(){
         var z; for(z=0;z<BUTTONS;++z)   buttons[z].value="";            
         gray(idk);
         idk.value="";
     }
-
     function ungrayanswerbuttons(){
         var z; for(z=0;z<BUTTONS;++z)   ungray(buttons[z]);            
         ungray(idk);
     }
-    
-    
     function zeroto(range) {return Math.floor(range*Math.random())}
-     
-    let isBlink = false;
-    let myBlinkTime;
-    function blink(){
-        e("indicator").style.backgroundColor=isBlink?"green":"red";
-        e("trace3").innerHTML="blinked";
-        myBlinkTime= setTimeout(blinkReset, 10);
-
-        function blinkReset(){
-            clearTimeout(myBlinkTime);
-            e("indicator").style.backgroundColor="white";
-            e("trace3").innerHTML="no blinking";
-            asknextquestion();
-        }
-    }
-    
     function e(id){ return document.getElementById(id);  }            
     </script>
 </body></html>
