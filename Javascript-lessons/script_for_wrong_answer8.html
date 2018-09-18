@@ -29,7 +29,7 @@
     <input class="ub" onclick="dostopquiz()" value="STOP QUIZ" id="stopquiz" class="cb" type="button">    
     </p>
     
-    <p><span onclick="blink()" id="showenglish"   style="font-size:150%;">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> </p>
+    <p><span  id="showenglish"   style="font-size:150%;">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> </p> <!--onclick="blink()"-->
     
     <p id="btnboard">  
     <input onclick="usclick(this)"  id="b0" class="ub" type="button">
@@ -204,7 +204,7 @@ var bengaliWords = [
     function countdown(){
       // this should show a progress bar or an hourglass anim, numbers just make people nervous;also we need  a timeout sound
         
-        e("bar").value=100-cd;          
+        e("bar").value=150-cd;          
         cd -= 2;
  
         if(cd<1){
@@ -272,8 +272,6 @@ var bengaliWords = [
         if("good"==ans){
             rightanswersc++;
             success.play();
-            isBlink=true; ///////////////////
-     // asknextquestion();
         }
         else if("bad"==ans){ // user clicked a bad answer 
             wronganswersc++;
@@ -282,10 +280,10 @@ var bengaliWords = [
         else{ // user clicked idk or timeouted
             idkanswersc++;
             noIdea.play();
-            isBlink=true;
+  //          isBlink=true;
         }
         ++totalanswers;
-        
+  isBlink=true;      
         /*score.innerHTML=`
 GOOD ${rightanswersc} 
 BAD ${wronganswersc} 
@@ -302,7 +300,7 @@ SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalansw
     function greenoff(){showenglish.style.border="3px solid white";}
 
     function asknextquestion(){
-     //   isBlink = false; /////////////////////////////
+        isBlink=false; /////////////////////////////////
         greenoff();
         ++i;
         if(    i>=N ){ 
@@ -401,10 +399,11 @@ SCORE ${Math.round(rightanswersc-wronganswersc/WRONGS)} out of TOTAL ${totalansw
     let myBlinkTime;
     function blink(){
         if(!isBlink)return;
+        isBlink=false;
         e("indicator").style.backgroundColor=isBlink?"green":"red";
             e("trace3").innerHTML="blinked";
             myBlinkTime= setTimeout(blinkReset, 10);
-            isBlink=false;
+            
             function blinkReset(){
                 clearTimeout(myBlinkTime);
                 e("indicator").style.backgroundColor="white";
