@@ -74,14 +74,17 @@ year
 seed
 can
 person
+******************************************
+
+
 pig
 those
+
+lesson4 start ********************
+
 child
 bad
 correct
-***********************************20
-
-
 them
 big
 mountain
@@ -94,6 +97,11 @@ he
 just
 white
 after
+
+************************** lesson4 end
+
+
+
 bird
 snake
 its

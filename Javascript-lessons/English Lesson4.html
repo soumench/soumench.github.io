@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Lesson Four</title>
+    <style>
+        body{text-align: center; background-color: antiquewhite;}
+        input.ub {width:7em;font-size:1em;border:3px solid white;}
+        input.cb {width:10em;font-size:1em;border:3px solid green;}
+    </style>
+</head>
+<body>    
+    <h1>English Lesson Four</h1>  
+<!--
+  Important
+  this script will only work correctly
+  if all the twenty bengali translations are different
+-->    
+<!--    <p>
+    This is a DRILL, not a test. No one is going to give you bad marks when you make mistakes. Click the IDK button if you don't know, that's better than clicking an answer at random. </p>-->
+    <!--<p>After you click START QUIZ, English words will appear in purple. You have a few seconds to click the right bengali translation. If you don't know or don't remember the right one, click  IDK -- do not waste time looking it up, that's useless.</p> -->          
+    <p id="startstop">
+    <input class="ub" onclick="startquiz()" value="START QUIZ" id="quiz" class="cb" type="button">   
+    <input class="ub" onclick="dostopquiz()" value="STOP QUIZ" id="stopquiz" class="cb" type="button">    
+    </p>    
+    <p><span  id="showenglish"   onclick="x()" style="font-size:150%;">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span> </p> 
+    <p id="btnboard">  
+    <input onclick="usclick(this)"  id="b0" class="ub" type="button">
+    <input onclick="usclick(this)"  id="b1" class="ub" type="button">
+    <br/>
+    <input onclick="usclick(this)"  id="b2" class="ub" type="button">
+    <input onclick="usclick(this)"  id="b3" class="ub" type="button">
+    <br><input onclick="usclick(this)" value="" id="idk" class="ub"type="button" style="width:14em">
+    </p> 
+    <p><progress id="bar" value="100" max="100" style="height:8px;width:300px"></progress></p>
+    <span  id="indicator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+   
+    
+    <script src="englishquizjs/englishquiz.js"></script>
+    <script>
+        
+        const englishWords = [
+            "child", "bad", "correct", "them", "big"
+            ,"mountain", "burn", "his", "most", "to"
+            ,"smoke", "he", "just", "white", "after"
+        ];
+        const bengaliWords = [
+            "শিশু", "খারাপ", "সঠিক", "তাদেরকে", "বড়"
+            ,"পর্বত", "পোড়ানো", "তার", "সবচেয়ে", "প্রতি"
+            ,"ধোঁয়া", "সে", "মাত্র", "সাদা", "পরে"         
+        ];
+            
+        
+        let isBlink = false;
+        const ebar= e("bar");
+        let timeoutCounter=0;     
+        const success = new Audio("audio/success.oga");
+        const failure = new Audio("audio/fail.oga");
+        const noIdea = new Audio("audio/idk.oga");
+        ebar.style.visibility="hidden";
+        
+        var showenglish=e("showenglish"); 
+        var b0=e("b0");
+        var b1=e("b1");
+        var b2=e("b2");
+        var b3=e("b3");
+        var b4=e("b4");
+        var b5=e("b5");
+        var idk=e("idk");
+        
+        var quiz=e("quiz");
+        var stopquiz=e("stopquiz");
+        gray(stopquiz);
+        
+        var buttons=[b0,b1,b2,b3,b4,b5];
+        idk.attr="idk";
+        grayanswerbuttons();
+        
+        var WRONGS=3;
+        var BUTTONS=WRONGS+1;
+        var z; for(z=0;z<BUTTONS;++z)buttons[z].attr=z;
+                
+            
+        var N=englishWords.length;
+
+        var i=0;
+        var rightbutton = 0;
+        var good_chosen=false;
+        var idk_chosen=true;
+        var wrongbutton;
+        var cd;
+        var countdown_timer;
+        var nextq;
+
+        var rightanswersc;
+        var wronganswersc;
+        var idkanswersc;
+        var totalanswers;
+
+        const waitclick_timeout=15000;
+        const delayafterrightanswer = 1500;
+        const delayafterwronganswer=5000;
+
+        cleanup();
+        stopquiz.style.visibility="hidden";
+    </script>
+</body></html>
