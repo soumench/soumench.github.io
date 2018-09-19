@@ -41,7 +41,7 @@
        
     <p><progress id="bar" value="100" max="100" style="height:8px;width:300px"></progress></p>
     <span  id="indicator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-   <!--<span id="trace3"></span>-->
+   
     <script src="lessonjs/quiz1.js"></script>
     <script src="englishquizjs/englishquiz.js"></script>
     <script>
@@ -89,53 +89,32 @@
         idk.attr="idk";
         grayanswerbuttons();
         
-        var WRONGS=3; 
-        var BUTTONS=WRONGS+1; 
-        var z; for(z=0;z<BUTTONS;++z)buttons[z].attr=z;        
+        var WRONGS=3;
+        var BUTTONS=WRONGS+1;
+        var z; for(z=0;z<BUTTONS;++z)buttons[z].attr=z;
                 
             
-    var N=englishWords.length;    
-    
-    var i=0;        
-    var rightbutton = 0;        
-    var good_chosen=false;
-    var idk_chosen=true;
-    var wrongbutton;
-    var cd;
-    var countdown_timer;    
-    var nextq;    
-    
-    var rightanswersc;
-    var wronganswersc;
-    var idkanswersc;
-    var totalanswers;
-    
-    const waitclick_timeout=15000; 
-    const delayafterrightanswer = 1500;
-    const delayafterwronganswer=5000;
-            
-   cleanup();
- stopquiz.style.visibility="hidden";
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        var N=englishWords.length;
 
-    
-    
-    
-    
-    
+        var i=0;
+        var rightbutton = 0;
+        var good_chosen=false;
+        var idk_chosen=true;
+        var wrongbutton;
+        var cd;
+        var countdown_timer;
+        var nextq;
 
-    
+        var rightanswersc;
+        var wronganswersc;
+        var idkanswersc;
+        var totalanswers;
 
-    
-             
+        const waitclick_timeout=15000;
+        const delayafterrightanswer = 1500;
+        const delayafterwronganswer=5000;
+
+        cleanup();
+        stopquiz.style.visibility="hidden";
     </script>
 </body></html>
