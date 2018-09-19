@@ -61,59 +61,22 @@
           
         ];
             
-        
-        let isBlink = false;
-        const ebar= e("bar");
-        let timeoutCounter=0;     
-        const success = new Audio("audio/success.oga");
-        const failure = new Audio("audio/fail.oga");
-        const noIdea = new Audio("audio/idk.oga");
-        ebar.style.visibility="hidden";
-        
-        var showenglish=e("showenglish"); 
         init();
         
-        /*b0=e("b0");
-        b1=e("b1");
-        b2=e("b2");
-        b3=e("b3");*/
-        
+        const ebar= e("bar");
+        ebar.style.visibility="hidden";
+        var showenglish=e("showenglish"); 
         var idk=e("idk");
-        
         var quiz=e("quiz");
         var stopquiz=e("stopquiz");
         gray(stopquiz);
-        
         var buttons=[b0,b1,b2,b3];
         idk.attr="idk";
         grayanswerbuttons();
-        
-        var WRONGS=3;
-        var BUTTONS=WRONGS+1;
-        var z; for(z=0;z<BUTTONS;++z)buttons[z].attr=z;
                 
+        var z; for(z=0;z<BUTTONS;++z)buttons[z].attr=z;        
             
-        var N=englishWords.length;
-
-        var i=0;
-        var rightbutton = 0;
-        var good_chosen=false;
-        var idk_chosen=true;
-        var wrongbutton;
-        var cd;
-        var countdown_timer;
-        var nextq;
-
-        var rightanswersc;
-        var wronganswersc;
-        var idkanswersc;
-        var totalanswers;
-
-        const waitclick_timeout=15000;
-        const delayafterrightanswer = 1500;
-        const delayafterwronganswer=5000;
-
+        var N=englishWords.length; // don't move
         cleanup();
-        stopquiz.style.visibility="hidden";
     </script>
 </body></html>
