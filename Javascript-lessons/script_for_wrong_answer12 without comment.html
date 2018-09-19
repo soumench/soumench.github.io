@@ -4,13 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Lesson One</title>
-    <link rel="stylesheet" type="text/css" href="css/drill.css">
     <style>
         body{text-align: center; background-color: antiquewhite;}
         input.ub {width:7em;font-size:1em;border:3px solid white;}
         input.cb {width:10em;font-size:1em;border:3px solid green;}
-        
-        
     </style>
 </head>
 <body>    
@@ -24,12 +21,10 @@
     This is a DRILL, not a test. No one is going to give you bad marks when you make mistakes. Click the IDK button if you don't know, that's better than clicking an answer at random. </p>-->
     <!--<p>After you click START QUIZ, English words will appear in purple. You have a few seconds to click the right bengali translation. If you don't know or don't remember the right one, click  IDK -- do not waste time looking it up, that's useless.</p> -->          
     <p id="startstop">
-    <input class="ub" onclick="startquiz()" value="START QUIZ" id="quiz" class="cb" type="button">    
+    <input class="ub" onclick="startquiz()" value="START QUIZ" id="quiz" class="cb" type="button">   
     <input class="ub" onclick="dostopquiz()" value="STOP QUIZ" id="stopquiz" class="cb" type="button">    
-    </p>
-    
+    </p>    
     <p><span  id="showenglish"   onclick="x()" style="font-size:150%;">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span> </p> 
-    
     <p id="btnboard">  
     <input onclick="usclick(this)"  id="b0" class="ub" type="button">
     <input onclick="usclick(this)"  id="b1" class="ub" type="button">
@@ -38,11 +33,10 @@
     <input onclick="usclick(this)"  id="b3" class="ub" type="button">
     <br><input onclick="usclick(this)" value="" id="idk" class="ub"type="button" style="width:14em">
     </p> 
-       
     <p><progress id="bar" value="100" max="100" style="height:8px;width:300px"></progress></p>
     <span  id="indicator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
    
-    <script src="lessonjs/quiz1.js"></script>
+    
     <script src="englishquizjs/englishquiz.js"></script>
     <script>
         
