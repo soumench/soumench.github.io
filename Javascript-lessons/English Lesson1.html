@@ -41,7 +41,7 @@
         <a href="English%20Lesson2.html" target="_self">Next</a>
     </p>
    
-    
+    <script src="englishquizjs/var.js"></script>
     <script src="englishquizjs/englishquiz.js"></script>
     <script>
         
@@ -71,19 +71,20 @@
         ebar.style.visibility="hidden";
         
         var showenglish=e("showenglish"); 
-        var b0=e("b0");
-        var b1=e("b1");
-        var b2=e("b2");
-        var b3=e("b3");
-        var b4=e("b4");
-        var b5=e("b5");
+        init();
+        
+        /*b0=e("b0");
+        b1=e("b1");
+        b2=e("b2");
+        b3=e("b3");*/
+        
         var idk=e("idk");
         
         var quiz=e("quiz");
         var stopquiz=e("stopquiz");
         gray(stopquiz);
         
-        var buttons=[b0,b1,b2,b3,b4,b5];
+        var buttons=[b0,b1,b2,b3];
         idk.attr="idk";
         grayanswerbuttons();
         
