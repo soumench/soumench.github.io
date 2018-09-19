@@ -72,7 +72,7 @@ water
 any
 year
 seed
-can
+about
 person
 ******************************************
 
@@ -101,12 +101,16 @@ after
 ************************** lesson4 end
 
 
+lesson 5 start
 
 bird
 snake
 its
 tongue
 die
+lesson 5 end
+
+
 stand
 heavy
 louse
@@ -290,7 +294,7 @@ come
 cold
 wood
 some
-about
 
+"can"
 ************************14
 */
