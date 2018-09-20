@@ -1,3 +1,5 @@
+var ebar;
+
 let isBlink = false;
 let timeoutCounter=0; 
 var b0;
@@ -39,7 +41,7 @@ const noIdea = new Audio("audio/idk.oga");
 stopquiz.style.visibility="hidden";
 
 function init() {   b0=e("b0");  b1=e("b1"); b2=e("b2"); b3=e("b3"); 
-                    
+                    ebar= e("bar").style.visibility="hidden";
                  
                 
                 }
