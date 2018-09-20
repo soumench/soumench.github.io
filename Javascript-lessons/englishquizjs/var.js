@@ -1,3 +1,4 @@
+var N;
 var ebar;
 var showenglish;
 var buttons ;
@@ -55,5 +56,13 @@ function init() {   b0=e("b0");  b1=e("b1"); b2=e("b2"); b3=e("b3");
                     gray(stopquiz);
                  
                     buttons=[b0,b1,b2,b3];
+                 
+                  idk.attr="idk";
+                  grayanswerbuttons();
+                
+                  var z; for(z=0;z<BUTTONS;++z)buttons[z].attr=z;        
+            
+                  N=englishWords.length; 
+                  cleanup();
                 
                 }
