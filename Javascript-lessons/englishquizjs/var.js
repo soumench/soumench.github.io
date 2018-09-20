@@ -1,6 +1,6 @@
 var ebar;
 var showenglish;
-
+var buttons ;
 var idk;
 var quiz;
 var stopquiz;
@@ -50,5 +50,10 @@ function init() {   b0=e("b0");  b1=e("b1"); b2=e("b2"); b3=e("b3");
                     idk=e("idk");
                     quiz=e("quiz");
                     stopquiz=e("stopquiz");
+                 
+                    stopquiz.style.visibility="hidden";
+                    gray(stopquiz);
+                 
+                    buttons=[b0,b1,b2,b3];
                 
                 }
