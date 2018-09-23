@@ -111,13 +111,11 @@ die
 lesson 5 end
 
 
+lesson 6 start
 stand
 heavy
 louse
 liver
-*********************************20
-
-
 or
 father
 bone
@@ -129,6 +127,11 @@ take
 how
 make
 this
+lesson 6 end
+
+
+
+lesson 7 start
 your
 horn
 like
@@ -138,16 +141,17 @@ flesh
 leaf
 say
 wind
-
-*******************************20
-
-
 blood
 egg
 long
 time
 which
 what?
+lesson 7 end
+
+
+
+lesson 8 start
 feather
 good
 skin
@@ -162,10 +166,11 @@ old
 sun
 ear
 knee
-
-********************************20
-
 not
+lesson 8 end
+
+
+lesson 9 start
 full
 many
 know
@@ -181,23 +186,31 @@ will
 also
 fish
 that
+lesson 9 end
+
+
+
+lesson 10 start
 head
 when
 bite
 lie
-*******************************20
-
 woman
 day
 mouth
 sand
 hear
 husband
-would
+would XXXXXXXXXX
+wood
 neck
 two
 snow
 than
+lesson 10 end
+
+
+lesson 11 start
 hand
 green
 the
@@ -207,14 +220,19 @@ worm
 hot
 ash
 mother
-*********************************20
-
 stone
 bark
 rope
 short
 count
 be
+lesson 11 end
+
+
+
+
+
+lesson 12 start
 sing
 salt
 eat
@@ -229,13 +247,12 @@ could
 by
 from
 sea
-
-
-************************************20
-
-
-
 hunt
+lesson 12 end
+
+
+
+lesson 13 start
 rain
 she
 my
@@ -251,14 +268,16 @@ play
 see
 man
 flower
+lesson 13 end
+
+
+
+lesson 14 start
 star
 belly
 tell
 do
 an
-*****************************20
-
-
 dance
 go
 dry
@@ -269,6 +288,11 @@ root
 even
 work
 round
+lesson 14 end
+
+
+
+lesson 15 start
 a
 meat
 people
@@ -279,22 +303,23 @@ vomit
 with
 I
 wife
-*********************************20
-
 these
 get
 night
 out
 claw
+lesson 15 end
+
+
+lesson 16 start
 our
 find
 it
 we
 come
 cold
-wood
-some
 
-"can"
-************************14
+some
+can
+
 */
