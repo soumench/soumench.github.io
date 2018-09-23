@@ -39,6 +39,8 @@ var BUTTONS=WRONGS+1;
 const success = new Audio("audio/success.oga");
 const failure = new Audio("audio/fail.oga");
 const noIdea = new Audio("audio/idk.oga");
+const gameOver = new Audio("audio/gameOver.oga");
+const blinkSound = new Audio("audio/blinksound.oga");
 
 
 
@@ -128,6 +130,7 @@ function shuffleSynch(){
             showenglish.style.backgroundColor = "white"; 
             showenglish.style.color = "black"; 
         }
+        blinkSound.play(); // bug >> this sound is getting triggered twice
     }
     
     function choosewrongs(N,i){
@@ -151,6 +154,7 @@ function asknextquestion(){
             dostopquiz();
             showenglish.innerHTML=`
                 ${Math.round(rightanswersc-wronganswersc/WRONGS)} points out of ${totalanswers}`;
+            gameOver.play();
         }else{
            askquestion();
         }
