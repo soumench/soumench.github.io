@@ -68,6 +68,7 @@ function init() {   b0=e("b0");  b1=e("b1"); b2=e("b2"); b3=e("b3");
                   cleanup();
                  
                  e("heading").innerHTML = document.title = title;
+                 bar.max=150;
                 
                 }
  
@@ -126,11 +127,11 @@ function shuffleSynch(){
         showenglish.style.backgroundColor = (f%2)?"purple":"white" ;
         showenglish.style.color = (f%2)?"white":"purple" ;
         if(f<1){
+            blinkSound.play(); 
             clearTimeout(flashcontrol);
             showenglish.style.backgroundColor = "white"; 
             showenglish.style.color = "black"; 
         }
-        blinkSound.play(); // bug >> this sound is getting triggered twice
     }
     
     function choosewrongs(N,i){
@@ -223,10 +224,10 @@ function countdown(){
      //           showenglish.innerHTML="You timeouted three times, so you don't get a score.";
                 showenglish.innerHTML="তিন বারের বেশী টাইম আউট হয়ে যাবার জন্য কোনও স্কোর দেখানো হল না ।"
                 setTimeout(cleanup, 10000);  
-                return;
+              //  return;
             }
         } 
-    ebar.value=150-cd; 
+    ebar.value=waitclick_timeout/100-cd; 
     } 
 
 
