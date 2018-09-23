@@ -208,7 +208,7 @@ function stopcountdown(){
     }
 
 function countdown(){
-       ebar.value=150-cd;          
+                
         cd -= 2;
  
         if(cd<1){
@@ -225,7 +225,8 @@ function countdown(){
                 setTimeout(cleanup, 10000);  
                 return;
             }
-        }                    
+        } 
+    ebar.value=150-cd; 
     } 
 
 
