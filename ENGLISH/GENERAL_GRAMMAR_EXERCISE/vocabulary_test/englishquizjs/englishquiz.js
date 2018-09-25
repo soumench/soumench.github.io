@@ -1,7 +1,7 @@
 /*
 Copyright: Soumen Chakraborty 2018
 https://soumen-here.blogspot.com/
-Acknowledgement: Professor Ganapati
+Sincere acknowledgement: Professor Ganapati
 Strictly for Educational and Non-commercial Purpose
 */
 
