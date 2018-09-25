@@ -1,3 +1,10 @@
+/*
+Copyright: Soumen Chakraborty 2018
+https://soumen-here.blogspot.com/
+Acknowledgement: Professor Ganapati
+Strictly for Educational and Non-commercial Purpose
+*/
+
 var N;
 var ebar;
 var showenglish;
