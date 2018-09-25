@@ -3,16 +3,16 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Lesson Four</title>
+    <title>English Lesson </title>
     <style>
-        body{text-align: center; background-color: antiquewhite;}
+        
         input.ub {width:7em;font-size:1em;border:3px solid white;}
         input.cb {width:10em;font-size:1em;border:3px solid green;}
     </style>
     <link rel="stylesheet" type="text/css" href="css/englishQuiz.css">
 </head>
 <body>    
-    <h1 id="heading">English Lesson Four</h1>  
+    <h1 id="heading">English Lesson </h1>  
 <!--
   Important
   this script will only work correctly
@@ -37,25 +37,35 @@
     <p><progress id="bar" value="100" max="100" style="height:8px;width:300px"></progress></p>
     <span  id="indicator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
     <p id="navigate">
-        <a href="English%20Lesson3.html" target="_self">Previous</a>
+        <a href="English%20Lesson15.html" target="_self">Previous</a>
         <a href="indexOfLessons.html" target="_self">Home</a>
-        <a href="English%20Lesson5.html" target="_self">Next</a>
+        <a href="English%20Lesson1.html" target="_self">Next</a>
     </p>
+    <footer> 
+		Copyright &copy; Made by Soumen Chakraborty     - <span id="year">year</span> 
+	<br> 
+		Strictly for Educational and Non-Commercial purpose only.
+   </footer>
+    
+    <script src="../../../ENGLISH/year.js"></script>
     
     <script src="englishquizjs/englishquiz.js"></script>
     <script>
-        const title = "English Lesson Four";       
-                
+        const title = "English Lesson Sixteen";
+        e("year").innerHTML = creation_year;
+        
         const englishWords = [
-            "child", "bad", "correct", "them", "big"
-            ,"mountain", "burn", "his", "most", "to"
-            ,"smoke", "he", "just", "white", "after"
+          "our", "find", "it", "we", "come"
+         ,"cold", "some", "can", "may", "learn"
+         ,"teach", "obey", "feed", "wake", "love"
         ];
         const bengaliWords = [
-            "শিশু", "খারাপ", "সঠিক", "তাদেরকে", "বড়"
-            ,"পর্বত", "পোড়ানো", "তার", "সবচেয়ে", "তে/প্রতি"
-            ,"ধোঁয়া", "সে", "মাত্র", "সাদা", "পরে"         
+        "আমাদের", "খোঁজা", "এটি", "আমরা", "আসা"
+        ,"ঠান্ডা", "কিছু", "পারা (নিশ্চিত)", "পারা (অনিশ্চিত)", "শেখা"
+        ,"শেখানো", "মান্য করা", "খাওয়ানো", "ওঠা/জাগা", "ভালোবাসা"
         ];
-        init(); 
+        
+            
+        init();       
     </script>
 </body></html>

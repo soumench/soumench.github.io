@@ -3,16 +3,15 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Lesson </title>
+    <title>English Lesson One</title>
     <style>
-        body{text-align: center; background-color: antiquewhite;}
         input.ub {width:7em;font-size:1em;border:3px solid white;}
         input.cb {width:10em;font-size:1em;border:3px solid green;}
     </style>
     <link rel="stylesheet" type="text/css" href="css/englishQuiz.css">
 </head>
 <body>    
-    <h1 id="heading">English Lesson </h1>  
+    <h1 id="heading">English Lesson One</h1>  
 <!--
   Important
   this script will only work correctly
@@ -34,31 +33,39 @@
     <input onclick="usclick(this)"  id="b3" class="ub" type="button">
     <br><input onclick="usclick(this)" value="" id="idk" class="ub"type="button" style="width:14em">
     </p> 
-    <p><progress id="bar" value="100" max="100" style="height:8px;width:300px"></progress></p>
+    <p><progress id="bar" value="150" max="150" style="height:8px;width:300px"></progress></p>
     <span  id="indicator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
     <p id="navigate">
-        <a href="English%20Lesson7.html" target="_self">Previous</a>
         <a href="indexOfLessons.html" target="_self">Home</a>
-        <a href="English%20Lesson9.html" target="_self">Next</a>
+        <a href="English%20Lesson2.html" target="_self">Next</a>
     </p>
-   
+   <footer> 
+		Copyright &copy; Made by Soumen Chakraborty     - <span id="year">year</span> 
+	<br> 
+		Strictly for Educational and Non-Commercial purpose only.
+   </footer>
     
+    <script src="../../../ENGLISH/year.js"></script>    
     <script src="englishquizjs/englishquiz.js"></script>
     <script>
-        const title = "English Lesson Eight";       
-        
+        const title = "English Lesson one";       
+        e("year").innerHTML = creation_year;
         
         const englishWords = [
-            "feather", "good", "skin", "now", "want"
-            , "if", "for", "wide", "tooth", "there"
-            ,"old", "sun", "ear", "knee", "not"
+            "eye", "their", "over","warm","narrow"
+           ,"hair","thing", "small","earth","swim"
+           ,"brother","well","black","they","laugh"
+         
         ];
         const bengaliWords = [
-           "পালক", "ভালো", "চামড়া / ত্বক", "এখন", "চাই"
-            , "যদি", "জন্য", "চওড়া", "দাঁত", "সেখানে"
-            ,"পুরোনো", "সূর্য", "কান", "হাঁটু", "না"          
+         //   "cOkh", "cOrbi", "upar diye", "uSNO", "saMkIrNa"
+            "চোখ", "তাদের", "উপর দিয়ে", "উষ্ণ", "সঙ্কীর্ণ"            
+          //  ,"cul","jiniS", "chOTO", "pRIthibI", "sAntAr kATA"
+            ,"চুল", "জিনিষ", "ছোটো", "পৃথিবী", "সাঁতার কাটা"
+          //  ,"bhAi", "bhAlO", "kAlO", "tArA", "hAnSi"
+            ,"ভাই", "ভালো / বেশ", "কালো", "তারা", "হাসা"
+          
         ];
-        
             
         init();       
     </script>

@@ -70,6 +70,7 @@ function init() {   b0=e("b0");  b1=e("b1"); b2=e("b2"); b3=e("b3");
                  e("heading").innerHTML = document.title = title;
                  bar.max=150;
                 
+                 
                 }
  
 //-----------------------------------------------------
@@ -291,6 +292,7 @@ function x(){if(isBlink){clearTimeout(nextq);asknextquestion();}}
         
         stopcountdown();
         asknextquestion();
+        
     }
 
 

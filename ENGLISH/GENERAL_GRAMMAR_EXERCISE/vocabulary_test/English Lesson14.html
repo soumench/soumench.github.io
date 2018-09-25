@@ -3,16 +3,16 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Lesson Two</title>
+    <title>English Lesson </title>
     <style>
-        body{text-align: center; background-color: antiquewhite;}
+       
         input.ub {width:7em;font-size:1em;border:3px solid white;}
         input.cb {width:10em;font-size:1em;border:3px solid green;}
     </style>
     <link rel="stylesheet" type="text/css" href="css/englishQuiz.css">
 </head>
 <body>    
-    <h1 id="heading">English Lesson Two</h1>
+    <h1 id="heading">English Lesson </h1>  
 <!--
   Important
   this script will only work correctly
@@ -36,34 +36,36 @@
     </p> 
     <p><progress id="bar" value="100" max="100" style="height:8px;width:300px"></progress></p>
     <span  id="indicator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    
     <p id="navigate">
-        <a href="English%20Lesson1.html" target="_self">Previous</a>
+        <a href="English%20Lesson13.html" target="_self">Previous</a>
         <a href="indexOfLessons.html" target="_self">Home</a>
-        <a href="English%20Lesson3.html" target="_self">Next</a>
+        <a href="English%20Lesson15.html" target="_self">Next</a>
     </p>
+    <footer> 
+		Copyright &copy; Made by Soumen Chakraborty     - <span id="year">year</span> 
+	<br> 
+		Strictly for Educational and Non-Commercial purpose only.
+   </footer>
+    
+    <script src="../../../ENGLISH/year.js"></script> 
     
     <script src="englishquizjs/englishquiz.js"></script>
     <script>
-        const title = "English Lesson Two";       
+        const title = "English Lesson Fourteen";       
+        e("year").innerHTML = creation_year;
         
-         
-    var englishWords = [
-         "kill", "who", "but", "sleep", "think"
-        , "then", "first", "heart", "so", "name"
-        , "sit", "animal", "sharp", "more", "look"
-     
-    ];
-    var bengaliWords = [
-    //    "hatyA karA", "ke", "kintu", "ghumAnO", "bhAbA"
-         "হত্যাকরা", "কে", "কিন্তু", "ঘুমানো", "ভাবা"
-    //    , "takhan", "pratham", "hRday", "sutarAG", "nAm"
-        ,"তখন", "প্রথম", "হৃদয়","সুতরাং", "নাম"  
-    //    , "basA", "jantu", "dhArAlO", "Aro", "tAkAnO"
-        ,"বসা", "জন্তু", "ধারালো", "আরও", "তাকানো"
-    
-    ];
-
-      init(); 
+        const englishWords = [
+           "star", "belly", "tell", "do", "an"
+            ,"dance", "go", "dry", "as", "of"
+            ,"and", "root", "even", "work", "round"
+        ];
+        const bengaliWords = [
+         "তারা", "পেট", "বলা", "করা", "একটি"
+         ,"নাচ করা", "যাওয়া", "শুকানো", "যেমন", "এর"
+         ,"এবং", "মূল", "এমনকি", "কাজ করা", "বৃত্তাকার"
+        ];
+        
+            
+        init();       
     </script>
 </body></html>
