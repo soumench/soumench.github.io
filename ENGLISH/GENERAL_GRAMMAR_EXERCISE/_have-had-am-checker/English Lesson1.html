@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Lesson One</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/englishQuiz.css">
+</head>
+<body>    
+    <h1 id="heading">English Lesson One</h1>  
+<!--
+  Important
+  this script will only work correctly
+  if all the twenty bengali translations are different
+-->    
+<!--    <p>
+    This is a DRILL, not a test. No one is going to give you bad marks when you make mistakes. Click the IDK button if you don't know, that's better than clicking an answer at random. </p>-->
+    <!--<p>After you click START QUIZ, English words will appear in purple. You have a few seconds to click the right bengali translation. If you don't know or don't remember the right one, click  IDK -- do not waste time looking it up, that's useless.</p> -->          
+    <p id="startstop">
+    <input class="ub" onclick="startquiz()" value="START QUIZ" id="quiz" class="cb" type="button">   
+    <input class="ub" onclick="dostopquiz()" value="STOP QUIZ" id="stopquiz" class="cb" type="button">    
+    </p>    
+    <p><span  id="showenglish"   onclick="x()" style="font-size:150%;">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span> </p> 
+    <p id="btnboard">  
+    <input onclick="usclick(this)"  id="b0" class="ub" type="button">
+    <input onclick="usclick(this)"  id="b1" class="ub" type="button">
+    <br/>
+    <input onclick="usclick(this)"  id="b2" class="ub" type="button">
+    <input onclick="usclick(this)"  id="b3" class="ub" type="button">
+    <br><input onclick="usclick(this)" value="" id="idk" class="ub"type="button" style="width:14em">
+    </p> 
+    <p><progress id="bar" value="150" max="150" style="height:8px;width:300px"></progress></p>
+    <span  id="indicator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <p id="navigate">
+        <a href="indexOfLessons.html" target="_self">Home</a>
+        <a href="English%20Lesson2.html" target="_self">Next</a>
+    </p>
+   <footer> 
+		Copyright &copy; Made by Soumen Chakraborty     - <span id="year">year</span> 
+	<br> 
+		Strictly for Educational and Non-Commercial purpose only.
+   </footer>
+    
+    <script src="../../../ENGLISH/year.js"></script>    
+    <script src="englishquizjs/englishquiz.js"></script>
+    <script>
+        const title = "A Quiz on the 'Be verbs'-1";       
+        e("year").innerHTML = creation_year;
+        
+        const englishWords = [
+            "I have a toy.", "I am a good boy.", "I was a kid.","I had a cycle.","I will be a doctor."
+           ,"You are a liar.","You have a cat.", "You were present.","You will be there.","You are right."
+           ,"He is honest.","He was wrong.","He has a computer.","They are students.","They were there."
+           ,"We are fine.","We had a house.","He had a dog.","We were in Kolkata.","We have a tradition." 
+         
+        ];
+        const bengaliWords = [
+         
+            "আমার একটা খেলনা আছে।", "আমি ভালো ছেলে।", "আমি বাচ্চা ছিলাম", "আমার একটা সাইকেল ছিল।", "আমি ডাক্তার হব।"            
+          
+            ,"তুমি মিথ্যাবাদী।", "আপনার একটা বিড়াল আছে।", "তুই উপস্থিত ছিলি।", "আপনি সেখানে থাকবেন।", "তুমি সঠিক।"
+          
+            ,"সে সৎ।", "সে ভুল ছিল।", "তার একটা কম্প্যুটর আছে।", "তারা ছাত্র।", "ওরা সেখানে ছিল।"
+            
+            ,"আমরা ভাল আছি।", "আমাদের একটা বাড়ী ছিল।","তার একটা কুকুর ছিল।", "আমরা কোলকাতায় ছিলাম।", "আমাদের একটা ঐতিহ্য আছে।"
+          
+        ];
+            
+        init();       
+    </script>
+</body></html>
