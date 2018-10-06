@@ -23,7 +23,7 @@ const qa = [
 			10,"I go to school on foot.<br>(Rewrite using \"how\".)", "How do you go to school?",
     
     
-			11,"His life inspired us. (Change the voice.)","We were inspired by his life.",
+			11,"His life inspired us. <br>(Change the voice.)","We were inspired by his life.",
     
     
 			12,"And then, all of a sudden, the light filled the room. <br> (Change the voice.)", "And then, all of a sudden, the room was filled with the light.",
