@@ -35,7 +35,7 @@ const qa = [
 			14, "I wished to kill you. <br> You have saved my life.<br>(To a compound sentence.)","I wished to kill you but you have saved my life.",
     
     
-			15,"Thou art more lovely.<br> Thou art more temperate.<br>(Turn into a compound sentence.)", "Thou art more lovely and temperate.",
+			15,"Thou art more lovely.<br> Thou art more temperate.<br>(Join into a single sentence.)", "Thou art more lovely and temperate.",
     
 			16,"I am tired of people telling me that I have a pretty face.<br>(Split.)", "I have a pretty face. <br>People tell me this. <br>I am tired of it.",
     
