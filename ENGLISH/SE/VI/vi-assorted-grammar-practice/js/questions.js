@@ -46,7 +46,7 @@ const qa = [
 			18,"Neither Raja nor Rani ____(were / was) invited to the party.(Find out the correct option.)", "Neither Raja nor Rani <u> was </u> invited to the party.",
     
     
-			19,"I am neither a poet <u>or</u> a novelist.<br>(Correct the error.)","I am neither a poet nor a novelist",
+			19,"I am neither a poet <u>or</u> a novelist.<br>(Correct the error.)","I am neither a poet nor a novelist.",
     
     
 			20,"My mother spent many _____(sleep) nights when I was unwell.<br>(Add a suitable prefix or suffix.)","My mother spent many <i>sleepless</i> nights when I was unwell.",
