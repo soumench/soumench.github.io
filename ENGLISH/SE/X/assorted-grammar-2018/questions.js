@@ -56,3 +56,5 @@ const qa = [
             22,"Never ever disregard your parents.<br> (Change the voice.)", "Let your parents be never ever disregarded."
         ];
         const length = qa.length;
+
+/*Copyright- Soumen Chakraborty 2018*/
