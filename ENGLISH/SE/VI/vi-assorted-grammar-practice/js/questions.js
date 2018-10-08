@@ -20,7 +20,7 @@ const qa = [
 			9,"The earth _____ (moves / move) round the sun.<br>(Fill in the blank with the correct option.)","The earth <u>moves</u> round the sun.",
     
     
-			10,"Edison was ____________ great scientist.<br> (Fill in the blank.)", "Edison was <u>a</u> great scientist.",
+			10,"Nikola Tesla was __ great scientist.<br> (Fill in the blank.)", "Nikola Tesla was <u>a</u> great scientist.",
     
     
 			11,"He is trying ____ solve the Rubik's Cube Puzzle.<br>(Fill in the blank with a preposition.)","He is trying <u>to</u> solve the Rubik's Cube Puzzle.",
