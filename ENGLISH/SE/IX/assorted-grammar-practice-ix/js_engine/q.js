@@ -23,7 +23,7 @@ var bank = [
     
     ,"Nicola Tesla was a great scientist.<br>(to Interrogative sentence)~Was not Nicola Tesla a great scientist?"
     
-    ,"Please obey your parents.<br>(to Assertive sentence)~You are advised to obey your parents."
+    ,"Please obey your parents.<br>(to Assertive sentence)~You are earnestly advised to obey your parents."
     
     ,"The sunset is very beautiful.<br>(to Exclamatory)~What a beautiful sunset!"
     
