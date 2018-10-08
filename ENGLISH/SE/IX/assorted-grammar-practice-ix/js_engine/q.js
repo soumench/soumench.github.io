@@ -29,7 +29,7 @@ var bank = [
     
     ,"Everest is the highest peak in the world.<br>(to Positive degree)~No other peak in the world is as high as Everest."
     
-    ,"We all take pride in our India.<br>(use adjective form of 'pride')~We all are proud of our India."
+    ,"We all take pride in our India.<br>(Use adjective form of 'pride'.)~We all are proud of our India."
     
     ,"You have kept the rule, but broken its spirit.<br>(to Complex)~Though you have kept the rule, you have broken its spirit."
     
