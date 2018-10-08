@@ -7,7 +7,7 @@ const qa = [
         
             4,"Can you tell me the opposite of 'before'?", "Sure! The answer is 'after'.",
     
-            5,"I want know the opposite of 'go'.", "The opposite of 'go' is 'come'.",
+            5,"I want to know the opposite of 'go'.", "The opposite of 'go' is 'come'.",
         
             6,"I think you know the opposite of 'cold', right?", "Yes, I know. It is 'hot'.",
         
