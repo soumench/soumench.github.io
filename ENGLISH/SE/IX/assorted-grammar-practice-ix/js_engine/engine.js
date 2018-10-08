@@ -9,8 +9,7 @@ const btnsnd = new Audio("audio/success.oga");
 const hint = new Audio("audio/idk.oga");
 
 const bankLength = bank.length;
-let i = 0;
-let someString = bank[i];
+let i = 0; let someString = bank[i];
 let t; var f; var flashcontrol;
 
 function init() {
