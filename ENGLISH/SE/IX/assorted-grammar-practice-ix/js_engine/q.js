@@ -31,7 +31,7 @@ var bank = [
     
     ,"We all take pride in our India.<br>(use adjective form of 'pride')~We all are proud of our India."
     
-    ,"You have kept the rule, but broken its spirit.<br>(to Complex)~Though you have kept the rule, you have broken it's spirit."
+    ,"You have kept the rule, but broken its spirit.<br>(to Complex)~Though you have kept the rule, you have broken its spirit."
     
     ,"It was a bitterly cold night.<br>(to complex)~It was a night which was bitterly cold."
     
