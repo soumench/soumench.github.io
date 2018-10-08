@@ -5,14 +5,13 @@ Strictly for Educational and Non-commercial Purpose
 */
 const blinkSound = new Audio("audio/blinksound.oga");
 const gameover = new Audio("audio/gameOver.oga");
-const success = new Audio("audio/success.oga");
-const idk = new Audio("audio/idk.oga");
+const btnsnd = new Audio("audio/success.oga");
+const hint = new Audio("audio/idk.oga");
 
 const bankLength = bank.length;
-
 let i = 0;
 let someString = bank[i];
-let t;
+let t; var f; var flashcontrol;
 
 function init() {
     const heading = e("heading");
@@ -22,25 +21,18 @@ function init() {
     bar.max = bankLength;
     
     fisherYates(bank);
-    toggle();
-    split();
+    toggle(); split();
     e("year").innerHTML = creation_year;  
 }
 
 function advance() {
-    ++i;
-    if (i >= bankLength) {
-        gameover.play();
-        i = 0;
-    }
-    split();
+    ++i; if (i >= bankLength){gameover.play();i = 0;}
+    split(); combosnd();
 }
 
 function receed() {
-    if (i <= 0) {
-        i = bankLength;
-    }--i;
-    split();
+    if (i <= 0) {i = bankLength;} --i;
+    split(); combosnd();
 }
 
 function split() {
@@ -50,26 +42,15 @@ function split() {
     let q = someString.substr(0, index);
     let a = someString.substr(index + 1);
     question.innerHTML = q;  answer.innerHTML = a;
-    t = 0;
-    toggle();
+    t = 0;  toggle();
     bar.value = i + 1;
-    f = 7;
-    flashcontrol = setInterval(flashenglish, 100);
-    success.play();
+    f = 7; flashcontrol = setInterval(flashenglish, 100);
 }
 
 function toggle() {
     answer.style.color = (t = t ^ 1) ? "white" : "blue";
 }
-
-function clicktoggle() {
-    toggle();
-    idk.play();
-}
-
-
-var f;
-var flashcontrol;
+function clicktoggle(){toggle();hint.play();}
 
 function flashenglish() {
     --f;
@@ -77,8 +58,10 @@ function flashenglish() {
     question.style.color = (f % 2) ? "white" : "purple";
     if (f < 1) {
         clearTimeout(flashcontrol);
-        blinkSound.play();
+        //blinkSound.play();
         question.style.backgroundColor = "white";
         question.style.color = "black";
     }
 }
+
+function combosnd(){btnsnd.play(); blinkSound.play();}
