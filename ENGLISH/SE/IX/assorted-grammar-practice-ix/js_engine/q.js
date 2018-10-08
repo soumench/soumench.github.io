@@ -39,9 +39,9 @@ var bank = [
     
     ,"He became excited.<br>(Rewrite using noun form of 'excited')~He was filled with excitement."
     
-    ,"He uttered a joyful scream.<br>(Use adverb form of 'joyful',)~He screamed joyfully."
+    ,"He uttered a joyful scream.<br>(Use adverb form of 'joyful'.)~He screamed joyfully."
     
-    ,"I had neither food nor clothes.<br>(to affiemative )~ I was without food and clothes."
+    ,"I had neither food nor clothes.<br>(to affirmative )~ I was without food and clothes."
     
     ,"He is a happy man.<br>(to complex)~ He is a man who is happy."
     
