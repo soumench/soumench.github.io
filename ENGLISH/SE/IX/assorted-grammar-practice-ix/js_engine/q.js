@@ -49,7 +49,7 @@ var bank = [
     
     ,"Everybody loves his motherland.<br>(to interrogative)~Who does not love his motherland?"
     
-    ,"You can cry me a river. I won't allow it.<br>(Join.)~You can cry me a river but i won't allow it."
+    ,"You can cry me a river. I won't allow it.<br>(Join.)~You can cry me a river but I won't allow it."
     
     ,"As soon as he reached home, his dog hugged him.<br>(to negative)~ No sooner had he reached home than his dog hugged him."
             
