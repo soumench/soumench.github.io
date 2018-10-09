@@ -40,7 +40,7 @@ const qa = [
 			16,"Tell me the synonym of the following phrase.<br>'a person who plants seeds'", "A person who plants seeds is called a sower.",
     
     
-			17,"The dancer and the musician _____(are/is) great friends.<br>(Which one is correct?)","The dancer and the musician <u>are<u/>  great friends",
+			17,"The dancer and the musician _____(are/is) great friends.<br>(Which one is correct?)","The dancer and the musician <u>are</u>  great friends",
     
     
 			18,"Neither Raja nor Rani ____(were / was) invited to the party.(Find out the correct option.)", "Neither Raja nor Rani <u> was </u> invited to the party.",
