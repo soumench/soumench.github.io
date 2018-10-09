@@ -14,7 +14,7 @@ const qa = [
             7,"Okay, tell me the opposite of 'start'.", "It can  be either 'finish' or 'end'.",
     
     
-			8,"My cat is hiding _____ sofa.<br>(Fill in the blank.)", "My cat is hiding <u>under or behind</u> the sofa.",
+			8,"My cat is hiding _____ sofa.<br>(Fill in the blank.)", "My cat is hiding <u>under</u> or <u>behind</u> the sofa.",
     
     
 			9,"The earth _____ (moves / move) round the sun.<br>(Fill in the blank with the correct option.)","The earth <u>moves</u> round the sun.",
@@ -35,7 +35,7 @@ const qa = [
 			14, "Make a meaningful sentence with 'precious'.","I am very <i>precious</i> to my parents.",
     
     
-			15,"My friend was not well.<br>(What type of sentence is it?.)", "It is a negative sentence.",
+			15,"My friend was not well.<br>(What type of sentence is it?)", "It is a negative sentence.",
     
 			16,"Tell me the synonym of the following phrase.<br>'a person who plants seeds'", "A person who plants seeds is called a sower.",
     
@@ -46,7 +46,7 @@ const qa = [
 			18,"Neither Raja nor Rani ____(were / was) invited to the party.(Find out the correct option.)", "Neither Raja nor Rani <u> was </u> invited to the party.",
     
     
-			19,"I am neither a poet <u>or</u> a novelist.<br>(Correct the error.)","I am neither a poet nor a novelist.",
+			19,"I am neither a poet <u>or</u> a novelist.<br>(Correct the error.)","I am neither a poet <u>nor</u> a novelist.",
     
     
 			20,"My mother spent many _____(sleep) nights when I was unwell.<br>(Add a suitable prefix or suffix.)","My mother spent many <i>sleepless</i> nights when I was unwell.",
