@@ -21,7 +21,7 @@ var bank = [
     
     ,"Man is mortal.<br>(to Negative Sentence)~No man is immortal."
     
-    ,"Nikola Tesla was a great scientist.<br>(to Interrogative sentence)~Was not Nikola Tesla a great scientist?"
+    ,"Nikola Tesla was a great inventor.<br>(to Interrogative sentence)~Was not Nikola Tesla a great inventor?"
     
     ,"Please obey your parents.<br>(to Assertive sentence)~You are earnestly advised to obey your parents."
     
