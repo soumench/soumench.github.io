@@ -5,7 +5,7 @@ const qa = [
     
             3,"\"Where are you going?\", she asked.<br>(Change the mode of narration) ", "She asked me where I was going.",
         
-            4,"She said,\"Are you hungry?\"<br>(Change the mode of narration)", "She asked the boy if he was hungry.",
+            4,"She said to the boy,\"Are you hungry?\"<br>(Change the mode of narration)", "She asked the boy if he was hungry.",
     
             5,"I wish I were going to Mussoorie.<br> I love the hills.<br>(To complex.)", "I wish I were going to Mussoorie because I love the hills.",
         
@@ -17,7 +17,7 @@ const qa = [
 			8,"I was the most important man.<br>(Rewrite the sentence using positive degree of ‘important’.)", "No other man was as important as I was.",
     
     
-			9,"Wash your face.<br>(Change the voice.) ","Let your face be washed.",
+			9,"Wash your face.<br>(Change the voice.)","Let your face be washed.",
     
     
 			10,"A soldier, very young, lies open-mouthed.<br> (Rewrite as a complex sentence.)", "A soldier who is very young, lies open-mouthed.",
