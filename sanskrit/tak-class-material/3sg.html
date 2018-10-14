@@ -40,7 +40,7 @@
             background-color: aqua;
         }
         
-        .doer{border: 2px solid green; /*height: 2.5em; width: 15em;*/}
+        .doer,.verb,.obj{border: 2px solid green; /*height: 2.5em; width: 15em;*/}
         .txtdisplay{width: 20em;}
     </style>
 </head>
@@ -59,40 +59,41 @@
         </tr>
         
         <tr>
-            <td><input type="button" class="doer" name="button" id="1" value="kapis >> monkey" onclick="getRed(this.id)"></td>
-            <td>tarati >> crosses </td>
-            <td>nadiim >> river</td>
+            <td><input type="button" class="doer" name="button" id="1" value="kapis > monkey" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="7" value="tarati > crosses" onclick="getRed(this.id)"> </td>
+            <td><input type="button" class="obj" name="button" id="8" value="nadiim > river" onclick="getRed(this.id)"> </td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="2" value="rAmas >> Rama" onclick="getRed(this.id)"></td>
-            <td>smarati >> remembers</td>
-            <td>mArgam >> way</td>
+            <td><input type="button" class="doer" name="button" id="2" value="rAmas > Rama" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="9" value="smarati > remembers" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="10" value="mArgam > way" onclick="getRed(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="3" value="kAkas >> crow" onclick="getRed(this.id)"></td>
-            <td>yAti >> goes</td>
-            <td>sAgaram >> sea</td>
+            <td><input type="button" class="doer" name="button" id="3" value="kAkas > crow" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="11" value="yAti > goes" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="12" value="sAgaram > sea" onclick="getRed(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="4" value="kRSNazakunis >> crow" onclick="getRed(this.id)"></td>
-            <td>gacchati >> goes</td>
-            <td>vanam >> woods</td>
+            <td><input type="button" class="doer" name="button" id="4" value="kRSNazakunis > crow" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="13" value="gacchati > goes" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="14" value="vanam > woods" onclick="getRed(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="5" value="kukkuTas >> rooster" onclick="getRed(this.id)"></td>
-            <td>pazyati >> sees</td>
-            <td>laGkAm >> Langka, a country</td>
+            <td><input type="button" class="doer" name="button" id="5" value="kukkuTas > rooster" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="15" value="pazyati > sees" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="16" value="laGkAm > Langka, a country" onclick="getRed(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="6" value="rAvaNas" onclick="getRed(this.id)"></td>
-            <td>icchati >> wants</td>
-            <td>gRham >> house</td>
+            <td><input type="button" class="doer" name="button" id="6" value="rAvaNas > Ravana" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="17" value="icchati > wants" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="18" value="gRham >> house" onclick="getRed(this.id)"></td>
         </tr>
     </table>
     <p>
         <span id="bnsentence" class="txtdisplay">**********</span><br>
-        <span id="sasentence" class="txtdisplay">**********</span><input type="button" name="button" value="SHUFFLE"><br>
-        <span id="ensentence" class="txtdisplay">**********</span>
+        <span id="sasentence" class="txtdisplay">**********</span><br>
+        <span id="ensentence" class="txtdisplay">**********</span><br>
+        <input type="button" name="button" value="SHUFFLE">
     </p>    
     <p>
     <a href="sanskritindex.html" target="_self">Index</a>
@@ -100,14 +101,29 @@
     <span id="trace">test output here</span>
     <script>
         function getRed(clicked_id){
-            const btnslist = ["1","2","3","4","5","6"];
-            let i=0;
-            while(i<=5){
-                e(btnslist[i]).style.borderColor="#fff";
+            let i=1;
+            while(i<=18){
+                e(i.toString()).style.borderColor="#fff";
                 e("trace").innerHTML=i;
                 ++i;
             }
             e(clicked_id).style.borderColor = "red";
+            
+            let doerString = e(clicked_id).value;
+            let index = doerString.indexOf(">");
+            let doerSanskrit = doerString.substr(0, index);
+            let doerEnglish = doerString.substr(index + 1);
+    
+            e("sasentence").innerHTML = doerSanskrit;
+            e("ensentence").innerHTML = doerEnglish;
+        }
+        
+        
+        
+        function split(string, separator){
+            let index = doerString.indexOf(">");
+            let sanskrit = doerString.substr(0, index);
+            let english = doerString.substr(index + 1);
         }
         function e(id){return document.getElementById(id);}   
     </script>
