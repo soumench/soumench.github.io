@@ -40,22 +40,26 @@
             background-color: aqua;
         }
         
-        .doer,.verb,.obj{border: 2px solid green; /*height: 2.5em; width: 15em;*/}
+        /*.doer,.verb,.obj{border: 2px solid green;*/ /*height: 2.5em; width: 15em;*/}
+        .erase{border: 2px solid red;}
         .txtdisplay{width: 20em;}
     </style>
 </head>
 
 <body>
-    <h1>3rd person singular number</h1>
+    <h3>3rd person singular number</h3>
+    <p>
+    <span id="bnsentence" class="txtdisplay">**********</span><br>
+    <span id="sasentence" class="txtdisplay">**********</span><br>
+    <span id="ensentence" class="txtdisplay">**********</span><br>
+    <input type="button" name="button" value="SHUFFLE">
+    </p> 
     
-    <!--<table style="width:100%">-->
     <table>
-        <caption><!--Third Person Singular Number--></caption>
         <tr id="heading">
-            <!--<th rowspan="8">Third Person <br>-----<br> Singular Number</th>-->
-            <th>Doer<br>(kartR)</th>
+            <th>Doer (kartR)</th>
             <th>verb</th>
-            <th>Object<br>(karma)</th>
+            <th>Object (karma)</th>
         </tr>
         
         <tr>
@@ -89,17 +93,13 @@
             <td><input type="button" class="obj" name="button" id="18" value="gRham > house" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="" value="Erase" onclick="eraseDoer(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="" value="Erase" onclick="eraseVerb(this.id)"></td>
-            <td><input type="button" class="obj" name="button" id="" value="Erase" onclick="eraseObj(this.id)"></td>
+            <td><input type="button" class="erase" name="button" id="" value="Erase" onclick="eraseDoer(this.id)"></td>
+            <td></td>
+            <!--<td><input type="button" class="erase" name="button" id="" value="Erase" onclick="eraseVerb(this.id)"></td>-->
+            <td><input type="button" class="erase" name="button" id="" value="Erase" onclick="eraseObj(this.id)"></td>
         </tr>
     </table>
-    <p>
-        <span id="bnsentence" class="txtdisplay">**********</span><br>
-        <span id="sasentence" class="txtdisplay">**********</span><br>
-        <span id="ensentence" class="txtdisplay">**********</span><br>
-        <input type="button" name="button" value="SHUFFLE">
-    </p>    
+       
     <p>
     <a href="sanskritindex.html" target="_self">Index</a>
     </p>
@@ -139,12 +139,7 @@
         }
         
         function getObj(clicked_id){
-            let i=13;
-            while(i<=18){
-                e(i.toString()).style.borderColor="#fff";
-                e("trace").innerHTML=i;
-                ++i;
-            }
+            makeBtnWhite(objBtnStart, objBtnEnd);
             e(clicked_id).style.borderColor = "red";
                         
             let doerString = e(clicked_id).value;
@@ -156,12 +151,7 @@
         }
         
         function getVerb(clicked_id){
-           let i=7;
-            while(i<=12){
-                e(i.toString()).style.borderColor="#fff";
-                e("trace").innerHTML=i;
-                ++i;
-            }
+            makeBtnWhite(verbBtnStart, verbBtnEnd);
             e(clicked_id).style.borderColor = "red";
                         
             let doerString = e(clicked_id).value;
@@ -174,12 +164,7 @@
         
         
         function getDoer(clicked_id){
-            let i=1;
-            while(i<=6){
-                e(i.toString()).style.borderColor="#fff";
-                e("trace").innerHTML=i;
-                ++i;
-            }
+            makeBtnWhite(doerBtnStart, doerBtnEnd);
             e(clicked_id).style.borderColor = "red";
             
             let doerString = e(clicked_id).value;
