@@ -108,17 +108,33 @@
         const sas = e("sasentence");
         const ens = e("ensentence");
         let doerSanskrit=doerEnglish=verbSanskrit=verbEnglish=objSanskrit=objEnglish="";
+        const doerBtnStart=1; const doerBtnEnd =6;
+        const verbBtnStart=7; const verbBtnEnd =12;
+        const objBtnStart=13; const objBtnEnd =18;
+        
+        
+        function makeBtnWhite(btnStart, btnEnd){
+            let i=btnStart;
+            while(i<=btnEnd){
+                e(i.toString()).style.borderColor="#fff";
+                e("trace").innerHTML=i;
+                ++i;
+            }
+        }
         
         function eraseDoer(){
             doerSanskrit = doerEnglish ="";
+            makeBtnWhite(doerBtnStart, doerBtnEnd);
             output();
         }
         function eraseVerb(){
             verbSanskrit = verbEnglish ="";
+            makeBtnWhite(verbBtnStart, verbBtnEnd);
             output();
         }
         function eraseObj(){
             objSanskrit = objEnglish ="";
+            makeBtnWhite(objBtnStart, objBtnEnd);
             output();
         }
         
