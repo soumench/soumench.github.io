@@ -43,6 +43,7 @@
         .doer,.verb,.obj{border: 3px solid white; /*height: 2.5em; width: 15em;*/}
         .erase{border: 3px solid green;}
         .txtdisplay{width: 20em;}
+        #sandhibtn{border: 3px solid red;}
     </style>
 </head>
 
@@ -53,7 +54,7 @@
     <span id="sasentence" class="txtdisplay">**********</span><br>
     <span id="ensentence" class="txtdisplay">**********</span><br>
     <input type="button" name="button" value="SHUFFLE">
-    <input type="button" name="button" id="sandhibtn" value="Sandhi On/Off" onclick=""> 
+    <input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi(this.id)"> 
     </p> 
     
     <table>
@@ -112,6 +113,19 @@
         const doerBtnStart=1; const doerBtnEnd =6;
         const verbBtnStart=7; const verbBtnEnd =12;
         const objBtnStart=13; const objBtnEnd =18;
+        
+        let t =0;
+        
+        
+        function sandhi(clicked_id){
+            let bid = e(clicked_id);
+            /*let sval; let col;*/
+            bid.style.borderColor=(t=t^1)?"green":"red";
+            /*if(t=t^1){ sval="Sandhi On"; col = "green";}
+            else {sval="Sandhi Off"; col = "red";}
+            bid.value=sval; bid.style.borderColor=col;*/
+                  
+        }
         
         
         function makeBtnWhite(btnStart, btnEnd){
