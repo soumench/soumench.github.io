@@ -59,34 +59,34 @@
         </tr>
         
         <tr>
-            <td><input type="button" class="doer" name="button" id="1" value="kapis > monkey" onclick="getRed(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="7" value="tarati > crosses" onclick="getRed(this.id)"> </td>
-            <td><input type="button" class="obj" name="button" id="8" value="nadiim > river" onclick="getRed(this.id)"> </td>
+            <td><input type="button" class="doer" name="button" id="1" value="kapis > monkey" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="7" value="tarati > crosses" onclick="getVerb(this.id)"> </td>
+            <td><input type="button" class="obj" name="button" id="13" value="nadiim > river" onclick="getObj(this.id)"> </td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="2" value="rAmas > Rama" onclick="getRed(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="9" value="smarati > remembers" onclick="getRed(this.id)"></td>
-            <td><input type="button" class="obj" name="button" id="10" value="mArgam > way" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="doer" name="button" id="2" value="rAmas > Rama" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="8" value="smarati > remembers" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="14" value="mArgam > way" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="3" value="kAkas > crow" onclick="getRed(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="11" value="yAti > goes" onclick="getRed(this.id)"></td>
-            <td><input type="button" class="obj" name="button" id="12" value="sAgaram > sea" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="doer" name="button" id="3" value="kAkas > crow" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="9" value="yAti > goes" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="15" value="sAgaram > sea" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="4" value="kRSNazakunis > crow" onclick="getRed(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="13" value="gacchati > goes" onclick="getRed(this.id)"></td>
-            <td><input type="button" class="obj" name="button" id="14" value="vanam > woods" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="doer" name="button" id="4" value="kRSNazakunis > crow" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="10" value="gacchati > goes" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="16" value="vanam > woods" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="5" value="kukkuTas > rooster" onclick="getRed(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="15" value="pazyati > sees" onclick="getRed(this.id)"></td>
-            <td><input type="button" class="obj" name="button" id="16" value="laGkAm > Langka, a country" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="doer" name="button" id="5" value="kukkuTas > rooster" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="11" value="pazyati > sees" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="17" value="laGkAm > Langka, a country" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="6" value="rAvaNas > Ravana" onclick="getRed(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="17" value="icchati > wants" onclick="getRed(this.id)"></td>
-            <td><input type="button" class="obj" name="button" id="18" value="gRham >> house" onclick="getRed(this.id)"></td>
+            <td><input type="button" class="doer" name="button" id="6" value="rAvaNas > Ravana" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="12" value="icchati > wants" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="18" value="gRham > house" onclick="getObj(this.id)"></td>
         </tr>
     </table>
     <p>
@@ -100,9 +100,48 @@
     </p>
     <span id="trace">test output here</span>
     <script>
-        function getRed(clicked_id){
-            let i=1;
+        const sas = e("sasentence");
+        const ens = e("ensentence");
+        let doerSanskrit=doerEnglish=verbSanskrit=verbEnglish=objSanskrit=objEnglish="";
+        
+        function getObj(clicked_id){
+            let i=13;
             while(i<=18){
+                e(i.toString()).style.borderColor="#fff";
+                e("trace").innerHTML=i;
+                ++i;
+            }
+            e(clicked_id).style.borderColor = "red";
+                        
+            let doerString = e(clicked_id).value;
+            let index = doerString.indexOf(">");
+            objSanskrit = doerString.substr(0, index);
+            objEnglish = doerString.substr(index + 1);
+            
+            output();
+        }
+        
+        function getVerb(clicked_id){
+           let i=7;
+            while(i<=12){
+                e(i.toString()).style.borderColor="#fff";
+                e("trace").innerHTML=i;
+                ++i;
+            }
+            e(clicked_id).style.borderColor = "red";
+                        
+            let doerString = e(clicked_id).value;
+            let index = doerString.indexOf(">");
+            verbSanskrit = doerString.substr(0, index);
+            verbEnglish = doerString.substr(index + 1);
+            
+            output();
+        }
+        
+        
+        function getDoer(clicked_id){
+            let i=1;
+            while(i<=6){
                 e(i.toString()).style.borderColor="#fff";
                 e("trace").innerHTML=i;
                 ++i;
@@ -111,15 +150,17 @@
             
             let doerString = e(clicked_id).value;
             let index = doerString.indexOf(">");
-            let doerSanskrit = doerString.substr(0, index);
-            let doerEnglish = doerString.substr(index + 1);
-    
-            e("sasentence").innerHTML = doerSanskrit;
-            e("ensentence").innerHTML = doerEnglish;
+            doerSanskrit = doerString.substr(0, index);
+            doerEnglish = doerString.substr(index + 1);
+            
+            output();
         }
         
         
-        
+        function output(){
+            sas.innerHTML = doerSanskrit+ " " + verbSanskrit + " " + objSanskrit;
+            ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
+        }
         function split(string, separator){
             let index = doerString.indexOf(">");
             let sanskrit = doerString.substr(0, index);
