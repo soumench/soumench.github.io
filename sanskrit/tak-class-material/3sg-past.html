@@ -147,21 +147,24 @@
      /* sas.innerHTML=s;*/
          
     
-       sas.innerHTML = sas.innerHTML .
-          replace(/as\s+a/g,"o '")    .
-          replace(/as\s+([nmvdgybD])/g,"o $1")    .
-          replace(/s\s+([nmvdgybD])/g,"r $1")  .
+        sas.innerHTML = sas.innerHTML .
+          replace(/as\s+a/g,"o '").
+          replace(/as\s+([^eiouAIUR])/g,"a:: $1").
+          replace(/as\s+([nmvdgybDjh])/g,"o $1")    .
+          replace(/s\s+([pk]|ts)/g,"H $1")  .
+          replace(/s\s+([zc])/g,"z $1")  .
+          replace(/s\s+([ts])/g,"s $1")  .
+          replace(/s\s+([TS])/g,"S $1")  .          
+          replace(/s\s+([nmvdgybDaeiouAIUR])/g,"r $1")  .
           replace(/t\s+([vdgyrlb])/g,"d $1")  .
           replace(/t\s+([nm])/g,"n $1")  .
           replace(/t\s+h/g,"d dh")  .
-          replace(/s\s+([pk]|ts)/g,"H $1")  .
           replace(/m\s+([^aeiouAIUR])/g,"M $1").
           replace(/i\s+i/gi,"I $1").
           replace(/a\s+a/gi,"A $1").
           replace(/u\s+u/gi,"U $1").
           replace(/i\s+([^aeouAUR])/g,"y $1").
           replace(/u\s+([^aeoiAIR])/g,"v $1").
-          replace(/as\s+([^eiouAIUR])/g,"a:: $1").
           replace(/s\s+$/,"H")
           ;
     }
