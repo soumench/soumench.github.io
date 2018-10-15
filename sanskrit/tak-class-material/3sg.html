@@ -130,10 +130,18 @@
             bid.value=sval; bid.style.borderColor=col;*/
             
       var s=sas.innerHTML;
-      s=s.
+      /*s=s.
       replace(/as ([nmvdgy])/g,"o $2")      .
       replace(/s ([nmvdg])/g,"r $1")      .
       replace(/m ([^aeiouAIUR])/g,"M $1")      .replace(/s$/,"H")
+      ;*/
+      s=s.
+      replace(/as\s+a/g,"o '")    .
+      replace(/as\s+([nmvdgy])/g,"o $1")    .
+      replace(/s\s+([nmvdgy])/g,"r $1")  .
+      replace(/s\s+([pk]|ts)/g,"H $1")  .
+      replace(/m\s+([^aeiouAIUR])/g,"M $1").
+      replace(/s\s+$/,"H")
       ;
       sas.innerHTML=s;
          
