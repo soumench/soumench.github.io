@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3rd person singular number - past tense</title>
+    <style>
+        body{background-color: rgba(185, 22, 22, 0.55);}
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+           /* margin-left: 225px;
+            margin-right: auto;*/
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+
+        th,h1 {
+            text-align: left;
+        }
+
+        table {
+            border-spacing: 5px;
+        }
+
+        body {
+            text-align: left;
+        }
+
+        #heading {
+            background-color: yellowgreen;
+        }
+
+        #todo {
+            background-color: aqua;
+        }
+        
+        .doer,.verb,.obj{border: 3px solid white; /*height: 2.5em; width: 15em;*/}
+        .erase{border: 3px solid green;}
+        .txtdisplay{width: 20em;}
+        #sandhibtn{border: 3px solid red;}
+    </style>
+</head>
+
+<body>
+    <h3>3rd person singular number - past tense</h3>
+    <p>
+    <span id="bnsentence" class="txtdisplay">**********</span><br>
+    <span id="sasentence" class="txtdisplay">**********</span><br>
+    <span id="ensentence" class="txtdisplay">**********</span><br>
+    <input type="button" name="button" value="SHUFFLE">
+    <input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi(this.id)"> 
+    </p> 
+    
+    <table>
+        <tr id="heading">
+            <th>Doer (kartR)</th>
+            <th>verb</th>
+            <th>Object (karma)</th>
+        </tr>
+        
+        <tr>
+            <td><input type="button" class="doer" name="button" id="1" value="kapis > monkey" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="7" value="atarat > crossed" onclick="getVerb(this.id)"> </td>
+            <td><input type="button" class="obj" name="button" id="13" value="nadiim > river" onclick="getObj(this.id)"> </td>
+        </tr>
+        <tr>
+            <td><input type="button" class="doer" name="button" id="2" value="rAmas > Rama" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="8" value=" asmarat > remembered" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="14" value="mArgam > road" onclick="getObj(this.id)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="doer" name="button" id="3" value="kAkas > crow" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="9" value="ayAt > went" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="15" value="sAgaram > sea" onclick="getObj(this.id)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="doer" name="button" id="4" value="hayas > horse" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="10" value="agacchat > went" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="16" value="vanam > forest" onclick="getObj(this.id)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="doer" name="button" id="5" value="kukkuTas > chicken" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="11" value="apazyat > saw" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="17" value="dviipam > island" onclick="getObj(this.id)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="doer" name="button" id="6" value="rAvaNas > Ravana" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" name="button" id="12" value="aicchat > wanted" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" name="button" id="18" value="gRham > house" onclick="getObj(this.id)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="erase" name="button" id="" value="Erase" onclick="eraseDoer(this.id)"></td>
+            <td></td>
+            <!--<td><input type="button" class="erase" name="button" id="" value="Erase" onclick="eraseVerb(this.id)"></td>-->
+            <td><input type="button" class="erase" name="button" id="" value="Erase" onclick="eraseObj(this.id)"></td>
+        </tr>
+    </table>
+       
+    <p>
+    <a href="sanskritindex.html" target="_self">Index</a>
+    </p>
+    <span id="trace">test output here</span>
+    <script>
+        const sas = e("sasentence");
+        const ens = e("ensentence");
+        let doerSanskrit=doerEnglish=verbSanskrit=verbEnglish=objSanskrit=objEnglish="";
+        const doerBtnStart=1; const doerBtnEnd =6;
+        const verbBtnStart=7; const verbBtnEnd =12;
+        const objBtnStart=13; const objBtnEnd =18;
+        
+        let t =0;
+        
+        
+        function sandhi(clicked_id){
+            let bid = e(clicked_id);
+            /*let sval; let col;*/
+            bid.style.borderColor=(t=t^1)?"green":"red";
+            /*if(t=t^1){ sval="Sandhi On"; col = "green";}
+            else {sval="Sandhi Off"; col = "red";}
+            bid.value=sval; bid.style.borderColor=col;*/
+                  
+        }
+        
+        
+        function makeBtnWhite(btnStart, btnEnd){
+            let i=btnStart;
+            while(i<=btnEnd){
+                e(i.toString()).style.borderColor="#fff";
+                e("trace").innerHTML=i;
+                ++i;
+            }
+        }
+        
+        function eraseDoer(){
+            doerSanskrit = doerEnglish ="";
+            makeBtnWhite(doerBtnStart, doerBtnEnd);
+            output();
+        }
+        function eraseVerb(){
+            verbSanskrit = verbEnglish ="";
+            makeBtnWhite(verbBtnStart, verbBtnEnd);
+            output();
+        }
+        function eraseObj(){
+            objSanskrit = objEnglish ="";
+            makeBtnWhite(objBtnStart, objBtnEnd);
+            output();
+        }
+        
+        function getObj(clicked_id){
+            makeBtnWhite(objBtnStart, objBtnEnd);
+            e(clicked_id).style.borderColor = "red";
+                        
+            let doerString = e(clicked_id).value;
+            let index = doerString.indexOf(">");
+            objSanskrit = doerString.substr(0, index);
+            objEnglish = doerString.substr(index + 1);
+            
+            output();
+        }
+        
+        function getVerb(clicked_id){
+            makeBtnWhite(verbBtnStart, verbBtnEnd);
+            e(clicked_id).style.borderColor = "red";
+                        
+            let doerString = e(clicked_id).value;
+            let index = doerString.indexOf(">");
+            verbSanskrit = doerString.substr(0, index);
+            verbEnglish = doerString.substr(index + 1);
+            
+            output();
+        }
+        
+        
+        function getDoer(clicked_id){
+            makeBtnWhite(doerBtnStart, doerBtnEnd);
+            e(clicked_id).style.borderColor = "red";
+            
+            let doerString = e(clicked_id).value;
+            let index = doerString.indexOf(">");
+            doerSanskrit = doerString.substr(0, index);
+            doerEnglish = doerString.substr(index + 1);
+            
+            output();
+        }
+        
+        
+        function output(){
+            sas.innerHTML = doerSanskrit+ " " + verbSanskrit + " " + objSanskrit;
+            ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
+        }
+        function split(string, separator){
+            let index = doerString.indexOf(">");
+            let sanskrit = doerString.substr(0, index);
+            let english = doerString.substr(index + 1);
+        }
+        function e(id){return document.getElementById(id);}   
+    </script>
+</body>
+
+</html>
