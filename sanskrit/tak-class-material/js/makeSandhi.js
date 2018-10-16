@@ -31,5 +31,5 @@
           replace(/u u/gi,"U").
           replace(/[Ii] ([aeouAUR])/g,"y $1").
           replace(/[uU] ([aeoiAIR])/g,"v $1").
-          replace(/s$/,"H");
+          replace(/[sr]$/,"H");
  }
