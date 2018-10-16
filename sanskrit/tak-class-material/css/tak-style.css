@@ -20,7 +20,10 @@ h1 {
     text-align: left;
 }
 
-th{background-color: white; color: grey;}
+th{
+    /*background-color: white; color: grey;*/
+    
+}
 
 table {
     border-spacing: 5px;
@@ -28,19 +31,25 @@ table {
 
 
 
-#heading {
+/*#heading {
     background-color: yellowgreen;
 }
 
 #todo {
     background-color: aqua;
-}
+}*/
 
 .doer,
 .verb,
 .obj {
     border: 3px solid white;
 }
+
+.doer:hover, .verb:hover, .obj:hover{
+    /*font-size: 90%;*/
+    background-color: yellow;
+}
+
 
 .erase {
     border: 3px solid green;
