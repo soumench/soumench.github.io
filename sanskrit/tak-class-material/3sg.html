@@ -12,15 +12,15 @@
 <body>
     <h3 id="header">3rd person singular number - Present Tense</h3>
     <p>
-    <span id="bnsentence" class="txtdisplay">**********</span><br>
+    
     <span id="sasentence" class="txtdisplay">**********</span><br>
     <span id="ensentence" class="txtdisplay">**********</span><br>
-    <input type="button" name="button" value="SHUFFLE" onclick="shuffle(perm)">
+   <!-- <input type="button" name="button" value="SHUFFLE" onclick="shuffle(perm)">-->
         
     <input type="button" id="sw1" value="X|" onclick="swap12()">
     <input type="button" id="sw2" value="|X" onclick="swap23()">    
     
-    <input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi(this.id)"> 
+    <input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi()"> 
     </p> 
     
     <table>
@@ -33,7 +33,7 @@
         <tr>
             <td><input type="button" class="doer" id="1" value="kapis > monkey" onclick="getDoer(this.id)"></td>
             <td><input type="button" class="verb" id="7" value="tarati > crosses" onclick="getVerb(this.id)"> </td>
-            <td><input type="button" class="obj" id="13" value="nadiim > river" onclick="getObj(this.id)"> </td>
+            <td><input type="button" class="obj" id="13" value="nadIm > river" onclick="getObj(this.id)"> </td>
         </tr>
         <tr>
             <td><input type="button" class="doer" id="2" value="rAmas > Rama" onclick="getDoer(this.id)"></td>
@@ -53,7 +53,7 @@
         <tr>
             <td><input type="button" class="doer" id="5" value="kukkuTas > chicken" onclick="getDoer(this.id)"></td>
             <td><input type="button" class="verb" id="11" value="pazyati > sees" onclick="getVerb(this.id)"></td>
-            <td><input type="button" class="obj" id="17" value="dviipam > island" onclick="getObj(this.id)"></td>
+            <td><input type="button" class="obj" id="17" value="dvIpam > island" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
             <td><input type="button" class="doer" id="6" value="rAvaNas > Ravana" onclick="getDoer(this.id)"></td>
@@ -93,17 +93,11 @@
         const verbBtnStart = 7; const verbBtnEnd = 12;
         const objBtnStart = 13; const objBtnEnd = 18;
 
-        let t = 0;
-
-        function sandhi(clicked_id) {
-            sas.innerHTML = makesandhi(sas.innerHTML);
-        }
-
+      
         function makeBtnWhite(btnStart, btnEnd) {
             let i = btnStart;
             while (i <= btnEnd) {
                 e(i.toString()).style.borderColor = "#fff";
-                /*e("trace").innerHTML = i;*/
                 ++i;
             }
         }
@@ -159,9 +153,7 @@
             
             
             e("trace1").innerHTML = doerString;
-           /* let se = split2(doerString);
-            doerSanskrit=se[0]; 
-            doerEnglish=se[1];*/
+           
             
             let index = doerString.indexOf(">");
             doerSanskrit = doerString.substr(0, index);
@@ -189,18 +181,6 @@
         function swap12(){ swap(perm,0,1);    output(); }
         
         function swap23(){swap(perm,1,2);    output();}
-
-        /*function output() {
-            var A = [doerSanskrit, verbSanskrit, objSanskrit];
-            sas.innerHTML = A[perm[0]] + " " + A[perm[1]] + " " + A[perm[2]];
-            ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
-        }*/
-
-        /*function split(string, separator) {
-            let index = doerString.indexOf(">");
-            let sanskrit = doerString.substr(0, index);
-            let english = doerString.substr(index + 1);
-        }*/        
     </script>
 </body>
 
