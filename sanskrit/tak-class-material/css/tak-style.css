@@ -67,7 +67,8 @@ table {
 .blue{color: blue;}
 
 #unsandhi,
-#sasentence,
-#ensentence{
+#sasentence
+{
     font-family: monospace, monospace;
+    font-weight: bolder;
 }
