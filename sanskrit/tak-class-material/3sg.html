@@ -79,6 +79,8 @@
         const title = "Third Person Singular Number - Present Tense";
         init();
         
+        var sandhion;
+        
         var perm = [0, 1, 2];
         const sas = e("sasentence");
         const ens = e("ensentence");
@@ -163,12 +165,28 @@
 
             output();
         }
+        
+         if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML);
+         function output(){
+            var A=[doerSanskrit , verbSanskrit , objSanskrit];
+            sas.innerHTML = A[perm[0]]+ " " + A[perm[1]] + " " + A[perm[2]];
+            ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
+            if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML); 
+        }
+        
+        function sandhi(){            
+            sandhion = ! sandhion;
+            const bid=e("sandhibtn");
+            bid.value= sandhion ?"Sandhi On":"Sandhi Off";  
+            bid.style.borderColor=sandhion ?"green":"red";            
+            output();
+        }
 
-        function output() {
+        /*function output() {
             var A = [doerSanskrit, verbSanskrit, objSanskrit];
             sas.innerHTML = A[perm[0]] + " " + A[perm[1]] + " " + A[perm[2]];
             ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
-        }
+        }*/
 
         /*function split(string, separator) {
             let index = doerString.indexOf(">");
