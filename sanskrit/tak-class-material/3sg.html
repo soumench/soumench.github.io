@@ -25,10 +25,10 @@
     </p> 
     
     <table>
-        <tr id="heading">
-            <th>Doer (kartR)</th>
-            <th>verb</th>
-            <th>Object (karma)</th>
+        <tr id="heading" >
+            <th style="background-color: red; color: white;">Doer (kartR)</th>
+            <th style="background-color: green; color: white;">verb</th>
+            <th style="background-color: blue; color: white;">Object (karma)</th>
         </tr>
         
         <tr>
@@ -71,8 +71,8 @@
     <p>
     <a href="sanskritindex.html" target="_self">Index</a>
     </p>
-    <span id="trace1">test output here</span><br>
-    <span id="trace2">test output here</span>
+    <span id="trace1">test output here</span>
+    <p id="trace2">test output here</p>
     
     <script src="js/makeSandhi.js"></script>
     <script src="js/shuffle.js"></script>
@@ -83,6 +83,7 @@
         
         const title = "Third Person Singular Number - Present Tense";
         init();
+        const etrace2 = e("trace2");
         
         var sandhion;
         
@@ -102,28 +103,30 @@
                 ++i;
             }
         }
+        
+        
 
         function eraseDoer() {
             doerSanskrit = doerEnglish = "";
             makeBtnWhite(doerBtnStart, doerBtnEnd);
             output();
         }
-
         function eraseVerb() {
             verbSanskrit = verbEnglish = "";
             makeBtnWhite(verbBtnStart, verbBtnEnd);
             output();
         }
-
         function eraseObj() {
             objSanskrit = objEnglish = "";
             makeBtnWhite(objBtnStart, objBtnEnd);
             output();
         }
+        
+        
 
         function getObj(clicked_id) {
             makeBtnWhite(objBtnStart, objBtnEnd);
-            e(clicked_id).style.borderColor = "red";
+            e(clicked_id).style.borderColor = "blue";
 
             let doerString = e(clicked_id).value;
             let index = doerString.indexOf(">");
@@ -132,10 +135,9 @@
 
             output();
         }
-
         function getVerb(clicked_id) {
             makeBtnWhite(verbBtnStart, verbBtnEnd);
-            e(clicked_id).style.borderColor = "red";
+            e(clicked_id).style.borderColor = "green";
 
             let doerString = e(clicked_id).value;
             let index = doerString.indexOf(">");
@@ -144,8 +146,6 @@
 
             output();
         }
-
-
         function getDoer(clicked_id) {
             makeBtnWhite(doerBtnStart, doerBtnEnd);
             e(clicked_id).style.borderColor = "red";
@@ -163,13 +163,26 @@
             output();
         }
         
+        
+        
          if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML);
-         function output(){
+        
+        function output(){
+            var A=[doerSanskrit , verbSanskrit , objSanskrit];
+            var B=['<span class="red">'+doerSanskrit+"</span>", verbSanskrit , objSanskrit];
+            sas.innerHTML = A[perm[0]]+ " " + A[perm[1]] + " " + A[perm[2]];
+            ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
+            if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML); 
+            etrace2.innerHTML= B[perm[0]]+ " " + B[perm[1]] + " " + B[perm[2]];
+        }
+        
+        
+       /*  function output(){
             var A=[doerSanskrit , verbSanskrit , objSanskrit];
             sas.innerHTML = A[perm[0]]+ " " + A[perm[1]] + " " + A[perm[2]];
             ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
             if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML); 
-        }
+        }*/
         
         function sandhi(){            
             sandhion = ! sandhion;
@@ -181,7 +194,7 @@
         
         function swap12(){ swap(perm,0,1);    output(); }
         
-        function swap23(){swap(perm,1,2);    output();}
+        function swap23(){ swap(perm,1,2);    output(); }
     </script>
 </body>
 
