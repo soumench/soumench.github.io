@@ -65,3 +65,9 @@ table {
 .red{color: red;}
 .green{color: green;}
 .blue{color: blue;}
+
+#unsandhi,
+#sasentence,
+#ensentence{
+    font-family: monospace, monospace;
+}
