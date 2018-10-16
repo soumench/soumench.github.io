@@ -12,8 +12,9 @@
 
 <body>
     <h1 id="header">3rd person singular number - Present Tense</h1>
-    <p>
     
+    <p id="unsandhi">test output here</p>
+    <p>
     <span id="sasentence" class="txtdisplay">**********</span><br>
     <span id="ensentence" class="txtdisplay">**********</span><br>
    <!-- <input type="button" name="button" value="SHUFFLE" onclick="shuffle(perm)">-->
@@ -21,7 +22,7 @@
     <input type="button" id="sw1" value="X|" onclick="swap12()">
     <input type="button" id="sw2" value="|X" onclick="swap23()">    
     
-    <input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi()"> 
+    <!--<input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi()"> -->
     </p> 
     
     <table>
@@ -72,7 +73,7 @@
     Back to <a href="sanskritindex.html" target="_self">Index</a>
     </p>
     <!--<span id="trace1">test output here</span>-->
-    <p id="trace2">test output here</p>
+    
     
     <script src="js/makeSandhi.js"></script>
     <script src="js/shuffle.js"></script>
@@ -83,9 +84,9 @@
         
         const title = "Third Person Singular Number - Present Tense";
         init();
-        const etrace2 = e("trace2");
+        const etrace2 = e("unsandhi");
         
-        var sandhion;
+        var sandhion=true;
         
         var perm = [0, 1, 2];
         const sas = e("sasentence");
