@@ -16,6 +16,10 @@
     <span id="sasentence" class="txtdisplay">**********</span><br>
     <span id="ensentence" class="txtdisplay">**********</span><br>
     <input type="button" name="button" value="SHUFFLE" onclick="shuffle(perm)">
+        
+    <input type="button" id="sw1" value="X|" onclick="swap12()">
+    <input type="button" id="sw2" value="|X" onclick="swap23()">    
+    
     <input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi(this.id)"> 
     </p> 
     
@@ -42,7 +46,7 @@
             <td><input type="button" class="obj" id="15" value="sAgaram > sea" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" id="4" value="hayas > horse" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="doer" id="4" value="azvas > horse" onclick="getDoer(this.id)"></td>
             <td><input type="button" class="verb" id="10" value="gacchati > goes" onclick="getVerb(this.id)"></td>
             <td><input type="button" class="obj" id="16" value="vanam > forest" onclick="getObj(this.id)"></td>
         </tr>
@@ -181,6 +185,10 @@
             bid.style.borderColor=sandhion ?"green":"red";            
             output();
         }
+        
+        function swap12(){ swap(perm,0,1);    output(); }
+        
+        function swap23(){swap(perm,1,2);    output();}
 
         /*function output() {
             var A = [doerSanskrit, verbSanskrit, objSanskrit];
