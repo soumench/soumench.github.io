@@ -121,53 +121,21 @@
 
         
         
-        function sandhi(clicked_id){
-            let bid = e(clicked_id);
-            /*let sval; let col;*/
+      function sandhi(clicked_id){
+        let bid = e(clicked_id);
+        
             
-       //     bid.style.borderColor=(t=t^1)?"green":"red";
-       
-            /*if(t=t^1){ sval="Sandhi On"; col = "green";}
-            else {sval="Sandhi Off"; col = "red";}
-            bid.value=sval; bid.style.borderColor=col;*/
-            
-      var s=sas.innerHTML;
-      /*s=s.
-      replace(/as ([nmvdgy])/g,"o $2")      .
-      replace(/s ([nmvdg])/g,"r $1")      .
-      replace(/m ([^aeiouAIUR])/g,"M $1")      .replace(/s$/,"H")
-      ;*/
-      s=s.
-      replace(/as\s+a/g,"o '")    .
-      replace(/as\s+([nmvdgy])/g,"o $1")    .
-      replace(/s\s+([nmvdgy])/g,"r $1")  .
-      replace(/s\s+([pk]|ts)/g,"H $1")  .
-      replace(/m\s+([^aeiouAIUR])/g,"M $1").
-      replace(/s\s+$/,"H")
-      ;
-      /*sas.innerHTML=s;*/
-            
-       /*sas.innerHTML = sas.innerHTML .
-          replace(/as\s+a/g,"o '").
-          replace(/as\s+([^eiouAIUR])/g,"a:: $1").
-          replace(/as\s+([nmvdgybDjh])/g,"o $1")    .
+        var s=sas.innerHTML;
+      
+          s=s.
+          replace(/as\s+a/g,"o '")    .
+          replace(/as\s+([nmvdgy])/g,"o $1")    .
+          replace(/s\s+([nmvdgy])/g,"r $1")  .
           replace(/s\s+([pk]|ts)/g,"H $1")  .
-          replace(/s\s+([zc])/g,"z $1")  .
-          replace(/s\s+([ts])/g,"s $1")  .
-          replace(/s\s+([TS])/g,"S $1")  .          
-          replace(/s\s+([nmvdgybDaeiouAIUR])/g,"r $1")  .
-          replace(/t\s+([vdgyrlb])/g,"d $1")  .
-          replace(/t\s+([nm])/g,"n $1")  .
-          replace(/t\s+h/g,"d dh")  .
           replace(/m\s+([^aeiouAIUR])/g,"M $1").
-          replace(/i\s+i/gi,"I $1").
-          replace(/a\s+a/gi,"A $1").
-          replace(/u\s+u/gi,"U $1").
-          replace(/i\s+([^aeouAUR])/g,"y $1").
-          replace(/u\s+([^aeoiAIR])/g,"v $1").
           replace(/s\s+$/,"H")
-          ;*/
-          sas.innerHTML = makesandhi( sas.innerHTML );
+          ;
+        sas.innerHTML = makesandhi( sas.innerHTML );
          
     }
 
