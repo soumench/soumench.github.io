@@ -5,58 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>3rd person singular number - Past Tense</title>
-    <style>
-        body{background-color: rgba(220, 20, 60, 0.15);}
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-           /* margin-left: 225px;
-            margin-right: auto;*/
-        }
-
-        th,
-        td {
-            padding: 10px;
-        }
-
-        th,h1 {
-            text-align: left;
-        }
-
-        table {
-            border-spacing: 5px;
-        }
-
-        body {
-            text-align: left;
-        }
-
-        #heading {
-            background-color: yellowgreen;
-        }
-
-        #todo {
-            background-color: aqua;
-        }
-        
-        .doer,.verb,.obj{border: 3px solid white; /*height: 2.5em; width: 15em;*/}
-        .erase{border: 3px solid green;}
-        .txtdisplay{width: 20em;}
-        #sandhibtn{border: 3px solid red;}
-    </style>
+    <title>3rd person singular number - Present Tense</title>
+    <link rel="stylesheet" type="text/css" href="css/tak-style.css">
+    <style> body{background-color: rgba(255, 0, 0, 0.22);}</style>
 </head>
 
 <body>
-    <h3>3rd person singular number - Past Tense</h3>
+    <h3 id="header">3rd person singular number - Present Tense</h3>
     <p>
-    <span id="bnsentence" class="txtdisplay">**********</span><br>
+    
     <span id="sasentence" class="txtdisplay">**********</span><br>
     <span id="ensentence" class="txtdisplay">**********</span><br>
-    <input type="button" name="button" value="SHUFFLE" onclick="shuffle(perm)">
-    <input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi(this.id)"> 
+   <!-- <input type="button" name="button" value="SHUFFLE" onclick="shuffle(perm)">-->
+        
+    <input type="button" id="sw1" value="X|" onclick="swap12()">
+    <input type="button" id="sw2" value="|X" onclick="swap23()">    
+    
+    <input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi()"> 
     </p> 
     
     <table>
@@ -67,202 +32,159 @@
         </tr>
         
         <tr>
-            <td><input type="button" class="doer" name="button" id="1" value="kapis > monkey" onclick="getDoer(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="7" value="atarat > crossed" onclick="getVerb(this.id)"> </td>
-            <td><input type="button" class="obj" name="button" id="13" value="nadiim > river" onclick="getObj(this.id)"> </td>
+            <td><input type="button" class="doer" id="1" value="kapis > monkey" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="7" value="atarat > crossed" onclick="getVerb(this.id)"> </td>
+            <td><input type="button" class="obj" id="13" value="nadIm > river" onclick="getObj(this.id)"> </td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="2" value="rAmas > Rama" onclick="getDoer(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="8" value="asmarat > remembered" onclick="getVerb(this.id)"></td>
-            <td><input type="button" class="obj" name="button" id="14" value="mArgam > road" onclick="getObj(this.id)"></td>
+            <td><input type="button" class="doer" id="2" value="rAmas > Rama" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="8" value="asmarat > remembered" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" id="14" value="mArgam > road" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="3" value="kAkas > crow" onclick="getDoer(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="9" value="ayAt > went"  onclick="getVerb(this.id)"></td>
-            <td><input type="button" class="obj" name="button" id="15" value="sAgaram > sea" onclick="getObj(this.id)"></td>
+            <td><input type="button" class="doer" id="3" value="kAkas > crow" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="9" value="ayAt > went"  onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" id="15" value="sAgaram > sea" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="4" value="hayas > horse" onclick="getDoer(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="10" value="agacchat > went" onclick="getVerb(this.id)"></td>
-            <td><input type="button" class="obj" name="button" id="16" value="vanam > forest" onclick="getObj(this.id)"></td>
+            <td><input type="button" class="doer" id="4" value="azvas > horse" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="10" value="agacchat > went" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" id="16" value="vanam > forest" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="5" value="kukkuTas > chicken" onclick="getDoer(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="11" value="apazyat > saw" onclick="getVerb(this.id)"></td>
-            <td><input type="button" class="obj" name="button" id="17" value="dviipam > island" onclick="getObj(this.id)"></td>
+            <td><input type="button" class="doer" id="5" value="kukkuTas > chicken" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="11" value="apazyat > saw" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" id="17" value="dvIpam > island" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="doer" name="button" id="6" value="rAvaNas > Ravana" onclick="getDoer(this.id)"></td>
-            <td><input type="button" class="verb" name="button" id="12" value="aicchat > wanted" onclick="getVerb(this.id)"></td>
-            <td><input type="button" class="obj" name="button" id="18" value="gRham > house" onclick="getObj(this.id)"></td>
+            <td><input type="button" class="doer" id="6" value="rAvaNas > Ravana" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="12" value="aicchat > wanted" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" id="18" value="gRham > house" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="erase" name="button" id="" value="Erase" onclick="eraseDoer(this.id)"></td>
+            <td><input type="button" class="erase" id="" value="Erase" onclick="eraseDoer(this.id)"></td>
             <td></td>
-            <td><input type="button" class="erase" name="button" id="" value="Erase" onclick="eraseObj(this.id)"></td>
+            <td><input type="button" class="erase" id="" value="Erase" onclick="eraseObj(this.id)"></td>
         </tr>
     </table>
        
     <p>
     <a href="sanskritindex.html" target="_self">Index</a>
     </p>
-    <span id="trace">test output here</span>
+    <span id="trace1">test output here</span><br>
+    <span id="trace2">test output here</span>
+    
+    <script src="js/makeSandhi.js"></script>
+    <script src="js/shuffle.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/rename.js"></script>
+    <script src="js/shrink.js"></script>
     <script>
-        var perm=[0,1,2];
+        
+        const title = "Third Person Singular Number - Past Tense";
+        init();
+        
+        var sandhion;
+        
+        var perm = [0, 1, 2];
         const sas = e("sasentence");
         const ens = e("ensentence");
-        let doerSanskrit=doerEnglish=verbSanskrit=verbEnglish=objSanskrit=objEnglish="";
-        const doerBtnStart=1; const doerBtnEnd =6;
-        const verbBtnStart=7; const verbBtnEnd =12;
-        const objBtnStart=13; const objBtnEnd =18;
-        
-        let t =0;
+        let doerSanskrit = doerEnglish = verbSanskrit = verbEnglish = objSanskrit = objEnglish = "";
+        const doerBtnStart = 1; const doerBtnEnd = 6;
+        const verbBtnStart = 7; const verbBtnEnd = 12;
+        const objBtnStart = 13; const objBtnEnd = 18;
 
-        
-        
-     function sandhi(clicked_id){
-            let bid = e(clicked_id);
-            /*let sval; let col;*/
-            
-       //     bid.style.borderColor=(t=t^1)?"green":"red";
-       
-            /*if(t=t^1){ sval="Sandhi On"; col = "green";}
-            else {sval="Sandhi Off"; col = "red";}
-            bid.value=sval; bid.style.borderColor=col;*/
-            
-        var s=sas.innerHTML;
-      /*s=s.
-      replace(/as ([nmvdgy])/g,"o $2")      .
-      replace(/s ([nmvdg])/g,"r $1")      .
-      replace(/m ([^aeiouAIUR])/g,"M $1")      .replace(/s$/,"H")
-      ;*/
-      s=s.
-      replace(/as\s+a/g,"o '")    .
-      replace(/as\s+([nmvdgy])/g,"o $1")    .
-      replace(/s\s+([nmvdgy])/g,"r $1")  .
-      replace(/s\s+([pk]|ts)/g,"H $1")  .
-      replace(/m\s+([^aeiouAIUR])/g,"M $1").
-      replace(/s\s+$/,"H")
-      ;
-     /* sas.innerHTML=s;*/
-         
-    
-        sas.innerHTML = sas.innerHTML .
-          replace(/as\s+a/g,"o '").
-          replace(/as\s+([^eiouAIUR])/g,"a:: $1").
-          replace(/as\s+([nmvdgybDjh])/g,"o $1")    .
-          replace(/s\s+([pk]|ts)/g,"H $1")  .
-          replace(/s\s+([zc])/g,"z $1")  .
-          replace(/s\s+([ts])/g,"s $1")  .
-          replace(/s\s+([TS])/g,"S $1")  .          
-          replace(/s\s+([nmvdgybDaeiouAIUR])/g,"r $1")  .
-          replace(/t\s+([vdgyrlb])/g,"d $1")  .
-          replace(/t\s+([nm])/g,"n $1")  .
-          replace(/t\s+h/g,"d dh")  .
-          replace(/m\s+([^aeiouAIUR])/g,"M $1").
-          replace(/i\s+i/gi,"I $1").
-          replace(/a\s+a/gi,"A $1").
-          replace(/u\s+u/gi,"U $1").
-          replace(/i\s+([^aeouAUR])/g,"y $1").
-          replace(/u\s+([^aeoiAIR])/g,"v $1").
-          replace(/s\s+$/,"H")
-          ;
-    }
-        
-        function shuffle(array){            
-            var count = array.length, randomnumber;
-            while( count > 1 ){
-                randomnumber = Math.floor ( Math.random() * count-- ); 
-                if(randomnumber != count){
-                    swap(array,count,randomnumber);
-                }
-            }
-            
-            output();
-        }
-        
-        function swap(array, a, b){
-           var temp=array[a];
-           array[a]=array[b];
-           array[b]=temp;
-        }        
-        
-        function makeBtnWhite(btnStart, btnEnd){
-            let i=btnStart;
-            while(i<=btnEnd){
-                e(i.toString()).style.borderColor="#fff";
-                e("trace").innerHTML=i;
+      
+        function makeBtnWhite(btnStart, btnEnd) {
+            let i = btnStart;
+            while (i <= btnEnd) {
+                e(i.toString()).style.borderColor = "#fff";
                 ++i;
             }
         }
-        
-        function eraseDoer(){
-            doerSanskrit = doerEnglish ="";
+
+        function eraseDoer() {
+            doerSanskrit = doerEnglish = "";
             makeBtnWhite(doerBtnStart, doerBtnEnd);
             output();
         }
-        function eraseVerb(){
-            verbSanskrit = verbEnglish ="";
+
+        function eraseVerb() {
+            verbSanskrit = verbEnglish = "";
             makeBtnWhite(verbBtnStart, verbBtnEnd);
             output();
         }
-        function eraseObj(){
-            objSanskrit = objEnglish ="";
+
+        function eraseObj() {
+            objSanskrit = objEnglish = "";
             makeBtnWhite(objBtnStart, objBtnEnd);
             output();
         }
-        
-        function getObj(clicked_id){
+
+        function getObj(clicked_id) {
             makeBtnWhite(objBtnStart, objBtnEnd);
             e(clicked_id).style.borderColor = "red";
-                        
+
             let doerString = e(clicked_id).value;
             let index = doerString.indexOf(">");
             objSanskrit = doerString.substr(0, index);
             objEnglish = doerString.substr(index + 1);
-            
+
             output();
         }
-        
-        function getVerb(clicked_id){
+
+        function getVerb(clicked_id) {
             makeBtnWhite(verbBtnStart, verbBtnEnd);
             e(clicked_id).style.borderColor = "red";
-                        
+
             let doerString = e(clicked_id).value;
             let index = doerString.indexOf(">");
             verbSanskrit = doerString.substr(0, index);
             verbEnglish = doerString.substr(index + 1);
-            
+
             output();
         }
-        
-        
-        function getDoer(clicked_id){
+
+
+        function getDoer(clicked_id) {
             makeBtnWhite(doerBtnStart, doerBtnEnd);
             e(clicked_id).style.borderColor = "red";
-            
+
             let doerString = e(clicked_id).value;
+            
+            
+            e("trace1").innerHTML = doerString;
+           
+            
             let index = doerString.indexOf(">");
             doerSanskrit = doerString.substr(0, index);
             doerEnglish = doerString.substr(index + 1);
-            
+
             output();
         }
         
-        
-        function output(){
+         if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML);
+         function output(){
             var A=[doerSanskrit , verbSanskrit , objSanskrit];
             sas.innerHTML = A[perm[0]]+ " " + A[perm[1]] + " " + A[perm[2]];
             ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
+            if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML); 
         }
         
-        function split(string, separator){
-            let index = doerString.indexOf(">");
-            let sanskrit = doerString.substr(0, index);
-            let english = doerString.substr(index + 1);
+        function sandhi(){            
+            sandhion = ! sandhion;
+            const bid=e("sandhibtn");
+            bid.value= sandhion ?"Sandhi On":"Sandhi Off";  
+            bid.style.borderColor=sandhion ?"green":"red";            
+            output();
         }
-        function e(id){return document.getElementById(id);}   
+        
+        function swap12(){ swap(perm,0,1);    output(); }
+        
+        function swap23(){swap(perm,1,2);    output();}
     </script>
 </body>
 
 </html>
+
+<!--Concept and Coding: Professor Ganapti 2018-->
