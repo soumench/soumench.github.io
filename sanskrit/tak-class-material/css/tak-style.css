@@ -1,0 +1,50 @@
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+th,
+h1 {
+    text-align: left;
+}
+
+table {
+    border-spacing: 5px;
+}
+
+body {
+    text-align: left;
+}
+
+#heading {
+    background-color: yellowgreen;
+}
+
+#todo {
+    background-color: aqua;
+}
+
+.doer,
+.verb,
+.obj {
+    border: 3px solid white;
+}
+
+.erase {
+    border: 3px solid green;
+}
+
+.txtdisplay {
+    width: 20em;
+}
+
+#sandhibtn {
+    border: 3px solid red;
+}

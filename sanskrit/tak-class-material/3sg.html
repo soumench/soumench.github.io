@@ -6,50 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>3rd person singular number - Present Tense</title>
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-           /* margin-left: 225px;
-            margin-right: auto;*/
-        }
-
-        th,
-        td {
-            padding: 10px;
-        }
-
-        th,h1 {
-            text-align: left;
-        }
-
-        table {
-            border-spacing: 5px;
-        }
-
-        body {
-            text-align: left;
-        }
-
-        #heading {
-            background-color: yellowgreen;
-        }
-
-        #todo {
-            background-color: aqua;
-        }
-        
-        .doer,.verb,.obj{border: 3px solid white; /*height: 2.5em; width: 15em;*/}
-        .erase{border: 3px solid green;}
-        .txtdisplay{width: 20em;}
-        #sandhibtn{border: 3px solid red;}
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/tak-style.css">
 </head>
 
 <body>
-    <h3>3rd person singular number - Present Tense</h3>
+    <h3 id="header">3rd person singular number - Present Tense</h3>
     <p>
     <span id="bnsentence" class="txtdisplay">**********</span><br>
     <span id="sasentence" class="txtdisplay">**********</span><br>
@@ -105,106 +66,115 @@
     <p>
     <a href="sanskritindex.html" target="_self">Index</a>
     </p>
-    <span id="trace">test output here</span>
+    <span id="trace1">test output here</span><br>
+    <span id="trace2">test output here</span>
     
     <script src="js/makeSandhi.js"></script>
     <script src="js/shuffle.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/rename.js"></script>
+    <script src="js/shrink.js"></script>
     <script>
-        var perm=[0,1,2];
+        
+        const title = "Third Person Singular Number - Present Tense";
+        init();
+        
+        var perm = [0, 1, 2];
         const sas = e("sasentence");
         const ens = e("ensentence");
-        let doerSanskrit=doerEnglish=verbSanskrit=verbEnglish=objSanskrit=objEnglish="";
-        const doerBtnStart=1; const doerBtnEnd =6;
-        const verbBtnStart=7; const verbBtnEnd =12;
-        const objBtnStart=13; const objBtnEnd =18;
-        
-        let t =0;
+        let doerSanskrit = doerEnglish = verbSanskrit = verbEnglish = objSanskrit = objEnglish = "";
+        const doerBtnStart = 1; const doerBtnEnd = 6;
+        const verbBtnStart = 7; const verbBtnEnd = 12;
+        const objBtnStart = 13; const objBtnEnd = 18;
 
-        
-        
-    function sandhi(clicked_id){
-       
-        sas.innerHTML = makesandhi( sas.innerHTML );
-         
-    }
+        let t = 0;
 
-         
-        
-        function makeBtnWhite(btnStart, btnEnd){
-            let i=btnStart;
-            while(i<=btnEnd){
-                e(i.toString()).style.borderColor="#fff";
-                e("trace").innerHTML=i;
+        function sandhi(clicked_id) {
+            sas.innerHTML = makesandhi(sas.innerHTML);
+        }
+
+        function makeBtnWhite(btnStart, btnEnd) {
+            let i = btnStart;
+            while (i <= btnEnd) {
+                e(i.toString()).style.borderColor = "#fff";
+                /*e("trace").innerHTML = i;*/
                 ++i;
             }
         }
-        
-        function eraseDoer(){
-            doerSanskrit = doerEnglish ="";
+
+        function eraseDoer() {
+            doerSanskrit = doerEnglish = "";
             makeBtnWhite(doerBtnStart, doerBtnEnd);
             output();
         }
-        function eraseVerb(){
-            verbSanskrit = verbEnglish ="";
+
+        function eraseVerb() {
+            verbSanskrit = verbEnglish = "";
             makeBtnWhite(verbBtnStart, verbBtnEnd);
             output();
         }
-        function eraseObj(){
-            objSanskrit = objEnglish ="";
+
+        function eraseObj() {
+            objSanskrit = objEnglish = "";
             makeBtnWhite(objBtnStart, objBtnEnd);
             output();
         }
-        
-        function getObj(clicked_id){
+
+        function getObj(clicked_id) {
             makeBtnWhite(objBtnStart, objBtnEnd);
             e(clicked_id).style.borderColor = "red";
-                        
+
             let doerString = e(clicked_id).value;
             let index = doerString.indexOf(">");
             objSanskrit = doerString.substr(0, index);
             objEnglish = doerString.substr(index + 1);
-            
+
             output();
         }
-        
-        function getVerb(clicked_id){
+
+        function getVerb(clicked_id) {
             makeBtnWhite(verbBtnStart, verbBtnEnd);
             e(clicked_id).style.borderColor = "red";
-                        
+
             let doerString = e(clicked_id).value;
             let index = doerString.indexOf(">");
             verbSanskrit = doerString.substr(0, index);
             verbEnglish = doerString.substr(index + 1);
-            
+
             output();
         }
-        
-        
-        function getDoer(clicked_id){
+
+
+        function getDoer(clicked_id) {
             makeBtnWhite(doerBtnStart, doerBtnEnd);
             e(clicked_id).style.borderColor = "red";
-            
+
             let doerString = e(clicked_id).value;
-            let index = doerString.indexOf(">");
-            doerSanskrit = doerString.substr(0, index);
-            doerEnglish = doerString.substr(index + 1);
             
+            
+            e("trace1").innerHTML = doerString;
+            let se = split2(doerString);
+            doerSanskrit=se[0]; 
+            doerEnglish=se[1];
+            
+           /* let index = doerString.indexOf(">");
+            doerSanskrit = doerString.substr(0, index);
+            doerEnglish = doerString.substr(index + 1);*/
+
             output();
         }
-        
-        
-        function output(){
-            var A=[doerSanskrit , verbSanskrit , objSanskrit];
-            sas.innerHTML = A[perm[0]]+ " " + A[perm[1]] + " " + A[perm[2]];
+
+        function output() {
+            var A = [doerSanskrit, verbSanskrit, objSanskrit];
+            sas.innerHTML = A[perm[0]] + " " + A[perm[1]] + " " + A[perm[2]];
             ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
         }
-        
-        function split(string, separator){
+
+        /*function split(string, separator) {
             let index = doerString.indexOf(">");
             let sanskrit = doerString.substr(0, index);
             let english = doerString.substr(index + 1);
-        }
-        function e(id){return document.getElementById(id);}   
+        }*/        
     </script>
 </body>
 
