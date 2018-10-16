@@ -1,6 +1,6 @@
  function makesandhi(s){
      return s.
-          replace(/\s\s+/g," ").
+           replace(/\s\s+/g," ").replace( /^\s+/, "") . replace ( /\s+$/ , ""  ).
           replace(/m ([yvrlhszS])/g,"M $1").
           replace(/m ([ntd])/g,"n· $1").
           replace(/m ([Jczj])/g,"J· $1").
