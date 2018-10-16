@@ -5,30 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>3rd person singular number - Present Tense</title>
+    <title>Your Title</title>
     <link rel="stylesheet" type="text/css" href="css/tak-style.css">
     <style> body{background-color: rgba(255, 0, 0, 0.22);}</style>
 </head>
 
 <body>
-    <h3 id="header">3rd person singular number - Present Tense</h3>
-    <p>
+    <h1 id="header">Your Heading</h1>
     
+    <p id="unsandhi">**********</p>
     <span id="sasentence" class="txtdisplay">**********</span><br>
     <span id="ensentence" class="txtdisplay">**********</span><br>
    <!-- <input type="button" name="button" value="SHUFFLE" onclick="shuffle(perm)">-->
+    
+    
+    
+    
         
     <input type="button" id="sw1" value="X|" onclick="swap12()">
     <input type="button" id="sw2" value="|X" onclick="swap23()">    
     
-    <input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi()"> 
-    </p> 
+    <!--<input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi()"> -->
+    
     
     <table>
-        <tr id="heading">
-            <th>Doer (kartR)</th>
-            <th>verb</th>
-            <th>Object (karma)</th>
+        <tr id="heading" >
+            <th style="background-color: red; color: white;">Doer (kartR)</th>
+            <th style="background-color: green; color: white;">verb</th>
+            <th style="background-color: blue; color: white;">Object (karma)</th>
         </tr>
         
         <tr>
@@ -43,7 +47,7 @@
         </tr>
         <tr>
             <td><input type="button" class="doer" id="3" value="kAkas > crow" onclick="getDoer(this.id)"></td>
-            <td><input type="button" class="verb" id="9" value="ayAt > went"  onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="verb" id="9" value="ayAt > went" onclick="getVerb(this.id)"></td>
             <td><input type="button" class="obj" id="15" value="sAgaram > sea" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
@@ -69,10 +73,10 @@
     </table>
        
     <p>
-    <a href="sanskritindex.html" target="_self">Index</a>
+    Back to <a href="sanskritindex.html" target="_self">Index</a>
     </p>
-    <span id="trace1">test output here</span><br>
-    <span id="trace2">test output here</span>
+    <!--<span id="trace1">test output here</span>-->
+    
     
     <script src="js/makeSandhi.js"></script>
     <script src="js/shuffle.js"></script>
@@ -83,8 +87,9 @@
         
         const title = "Third Person Singular Number - Past Tense";
         init();
+        const etrace2 = e("unsandhi");
         
-        var sandhion;
+        var sandhion=true;
         
         var perm = [0, 1, 2];
         const sas = e("sasentence");
@@ -102,28 +107,30 @@
                 ++i;
             }
         }
+        
+        
 
         function eraseDoer() {
             doerSanskrit = doerEnglish = "";
             makeBtnWhite(doerBtnStart, doerBtnEnd);
             output();
         }
-
         function eraseVerb() {
             verbSanskrit = verbEnglish = "";
             makeBtnWhite(verbBtnStart, verbBtnEnd);
             output();
         }
-
         function eraseObj() {
             objSanskrit = objEnglish = "";
             makeBtnWhite(objBtnStart, objBtnEnd);
             output();
         }
+        
+        
 
         function getObj(clicked_id) {
             makeBtnWhite(objBtnStart, objBtnEnd);
-            e(clicked_id).style.borderColor = "red";
+            e(clicked_id).style.borderColor = "blue";
 
             let doerString = e(clicked_id).value;
             let index = doerString.indexOf(">");
@@ -132,10 +139,9 @@
 
             output();
         }
-
         function getVerb(clicked_id) {
             makeBtnWhite(verbBtnStart, verbBtnEnd);
-            e(clicked_id).style.borderColor = "red";
+            e(clicked_id).style.borderColor = "green";
 
             let doerString = e(clicked_id).value;
             let index = doerString.indexOf(">");
@@ -144,8 +150,6 @@
 
             output();
         }
-
-
         function getDoer(clicked_id) {
             makeBtnWhite(doerBtnStart, doerBtnEnd);
             e(clicked_id).style.borderColor = "red";
@@ -153,7 +157,7 @@
             let doerString = e(clicked_id).value;
             
             
-            e("trace1").innerHTML = doerString;
+            /*e("trace1").innerHTML = doerString;*/
            
             
             let index = doerString.indexOf(">");
@@ -163,13 +167,26 @@
             output();
         }
         
-         if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML);
-         function output(){
+        
+        
+        /* if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML);*/
+        
+        function output(){
+            var A=[doerSanskrit , verbSanskrit , objSanskrit];
+            var B=['<span class="red">'+doerSanskrit+"</span>", '<span class="green">'+verbSanskrit+"</span>" , '<span class="blue">'+objSanskrit+"</span>" ];
+            sas.innerHTML = A[perm[0]]+ " " + A[perm[1]] + " " + A[perm[2]];
+            ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
+            if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML); 
+            etrace2.innerHTML= B[perm[0]]+ " " + B[perm[1]] + " " + B[perm[2]];
+        }
+        
+        
+       /*  function output(){
             var A=[doerSanskrit , verbSanskrit , objSanskrit];
             sas.innerHTML = A[perm[0]]+ " " + A[perm[1]] + " " + A[perm[2]];
             ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
             if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML); 
-        }
+        }*/
         
         function sandhi(){            
             sandhion = ! sandhion;
@@ -181,7 +198,7 @@
         
         function swap12(){ swap(perm,0,1);    output(); }
         
-        function swap23(){swap(perm,1,2);    output();}
+        function swap23(){ swap(perm,1,2);    output(); }
     </script>
 </body>
 
