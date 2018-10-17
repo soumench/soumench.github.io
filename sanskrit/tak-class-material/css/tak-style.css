@@ -54,7 +54,15 @@ table {
 
 
 .erase {
-    border: 3px solid green;
+    border: 4px solid #000000;
+    display: inline-block;
+    font-size: 20px; 
+    color: white;
+    background-color: red;
+}
+
+#eraseAlign{
+    text-align: center;
 }
 
 .txtdisplay {
