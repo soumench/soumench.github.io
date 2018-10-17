@@ -78,7 +78,8 @@
     <p>
     Back to <a href="sanskritindex.html" target="_self">Index</a>
     </p>
-   
+    
+    <span id="trace3">---</span>
     
     
     <script src="js/makeSandhi.js"></script>
@@ -90,6 +91,21 @@
         
         const title = "Third Person Plural Number - Present Tense";
         init();
+        var Z=["kapayas","rAjAnas"];
+        var Ze = ["monkeys","kings"];
+        
+        
+        const len = Z.length;
+        let c;
+        for(c=0; c<len;++c){
+            let doertxt = Z[c]+",";
+            let objtxt = Ze[c]+",";
+            e("trace3").innerHTML+=doertxt+ objtxt;
+        }
+        
+        
+        
+                  
         const etrace2 = e("unsandhi");
         
         var sandhion=true;
@@ -103,7 +119,12 @@
         const objBtnStart = 13; const objBtnEnd = 18;
         
         getDoer("1"); getVerb("7"); getObj("13");
-
+        
+        
+        
+        
+       
+        
       
         function makeBtnWhite(btnStart, btnEnd) {
             let i = btnStart;
