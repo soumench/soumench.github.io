@@ -12,6 +12,14 @@
 
 <body>
     <h1 id="header">Your Heading</h1>
+          
+    <input type="button" id="sw1" value="X|" onclick="swap12()">
+    <input type="button" id="sw2" value="|X" onclick="swap23()">  <br>  
+    
+    <!--<input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi()"> -->
+    <!--mitrANi > friends, suhRdas friends-->
+    
+    
     
     <span id="unsandhi">**********</span><br>
     <span id="sasentence" class="txtdisplay">**********</span><br>
@@ -21,12 +29,7 @@
     
     
     
-        
-    <input type="button" id="sw1" value="X|" onclick="swap12()">
-    <input type="button" id="sw2" value="|X" onclick="swap23()">    
-    
-    <!--<input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi()"> -->
-    <!--mitrANi > friends, suhRdas friends-->
+  
     
     <table>
         <tr id="heading" >
@@ -58,7 +61,7 @@
         <tr>
             <td><input type="button" class="doer" id="5" value="kukkuTyas > hens" onclick="getDoer(this.id)"></td>
             <td><input type="button" class="verb" id="11" value="pazyanti > see" onclick="getVerb(this.id)"></td>
-            <td><input type="button" class="obj" id="17" value="azvAn > horses" onclick="getObj(this.id)"></td><!--dvIpam > island-->
+            <td><input type="button" class="obj" id="17" value="azvAn > horses" onclick="getObj(this.id)"></td>
         </tr>
         <tr>
             <td><input type="button" class="doer" id="6" value=" guravas > teachers" onclick="getDoer(this.id)"></td>
@@ -75,7 +78,7 @@
     <p>
     Back to <a href="sanskritindex.html" target="_self">Index</a>
     </p>
-    <!--<span id="trace1">test output here</span>-->
+   
     
     
     <script src="js/makeSandhi.js"></script>
@@ -157,7 +160,7 @@
             let doerString = e(clicked_id).value;
             
             
-            /*e("trace1").innerHTML = doerString;*/
+            
            
             
             let index = doerString.indexOf(">");
@@ -195,4 +198,4 @@
 
 </html>
 
-<!--Concept and Coding: Professor Ganapti 2018-->
+<!--Concept and Coding: Professor Ganapati - 2018-->
