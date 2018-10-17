@@ -44,6 +44,7 @@ table {
 .obj {
     border: 3px solid white;
     display: inline-block;
+    font-size: 20px;
 }
 
 .doer:hover, .verb:hover, .obj:hover{
