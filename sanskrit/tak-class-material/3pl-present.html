@@ -169,8 +169,7 @@
         
         
         
-        /* if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML);*/
-        
+                
         function output(){
             var A=[doerSanskrit , verbSanskrit , objSanskrit];
             var B=['<span class="red">'+doerSanskrit+"</span>", '<span class="green">'+verbSanskrit+"</span>" , '<span class="blue">'+objSanskrit+"</span>" ];
@@ -179,14 +178,6 @@
             if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML); 
             etrace2.innerHTML= B[perm[0]]+ " " + B[perm[1]] + " " + B[perm[2]];
         }
-        
-        
-       /*  function output(){
-            var A=[doerSanskrit , verbSanskrit , objSanskrit];
-            sas.innerHTML = A[perm[0]]+ " " + A[perm[1]] + " " + A[perm[2]];
-            ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
-            if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML); 
-        }*/
         
         function sandhi(){            
             sandhion = ! sandhion;
