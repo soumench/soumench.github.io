@@ -72,3 +72,29 @@ table {
     font-family: monospace, monospace;
     font-weight: bolder;
 }
+
+
+.swap{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #a04caf;
+  border: none;
+  border-radius: 15px;
+  /*box-shadow: 0 9px #999;*/
+}
+
+.swap:hover {background-color: #3e8e41}
+
+.swap:active {
+  background-color: #3e8e41;
+ /* box-shadow: 0 5px #666;*/
+  transform: translateY(4px);
+}
+
+#heading{font-size: 21px;}
