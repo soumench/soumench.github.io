@@ -137,6 +137,7 @@ function getVerb(clicked_id) {
 function output() {
     var A = [doerSanskrit, verbSanskrit, objSanskrit];
     var B = ['<span class="red">' + doerSanskrit + "</span>", '<span class="green">' + verbSanskrit + "</span>", '<span class="blue">' + objSanskrit + "</span>"];
+    
     sas.innerHTML = A[perm[0]] + " " + A[perm[1]] + " " + A[perm[2]];
     ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
     if (sandhion) sas.innerHTML = makesandhi(sas.innerHTML);
