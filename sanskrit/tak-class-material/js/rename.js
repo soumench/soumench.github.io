@@ -1,42 +1,81 @@
-function init() {
-    e("header").innerHTML = document.title = title;
-    const len = Z.length;
+let doerSanskrit; let doerEnglish;
+let verbSanskrit; let verbEnglish;
+let objSanskrit; let objEnglish;
+var doerBtnStart; var doerBtnEnd;
+var verbBtnStart; var verbBtnEnd;
+var objBtnStart; var objBtnEnd;
 
-    let c;
-    for (c = 0; c < len; ++c) {
-        let doertxt = Z[c];
-        let objtxt = Ze[c];
-     //   e("trace3").innerHTML += doertxt + " -> " + objtxt;
-        e((c + 1).toString()).value = doertxt + " > " + objtxt;
-        e((c + 7).toString()).value = doertxt + " > " + objtxt;
-        e((c + 13).toString()).value = doertxt + " > " + objtxt;
-    }
+var sas; var ens;
+var etrace2;
+var sandhion ;
+var perm ;
+var sas ; var ens ;
+var len;
+function init() {
+    sandhion = true;
+    perm = [0, 1, 2];
+    e("header").innerHTML = document.title = title;
+    sas = e("sasentence");
+    ens = e("ensentence");
+    
+    doerBtnStart = 1; doerBtnEnd = 6;
+    verbBtnStart = 7; verbBtnEnd = 12;
+    objBtnStart = 13; objBtnEnd = 18;
+    doerSanskrit = doerEnglish = verbSanskrit = verbEnglish = objSanskrit = objEnglish = "";
+
+    
+
+    etrace2 = e("unsandhi");
+    sas = e("sasentence");
+    ens = e("ensentence");
+    
+    len = Z.length;
+        let c;
+        for (c = 0; c < len; ++c) {
+            let doertxt = Z[c]; let doertxtE = Ze[c];
+            
+            let verbtxt = V[c]; let verbtxtE = Ve[c];
+            
+            let objtxt = O[c];  let objtxtE = Oe[c];
+         //   e("trace3").innerHTML += doertxt + " -> " + objtxt;
+            e((c + 1).toString()).value = doertxt + " > " + doertxtE;
+            e((c + 7).toString()).value = verbtxt + " > " + verbtxtE;
+            e((c + 13).toString()).value = objtxt + " > " + objtxtE;
+        }
+    
+
+     getDoer("1");  getVerb("7");  getObj("13");
 
 }
 
 
 
+
+
+
+
+function getDoer(clicked_id) {
+        makeBtnWhite(doerBtnStart, doerBtnEnd);
+        e(clicked_id).style.borderColor = "red";
+
+        let doerString = e(clicked_id).value;
+    
+
+        let index = doerString.indexOf(">");
+        doerSanskrit = doerString.substr(0, index);
+        doerEnglish = doerString.substr(index + 1);
+
+        output();
+    }
+    
+
+
+  
  
+
+
+
  
-
-
-
- const etrace2 = e("unsandhi");
-        
- var sandhion=true;
-        
- var perm = [0, 1, 2];
- const sas = e("sasentence");
- const ens = e("ensentence");
-
-
-  let doerSanskrit = doerEnglish = verbSanskrit = verbEnglish = objSanskrit = objEnglish = "";
-  const doerBtnStart = 1;  const doerBtnEnd = 6;
-  const verbBtnStart = 7;  const verbBtnEnd = 12;
-  const objBtnStart = 13;  const objBtnEnd = 18;
-
-  getDoer("1");  getVerb("7");  getObj("13");
-
 
  function makeBtnWhite(btnStart, btnEnd) {
      let i = btnStart;
@@ -91,22 +130,7 @@ function getVerb(clicked_id) {
     output();
 }
 
-function getDoer(clicked_id) {
-    makeBtnWhite(doerBtnStart, doerBtnEnd);
-    e(clicked_id).style.borderColor = "red";
 
-    let doerString = e(clicked_id).value;
-
-
-
-
-
-    let index = doerString.indexOf(">");
-    doerSanskrit = doerString.substr(0, index);
-    doerEnglish = doerString.substr(index + 1);
-
-    output();
-}
         
 
 

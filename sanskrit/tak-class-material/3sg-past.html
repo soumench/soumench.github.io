@@ -86,119 +86,18 @@
     <script>
         
         const title = "Third Person Singular Number - Past Tense";
+        
+        var Z=["kapis","rAmas","kAkas","azvas","kukkuTas","rAvaNas"];
+        var Ze = ["monkey","Rama","crow","horse","chicken","Ravana"];
+        
+        var V=["atarat","asmarat","ayAt","agacchat","apazyat","aicchat"];
+        var Ve = ["crossed","remembered","went","went","saw","wanted"];
+        
+        var O=["nadIm","mArgam","arNavam","dvIpam","azvas","gRham"];
+        var Oe = ["river","road","sea","island","horse","house"];
+        
         init();
-        const etrace2 = e("unsandhi");
         
-        var sandhion=true;
-        
-        var perm = [0, 1, 2];
-        const sas = e("sasentence");
-        const ens = e("ensentence");
-        let doerSanskrit = doerEnglish = verbSanskrit = verbEnglish = objSanskrit = objEnglish = "";
-        const doerBtnStart = 1; const doerBtnEnd = 6;
-        const verbBtnStart = 7; const verbBtnEnd = 12;
-        const objBtnStart = 13; const objBtnEnd = 18;
-
-      
-        function makeBtnWhite(btnStart, btnEnd) {
-            let i = btnStart;
-            while (i <= btnEnd) {
-                e(i.toString()).style.borderColor = "#fff";
-                ++i;
-            }
-        }
-        
-        
-
-        function eraseDoer() {
-            doerSanskrit = doerEnglish = "";
-            makeBtnWhite(doerBtnStart, doerBtnEnd);
-            output();
-        }
-        function eraseVerb() {
-            verbSanskrit = verbEnglish = "";
-            makeBtnWhite(verbBtnStart, verbBtnEnd);
-            output();
-        }
-        function eraseObj() {
-            objSanskrit = objEnglish = "";
-            makeBtnWhite(objBtnStart, objBtnEnd);
-            output();
-        }
-        
-        
-
-        function getObj(clicked_id) {
-            makeBtnWhite(objBtnStart, objBtnEnd);
-            e(clicked_id).style.borderColor = "blue";
-
-            let doerString = e(clicked_id).value;
-            let index = doerString.indexOf(">");
-            objSanskrit = doerString.substr(0, index);
-            objEnglish = doerString.substr(index + 1);
-
-            output();
-        }
-        function getVerb(clicked_id) {
-            makeBtnWhite(verbBtnStart, verbBtnEnd);
-            e(clicked_id).style.borderColor = "green";
-
-            let doerString = e(clicked_id).value;
-            let index = doerString.indexOf(">");
-            verbSanskrit = doerString.substr(0, index);
-            verbEnglish = doerString.substr(index + 1);
-
-            output();
-        }
-        function getDoer(clicked_id) {
-            makeBtnWhite(doerBtnStart, doerBtnEnd);
-            e(clicked_id).style.borderColor = "red";
-
-            let doerString = e(clicked_id).value;
-            
-            
-            /*e("trace1").innerHTML = doerString;*/
-           
-            
-            let index = doerString.indexOf(">");
-            doerSanskrit = doerString.substr(0, index);
-            doerEnglish = doerString.substr(index + 1);
-
-            output();
-        }
-        
-        
-        
-        /* if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML);*/
-        
-        function output(){
-            var A=[doerSanskrit , verbSanskrit , objSanskrit];
-            var B=['<span class="red">'+doerSanskrit+"</span>", '<span class="green">'+verbSanskrit+"</span>" , '<span class="blue">'+objSanskrit+"</span>" ];
-            sas.innerHTML = A[perm[0]]+ " " + A[perm[1]] + " " + A[perm[2]];
-            ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
-            if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML); 
-            etrace2.innerHTML= B[perm[0]]+ " " + B[perm[1]] + " " + B[perm[2]];
-        }
-        
-        
-       /*  function output(){
-            var A=[doerSanskrit , verbSanskrit , objSanskrit];
-            sas.innerHTML = A[perm[0]]+ " " + A[perm[1]] + " " + A[perm[2]];
-            ens.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
-            if(sandhion)sas.innerHTML = makesandhi(sas.innerHTML); 
-        }*/
-        
-        function sandhi(){            
-            sandhion = ! sandhion;
-            const bid=e("sandhibtn");
-            bid.value= sandhion ?"Sandhi is On":"Sandhi is Off";  
-            bid.style.borderColor=sandhion ?"green":"red";            
-            output();
-        }
-        
-        function swap12(){ swap(perm,0,1);    output(); }
-        
-        function swap23(){ swap(perm,1,2);    output(); }
     </script>
 </body>
 
