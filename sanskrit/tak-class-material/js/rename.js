@@ -6,7 +6,7 @@ function init() {
     for (c = 0; c < len; ++c) {
         let doertxt = Z[c];
         let objtxt = Ze[c];
-        e("trace3").innerHTML += doertxt + " -> " + objtxt;
+     //   e("trace3").innerHTML += doertxt + " -> " + objtxt;
         e((c + 1).toString()).value = doertxt + " > " + objtxt;
         e((c + 7).toString()).value = doertxt + " > " + objtxt;
         e((c + 13).toString()).value = doertxt + " > " + objtxt;
