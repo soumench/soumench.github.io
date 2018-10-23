@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Title</title>
+    <link rel="stylesheet" type="text/css" href="css/tak-style.css">
+    <style> body{background-color: rgba(0, 69, 11, 0.15);}</style>
+</head>
+
+<body>
+    <h1 id="header">Your Heading</h1>
+          
+    <input type="button" id="sw1" class="swap" value="X|" onclick="swap12()">
+    <input type="button" id="sw2" class="swap" value="|X" onclick="swap23()">  <br>  
+    
+    <!--<input type="button" name="button" id="sandhibtn" value="Sandhi" onclick="sandhi()"> -->
+    <!--mitrANi > friends, suhRdas friends-->
+    
+    
+    
+    <span id="unsandhi">**********</span><br>
+    <span id="sasentence" class="txtdisplay">**********</span><br>
+    <span id="ensentence" class="txtdisplay">**********</span><br>
+   <!-- <input type="button" name="button" value="SHUFFLE" onclick="shuffle(perm)">-->
+    
+    
+    
+    
+  
+    
+    <table>
+        <tr id="heading" >
+            <th style="background-color: white; color: red;">Doer (kartR)</th>
+            <th style="background-color: green; color: white;">verb</th>
+            <th style="background-color: blue; color: white;">Object (karma)</th>
+        </tr>
+        
+        <tr>
+            <td><input type="button" class="doer" id="1" value="kapayas > monkeys" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="7" value="taranti > cross" onclick="getVerb(this.id)"> </td>
+            <td><input type="button" class="obj" id="13" value="nadIs > rivers" onclick="getObj(this.id)"> </td>
+        </tr>
+        <tr>
+            <td><input type="button" class="doer" id="2" value="rAjAnas > kings" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="8" value="smaranti > remember" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" id="14" value="mArgAn > roads" onclick="getObj(this.id)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="doer" id="3" value="kAkAs > crows" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="9" value="yAnti > go to" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" id="15" value="arNavAn > oceans" onclick="getObj(this.id)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="doer" id="4" value="azvAs > horses " onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="10" value="gacchanti > go to" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" id="16" value="vanAni > forests" onclick="getObj(this.id)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="doer" id="5" value="kukkuTyas > hens" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="11" value="pazyanti > see" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" id="17" value="azvAn > horses" onclick="getObj(this.id)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="doer" id="6" value="guravas > teachers" onclick="getDoer(this.id)"></td>
+            <td><input type="button" class="verb" id="12" value="icchanti > want" onclick="getVerb(this.id)"></td>
+            <td><input type="button" class="obj" id="18" value="gRhANi > houses" onclick="getObj(this.id)"></td>
+        </tr>
+        <tr id="eraseAlign">
+            <td><input type="button" class="erase" id="" value="Erase" onclick="eraseDoer(this.id)"></td>
+            <td></td>
+            <td><input type="button" class="erase" id="" value="Erase" onclick="eraseObj(this.id)"></td>
+        </tr>
+    </table>
+       
+    <p>
+    Back to <a href="sanskritindex.html" target="_self">Index</a>
+    </p>
+    
+    <span id="trace3">---</span>
+    
+    
+    <script src="js/makeSandhi.js"></script>
+    <script src="js/shuffle.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/rename.js"></script>
+    <script src="js/shrink.js"></script>
+    <script>
+        
+        const title = "Third Person Plural Number - Present Tense";
+        
+        var Z=["kapayas","rAjAnas","kAkAs","azvAs","kukkuTyas","guravas"];
+        var Ze = ["monkeys","kings","crows","horses","hens","teachers"];
+        
+        var V=["taranti","smaranti","yAnti","gacchanti","pazyanti","icchanti"];
+        var Ve = ["cross","remember","go to","go to","see","want"];
+        
+        var O=["nadIs","mArgAn","arNavAn","vanAni","azvAn","gRhANi"];
+        var Oe = ["rivers","roads","oceans","forests","horses","houses"];
+        
+        init();        
+       
+    </script>
+</body>
+
+</html>
+
+<!--Concept and Coding: Professor Ganapati - 2018-->
