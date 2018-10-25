@@ -19,7 +19,7 @@ const list=[
 	 		"were",
 	 		"b",
 	 		
-	 		"I ___ at a small village.",
+	 		"I ___ in a small village.",
 	 		"love",
 	 		"live",
 	 		"liv",
