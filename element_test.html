@@ -12,25 +12,36 @@
     <input type="button" id="b00" class="btnclass" value="click me" onclick="act(this)">
     <input type="button" id="b10" class="btnclass" value="click me" onclick="act(this)">
     <input type="button" id="b20" class="btnclass" value="click me" onclick="act(this)">
-    <input type="button" id="b30" class="btnclass" value="click me" onclick="act(this)">
-    <input type="button" id="b40" class="btnclass" value="click me" onclick="act(this)">
-    <input type="button" id="b50" class="btnclass" value="click me" onclick="act(this)"><br>
+   <br>
     
     
     <input type="button" id="b01" class="btnclass" value="click me" onclick="act(this)">
     <input type="button" id="b11" class="btnclass" value="click me" onclick="act(this)">
     <input type="button" id="b21" class="btnclass" value="click me" onclick="act(this)">
-    <input type="button" id="b31" class="btnclass" value="click me" onclick="act(this)">
-    <input type="button" id="b41" class="btnclass" value="click me" onclick="act(this)">
-    <input type="button" id="b51" class="btnclass" value="click me" onclick="act(this)"><br>
+   <br>
     
     
     <input type="button" id="b02" class="btnclass" value="click me" onclick="act(this)">
     <input type="button" id="b12" class="btnclass" value="click me" onclick="act(this)">
     <input type="button" id="b22" class="btnclass" value="click me" onclick="act(this)">
-    <input type="button" id="b32" class="btnclass" value="click me" onclick="act(this)">
-    <input type="button" id="b42" class="btnclass" value="click me" onclick="act(this)">
-    <input type="button" id="b52" class="btnclass" value="click me" onclick="act(this)"><br>
+   <br>
+    
+    <input type="button" id="b03" class="btnclass" value="click me" onclick="act(this)">
+    <input type="button" id="b13" class="btnclass" value="click me" onclick="act(this)">
+    <input type="button" id="b23" class="btnclass" value="click me" onclick="act(this)">
+   <br>
+    
+    
+    <input type="button" id="b04" class="btnclass" value="click me" onclick="act(this)">
+    <input type="button" id="b14" class="btnclass" value="click me" onclick="act(this)">
+    <input type="button" id="b24" class="btnclass" value="click me" onclick="act(this)">
+   <br>
+    
+    
+    <input type="button" id="b05" class="btnclass" value="click me" onclick="act(this)">
+    <input type="button" id="b15" class="btnclass" value="click me" onclick="act(this)">
+    <input type="button" id="b25" class="btnclass" value="click me" onclick="act(this)">
+   <br>
     
     
     <span id="trace1"></span><br>
@@ -43,15 +54,7 @@
     
     <script>
         "use strict";
-        /*const btn = e("b1");
-        
-        
-        const btn7 = e("b7");
-        
-        
-        const btn13 = e("b13");*/
-       
-        
+            
         
         
         const trace1 = e("trace1");
@@ -67,6 +70,13 @@
             for (j=0; j<6;j++){
                let B=e("b"+i+""+j);
                if(B) B.xxx=888;        
+            }
+        }
+        
+        for(i=0;i<5;i++){ 
+            for (j=0; j<3;j++){
+               let B=e("b"+i+""+j);
+               if(B) B.xxx=0;        
             }
         }
 
