@@ -42,6 +42,7 @@
     <span id="trace7"></span><br>
     
     <script>
+        "use strict";
         const btn = e("b1");
         btn.xxx=0; btn.yyy=0;
         
@@ -61,9 +62,10 @@
         const trace6 = e("trace6");
         const trace7 = e("trace7");
         
+        var B; var i; var j;
         for(i=0;i<3;i++){ 
             for (j=0; j<6;j++){
-               var B=e("b"+i+""+j);
+               B=e("b"+i+""+j);
                if(B) B.xxx=888;        
             }
         }
@@ -75,8 +77,8 @@
             /*trace3.innerHTML = "name >> " + element.name;*/
             trace4.innerHTML = "type >> " + element.type;            
             trace5.innerHTML = "class >> " + element.className;
-            trace6.innerHTML = "x >> " + B.xxx;
-            trace7.innerHTML = "y >> " + B.yyy;
+            trace6.innerHTML = "x >> " + element.xxx;
+            trace7.innerHTML = "y >> " + element.yyy;
         }
 
         function e(id) {
