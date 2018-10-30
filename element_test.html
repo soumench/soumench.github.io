@@ -9,41 +9,36 @@
 </head>
 
 <body>
-    <input type="button" id="b1" class="btnclass" name="my button name" value="click me" onclick="act(this)"  data-age="old" x="0" y="200" coords="0,0,80,160"><br><br>
+    <input type="button" id="b1" class="btnclass" value="click me" onclick="act(this)"><br><br>
     <span id="trace1"></span><br>
     <span id="trace2"></span><br>
     <span id="trace3"></span><br>
     <span id="trace4"></span><br>    
-    <span id="trace5"></span><br><br>
+    <span id="trace5"></span><br><br>        
     <span id="trace6"></span><br>
-    
     <span id="trace7"></span><br>
-    <span id="trace8"></span><br>
     
     <script>
         const btn = e("b1");
+        btn.xxx=0; btn.yyy=0;
+        
         const trace1 = e("trace1");
         const trace2 = e("trace2");
         const trace3 = e("trace3");
         const trace4 = e("trace4");
-        const trace5 = e("trace5");
+        const trace5 = e("trace5");        
         const trace6 = e("trace6");
-        
         const trace7 = e("trace7");
-        const trace8 = e("trace8");
 
 
         function act(element) {
             trace1.innerHTML = "value >> " + element.value;
             trace2.innerHTML = "id >> " + element.id;
-            trace3.innerHTML = "name >> " + element.name;
+            /*trace3.innerHTML = "name >> " + element.name;*/
             trace4.innerHTML = "type >> " + element.type;            
             trace5.innerHTML = "class >> " + element.className;
-            
-            trace6.innerHTML = "age >> " + element.data-age;
-            
-            trace7.innerHTML = "x >> " + element.x;
-            trace8.innerHTML = "y >> " + element.y;
+            trace6.innerHTML = "x >> " + btn.xxx;
+            trace7.innerHTML = "y >> " + btn.yyy;
         }
 
         function e(id) {
