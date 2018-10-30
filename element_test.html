@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -65,19 +64,23 @@
         const trace6 = e("trace6");
         const trace7 = e("trace7");
         
-        var i; var j;
-        for(i=0;i<3;i++){ 
-            for (j=0; j<6;j++){
-               let B=e("b"+i+""+j);
-               if(B) B.xxx=888;        
+        var x; var y;
+        for(x=0;x<3;x++){ 
+            for (y=0; y<6;y++){
+               let B=e("b"+x+""+y);
+               B.xxx="missing xxx";        
+               B.yyy="missing yyy";        
             }
         }
-        
-        for(i=0;i<5;i++){ 
-            for (j=0; j<3;j++){
-               let B=e("b"+i+""+j);
-               if(B) B.xxx=0;        
-            }
+        x=0;  
+        for(y=0;y<6;y++){ 
+            let B=e("b"+x+""+y);
+            if(B) B.xxx=x;        
+        }
+        y=4;  
+        for(x=0;x<3;x++){ 
+            let B=e("b"+x+""+y);
+            if(B) B.yyy=y;        
         }
 
 
@@ -96,6 +99,6 @@
         }
     </script>
 
-</body>
 
-</html>
+
+</body></html>
