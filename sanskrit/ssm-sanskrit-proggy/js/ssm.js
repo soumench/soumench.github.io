@@ -27,3 +27,8 @@ var x; var y;
         }
     }
 }
+
+const en = e("en");
+const qz = e("qz");
+const qz2 = e("qz2");
+const nqz = e("noquiz");

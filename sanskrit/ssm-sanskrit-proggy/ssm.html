@@ -65,37 +65,11 @@
     
     
     <script>
-        //"use strict";
-        
+            
         const clickSound=new Audio("ssm-audio/ssm-sound.oga");
         
-		//var showenglish=false;
-		//var QUIZMODE=false;
-		//const cb=["#fbb","#afa","#adf"];
-		//const cB=["red","green","blue"];
-        
-        
-        /*const trace1 = e("trace1");
-        const trace2 = e("trace2");
-        const unsandhi = e("unsandhi");
-        */
-        
-        //const sasentence = e("sasentence");
-        const en = e("en");
-        const qz = e("qz");
-        const qz2 = e("qz2");
-        const nqz = e("noquiz");
-        
-		/*var grid=[[],[],[]];
-        var x; var y;
-        for(x=0;x<3;x++){ 
-            for (y=0; y<6;y++){
-               let B=e("b"+x+""+y);
-                B.xxx=x;        
-	     		B.yyy=y;  
-			    grid[x].push(B);
-            }
-        }*/
+		
+       
 		var doers=["viSkiras","rAmas","hayas","vRSabhas","gardabhas"];
 		var edoers=["chicken","rAma","horse","bull","donkey"];
 		
@@ -137,8 +111,7 @@
 		ode=grid[0][dn];
 		ove=grid[1][vn];
 		ooe=grid[2][on];	
-		// trace2.innerHTML="ode.id is "+ode.id+" ode.style.borderColor is "+ode.style.borderColor;
-
+		
         init();
 		
 		function init()
@@ -156,7 +129,7 @@
 			    nvn=Math.floor((Math.random() * verbs.length));
 			    non=Math.floor((Math.random() * objects.length));
 			} while (ndn == dn || nvn == vn || non == on );			
-//console.log(`quiz button pressed now swapr`)			
+			
 			swapr();
 		}
 		function noquiz(){
@@ -170,7 +143,7 @@
 		    var oldelement;
 			if(element.xxx==0){
 				oldelement=ode;
-				if(oldelement === element)return; // nothing to do
+				if(oldelement === element)return; 
 				dn=element.yyy;				
 				ode=element;
 			}else if(element.xxx==1){
@@ -186,11 +159,10 @@
 			}
 			buttonborder(oldelement,cb[element.xxx]);
 			buttonborder(element,cB[element.xxx]);							
-			// now if i am in click mode and i got the right answer, exit of quiz mode and play a sound
-          //  clickSound.play();
+			
 			if(QUIZMODE)if(ndn==dn)if(nvn==vn)if(non==on){
 				noquiz();
-				// add play sound here
+				
                 clickSound.play();
 			}
 			output();
@@ -213,7 +185,7 @@
 		if (sandhion) sasentence.innerHTML = makesandhi(sai);
 		unsandhi.innerHTML = B[perm[0]] + " " + B[perm[1]] + " " + B[perm[2]];
 		if(QUIZMODE){
-// console.log(`output called while in quizmode`);	
+	
 			if(showenglish){
 					var A = [doers[ndn],verbs[nvn],objects[non]];
 					var sai = A[perm[0]] + " " + A[perm[1]] + " " + A[perm[2]];			
@@ -244,7 +216,7 @@
 		   else if(p==3)swap(perm,0,2);    
 		   else if(p==4){swap(perm,1,2);swap(perm,0,1);}
 		   else {swap(perm,0,1);swap(perm,1,2);}		   
-// console.log(`swapr done now outputting`);					   
+					   
 		   output(); 
 		}				
 		function pass(elements, values,x){
