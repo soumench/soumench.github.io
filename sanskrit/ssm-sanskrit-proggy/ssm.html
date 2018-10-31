@@ -54,29 +54,38 @@
 	    <input type="button" id="noquiz" class="swap" value="no quiz" onclick="noquiz()">
 <br/>
     <span id="trace1"></span><br/>
-    <span id="trace2"></span><br/>    
+    <span id="trace2"></span><br/> 
+    
+    
+    
     <script src="js/makeSandhi.js"></script>
     <script src="js/shuffle.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/ssm.js"></script>
+    <script src="js/main.js"></script>
+    
     <script>
-        "use strict";
+        //"use strict";
         
         const clickSound=new Audio("ssm-audio/ssm-sound.oga");
         
-		var showenglish=false;
-		var QUIZMODE=false;
-		const cb=["#fbb","#afa","#adf"];
-		const cB=["red","green","blue"];
-        const trace1 = e("trace1");
+		//var showenglish=false;
+		//var QUIZMODE=false;
+		//const cb=["#fbb","#afa","#adf"];
+		//const cB=["red","green","blue"];
+        
+        
+        /*const trace1 = e("trace1");
         const trace2 = e("trace2");
         const unsandhi = e("unsandhi");
-        const sasentence = e("sasentence");
+        */
+        
+        //const sasentence = e("sasentence");
         const en = e("en");
         const qz = e("qz");
         const qz2 = e("qz2");
         const nqz = e("noquiz");
-		var grid=[[],[],[]];
+        
+		/*var grid=[[],[],[]];
         var x; var y;
         for(x=0;x<3;x++){ 
             for (y=0; y<6;y++){
@@ -85,7 +94,7 @@
 	     		B.yyy=y;  
 			    grid[x].push(B);
             }
-        }
+        }*/
 		var doers=["viSkiras","rAmas","hayas","vRSabhas","gardabhas"];
 		var edoers=["chicken","rAma","horse","bull","donkey"];
 		
