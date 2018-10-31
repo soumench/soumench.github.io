@@ -55,12 +55,15 @@
 <br/>
     <span id="trace1"></span><br/>
     <span id="trace2"></span><br/>    
-	   <script src="js/makeSandhi.js"></script>
-	       <script src="js/shuffle.js"></script>
-	       <script src="js/main.js"></script>
-	       <script src="js/ssm.js"></script>
+    <script src="js/makeSandhi.js"></script>
+    <script src="js/shuffle.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ssm.js"></script>
     <script>
         "use strict";
+        
+        const clickSound=new Audio("ssm-audio/ssm-sound.oga");
+        
 		var showenglish=false;
 		var QUIZMODE=false;
 		const cb=["#fbb","#afa","#adf"];
@@ -106,7 +109,7 @@
 		flip();
 		
 		function flip(){
-			showenglish=! showenglish;
+            showenglish=! showenglish;
 			if(showenglish){
 				pass(grid[0], edoers,0);
 				pass(grid[1], everbs,1);
@@ -184,7 +187,7 @@
 	function wrap(color,x){return `<span class="${color}">${x}</span>`;}
 	
 	function output() {
-	
+	    clickSound.play();
 		var doerSanskrit=doers[dn];
 		var verbSanskrit=verbs[vn];
 		var objSanskrit=objects[on];
