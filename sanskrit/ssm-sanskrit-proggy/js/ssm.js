@@ -1,4 +1,5 @@
  "use strict";
+ var lastp=-1;
  var showenglish = false;
  var QUIZMODE = false;
 
@@ -76,4 +77,35 @@ function noquiz() {
     QUIZMODE = false;
     qz.innerHTML = "&nbsp;";
     qz2.innerHTML = "&nbsp;";
+}
+
+
+function swap12() {
+    swap(perm, 0, 1);
+    output();
+}
+
+function swap23() {
+    swap(perm, 1, 2);
+    output();
+}
+
+
+function swapr() {
+    var p;
+    var avoid = [-1, 0, 1, 2, 4, 3][lastp + 1];
+    do p = Math.floor(Math.random() * 5); while (p == avoid);
+    lastp = p;
+    if (p == 0) swap(perm, 1, 2);
+    else if (p == 2) swap(perm, 0, 1);
+    else if (p == 3) swap(perm, 0, 2);
+    else if (p == 4) {
+        swap(perm, 1, 2);
+        swap(perm, 0, 1);
+    } else {
+        swap(perm, 0, 1);
+        swap(perm, 1, 2);
+    }
+
+    output();
 }
