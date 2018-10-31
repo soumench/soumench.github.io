@@ -79,34 +79,15 @@
 		var objects=["mArgam","mahodadhim","vanam","nadIm","laGkAm"];
 		var eobjects=["road","ocean","forest","river","Ceylon"];
 
-		var perm=[0,1,2];
-
-        var sandhion = true;
-		var dn=0, vn=0, on=0;
-
-		var ode, ove, ooe;
 		
-	    var ndn, nvn, non;
+        var sandhion = true;
+		
 
 		
 		showenglish=true;
 		flip();
 		
-		function flip(){
-            showenglish=! showenglish;
-			if(showenglish){
-				pass(grid[0], edoers,0);
-				pass(grid[1], everbs,1);
-				pass(grid[2], eobjects,2);		
-				qz.setAttribute('class',"san");		   
-			}else{	
-				pass(grid[0], doers,0);
-				pass(grid[1], verbs,1);
-				pass(grid[2], objects,2);		
-				qz.setAttribute('class',"eng");		   
-			}
-			output();
-		}
+		
 		
 		ode=grid[0][dn];
 		ove=grid[1][vn];
@@ -122,22 +103,7 @@
 
 		function buttonborder(button, color){if(button)button.style.borderColor = color;}		
 		
-		function quiz(){
-			if(!QUIZMODE)QUIZMODE=true;
-			do {
-			    ndn=Math.floor((Math.random() * doers.length));
-			    nvn=Math.floor((Math.random() * verbs.length));
-			    non=Math.floor((Math.random() * objects.length));
-			} while (ndn == dn || nvn == vn || non == on );			
-			
-			swapr();
-		}
-		function noquiz(){
-		    if(!QUIZMODE)return;
-			QUIZMODE=false;
-			qz.innerHTML="&nbsp;";			
-			qz2.innerHTML="&nbsp;";			
-		}
+		
 
         function act(element) {		    
 		    var oldelement;
