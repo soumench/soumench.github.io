@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> SSM	</title>
+	 <link rel="stylesheet" type="text/css" href="css/ssm.css">	
+</head>
+
+<body>
+    <h1> SSM </h1>
+    
+    <input type="button" id="sw1" class="swap" value="swap left" onclick="swap12()">
+    <input type="button" id="sw2" class="swap" value="swap right" onclick="swap23()">  
+	<input type="button" id="sw3" class="swap" value="shuffle" onclick="swapr()">  <br>  
+          
+    <span id="unsandhi"></span><br/>
+    <span id="sasentence"></span> = <br/> <span id="en" class="eng"></span><br>    
+    <span id="qz" class="eng">&nbsp;</span> <span id="qz2" class="eng">&nbsp;</span>
+	
+	<br>
+	
+    <table border>
+<colgroup>
+    <col style="background-color:#fbb">
+    <col style="background-color:#afa">
+    <col style="background-color:#adf">
+  </colgroup>	
+	
+	<tr><td>	
+<input type="button" id="b00" ></td><td>
+<input type="button" id="b10" ></td><td>
+<input type="button" id="b20" >
+</td></tr>
+<tr><td>     
+<input type="button" id="b01" ></td><td>
+<input type="button" id="b11" ></td><td>
+<input type="button" id="b21" >
+</td></tr>
+<tr><td>
+<input type="button" id="b02" ></td><td><input type="button" id="b12" ></td><td><input type="button" id="b22" >
+</td></tr>
+<tr><td>     
+<input type="button" id="b03" ></td><td><input type="button" id="b13" ></td><td><input type="button" id="b23">
+</td></tr>
+<tr><td>     
+<input type="button" id="b04" ></td><td><input type="button" id="b14" ></td><td>
+<input type="button" id="b24" ></td></tr>
+<tr><td><input type="button" id="b05" ></td><td><input type="button" id="b15" ></td><td><input type="button" id="b25" ></td></tr>
+</table>        
+	    <input type="button" id="quiz" class="swap" value="quiz" onclick="quiz()">
+	    <input type="button" id="flip" class="swap" value="flip" onclick="flip()">
+	    <input type="button" id="noquiz" class="swap" value="no quiz" onclick="noquiz()">
+<br/>
+    <span id="trace1"></span><br/>
+    <span id="trace2"></span><br/>    
+	   <script src="js/makeSandhi.js"></script>
+	       <script src="js/shuffle.js"></script>
+	       <script src="js/main.js"></script>
+	       <script src="js/ssm.js"></script>
+    <script>
+        "use strict";
+		var showenglish=false;
+		var QUIZMODE=false;
+		const cb=["#fbb","#afa","#adf"];
+		const cB=["red","green","blue"];
+        const trace1 = e("trace1");
+        const trace2 = e("trace2");
+        const unsandhi = e("unsandhi");
+        const sasentence = e("sasentence");
+        const en = e("en");
+        const qz = e("qz");
+        const qz2 = e("qz2");
+        const nqz = e("noquiz");
+		var grid=[[],[],[]];
+        var x; var y;
+        for(x=0;x<3;x++){ 
+            for (y=0; y<6;y++){
+               let B=e("b"+x+""+y);
+                B.xxx=x;        
+	     		B.yyy=y;  
+			    grid[x].push(B);
+            }
+        }
+		var doers=["viSkiras","rAmas","hayas","vRSabhas","gardabhas"];
+		var edoers=["chicken","rAma","horse","bull","donkey"];
+		
+		var verbs=["vitarati","vIkSate","vismarati","dveSTi","gacchati"];
+		var everbs=["crosses","looks at","forgets","hates","goes to"];
+		
+		var objects=["mArgam","mahodadhim","vanam","nadIm","laGkAm"];
+		var eobjects=["road","ocean","forest","river","Ceylon"];
+
+		var perm=[0,1,2];
+
+        var sandhion = true;
+		var dn=0, vn=0, on=0;
+
+		var ode, ove, ooe;
+		
+	    var ndn, nvn, non;
+
+		
+		showenglish=true;
+		flip();
+		
+		function flip(){
+			showenglish=! showenglish;
+			if(showenglish){
+				pass(grid[0], edoers,0);
+				pass(grid[1], everbs,1);
+				pass(grid[2], eobjects,2);		
+				qz.setAttribute('class',"san");		   
+			}else{	
+				pass(grid[0], doers,0);
+				pass(grid[1], verbs,1);
+				pass(grid[2], objects,2);		
+				qz.setAttribute('class',"eng");		   
+			}
+			output();
+		}
+		
+		ode=grid[0][dn];
+		ove=grid[1][vn];
+		ooe=grid[2][on];	
+		// trace2.innerHTML="ode.id is "+ode.id+" ode.style.borderColor is "+ode.style.borderColor;
+
+        init();
+		
+		function init()
+		{
+     		shuffle(perm);		
+			output();		
+		}
+
+		function buttonborder(button, color){if(button)button.style.borderColor = color;}		
+		
+		function quiz(){
+			if(!QUIZMODE)QUIZMODE=true;
+			do {
+			    ndn=Math.floor((Math.random() * doers.length));
+			    nvn=Math.floor((Math.random() * verbs.length));
+			    non=Math.floor((Math.random() * objects.length));
+			} while (ndn == dn || nvn == vn || non == on );			
+//console.log(`quiz button pressed now swapr`)			
+			swapr();
+		}
+		function noquiz(){
+		    if(!QUIZMODE)return;
+			QUIZMODE=false;
+			qz.innerHTML="&nbsp;";			
+			qz2.innerHTML="&nbsp;";			
+		}
+
+        function act(element) {		    
+		    var oldelement;
+			if(element.xxx==0){
+				oldelement=ode;
+				if(oldelement === element)return; // nothing to do
+				dn=element.yyy;				
+				ode=element;
+			}else if(element.xxx==1){
+				oldelement=ove;
+				if(oldelement === element)return;
+			    vn=element.yyy; 
+				ove=element;				
+			}else {
+				oldelement=ooe;
+				if(oldelement === element)	return;
+			    on=element.yyy;				
+				ooe=element;				
+			}
+			buttonborder(oldelement,cb[element.xxx]);
+			buttonborder(element,cB[element.xxx]);							
+			// now if i am in click mode and i got the right answer, exit of quiz mode and play a sound
+			if(QUIZMODE)if(ndn==dn)if(nvn==vn)if(non==on){
+				noquiz();
+				// add play sound here
+			}
+			output();
+        }
+		
+	function wrap(color,x){return `<span class="${color}">${x}</span>`;}
+	
+	function output() {
+	
+		var doerSanskrit=doers[dn];
+		var verbSanskrit=verbs[vn];
+		var objSanskrit=objects[on];
+		var doerEnglish=edoers[dn];
+		var verbEnglish=everbs[vn];
+		var objEnglish=eobjects[on];	
+	
+		var A = [doerSanskrit, verbSanskrit, objSanskrit];
+		var B = [wrap("red",doerSanskrit), wrap("green",verbSanskrit),wrap("blue",objSanskrit)];		
+		var sai = A[perm[0]] + " " + A[perm[1]] + " " + A[perm[2]];
+		en.innerHTML = doerEnglish + " " + verbEnglish + " " + objEnglish;
+		if (sandhion) sasentence.innerHTML = makesandhi(sai);
+		unsandhi.innerHTML = B[perm[0]] + " " + B[perm[1]] + " " + B[perm[2]];
+		if(QUIZMODE){
+// console.log(`output called while in quizmode`);	
+			if(showenglish){
+					var A = [doers[ndn],verbs[nvn],objects[non]];
+					var sai = A[perm[0]] + " " + A[perm[1]] + " " + A[perm[2]];			
+					qz.innerHTML=makesandhi(sai); 
+					qz2.innerHTML=" &larr; click the english translations of these words";
+			}else{
+				qz.innerHTML=wrap("red",edoers[ndn])+" "+wrap("green",everbs[nvn])+" "+wrap("blue",eobjects[non]);
+				qz2.innerHTML= " &larr; click the sanskrit translations of these words";
+			}
+		}else{
+			qz.innerHTML="&nbsp;";
+			qz2.innerHTML="&nbsp;";
+		}
+	}
+	
+		function swap12(){ swap(perm,0,1);    output(); }				
+		
+		function swap23(){ swap(perm,1,2);    output(); }		
+		
+		var lastp=-1;				
+		function swapr(){ 		  
+		   var p;
+		   var avoid=[-1,0,1,2,4,3][lastp+1];		   
+		   do p=Math.floor(Math.random() * 5); while(p==avoid);		   
+		   lastp=p;
+		   if(p==0)swap(perm,1,2);    
+		   else if(p==2)swap(perm,0,1);    
+		   else if(p==3)swap(perm,0,2);    
+		   else if(p==4){swap(perm,1,2);swap(perm,0,1);}
+		   else {swap(perm,0,1);swap(perm,1,2);}		   
+// console.log(`swapr done now outputting`);					   
+		   output(); 
+		}				
+		function pass(elements, values,x){
+		   var L=elements.length;
+		   var V=values.length;
+		   if(V>L)V=L;
+		   var i;
+		   for(i=0;i<V;++i){
+				elements[i].value=values[i];		   
+				elements[i].setAttribute('onclick',"act(this)");		   
+		   }
+		   for(i=0;i<L;++i){
+		      elements[i].setAttribute('class',["doer","verb","obj"][x]);		   
+              buttonborder(elements[i],(i>=V?cb:i==([dn,vn,on][x])?cB:cb)[x]);
+		   }		   
+		}
+    </script>
+</body></html>
