@@ -177,9 +177,11 @@
 			buttonborder(oldelement,cb[element.xxx]);
 			buttonborder(element,cB[element.xxx]);							
 			// now if i am in click mode and i got the right answer, exit of quiz mode and play a sound
+            clickSound.play();
 			if(QUIZMODE)if(ndn==dn)if(nvn==vn)if(non==on){
 				noquiz();
 				// add play sound here
+                clickSound.play();
 			}
 			output();
         }
@@ -187,8 +189,7 @@
 	function wrap(color,x){return `<span class="${color}">${x}</span>`;}
 	
 	function output() {
-	    clickSound.play();
-		var doerSanskrit=doers[dn];
+	    var doerSanskrit=doers[dn];
 		var verbSanskrit=verbs[vn];
 		var objSanskrit=objects[on];
 		var doerEnglish=edoers[dn];
