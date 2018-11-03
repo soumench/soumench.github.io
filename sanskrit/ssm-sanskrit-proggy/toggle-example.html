@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <input type="button" value="ON" id="on" onclick="act()">
+    <input type="button" value="OFF" id="off" >
+    <input type="button" value="TOGGLE" id="tog">
+    
+    <script>
+        /*var onBtn = e("on");
+        var offBtn = e("off");
+        var togBtn = e("tog");
+        */
+        var toggle = false;
+        
+        function act(){
+            toggle=!toggle;                  
+            console.log('The switch was earlier off and now it is on.');
+        }
+        
+        function e(id){return document.getElementById(id);}
+    
+    </script>
+    
+
+</body>
+
+</html>
