@@ -34,35 +34,26 @@
         }
         
         function toggle(){
-            if(switchison){
-                switchison=false;
-            }
-            else{
-                switchison=true;    
-            }
             console.log(switchison?setFalsemsg:setTruemsg);
+            if(switchison){switchison=false;}
+            else{switchison=true;}
             changeImage();
         }
         
         function settofalse(){
+            console.log(switchison ? setFalsemsg : 'Variable is already false so doing nothing.');
             if(switchison){
                 switchison=false;
                 changeImage();
-            }
-            console.log(switchison ? setFalsemsg : 'Variable is already false so doing nothing.');
+            }            
         }
         
         function settotrue(){
-            var msg;
-            if(switchison){
-                msg='Variable is already true so doing nothing.';
-            }
-            else{
+            console.log(switchison ? 'Variable is already true so doing nothing.' : setTruemsg   );
+            if(!switchison){
                 switchison=true;
-                msg=setTruemsg;
+                changeImage();
             }
-            console.log(msg);
-            changeImage();
         }
         
         function show(){
