@@ -26,6 +26,11 @@
         
         show();
         
+        function changeImage(){
+            if(switchison){pic.src="img/switch_on.jpg";}
+            else{pic.src="img/switch_off.jpg";}
+        }
+        
         function toggle(){
             var msg;
             if(switchison==false){
@@ -37,7 +42,7 @@
                 msg=setFalsemsg;
             }
             console.log(msg);
-            show();
+            changeImage();
         }
         
         function settofalse(){
@@ -50,7 +55,7 @@
                 msg='Variable is already false so doing nothing.';
             }
             console.log(msg);
-            show();
+            changeImage();
         }
         
         function settotrue(){
@@ -63,16 +68,10 @@
                 msg=setTruemsg;
             }
             console.log(msg);
-            show();
+            changeImage();
         }
         
         function show(){
-            if(switchison==false){              
-                pic.src="img/switch_off.jpg";
-            }
-            else if(switchison==true){                
-                pic.src="img/switch_on.jpg";
-            }
             console.log('The var is now '+ switchison);
         }
     </script>
