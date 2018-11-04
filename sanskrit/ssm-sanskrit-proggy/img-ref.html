@@ -67,15 +67,13 @@
         }
         
         function show(){
-            if(switchison==0){
-                msg=false;
+            if(switchison==false){              
                 pic.src="img/switch_off.jpg";
             }
-            else if(switchison==1){
-                msg=true;
+            else if(switchison==true){                
                 pic.src="img/switch_on.jpg";
             }
-            console.log('The var is now '+ msg);
+            console.log('The var is now '+ switchison);
         }
     </script>
 
