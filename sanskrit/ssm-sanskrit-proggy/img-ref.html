@@ -45,16 +45,11 @@
         }
         
         function settofalse(){
-            var msg;
-            if(switchison===true){
+            if(switchison){
                 switchison=false;
-                msg=setFalsemsg;
+                changeImage();
             }
-            else{                
-                msg='Variable is already false so doing nothing.';
-            }
-            console.log(msg);
-            changeImage();
+            console.log(switchison?setFalsemsg:'Variable is already false so doing nothing.');
         }
         
         function settotrue(){
