@@ -9,13 +9,15 @@
 </head>
 
 <body>
-    <img src="" alt="" width="" height="">
+    <img src="" alt="" width="" height="" id="pic">
     <input type="button" value="SHOW" onclick="show()">
     <input type="button" value="SET TO TRUE" onclick="settotrue()">
     <input type="button" value="SET TO FALSE" onclick="settofalse()">
     <input type="button" value="TOGGLE" onclick="toggle()">
     <script>
         var switchison=false;
+        var pic = document.getElementById("pic");
+        show();
         
         var setFalsemsg='Variable was true so setting it to false.';
         var setTruemsg='Variable was false so setting it to true.';
@@ -29,17 +31,20 @@
                 msg=setFalsemsg;
             }
             console.log(msg);
+            show();
         }
         
         function settofalse(){
             var msg;
-            if(switchison==true){
+            if(switchison===true){
+                switchison=false;
                 msg=setFalsemsg;
             }
             else{                
                 msg='Variable is already false so doing nothing.';
             }
             console.log(msg);
+            show();
         }
         
         function settotrue(){
@@ -52,11 +57,18 @@
                 msg=setTruemsg;
             }
             console.log(msg);
+            show();
         }
         
         function show(){
-            if(switchison==0)msg=false;
-            else if(switchison==1)msg=true;
+            if(switchison==0){
+                msg=false;
+                pic.src="img/switch_off.jpg";
+            }
+            else if(switchison==1){
+                msg=true;
+                pic.src="img/switch_on.jpg";
+            }
             console.log('The var is now '+ msg);
         }
     </script>
