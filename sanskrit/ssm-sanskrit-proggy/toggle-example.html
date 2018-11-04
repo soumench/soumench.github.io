@@ -11,17 +11,19 @@
 <body>
     <input type="button" value="ON" id="on" onclick="act()">
     <input type="button" value="OFF" id="off" >
-    <input type="button" value="TOGGLE" id="tog">
+    <input type="button" value="TOGGLE" id="">
+    <input type="button" value="show switchison variable" onclick="toggle(this)">
     
     <script>
-        /*var onBtn = e("on");
-        var offBtn = e("off");
-        var togBtn = e("tog");
-        */
-        var toggle = false;
+        var switchison = false;
+        function toggle(el){
+           
+            console.log('switchison is '+switchison);
+        }
+       
         
         function act(){
-            toggle=!toggle;                  
+                             
             console.log('The switch was earlier off and now it is on.');
         }
         
