@@ -11,24 +11,54 @@
 <body>
     <img src="" alt="" width="" height="">
     <input type="button" value="SHOW" onclick="show()">
-    <input type="button" value="SET TO TRUE" onclick="check()">
+    <input type="button" value="SET TO TRUE" onclick="settotrue()">
+    <input type="button" value="SET TO FALSE" onclick="settofalse()">
+    <input type="button" value="TOGGLE" onclick="toggle()">
     <script>
         var switchison=false;
         
-        function check(){
+        var setFalsemsg='Variable was true so setting it to false.';
+        var setTruemsg='Variable was false so setting it to true.';
+        
+        function toggle(){
+            var msg;
+            if(switchison=switchison^1){
+               msg=setTruemsg;
+            }
+            else{
+                msg=setFalsemsg;
+            }
+            console.log(msg);
+        }
+        
+        function settofalse(){
+            var msg;
+            if(switchison){
+                msg='Variable is already false so doing nothing.';
+            }
+            else{
+                switchison=false;
+                msg=setFalsemsg;
+            }
+            console.log(msg);
+        }
+        
+        function settotrue(){
             var msg;
             if(switchison){
                 msg='Variable is already true so doing nothing.';
             }
             else{
                 switchison=true;
-                msg='Variable was false so setting it to true.';
+                msg=setTruemsg;
             }
             console.log(msg);
         }
         
         function show(){
-            console.log('The var is now '+ switchison);
+            if(switchison==0)msg=false;
+            else if(switchison==1)msg=true;
+            console.log('The var is now '+ msg);
         }
     </script>
 
