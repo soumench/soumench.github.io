@@ -34,16 +34,13 @@
         }
         
         function toggle(){
-            var msg;
-            if(switchison==false){
-                switchison=true;
-               msg=setTruemsg;
+            if(switchison){
+                switchison=false;
             }
-            else if( switchison==true){
-                switchison=false;    
-                msg=setFalsemsg;
+            else{
+                switchison=true;    
             }
-            console.log(msg);
+            console.log(switchison?setFalsemsg:setTruemsg);
             changeImage();
         }
         
