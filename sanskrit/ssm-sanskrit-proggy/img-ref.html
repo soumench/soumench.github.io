@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <img src="" alt="" width="" height="" id="pic">
+    <img src="" alt="" width="350" height="120" id="pic">
     <p>
     <input type="button" value="SHOW" onclick="show()">
     <input type="button" value="SET TO TRUE" onclick="settotrue()">
@@ -19,17 +19,21 @@
     <script>
         var switchison=false;
         var pic = document.getElementById("pic");
-        show();
+        
         
         var setFalsemsg='Variable was true so setting it to false.';
         var setTruemsg='Variable was false so setting it to true.';
         
+        show();
+        
         function toggle(){
             var msg;
-            if(switchison=switchison^1){
+            if(switchison==false){
+                switchison=true;
                msg=setTruemsg;
             }
-            else{
+            else if( switchison==true){
+                switchison=false;    
                 msg=setFalsemsg;
             }
             console.log(msg);
