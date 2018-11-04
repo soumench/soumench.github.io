@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <img src="" alt="" width="" height="">
+    <input type="button" value="button" onclick="act()">
+    <input type="button" value="ON" onclick="check()">
+    <script>
+        var switchison=false;
+        
+        function check(){
+            var msg;
+            if(switchison){
+                msg='Variable is already true so doing nothing.';
+            }
+            else{
+                switchison=true;
+                msg='Variable was false so setting it to true.';
+            }
+            console.log(msg);
+        }
+        
+        function act(){
+            console.log('The var is now '+ switchison);
+        }
+    </script>
+
+</body>
+
+</html>
