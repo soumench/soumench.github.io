@@ -37,10 +37,10 @@
 	<hr>
 	<div id="opt_group">
 	<span class="txt">9. Type of your phone: </span>
-    	<input type="radio" name="type_of_phone" onclick="choose(this.value)" value="an i-phone">i-Phone &ensp;
-        <input type="radio" name="type_of_phone" onclick="choose(this.value)" value="an Android phone">Android Phone&ensp;<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;<input type="radio" name="type_of_phone" onclick="choose(this.value)" value="a Windows Phone">Windows Phone
-        <input type="radio" name="type_of_phone" onclick="choose(this.value)" value="a feature phone">Feature phone <br>
+    	<input type="radio" name="type_of_phone" onclick="choose(this.value)" value="an iphone">an i-Phone &ensp;
+        <input type="radio" name="type_of_phone" onclick="choose(this.value)" value="an Android phone">an Android Phone&ensp;<br>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;<input type="radio" name="type_of_phone" onclick="choose(this.value)" value="a Windows Phone">a Windows Phone
+        <input type="radio" name="type_of_phone" onclick="choose(this.value)" value="a feature phone"> A feature phone <br>
        
 	</div>
 	<hr>
@@ -74,15 +74,12 @@
 		let today;		
 		let fromDate; /*let alteredFromDate;*/
 		let toDate; /*let alteredToDate;*/
-		/*let daysAbsent; */
-        let phone_type = " an Android phone"; let mob_serial_no;
+		/*let daysAbsent; */let phone_type; let mob_serial_no;
 		
 		let mob_maker; let mob_no; let mob_IMEI_no;
 		let mob_model;
-        
-        var showLetter = e("display_letter");
 		
-		showLetter.style.color="white";
+		e("display_letter").style.color="white";
 		
 		function update(){
 			name=firstUpperCase( e("applicant_name").value ); 
@@ -102,16 +99,8 @@
 			/*alteredToDate = buildDate(toDate);*/
 			
 			/*dateDiff();			*/
-            if(mob_no===""||name===""||address===""){
-                showLetter.innerHTML="Please Enter Your name, address and mobile Number."; 
-                return;
-            }
-            
-            if(mob_IMEI_no===""){mob_IMEI_no=" not known ";}
-            if(mob_serial_no===""){mob_serial_no=" not known ";}
-            if(mob_model===""){mob_model=" not known ";}
 					
-			showLetter.innerHTML =`
+			e("display_letter").innerHTML =`
 				To<br>
 				The Officer-in-Charge,<br>
 				....................... Police Station<br>
@@ -123,7 +112,7 @@
 				&ensp;	This is for your kind perusal that I, ${name}, a resident of ${address}, 
 				lost my mobile phone near ${lost_address}, on ${alteredFromDate}, as far as I can remember.
 				 <br>
-				&ensp; It is ${phone_type}, made by ${mob_maker} (model no - ${mob_model}). The IMEI of the device is ${mob_IMEI_no} and the serial number is ${mob_serial_no}.<br>
+				&ensp; It is ${phone_type}, made by ${mob_maker}(model no - ${mob_model}). The IMEI of the device is ${mob_IMEI_no} and the serial number is ${mob_serial_no}<br>
 				&ensp; I shall be highly obliged if you kindly register a complaint and give me an attested copy so that I can block the phone number to prevent any possible misuse of my SIM Card No ${mob_no} and do the requisite to recover my lost phone as early as possible. <br>
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  Thanking you,<br>
 				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Yours faithfully,<br>
@@ -133,9 +122,8 @@
 		}
 		
 		function show(){
-            update();
 			snd.play();
-			showLetter.style.color="black";
+			e("display_letter").style.color="black";
 			del("btn");
 			del("del_hr");
 		}			
