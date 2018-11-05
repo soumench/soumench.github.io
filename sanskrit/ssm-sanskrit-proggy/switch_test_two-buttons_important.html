@@ -23,17 +23,13 @@
     <script>
         var body = document.getElementById("body");
         var backgroundisblack=false;  var textisred=false;
-        var pic = document.getElementById("pic")
+        
         changeImage()		
 		
         function changeImage(){
             bgchanger.src=`img/switch_o${backgroundisblack ?'n':'ff'}.jpg`
 			bgchanger.alt=backgroundisblack?"ON":"OFF"
-			if(backgroundisblack){
-				console.log("switch is now on")
-			}else{
-				console.log("switch is now off")			
-			}
+			
             body.style.backgroundColor=backgroundisblack ? "black" : "white"; 
             console.log("background is now "+(backgroundisblack?"black":"white")) 
         }
