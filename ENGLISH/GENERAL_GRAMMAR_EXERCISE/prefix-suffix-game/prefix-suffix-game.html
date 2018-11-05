@@ -17,12 +17,12 @@
     <img src="img/blank1.png" id="arrow" alt="" width="300px" height="300px" onclick="knobUpdate()"><br>
     
     <div id="display">
-        <span id="fixWord">***</span>
+        <span id="fixWord">***</span><br>
     </div>
-    
+    <div>
     <input type="button" id="select" onclick="load()" value="START" class="btn"><br><br>
     <button id="check" onclick="checkFix()" class="btn">CHECK</button><br>
-    
+    </div>
     <footer id="foot">
 		Copyright &copy; Made by Soumen Chakraborty  - <span id="year">year</span> <br>
 		Strictly for Educational, Non-commercial and Non-Profit purpose.
@@ -56,14 +56,17 @@
         selectBtn.style.position="absolute";
         arrowKnob.style.position="absolute";
         fixWordDisplay.style.position="absolute";
+        fixWordDisplay.style.zIndex=4;
         
         checkBtn.style.visibility="hidden";
         
-        move("p","70px","9px"); prefix.style.zIndex=suffix.style.zIndex=2;
+        prefix.style.zIndex=suffix.style.zIndex=2;
+        
+        move("p","70px","9px"); 
         move("s","70px","249px");
         move("arrow","10px","10px"); rotate("arrow",0);
-        move("select","435px","100px"); 
-        move("check","435px","100px"); 
+        move("select","435px","200px"); 
+        move("check","435px","200px"); 
         
          // move("fixWord","385px", "120px");
         move("display","385px", "20px");
@@ -102,11 +105,13 @@
            
             
             if(fixCheck==="prefix" && fixknobSet === "prefix" || fixCheck==="suffix" && fixknobSet === "suffix"){
-                rotate("arrow",0); arrowKnob.src="img/clapping.png"; 
+                rotate("arrow",0); 
+                arrowKnob.src="img/clapping.png"; 
                 clap.play();
             }           
             else{
-                rotate("arrow",0); arrowKnob.src="img/boom.png";
+                rotate("arrow",0); 
+                arrowKnob.src="img/boom.png";
                 explosion.play();
             }
             fixWordDisplay.innerHTML= answerWord ;

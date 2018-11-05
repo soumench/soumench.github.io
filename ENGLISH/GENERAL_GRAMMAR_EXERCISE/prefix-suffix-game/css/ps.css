@@ -15,8 +15,8 @@ footer{
         font-size: 20PX;
     }
     h3{border: 2px solid red; border-radius: 16px;}
-    #fixWord{font-size: 180%;}
-    #mainWord{font-size: 180%;}
+    #fixWord{font-size: 170%;}
+    /*#mainWord{font-size: 170%;}*/
 
     .btn {
         -webkit-transition-duration: 0.4s; /* Safari */
@@ -34,7 +34,7 @@ footer{
         color: red;
     }
     
-    #fixword{
+    #fixword,#mainWord{
         border: 1px solid red;
         text-align: center;
         margin-left: auto;
