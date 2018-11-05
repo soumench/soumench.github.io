@@ -14,7 +14,7 @@
 </head>
 
 <body id="body">
-    <img alt="OFF" id="pic1" class="resizePic" onclick="toggle()"> 
+    <img alt="OFF" id="bgchanger" class="resizePic" onclick="toggle()"> 
     <span >Black Background</span><br>
        
     <img alt="OFF" id="pic2" class="resizePic" > 
@@ -27,8 +27,8 @@
         changeImage()		
 		
         function changeImage(){
-            pic1.src=`img/switch_o${backgroundisblack ?'n':'ff'}.jpg`
-			pic1.alt=backgroundisblack?"ON":"OFF"
+            bgchanger.src=`img/switch_o${backgroundisblack ?'n':'ff'}.jpg`
+			bgchanger.alt=backgroundisblack?"ON":"OFF"
 			if(backgroundisblack){
 				console.log("switch is now on")
 			}else{
@@ -42,15 +42,6 @@
             backgroundisblack = ! backgroundisblack
             changeImage();
         }        
-        function settofalse(){
-            if(!backgroundisblack)return
-            backgroundisblack=false
-            changeImage();
-        }        
-        function settotrue(){
-            if(backgroundisblack)return;
-            backgroundisblack=true;
-            changeImage();
-        }        
+         
     </script>
 </body></html>
