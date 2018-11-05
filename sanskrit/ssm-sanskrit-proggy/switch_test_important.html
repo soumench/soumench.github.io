@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Later switch test </title>
-   <link rel="stylesheet" type="text/css" href="switches.css">		
+   <!--<link rel="stylesheet" type="text/css" href="switches.css">-->
+    <style>
+        .resizable{width: 35px;}
+        .resizePic{width: 60px;}
+    </style>
 </head>
 
 <body id="body">
-    <img alt="OFF" id="pic" class="rezisable" onclick="toggle()">
+    <img alt="OFF" id="pic" class="resizePic" onclick="toggle()"> 
+    <span style="color: #03a021">Black Background</span>
     <p>    
-    <input type=button class="rezisable"  value="ON" onclick="settotrue()">
-    <input type=button class="rezisable"  value="OFF" onclick="settofalse()">    
+    <input type=button class="resizable"  value="ON" onclick="settotrue()">
+    <input type=button class="resizable"  value="OFF" onclick="settofalse()">    
     </p>
     <script>
         var body = document.getElementById("body");
@@ -28,7 +33,7 @@
 			}else{
 				console.log("switch is now off")			
 			}
-            body.style.backgroundColor=switchison ? "white" : "black";
+            body.style.backgroundColor=switchison ? "black" : "white"; 
         }
 		
         function toggle(){            
