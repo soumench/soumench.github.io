@@ -30,13 +30,18 @@ footer{
     }
 
     .btn:hover {
-        background-color: #ffffff; 
+        background-color: yellow; 
         color: red;
     }
-    #display{
+    
+    #fixword{
         border: 1px solid red;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
         padding: 1px;
+        background-color: aqua;
     }
+footer{
+    font-size: 60%;
+}
