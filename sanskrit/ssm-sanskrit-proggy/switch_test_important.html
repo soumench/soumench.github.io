@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Later switch test </title>
+   <link rel="stylesheet" type="text/css" href="switches.css">		
+</head>
+
+<body id="body">
+    <img alt="OFF" id="pic" class="rezisable" onclick="toggle()">
+    <p>    
+    <input type=button class="rezisable"  value="ON" onclick="settotrue()">
+    <input type=button class="rezisable"  value="OFF" onclick="settofalse()">    
+    </p>
+    <script>
+        var body = document.getElementById("body");
+        var switchison=false
+        var pic = document.getElementById("pic")
+        changeImage()		
+		
+        function changeImage(){
+            pic.src=`img/switch_o${switchison?'n':'ff'}.jpg`
+			pic.alt=switchison?"ON":"OFF"
+			if(switchison){
+				console.log("switch is now on")
+			}else{
+				console.log("switch is now off")			
+			}
+            body.style.backgroundColor=switchison ? "white" : "black";
+        }
+		
+        function toggle(){            
+            switchison = ! switchison
+            changeImage();
+        }        
+        function settofalse(){
+            if(!switchison)return
+            switchison=false
+            changeImage();
+        }        
+        function settotrue(){
+            if(switchison)return;
+            switchison=true;
+            changeImage();
+        }        
+    </script>
+</body></html>
