@@ -30,25 +30,36 @@
         var flags = [false,false,false];
         var body = document.getElementById("body");
         var backgroundisblack=false;  
-      //  var flags[1]=false;
-      //  var flags[2]=false;
-        
-        changeImage(0);
-        changeImage(1);
-        changeImage(2);
-        
-        function changeimage(parameter){
               
+        changeImage(0);     changeImage(1);        changeImage(2);
+        
+        function changeImage(parameter){
+            if(0==parameter){
+                bgchanger.src=`img/switch_o${flags[0] ?'n':'ff'}.jpg`
+                bgchanger.alt=flags[0] ?"ON":"OFF"
+
+                body.style.backgroundColor=flags[0] ? "black" : "white";
+                console.log("background is now "+(flags[0]?"black":"white"))
+            }
+            
+            else if(1==parameter){
+                textchanger.src=`img/switch_o${flags[1] ?'n':'ff'}.jpg`
+                textchanger.alt=flags[1] ?"ON":"OFF"
+
+                body.style.color=flags[1] ? "red" : "green"; 
+                console.log("text is now "+(flags[1] ?"red":"green"))
+            }
+                
+            else if(2==parameter){
+                photochanger.src=`img/switch_o${flags[2] ?'n':'ff'}.jpg`
+                photochanger.alt=flags[2] ?"ON":"OFF"
+
+                photo.src=`img/photo${flags[2] ? '1':'2'}.jpg`
+                console.log("Photo is now "+(flags[2] ?"shown":"hiden")) 
+            }              
         }
 		
-        function changeImage(0){
-            bgchanger.src=`img/switch_o${flags[0] ?'n':'ff'}.jpg`
-			bgchanger.alt=flags[0] ?"ON":"OFF"
-			
-            body.style.backgroundColor=flags[0] ? "black" : "white"; 
-            console.log("background is now "+(flags[0]?"black":"white")) 
-        }
-        
+      
         
         function newtoggle(parameter){
              console.log("the parameter is now "+parameter); 
@@ -65,34 +76,6 @@
               //  changeImage(2);
             } 
             changeImage(parameter);
-        } 
-        
-        
-        
-        function changeImage(1){
-            textchanger.src=`img/switch_o${flags[1] ?'n':'ff'}.jpg`
-			textchanger.alt=flags[1] ?"ON":"OFF"
-			
-            body.style.color=flags[1] ? "red" : "green"; 
-            console.log("text is now "+(flags[1] ?"red":"green")) 
-        }		
-       /* function newtoggle(){            
-            flags[1] = ! flags[1]
-            changeImage2();
-        }*/
-        
-        
-        
-        function changeImage(2){
-            photochanger.src=`img/switch_o${flags[2] ?'n':'ff'}.jpg`
-			photochanger.alt=flags[2] ?"ON":"OFF"
-			
-            photo.src=`img/photo${flags[2] ? '1':'2'}.jpg`
-            console.log("Photo is now "+(flags[2] ?"shown":"hiden")) 
-        }		
-       /* function newtoggle(){            
-            flags[2] = ! flags[2]
-            changeImage3();
-        } */         
+        }        
     </script>
 </body></html>
