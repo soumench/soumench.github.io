@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Later switch test </title>
@@ -11,6 +12,7 @@
     <span >Rabbit </span><img id="photochanger" ><br>
     <img alt="Hidden" width="100" height="100" id="photo"><br>
     <div  id="panel">
+    
     <span >Change Font </span><img id="changefont" ><br>
     <span >Change Photo </span><img id="changesomething" ><br>
     <img alt="Hidden" width="100" height="100" id="photo1"><br>
@@ -18,6 +20,17 @@
     <script>
         var flags = [];
         const  buttons= [bgchanger,textchanger,photochanger,    changefont, changesomething];
+        
+        var functions=[
+            function(FLAG){body.style.backgroundColor= FLAG ? "black" : "white";},
+            function(FLAG){body.style.color=FLAG ? "red" : "green"; },
+            function(FLAG){body.style.backgroundColor= FLAG ? "black" : "white";
+                            photo.src=`img/photo${FLAG ? '1':'2'}.jpg`},
+            function(FLAG){body.style.fontFamily = FLAG ? "monospace" :"sans-serif";},
+            function(FLAG){photo1.src=`img/photo${ FLAG ? 'fruit':'clown'}.jpg`;},
+        ];
+        
+        
         i=buttons.length; 
         while(i--){
             buttons.push(false);
@@ -25,26 +38,14 @@
             buttons[i].setAttribute("class","resizePic");
             buttons[i].setAttribute("onclick","newtoggle(" + i + ")" );
         }        
+        
+        
         function changeImage(parameter){
             buttons[parameter].src=`img/switch_o${flags[parameter] ?'n':'ff'}.jpg`;
             buttons[parameter].alt=flags[parameter] ?"ON":"OFF";
-            if(0==parameter){
-                body.style.backgroundColor=flags[parameter] ? "black" : "white";
-            }else if(1===parameter){
-                body.style.color=flags[parameter] ? "red" : "green"; 
-            }else if(2===parameter){
-                photo.src=`img/photo${flags[parameter] ? '1':'2'}.jpg`;
-            }
-            
-           
-            else if(3===parameter){
-                body.style.fontFamily = flags[parameter] ? "monospace" :"sans-serif";
-            }
-            else if(4===parameter){
-                photo1.src=`img/photo${flags[parameter] ? 'fruit':'clown'}.jpg`;
-            }
-            
+            functions[parameter](flags[parameter])        
         }
+        
         function newtoggle(parameter){
             console.log("the parameter is now "+parameter); 
             flags[parameter] = ! flags[parameter]
