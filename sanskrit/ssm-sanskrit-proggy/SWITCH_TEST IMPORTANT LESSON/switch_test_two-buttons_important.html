@@ -27,12 +27,17 @@
             buttons[parameter].src=`img/switch_o${flags[parameter] ?'n':'ff'}.jpg`;
             buttons[parameter].alt=flags[parameter] ?"ON":"OFF";
             if(0==parameter){
-                body.style.backgroundColor=flags[0] ? "black" : "white";
-            }else if(1==parameter){
-                body.style.color=flags[1] ? "red" : "green"; 
-            }else if(2==parameter){
-                photo.src=`img/photo${flags[2] ? '1':'2'}.jpg`
-            }              
+                body.style.backgroundColor=flags[parameter] ? "black" : "white";
+            }else if(1===parameter){
+                body.style.color=flags[parameter] ? "red" : "green"; 
+            }else if(2===parameter){
+                photo.src=`img/photo${flags[parameter] ? '1':'2'}.jpg`
+            }
+            
+            else if(3===parameter){
+                photo.src=`img/photo${flags[parameter] ? '3':'4'}.jpg`
+                
+            }
         }
         function newtoggle(parameter){
             console.log("the parameter is now "+parameter); 
