@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Later switch test </title>
-   <!--<link rel="stylesheet" type="text/css" href="switches.css">-->
+   
     <style>
         body{color: #03a021;}
         .resizable{width: 35px;}
@@ -18,15 +18,20 @@
     <span >Black Background</span><br>
        
     <img alt="OFF" id="textchanger" class="resizePic" onclick="toggle2()"> 
-    <span >Red Text</span>
+    <span >Red Text</span><br>
+    
+     <img alt="OFF" id="photochanger" class="resizePic" onclick="toggle3()"> 
+    <span >Change Photo</span><br>
     
     <script>
         var body = document.getElementById("body");
         var backgroundisblack=false;  
         var textisred=false;
+        var photoshown=false;
         
         changeImage()
         changeImage2()
+        changeImage3()
 		
         function changeImage(){
             bgchanger.src=`img/switch_o${backgroundisblack ?'n':'ff'}.jpg`
@@ -34,8 +39,7 @@
 			
             body.style.backgroundColor=backgroundisblack ? "black" : "white"; 
             console.log("background is now "+(backgroundisblack?"black":"white")) 
-        }
-		
+        }		
         function toggle(){            
             backgroundisblack = ! backgroundisblack
             changeImage();
@@ -49,12 +53,25 @@
 			
             body.style.color=textisred ? "red" : "green"; 
             console.log("text is now "+(textisred?"red":"green")) 
-        }
-		
+        }		
         function toggle2(){            
             textisred = ! textisred
             changeImage2();
-        }    
+        }
+        
+        
+        
+        function changeImage3(){
+            photochanger.src=`img/switch_o${textisred ?'n':'ff'}.jpg`
+			photochanger.alt=photoshown ?"ON":"OFF"
+			
+            body.style.color=photoshown ? "red" : "yellow"; 
+            console.log("Photo is now "+(photoshown ?"shown":"hiden")) 
+        }		
+        function toggle3(){            
+            photoshown = ! photoshown
+            changeImage3();
+        } 
          
     </script>
 </body></html>
