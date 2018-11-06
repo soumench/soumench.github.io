@@ -11,14 +11,17 @@
     <span >Rabbit </span><img id="photochanger" ><br>
     <img alt="Hidden" width="100" height="100" id="photo"><br>
     <div  id="panel">
-    <span >CHANGE NAME </span><img id="changename" ><br>
-    <span >CHANGE NAME </span><img id="changecity" ><br>
-    <span >CHANGE NAME </span><img id="changeage" ><br>
+    
+    <span >Change Font </span><img id="changefont" ><br>
+    <span >Change Photo </span><img id="changesomething" ><br>
+    <img alt="Hidden" width="100" height="100" id="photo1"><br>
     </div>
     <script>
-        var flags = [false,false,false];
-        const  buttons= [bgchanger,textchanger,photochanger,     changename, changecity, changeage];
-        i=buttons.length; while(i--){
+        var flags = [];
+        const  buttons= [bgchanger,textchanger,photochanger,    changefont, changesomething];
+        i=buttons.length; 
+        while(i--){
+            buttons.push(false);
             changeImage(i);
             buttons[i].setAttribute("class","resizePic");
             buttons[i].setAttribute("onclick","newtoggle(" + i + ")" );
@@ -31,13 +34,17 @@
             }else if(1===parameter){
                 body.style.color=flags[parameter] ? "red" : "green"; 
             }else if(2===parameter){
-                photo.src=`img/photo${flags[parameter] ? '1':'2'}.jpg`
+                photo.src=`img/photo${flags[parameter] ? '1':'2'}.jpg`;
             }
             
+           
             else if(3===parameter){
-                photo.src=`img/photo${flags[parameter] ? '3':'4'}.jpg`
-                
+                body.style.fontFamily = flags[parameter] ? "monospace" :"sans-serif";
             }
+            else if(4===parameter){
+                photo1.src=`img/photo${flags[parameter] ? 'fruit':'clown'}.jpg`;
+            }
+            
         }
         function newtoggle(parameter){
             console.log("the parameter is now "+parameter); 
