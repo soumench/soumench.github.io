@@ -7,9 +7,13 @@
     <title> lesson on function </title>
 </head>
 
-<body>
+<body id="body">
     <script>
          var makeblack = function(FLAG){body.style.backgroundColor= FLAG ? "black" : "white";}
+         
+          makeblack(true); makeblack(false);
+        
+         (function(FLAG){body.style.backgroundColor= FLAG ? "black" : "white";} )  (true)
     </script>
 
 </body>
