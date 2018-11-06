@@ -20,8 +20,9 @@
     <img alt="OFF" id="textchanger" class="resizePic" onclick="toggle2()"> 
     <span >Red Text</span><br>
     
-     <img alt="OFF" id="photochanger" class="resizePic" onclick="toggle3()"> 
+    <img alt="OFF" id="photochanger" class="resizePic" onclick="toggle3()"> 
     <span >Change Photo</span><br>
+    <img alt="Hidden" width="100" height="100" id="photo">
     
     <script>
         var body = document.getElementById("body");
@@ -62,10 +63,11 @@
         
         
         function changeImage3(){
-            photochanger.src=`img/switch_o${textisred ?'n':'ff'}.jpg`
+            photochanger.src=`img/switch_o${photoshown ?'n':'ff'}.jpg`
 			photochanger.alt=photoshown ?"ON":"OFF"
 			
-            body.style.color=photoshown ? "red" : "yellow"; 
+            //body.style.color=photoshown ? "red" : "yellow"; 
+            photo.src=`img/photo${photoshown ? '1':'2'}.jpg`
             console.log("Photo is now "+(photoshown ?"shown":"hiden")) 
         }		
         function toggle3(){            
