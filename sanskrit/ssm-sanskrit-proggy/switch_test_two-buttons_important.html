@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Later switch test </title>
-   
+    
     <style>
         body{color: #03a021;}
         .resizable{width: 35px;}
@@ -21,58 +21,59 @@
     <img alt="OFF" id="textchanger" class="resizePic" onclick="newtoggle(1)"> 
     <br>
     
-    <span >Rabbit on</span>
+    <span >Rabbit </span>
     <img alt="OFF" id="photochanger" class="resizePic" onclick="newtoggle(2)"> 
     <br>
     <img alt="Hidden" width="100" height="100" id="photo">
     
     <script>
+        var flags = [false,false,false];
         var body = document.getElementById("body");
         var backgroundisblack=false;  
-        var textisred=false;
-        var photoshown=false;
+      //  var flags[1]=false;
+      //  var flags[2]=false;
         
-        changeImage()
-        changeImage2()
-        changeImage3()
+        changeImage();
+        changeImage2();
+        changeImage3();
 		
         function changeImage(){
-            bgchanger.src=`img/switch_o${backgroundisblack ?'n':'ff'}.jpg`
-			bgchanger.alt=backgroundisblack?"ON":"OFF"
+            bgchanger.src=`img/switch_o${flags[0] ?'n':'ff'}.jpg`
+			bgchanger.alt=flags[0] ?"ON":"OFF"
 			
-            body.style.backgroundColor=backgroundisblack ? "black" : "white"; 
-            console.log("background is now "+(backgroundisblack?"black":"white")) 
+            body.style.backgroundColor=flags[0] ? "black" : "white"; 
+            console.log("background is now "+(flags[0]?"black":"white")) 
         }		
         function newtoggle(){            
-            backgroundisblack = ! backgroundisblack
+            flags[0] = ! flags[0]
             changeImage();
         } 
         
         
         
         function changeImage2(){
-            textchanger.src=`img/switch_o${textisred ?'n':'ff'}.jpg`
-			textchanger.alt=textisred ?"ON":"OFF"
+            textchanger.src=`img/switch_o${flags[1] ?'n':'ff'}.jpg`
+			textchanger.alt=flags[1] ?"ON":"OFF"
 			
-            body.style.color=textisred ? "red" : "green"; 
-            console.log("text is now "+(textisred?"red":"green")) 
+            body.style.color=flags[1] ? "red" : "green"; 
+            console.log("text is now "+(flags[1] ?"red":"green")) 
         }		
         function newtoggle(){            
-            textisred = ! textisred
+            flags[1] = ! flags[1]
             changeImage2();
         }
         
         
         
         function changeImage3(){
-            photochanger.src=`img/switch_o${photoshown ?'n':'ff'}.jpg`
-			photochanger.alt=photoshown ?"ON":"OFF"
+            photochanger.src=`img/switch_o${flags[2] ?'n':'ff'}.jpg`
+			photochanger.alt=flags[2] ?"ON":"OFF"
 			
-            photo.src=`img/photo${photoshown ? '1':'2'}.jpg`
-            console.log("Photo is now "+(photoshown ?"shown":"hiden")) 
+            photo.src=`img/photo${flags[2] ? '1':'2'}.jpg`
+            console.log("Photo is now "+(flags[2] ?"shown":"hiden")) 
         }		
         function newtoggle(){            
-            photoshown = ! photoshown
+            flags[2] = ! flags[2]
             changeImage3();
         }          
     </script>
