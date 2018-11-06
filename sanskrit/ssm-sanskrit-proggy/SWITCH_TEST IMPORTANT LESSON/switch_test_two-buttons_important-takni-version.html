@@ -17,7 +17,8 @@
     <span >apple </span><img id="changeapple" ><br>
     <img alt="Hidden" width="100" height="100" id="photo1"><br>
     </div>
-    <span >sixth button </span><img id="changesomething" ><br>
+    <span >Girl </span><img id="changesomething" ><br>
+    <img alt="Hidden" width="100" height="100" id="photo2"><br>
     <script>
         var flags = [];
         const  buttons= [bgchanger,textchanger,photochanger,    
@@ -26,11 +27,11 @@
         var functions=[
             function(FLAG){body.style.backgroundColor= FLAG ? "black" : "white";},
             function(FLAG){body.style.color=FLAG ? "red" : "green"; },
-            function(FLAG){body.style.backgroundColor= FLAG ? "black" : "white";
-                            photo.src=`img/photo${FLAG ? '1':'2'}.jpg`},
+            function(FLAG){photo.src=`img/photo${FLAG ? '1':'2'}.jpg`},
             function(FLAG){body.style.fontFamily = FLAG ? "monospace" :"sans-serif";},
             function(FLAG){photo1.src=`img/photo${ FLAG ? 'fruit':'clown'}.jpg`;},
-            function(FLAG){photo1.src=`img/photo${ FLAG ? 'fruit':'clown'}.jpg`;},
+            
+            function(FLAG){photo2.src=`img/pic${ FLAG ? 'girl' :'boy'}.jpg`;},
         ];
         
         
