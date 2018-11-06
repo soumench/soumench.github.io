@@ -2,29 +2,26 @@
 <html lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Later switch test </title>    
-    <style>
-        body{color: #03a021;}
-        .resizable{width: 35px;}
-        .resizePic{width: 60px;}
-    </style>
+    <title> Later switch test </title>
+     <link rel="stylesheet" type="text/css" href="switchTest.css">
 </head>
 <body id="body">
-    <span >Black Background</span>
-    <img alt="OFF" id="bgchanger" class="resizePic" onclick="newtoggle(0)"><br> 
-    <span >Red Text</span>  
-    <img alt="OFF" id="textchanger" class="resizePic" onclick="newtoggle(1)"><br>
-    <span >Rabbit </span>
-    <img alt="OFF" id="photochanger" class="resizePic" onclick="newtoggle(2)"><br>
+    <span >Black Background</span><img id="bgchanger" ><br> 
+    <span >Red Text</span><img id="textchanger" ><br>
+    <span >Rabbit </span><img id="photochanger" ><br>
     <img alt="Hidden" width="100" height="100" id="photo">
     <script>
         var flags = [false,false,false];
         const  buttons= [bgchanger,textchanger,photochanger];
-        var backgroundisblack=false;
-        var i=3; while(i--) {changeImage(i)};                
+        i=buttons.length; while(i--){
+            changeImage(i);
+            buttons[i].setAttribute("class","resizePic");
+            buttons[i].setAttribute("onclick","newtoggle(" + i + ")" );
+        }      
+        
         function changeImage(parameter){
-            [bgchanger,textchanger,photochanger][parameter].src=`img/switch_o${flags[parameter] ?'n':'ff'}.jpg`;
-            [ bgchanger, textchanger, photochanger] [parameter] .alt=flags[parameter] ?"ON":"OFF";
+            buttons[parameter].src=`img/switch_o${flags[parameter] ?'n':'ff'}.jpg`;
+            buttons[parameter].alt=flags[parameter] ?"ON":"OFF";
             if(0==parameter){
                 body.style.backgroundColor=flags[0] ? "black" : "white";
             }else if(1==parameter){
