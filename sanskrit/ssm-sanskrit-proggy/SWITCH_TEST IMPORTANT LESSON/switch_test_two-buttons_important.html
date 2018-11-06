@@ -17,8 +17,7 @@
             changeImage(i);
             buttons[i].setAttribute("class","resizePic");
             buttons[i].setAttribute("onclick","newtoggle(" + i + ")" );
-        }      
-        
+        }        
         function changeImage(parameter){
             buttons[parameter].src=`img/switch_o${flags[parameter] ?'n':'ff'}.jpg`;
             buttons[parameter].alt=flags[parameter] ?"ON":"OFF";
