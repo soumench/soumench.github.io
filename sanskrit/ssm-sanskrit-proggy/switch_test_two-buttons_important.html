@@ -33,11 +33,15 @@
       //  var flags[1]=false;
       //  var flags[2]=false;
         
-        changeImage1();
-        changeImage2();
-        changeImage3();
+        changeImage(0);
+        changeImage(1);
+        changeImage(2);
+        
+        function changeimage(parameter){
+              
+        }
 		
-        function changeImage1(){
+        function changeImage(0){
             bgchanger.src=`img/switch_o${flags[0] ?'n':'ff'}.jpg`
 			bgchanger.alt=flags[0] ?"ON":"OFF"
 			
@@ -48,23 +52,24 @@
         
         function newtoggle(parameter){
              console.log("the parameter is now "+parameter); 
-            if(!flags[0]){
+            if(0===parameter){
                 flags[0] = ! flags[0]
-                changeImage1();
+               // changeImage(parameter);
             }
-            else if(!flags[1]){
+            else if(1===parameter){
                 flags[1] = ! flags[1]
-                changeImage2();
+               // changeImage(1);
             }
-            else if(!flags[2]){
+            else if(2===parameter){
                 flags[2] = ! flags[2]
-                changeImage3();
-            }            
+              //  changeImage(2);
+            } 
+            changeImage(parameter);
         } 
         
         
         
-        function changeImage2(){
+        function changeImage(1){
             textchanger.src=`img/switch_o${flags[1] ?'n':'ff'}.jpg`
 			textchanger.alt=flags[1] ?"ON":"OFF"
 			
@@ -78,7 +83,7 @@
         
         
         
-        function changeImage3(){
+        function changeImage(2){
             photochanger.src=`img/switch_o${flags[2] ?'n':'ff'}.jpg`
 			photochanger.alt=flags[2] ?"ON":"OFF"
 			
