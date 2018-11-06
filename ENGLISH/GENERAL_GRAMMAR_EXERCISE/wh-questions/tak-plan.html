@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body id="body">
+    <input type="button" value="TRY" id="click">
+    <!--<input type="button" value="startbengali">
+    <input type="button" value="endbengali"><br>
+    <input type="button" value="startenglish">
+    <input type="button" value="endenglish">-->
+    <p><span id="engtxt">***</span><br>
+       <span id="bentxt">***</span>
+    </p>
+    
+    <script>
+        const se=["dog","cat","bird"];
+        const sb=["kukkura","biRAl", "pAkhI"];
+        const esentence = ["runs", "goes to market", "eats mice", "sings"];
+        const bsentence = ["dourAy", "bAjAre jAy", "indur khAy", "gAn kore"];
+        if(se.length!=sb.length||esentence.length!=bsentence.length)console.log(`list mismatch`)//debug
+        const buttons = [click];
+        var i = buttons.length;
+        while(i--){buttons[i].setAttribute("onclick","show(" + i + ")" );}
+        let dice1; let dice2;
+        function show(){
+           dice1= Math.floor(Math.random()* se.length);
+           dice2= Math.floor(Math.random()* esentence.length);
+           
+           engtxt.innerHTML=se[dice1]+ " " + esentence[dice2];
+           bentxt.innerHTML=sb[dice1]+ " " + bsentence[dice2];
+        }    
+    </script>
+</body>
+
+</html>
