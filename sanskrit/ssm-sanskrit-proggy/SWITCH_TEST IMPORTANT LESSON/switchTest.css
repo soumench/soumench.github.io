@@ -10,4 +10,10 @@
     width: 60px;
 }
 
+#panel{
+    border: 1px solid green;
+    width: 50%;
+    padding: 10px;
+}
+
 </style >

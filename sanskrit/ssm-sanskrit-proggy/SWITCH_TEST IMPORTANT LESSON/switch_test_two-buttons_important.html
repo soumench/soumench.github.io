@@ -9,10 +9,15 @@
     <span >Black Background</span><img id="bgchanger" ><br> 
     <span >Red Text</span><img id="textchanger" ><br>
     <span >Rabbit </span><img id="photochanger" ><br>
-    <img alt="Hidden" width="100" height="100" id="photo">
+    <img alt="Hidden" width="100" height="100" id="photo"><br>
+    <div  id="panel">
+    <span >CHANGE NAME </span><img id="changename" ><br>
+    <span >CHANGE NAME </span><img id="changecity" ><br>
+    <span >CHANGE NAME </span><img id="changeage" ><br>
+    </div>
     <script>
         var flags = [false,false,false];
-        const  buttons= [bgchanger,textchanger,photochanger];
+        const  buttons= [bgchanger,textchanger,photochanger,     changename, changecity, changeage];
         i=buttons.length; while(i--){
             changeImage(i);
             buttons[i].setAttribute("class","resizePic");
