@@ -33,20 +33,32 @@
       //  var flags[1]=false;
       //  var flags[2]=false;
         
-        changeImage();
+        changeImage1();
         changeImage2();
         changeImage3();
 		
-        function changeImage(){
+        function changeImage1(){
             bgchanger.src=`img/switch_o${flags[0] ?'n':'ff'}.jpg`
 			bgchanger.alt=flags[0] ?"ON":"OFF"
 			
             body.style.backgroundColor=flags[0] ? "black" : "white"; 
             console.log("background is now "+(flags[0]?"black":"white")) 
-        }		
-        function newtoggle(){            
-            flags[0] = ! flags[0]
-            changeImage();
+        }
+        
+        
+        function newtoggle(){
+            if(flags[0]){
+                flags[0] = ! flags[0]
+                changeImage1();
+            }
+            else if(flags[1]){
+                flags[1] = ! flags[1]
+                changeImage2();
+            }
+            else if(flags[2]){
+                flags[2] = ! flags[2]
+                changeImage3();
+            }            
         } 
         
         
@@ -58,10 +70,10 @@
             body.style.color=flags[1] ? "red" : "green"; 
             console.log("text is now "+(flags[1] ?"red":"green")) 
         }		
-        function newtoggle(){            
+       /* function newtoggle(){            
             flags[1] = ! flags[1]
             changeImage2();
-        }
+        }*/
         
         
         
@@ -72,9 +84,9 @@
             photo.src=`img/photo${flags[2] ? '1':'2'}.jpg`
             console.log("Photo is now "+(flags[2] ?"shown":"hiden")) 
         }		
-        function newtoggle(){            
+       /* function newtoggle(){            
             flags[2] = ! flags[2]
             changeImage3();
-        }          
+        } */         
     </script>
 </body></html>

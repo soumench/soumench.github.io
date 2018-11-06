@@ -1,0 +1,76 @@
+/* This CSS is completely optional*/
+
+/* Table appearance */
+.theTable{
+  font: normal 16px sans-serif;
+  padding: 0.5em;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 0.5em;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-bottom: 40px;
+  vertical-align: top;
+}
+.theTable table{
+  border-collapse: collapse;
+}
+.theTable table td{
+  border: 2px solid #ccc;
+  padding: 0.5em;
+  background: #eee;
+}
+
+.theTable table tr.header td{
+  background: #ccc;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Cell with buttons */
+
+.theTable table td.buttons{
+  background: #ccc;
+  font-weight: bold;
+  text-align: center;
+}
+
+.theTable table td.buttons .delete{
+  color: #800;
+}
+.theTable table td.buttons .done{
+  background: #cec;
+}
+
+.theTable table td.buttons>*{
+  border: 1px solid #aaa;
+  background: #ddd;
+  border-radius: 2px;
+  padding: 0.2em 0.5em;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.theTable .inputs input{
+  display: block;
+  width: 100%;
+  min-width: 0;
+  outline: none;
+  padding: 0.5em;
+  box-sizing: border-box;
+  border:none;
+}
+.theTable .inputs td{
+  padding: 0;
+}
+
+/* Cell adding button*/
+
+.theTable button{
+  margin-top: 0.5em;
+  border: 2px solid #ccc;
+  background: #eee;
+  outline: none;
+}
+.theTable button:active{
+  background: #fff;
+}
