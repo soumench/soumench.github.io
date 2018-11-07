@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body id="body">
+    <input type="button" value="click" id="click" >
+    <input type="button" value="me" id="me" >
+    
+    <script>
+        const buttons = [click, me];
+        var i = buttons.length;
+        while(i--){buttons[i].setAttribute("onclick","show(" + i + ")" );}
+        
+        
+        function show(param){
+            console.log(`clicked ${param}`);
+        }
+    </script>
+
+</body>
+</html>
