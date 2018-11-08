@@ -32,30 +32,30 @@
             buttons[i].setAttribute("onclick","show(" + i + ")" )
             buttons[i].style.width="100px"
         }        
-        var array = ["tak", "som","kitty"]
+        var array1 = ["tak", "som","kitty"]
         var arraydisplay = e("array")
         var unshiftt=e("unshiftt")
         var donothing=function(){} 
-        var actions=[donothing,()=>array.pop(),()=>array.shift(),()=>{
+        var actions=[donothing,()=>array1.pop(),()=>array1.shift(),()=>{
                 var v = unshiftt.value;
-                v ? array.unshift(v): debugme(1);
+                v ? array.unshift(v): debug.innerHTML=`Please write something`;
             }];
         arraydisplay.innerHTML=array.toString()
         function show(param){
-            debugme(0)
+            debug.innerHTML=""
             actions[param]()
             if(0==param){
                 var v = pusht.value
-                v ? array.push(v) : debugme(1)
+                v ? array1.push(v) : debug.innerHTML=`Please write something`
             }
-            else if(1==param){array.pop()}
-            else if(2==param){array.shift()}
+            else if(1==param){array1.pop()}
+            else if(2==param){array1.shift()}
             else if(3==param){
                 var v = unshiftt.value
-                v ? array.unshift(v): debugme(1)
+                v ? array1.unshift(v): debug.innerHTML=`Please write something`
             }
-            lengtht.value=`There are ${array.length} elemensts`
-            arraydisplay.innerHTML=array.toString()
+            lengtht.value=`There are ${array1.length} elemensts`
+            arraydisplay.innerHTML=array1.toString()
         }        
         function debugme(param){
             if(param)debug.innerHTML=`Please write something`
