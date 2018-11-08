@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style>body{background-color: #e5e4e4;}
+        .btns{ }
+    </style>
+</head>
+<body>
+    <h1>Array Lesson - tak's class</h1>
+    <span id="arraydisplay"></span><br>
+    <input type="text" id="pusht" placeholder="Add an item at the end.">
+    <input type="button" id="push"><br>
+    <span>Delete the last item. </span>
+    <input type="button" id="pop"><br>
+    <span>Delete the first item.</span>
+    <input type="button" id="shift"><br>
+    <input type="text" id="unshiftt" placeholder="Add an item at the start.">
+    <input type="button" id="unshift"><br>
+    <span id="lengtht"> </span>
+    <input type="button" id="clear"><br>
+    <span id="debug" style="color:red;"></span><br>
+    <script>
+        const buttons=[push, pop, shift, unshift,clear]
+        var i = buttons.length
+        while(i--){
+            buttons[i].setAttribute("onclick","show(" + i + ")" )
+            buttons[i].setAttribute("class","btns" )
+            buttons[i].style.width="100px"
+            buttons[i].value=buttons[i].id.toLowerCase()
+        }        
+        var array1 = ["tak", "som","kitty"] 
+        lengtht.innerHTML=`The array length is ${array1.length}`
+        var actions=[
+            ()=>{  
+                var v = pusht.value
+                v ? array1.push(v) : debug.innerHTML=`Please write something`
+            },
+            ()=>{array1.pop();},
+            ()=>{array1.shift();},
+            ()=>{
+                var v = unshiftt.value;
+                v ? array1.unshift(v): debug.innerHTML=`Please write something`;                
+            },
+            ()=>{array1 =[]}
+        ];
+        arraydisplay.innerHTML="[ " + array1.toString() + "]"
+        function show(param){
+            debug.innerHTML=""
+            actions[param]()
+            lengtht.innerHTML=`The array length is ${array1.length}`
+            arraydisplay.innerHTML="[ " + array1.toString() + "]"
+        }       
+    </script>    
+</body>
+</html>
