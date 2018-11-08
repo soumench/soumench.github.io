@@ -34,7 +34,7 @@
         }        
         var array1 = ["tak", "som","kitty"]
         var arraydisplay = e("array")
-        var unshiftt=e("unshiftt")
+       // var unshiftt=e("unshiftt")
         var donothing=function(){} 
         var actions=[donothing,()=>array1.pop(),()=>array1.shift(),()=>{
                 var v = unshiftt.value;
@@ -43,7 +43,7 @@
         arraydisplay.innerHTML=array.toString()
         function show(param){
             debug.innerHTML=""
-            actions[param]()
+          //  actions[param]()
             if(0==param){
                 var v = pusht.value
                 v ? array1.push(v) : debug.innerHTML=`Please write something`
