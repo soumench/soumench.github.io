@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <h1>Array Lesson - tak's class</h1>
+    <span id="array"></span><br>
+    <input type="text" id="pusht">
+    <input type="button" value="push" id="Push"><br>
+    <input type="text" id="popt" disabled >
+    <input type="button" value="pop" id="Pop"><br>
+    <input type="text" id="shiftt" disabled >
+    <input type="button" value="shift" id="Shift"><br>
+    <input type="text" id="unshiftt">
+    <input type="button" value="unshift" id="Unshift"><br>
+    <input type="text" id="lengtht" disabled>
+    <input type="button" value="length" id="Length"><br>
+    <span id="debug" style="color:red;"></span><br>
+    <script>
+        const buttons=[Push, Pop, Shift, Unshift, Length];
+       // const txtfields = [pusht, popt, shiftt, unshiftt, lengtht];
+        var i = buttons.length;
+        while(i--){
+           buttons[i].setAttribute("onclick","show(" + i + ")" );
+           //txtfields[i].setAttribute("onclick","show(" + i + ")" );    
+        }
+        
+        var array = ["tak", "som","kitty"];
+        var arraydisplay = e("array");
+        var debug = e("debug")
+        var pustt = e("pusht");
+        var unshiftt=e("unshiftt");
+        arraydisplay.innerHTML=array.toString();
+        function show(param){
+            debugme(0);
+            if(0===param){
+                var v = pusht.value
+                if(v!="")array.push(v);
+                else debugme(1); 
+            }
+            if(1===param){array.pop();}
+            if(2===param){
+                array.shift();
+            }
+            if(3===param){
+                var v = unshiftt.value;
+                if(v!="") array.unshift(v);
+                else debugme(1);
+            }
+            if(4===param){debugme(0);}
+            
+            arraydisplay.innerHTML=array.toString();
+        }
+        
+        function debugme(param){
+            if(param)debug.innerHTML=`Please write something`;
+            else {
+                lengtht.value=array.length;
+                debug.innerHTML=``;
+            }      
+        }
+        
+        function e(id){return document.getElementById(id);}
+    </script>
+    
+</body>
+
+</html>
