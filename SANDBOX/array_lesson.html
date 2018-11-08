@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Array Lesson - tak's class</h1>
-    <span id="array"></span><br>
+    <span id="arraydisplay"></span><br>
     <input type="text" id="pusht">
     <input type="button" value="push" id="Push"><br>
     <input type="text" id="popt" disabled >
@@ -33,14 +33,13 @@
             buttons[i].style.width="100px"
         }        
         var array1 = ["tak", "som","kitty"]
-        var arraydisplay = e("array")
-       // var unshiftt=e("unshiftt")
+      
         var donothing=function(){} 
         var actions=[donothing,()=>array1.pop(),()=>array1.shift(),()=>{
                 var v = unshiftt.value;
                 v ? array.unshift(v): debug.innerHTML=`Please write something`;
             }];
-        arraydisplay.innerHTML=array.toString()
+        arraydisplay.innerHTML=array1.toString()
         function show(param){
             debug.innerHTML=""
           //  actions[param]()
