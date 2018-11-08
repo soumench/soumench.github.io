@@ -22,20 +22,21 @@
     <input type="text" id="unshiftt">
     <input type="button" value="unshift" id="Unshift"><br>
     <input type="text" id="lengtht" disabled>
-    <input type="button" value="length" id="Length" disabled><br>
     <span id="debug" style="color:red;"></span><br>
     <script>
-        const buttons=[Push, Pop, Shift, Unshift, Length]
-       // const txtfields = [pusht, popt, shiftt, unshiftt, lengtht]
+        const buttons=[Push, Pop, Shift, Unshift]
         var i = buttons.length
         while(i--){
             buttons[i].setAttribute("onclick","show(" + i + ")" )
             buttons[i].style.width="100px"
         }        
-        var array1 = ["tak", "som","kitty"]      
+        var array1 = ["tak", "som","kitty"] 
+        lengtht.value=`The length of the array is ${array1.length}`
         var donothing=function(){} 
-         var actions=[
-            ()=>{                
+        var actions=[
+            ()=>{  
+                var v = pusht.value
+                v ? array1.push(v) : debug.innerHTML=`Please write something`
                 console.log("just did action number 0")
             },
             ()=>{
@@ -43,38 +44,24 @@
                 console.log("just did action number 1")
             },
             ()=>{
-                 array1.shift();  
+                array1.shift();  
                 console.log("just did action number 2")
             },
-            ()=>{/*
+            ()=>{
                 var v = unshiftt.value;
-                v ? array.unshift(v): debug.innerHTML=`Please write something`;
-                */
+                v ? array1.unshift(v): debug.innerHTML=`Please write something`;                
                 console.log("just did action number 3")
             }];
         arraydisplay.innerHTML=array1.toString()
         function show(param){
             debug.innerHTML=""
             actions[param]()
-            if(0==param){
-                var v = pusht.value
-                v ? array1.push(v) : debug.innerHTML=`Please write something`
-            }
-           // else if(1==param){array1.pop()}
-            else if(1==param){}
-          //  else if(2==param){array1.shift()}
-            else if(3==param){
-                var v = unshiftt.value
-                v ? array1.unshift(v): debug.innerHTML=`Please write something`
-            }
-            lengtht.value=`There are ${array1.length} elemensts`
+            if(0==param){}           
+            else if(1==param){}          
+            else if(3==param){}
+            lengtht.value=`The length of the array is ${array1.length}`
             arraydisplay.innerHTML=array1.toString()
-        }        
-        function debugme(param){
-            if(param)debug.innerHTML=`Please write something`
-            else {debug.innerHTML=``}
-        }        
-        function e(id){return document.getElementById(id)}
+        }       
     </script>    
 </body>
 </html>
