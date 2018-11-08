@@ -36,11 +36,14 @@
         var arraydisplay = e("array")
         var unshiftt=e("unshiftt")
         var donothing=function(){} 
-        var actions=[donothing,()=>array.pop(),()=>array.shift(),donothing];
+        var actions=[donothing,()=>array.pop(),()=>array.shift(),()=>{
+                var v = unshiftt.value;
+                v ? array.unshift(v): debugme(1);
+            }];
         arraydisplay.innerHTML=array.toString()
         function show(param){
-            actions[param]()
             debugme(0)
+            actions[param]()
             if(0==param){
                 var v = pusht.value
                 v ? array.push(v) : debugme(1)
