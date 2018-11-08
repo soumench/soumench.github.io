@@ -5,31 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
-    <style>
-        body{background-color: #e5e4e4;}
-        #popt,#shiftt{ }
-    </style>
+    <style>body{background-color: #e5e4e4;}</style>
 </head>
 <body>
     <h1>Array Lesson - tak's class</h1>
     <span id="arraydisplay"></span><br>
-    <input type="text" id="pusht">
-    <input type="button" value="push" id="Push"><br>
+    <input type="text" id="pusht" placeholder="Add an item at the end.">
+    <input type="button" id="push"><br>
     <input type="text" id="popt" placeholder="Delete the last item." disabled >
-    <input type="button" value="pop" id="Pop"><br>
+    <input type="button" id="pop"><br>
     <input type="text" id="shiftt" placeholder="Delete the first item."disabled>
-    <input type="button" value="shift" id="Shift"><br>
-    <input type="text" id="unshiftt">
-    <input type="button" value="unshift" id="Unshift"><br>
+    <input type="button" id="shift"><br>
+    <input type="text" id="unshiftt" placeholder="Add an item at the start.">
+    <input type="button" id="unshift"><br>
     <input type="text" id="lengtht" disabled>
-    <input type="button" value="clear" id="Clear"><br>
+    <input type="button" id="clear"><br>
     <span id="debug" style="color:red;"></span><br>
     <script>
-        const buttons=[Push, Pop, Shift, Unshift, Clear]
+        const buttons=[push, pop, shift, unshift,clear]
         var i = buttons.length
         while(i--){
             buttons[i].setAttribute("onclick","show(" + i + ")" )
             buttons[i].style.width="100px"
+            buttons[i].value=buttons[i].id.toLowerCase()
         }        
         var array1 = ["tak", "som","kitty"] 
         lengtht.value=`The array length is ${array1.length}`
@@ -37,24 +35,15 @@
             ()=>{  
                 var v = pusht.value
                 v ? array1.push(v) : debug.innerHTML=`Please write something`
-                console.log("just did action number 0")
             },
-            ()=>{
-                array1.pop();  
-                console.log("just did action number 1")
-            },
-            ()=>{
-                array1.shift();  
-                console.log("just did action number 2")
-            },
+            ()=>{array1.pop();},
+            ()=>{array1.shift();},
             ()=>{
                 var v = unshiftt.value;
                 v ? array1.unshift(v): debug.innerHTML=`Please write something`;                
-                console.log("just did action number 3")
             },
-            ()=>{
-                array1 =[]
-            }];
+            ()=>{array1 =[]}
+        ];
         arraydisplay.innerHTML="[ " + array1.toString() + "]"
         function show(param){
             debug.innerHTML=""
