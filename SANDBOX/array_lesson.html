@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
 </head>
-
 <body>
     <h1>Array Lesson - tak's class</h1>
     <span id="array"></span><br>
@@ -19,7 +18,7 @@
     <input type="text" id="unshiftt">
     <input type="button" value="unshift" id="Unshift"><br>
     <input type="text" id="lengtht" disabled>
-    <input type="button" value="length" id="Length"><br>
+    <input type="button" value="length" id="Length" disabled><br>
     <span id="debug" style="color:red;"></span><br>
     <script>
         const buttons=[Push, Pop, Shift, Unshift, Length];
@@ -27,10 +26,8 @@
         var i = buttons.length;
         while(i--){
             buttons[i].setAttribute("onclick","show(" + i + ")" );
-            buttons[i].style.width="100px"
-            //txtfields[i].setAttribute("onclick","show(" + i + ")" );    
-        }
-        
+            buttons[i].style.width="100px";
+        }        
         var array = ["tak", "som","kitty"];
         var arraydisplay = e("array");
         var debug = e("debug")
@@ -41,34 +38,23 @@
             debugme(0);
             if(0===param){
                 var v = pusht.value
-                if(v!="")array.push(v);
-                else debugme(1); 
+                v!="" ? array.push(v) : debugme(1);
             }
             else if(1===param){array.pop();}
-            else if(2===param){
-                array.shift();
-            }
+            else if(2===param){array.shift();}
             else if(3===param){
                 var v = unshiftt.value;
-                if(v!="") array.unshift(v);
-                else debugme(1);
+                v!="" ? array.unshift(v): debugme(1);
             }
             else if(4===param){debugme(0);}
-            
+            lengtht.value=array.length;
             arraydisplay.innerHTML=array.toString();
-        }
-        
+        }        
         function debugme(param){
             if(param)debug.innerHTML=`Please write something`;
-            else {
-                lengtht.value=array.length;
-                debug.innerHTML=``;
-            }      
-        }
-        
+            else {debug.innerHTML=``;}
+        }        
         function e(id){return document.getElementById(id);}
-    </script>
-    
+    </script>    
 </body>
-
 </html>
