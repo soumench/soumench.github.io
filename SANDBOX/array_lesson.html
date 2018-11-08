@@ -34,19 +34,34 @@
         }        
         var array1 = ["tak", "som","kitty"]      
         var donothing=function(){} 
-        var actions=[donothing,()=>array1.pop(),()=>array1.shift(),()=>{
+         var actions=[
+            ()=>{                
+                console.log("just did action number 0")
+            },
+            ()=>{
+                /* array1.pop(); */ 
+                console.log("just did action number 1")
+            },
+            ()=>{
+                /* array1.shift(); */ 
+                console.log("just did action number 2")
+            },
+            ()=>{/*
                 var v = unshiftt.value;
                 v ? array.unshift(v): debug.innerHTML=`Please write something`;
+                */
+                console.log("just did action number 3")
             }];
         arraydisplay.innerHTML=array1.toString()
         function show(param){
             debug.innerHTML=""
-          //  actions[param]()
+            actions[param]()
             if(0==param){
                 var v = pusht.value
                 v ? array1.push(v) : debug.innerHTML=`Please write something`
             }
-            else if(1==param){array1.pop()}
+            //else if(1==param){array1.pop()}
+            else if(1==param){}
             else if(2==param){array1.shift()}
             else if(3==param){
                 var v = unshiftt.value
