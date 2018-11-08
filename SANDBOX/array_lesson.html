@@ -36,7 +36,7 @@
         var arraydisplay = e("array")
         var unshiftt=e("unshiftt")
         var donothing=function(){} 
-        var actions=[donothing,donothing,donothing,donothing]
+        var actions=[donothing,()=>array.pop(),()=>array.shift(),donothing];
         arraydisplay.innerHTML=array.toString()
         function show(param){
             actions[param]()
@@ -51,7 +51,6 @@
                 var v = unshiftt.value
                 v ? array.unshift(v): debugme(1)
             }
-            else if(4==param){debugme(0)}
             lengtht.value=`There are ${array.length} elemensts`
             arraydisplay.innerHTML=array.toString()
         }        
