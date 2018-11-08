@@ -50,14 +50,11 @@
                 var v = unshiftt.value;
                 v ? array1.unshift(v): debug.innerHTML=`Please write something`;                
                 console.log("just did action number 3")
-            }];
+        }];
         arraydisplay.innerHTML=array1.toString()
         function show(param){
             debug.innerHTML=""
             actions[param]()
-            if(0==param){}           
-            else if(1==param){}          
-            else if(3==param){}
             lengtht.value=`The array length is ${array1.length}`
             arraydisplay.innerHTML=array1.toString()
         }       
