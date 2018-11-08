@@ -44,16 +44,16 @@
                 if(v!="")array.push(v);
                 else debugme(1); 
             }
-            if(1===param){array.pop();}
-            if(2===param){
+            else if(1===param){array.pop();}
+            else if(2===param){
                 array.shift();
             }
-            if(3===param){
+            else if(3===param){
                 var v = unshiftt.value;
                 if(v!="") array.unshift(v);
                 else debugme(1);
             }
-            if(4===param){debugme(0);}
+            else if(4===param){debugme(0);}
             
             arraydisplay.innerHTML=array.toString();
         }
