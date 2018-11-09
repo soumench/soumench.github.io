@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style>body{background-color: #efefef; font-family: sans-serif;}
+        #board{border: 3px solid green; padding: 15px;}
+        .btns{
+            position: absolute;
+            right: 0px;
+            left: 200px;            
+        }
+        .f{position: absolute;
+            right: 0px;
+            left: 310px;
+            color: blue;
+        }
+        #lengtht{color: green; font-weight: bolder;}
+        footer{
+            text-align: center;
+			font-size: 85%;
+			border: 2px solid black; border-radius: 20px; background-color: #939393;
+			color: white;
+            padding: 10px;
+		}
+	
+    </style>
+</head>
+<body>
+    <h1>How an array works</h1>
+    <span style="color: purple">Simply speaking, an array data structure consisting of a collection of elements (values or variables). They can be manipulated using the following methods:<br>
+    অ্যারে হল এক বিশেষ ধরনের ডেটা স্ট্রাকচার যার মধ্যে আমরা কিছু ভ্যালু বা অন্যান্য ভ্যারিয়েবল স্টোর করে রাখতে পারি । অ্যারে ম্যানিপুলেশন হল অ্যারের মধ্যে কোনো ভ্যালু বা ভ্যারিয়েবলকে যুক্ত করা, বাদ দেওয়া, নির্দিষ্ট পজিশনে (index) কোনও ভ্যারিয়েবলকে যুক্ত করা ইত্যাদি।        
+    নিম্নলিখিত পদ্ধতিগুলি ব্যবহার করে অ্যারে ম্যানিপুলেশন করা যেতে পারে:
+    </span>
+    <div id="board">
+    <span id="arraydisplay"></span><br><br>
+    <input type="text" id="pusht" placeholder="Add an item at the end.">
+    <input type="button" id="push"><span class="f">Method: array.push(...)</span><br>
+    <span>Delete the last item. </span>
+    <input type="button" id="pop"><span class="f">Method: array.pop()</span><br>
+    <span>Delete the first item.</span>
+    <input type="button" id="shift"><span class="f">Method: array.shift()</span><br>
+    <input type="text" id="unshiftt" placeholder="Add an item at the start.">
+    <input type="button" id="unshift"><span class="f">Method: array.unshift(...)</span><br>
+    <span id="lengtht"> </span>
+    <input type="button" id="clear"><span class="f">Method: array=[]</span><br>
+    <span id="debug" style="color:red;"></span><br>
+    </div>
+    <footer>
+		Copyright &copy; Soumen Chakraborty - <span id="year">creation_year</span> <br>
+		Strictly for Educational, non-profit and non-commercial purpose.<br>
+        All rights reserved.
+	</footer>
+
+    <script src="../../year.js"></script>
+    <script>
+        const buttons=[push, pop, shift, unshift,clear]
+        var i = buttons.length
+        while(i--){
+            buttons[i].setAttribute("onclick","show(" + i + ")" )
+            buttons[i].setAttribute("class","btns" )
+            buttons[i].style.width="100px"
+            buttons[i].value=buttons[i].id.toLowerCase()
+        }        
+        var array1 = ["soumen", "teacher", "kitty", 123] 
+        lengtht.innerHTML=`The array length is ${array1.length}`
+        var actions=[
+            ()=>{  
+                var v = pusht.value
+                v ? array1.push(v) : debug.innerHTML=`Please write something`
+                pusht.focus()
+            },
+            ()=>{array1.pop();},
+            ()=>{array1.shift();},
+            ()=>{
+                var v = unshiftt.value;
+                v ? array1.unshift(v): debug.innerHTML=`Please write something`;
+                unshiftt.focus()
+            },
+            ()=>{array1 =[]}
+        ];
+        arraydisplay.innerHTML="var myArray=[ " + array1.toString() + "]"
+        function show(param){
+            debug.innerHTML=""
+            actions[param]()
+            lengtht.innerHTML=`The array length is ${array1.length}`
+            arraydisplay.innerHTML="var myArray=[ " + array1.toString() + "]"
+        }
+        document.getElementById("year").innerHTML = creation_year;
+    </script>    
+</body>
+</html>

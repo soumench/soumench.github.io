@@ -6,22 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
     <style>body{background-color: #e5e4e4;}
-        .btns{ }
+        #board{border: 3px solid green; padding: 15px;}
+        .btns{
+            position: absolute;
+            right: 0px;
+            left: 180px;            
+        }
+        .f{position: absolute;
+            right: 0px;
+            left: 282px;
+            color: blue;
+        }
+        #lengtht{color: green; font-weight: bolder;}
     </style>
 </head>
 <body>
     <h1>Array Lesson - tak's class</h1>
+    <div id="board">
     <span id="arraydisplay"></span><br>
     <input type="text" id="pusht" placeholder="Add an item at the end.">
-    <input type="button" id="push"><br>
+    <input type="button" id="push"><span class="f">function: array.push(...)</span><br>
     <span>Delete the last item. </span>
-    <input type="button" id="pop"><br>
+    <input type="button" id="pop"><span class="f">function: array.pop()</span><br>
     <span>Delete the first item.</span>
-    <input type="button" id="shift"><br>
+    <input type="button" id="shift"><span class="f">function: array.shift()</span><br>
     <input type="text" id="unshiftt" placeholder="Add an item at the start.">
-    <input type="button" id="unshift"><br>
+    <input type="button" id="unshift"><span class="f">function: array.unshift(...)</span><br>
     <span id="lengtht"> </span>
-    <input type="button" id="clear"><br>
+    <input type="button" id="clear"><span class="f">function: array=[]</span><br>
+    </div>
     <span id="debug" style="color:red;"></span><br>
     <script>
         const buttons=[push, pop, shift, unshift,clear]
@@ -32,7 +45,7 @@
             buttons[i].style.width="100px"
             buttons[i].value=buttons[i].id.toLowerCase()
         }        
-        var array1 = ["tak", "som","kitty"] 
+        var array1 = ["soumen", "teacher","kitty", 123] 
         lengtht.innerHTML=`The array length is ${array1.length}`
         var actions=[
             ()=>{  
@@ -47,12 +60,12 @@
             },
             ()=>{array1 =[]}
         ];
-        arraydisplay.innerHTML="[ " + array1.toString() + "]"
+        arraydisplay.innerHTML="var myArray=[ " + array1.toString() + "]"
         function show(param){
             debug.innerHTML=""
             actions[param]()
             lengtht.innerHTML=`The array length is ${array1.length}`
-            arraydisplay.innerHTML="[ " + array1.toString() + "]"
+            arraydisplay.innerHTML="var myArray=[ " + array1.toString() + "]"
         }       
     </script>    
 </body>
