@@ -9,10 +9,11 @@
         #board{border: 3px solid green; padding: 15px;}
         .btns{
             /*position: absolute;*/
-            position: fixed;
+           /* position: fixed;*/
             right: 0px;
-            left: 200px; 
+            /*left: 200px; */
              font-size:20px;
+            width: 100px;
         }
         .f{
             /*position: absolute;*/
@@ -46,7 +47,7 @@
         while(i--){
             buttons[i].setAttribute("onclick","show(" + i + ")" )
             buttons[i].setAttribute("class","btns" )
-            buttons[i].style.width="100px"
+           // buttons[i].style.width="100px"
             buttons[i].value=buttons[i].id.toLowerCase()
         }        
         var array1 = ["soumen", "teacher","kitty", 123] 
