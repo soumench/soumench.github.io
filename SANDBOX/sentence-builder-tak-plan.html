@@ -23,6 +23,8 @@
     <p><span id="engtxt">***</span><br><br>
        <span id="bentxt">***</span>
     </p>
+    <input type="button" value="Change First" onclick="changeFirst()">
+    <input type="button" value="Change Second" onclick="changeSecond()">
     
     <script>
         const se=["dog","cat","bird","rat","dog"];
@@ -34,11 +36,22 @@
         
         const buttons = [click];
         var i = buttons.length;
+        let dice1
+        let dice2
         while(i--){buttons[i].setAttribute("onclick","show(" + i + ")" );}
         
+        function changeFirst(){
+            dice1= Math.floor(Math.random()* se.length);
+            show()
+        }
+        function changeSecond(){
+            dice2= Math.floor(Math.random()* esentence.length);
+            show()
+        }
+        
         function show(){
-           let dice1= Math.floor(Math.random()* se.length);
-           let dice2= Math.floor(Math.random()* esentence.length);
+           
+           
            
             engtxt.innerHTML=`<span class="A">${se[dice1]}</span>`+ " " + `<span class="B">${esentence[dice2]} </span>`
            bentxt.innerHTML=`<span class="A">${sb[dice1]}</span>`+ " " + `<span class="B">${bsentence[dice2]} </span>`
