@@ -36,6 +36,6 @@ function update(){
             totalTax.innerHTML=Math.round(TOTALTAX) + ' INR'            
             var TDS = parseInt(tds.value);
             var tbp = Math.round(TOTALTAX-TDS)
-            tobepaid.innerHTML=tbp<=0 ? "nil ( আপনাকে আর কোনো tax দিতে হবে না )" : tbp + ' INR'
+            tobepaid.innerHTML=tbp<=0 ? "nil ( আর কোনো tax দিতে হবে না )" : tbp + ' INR'
             tobepaid.style.color= tbp<=0 ? "green" :"red"
 }
