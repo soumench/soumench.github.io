@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
+    <style>
+        body{font-family: sans-serif; font-size: 24px; font-kerning: 1px;}
+        .A{color: red; border: 1px solid grey; padding: 1px; background-color: yellow;}
+        .B{color: blue;border: 1px solid #87b168; padding: 1px; background-color: #affcbb;}
+    </style>
 </head>
 
 <body id="body">
@@ -14,7 +19,7 @@
     <input type="button" value="endbengali"><br>
     <input type="button" value="startenglish">
     <input type="button" value="endenglish">-->
-    <p><span id="engtxt">***</span><br>
+    <p><span id="engtxt">***</span><br><br>
        <span id="bentxt">***</span>
     </p>
     
@@ -34,8 +39,8 @@
            let dice1= Math.floor(Math.random()* se.length);
            let dice2= Math.floor(Math.random()* esentence.length);
            
-           engtxt.innerHTML=se[dice1]+ " " + esentence[dice2];
-           bentxt.innerHTML=sb[dice1]+ " " + bsentence[dice2];
+            engtxt.innerHTML=`<span class="A">${se[dice1]}</span>`+ " " + `<span class="B">${esentence[dice2]} </span>`
+           bentxt.innerHTML=`<span class="A">${sb[dice1]}</span>`+ " " + `<span class="B">${bsentence[dice2]} </span>`
         }    
     </script>
 </body>
