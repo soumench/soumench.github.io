@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> itc-fy-2018-19 </title>
+    <link rel="stylesheet" type="text/css" href="css/itc.css">    
+</head>
+<body>
+    <h3>My Simple Income-Tax Calculator for Salaried Professionals</h3>
+    <span class="heading"> (For Financial Year : 2018-19 / Assessment Year : 2019-20)</span><br><br>
+    Your Total Salary Per Annum :<br>বছরে মোট যা বেতন পেয়েছেনঃ<input type="number" id="sal">
+    <span class="remarks">Gross Income</span><br><br>
+    Professional Tax :<br>বছরে  মোট P-Tax যা কাটিয়েছেন : <input type="number"  id="ptax" disabled>
+    <span class="remarks">বিয়োগ করুন</span><br><br>
+    House BuildingLoan Interest : <br>গৃহঋণের মোট সুদ মিটিয়েছেন :    
+    <input type="number" value=0 id="hblInt"><span class="remarks">বিয়োগ করুন</span><br><br>
+    Savings Account Interest :<br>সেভিংস অ্যাকাউন্ট-এর মোট সুদ :    
+    <input type="number" value=0 id="savInt"> <span class="remarks">(80TTA)প্রাপ্ত সুদ ১০০০০ এর বেশি হলে বাকীটা যোগ করুন</span><br><br>
+    Deposit Account Interest :<br>ফিক্সড ডিপোজিট ইত্যাদির মোট সুদ:<input type="number" value=0 id="depoInt">
+    <span class="remarks">যোগ করুন</span><br><br>    
+    Total Income ( আপনার মোট বাৎসরিক আয় ) : <span id="totalincome"></span><br><hr>  
+    <span class="heading">DEDUCTION</span><br>
+    NSC, LIC, PLI, GSLI, Tuition Fee, Principal of House Building Loan<br>(Maximum 150000 INR) : 
+    80C ধারায় আপনি সর্বমোট ১৫০০০০ টাকা অবধি ছাড় পাবেন, যদি উপরোক্ত জিনিসগুলিতে বিনিয়োগ করে থাকেন :<br>
+    <input type="number" value=0 id="c80"><span class="remarks">(80C) বিয়োগ করুন</span><br><br>
+    Medical Insurance :<br>স্বাস্থ্য বীমায় মোট বিনিয়োগ : <input type="number" value=0 id="medi"><span class="remarks">(80D) বিয়োগ করুন</span><br><br>
+    Standard Deduction : <input type="number" value=40000 id="stdd" disabled><span class="remarks">(NEW) বিয়োগ করুন </span><br><br>
+    Total Deduction ( আপনি সর্বমোট যতটাকা আয়কর ছাড় পাবেন ): <span id="totald" ></span>
+    <hr>
+    Your Taxable Income ( আপনার করযোগ্য আয় হল ): <span id="taxableincome" ></span><br>
+    Tax : <span id="Tax" ></span><br>
+    Health & Education Cess @ 4% : <span id="Cess" ></span><br>
+    Total Tax ( আপনাকে মোট TAX যা দিতে হবে ) : <span id="totalTax" ></span><br><br>
+    আপনি  প্রতি মাসের TDS হিসেবে বছরে মোট যত টাকা কাটিয়েছেন :<br>
+    Total Tax Deducted at Source : <input type="number" value=0 id="tds" ><br><br>
+    Tax to be paid ( যত আয়কর এখনো বাকী আছে ): <span id="tobepaid" ></span>
+    <footer>Copyright &copy; Soumen Chakraborty  - <span id="year">year</span><br> 
+		      Strictly for Educational and Non-Commercial purpose.
+    </footer> 
+    <script src="js/itc.js"></script>
+    <script src="../../../ENGLISH/year.js"></script>
+    <script>
+        "use strict";
+        const vals = [sal, ptax, hblInt, savInt, depoInt, c80, medi, stdd, totald, tds]
+        var i = vals.length
+        while (i--){
+            vals[i].setAttribute("onchange","update()")
+            vals[i].setAttribute("class","ui")
+        }
+        year.innerHTML=creation_year
+    </script>
+</body>
+</html>

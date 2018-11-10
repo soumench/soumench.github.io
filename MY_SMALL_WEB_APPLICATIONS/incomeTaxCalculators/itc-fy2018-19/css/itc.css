@@ -1,0 +1,17 @@
+h3,.heading{position: relative; text-align: center;}
+h3{background-color: #f8f8e9;}
+.heading{font-weight: bolder; left: 0px;}
+body{font-family: sans-serif; background: #d9d9d9; font-size: 16px;}
+.heading, .ui, .remarks,#totald{ position: absolute; right: 0px;}
+.ui{ left: 259px;}
+.remarks{ left: 435px; }
+#totald{left: 460px;}
+footer{
+    font-size: 80%; position: relative; text-align: center;
+    border: 1px solid green; padding: 2px; border-radius: 16px;
+    background-color: aliceblue;
+    margin: 10px;
+}
+            
+/*copyright : Soumen Chakraborty 2018*/
+    
