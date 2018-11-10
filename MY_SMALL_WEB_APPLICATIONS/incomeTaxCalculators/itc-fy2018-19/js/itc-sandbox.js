@@ -3,15 +3,15 @@ I wrote this program to teach coding to my students.
 For Actual Tax Calculation, refer to the official Site of the IT department. 
 Copyright: Soumen Chakraborty - 2018 
 All Rights Reserved*/
-function update(){    
-    var Sal = fix(sal)
-    var HBLINT = fix(hblInt)
+function update(){
+    var Sal = parseInt(sal.value)
+    var HBLINT = parseInt(hblInt.value)
     var savint = savInt.value;
-    var depoint = fix(depoInt);
-    var C80 = fix(c80)
-    var med = fix(medi)
-    var stdD = fix(stdd)
-    var TDS = fix(tds);                        
+    var depoint = parseInt(depoInt.value);
+    var C80 = parseInt(c80.value)
+    var med = parseInt(medi.value)
+    var stdD = parseInt(stdd.value)
+    var TDS = parseInt(tds.value);                        
     Sal = Sal ? Sal : 0
     HBLINT = HBLINT?HBLINT:0
     savint = savint? savint :0
@@ -47,9 +47,6 @@ function update(){
     totalTax.innerHTML=Math.round(TOTALTAX) + ' INR'            
     var tbp = Math.round(TOTALTAX-TDS)
     
-    tobepaid.innerHTML=tbp<=0 ? `nil, Your Refund: Rs. ${(tbp*-1)} approx<br> ( আর কোনো আয়কর দিতে হবে না, আপনার রিফান্ড হবে ${(tbp*-1)} টাকা )` : `Tax to be paid: Rs.${tbp}<br> ( আপনাকে আরও ${tbp} টাকা আয়কর দিতে হবে )`
+    tobepaid.innerHTML=tbp<=0 ? `nil, Your Refund: ${(tbp*-1)}<br> ( আর কোনো আয়কর দিতে হবে না, আপনার রিফান্ড হবে প্রায় ${(tbp*-1)} টাকা )` : `Tax to be paid: Rs.${tbp}<br> ( আপনাকে আরও ${tbp} টাকা আয়কর দিতে হবে )`
     tobepaid.style.color= tbp<=0 ? "green" :"red"
 }
-
-function fix(element) {var number=element.value; return number?parseInt(number):0;}
- 
