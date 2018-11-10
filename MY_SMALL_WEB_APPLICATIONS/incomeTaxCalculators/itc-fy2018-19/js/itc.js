@@ -37,8 +37,8 @@ function update(){
     var tax;
     if(taxableIncome<=300000)tax=0
     else if(taxableIncome>300000 && taxableIncome<=350000)tax=(taxableIncome-300000)*5/100
-    else if(taxableIncome>300000 && taxableIncome<500000)tax=(taxableIncome-250000)*5/100-2500
-    else if(taxableIncome>500000 && taxableIncome<1000000)tax=(taxableIncome-500000)*20/100+12500 
+    else if(taxableIncome>300000 && taxableIncome<=500000)tax=(taxableIncome-250000)*5/100-2500
+    else if(taxableIncome>500000 && taxableIncome<=1000000)tax=(taxableIncome-500000)*20/100+12500 
     else if(taxableIncome>1000000 )tax=(taxableIncome-1000000)*30/100+112500
     Tax.innerHTML=Math.round(tax) + ' INR'
     var cess = tax*4/100
