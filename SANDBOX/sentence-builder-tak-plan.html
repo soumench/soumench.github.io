@@ -11,6 +11,8 @@
         input{font-size:100%;}
         .A{color: red; border: 1px solid grey; padding: 1px; background-color: yellow;}
         .B{color: blue;border: 1px solid #87b168; padding: 1px; background-color: #affcbb;}
+        #First{background-color: #f79a9a;}
+        #Second{background-color: #9f9fff;}
     </style>
 </head>
 
@@ -20,14 +22,14 @@
     <input type="button" id="Second" >
     
     <script>
-        const se=["dog","cat","bird","rat","dog"];
-        const sb=["kukkura","biRAl", "pAkhI","indur", "kukur"];
+        const se=["dog","cat","bird","rat","bear"];
+        const sb=["kukur","biRAl", "pAkhI","indur", "bhAluk"];
         const esentence = ["runs", "goes to market", "eats insect", "sings","plays"];
         const bsentence = ["dourAy", "bAjAre jAy", "pokA khAy", "gAn kore", "khele"];
         
         if(se.length!=sb.length||esentence.length!=bsentence.length)console.log(`list mismatch`)//debug
         
-        let dice1
+        let dice1  
         let dice2
         show(0)
         show(1)
