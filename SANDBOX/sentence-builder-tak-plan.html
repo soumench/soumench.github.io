@@ -15,16 +15,9 @@
 </head>
 
 <body id="body">
-    <input type="button" value="TRY" id="click">
-    <!--<input type="button" value="startbengali">
-    <input type="button" value="endbengali"><br>
-    <input type="button" value="startenglish">
-    <input type="button" value="endenglish">-->
-    <p><span id="engtxt">***</span><br><br>
-       <span id="bentxt">***</span>
-    </p>
-    <input type="button" value="Change First" onclick="changeFirst()">
-    <input type="button" value="Change Second" onclick="changeSecond()">
+    <p id="engtxt"></p><p id="bentxt"></p>
+    <input type="button" id="First" >
+    <input type="button" id="Second" >
     
     <script>
         const se=["dog","cat","bird","rat","dog"];
@@ -34,26 +27,27 @@
         
         if(se.length!=sb.length||esentence.length!=bsentence.length)console.log(`list mismatch`)//debug
         
-        const buttons = [click];
-        var i = buttons.length;
         let dice1
         let dice2
-        while(i--){buttons[i].setAttribute("onclick","show(" + i + ")" );}
-        
-        function changeFirst(){
-            dice1= Math.floor(Math.random()* se.length);
-            show()
-        }
-        function changeSecond(){
-            dice2= Math.floor(Math.random()* esentence.length);
-            show()
+        show(0)
+        show(1)
+        const buttons = [First,Second];
+        var i = buttons.length;
+        while(i--){
+            buttons[i].value=buttons[i].id
+            buttons[i].setAttribute("onclick","show(" + i + ")" );
         }
         
-        function show(){
-           
-           
-           
-            engtxt.innerHTML=`<span class="A">${se[dice1]}</span>`+ " " + `<span class="B">${esentence[dice2]} </span>`
+               
+        function show(param){
+            if(0==param){
+                dice1= Math.floor(Math.random()* se.length);
+            }
+            else if(1==param){
+                dice2= Math.floor(Math.random()* esentence.length);
+            }
+            
+           engtxt.innerHTML=`<span class="A">${se[dice1]}</span>`+ " " + `<span class="B">${esentence[dice2]} </span>`
            bentxt.innerHTML=`<span class="A">${sb[dice1]}</span>`+ " " + `<span class="B">${bsentence[dice2]} </span>`
         }    
     </script>
