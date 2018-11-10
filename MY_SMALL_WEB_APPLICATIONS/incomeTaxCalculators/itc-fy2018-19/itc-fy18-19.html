@@ -10,26 +10,26 @@
 <body>
     <h3>My Simple Income-Tax Calculator for Salaried Professionals</h3>
     <span class="heading"> (For Financial Year : 2018-19 / Assessment Year : 2019-20)</span><br><br>
-    Your Total Salary Per Annum ( বছরে মোট যা বেতন পেয়েছেন ) :<br>
+    Your Total Salary Per Annum ( বছরে যত টাকা মোট বেতন পেয়েছেন ) :<br>
     <span class="remarks">Gross Income</span><input type="number" id="sal">
     <br><br>
-    Professional Tax ( বছরে  মোট P-Tax যা কাটিয়েছেন ) :<br> 
+    Professional Tax ( বছরে  মোট যত টাকা P-Tax কাটিয়েছেন ) :<br> 
     <span class="remarks">বিয়োগ করুন</span><input type="number"  id="ptax" disabled>
     <br><br>
-    House BuildingLoan Interest ( গৃহঋণের মোট সুদ মিটিয়েছেন ) : <br>   
-    <span class="remarks">বিয়োগ করুন</span><input type="number" value=0 id="hblInt"><br><br>
-    Savings Account Interest ( সেভিংস অ্যাকাউন্ট-এর মোট সুদ ) : <br>   
-    <span class="remarks">(80TTA)প্রাপ্ত সুদ ১০০০০এর <br>বেশি হলে বাকীটা যোগ করুন</span><input type="number" value=0 id="savInt"> <br><br><br>
+    House BuildingLoan Interest ( সারা বছরে মোট গৃহঋণের সুদ মিটিয়েছেন ) : <br>   
+    <span class="remarks">বিয়োগ করুন</span><input type="number"  id="hblInt"><br><br>
+    Savings Account Interest ( সারা বছরে সেভিংস অ্যাকাউন্ট থেকে মোট সুদ পেয়েছেন ) : <br>   
+    <span class="remarks">(80TTA)প্রাপ্ত সুদ ১০০০০এর <br>বেশি হলে বাকীটা যোগ করুন</span><input type="number"  id="savInt"> <br><br><br>
     Deposit Account Interest ( ফিক্সড ডিপোজিট ইত্যাদির মোট সুদ ) : <br>
-    <span class="remarks">যোগ করুন</span><input type="number" value=0 id="depoInt">
+    <span class="remarks">যোগ করুন</span><input type="number"  id="depoInt">
     <br><br>    
     Total Income ( আপনার মোট বাৎসরিক আয় ) : <span id="totalincome"></span><br><hr>  
     <span class="heading">DEDUCTION</span><br>
     NSC, LIC, PLI, GSLI, Tuition Fee, Principal of House Building Loan<br>(Maximum 150000 INR) : 
     80C ধারায় আপনি সর্বমোট ১৫০০০০ টাকা অবধি ছাড় পাবেন, যদি উপরোক্ত জিনিসগুলিতে বিনিয়োগ করে থাকেন :<br>
-    <span class="remarks">(80C) বিয়োগ করুন</span><input type="number" value=0 id="c80"><br><br>
+    <span class="remarks">(80C) বিয়োগ করুন</span><input type="number"  id="c80"><br><br>
     Medical Insurance ( স্বাস্থ্য বীমায় মোট বিনিয়োগ ) :<br> 
-    <span class="remarks">(80D) বিয়োগ করুন</span><input type="number" value=0 id="medi"><br><br>
+    <span class="remarks">(80D) বিয়োগ করুন</span><input type="number"  id="medi"><br><br>
     Standard Deduction : <input type="number" value=40000 id="stdd" disabled><span id="stdrem" class="remarks">(NEW) বিয়োগ করুন </span><br><br>
     Total Deduction ( আপনি সর্বমোট যতটাকা আয়কর ছাড় পাবেন ): <span id="totald" ></span>
     <hr>
@@ -38,7 +38,7 @@
     Health & Education Cess @ 4% : <span id="Cess" ></span><br>
     Total Tax ( আপনাকে মোট TAX যা দিতে হবে ) : <span id="totalTax" ></span><br><br>
     আপনি  প্রতি মাসের TDS হিসেবে বছরে মোট যত টাকা কাটিয়েছেন :<br>
-    Total Tax Deducted at Source : <input type="number" value=0 id="tds" ><br><br>
+    Total Tax Deducted at Source : <input type="number"  id="tds" ><br><br>
     Tax to be paid ( যত আয়কর এখনো বাকী আছে ): <span id="tobepaid" ></span>
     <footer>Copyright &copy; Soumen Chakraborty  - <span id="year">year</span><br> 
 		      Strictly for Educational and Non-Commercial purpose.
