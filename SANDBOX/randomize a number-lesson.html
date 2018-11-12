@@ -19,26 +19,30 @@ var fade = function (node) {
 
 fade(document.body);
 
-    var oldD1=-1;
-    var old1=-1;
-    var dice1=-1;
-    var new1;
+   
+    var oldvalue=0;
+    //var dice1=-1;
+    var newvalue;
     var se=[0,0,0,0,0];
     
     function different(){
-
-        new1= Math.floor(Math.random()* se.length);
-        if(dice1!=old1){
-           dice1=new1;                  
+        newvalue= Math.floor(Math.random()* se.length);
+        if(oldvalue!=newvalue){
+           oldvalue=newvalue;
         }else{
-           dice1= Math.floor(Math.random()* se.length);
-           oldD1=dice1;
+            do{
+                oldvalue= Math.floor(Math.random()* se.length);
+            }
+            while(oldvalue===newvalue);
         }
+           
+        
+        
     }
     var i=100;
     while(i--){
     different();
-    document.write(" "+dice1)
+    document.write(" "+oldvalue)
     }
 
 
