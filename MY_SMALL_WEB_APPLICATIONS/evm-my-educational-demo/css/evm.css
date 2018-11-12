@@ -62,7 +62,7 @@
     #bubtns{left: 145px;top: 54px;}
     #buCandLamps{left: 105px;top: 54px;}
     #LCand1,#LCand2,#LCand3,#LCand4{background-color: #ff1f4c; border-radius: 16px; width: 30px;}        
-    #paperTrail{font-size: 70%; border: 1px solid blue;
+    #paperTrail{font-size: 60%; border: 1px solid blue;
         width: 150px; height: 80px;
         left: 20px; background-color: #f7f1f1;
         top: -8px; text-align: center; padding: 10px;
