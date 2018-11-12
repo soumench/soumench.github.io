@@ -11,15 +11,20 @@
         input{font-size:100%;}
         .A{color: red; border: 1px solid grey; padding: 1px; background-color: yellow;}
         .B{color: blue;border: 1px solid #87b168; padding: 1px; background-color: #affcbb;}
+        #wordbox,#buttonbox{border: 1px solid black; margin-left: auto; margin-right: auto;
+            text-align: center; display: block;
+        }
+        #buttonbox{padding: 2%;}
         #First{background-color: #f79a9a;}
         #Second{background-color: #9f9fff;}
     </style>
 </head>
 
 <body id="body">
-    <p id="engtxt"></p><p id="bentxt"></p>
-    <input type="button" id="First" >
-    <input type="button" id="Second" >
+    <div id="wordbox"><p id="engtxt"></p><p id="bentxt"></p></div>
+    <div id="buttonbox"><input type="button" id="First" >
+        <input type="button" id="Second" >
+    </div>
     
     <script>
         const se=["dog","cat","bird","rat","bear"];
