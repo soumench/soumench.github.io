@@ -1,0 +1,47 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<script>
+var fade = function (node) {
+    var level = 1;
+    var step = function ( ) {
+        var hex = level.toString(16);
+        node.style.backgroundColor = '#' + hex + 'f'+ hex ;
+        if (level >= 15) return;
+        level ++;
+        setTimeout(step, 30);
+    };
+    setTimeout(step, 30);
+};
+
+fade(document.body);
+
+    var oldD1=-1;
+    var old1=-1;
+    var dice1=-1;
+    var new1;
+    var se=[0,0,0,0,0];
+    
+    function different(){
+
+        new1= Math.floor(Math.random()* se.length);
+        if(dice1!=old1){
+           dice1=new1;                  
+        }else{
+           dice1= Math.floor(Math.random()* se.length);
+           oldD1=dice1;
+        }
+    }
+    var i=100;
+    while(i--){
+    different();
+    document.write(" "+dice1)
+    }
+
+
+</script>
+</body>
+</html>

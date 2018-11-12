@@ -44,11 +44,22 @@
             buttons[i].setAttribute("onclick","show(" + i + ")" );
         }
         
-               
+        var old1=0;
+        var new1=0;
+        
         function show(param){
             if(0==param){
-                dice1= Math.floor(Math.random()* se.length);
+                new1= Math.floor(Math.random()* se.length);
+                if(dice1!=new1){
+                   dice1=new1;                  
+                }else{
+                   dice1= Math.floor(Math.random()* se.length);
+                   oldD1=dice1;
+                }
+                console.log(`${dice1}`)
             }
+            
+            
             else if(1==param){
                 dice2= Math.floor(Math.random()* esentence.length);
             }
