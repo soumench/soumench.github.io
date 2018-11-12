@@ -15,8 +15,10 @@
             text-align: center; display: block;
         }
         #buttonbox{padding: 2%;}
+        #First,#Second{border-radius: 8px;padding: 4px; width: 80px;}
         #First{background-color: #f79a9a;}
         #Second{background-color: #9f9fff;}
+        
     </style>
 </head>
 
@@ -54,8 +56,8 @@
                 dice2= Math.floor(Math.random()* esentence.length);
             }
             
-           engtxt.innerHTML=`<span class="A">${se[dice1]}</span>`+ " " + `<span class="B">${esentence[dice2]} </span>`
-           bentxt.innerHTML=`<span class="A">${sb[dice1]}</span>`+ " " + `<span class="B">${bsentence[dice2]} </span>`
+           engtxt.innerHTML=`<span class="A">${se[dice1]}</span>`+ " " + `<span class="B">${esentence[dice2]} </span>`;
+           bentxt.innerHTML=`<span class="A">${sb[dice1]}</span>`+ " " + `<span class="B">${bsentence[dice2]} </span>`;
         }    
     </script>
 </body>
