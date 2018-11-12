@@ -47,7 +47,7 @@ function update(){
     totalTax.innerHTML=Math.round(TOTALTAX) + ' INR'            
     var tbp = Math.round(TOTALTAX-TDS)
     
-    tobepaid.innerHTML=tbp<=0 ? `nil, ( Your Refund: Rs. ${(tbp*-1)} approx )<br> ( আর কোনো আয়কর দিতে হবে না, আপনার রিফান্ড হবে প্রায় ${(tbp*-1)} টাকা )` : `Tax to be paid: Rs.${tbp}<br> ( আপনাকে আরও ${tbp} টাকা আয়কর দিতে হবে )`
+    tobepaid.innerHTML=tbp<=0 ? `nil, ( Your Refund: Rs. ${Math.abs(tbp)} approx )<br> ( আর কোনো আয়কর দিতে হবে না, আপনার রিফান্ড হবে প্রায় ${Math.abs(tbp)} টাকা )` : `Tax to be paid: Rs.${tbp}<br> ( আপনাকে আরও ${tbp} টাকা আয়কর দিতে হবে )`
     tobepaid.style.color= tbp<=0 ? "green" :"red"
 }
 
