@@ -1,7 +1,7 @@
 /* Created by Soumen Chakraborty - 2018 - 
 ( Strictly for Educational Demonstration, Non-Profit and Strictly Non-Commercial purpose. All Rights Reserved. )*/
 var all=[
-    ()=>{if(toggle=toggle^1){evmOn();}else{evmOff();}},
+    ()=>{if(toggle=toggle^1){evmOn();}else{evmOff();shortBeepSound.play();}},
     ()=>{pollClosed();},
     ()=>{result();},
     ()=>{clearPoll();},
