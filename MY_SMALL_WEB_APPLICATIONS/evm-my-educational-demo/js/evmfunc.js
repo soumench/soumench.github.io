@@ -42,14 +42,14 @@
         const lamps1=[LCand1,LCand2,LCand3,LCand4,busyCU,busyBU ];
         var c=lamps1.length; while(c--){lamps1[c].style.backgroundColor="grey";}
         if(pollIsClosed){display(closedMsg);}
-        else display("EVM is on.<br><br> Press<br>the Ballot button<br>to continue.");}
+        else display("EVM is on.<br>Press<br>the Ballot button<br>to continue.");}
     function LcandOFF(mytime){setTimeout(candLampsOff,mytime);}        
     function candBtnAction(){ ballotIssued = false; LcandOFF(msgDuration);}
     function delay(t){setTimeout(candLampsOff,t);}
     function display(txt){document.getElementById("display").innerHTML=txt;}
     function displayColor(col){document.getElementById("display").style.backgroundColor=col;}
     var closedMsg=`Poll is Closed.<br>No further Voting is possible.`; 
-    var onMsg="EVM is on.<br>Press<br> the Ballot Button<br> to issue a Ballot.";
+    var onMsg="EVM is on.<br>Press<br>the Ballot Button <br>to continue.";
     function paperTrailPos(pos){ paperTrail.style.top=pos;}
     function paperTrailAnimAppear(){vvpatSound.play();
         paperTrail.style.zIndex=1; var myTime = setInterval(myTimer, 10); var m=10;
