@@ -63,17 +63,15 @@
             if(oldvalue!=newvalue){
                 oldvalue=newvalue;
             }else{
-                do{
-                    oldvalue= Math.floor(Math.random()* se.length);
-                }
+                do{oldvalue= Math.floor(Math.random()* se.length);}
                 while(oldvalue===newvalue);
-                }
             }
-            var i=100;
-            while(i--){
-                different();
-                //document.write(" "+oldvalue)
-            }       
+        }
+        var i=100;
+        while(i--){
+             different();
+            //document.write(" "+oldvalue)
+        }       
         
         
         
