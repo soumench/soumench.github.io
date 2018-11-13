@@ -22,8 +22,8 @@
 </head>
 <body id="body">
     <div id="wordbox"><p id="engtxt"></p><p id="bentxt"></p></div>
-    <div id="buttonbox"><input type="button" id="First" value="FIRST" onclick="different1()">
-                        <input type="button" id="Second" value="SECOND" onclick="different2()">
+    <div id="buttonbox"><input type="button" id="First" >
+                        <input type="button" id="Second" >
     </div>    
     <script>
         const se=["dog","cat","bird","rat","bear"];
@@ -34,83 +34,47 @@
         if(se.length!=sb.length||esentence.length!=bsentence.length)console.log(`list mismatch`)//debug
         
               
-       /* const buttons = [First,Second];
+        const buttons = [First,Second];
         var i = buttons.length;
         while(i--){
             buttons[i].value=buttons[i].id
-            buttons[i].setAttribute("onclick","show(" + i + ")" );
-        }*/
+            buttons[i].setAttribute("onclick","different(" + i + ")" );
+        }
         
-        different1();
-        different2();
+        different(0);   different(1);
         
         
-        var oldvalue1=0;
-        var newvalue1;        
-        function different1(){
-            newvalue1= Math.floor(Math.random()* se.length);
-            if(oldvalue1!=newvalue1){
-                oldvalue1=newvalue1;
+        var oldvalue=0;
+        var newvalue; 
+        var subIndex=0;
+        var predicateindex=0;
+        function different(param){
+            newvalue= Math.floor(Math.random()* se.length);
+            if(oldvalue!=newvalue){
+                oldvalue=newvalue;
             }else{
-                do{oldvalue1= Math.floor(Math.random()* se.length);}
-                while(oldvalue1===newvalue1);
+                do{oldvalue= Math.floor(Math.random()* se.length);}
+                while(oldvalue===newvalue);
             }
-            
+            if(0==param){subindex=oldvalue;}
+            else if(1==param){predicateindex=oldvalue;}
           displayResult();  
         }
         
-        var oldvalue2=0;
-        var newvalue2;        
-        function different2(){
-            newvalue2= Math.floor(Math.random()* se.length);
-            if(oldvalue2!=newvalue2){
-                oldvalue2=newvalue2;
-            }else{
-                do{oldvalue2= Math.floor(Math.random()* se.length);}
-                while(oldvalue2===newvalue2);
-            }
-            displayResult();
-        }
-       /* var i=100;
+        /* var i=100;
         while(i--){
-             different1();
+             different();
             document.write(" "+oldvalue1)
         }
         */
         
         function displayResult(){
-            engtxt.innerHTML=`<span class="A">${se[oldvalue1]}</span>`+ " " 
-            + `<span class="B">${esentence[oldvalue2]} </span>`;
+            engtxt.innerHTML=`<span class="A">${se[subindex]}</span>`+ " " 
+            + `<span class="B">${esentence[predicateindex]} </span>`;
         
-            bentxt.innerHTML=`<span class="A">${sb[oldvalue1]}</span>`+ " " 
-            + `<span class="B">${bsentence[oldvalue2]} </span>`;
-        }
-        
-        
-        
-        
-        /*var old1=0;
-        var new1=0;
-        
-        function show(param){
-            if(0==param){
-                new1= Math.floor(Math.random()* se.length);
-                if(dice1!=new1){
-                   dice1=new1;                  
-                }else{
-                   dice1= Math.floor(Math.random()* se.length);
-                   oldD1=dice1;
-                }
-                console.log(`${dice1}`)
-            }
-            
-            
-            else if(1==param){
-                dice2= Math.floor(Math.random()* esentence.length);
-            }*/
-            
-           
-        
+            bentxt.innerHTML=`<span class="A">${sb[subindex]}</span>`+ " " 
+            + `<span class="B">${bsentence[predicateindex]} </span>`;
+        }         
     </script>
 </body>
 </html>
