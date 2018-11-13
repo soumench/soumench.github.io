@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style>
+        div{display: inline-block;}
+        #displaymsg,#txt{color: red; background-color: yellow; padding: 5px;
+        border: 1px solid black;}
+        #txt{background-color: aqua;}
+    </style>
+</head>
+<body>
+    <div>
+    <input type="button" value="Multiple Functions" id="multifunc" onclick="multiTrigger(4)">
+    </div>
+    <div>
+    <input type="button" value="Single Function" id="sunglefunc" onclick="multiTrigger(1)">
+    </div><br><br>
+    <span>
+         0 + Hi<br>
+         1 + Hello<br>
+         2 + How are you?<br>
+         3 + God bless you.<br>
+    </span><br>
+    <span id="txt"></span>
+    <span id="displaymsg"></span>
+    <script>        
+        function multiTrigger(howmanyTimes){            
+            var repeat = setInterval(dothis,1000);
+            var i=0;
+            var all = [
+            ()=>{display(`0 + Hi`);},
+            ()=>{display(`1 + Hello`);},
+            ()=>{display(`2 + How are you?`);},
+            ()=>{display(`3 + God bless you.`);} // max number of functions
+            ];
+            function dothis(){
+                if( i>=howmanyTimes){ clearInterval(repeat);i=0; return;}
+                all[i](); i++; 
+                txt.innerHTML=i+" ";
+            }
+            function display(msg){displaymsg.innerHTML=msg;}
+        }
+    </script>
+</body>
+</html>
