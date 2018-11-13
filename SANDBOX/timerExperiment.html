@@ -14,7 +14,7 @@
 </head> 
 <body>
     <div>
-    <input type="button" value="Multiple Functions" id="multifunc" onclick="multiTrigger(4)">
+    <input type="button" value="Multiple Functions" id="multifunc" onclick="multiTrigger(5)">
     </div>
     <div>
     <input type="button" value="Single Function" id="sunglefunc" onclick="multiTrigger(1)">
@@ -35,12 +35,13 @@
             ()=>{display(`0 + Hi`);},
             ()=>{display(`1 + Hello`);},
             ()=>{display(`2 + How are you?`);},
-            ()=>{display(`3 + God bless you.`);} // max number of functions
+            ()=>{display(`3 + God bless you.`);},
+            ()=>{display(``);}// max number of functions
             ];
             function dothis(){
                 if( i>=howmanyTimes){ clearInterval(repeat);i=0; return;}
                 all[i](); i++; 
-                txt.innerHTML=i+" ";
+                txt.innerHTML=" i= "+i+" ";
             }
             function display(msg){displaymsg.innerHTML=msg;}
         }
