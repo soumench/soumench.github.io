@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,35 +23,23 @@
     </style>
 </head>
 <body id="body">
+<!--
     <div id="wordbox"><p id="engtxt"></p><p id="bentxt"></p></div>
-    <div id="buttonbox"><input type="button" id="First" >
-                        <input type="button" id="Second" >
+    <div id="buttonbox"><input type="button" id="First" value="FIRST" onclick="different1()">
+                        <input type="button" id="Second" value="SECOND" onclick="different2()">
     </div>    
+-->	
     <script>
-        "use sctrict";
         const se=["dog","cat","bird","rat","bear"];
         const sb=["kukur","biRAl", "pAkhI","indur", "bhAluk"];
         const esentence = ["runs", "goes to market", "eats insect", "sings","plays"];
         const bsentence = ["dourAy", "bAjAre jAy", "pokA khAy", "gAn kore", "khele"];
         
-        if(se.length!=sb.length||esentence.length!=bsentence.length)console.log(`list mismatch`)//debug
-        
-              
-        const buttons = [First,Second];
-        var i = buttons.length;
-        while(i--){
-            buttons[i].value=buttons[i].id
-            buttons[i].setAttribute("onclick","different(" + i + ")" );
-        }
-        
-        different(0);   different(1);
+        different(0);
+        different(1);
         
         
-        var oldvalue=0;
-        var newvalue; 
-        var subIndex=0;
-        var predicateindex=0;
-        function different(param){
+		 function different(param){
             newvalue= Math.floor(Math.random()* se.length);
             if(oldvalue!=newvalue){
                 oldvalue=newvalue;
@@ -60,26 +50,27 @@
             newvalue="";
             if(0==param){subindex=oldvalue;}
             else if(1==param){predicateindex=oldvalue;}
-            
-            displayResult();  
         }        
-        /* var i=100;
+		
+        var oldvalue=-1;
+		var newvalue;
+		var subindex;
+		var predicateindex;
+       		
+        var i=200;
+		var k="";
+		var kk="";
         while(i--){
-             different();
-            document.write(" "+oldvalue1)
+             different(0);
+			 k+=oldvalue+" ";
+             different(1);
+			 kk+=oldvalue+" ";
         }
-        */
+		k=k.replace(/(1 1|2 2|3 3|4 4|0 0)/g,"(($1))");
+            document.write("<br>k "+k)
+		kk=kk.replace(/(1 1|2 2|3 3|4 4|0 0)/g,"(($1))");
+            document.write("<br>kk "+kk)    
         
-        function d(pram){pram==0?different1();different2()}
-        if(param==0) {  different1() } else { different2() }
-        
-        function displayResult(){
-            engtxt.innerHTML=`<span class="A">${se[subindex]}</span>`+ " " 
-            + `<span class="B">${esentence[predicateindex]} </span>`;
-        
-            bentxt.innerHTML=`<span class="A">${sb[subindex]}</span>`+ " " 
-            + `<span class="B">${bsentence[predicateindex]} </span>`;
-        }         
     </script>
 </body>
 </html>
