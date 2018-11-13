@@ -35,7 +35,7 @@
     }
     #cuLid{
         width: 225px; height: 80px; border: 2px solid black;
-        left: 10px; top: 150px; color: #eef7ff;
+        left: 12px; top: 150px; color: #eef7ff;
         background-image: radial-gradient(#9f9fb5 0%, #2c3090 90%);
     }
     #On{left: 110px; top: 10px;}
