@@ -56,9 +56,11 @@
                 do{oldvalue= Math.floor(Math.random()* se.length);}
                 while(oldvalue===newvalue);
             }
+            newvalue="";
             if(0==param){subindex=oldvalue;}
             else if(1==param){predicateindex=oldvalue;}
-          displayResult();  
+            
+            displayResult();  
         }
         
         /* var i=100;
