@@ -56,7 +56,7 @@
         function myTimer(){if(m>=130){clearInterval(myTime);}m+=2; paperTrail.style.top=m+"px";}}
     function lidOpenAnim(){
         slideSound.play();//play lidopen
-        var minN=13; var maxN=249; var speed=10;
+        var minN=10; var maxN=250; var speed=10;
         if(lidOpen=lidOpen^1){
             var myTime = setInterval(myTimer, speed);
             var m=minN;function myTimer(){
