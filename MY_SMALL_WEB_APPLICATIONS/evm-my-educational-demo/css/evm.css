@@ -78,7 +78,7 @@
     #buBusyTxt,#cuBusyTxt,#powerOnTxt{ z-index: 2; text-align: center;
         font-size: 60%; font-family: monospace; font-weight: bold;
     }
-    #buBusyTxt{left: 179px; top: 32px;}
+    #buBusyTxt{left: 173px; top: 32px;}
     #cuBusyTxt{left: 218px; top: 62px;}
     #powerOnTxt{left: 0px; top: 62px;}
     #progName,#purpose{text-align: center; border: 3px solid black; padding: 10px; font-weight: bolder;
