@@ -22,7 +22,7 @@
     <div id="wordbox"><p id="engtxt"></p><p id="bentxt"></p></div>
     <div id="buttonbox"><input type="button" id="First"><input type="button" id="Second"></div>    
     <script>
-        "use sctrict";
+        "use strict";
         const se=["dog","cat","bird"];
         const sb=["kukur","biRAl", "pAkhI"];
         const esentence = ["runs", "goes to market", "eats insect", "sings","plays"];
@@ -34,20 +34,33 @@
         }        
         different(0); different(1);        
         var oldvalue=0;  var newvalue; var subIndex=0; var predicateindex=0;
-        function different(param){
-            newvalue= Math.floor(Math.random()* se.length);
+        
+        function different(param){if(param===0)changesubject();else changepredicate();displayResult();}
+        
+        function changesubject(){
+            changeoldvalue();            
+            subIndex=oldvalue;
+            displaysubject(subIndex);       
+        }     
+        
+        function changepredicate(){
+            changeoldvalue();           
+          predicateindex=oldvalue;            
+        } 
+        
+         function displaysubject(subjectnumber) {console.log("now displaying subject #"+subjectnumber);}
+         function displaypredicate( x ) {console.log("now displaying predicate #"+x);}
+        
+         function changeoldvalue(){ console.log("oldvalue used to be "+oldvalue);  newvalue= Math.floor(Math.random()* se.length);
             if(oldvalue!=newvalue){oldvalue=newvalue;}else{
                 do{oldvalue= Math.floor(Math.random()* se.length);}
                 while(oldvalue===newvalue);
-            }newvalue="";
-            if(0==param){subindex=oldvalue;}
-            else if(1==param){predicateindex=oldvalue;}            
-            displayResult();  
-        }       
+            }newvalue=""; console.log("and now has changed to " + oldvalue); }
+        
         function displayResult(){
-            engtxt.innerHTML=`<span class="A">${se[subindex]}</span>`+ " " 
+            engtxt.innerHTML=`<span class="A">${se[subIndex]}</span>`+ " " 
             + `<span class="B">${esentence[predicateindex]} </span>`;        
-            bentxt.innerHTML=`<span class="A">${sb[subindex]}</span>`+ " " 
+            bentxt.innerHTML=`<span class="A">${sb[subIndex]}</span>`+ " " 
             + `<span class="B">${bsentence[predicateindex]} </span>`;
         }         
     </script>
