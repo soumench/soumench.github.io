@@ -40,14 +40,15 @@
         
         function changesubject(){
             var newvalue = Math.floor(Math.random()*se.length);
-            while(newvalue===oldsubject) newvalue = Math.floor(Math.random()*5);
+            while(newvalue===oldsubject) newvalue = Math.floor(Math.random()*se.length);
             subIndex=newvalue;
             displaysubject(subIndex);            
             console.log(`user clicked left button; left dice threw ${newvalue};the last time user clicked left button the dice threw was ${oldsubject}`);
             oldsubject=newvalue;
         }
         function changepredicate(){
-          var newvalue = Math.floor(Math.random()*se.length);
+          var newvalue = Math.floor(Math.random()*5);
+          while(newvalue===oldpredicate) newvalue = Math.floor(Math.random()*5);
           predicateindex=newvalue;        
           console.log(`user clicked right button; right dice threw ${newvalue};the last time user clicked right button the dice threw was ${oldpredicate}`);
           oldpredicate=newvalue;
