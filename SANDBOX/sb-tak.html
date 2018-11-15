@@ -39,7 +39,9 @@
         function different(param){if(param===0)changesubject();else changepredicate(); displayResult();}
         
         function changesubject(){
-            changeoldvalue();
+            if(oldsubject==2){
+                changeoldvalue();
+            } else{changeoldvalue();}
             subIndex=oldvalue;
             displaysubject(subIndex);         
             
@@ -51,7 +53,7 @@
           changeoldvalue();
           predicateindex=oldvalue;          
          
-          console.log(`user clicked right button; right dice threw ${oldvalue};the last time user clicked left button the dice threw was ${oldpredicate}`);
+          console.log(`user clicked right button; right dice threw ${oldvalue};the last time user clicked right button the dice threw was ${oldpredicate}`);
           oldpredicate=oldvalue;
         } 
         
