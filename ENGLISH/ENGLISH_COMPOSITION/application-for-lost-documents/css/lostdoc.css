@@ -1,9 +1,12 @@
 body{text-align: left; font-family: sans-serif; background-color: #ef9494;
     font-size: 18px;
 }
-#heading{font-weight: bolder; font-size: 110%; 
+#heading,footer{
+    clear: both;
+    font-weight: bolder; font-size: 110%; 
     background-color: aqua; padding: 1%; 
     border: 2px solid Black; border-radius: 16px;
+    text-align: center;
 }
 .chkbxbtns,.chkbxname,.uip,.feedNames{position: absolute; left: 100px;}
 .uip{color: gray;}
@@ -12,13 +15,14 @@ body{text-align: left; font-family: sans-serif; background-color: #ef9494;
 .chkbxdisplay{margin-left:  left: 135px;}
 .uip{left:280px;}
 #lostlistbox{text-align: left;  padding: 1%;}
-#updateBtn{text-align: center; width: 510px; height: 40px; font-weight: bolder;
+#updateBtn{text-align: center;  height: 40px; font-weight: bolder;
     background-color: green; color: aliceblue; font-size: 120%;
 }
 #letterbox{background-color: white;}
-footer{font-size: 64%;border: 1px solid black; border-radius: 16px;
-    background-color: #8de2ff; padding: 1%;
+footer{
+    font-size: 64%; background-color: #8de2ff;    
+}
+#updatebtnbox{
     text-align: center;
 }
-   
 /*copyright: Soumen Chakraborty*/
