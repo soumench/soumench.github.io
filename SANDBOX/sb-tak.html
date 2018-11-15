@@ -32,7 +32,7 @@
         while(i--){buttons[i].value=buttons[i].id;
             buttons[i].setAttribute("onclick","different(" + i + ")" );
         } 
-        var myoldsubindex; var myoldpredindex;
+        var oldsubject; var oldpredicate;
         different(0); different(1);        
         var oldvalue=0;  var newvalue; var subIndex=0; var predicateindex=0;
         
@@ -43,17 +43,16 @@
             subIndex=oldvalue;
             displaysubject(subIndex);         
             
-            console.log(`user clicked left button; left dice threw ${oldvalue};the last time user clicked left button the dice threw was ${myoldpredindex}`);
-            myoldsubindex=subIndex;
+            console.log(`user clicked left button; left dice threw ${oldvalue};the last time user clicked left button the dice threw was ${oldsubject}`);
+            oldsubject=subIndex;
             
         }
         function changepredicate(){
           changeoldvalue();
-          predicateindex=oldvalue;
-          
+          predicateindex=oldvalue;          
          
-          console.log(`user clicked right button; right dice threw ${oldvalue};the last time user clicked left button the dice threw was ${subIndex}`);
-          myoldpredindex=oldvalue;
+          console.log(`user clicked right button; right dice threw ${oldvalue};the last time user clicked left button the dice threw was ${oldpredicate}`);
+          oldpredicate=oldvalue;
         } 
         
          function displaysubject(subjectnumber) {/*console.log("now displaying subject #"+subjectnumber);*/}
