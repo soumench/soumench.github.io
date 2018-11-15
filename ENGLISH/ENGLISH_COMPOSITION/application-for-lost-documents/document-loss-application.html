@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> lostdocapbySoumen </title>
+    <link rel="stylesheet" type="text/css" href="css/lostdoc.css">
+</head>
+<body>
+    <span id="heading">An Application for the loss of important documents.</span><br><br> 
+    <span id="yourName">Your name : </span><input type="text" id="namex" ><br><br>
+    <span id="youraddress">Your address : </span> <input type="text" id="address"><br><br>
+    <span id="yourDate">The date when you lost : </span> <input type="date" id="lostdate"><br><br>
+    <span id="yourTime">Time when you lost :</span> <input type="time" value="" id="losttime"><br><br>
+    <span id="yourPlace">Place where you lost :</span> <input type="text" value="Howrah Station" id="lostplace"><br><br>
+    <div id="opt_group">
+	<span class="feedNames">How was it lost : </span><br>
+    	<input type="radio" name="howlostType" onclick="choose(this.value)" value="while I was travelling by bus"  class="chkbxbtns"> <span class="chkbxname">while I was travelling by bus</span><br>
+        <input type="radio" name="howlostType" onclick="choose(this.value)" value="on my way back home" class="chkbxbtns"><span class="chkbxname">on my way back home</span><br>
+        <input type="radio" name="howlostType" onclick="choose(this.value)" value="when I was going to my school" class="chkbxbtns"><span class="chkbxname">when I was going to my school</span><br>       
+	</div> 
+    <span id="yourDocs">Documents lost :</span><br> 
+    <input type="checkbox" id="d0"> <span id="doc0Name">* Birth Certificate</span><br>
+    <input type="checkbox" id="d1"> <span id="doc1Name">* Admit Card of Secondary Exam</span><br>
+    <input type="checkbox" id="d2"> <span id="doc2Name">* Mark Sheet of Secondary Exam</span><br>
+    <input type="checkbox" id="d3"> <span id="doc3Name">* Certificate of Secondary Exam</span><br>
+    <input type="checkbox" id="d4"> <span id="doc4Name">* Admit Card of Higher Secondary Exam</span><br>
+    <input type="checkbox" id="d5"> <span id="doc5Name">* Mark Sheet of Higher Secondary Exam</span><br>
+    <input type="checkbox" id="d6"> <span id="doc6Name">* Certificate of Higher Secondary Exam</span><br>
+    <input type="checkbox" id="d7"> <span id="doc7Name">* Aadhaar Card</span><br>
+    <input type="checkbox" id="d8"> <span id="doc8Name">* Voter ID Card</span><br>
+    <input type="checkbox" id="d9"> <span id="doc9Name">* PAN Card</span><br>
+    <input type="checkbox" id="d10"><span id="doc10Name">* Bank Pass Book</span><br>
+    <input type="button" id="updateBtn" value="Show Application" onclick="fUpdate()"><br>
+    <footer> 
+		Copyright &copy; Made by Soumen Chakraborty     - <span id="year">year</span> 
+	<br> 
+		Strictly for Educational and Non-Commercial purpose only.
+    </footer>
+    <div id="letterbox">
+    <span id="showLetter1"></span>    
+    <span id="showLetter2"></span>    
+    <div id="lostlistbox">
+    <span id="doc0"></span><span id="doc1"></span><span id="doc2"></span><span id="doc3"></span>
+    <span id="doc4"></span><span id="doc5"></span><span id="doc6"></span><span id="doc7"></span>
+    <span id="doc8"></span><span id="doc9"></span><span id="doc10"></span>    
+    </div>
+    <span id="showLetter3"></span>
+    </div>
+    
+    <script src="js/genfunc.js"></script>
+    <script src="js/funcs.js"></script>
+    <script src="../../year.js"></script>
+    <script>
+        "use strict"; 
+        showLetter1.style.color=showLetter2.style.color=showLetter3.style.color="white";
+        const detailsui = [namex, address, lostdate, losttime, lostplace];
+        var c = detailsui.length; 
+        while(c--){
+            detailsui[c].setAttribute("class","uip");
+            detailsui[c].setAttribute("onchange","update()");
+        }
+        const toFeedList = [yourName, youraddress, yourDate, yourTime, yourPlace, yourDocs];
+        var l = toFeedList.length; while(l--){toFeedList[l].setAttribute("class","feedNames");}
+        const chkboxes = [d0, d1, d2, d3, d4, d5, d6, d7, d8, d9,  d10];
+        const chknames = [doc0Name, doc1Name, doc2Name, doc3Name, doc4Name, doc5Name, doc6Name, doc7Name, doc8Name , doc9Name, doc10Name];
+        const chkboxdisplay = [doc0, doc1, doc2, doc3, doc4, doc5, doc6, doc7, doc8, doc9, doc10];
+        var i = chkboxes.length; while(i--){
+            chkboxes[i].setAttribute("onclick",`checkList(`+i+`)`);
+            chkboxes[i].setAttribute("class","chkbxbtns" );
+            chknames[i].setAttribute("class","chkbxname" );
+            chkboxdisplay[i].setAttribute("class", "chkbxdisplay");
+        }
+        year.innerHTML=creation_year;
+    </script>
+</body>
+</html>
