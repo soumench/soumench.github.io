@@ -31,31 +31,39 @@
         const buttons = [First,Second]; var i = buttons.length;
         while(i--){buttons[i].value=buttons[i].id;
             buttons[i].setAttribute("onclick","different(" + i + ")" );
-        }        
+        } 
+        var myoldsubindex; var myoldpredindex;
         different(0); different(1);        
         var oldvalue=0;  var newvalue; var subIndex=0; var predicateindex=0;
         
-        function different(param){if(param===0)changesubject();else changepredicate();displayResult();}
+        function different(param){if(param===0)changesubject();else changepredicate(); displayResult();}
         
         function changesubject(){
-            changeoldvalue();            
+            changeoldvalue();
             subIndex=oldvalue;
-            displaysubject(subIndex);       
-        }     
-        
+            displaysubject(subIndex);         
+            
+            console.log(`user clicked left button; left dice threw ${oldvalue};the last time user clicked left button the dice threw was ${myoldpredindex}`);
+            myoldsubindex=subIndex;
+            
+        }
         function changepredicate(){
-            changeoldvalue();           
-          predicateindex=oldvalue;            
+          changeoldvalue();
+          predicateindex=oldvalue;
+          
+         
+          console.log(`user clicked right button; right dice threw ${oldvalue};the last time user clicked left button the dice threw was ${subIndex}`);
+          myoldpredindex=oldvalue;
         } 
         
-         function displaysubject(subjectnumber) {console.log("now displaying subject #"+subjectnumber);}
-         function displaypredicate( x ) {console.log("now displaying predicate #"+x);}
+         function displaysubject(subjectnumber) {/*console.log("now displaying subject #"+subjectnumber);*/}
+         function displaypredicate( x ) {/*console.log("now displaying predicate #"+x);*/}
         
-         function changeoldvalue(){ console.log("oldvalue used to be "+oldvalue);  newvalue= Math.floor(Math.random()* se.length);
+         function changeoldvalue(){ /*console.log("oldvalue used to be "+oldvalue);*/  newvalue= Math.floor(Math.random()* se.length);
             if(oldvalue!=newvalue){oldvalue=newvalue;}else{
                 do{oldvalue= Math.floor(Math.random()* se.length);}
                 while(oldvalue===newvalue);
-            }newvalue=""; console.log("and now has changed to " + oldvalue); }
+            }newvalue=""; /*console.log("and now has changed to " + oldvalue); */}
         
         function displayResult(){
             engtxt.innerHTML=`<span class="A">${se[subIndex]}</span>`+ " " 
