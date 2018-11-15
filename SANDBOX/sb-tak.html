@@ -39,22 +39,18 @@
         function different(param){if(param===0)changesubject();else changepredicate(); displayResult();}
         
         function changesubject(){
-            if(oldsubject==2){
-                changeoldvalue();
-            } else{changeoldvalue();}
-            subIndex=oldvalue;
-            displaysubject(subIndex);         
-            
-            console.log(`user clicked left button; left dice threw ${oldvalue};the last time user clicked left button the dice threw was ${oldsubject}`);
-            oldsubject=subIndex;
-            
+            var newvalue = Math.floor(Math.random()*se.length);
+            while(newvalue===oldsubject) newvalue = Math.floor(Math.random()*5);
+            subIndex=newvalue;
+            displaysubject(subIndex);            
+            console.log(`user clicked left button; left dice threw ${newvalue};the last time user clicked left button the dice threw was ${oldsubject}`);
+            oldsubject=newvalue;
         }
         function changepredicate(){
-          changeoldvalue();
-          predicateindex=oldvalue;          
-         
-          console.log(`user clicked right button; right dice threw ${oldvalue};the last time user clicked right button the dice threw was ${oldpredicate}`);
-          oldpredicate=oldvalue;
+          var newvalue = Math.floor(Math.random()*se.length);
+          predicateindex=newvalue;        
+          console.log(`user clicked right button; right dice threw ${newvalue};the last time user clicked right button the dice threw was ${oldpredicate}`);
+          oldpredicate=newvalue;
         } 
         
          function displaysubject(subjectnumber) {/*console.log("now displaying subject #"+subjectnumber);*/}
