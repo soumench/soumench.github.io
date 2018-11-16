@@ -8,24 +8,24 @@
     <link rel="stylesheet" type="text/css" href="css/evm.css">    
 </head>
 <body>
-    <div id="cubox"><input type="button" id="LPon">        
+    <div id="cubox"><input type="button" id="LPon" value="X">        
         <p id="displaypanel"> <span id="display"> display section Testing </span></p>
-        <input type="button" id="busyCU">        
+        <input type="button" id="busyCU" value="X">        
         <p><input type="button" id="On"></p>
         <p id="crcBox"><input type="button" id="Close"><input type="button" id="Result"><input type="button" id="Clear"></p><p><input type="button" id="Total"><input type="button" id="Ballot"></p>
         <input type="button" id="cuLid">
         <span id="powerOnTxt">Power<br>On</span>
         <span id="cuBusyTxt">Busy<br>Lamp</span></div>
-    <div id="bubox"><input type="button" id="busyBU"><br>        
+    <div id="bubox"><input type="button" id="busyBU" value="X"><br>        
         <p id="bunames"><input type="text" id="Ncand1"><br><br>
         <input type="text" id="Ncand2"><br><br><input type="text" id="Ncand3"><br><br>
         <input type="text" id="Ncand4"></p>
         <p id="bubtns"><input type="button" id="Cand1"><br><br>
         <input type="button" id="Cand2"><br><br><input type="button" id="Cand3"><br><br>
         <input type="button" id="Cand4"></p>
-        <p id="buCandLamps"><input type="button" id="LCand1"><br><br>
-        <input type="button" id="LCand2"><br><br><input type="button" id="LCand3"><br><br>
-        <input type="button" id="LCand4"></p>
+        <p id="buCandLamps"><input type="button" id="LCand1" value="«"><br><br>
+        <input type="button" id="LCand2" value="«"><br><br><input type="button" id="LCand3" value="«"><br><br>
+        <input type="button" id="LCand4" value="«"></p>
         <span id="buBusyTxt">Ready<br>Lamp</span>
         <span id="candNameTxt">Name<br>of the<br>Candidates</span></div>
     <div id="vvpatbox"><p id="paperTrail"><span id="trailMsg"></span></p></div>
@@ -60,7 +60,8 @@
         var storedVotes = []; var c1=0; var c2=0; var c3=0; var c4=0;
         var cn1 = Ncand1.value;var cn2 = Ncand2.value; var cn3 = Ncand3.value; var cn4 = Ncand4.value;
         var pollIsClosed=false; var resultIsDeclared=false;
-        evmOff();   paperTrail.style.zIndex=-2; cuLid.style.zIndex=3; cuLid.value=`Click to slide this panel.`;
+        evmOff();   display(`<br>Please wait....`)
+        paperTrail.style.zIndex=-2; cuLid.style.zIndex=3; cuLid.value=`Click to slide this panel.`;
         year.innerHTML=creation_year;
     </script>
 </body>

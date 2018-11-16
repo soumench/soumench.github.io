@@ -12,29 +12,30 @@
     function BallotIssuedFunc(){if(evmONTog && !pollIsClosed){ 
             ballotIssued=true;  if(firstballotpressed==false){firstballotpressed=true;
                 var now = new Date().toLocaleString(); pst=`${now}`; pollcleared=false; }
-            lampon(busyCU);lampon(busyBU); display(`Ballot issued.<br>Press a button <br>in the Ballot Unit <br>to vote.`);} else if(evmONTog && pollIsClosed){display(closedMsg);} paperTrailPos("-8px");} 
+            lampOnGreen(busyCU);lampOnGreen(busyBU); display(`Ballot issued.<br>Press a button <br>in the Ballot Unit <br>to vote.`);} else if(evmONTog && pollIsClosed){display(closedMsg);} paperTrailPos("-8px");} 
     function seeTotalVotes(){LcandOFF(msgDuration); checkTotal();}        
     function result(){if(pollIsClosed){ calculateResult(); resultIsDeclared=true;}LcandOFF(msgDuration); }       
-    function addvote(s){longBeepsound.play();storeTheVotes();
+    function addvote(s){storeTheVotes();longBeepsound.play();
         var now = new Date().toLocaleString();
         trailMsg.innerHTML=`You have voted <br>for<br> ${s} <br>on<br> ${now}`;  storedVotes.push(s);
         c1 = storedVotes.filter(i => i === cn1).length;
         c2 = storedVotes.filter(i => i === cn2).length;
         c3 = storedVotes.filter(i => i === cn3).length;
         c4 = storedVotes.filter(i => i === cn4).length;
-        candBtnAction();   paperTrailAnimAppear();}        
-    function lampon(e){e.style.backgroundColor="red";}        
+        candBtnAction();   paperTrailAnimAppear();}
+    function lampon(e){e.style.backgroundColor="#ff0000";} 
+    function lampOnGreen(e){e.style.backgroundColor="#00ff00";} 
     function allLamsOff(){ const lamps= [LPon, busyCU, busyBU,LCand1,LCand2,LCand3,LCand4 ];
-        var c= lamps.length; while(c--){lamps[c].style.backgroundColor="grey";}}
+        var c= lamps.length; while(c--){lamps[c].style.backgroundColor="#b9b9b9";}}
     function candLampsOff(){ paperTrailPos("100px"); paperTrail.style.zIndex=-2;
         const lamps1=[LCand1,LCand2,LCand3,LCand4,busyCU,busyBU ];
-        var c=lamps1.length; while(c--){lamps1[c].style.backgroundColor="grey";}}
-    function LcandOFF(mytime){setTimeout(candLampsOff,mytime);}        
+        var c=lamps1.length; while(c--){lamps1[c].style.backgroundColor="#8d8d8d";}}
+    function LcandOFF(mytime){setTimeout(candLampsOff,mytime);}
     function candBtnAction(){ ballotIssued = false; LcandOFF(msgDuration);}
     function display(txt){document.getElementById("display").innerHTML=txt;}
     function displayColor(col){document.getElementById("display").style.backgroundColor=col;}
     var closedMsg=`Poll is Closed.<br>No further Voting is possible.`; 
-    var onMsg="EVM is on.<br>Press<br>the Ballot Button <br>to continue.";
+    var onMsg="E.V.M. is on.<br>Press<br>the Ballot Button <br>to continue.";
     function paperTrailPos(pos){ paperTrail.style.top=pos;}
     function paperTrailAnimAppear(){vvpatSound.play();
         paperTrail.style.zIndex=1; var myTime = setInterval(myTimer, 10); var m=10;

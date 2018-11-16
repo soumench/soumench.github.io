@@ -64,7 +64,7 @@
     #bunames{left: 10px; top: 50px;}
     #bubtns{left: 145px;top: 54px;}
     #buCandLamps{left: 105px;top: 54px;}
-    #LCand1,#LCand2,#LCand3,#LCand4{background-color: #ff1f4c; border-radius: 16px; width: 30px;}        
+           
     #paperTrail{font-size: 60%; border: 1px solid blue;
         width: 150px; height: 80px;
         left: 20px; background-color: #f7f1f1;
@@ -92,3 +92,8 @@
     #creator{z-index: 2; font-size: 65%; top: 615px; left: 115px; padding: 0.2%;font-weight: bolder;
         background-color: #d6d660; border-radius: 16px; border: 4px solid white;
     }
+    #LCand1,#LCand2,#LCand3,#LCand4{
+        font-weight: bolder; color: white; font-size: 90%;
+        background-color: #ff1f4c; border-radius: 16px; width: 30px;
+    }
+    #LPon,#busyCU,#busyBU{ font-size: bolder;}
