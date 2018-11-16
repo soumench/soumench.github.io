@@ -30,7 +30,7 @@ function calculateResult(){display(`Calculating result.<br><br> Please wait....`
     ,()=>{display(`<br>Candidate4=${c4}`);beep();}
     ,()=>{display(`<br>Press the Clear button.`);beep();allBtnsState(1);}]; var howmanytimes = all.length;
 function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}}
-function closeThePoll(){display(`Closing the poll.<br>Please wait....`);
+function closeThePoll(){display(`Closing the poll.<br><br>Please wait....`);
     var repeat = setInterval(dothis,delay);var i=0; var all=[
     ()=>{allBtnsState(0); display(`<br>No of candidates : ${BUNAMES.length}`);beep();}
     ,()=>{display(`Poll Start Time:<br>${pst}`);beep();}
