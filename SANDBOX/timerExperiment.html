@@ -27,8 +27,15 @@
     </span><br>
     <span id="txt"></span>
     <span id="displaymsg"></span>
-    <script>        
-        function multiTrigger(howmanyTimes){            
+    <br><br>
+    
+    <div>
+        <input type="button" value="timer with Strings" onclick="loopmystrings()"><br>
+        <span id="displaymsg2"></span>
+    </div>
+    <script> 
+        "use strict"
+        /*function multiTrigger(howmanyTimes){            
             var repeat = setInterval(dothis,1000);
             var i=0;
             var all = [
@@ -44,7 +51,20 @@
                 txt.innerHTML=" i= "+i+" ";
             }
             function display(msg){displaymsg.innerHTML=msg;}
-        }
+            */
+        
+        
+            function loopmystrings(){
+                var repeat1 = setInterval(dothis2,1000);
+                const msglist = ["hi","what","when", "where", ""];
+                var howmanytimes = msglist.length;
+                var c=0;
+                function dothis2(){
+                    if( c>=howmanytimes){ clearInterval(repeat1);c=0; return;}
+                    document.getElementById("displaymsg2").innerHTML=msglist[c]; c++; 
+                }
+            }
+     /*   }*/
     </script>
 </body>
 </html>
