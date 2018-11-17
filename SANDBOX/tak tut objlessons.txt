@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="part.css">	
+</head>
+<body id="body">
+    <div id="buttonbox">
+		<input type="button" id="First">
+		<input type="button" id="Second">
+	</div>    
+	<div>	
+    <p>
+	<span id="engtextsubj" class="subjclass"></span><span id="engtextpred" class="predclass"></span>
+	<p>
+	<span id="bentextsubj" class="subjclass"></span><span id="bentextpred" class="predclass">	</span>
+    <script>
+        "use strict";
+        const buttons = [First,Second]; 
+		( function (){
+			var i = buttons.length;
+			while(i--){
+				buttons[i].value=buttons[i].id;
+				buttons[i].setAttribute("onclick","button_was_clicked(" + i + ")" );
+			} 
+		} )();
+
+        function button_was_clicked(param){ 
+			if(param===0)changesubject();
+			else changepredicate(); 
+		}
+
+		var predicatedata={		  
+		  name: "predicate data" ,
+		  english: ["runs", "goes to market", "eats insect", "sings","plays"] ,
+		  bengali: ["dourAy", "bAjAre jAy", "pokA khAy", "gAn kore", "khele"],
+		  bendisplay: bentextpred,
+		  engdisplay: engtextpred		  
+		}
+		
+		var subjectdata={
+		  name: "subject data" ,
+		  english: ["dog","cat","bird"],
+		  bengali: ["kukur","biRAl", "pAkhI"],		
+		  bendisplay: bentextsubj,
+		  engdisplay: engtextsubj
+		}
+        if(
+			subjectdata.english.length!=subjectdata.bengali.length ||
+			predicatedata.english.length!=predicatedata.bengali.length
+		)console.log("list mismatch in either subjectdata or predicatedata")
+
+		changesubject()
+		changepredicate()
+		
+        function changesubject(){
+            var newvalue;
+			do newvalue= Math.floor(Math.random()*subjectdata.english.length);
+            while(newvalue===subjectdata.old);
+            subjectdata.index=newvalue;
+            displaysubject();            
+            subjectdata.old=newvalue;
+        }
+		
+        function changepredicate(){
+          var newvalue;
+		  do newvalue = Math.floor(Math.random()*predicatedata.english.length);
+          while(newvalue===predicatedata.old);
+          predicatedata.index=newvalue;        
+          displaypredicate();            
+          predicatedata.old=newvalue;
+        } 
+        
+        function displaysubject() {
+            subjectdata.engdisplay.innerHTML=subjectdata.english[subjectdata.index];        
+            subjectdata.bendisplay.innerHTML=subjectdata.bengali[subjectdata.index];    
+		 }
+		 		 
+         function displaypredicate() {
+            predicatedata.engdisplay.innerHTML=predicatedata.english[predicatedata.index];
+            predicatedata.bendisplay.innerHTML=predicatedata.bengali[predicatedata.index];
+		 }
+    </script>
+</body>
+</html>
+
+

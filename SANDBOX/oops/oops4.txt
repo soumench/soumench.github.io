@@ -1,0 +1,94 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title> Title </title>
+	 <link rel="stylesheet" type="text/css" href="newsb.css">	
+</head>
+<body id="body">
+    <div id="buttonbox">
+		<input type="button" id="First">
+		<input type="button" id="Second">
+	</div>    
+	<div>	
+	<span id="engtextsubj" class="subjclass"></span>
+	<span id="engtextpred" class="predclass"></span>
+	<br>
+	<span id="bentextsubj" class="subjclass"></span>
+	<span id="bentextpred" class="predclass">	</span>
+    <script>
+        "use strict";
+        
+        const buttons = [First,Second]; 
+		
+		( function (){
+			var i = buttons.length;
+			while(i--){
+				buttons[i].value=" ";
+				buttons[i].setAttribute("onclick","button_was_clicked(" + i + ")" );
+			} 
+		} )();
+		        
+        function button_was_clicked(param){ 
+			if(param===0)change(subjectdata);
+			else change(predicatedata); 
+		}
+
+		var predicatedata={		  
+		  name: "predicate data" ,
+		  english: ["runs", "goes to market", "eats insect", "sings","plays"] ,
+		  bengali: ["dourAy", "bAjAre jAy", "pokA khAy", "gAn kore", "khele"],
+		  bendisplay: bentextpred,
+		  engdisplay: engtextpred,
+		  index:0,
+         displayfun: function () {
+            this.engdisplay.innerHTML=this.english[this.index];
+            this.bendisplay.innerHTML=this.bengali[this.index];
+		 },
+		 
+           check:function(){
+		      if(this.english.length==this.bengali.length)console.log(this.name + " passed the check");
+			  else console.log(this.name + " has a list mismatch");
+		   }
+		 
+		 
+		}
+		
+		var subjectdata={
+		  name: "subject data" ,
+		  english: ["dog","cat","bird"],
+		  bengali: ["kukur","biRAl", "pAkhI"],		
+		  bendisplay: bentextsubj,
+		  engdisplay: engtextsubj,
+		  index:0,
+		  displayfun:         function () {
+            this.engdisplay.innerHTML=this.english[this.index];        
+            this.bendisplay.innerHTML=this.bengali[this.index];    
+		 },
+           check:function(){
+		      if(this.english.length==this.bengali.length)console.log(this.name + " passed the check");
+			  else console.log(this.name + " has a list mismatch");
+		   }
+		}
+		
+		subjectdata.check();
+		predicatedata.check();
+		
+		change(subjectdata)
+		change(predicatedata)
+		
+        function change(data){
+            var newvalue;
+			do newvalue= Math.floor(Math.random()*data.english.length);
+            while(newvalue===data.old);
+            data.index=newvalue;
+            data.displayfun();            
+            data.old=newvalue;
+        }
+		
+    </script>
+</body>
+</html>
+
+

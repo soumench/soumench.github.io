@@ -26,8 +26,8 @@
     </div>    
     <script>
         "use strict";
-        const se=["dog","cat","bird"];
-        const sb=["kukur","biRAl", "pAkhI"];
+        const es=["dog","cat","bird"];
+        const bs=["kukur","biRAl", "pAkhI"];
         
         const ev = ["sees",  "eats", "takes"];
         const bv = ["dekhe",  "khAy",  "ney"];
@@ -53,8 +53,8 @@
         }
         
         function changesubject(){
-            var newvalue = Math.floor(Math.random()*se.length);
-            while(newvalue===oldsubject) newvalue = Math.floor(Math.random()*se.length);
+            var newvalue = Math.floor(Math.random()*es.length);
+            while(newvalue===oldsubject) newvalue = Math.floor(Math.random()*es.length);
             subindex=newvalue;
             displaysubject(subindex);            
             console.log(`user clicked left button; left dice threw ${newvalue};the last time user clicked left button the dice threw was ${oldsubject}`);
@@ -87,10 +87,10 @@
             }newvalue=""; /*console.log("and now has changed to " + oldvalue); */}
         
         function displayResult(){
-            engtxt.innerHTML=`<span class="A">${se[subindex]}</span>`+ " " 
+            engtxt.innerHTML=`<span class="A">${es[subindex]}</span>`+ " " 
             + `<span class="B">${ev[verbindex]} </span>`
                 +`<span class="C">${eo[objindex]}</span>`;        
-            bentxt.innerHTML=`<span class="A">${sb[subindex]}</span>`+ " " 
+            bentxt.innerHTML=`<span class="A">${bs[subindex]}</span>`+ " " 
             + `<span class="B">${bv[verbindex]} </span>`
             +`<span class="C">${bo[objindex]}</span>`;;
         }         
