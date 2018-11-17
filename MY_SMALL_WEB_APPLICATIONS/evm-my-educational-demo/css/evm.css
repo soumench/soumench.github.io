@@ -1,51 +1,29 @@
 /* Created by Soumen Chakraborty - 2018 - 
 (Strictly for Educational Demonstration, Non-Profit and Strictly Non-Commercial purpose. All Rights Reserved.)*/
-    body{
-        font-family: sans-serif; font-size: 20px;
-        width: 480px; height: 640px; border: 2px solid black;
-        /*background-image: radial-gradient(white 25%, black 90%);  */
-        background-color: #2c2c2c;
-    }
+    body{font-family: sans-serif; font-size: 20px;
+        width: 480px; height: 640px; border: 2px solid black;background-color: #2c2c2c;}
     #cubox, #bubox,#vvpatbox,.click,#LPon,#busyCU, #busyBU,#display,#bunames,#bubtns,#buCandLamps,#crcBox,#paperTrail,#cuLid,#cuLabel,#buLabel,#vvpatLabel,#vvpatCover,#buBusyTxt,#cuBusyTxt,#powerOnTxt,#LCand1,#LCand2,#LCand3,#LCand4,#candNameTxt,#progName,#purpose,#creator{position: absolute;}
     .click:hover{cursor: pointer;}
-    #cubox, #bubox,#vvpatbox{
-        background-repeat: no-repeat;
+    #cubox, #bubox,#vvpatbox{ background-repeat: no-repeat;
         background-size: cover; right: 0px;
         border: 1px solid #000000; top: 280px; height:330px;
-        background-image: radial-gradient(#d1cece 25%, #cecece 25%, #393939 99%);
-    }
+        background-image: radial-gradient(#d1cece 25%, #cecece 25%, #393939 99%);}
     #cubox{left: 11px; width:250px;}        
     #bubox,#vvpatbox{left: 274px; width:210px;}
     #vvpatbox{top:15px; height: 250px; background-color: gray;
-        /*background-image: linear-gradient(black, white, black 98%);*/
-        background-image: linear-gradient(to right, rgb(96, 91, 91), #afacac, #4a4545); 
-    }
-    .click{
-        font-size: 80%; font-weight: bolder;
-        border: 4px solid "black"; border-radius: 8px;
-    }
-    #LPon,#busyCU, #busyBU,#display{
-        background-color: red; height: 20px;
-        border-radius: 16px;box-shadow: 0 0 10px #f59da4;
-    }
-    #display{
-        box-shadow: 0 0 10px #9ecaed;
-        border-color: #090a0b;
-        border: 2px solid "black";            
-    }
-    #cuLid{
-        width: 225px; height: 80px; border: 2px solid black;
-        left: 12px; top: 150px; color: #eef7ff;
-        background-image: radial-gradient(#9f9fb5 0%, #2c3090 90%);
-    }
+        background-image: linear-gradient(to right, rgb(96, 91, 91), #afacac, #4a4545);}
+    .click{font-size: 80%; font-weight: bolder; border: 4px solid "black"; border-radius: 8px;}
+    #LPon,#busyCU, #busyBU,#display{background-color: red; height: 20px;
+        border-radius: 16px;box-shadow: 0 0 10px #f59da4;}
+    #display{ box-shadow: 0 0 10px #9ecaed; border-color: #090a0b; border: 2px solid "black";}
+    #cuLid{width: 225px; height: 80px; border: 2px solid black; left: 12px; top: 150px; color: #eef7ff;
+        background-image: radial-gradient(#9f9fb5 0%, #2c3090 90%);}
     #On{left: 110px; top: 10px;}
     #LPon,#display,#busyCU{top: 40px;}
     #LPon{left: 10px;}
-    #display{
-        font-size: 78%; left: 35px;  text-shadow: 1.5px 1.5px rgba(118, 118, 118, 0.28);
+    #display{font-size: 78%; left: 35px;  text-shadow: 1.5px 1.5px rgba(118, 118, 118, 0.28);
         background-color: aqua; width: 155px;height: 80px;
-        text-align: center; padding: 10px; border: 2px solid black;
-    }
+        text-align: center; padding: 10px; border: 2px solid black;}
     #busyCU{left: 222px;}
     #Close,#Result,#Clear{top: 141px;}
     #Close{left: 10px;}
@@ -55,51 +33,32 @@
     #Ballot{left:140px;top: 250px;font-size: 120%;}
     #busyBU{left:185px; top: 10px;}
     #Ncand1,#Ncand2,#Ncand3,#Ncand4{max-width: 80px;}
-    #candNameTxt{
-        font-size: 70%; z-index: 3;
-        left: 10px; top: 5px; text-align: center;
-        border: 2px solid black; padding: 5px;
-        background-color: aliceblue;
-    }
+    #candNameTxt{font-size: 70%; z-index: 3;left: 10px; top: 5px; text-align: center;
+        border: 2px solid black; padding: 5px; background-color: aliceblue;}
     #bunames{left: 10px; top: 50px;}
     #bubtns{left: 145px;top: 54px;}
-    #buCandLamps{left: 105px;top: 54px;}
-           
-    #paperTrail{font-size: 60%; border: 1px solid blue;
-        width: 150px; height: 80px;
-        left: 20px; background-color: #f7f1f1;
-        top: -8px; text-align: center; padding: 10px;
-    }
+    #buCandLamps{left: 105px;top: 54px;}           
+    #paperTrail{font-size: 60%; border: 1px solid blue; width: 150px; height: 80px;
+        left: 20px; background-color: #f7f1f1; top: -8px; text-align: center; padding: 10px;}
     #cuLabel,#buLabel,#vvpatLabel{z-index: 1; top: 580px; font-family: fantasy;}
     #cuLabel{left: 90px;}
     #buLabel,#vvpatLabel{left: 335px;}
     #vvpatLabel{left: 311px;top: 34px; z-index:2;color: white; font-family: serif;}
-    #vvpatCover{top: 20px; width: 200px; height: 50px;
-        border: 2px solid black; left: 278px;
-        background-color: gray;  z-index: 2;
-    }
+    #vvpatCover{top: 20px; width: 200px; height: 50px; border: 2px solid black; left: 278px;
+        background-color: gray;  z-index: 2; }
     #buBusyTxt,#cuBusyTxt,#powerOnTxt{ z-index: 2; text-align: center;
-        font-size: 60%; font-family: monospace; font-weight: bold;
-    }
+        font-size: 60%; font-family: monospace; font-weight: bold;}
     #buBusyTxt{left: 173px; top: 32px;}
     #cuBusyTxt{left: 218px; top: 62px;}
     #powerOnTxt{left: 0px; top: 62px;}
     #progName,#purpose{text-align: center; border: 3px solid black; padding: 10px; font-weight: bolder;
         font-size: 90%; left: 12px; top: 15px; background-color: burlywood;
-        background-image: radial-gradient(white 25%, white 25%, grey 90%);
-    }
+        background-image: radial-gradient(white 25%, white 25%, grey 90%);}
     #purpose{font-size: 70%; top: 160px; left: 45px; padding: 1%;}
     #creator{z-index: 2; font-size: 65%; top: 615px; left: 115px; padding: 0.2%;font-weight: bolder;
-        background-color: #d6d660; border-radius: 16px; border: 4px solid white;
-    }
-    #LCand1,#LCand2,#LCand3,#LCand4{
-        font-weight: bolder; color: white; font-size: 90%;
-        background-color: #ff1f4c; border-radius: 16px; width: 30px;
-    }
+        background-color: #d6d660; border-radius: 16px; border: 4px solid white;}
+    #LCand1,#LCand2,#LCand3,#LCand4{font-weight: bolder; color: white; font-size: 90%;
+        background-color: #ff1f4c; border-radius: 16px; width: 30px; }
     #LPon,#busyCU,#busyBU{ font-size: bolder;}
-    #aboutmsg{
-        font-size: 80%;
-    }
-    #aboutcreator{
-        font-size: 80%; color: red; font-weight: bolder;
-    }
+    #aboutmsg,#aboutcreator{font-size: 80%;}
+    #aboutcreator{color: red; font-weight: bolder;}
