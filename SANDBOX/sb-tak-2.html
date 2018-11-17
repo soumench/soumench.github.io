@@ -29,38 +29,53 @@
         const se=["dog","cat","bird"];
         const sb=["kukur","biRAl", "pAkhI"];
         
-        const esentence = ["sees",  "eats", "takes"];
-        const bsentence = ["dekhe",  "khAy",  "ney"];
+        const ev = ["sees",  "eats", "takes"];
+        const bv = ["dekhe",  "khAy",  "ney"];
         
         const eo=["rice","eggs", "rat"];
-        const bo=["bhAt", "Dim guli","indoor" ];
+        const bo=["bhAt", "Dim guli", "indoor"];
         
         
         const buttons = [First,Second,Third]; var i = buttons.length;
         while(i--){buttons[i].value=buttons[i].id;
             buttons[i].setAttribute("onclick","different(" + i + ")" );
         } 
-        var oldsubject=0; var oldpredicate=0;
-        different(0); different(1);        
-        var oldvalue=0;  var newvalue; var subIndex=0; var predicateindex=0;
+        var oldsubject=0; var oldverb=0; var oldobj=0;
+        different(0); different(1); different(2);       
+        var oldvalue=0;  var newvalue; 
+        var subindex=0; var verbindex=0; var objindex;
         
-        function different(param){if(param===0)changesubject();else changepredicate(); displayResult();}
+        function different(param){
+            if(param===0)changesubject();
+            else if(1===param) changeverb();
+            else if(2===param) changeobj();
+            displayResult();
+        }
         
         function changesubject(){
             var newvalue = Math.floor(Math.random()*se.length);
             while(newvalue===oldsubject) newvalue = Math.floor(Math.random()*se.length);
-            subIndex=newvalue;
-            displaysubject(subIndex);            
+            subindex=newvalue;
+            displaysubject(subindex);            
             console.log(`user clicked left button; left dice threw ${newvalue};the last time user clicked left button the dice threw was ${oldsubject}`);
             oldsubject=newvalue;
         }
-        function changepredicate(){
+        function changeverb(){
           var newvalue = Math.floor(Math.random()*5);
-          while(newvalue===oldpredicate) newvalue = Math.floor(Math.random()*5);
-          predicateindex=newvalue;        
-          console.log(`user clicked right button; right dice threw ${newvalue};the last time user clicked right button the dice threw was ${oldpredicate}`);
-          oldpredicate=newvalue;
+          while(newvalue===oldverb) newvalue = Math.floor(Math.random()*ev.length);
+          verbindex=newvalue;        
+          console.log(`user clicked right button; right dice threw ${newvalue};the last time user clicked right button the dice threw was ${oldverb}`);
+          oldverb=newvalue;
         } 
+        
+        function changeobj(){
+            var newvalue = Math.floor(Math.random()*5);
+            while(newvalue===oldverb) newvalue = Math.floor(Math.random()*eo);
+            objindex=newvalue;        
+            console.log(`user clicked right button; right dice threw ${newvalue};the last time user clicked right button the dice threw was ${oldobj}`);
+            oldobj=newvalue;
+        } 
+        
         
          function displaysubject(subjectnumber) {/*console.log("now displaying subject #"+subjectnumber);*/}
          function displaypredicate( x ) {/*console.log("now displaying predicate #"+x);*/}
@@ -72,10 +87,12 @@
             }newvalue=""; /*console.log("and now has changed to " + oldvalue); */}
         
         function displayResult(){
-            engtxt.innerHTML=`<span class="A">${se[subIndex]}</span>`+ " " 
-            + `<span class="B">${esentence[predicateindex]} </span>`;        
-            bentxt.innerHTML=`<span class="A">${sb[subIndex]}</span>`+ " " 
-            + `<span class="B">${bsentence[predicateindex]} </span>`;
+            engtxt.innerHTML=`<span class="A">${se[subindex]}</span>`+ " " 
+            + `<span class="B">${ev[verbindex]} </span>`
+                +`<span class="C">${eo[objindex]}</span>`;        
+            bentxt.innerHTML=`<span class="A">${sb[subindex]}</span>`+ " " 
+            + `<span class="B">${bv[verbindex]} </span>`
+            +`<span class="C">${bo[objindex]}</span>`;;
         }         
     </script>
 </body>
