@@ -35,7 +35,7 @@
     <span id="purpose">This program is strictly for <br>Educational, Research <br>and<br> Non-Commercial Purpose.</span><span id="creator">Created by Soumen Chakraborty - <span id="year"></span></span>
     <script src="../../ENGLISH/year.js"></script><script src="js/evmfuncv2.js"></script>
     <script src="js/fTriggerv2.js"></script><script src="js/funcContainerv2.js"></script>
-    <script src="js/multitriggerv2.js"></script>
+    <script src="js/multitriggerv3.js"></script>
     <script>
         var firstballotpressed=false;
         var peenk=new Audio("audio/peenk.oga");
@@ -60,7 +60,7 @@
         var storedVotes = []; var c1=0; var c2=0; var c3=0; var c4=0;
         var cn1 = Ncand1.value;var cn2 = Ncand2.value; var cn3 = Ncand3.value; var cn4 = Ncand4.value;
         var pollIsClosed=false; var resultIsDeclared=false;
-        evmOff();   display(`<br>Please wait....`)
+        evmOff();   display(`<br>Please wait.<br>Initializing......`)
         paperTrail.style.zIndex=-2; cuLid.style.zIndex=3; cuLid.value=`Click to slide this panel.`;
         year.innerHTML=creation_year;
     </script>

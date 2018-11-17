@@ -97,3 +97,9 @@
         background-color: #ff1f4c; border-radius: 16px; width: 30px;
     }
     #LPon,#busyCU,#busyBU{ font-size: bolder;}
+    #aboutmsg{
+        font-size: 80%;
+    }
+    #aboutcreator{
+        font-size: 80%; color: red; font-weight: bolder;
+    }
