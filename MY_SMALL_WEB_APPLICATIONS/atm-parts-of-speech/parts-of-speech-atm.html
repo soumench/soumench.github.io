@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> parts of speech atm </title>
+    <link rel="stylesheet" type="text/css" href="css/atm-css-by-soumen.css">
+</head>
+<body>
+    <div id="atmName">PARTS OF SPEECH ATM</div>
+    <div id="atmScreen"><span id="atmdisplay"></span></div>
+    <div id="atmcard" onclick="cardanimseq()"><span id="atmText">Soumen's ATM Card</span></div>
+    <div id="box"></div>
+    <div id="LBBOX">
+    <input type="button" value="Noun" class="LB" onclick="show(this)"><br><br><br>
+    <input type="button" value="Pronoun" class="LB" onclick="show(this)"><br><br><br>
+    <input type="button" value="Verb" class="LB" onclick="show(this)"><br><br><br>
+    <input type="button" value="Adverb" class="LB" onclick="show(this)"><br><br><br>
+    </div>
+    <div id="RBBOX">
+    <input type="button" value="Adjective" class="RB" onclick="show(this)"><br><br><br>
+    <input type="button" value="Preposition" class="RB" onclick="show(this)"><br><br><br>
+    <input type="button" value="Conjunction" class="RB" onclick="show(this)"><br><br><br>
+    <input type="button" value="Interjection" class="RB" onclick="show(this)"><br><br><br>
+    </div>
+    
+    <div id="kbBox">
+        <input type="button" value="1" class="kb" onclick="pinInput(this)">
+        <input type="button" value="2" class="kb" onclick="pinInput(this)">
+        <input type="button" value="3" class="kb" onclick="pinInput(this)"><br>
+        <input type="button" value="4" class="kb" onclick="pinInput(this)">
+        <input type="button" value="5" class="kb" onclick="pinInput(this)">
+        <input type="button" value="6" class="kb" onclick="pinInput(this)"><br>
+        <input type="button" value="7" class="kb" onclick="pinInput(this)">
+        <input type="button" value="8" class="kb" onclick="pinInput(this)">
+        <input type="button" value="9" class="kb" onclick="pinInput(this)"><br>
+        <input type="button" value="X" class="kb" onclick="pinInput(this)" style="color: red;">
+        <input type="button" value="0" class="kb" onclick="pinInput(this)">
+        <input type="button" value="⏎" class="kb" onclick="pinInput(this)" style="color: green; ">
+        <!--value="⏎"-->
+    </div>
+    <div id="atmCardSlotBox"></div>
+    <div id="cardSlot"></div>
+    <div id="soumen"><br>Created<br>by<br>Soumen Chakraborty<br>2018</div>
+    <div><span id="gpin"></span></div>
+         
+    <script>
+        "use strict";
+        const nouns=[`Soumen <br><br><br>Soumen is a teacher.`, "cat<br><br><br>The cat purrs.", "horse<br><br><br>The horse runs fast.","dog<br><br><br>A barking dog seldom bites."];
+        shuffle(nouns);
+        const beep=new Audio("audio/peenk.oga");
+        rotate("atmText",-90);
+        var generatedpin = generatePin(9999);
+        //gpin.innerHTML=`Use ${generatedpin} as PIN.`;
+        gpin.innerHTML=``;
+        var pin=""; var pinlen= pin.length
+        var pinmask="";
+        var pinverified=false;
+        var card = e("atmcard");
+        var breaks=`<br><br><br>`;
+        
+        var atm={// atm object
+            initialmsg: breaks+"Please <br><br>insert <br><br>the ATM Card.",
+            pinpromptmsg: breaks+"Please enter the PIN.",
+            pinverifiedmsg:breaks+"Pin verified."+breaks+"You may continue." ,
+            pinmismatchmsg:breaks+"Incorrect Pin."+breaks+"Try again." ,
+            resetPin: function(){pinmask=""; pin=""; pinlen=0;}
+        }       
+        display(atm.initialmsg);
+        
+        
+        
+        
+        function show(p){
+            var param= p.value;
+            if(param=="Noun"){  
+                dontRepeatNoun();
+                function dontRepeatNoun(){
+                    var newvalue; var oldvalue;
+			        do newvalue=Math.floor(Math.random()*nouns.length);
+                    while(newvalue===oldvalue);
+                    var myindex=newvalue;
+                    console.log(myindex);
+                    display(breaks+nouns[myindex]);
+                    oldvalue=newvalue;
+                }
+                console.log(p.value);
+            }
+            else if(param=="Pronoun"){
+               
+            }
+            else if(param=="Verb"){
+                
+            }
+            else if(param=="Adverb"){
+                
+            }
+            else if(param=="Adjective"){
+                
+            }
+            else if(param=="Preposition"){
+                
+            }
+            else if(param=="Conjunction"){
+                
+            }
+            else if(param=="Interjection"){
+                
+            }
+          //  display(breaks+`You requested ${param}.<br><br>Transaction in progress.<br><br>Please wait....`);
+        }
+        
+        
+        
+        function pinInput(p){
+            if(pinverified)return;
+                beep.play();
+                pin+=`${p.value}`;
+                pinmask+=`<span style="color:red;font-size:44px">*</span>`;
+                display(atm.pinpromptmsg+breaks+pinmask);
+                if(pin.length===4 && pin===generatedpin){
+                        display(atm.pinverifiedmsg);
+                        pinverified=true; atm.resetPin();gpin.innerHTML="";
+                }else if(pin.length===4 && pin!=generatedpin && pinverified==false){
+                        display(atm.pinmismatchmsg); atm.resetPin();
+            }              
+        }        
+        
+        function cardanimseq(){
+            if(pinverified)return;
+            var aseq=[()=>{display("");cardAnim(0);},()=>{cardAnim(1);},()=>{cardAnim(2); }];
+            var s=aseq.length; 
+            //var speed=1500;// origianl speed
+            var speed=1000;//debug speed
+            var myTime = setInterval(myTimer, speed);
+            function myTimer(){if(s==0){clearInterval(myTime);}
+                s--;cardAnim(s);
+            }
+        }            
+           
+        function e(id){return document.getElementById(id);}
+        function rotate(id, degree){e(id).style = 'transform: rotate(' + degree + 'deg)'; 
+}
+        function generatePin(num){var gpin = (Math.floor(Math.random()*num)).toString();
+            while(gpin<=1000){gpin=  (Math.floor(Math.random()*9999)).toString();}return gpin;}
+        function cardAnim(p){
+           // slideSound.play();
+            var inipos=500; var endpos=310; var speed=10;
+            if(0==p){var myTime = setInterval(myTimer, speed); var m=endpos;
+                function myTimer(){if(m>=inipos){clearInterval(myTime);} 
+                    m+=2; card.style.top=m+"px";} card.style.pointerEvents="none";}
+            else if(1==p){display("");
+                var time = setTimeout(myTime,1500);gpin.innerHTML=`Use ${generatedpin} as PIN.`;
+                function myTime(){display(atm.pinpromptmsg);} 
+            }else if(2==p){var myTime = setInterval(myTimer, speed); var m=inipos; 
+                function myTimer(){if(m<=endpos){clearInterval(myTime);} 
+                    m-=1; card.style.top=m+"px";}}}
+        function display(m){atmdisplay.innerHTML=m;} 
+        
+        function shuffle(array){            
+            var count = array.length, randomnumber;
+            while( count > 1 ){
+                randomnumber = Math.floor ( Math.random() * count-- ); 
+                if(randomnumber != count){
+                    swap(array,count,randomnumber);
+                }
+            }
+        }function swap(array, a, b){
+           var temp=array[a];
+           array[a]=array[b];
+           array[b]=temp;
+        }
+    </script>
+</body>
+</html>
+<!--Copyright &copy; Soumen Chakraborty 2018-->
