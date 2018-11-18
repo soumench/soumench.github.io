@@ -1,4 +1,4 @@
-
+/*Created by Soumen Chakraborty - 2018- only for Educational and non commercial Purpose*/
 body{background-color: #000000; font-family:sans-serif; font-weight: bolder; text-align: center;}
 #box{background-image: radial-gradient(white, grey);z-index: -1;}
 #box,.LB,#LBBOX,.RB,#RBBOX,#atmScreen,#kbBox,#atmCardSlotBox,#atmName,#atmcard,#atmText,#gpin,#cardSlot,#soumen{position: absolute; }
@@ -74,11 +74,11 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
 }
 #soumen{
     font-size: 90%;
-    width: 190px; height: 90px;
-    border-width:5px;  
+    width: 190px; height: 80px;
+    border-width:8px;  
     border-style:outset;
     border-radius: 16px;
-    left: 26px; top: 540px;
+    left: 26px; top: 545px;
     background-image: radial-gradient(white, grey);
 }
 #gpin{left: 300px; top: 365px; color: yellow;z-index: 3;}
