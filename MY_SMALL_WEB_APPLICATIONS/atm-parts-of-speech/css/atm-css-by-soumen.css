@@ -3,14 +3,15 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
 #box{background-image: radial-gradient(white, grey);z-index: -1;}
 #box,.LB,#LBBOX,.RB,#RBBOX,#atmScreen,#kbBox,#atmCardSlotBox,#atmName,#atmcard,#atmText,#gpin,#cardSlot,#soumen{position: absolute; }
 #box{width: 480px; height: 640px; border: 1px solid black; border-radius: 16px;}
-#atmName{ z-index: 1;
+#atmName{ z-index: 4;
     background-image: radial-gradient(yellow, grey);
    /* border: 4px solid black; */
     border-width:6px;
     border-style: ridge;
     border-radius: 8px;
-    padding: 1%; margin: auto;
-    width: 350px; background-color: aliceblue;
+    padding: 4px;; margin: auto;
+    width: 350px; height: 15px;
+    background-color: aliceblue;
     left: 60px; top: 15px;
 }
 #atmScreen{z-index: 0;
@@ -27,7 +28,7 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
 .LB, .RB{ z-index: 3;
     background-image: radial-gradient(white, grey);
     width: 88px; height: 30px; font-weight: bold; 
-    border-radius: 8px; padding: 1%;
+    border-radius: 8px; padding: 10;
     background-color: #e8e8e8; color: black;
     box-shadow:2px 2px grey;
     /*border-width:2px;
@@ -35,9 +36,10 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
     border-width:3px;  
     border-style:outset;
 }
-#kbBox{background-image: radial-gradient(#0b0b0b, #5d5dfc);
+#kbBox{z-index: 2;
+    background-image: radial-gradient(#0b0b0b, #5d5dfc);
     /*border: 4px solid black;*/ 
-    padding: 2%; margin: auto; left: 35px; 
+    padding: 20px; margin: auto; left: 35px; 
     width: auto; background-color: #6fb1eb;
     display: inline-block;
 }
@@ -72,13 +74,13 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
     border-radius: 16px;
     background-image: radial-gradient(blue, black);
 }
-#soumen{
-    font-size: 90%;
-    width: 190px; height: 80px;
+#soumen{z-index: 5;
+    font-size: 12px;
+    width: 190px; height: 45px;
     border-width:8px;  
     border-style:outset;
     border-radius: 16px;
-    left: 26px; top: 545px;
+    left: 26px; top: 575px;
     background-image: radial-gradient(white, grey);
 }
 #gpin{left: 300px; top: 365px; color: yellow;z-index: 3;}
