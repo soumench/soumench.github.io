@@ -45,20 +45,13 @@
          
     <script>
         "use strict";
-        blinkerAnim();
-        const nouns=[`Soumen <br><br><br>Soumen is a teacher.`, "cat<br><br><br>The cat purrs.", "horse<br><br><br>The horse runs fast.","dog<br><br><br>A barking dog seldom bites."];
-        shuffle(nouns);
-        const beep=new Audio("audio/peenk.oga");
-        rotate("atmText",-90);
+        var displaydelay=1000;
+        var pinverified=false;// execution lock
+        blinkerAnim();// use a gif here later
+        const beep=new Audio("audio/peenk.oga"); rotate("atmText",-90);
         var generatedpin = generatePin(9999);
-        //gpin.innerHTML=`Use ${generatedpin} as PIN.`;
-        gpin.innerHTML=``;
-        var pin=""; var pinlen= pin.length
-        var pinmask="";
-        var pinverified=false;
-        var card = e("atmcard");
-        var breaks=`<br><br><br>`;
-        
+        gpin.innerHTML=``; var pin=""; var pinlen= pin.length; var pinmask="";
+        var card = e("atmcard"); var breaks=`<br><br><br>`;
         var atm={// atm object
             initialmsg: breaks+"Please <br><br>insert <br><br>the ATM Card.",
             pinpromptmsg: breaks+"Please enter the PIN.",
@@ -67,64 +60,27 @@
             resetPin: function(){pinmask=""; pin=""; pinlen=0;}
         }       
         display(atm.initialmsg);
-        
-        
-        
+        function pinInput(p){if(pinverified)return;beep.play(); pin+=`${p.value}`; 
+                 pinmask+=`<span style="color:red;font-size:44px">*</span>`;
+                 display(atm.pinpromptmsg+breaks+pinmask);
+                if(pin.length===4 && pin===generatedpin){display(atm.pinverifiedmsg);
+                        pinverified=true; atm.resetPin(); gpin.innerHTML="";
+                }else if(pin.length===4 && pin!=generatedpin && pinverified==false){
+                        display(atm.pinmismatchmsg); atm.resetPin();}}     
         
         function show(p){
+            if(pinverified==false)return;
             var param= p.value;
-            if(param=="Noun"){  
-                dontRepeatNoun();
-                function dontRepeatNoun(){
-                    var newvalue; var oldvalue;
-			        do newvalue=Math.floor(Math.random()*nouns.length);
-                    while(newvalue===oldvalue);
-                    var myindex=newvalue;
-                    console.log(myindex);
-                    display(breaks+nouns[myindex]);
-                    oldvalue=newvalue;
-                }
-                console.log(p.value);
-            }
-            else if(param=="Pronoun"){
-               
-            }
-            else if(param=="Verb"){
-                
-            }
-            else if(param=="Adverb"){
-                
-            }
-            else if(param=="Adjective"){
-                
-            }
-            else if(param=="Preposition"){
-                
-            }
-            else if(param=="Conjunction"){
-                
-            }
-            else if(param=="Interjection"){
-                
-            }
-          //  display(breaks+`You requested ${param}.<br><br>Transaction in progress.<br><br>Please wait....`);
-        }
-        
-        
-        
-        function pinInput(p){
-            if(pinverified)return;
-                beep.play();
-                pin+=`${p.value}`;
-                pinmask+=`<span style="color:red;font-size:44px">*</span>`;
-                display(atm.pinpromptmsg+breaks+pinmask);
-                if(pin.length===4 && pin===generatedpin){
-                        display(atm.pinverifiedmsg);
-                        pinverified=true; atm.resetPin();gpin.innerHTML="";
-                }else if(pin.length===4 && pin!=generatedpin && pinverified==false){
-                        display(atm.pinmismatchmsg); atm.resetPin();
-            }              
-        }        
+            if(param=="Noun"){nounactivity();}
+            else if(param=="Pronoun"){pronounactivity();}
+            else if(param=="Verb"){verbactivity();}
+            else if(param=="Adverb"){adverbactivity();}
+            else if(param=="Adjective"){adjectiveactivity();}
+            else if(param=="Preposition"){prepositionactivity();}
+            else if(param=="Conjunction"){conjunctionactivity();}
+            else if(param=="Interjection"){interjectionactivity();}          
+        }      
+           
         
         function cardanimseq(){
             if(pinverified)return;
@@ -133,10 +89,7 @@
             //var speed=1500;// origianl speed
             var speed=1000;//debug speed
             var myTime = setInterval(myTimer, speed);
-            function myTimer(){if(s==0){clearInterval(myTime);}
-                s--;cardAnim(s);
-            }
-        }
+            function myTimer(){if(s==0){clearInterval(myTime);}s--;cardAnim(s);}}
         
         var b=false;
         function blinkerAnim(){var time=setInterval(blinks,800);
@@ -174,6 +127,27 @@
            array[a]=array[b];
            array[b]=temp;
         }
+        
+       var newvalue; var oldvalue; 
+    function nounactivity(){//ch
+        const nouns=[`Soumen <br><br><br>Soumen is a teacher.`
+                     ,"cat<br><br><br>The cat purrs."
+                     ,"horse<br><br><br>The horse runs fast."
+                     ,"dog<br><br><br>A barking dog seldom bites."
+        ];
+        shuffle(nouns); var len = nouns.length;//ch
+        display(breaks+`You requested a Noun.<br><br>Transaction in progress.<br><br>Please wait....`);//ch
+        var repeat = setInterval(dothis,displaydelay); var i=0;
+        var all=[
+             ()=>{display(``);}
+            ,()=>{dontRepeatNoun();}//ch
+            ,()=>{display(``);}
+        ];  var howmanytimes = all.length;
+        function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}
+        function dontRepeatNoun(){
+            do {newvalue=Math.floor(Math.random()*len);}while(newvalue===oldvalue);
+            display(breaks+nouns[newvalue]); //ch
+            oldvalue=newvalue;}}
     </script>
 </body>
 </html>
