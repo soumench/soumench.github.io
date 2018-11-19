@@ -36,7 +36,10 @@
 		function () {subjectdata.dochange();predicatedata.dochange();}
 	);
     makebutton("purple",
-        function(){}
+        function(){advdata.dochange();}
+    );
+    makebutton("blue",
+        function(){objdata.dochange();}        
     );
 	var subjectdata = new Part(
 		"subjectdata", 
@@ -47,18 +50,26 @@
 	);
 	var predicatedata = new Part(
 		"predicatedata", 
-		["runs", "goes to market", "eats insect", "sings", "plays"], 
-		["dourAy", "bAjAre jAy", "pokA khAy", "gAn kore", "khele"],
+		["remembers", "has seen", "eats", "sings", "plays"], 
+		["mone kore", "dekhechhe", "khAy", "gAn kore", "khele"],
 		engtextpred,
 		bentextpred
 	);
     
     var advdata= new Part(
         "advdata",
-        ["again", "quickly"],
-        ["punarAy", "druta"],
+        ["again", "quickly","slowly", "badly", "well"],
+        ["punarAy", "druta", "dhIre", "manda bhAbe", "bhAlo bhAbe"],
         engadv, 
         benadv
+    );
+    
+    var objdata = new Part(
+        "objdata",
+        ["rat", "dog", "insects"],
+        ["indoor", "kukur", "kIT pataGga"],
+        engobj,
+        benobj
     );
 	console.log(predicatedata.dochange);
 	init("engbeng, subj + pred version")
