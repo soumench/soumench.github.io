@@ -43,7 +43,7 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
     width: auto; background-color: #6fb1eb;
     display: inline-block;
 }
-.kb{font-size: 210%;  width: 40px; height: 40px; border-radius: 6px; 
+.kb{font-size: 210%;  width: 42px; height: 42px; border-radius: 6px; 
     padding: 1%; margin: 1px; margin-bottom: 5px;
     background-image: radial-gradient(white, grey);
 }
@@ -51,7 +51,6 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
     border-radius: 16px;
     border-width:5px;  
     border-style:ridge;
-
 } 
 #atmCardSlotBox{
     width: 210px; height: 320px; background-color: green;
@@ -60,12 +59,13 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
 }
 #atmcard{
     z-index: 2;
-    width: 80px; height: 130px; background-color: wheat;
-    border: 1px solid black; border-radius: 16px; left: 320px; top: 500px;
+    width: 80px; height: 130px; 
+    border: 2px solid black; border-radius: 16px; left: 320px; top: 500px;
     box-shadow:2px 2px #2f2e2e;
+    background-image: radial-gradient(wheat, grey);
 }
 #atmText{
-    left: 0px; top: 50px;}
+    left: 0px; top: 50px; font-size: 81%}
 #cardSlot{z-index: 3;
     width: 190px; height: 120px;
     border-width:5px;  

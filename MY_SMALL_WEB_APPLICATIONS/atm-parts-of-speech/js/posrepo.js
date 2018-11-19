@@ -1,6 +1,8 @@
+/*Created by Soumen Chakraborty - 2018 - Strictly For Educational, Non-profit and Non-Commercial Purpose */
 var newvalue; var oldvalue;
 
 function nounactivity(){//ch
+    Noun.style.color="red";
     const nouns=[`Soumen <br><br><br>Soumen is a teacher.`
                  ,"cat<br><br><br>The cat purrs."
                  ,"horse<br><br><br>The horse runs fast."
@@ -8,11 +10,12 @@ function nounactivity(){//ch
     ];
     shuffle(nouns); var len = nouns.length;//ch
     display(breaks+`You requested a Noun.<br><br>Transaction in progress.<br><br>Please wait....`);//ch
+    disableBtns();
     var repeat = setInterval(dothis,displaydelay); var i=0;
     var all=[
          ()=>{display(``);}
         ,()=>{dontRepeat();}//ch
-        ,()=>{display(``);}
+        ,()=>{display(``);enableBtns();}
     ];  var howmanytimes = all.length;
     function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}
     function dontRepeat(){
@@ -23,6 +26,7 @@ function nounactivity(){//ch
 
 
 function pronounactivity(){//ch
+        Pronoun.style.color="red";
         const pronouns=[`He <br><br><br>He is smart.`
                      ,"You<br><br><br>You need a playground."
                      ,"She<br><br><br>She likes biryani."
@@ -35,11 +39,12 @@ function pronounactivity(){//ch
         ];
         shuffle(pronouns); var len = pronouns.length;//ch
         display(breaks+`You requested a Pronoun.<br><br>Transaction in progress.<br><br>Please wait....`);//ch
+        disableBtns();    
         var repeat = setInterval(dothis,displaydelay); var i=0;
         var all=[
              ()=>{display(``);}
             ,()=>{dontRepeat();}//ch
-            ,()=>{display(``);}
+            ,()=>{display(``);enableBtns();}
         ];  var howmanytimes = all.length;
         function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}
         function dontRepeat(){
@@ -48,6 +53,7 @@ function pronounactivity(){//ch
             oldvalue=newvalue;}}
 
 function verbactivity(){//ch
+        Verb.style.color="red";
         const verbs=[`Play<br><br><br>Play is the highest form of research.`
                      ,"Help<br><br><br>God helps those who help themselves."
                      ,"Think<br><br><br>Think before you act."
@@ -77,14 +83,150 @@ function verbactivity(){//ch
         ];
         shuffle(verbs); var len = verbs.length;//ch
         display(breaks+`You requested a Verb.<br><br>Transaction in progress.<br><br>Please wait....`);//ch
+        disableBtns();    
         var repeat = setInterval(dothis,displaydelay); var i=0;
         var all=[
              ()=>{display(``);}
             ,()=>{dontRepeat();}
-            ,()=>{display(``);}
+            ,()=>{display(``);enableBtns();}
         ];  var howmanytimes = all.length;
         function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}
         function dontRepeat(){
             do {newvalue=Math.floor(Math.random()*len);}while(newvalue===oldvalue);
             display(breaks+verbs[newvalue]); //ch
+            oldvalue=newvalue;}}
+
+
+function adverbactivity(){//ch
+        Adverb.style.color="red";
+        const adverbs=[`badly<br><br><br>She did not run badly.`
+                     ,"Quickly<br><br><br>He finished his hometask quickly."
+                     ,"Loudly<br><br><br>My brother sings loudly in the shower."
+                     ,"Well<br><br><br>Even pet dog can respond well."
+                     ,"impatiently<br><br><br>We all wait impatiently for the mid-day meal."
+                    ,"Seriously<br><br><br>Please study seriously and attentively."
+                    ,"Incredibly<br><br><br>My cat is incredibly happy to see me when I come back home."
+                     
+        ];
+        shuffle(adverbs); var len = adverbs.length;//ch
+        display(breaks+`You requested a Adverb.<br><br>Transaction in progress.<br><br>Please wait....`);//ch
+        disableBtns();    
+        var repeat = setInterval(dothis,displaydelay); var i=0;
+        var all=[
+             ()=>{display(``);}
+            ,()=>{dontRepeat();}
+            ,()=>{display(``);enableBtns();}
+        ];  var howmanytimes = all.length;
+        function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}
+        function dontRepeat(){
+            do {newvalue=Math.floor(Math.random()*len);}while(newvalue===oldvalue);
+            display(breaks+adverbs[newvalue]); //ch
+            oldvalue=newvalue;}}
+
+
+function adjectiveactivity(){//ch
+        Adjective.style.color="red";
+        const adjectives=[`badly<br><br><br>She did not run badly.`
+                     ,"Quickly<br><br><br>He finished his hometask quickly."
+                     ,"Loudly<br><br><br>My brother sings loudly in the shower."
+                     ,"Well<br><br><br>Even pet dog can respond well."
+                     ,"impatiently<br><br><br>We all wait impatiently for the mid-day meal."
+                    ,"Seriously<br><br><br>Please study seriously and attentively."
+                    ,"Incredibly<br><br><br>My cat is incredibly happy to see me when I come back home."
+                     
+        ];
+        shuffle(adjectives); var len = adjectives.length;//ch
+        display(breaks+`You requested an Adjective.<br><br>Transaction in progress.<br><br>Please wait....`);//ch
+        disableBtns();    
+        var repeat = setInterval(dothis,displaydelay); var i=0;
+        var all=[
+             ()=>{display(``);}
+            ,()=>{dontRepeat();}
+            ,()=>{display(``);enableBtns();}
+        ];  var howmanytimes = all.length;
+        function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}
+        function dontRepeat(){
+            do {newvalue=Math.floor(Math.random()*len);}while(newvalue===oldvalue);
+            display(breaks+adjectives[newvalue]); //ch
+            oldvalue=newvalue;}}
+
+
+
+function prepositionactivity(){//ch
+        Preposition.style.color="red";
+        const prepositions=[`badly<br><br><br>She did not run badly.`
+                     ,"Quickly<br><br><br>He finished his hometask quickly."
+                     ,"Loudly<br><br><br>My brother sings loudly in the shower."
+                     ,"Well<br><br><br>Even pet dog can respond well."
+                     ,"impatiently<br><br><br>We all wait impatiently for the mid-day meal."
+                    ,"Seriously<br><br><br>Please study seriously and attentively."
+                    ,"Incredibly<br><br><br>My cat is incredibly happy to see me when I come back home."
+                     
+        ];
+        shuffle(prepositions); var len = prepositions.length;//ch
+        display(breaks+`You requested a Preposition.<br><br>Transaction in progress.<br><br>Please wait....`);//ch
+        disableBtns();    
+        var repeat = setInterval(dothis,displaydelay); var i=0;
+        var all=[
+             ()=>{display(``);}
+            ,()=>{dontRepeat();}
+            ,()=>{display(``);enableBtns();}
+        ];  var howmanytimes = all.length;
+        function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}
+        function dontRepeat(){
+            do {newvalue=Math.floor(Math.random()*len);}while(newvalue===oldvalue);
+            display(breaks+prepositions[newvalue]); //ch
+            oldvalue=newvalue;}}
+
+function conjunctionactivity(){//ch
+        Conjunction.style.color="red";
+        const conjunctions=[`badly<br><br><br>She did not run badly.`
+                     ,"Quickly<br><br><br>He finished his hometask quickly."
+                     ,"Loudly<br><br><br>My brother sings loudly in the shower."
+                     ,"Well<br><br><br>Even pet dog can respond well."
+                     ,"impatiently<br><br><br>We all wait impatiently for the mid-day meal."
+                    ,"Seriously<br><br><br>Please study seriously and attentively."
+                    ,"Incredibly<br><br><br>My cat is incredibly happy to see me when I come back home."
+                     
+        ];
+        shuffle(conjunctions); var len = conjunctions.length;//ch
+        display(breaks+`You requested a Conjunction.<br><br>Transaction in progress.<br><br>Please wait....`);//ch
+        disableBtns();    
+        var repeat = setInterval(dothis,displaydelay); var i=0;
+        var all=[
+             ()=>{display(``);}
+            ,()=>{dontRepeat();}
+            ,()=>{display(``);enableBtns();}
+        ];  var howmanytimes = all.length;
+        function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}
+        function dontRepeat(){
+            do {newvalue=Math.floor(Math.random()*len);}while(newvalue===oldvalue);
+            display(breaks+conjunctions[newvalue]); //ch
+            oldvalue=newvalue;}}
+
+
+function interjectionactivity(){//ch
+        Interjection.style.color="red";
+        const interjections=[`badly<br><br><br>She did not run badly.`
+                     ,"Quickly<br><br><br>He finished his hometask quickly."
+                     ,"Loudly<br><br><br>My brother sings loudly in the shower."
+                     ,"Well<br><br><br>Even pet dog can respond well."
+                     ,"impatiently<br><br><br>We all wait impatiently for the mid-day meal."
+                    ,"Seriously<br><br><br>Please study seriously and attentively."
+                    ,"Incredibly<br><br><br>My cat is incredibly happy to see me when I come back home."
+                     
+        ];
+        shuffle(interjections); var len = interjections.length;//ch
+        display(breaks+`You requested an Interjection.<br><br>Transaction in progress.<br><br>Please wait....`);//ch
+        disableBtns();    
+        var repeat = setInterval(dothis,displaydelay); var i=0;
+        var all=[
+             ()=>{display(``);}
+            ,()=>{dontRepeat();}
+            ,()=>{display(``);enableBtns();}
+        ];  var howmanytimes = all.length;
+        function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}
+        function dontRepeat(){
+            do {newvalue=Math.floor(Math.random()*len);}while(newvalue===oldvalue);
+            display(breaks+interjections[newvalue]); //ch
             oldvalue=newvalue;}}

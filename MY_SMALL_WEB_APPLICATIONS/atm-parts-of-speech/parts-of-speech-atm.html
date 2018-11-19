@@ -5,23 +5,18 @@
     <link rel="stylesheet" type="text/css" href="css/atm-css-by-soumen.css">
 </head>
 <body>
-    <div id="atmName">PARTS OF SPEECH ATM</div>
+    <div id="atmName">SOUMEN'S WORD DISPENSER</div>
     <div id="atmScreen"><span id="atmdisplay"></span></div>
-    <div id="atmcard" onclick="cardanimseq()"><span id="atmText">Soumen's ATM Card</span></div>
+    <div id="atmcard" onclick="cardanimseq()"><span id="atmText">Soumen's Access Card</span></div>
     <div id="box"></div>
-    <div id="LBBOX">
-    <input type="button" id="Noun"><br><br><br> <!--class=LB-->
-    <input type="button" id="Pronoun"><br><br><br>
-    <input type="button" id="Verb"><br><br><br>
-    <input type="button" id="Adverb"><br><br><br>
+    <div id="LBBOX"><!--class=LB-->
+    <input type="button" id="Noun"><br><br><br><input type="button" id="Pronoun"><br><br><br>
+    <input type="button" id="Verb"><br><br><br><input type="button" id="Adverb"><br><br><br>
     </div>
-    <div id="RBBOX">
-    <input type="button" id="Adjective"><br><br><br><!--class=RB-->
-    <input type="button" id="Preposition"><br><br><br>
-    <input type="button" id="Conjunction"><br><br><br>
-    <input type="button" id="Interjection"><br><br><br>
-    </div>
-    
+    <div id="RBBOX"><!--class=RB-->
+    <input type="button" id="Adjective"><br><br><br><input type="button" id="Preposition"><br><br><br>
+    <input type="button" id="Conjunction"><br><br><br><input type="button" id="Interjection"><br><br><br>
+    </div>    
     <div id="kbBox">
         <input type="button" value="1" class="kb" onclick="pinInput(this)">
         <input type="button" value="2" class="kb" onclick="pinInput(this)">
@@ -36,21 +31,25 @@
         <input type="button" value="0" class="kb" onclick="pinInput(this)">
         <input type="button" value="⏎" class="kb" onclick="pinInput(this)" style="color: green; ">
     </div>
-    <div id="atmCardSlotBox"></div>
-    <div id="cardSlot"></div>
-    <div id="blinker"></div>
-    <div id="soumen"><span>Copyright &copy;<br>Soumen Chakraborty<br><span id="year"></span></span><br>Strictly for Educatioanl and Noncommercial Purpose</div>
-    <div><span id="gpin"></span></div>
-    <script src="js/posrepo.js"></script><script src="../../ENGLISH/year.js"></script>     
+    <div id="atmCardSlotBox"></div><div id="cardSlot"></div><div id="blinker"></div>
+    <div id="soumen"><span>Copyright &copy;<br>Soumen Chakraborty<br><span id="year"></span></span><br>Strictly for Educatioanl and Noncommercial Purpose</div><div><span id="gpin"></span></div>
+    <script src="js/posrepo.js"></script><script src="../../ENGLISH/year.js"></script>
+    <script src="js/e.js"></script><script src="js/trigger.js"></script><script src="js/cardanim.js"></script>
+    <script src="js/shuffle.js"></script><script src="js/blinker.js"></script>
+    <script src="js/rot.js"></script><script src="js/pingenerate.js"></script><script src="js/pinverify.js"></script>
     <script>
         "use strict";
         var displaydelay=2000;
-        var pinverified=true;// execution lock
-        blinkerAnim();// use a gif here later
+      //  var pinverified=true;// execution lock
+        var pinverified=false;// execution lock
+        blinkerAnim();
         const kbbtns=[Noun,Pronoun,Verb,Adverb,Adjective,Preposition,Conjunction,Interjection];
         var k=kbbtns.length; while(k--){kbbtns[k].setAttribute("onclick", "show("+k+")");
             kbbtns[k].value=kbbtns[k].id;if(k>3){kbbtns[k].setAttribute("class","RB");}else{kbbtns[k].setAttribute("class","LB");}}
+        function disableBtns(){k=kbbtns.length; while(k--){kbbtns[k].disabled=true;}}
+        function enableBtns(){k=kbbtns.length;while(k--){kbbtns[k].disabled=false;kbbtns[k].style.color="black";}}
         const beep=new Audio("audio/peenk.oga"); rotate("atmText",-90);
+        const swsnd=new Audio("audio/switchSound.oga");
         var generatedpin = generatePin(9999);
         gpin.innerHTML=``; var pin=""; var pinlen= pin.length; var pinmask="";
         var card = e("atmcard"); var breaks=`<br><br><br>`;
@@ -59,71 +58,11 @@
             pinpromptmsg: breaks+"Please enter the PIN.",
             pinverifiedmsg:breaks+"Pin verified."+breaks+"You may continue." ,
             pinmismatchmsg:breaks+"Incorrect Pin."+breaks+"Try again." ,
-            resetPin: function(){pinmask=""; pin=""; pinlen=0;}
-        }       
-        display(atm.initialmsg);
-        function pinInput(p){if(pinverified)return;beep.play(); pin+=`${p.value}`; 
-                 pinmask+=`<span style="color:red;font-size:44px">*</span>`;
-                 display(atm.pinpromptmsg+breaks+pinmask);
-                if(pin.length===4 && pin===generatedpin){display(atm.pinverifiedmsg);
-                        pinverified=true; atm.resetPin(); gpin.innerHTML="";
-                }else if(pin.length===4 && pin!=generatedpin && pinverified==false){
-                        display(atm.pinmismatchmsg); atm.resetPin();}}     
-        
-        function show(p){if(pinverified==false)return; // main trigger of sequence of parts of speech 
-            if(0===p){nounactivity();} else if(1===p){pronounactivity();}
-            else if(2===p){verbactivity();}else if(3===p){adverbactivity();}
-            else if(4===p){adjectiveactivity();}else if(5===p){prepositionactivity();}
-            else if(6===p){conjunctionactivity();} else if(7===p){interjectionactivity();}}      
-           
-        
-        function cardanimseq(){if(pinverified)return;
-            var aseq=[()=>{display("");cardAnim(0);},()=>{cardAnim(1);},()=>{cardAnim(2); }];
-            var s=aseq.length; 
-            //var speed=1500;// origianl speed
-            var speed=1000;//debug speed
-            var myTime = setInterval(myTimer, speed);
-            function myTimer(){if(s==0){clearInterval(myTime);}s--;cardAnim(s);}}
-        
-        var b=false;
-        function blinkerAnim(){var time=setInterval(blinks,800);
-            function blinks(){if(b=b^1){blinker.style.backgroundColor="#00ff00";}
-               else{blinker.style.backgroundColor="black";}}}           
-        function e(id){return document.getElementById(id);}
-        function rotate(id, degree){e(id).style = 'transform: rotate(' + degree + 'deg)'; 
-}
-        function generatePin(num){var gpin = (Math.floor(Math.random()*num)).toString();
-            while(gpin<=1000){gpin=  (Math.floor(Math.random()*9999)).toString();}return gpin;}
-        function cardAnim(p){
-           // slideSound.play();
-            var inipos=500; var endpos=310; var speed=10;
-            if(0==p){var myTime = setInterval(myTimer, speed); var m=endpos;
-                function myTimer(){if(m>=inipos){clearInterval(myTime);} 
-                    m+=2; card.style.top=m+"px";} card.style.pointerEvents="none";}
-            else if(1==p){display("");
-                var time = setTimeout(myTime,1500);gpin.innerHTML=`Use ${generatedpin} as PIN.`;
-                function myTime(){display(atm.pinpromptmsg);} 
-            }else if(2==p){var myTime = setInterval(myTimer, speed); var m=inipos; 
-                function myTimer(){if(m<=endpos){clearInterval(myTime);} 
-                    m-=1; card.style.top=m+"px";}}}
-        function display(m){atmdisplay.innerHTML=m;} 
-        
-        function shuffle(array){            
-            var count = array.length, randomnumber;
-            while( count > 1 ){
-                randomnumber = Math.floor ( Math.random() * count-- ); 
-                if(randomnumber != count){
-                    swap(array,count,randomnumber);
-                }
-            }
-        }function swap(array, a, b){
-           var temp=array[a];
-           array[a]=array[b];
-           array[b]=temp;
-        }
-        year.innerHTML=creation_year;
-    
+            resetPin: function(){pinmask=""; pin=""; pinlen=0;}}       
+        display(atm.initialmsg);            
+        function display(m){atmdisplay.innerHTML=m;}        
+        year.innerHTML=creation_year;    
     </script>
 </body>
 </html>
-<!--Copyright &copy; Soumen Chakraborty 2018-->
+<!--Created by Soumen Chakraborty - 2018 - Strictly For Educational, Non-profit and Non-Commercial Purpose -->
