@@ -109,7 +109,7 @@ const interjections=[`Aah<br><br><br>Aah, that is so amazing!`
 ]; wordOutput(interjections);}
 function wordOutput(mylist){shuffle(mylist); var len = mylist.length;
     disableBtns(); var repeat = setInterval(dothis,displaydelay); var i=0;
-    var all=[()=>{display(``);} ,()=>{dontRepeat();},()=>{display(transactionfinished);enableBtns();}
+    var all=[()=>{dontRepeat();},()=>{display(transactionfinished);enableBtns();}
     ];  var howmanytimes = all.length;
     function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}
     function dontRepeat(){do {newvalue=Math.floor(Math.random()*len);}while(newvalue===oldvalue);
