@@ -39,13 +39,13 @@
     <div id="atmCardSlotBox"></div>
     <div id="cardSlot"></div>
     <div id="blinker"></div>
-    <div id="soumen"><span>Created by<br>Soumen Chakraborty<br>2018</span></div>
+    <div id="soumen"><span>Copyright &copy;<br>Soumen Chakraborty<br><span id="year"></span></span><br>Strictly for Educatioanl and Noncommercial Purpose</div>
     <div><span id="gpin"></span></div>
-         
+    <script src="js/posrepo.js"></script><script src="../../ENGLISH/year.js"></script>     
     <script>
         "use strict";
-        var displaydelay=1000;
-        var pinverified=false;// execution lock
+        var displaydelay=2000;
+        var pinverified=true;// execution lock
         blinkerAnim();// use a gif here later
         const kbbtns=[Noun,Pronoun,Verb,Adverb,Adjective,Preposition,Conjunction,Interjection];
         var k=kbbtns.length; while(k--){kbbtns[k].setAttribute("onclick", "show("+k+")");
@@ -121,27 +121,8 @@
            array[a]=array[b];
            array[b]=temp;
         }
-        
-    var newvalue; var oldvalue; 
-    function nounactivity(){//ch
-        const nouns=[`Soumen <br><br><br>Soumen is a teacher.`
-                     ,"cat<br><br><br>The cat purrs."
-                     ,"horse<br><br><br>The horse runs fast."
-                     ,"dog<br><br><br>A barking dog seldom bites."
-        ];
-        shuffle(nouns); var len = nouns.length;//ch
-        display(breaks+`You requested a Noun.<br><br>Transaction in progress.<br><br>Please wait....`);//ch
-        var repeat = setInterval(dothis,displaydelay); var i=0;
-        var all=[
-             ()=>{display(``);}
-            ,()=>{dontRepeatNoun();}//ch
-            ,()=>{display(``);}
-        ];  var howmanytimes = all.length;
-        function dothis(){if( i>=howmanytimes){ clearInterval(repeat);i=0; return;} all[i](); i++;}
-        function dontRepeatNoun(){
-            do {newvalue=Math.floor(Math.random()*len);}while(newvalue===oldvalue);
-            display(breaks+nouns[newvalue]); //ch
-            oldvalue=newvalue;}}
+        year.innerHTML=creation_year;
+    
     </script>
 </body>
 </html>
