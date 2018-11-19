@@ -9,7 +9,7 @@
     <div id="newbuttonbox">	</div>    
 	<div>	
 	<span id="engtextsubj" class="subjclass"></span>
-	<span id="engtextpred" class="predclass"></span>
+	<span id="engverb" class="predclass"></span>
     <span id="engobj" class="objclass"></span>
 	<span id="engadv" class="advclass"></span>
 	<br>
@@ -29,18 +29,18 @@
 		function () {subjectdata.dochange();}
 	);			
 	makebutton( "#affcbb",
-		function () {predicatedata.dochange();}
+		function () {verbdataa.dochange();}
 	);			
 	
-    makebutton("purple",
+    makebutton("#ffa8f8",
         function(){advdata.dochange();}
     );
-    makebutton("blue",
+    makebutton("#efd181",
         function(){objdata.dochange();}        
     );
     makebutton(	"red",
 		function () {
-            subjectdata.dochange();predicatedata.dochange();
+            subjectdata.dochange();verbdataa.dochange();
             objdata.dochange(); advdata.dochange();        
         }
 	);
@@ -51,11 +51,11 @@
 		engtextsubj,
 		bentextsubj
 	);
-	var predicatedata = new Part(
-		"predicatedata", 
+	var verbdataa = new Part(
+		"verbdataa", 
 		["remembers", "has seen", "eats",  "plays"], 
 		["mone kore", "dekhechhe", "khAy", "khele"],
-		engtextpred,
+		engverb,
 		bentextpred
 	);
     
@@ -74,7 +74,7 @@
         engobj,
         benobj
     );
-	console.log(predicatedata.dochange);
+	console.log(verbdataa.dochange);
 	init("engbeng, subj + pred version")
 	
 </script>
