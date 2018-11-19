@@ -1,7 +1,7 @@
 /*Created by Soumen Chakraborty - 2018 - Strictly For Educational, Non-profit and Non-Commercial Purpose */
 function cardanimseq(){if(pinverified)return;
     var aseq=[()=>{display("");cardAnim(0);},()=>{cardAnim(1);},()=>{cardAnim(2); }]; var s=aseq.length; 
-    //var speed=1500;// origianl speed
+    //var speed=1500;// original speed
     var speed=1000;//debug speed
     var myTime = setInterval(myTimer, speed);
     function myTimer(){if(s==0){clearInterval(myTime);}s--;cardAnim(s);}}
@@ -13,6 +13,7 @@ if(0==p){var myTime = setInterval(myTimer, speed); var m=endpos;
 else if(1==p){display("");
     var time = setTimeout(myTime,1500);
               gpin.innerHTML=`Use ${generatedpin} as PIN.<br>Don't share it.`;
+              numerickbactive=true;
     function myTime(){display(atm.pinpromptmsg);} 
 }else if(2==p){var myTime = setInterval(myTimer, speed); var m=inipos; 
     function myTimer(){if(m<=endpos){clearInterval(myTime);} 

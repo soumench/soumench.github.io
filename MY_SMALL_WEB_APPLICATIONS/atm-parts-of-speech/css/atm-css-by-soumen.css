@@ -5,7 +5,7 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
 #box{width: 480px; height: 640px; border: 1px solid black; border-radius: 16px;}
 #atmName{ z-index: 4; background-image: radial-gradient(yellow, grey); border-width:6px; border-style: ridge; border-radius: 8px;  
     padding: 4px;; margin: auto; width: 350px; height: 15px; background-color: aliceblue; left: 60px; top: 15px;}
-#atmScreen{z-index: 0; width: 250px; height: 190px; border: 2px solid black;border-radius: 8px; background-color: aqua;  left: 125px;}
+#atmScreen{z-index: 0; width: 250px; height: 200px; border: 2px solid black;border-radius: 8px; background-color: aqua;  left: 125px;}
 #atmScreen,#LBBOX,#RBBOX{top: 80px;}
 #LBBOX,#RBBOX{z-index: 0;}
 #LBBOX{left: 20px; }
@@ -19,7 +19,8 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
     background-image: radial-gradient(#0b0b0b, #5d5dfc);
     padding: 20px; margin: auto; left: 35px; width: auto; background-color: #6fb1eb; display: inline-block;}
 .kb{font-size: 210%;  width: 42px; height: 42px; border-radius: 6px; 
-    padding: 1%; margin: 1px; margin-bottom: 5px; background-image: radial-gradient(white, grey);}
+    padding: 1%; margin: 1px; margin-bottom: 5px; background-image: radial-gradient(white, grey);
+ text-shadow: black 0.1em 0.1em 0.2em}
 #atmCardSlotBox,#kbBox{ top: 300px; border-radius: 16px; border-width:5px;  border-style:ridge;} 
 #atmCardSlotBox{ width: 210px; height: 320px; background-color: green; left: 250px; background-image: radial-gradient(green, black);}
 #atmcard{z-index: 2; width: 80px; height: 130px; border: 2px solid black; border-radius: 16px; left: 320px; top: 500px;
@@ -29,6 +30,5 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
     background-image: radial-gradient(blue, black);}
 #blinker{z-index: 5; width: 170px; height: 10px;  background-color: #00ff00; border-radius: 16px; left: 270px; top: 410px;
     border-width:5px;    border-style:inset; color: green;}
-#soumen{z-index: 5; font-size: 12px;  width: 190px; height: 74px;  border-width:8px;  border-style:outset;  border-radius: 16px;
-    left: 26px; top: 548px;  background-image: radial-gradient(white, grey);}
+#soumen{z-index: 5; font-size: 12px;  width: 190px; height: 74px;  border-width:8px;  border-style:inset;  border-radius: 16px; left: 26px; top: 548px;  background-image: radial-gradient(yellow, grey);}
 #gpin{left: 300px; top: 365px; color: yellow;z-index: 3;}

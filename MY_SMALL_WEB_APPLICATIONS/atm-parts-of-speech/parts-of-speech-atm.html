@@ -26,13 +26,14 @@
         <input type="button" value="0" class="kb" onclick="pinInput(this)">
         <input type="button" value="⏎" class="kb" onclick="pinInput(this)" style="color: green; ">
     </div><div id="atmCardSlotBox"></div><div id="cardSlot"></div><div id="blinker"></div>
-    <div id="soumen"><span>Copyright &copy;<br>Soumen Chakraborty<br><span id="year"></span></span><br>Strictly for Educatioanl and Noncommercial Purpose</div><div><span id="gpin"></span></div>
+    <div id="soumen" onClick="window.location.reload()"><span>Copyright &copy;<br>Soumen Chakraborty<br><span id="year"></span></span><br>Strictly for Educatioanl and Noncommercial Purpose</div><div><span id="gpin"></span></div>
     <script src="js/posrepo.js"></script><script src="../../ENGLISH/year.js"></script>
     <script src="js/e.js"></script><script src="js/trigger.js"></script><script src="js/cardanim.js"></script>
     <script src="js/shuffle.js"></script><script src="js/blinker.js"></script>
     <script src="js/rot.js"></script><script src="js/pingenerate.js"></script><script src="js/pinverify.js"></script>
     <script>
         "use strict"; var displaydelay=2000; var pinverified=false;  blinkerAnim();
+        var numerickbactive=false;
         const kbbtns=[Noun,Pronoun,Verb,Adverb,Adjective,Preposition,Conjunction,Interjection];
         var k=kbbtns.length; while(k--){kbbtns[k].setAttribute("onclick", "show("+k+")");
         kbbtns[k].value=kbbtns[k].id;if(k>3){kbbtns[k].setAttribute("class","RB");}else{kbbtns[k].setAttribute("class","LB");}}
