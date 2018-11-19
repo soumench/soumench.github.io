@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> parts of speech atm </title>
-    <link rel="stylesheet" type="text/css" href="css/atm-css-by-soumen.css">
+<title>Word Dispenser by Soumen</title><link rel="stylesheet" type="text/css" href="css/atm-css-by-soumen.css">
 </head>
 <body>
-    <div id="atmName">SOUMEN'S WORD DISPENSER</div>
-    <div id="atmScreen"><span id="atmdisplay"></span></div>
+    <div id="atmName">SOUMEN'S WORD DISPENSER</div><div id="atmScreen"><span id="atmdisplay"></span></div>
     <div id="atmcard" onclick="cardanimseq()"><span id="atmText">Soumen's Access Card</span></div>
-    <div id="box"></div>
-    <div id="LBBOX"><!--class=LB-->
+    <div id="box"></div><div id="LBBOX">
     <input type="button" id="Noun"><br><br><br><input type="button" id="Pronoun"><br><br><br>
     <input type="button" id="Verb"><br><br><br><input type="button" id="Adverb"><br><br><br>
-    </div>
-    <div id="RBBOX"><!--class=RB-->
+    </div><div id="RBBOX">
     <input type="button" id="Adjective"><br><br><br><input type="button" id="Preposition"><br><br><br>
     <input type="button" id="Conjunction"><br><br><br><input type="button" id="Interjection"><br><br><br>
-    </div>    
-    <div id="kbBox">
+    </div><div id="kbBox">
         <input type="button" value="1" class="kb" onclick="pinInput(this)">
         <input type="button" value="2" class="kb" onclick="pinInput(this)">
         <input type="button" value="3" class="kb" onclick="pinInput(this)"><br>
@@ -30,22 +25,17 @@
         <input type="button" value="X" class="kb" onclick="pinInput(this)" style="color: red;">
         <input type="button" value="0" class="kb" onclick="pinInput(this)">
         <input type="button" value="⏎" class="kb" onclick="pinInput(this)" style="color: green; ">
-    </div>
-    <div id="atmCardSlotBox"></div><div id="cardSlot"></div><div id="blinker"></div>
+    </div><div id="atmCardSlotBox"></div><div id="cardSlot"></div><div id="blinker"></div>
     <div id="soumen"><span>Copyright &copy;<br>Soumen Chakraborty<br><span id="year"></span></span><br>Strictly for Educatioanl and Noncommercial Purpose</div><div><span id="gpin"></span></div>
     <script src="js/posrepo.js"></script><script src="../../ENGLISH/year.js"></script>
     <script src="js/e.js"></script><script src="js/trigger.js"></script><script src="js/cardanim.js"></script>
     <script src="js/shuffle.js"></script><script src="js/blinker.js"></script>
     <script src="js/rot.js"></script><script src="js/pingenerate.js"></script><script src="js/pinverify.js"></script>
     <script>
-        "use strict";
-        var displaydelay=2000;
-      //  var pinverified=true;// execution lock
-        var pinverified=false;// execution lock
-        blinkerAnim();
+        "use strict"; var displaydelay=2000; var pinverified=false;  blinkerAnim();
         const kbbtns=[Noun,Pronoun,Verb,Adverb,Adjective,Preposition,Conjunction,Interjection];
         var k=kbbtns.length; while(k--){kbbtns[k].setAttribute("onclick", "show("+k+")");
-            kbbtns[k].value=kbbtns[k].id;if(k>3){kbbtns[k].setAttribute("class","RB");}else{kbbtns[k].setAttribute("class","LB");}}
+        kbbtns[k].value=kbbtns[k].id;if(k>3){kbbtns[k].setAttribute("class","RB");}else{kbbtns[k].setAttribute("class","LB");}}
         function disableBtns(){k=kbbtns.length; while(k--){kbbtns[k].disabled=true;}}
         function enableBtns(){k=kbbtns.length;while(k--){kbbtns[k].disabled=false;kbbtns[k].style.color="black";}}
         const beep=new Audio("audio/peenk.oga"); rotate("atmText",-90);
@@ -53,15 +43,12 @@
         var generatedpin = generatePin(9999);
         gpin.innerHTML=``; var pin=""; var pinlen= pin.length; var pinmask="";
         var card = e("atmcard"); var breaks=`<br><br><br>`;
-        var atm={// atm object
-            initialmsg: breaks+"Please <br><br>insert <br><br>the ATM Card.",
+        var atm={initialmsg: breaks+"Please <br><br>insert <br><br>the Access Card.",
             pinpromptmsg: breaks+"Please enter the PIN.",
             pinverifiedmsg:breaks+"Pin verified."+breaks+"You may continue." ,
             pinmismatchmsg:breaks+"Incorrect Pin."+breaks+"Try again." ,
             resetPin: function(){pinmask=""; pin=""; pinlen=0;}}       
-        display(atm.initialmsg);            
-        function display(m){atmdisplay.innerHTML=m;}        
-        year.innerHTML=creation_year;    
+        display(atm.initialmsg);function display(m){atmdisplay.innerHTML=m;} year.innerHTML=creation_year;    
     </script>
 </body>
 </html>

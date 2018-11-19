@@ -12,7 +12,7 @@ if(0==p){var myTime = setInterval(myTimer, speed); var m=endpos;
         m+=2; card.style.top=m+"px";} card.style.pointerEvents="none";}
 else if(1==p){display("");
     var time = setTimeout(myTime,1500);
-              gpin.innerHTML=`Use ${generatedpin} as PIN.`;
+              gpin.innerHTML=`Use ${generatedpin} as PIN.<br>Don't share it.`;
     function myTime(){display(atm.pinpromptmsg);} 
 }else if(2==p){var myTime = setInterval(myTimer, speed); var m=inipos; 
     function myTimer(){if(m<=endpos){clearInterval(myTime);} 
