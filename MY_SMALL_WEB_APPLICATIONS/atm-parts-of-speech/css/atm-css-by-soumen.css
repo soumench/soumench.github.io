@@ -75,12 +75,12 @@ body{background-color: #000000; font-family:sans-serif; font-weight: bolder; tex
     background-image: radial-gradient(blue, black);
 }
 #blinker{z-index: 5;
-    width: 20px; height: 20px;
+    width: 170px; height: 10px;
     background-color: #00ff00;
     border-radius: 16px;
-    left: 420px; top: 320px;
+    left: 270px; top: 410px;
     border-width:5px;  
-    border-style:outset;
+    border-style:inset;
     color: green;
 }
 #soumen{z-index: 5;

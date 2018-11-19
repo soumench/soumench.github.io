@@ -10,16 +10,16 @@
     <div id="atmcard" onclick="cardanimseq()"><span id="atmText">Soumen's ATM Card</span></div>
     <div id="box"></div>
     <div id="LBBOX">
-    <input type="button" value="Noun" class="LB" onclick="show(this)"><br><br><br>
-    <input type="button" value="Pronoun" class="LB" onclick="show(this)"><br><br><br>
-    <input type="button" value="Verb" class="LB" onclick="show(this)"><br><br><br>
-    <input type="button" value="Adverb" class="LB" onclick="show(this)"><br><br><br>
+    <input type="button" id="Noun"><br><br><br> <!--class=LB-->
+    <input type="button" id="Pronoun"><br><br><br>
+    <input type="button" id="Verb"><br><br><br>
+    <input type="button" id="Adverb"><br><br><br>
     </div>
     <div id="RBBOX">
-    <input type="button" value="Adjective" class="RB" onclick="show(this)"><br><br><br>
-    <input type="button" value="Preposition" class="RB" onclick="show(this)"><br><br><br>
-    <input type="button" value="Conjunction" class="RB" onclick="show(this)"><br><br><br>
-    <input type="button" value="Interjection" class="RB" onclick="show(this)"><br><br><br>
+    <input type="button" id="Adjective"><br><br><br><!--class=RB-->
+    <input type="button" id="Preposition"><br><br><br>
+    <input type="button" id="Conjunction"><br><br><br>
+    <input type="button" id="Interjection"><br><br><br>
     </div>
     
     <div id="kbBox">
@@ -35,7 +35,6 @@
         <input type="button" value="X" class="kb" onclick="pinInput(this)" style="color: red;">
         <input type="button" value="0" class="kb" onclick="pinInput(this)">
         <input type="button" value="⏎" class="kb" onclick="pinInput(this)" style="color: green; ">
-        <!--value="⏎"-->
     </div>
     <div id="atmCardSlotBox"></div>
     <div id="cardSlot"></div>
@@ -48,6 +47,9 @@
         var displaydelay=1000;
         var pinverified=false;// execution lock
         blinkerAnim();// use a gif here later
+        const kbbtns=[Noun,Pronoun,Verb,Adverb,Adjective,Preposition,Conjunction,Interjection];
+        var k=kbbtns.length; while(k--){kbbtns[k].setAttribute("onclick", "show("+k+")");
+            kbbtns[k].value=kbbtns[k].id;if(k>3){kbbtns[k].setAttribute("class","RB");}else{kbbtns[k].setAttribute("class","LB");}}
         const beep=new Audio("audio/peenk.oga"); rotate("atmText",-90);
         var generatedpin = generatePin(9999);
         gpin.innerHTML=``; var pin=""; var pinlen= pin.length; var pinmask="";
@@ -68,22 +70,14 @@
                 }else if(pin.length===4 && pin!=generatedpin && pinverified==false){
                         display(atm.pinmismatchmsg); atm.resetPin();}}     
         
-        function show(p){
-            if(pinverified==false)return;
-            var param= p.value;
-            if(param=="Noun"){nounactivity();}
-            else if(param=="Pronoun"){pronounactivity();}
-            else if(param=="Verb"){verbactivity();}
-            else if(param=="Adverb"){adverbactivity();}
-            else if(param=="Adjective"){adjectiveactivity();}
-            else if(param=="Preposition"){prepositionactivity();}
-            else if(param=="Conjunction"){conjunctionactivity();}
-            else if(param=="Interjection"){interjectionactivity();}          
-        }      
+        function show(p){if(pinverified==false)return; // main trigger of sequence of parts of speech 
+            if(0===p){nounactivity();} else if(1===p){pronounactivity();}
+            else if(2===p){verbactivity();}else if(3===p){adverbactivity();}
+            else if(4===p){adjectiveactivity();}else if(5===p){prepositionactivity();}
+            else if(6===p){conjunctionactivity();} else if(7===p){interjectionactivity();}}      
            
         
-        function cardanimseq(){
-            if(pinverified)return;
+        function cardanimseq(){if(pinverified)return;
             var aseq=[()=>{display("");cardAnim(0);},()=>{cardAnim(1);},()=>{cardAnim(2); }];
             var s=aseq.length; 
             //var speed=1500;// origianl speed
@@ -128,7 +122,7 @@
            array[b]=temp;
         }
         
-       var newvalue; var oldvalue; 
+    var newvalue; var oldvalue; 
     function nounactivity(){//ch
         const nouns=[`Soumen <br><br><br>Soumen is a teacher.`
                      ,"cat<br><br><br>The cat purrs."
