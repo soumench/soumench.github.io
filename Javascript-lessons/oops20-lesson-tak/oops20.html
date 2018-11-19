@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,15 +31,19 @@
 	makebutton( "#affcbb",
 		function () {predicatedata.dochange();}
 	);			
-	makebutton(	"red",
-		function () {subjectdata.dochange();predicatedata.dochange();}
-	);
+	
     makebutton("purple",
         function(){advdata.dochange();}
     );
     makebutton("blue",
         function(){objdata.dochange();}        
     );
+    makebutton(	"red",
+		function () {
+            subjectdata.dochange();predicatedata.dochange();
+            objdata.dochange(); advdata.dochange();        
+        }
+	);
 	var subjectdata = new Part(
 		"subjectdata", 
 		["dog", "cat", "bird"], 
@@ -50,8 +53,8 @@
 	);
 	var predicatedata = new Part(
 		"predicatedata", 
-		["remembers", "has seen", "eats", "sings", "plays"], 
-		["mone kore", "dekhechhe", "khAy", "gAn kore", "khele"],
+		["remembers", "has seen", "eats",  "plays"], 
+		["mone kore", "dekhechhe", "khAy", "khele"],
 		engtextpred,
 		bentextpred
 	);
