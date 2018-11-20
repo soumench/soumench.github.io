@@ -21,6 +21,11 @@ function form(x){
 	prev.innerHTML=`back to step ${form(filenumber-1)} &larr;`
 	next.innerHTML=`&rarr; forward to step ${form(filenumber+1)}`
 	prev.href=name+form(filenumber-1)+".html"
-	next.href=name+form(filenumber+1)+".html"		
-	 
+	next.href=name+form(filenumber+1)+".html"
+    
+    var linktopanini = document.createElement("a")
+	experimentallinks.appendChild(linktopanini)
+    linktopanini.href= "http://onpanini.com/drills/newsb_step01.html"
+    linktopanini.innerHTML="original page in onpanini"
+    
 } )();
