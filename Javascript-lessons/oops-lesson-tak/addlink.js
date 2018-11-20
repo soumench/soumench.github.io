@@ -23,9 +23,14 @@ function form(x){
 	prev.href=name+form(filenumber-1)+".html"
 	next.href=name+form(filenumber+1)+".html"
     
+    
+    var expdiv = document.createElement("div")
+    body.appendChild(expdiv)
+    
     var linktopanini = document.createElement("a")
-	experimentallinks.appendChild(linktopanini)
-    linktopanini.href= "http://onpanini.com/drills/newsb_step01.html"
+	 expdiv.appendChild(linktopanini)
+    //linktopanini.href= "http://onpanini.com/drills/newsb_step01.html"
+    linktopanini.href="http://onpanini.com/drills/newsb_step"+form(filenumber)+".html" 
     linktopanini.innerHTML="original page in onpanini"
     
 } )();

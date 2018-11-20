@@ -1,0 +1,109 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title> Title </title>
+	   <link rel="stylesheet" type="text/css" href="part.css">	
+    <style>
+        body{font-family: sans-serif; }
+        input{font-size:100%;}
+		.subjclass, .predclass {padding:3px}
+        .subjclass{color: red; border: 1px solid grey;  background-color: yellow;}
+        .predclass{color: blue;border: 1px solid #87b168; background-color: #affcbb;}
+        div{border: 1px solid black; margin-left: 10px; margin-right: auto;
+            text-align: left; display: block; padding:10px; border-radius: 16px;}
+        
+        #First,#Second,div{border-radius: 16px; /*width: 80px;*/}
+        #First{background-color: yellow;}
+        #Second{background-color: #affcbb;}        
+    </style>
+		
+</head>
+<body id="body">
+    <div id="buttonbox">
+		<input type="button" id="First">
+		<input type="button" id="Second">
+	</div>    
+	<div id="sentences">	
+	<span id="engtextsubj" class="subjclass"></span>
+	<span id="engtextpred" class="predclass"></span>
+	<br>
+	<span id="bentextsubj" class="subjclass"></span>
+	<span id="bentextpred" class="predclass">	</span>
+    <script>
+        "use strict";
+        
+        const buttons = [First,Second]; 
+		
+		( function (){
+			var i = buttons.length;
+			while(i--){
+				buttons[i].value=" ";
+				buttons[i].setAttribute("onclick","button_was_clicked(" + i + ")" );
+			} 
+		} )();
+		        
+        function button_was_clicked(param){ 
+			if(param===0)changesubject();
+			else changepredicate(); 
+		}
+
+		var predicatedata={		  
+		  name: "predicate data" ,
+		  english: ["runs", "goes to market", "eats insect", "sings","plays"] ,
+		  bengali: ["dourAy", "bAjAre jAy", "pokA khAy", "gAn kore", "khele"],
+		  bendisplay: bentextpred,
+		  engdisplay: engtextpred,
+         displayfun: function () {
+            predicatedata.engdisplay.innerHTML=predicatedata.english[predicatedata.index];
+            predicatedata.bendisplay.innerHTML=predicatedata.bengali[predicatedata.index];
+		 }
+		}
+		
+		var subjectdata={
+		  name: "subject data" ,
+		  english: ["dog","cat","bird"],
+		  bengali: ["kukur","biRAl", "pAkhI"],		
+		  bendisplay: bentextsubj,
+		  engdisplay: engtextsubj,
+		  displayfun:         function () {
+            subjectdata.engdisplay.innerHTML=subjectdata.english[subjectdata.index];        
+            subjectdata.bendisplay.innerHTML=subjectdata.bengali[subjectdata.index];    
+		 }
+
+		}
+
+        if(subjectdata.english.length!=subjectdata.bengali.length||predicatedata.english.length!=predicatedata.bengali.length)console.log(`list mismatch in either subjecdata or predicatedata`)
+		
+		changesubject()
+		changepredicate()
+		
+        function changesubject(){
+            var newvalue;
+			do newvalue= Math.floor(Math.random()*subjectdata.english.length);
+            while(newvalue===subjectdata.old);
+            subjectdata.index=newvalue;
+            subjectdata.displayfun();            
+            subjectdata.old=newvalue;
+        }
+		
+        function changepredicate(){
+          var newvalue;
+		  do newvalue = Math.floor(Math.random()*predicatedata.english.length);
+          while(newvalue===predicatedata.old);
+          predicatedata.index=newvalue;        
+          predicatedata.displayfun();            
+          predicatedata.old=newvalue;
+        } 
+		
+    </script></div>
+        <div  id="experimentallinks"> </div>
+			<script src="addlink.js"></script>
+</body>
+</html>
+
+
