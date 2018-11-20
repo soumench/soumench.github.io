@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> Title </title>
     <style>
-        body{font-size: 18px; text-align: center;}
+        body{margin: 10px;margin-top: 0px;
+            font-size: 18px; text-align: center; background-color: black;
+            display: inline-block;
+        }
         h1{ 
             border-width: .4em;
             border-left-width: .8em;border-right-width: .8em;
@@ -19,13 +22,19 @@
             width: 30%;
             display: grid;
             text-align: left;
+            padding: .5em;
             padding-left: 10px;
+            border-radius: 20px;
+            background-color: dimgrey;
+            background-image: radial-gradient(red, yellow, green);
         }
         .chapters{
-            border: 1px solid red;
-            border-radius: 20px;
-            padding: 2px; margin: 4px;
+            border: 3px solid red;
+            border-radius: .5em;
+            padding: .2em; margin: .2em;
+            box-shadow:10px 10px 50px grey; 
         }
+       
     </style>
 </head>
 
@@ -53,6 +62,7 @@
     <a href="newsb_step019.html" target="none" id="nineteen">Lesson 19</a>
     <a href="newsb_step020.html" target="none" id="twenty">Lesson 20</a>
     </div>
+    
     <script>
         const topics=[one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,fourteen,fifteen, sixteen,seventeen,eighteen,nineteen,twenty];
         var i=topics.length; while(i--){
