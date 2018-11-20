@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+	<link rel="stylesheet" type="text/css" href="engbeng.css"></head>
+<body>
+<h1></h1>
+    <div id="newbuttonbox">	</div>    
+	<div>	
+	<span id="engtextsubj" class="subjclass"></span>
+	<span id="engtextpred" class="predclass"></span>
+	<br>
+	<span id="bentextsubj" class="subjclass"></span>
+	<span id="bentextpred" class="predclass">	</span>
+    <script src="engbeng9.js"></script>
+	<script src="addlink.js"></script>
+<script>
+	makebutton(	"yellow",
+		function () {subjectdata.dochange();}
+	);			
+	makebutton( "#affcbb",
+		function () {predicatedata.dochange();}
+	);			
+	makebutton(	"red",
+		function () {subjectdata.dochange();predicatedata.dochange();}
+	);
+	var subjectdata = new Part(
+		"subjectdata", 
+		["dog", "cat", "bird"], 
+		["kukur", "biRAl", "pAkhI"],
+		engtextsubj,
+		bentextsubj
+	);
+	var predicatedata = new Part(
+		"predicatedata", 
+		["runs", "goes to market", "eats insect", "sings", "plays"], 
+		["dourAy", "bAjAre jAy", "pokA khAy", "gAn kore", "khele"],
+		engtextpred,
+		bentextpred
+	);
+	
+	init("engbeng, subj + pred version")
+	
+</script>
+</body>
+</html>

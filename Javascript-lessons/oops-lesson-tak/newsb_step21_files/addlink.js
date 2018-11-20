@@ -1,4 +1,3 @@
-
 function form(x){
 	if(x<10)return "0"+x;
 	return x;	
@@ -21,25 +20,6 @@ function form(x){
 	prev.innerHTML=`back to step ${form(filenumber-1)} &larr;`
 	next.innerHTML=`&rarr; forward to step ${form(filenumber+1)}`
 	prev.href=name+form(filenumber-1)+".html"
-	next.href=name+form(filenumber+1)+".html"
-    
-    
-    var expdiv = document.createElement("div")
-    body.appendChild(expdiv)
-    
-    var linktopanini = document.createElement("a")
-	expdiv.appendChild(linktopanini)
-    linktopanini.href="http://onpanini.com/drills/newsb_step"+form(filenumber)+".html" 
-    linktopanini.innerHTML="original page in onpanini"
-    
-    
-    /*var indexdiv = document.createElement("div")
-    body.appendChild(indexdiv)*/
-    
-    var linktoindex = document.createElement("a")
-    expdiv.appendChild(linktoindex)
-    linktoindex.href="oop-index.html" 
-    linktoindex.innerHTML="<br> Index"
-    
-    
+	next.href=name+form(filenumber+1)+".html"		
+	 
 } )();

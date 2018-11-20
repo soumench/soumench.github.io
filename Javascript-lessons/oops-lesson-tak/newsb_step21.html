@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+	<link rel="stylesheet" type="text/css" href="engbeng.css"></head>
+<body>
+<h1></h1>
+    <div id="newbuttonbox">	</div>    
+	<div>	
+	<span id="engtextsubj" class="subjclass"></span>
+	<span id="engverb" class="predclass"></span>
+    <span id="engobj" class="objclass"></span>
+	<span id="engadv" class="advclass"></span>
+	<br>
+	<span id="bentextsubj" class="subjclass"></span>
+    <span id="benadv" class="advclass"></span>
+    <span id="benobj" class="objclass"></span>
+	<span id="bentextpred" class="predclass"></span>
+       
+    
+    
+	
+        
+    <script src="engbeng9.js"></script>
+	<script src="addlink.js"></script>
+<script>
+	makebutton(	"yellow",
+		function () {subjectdata.dochange();}
+	);			
+	makebutton( "#affcbb",
+		function () {verbdataa.dochange();}
+	);			
+	
+    
+    makebutton("#efd181",
+        function(){objdata.dochange();}        
+    );
+    
+    makebutton("#ffa8f8",
+        function(){advdata.dochange();}
+    );
+    makebutton(	"red",
+		function () {
+            subjectdata.dochange();verbdataa.dochange();
+            objdata.dochange(); advdata.dochange();        
+        }
+	);
+	var subjectdata = new Part(
+		"subjectdata", 
+		["dog", "cat", "bird"], 
+		["kukur", "biRAl", "pAkhI"],
+		engtextsubj,
+		bentextsubj
+	);
+	var verbdataa = new Part(
+		"verbdataa", 
+		["remembers", "has seen", "eats"], 
+		["mone kore", "dekhechhe", "khAy"],
+		engverb,
+		bentextpred
+	);
+    
+    var advdata= new Part(
+        "advdata",
+        ["again", "quickly","slowly", "badly", "well"," "," "," "],
+        ["punarAy", "druta", "dhIre", "manda bhAbe", "bhAlo bhAbe"," "," "," "],
+        engadv, 
+        benadv
+    );
+    
+    var objdata = new Part(
+        "objdata",
+        ["rat", "dog", "insects"],
+        ["indoor", "kukur", "kIT pataGga"],
+        engobj,
+        benobj
+    );
+	console.log(verbdataa.dochange);
+	init("engbeng, subj + verb + obj + adv version")
+	
+</script>
+</body>
+</html>
