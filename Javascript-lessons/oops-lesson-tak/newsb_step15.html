@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://onpanini.com/drills/newsb_step15.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Title </title>
+	<link rel="stylesheet" type="text/css" href="./newsb_step15_files/engbeng.css"></head>
+<body id="body">
+    <div id="buttonbox">
+		<input id="First" type="button" value=" " class="dice" onclick="onclicks[0]()">
+		<input id="Second" type="button" value=" " class="dice" onclick="onclicks[1]()">
+		<input id="Changeboth" type="button" value=" " class="dice" onclick="onclicks[2]()">
+	</div>    
+    <div id="newbuttonbox">
+	<input type="button" value=" " class="dice" onclick="onclicks[0]()" style="background: yellow;"><input type="button" value=" " class="dice" onclick="onclicks[1]()" style="background: rgb(175, 252, 187);"><input type="button" value=" " class="dice" onclick="onclicks[2]()" style="background: red;"></div>    
+	<div>	
+	<span id="engtextsubj" class="subjclass">cat</span>
+	<span id="engtextpred" class="predclass">sings</span>
+	<br>
+	<span id="bentextsubj" class="subjclass">biRAl</span>
+	<span id="bentextpred" class="predclass">gAn kore</span>
+	<script src="./newsb_step15_files/addlink.js.download"></script>
+    <script src="./newsb_step15_files/engbeng3.js.download"></script>
+    <script>
+        const buttons = [First, Second, Changeboth];
+        const onclicks = [
+		   function () {subjectdata.dochange();},
+		   function () {predicatedata.dochange();},
+		   function () {subjectdata.dochange();predicatedata.dochange();}
+		];
+		
+        (function() {
+            var i = buttons.length;
+            while (i--) {
+                buttons[i].value = " ";
+                buttons[i].setAttribute("type", "button");
+                buttons[i].setAttribute("class", "dice");
+                buttons[i].setAttribute("onclick", "onclicks[" + i + "]()");
+            }
+        })();
+				
+		var newbutton;		
+		newbutton=document.createElement("input");
+		newbuttonbox.appendChild(newbutton);
+		newbutton.value=" "
+		newbutton.setAttribute("type", "button");
+        newbutton.setAttribute("class", "dice");
+        newbutton.setAttribute("onclick", "onclicks[" + 0 + "]()");
+		newbutton.style.background="yellow"
+				
+		newbutton=document.createElement("input");
+		newbuttonbox.appendChild(newbutton);
+		newbutton.value=" "
+		newbutton.setAttribute("type", "button");
+        newbutton.setAttribute("class", "dice");
+        newbutton.setAttribute("onclick", "onclicks[" + 1 + "]()");
+		newbutton.style.background="#affcbb"
+				
+		newbutton=document.createElement("input");
+		newbuttonbox.appendChild(newbutton);
+		newbutton.value=" "
+		newbutton.setAttribute("type", "button");
+        newbutton.setAttribute("class", "dice");
+        newbutton.setAttribute("onclick", "onclicks[" + 2 + "]()");
+		newbutton.style.background="red"
+				
+        var predicatedata = new Part(
+            "predicate data", 
+			["runs", "goes to market", "eats insect", "sings", "plays"], 
+			["dourAy", "bAjAre jAy", "pokA khAy", "gAn kore", "khele"],
+            engtextpred,
+            bentextpred
+        );
+
+        var subjectdata = new Part(
+            "subjectdata", 
+			["dog", "cat", "bird"], 
+			["kukur", "biRAl", "pAkhI"],
+            engtextsubj,
+            bentextsubj
+        );
+</script>
+
+</div><p><a href="http://onpanini.com/drills/newsb_step14.html">back to step 14 ←</a> (this is step 15) <a href="http://onpanini.com/drills/newsb_step16.html">→ forward to step 16</a></p></body></html>

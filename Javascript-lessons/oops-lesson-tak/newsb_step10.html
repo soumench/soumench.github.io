@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://onpanini.com/drills/newsb_step10.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style>
+        body{font-family: sans-serif; }
+        input{font-size:100%;}
+		.subjclass, .predclass {padding:3px}
+        .subjclass{color: red; border: 1px solid grey;  background-color: yellow;}
+        .predclass{color: blue;border: 1px solid #87b168; background-color: #affcbb;}
+        div{border: 1px solid black; margin-left: 10px; margin-right: auto;
+            text-align: left; display: block; padding:10px; border-radius: 16px;}        
+         div{border-radius: 16px;}
+        .dice {border-radius: 16px;}
+        #First{background-color: yellow;}
+        #Second{background-color: #affcbb;}        
+        #Changeboth{background-color: red;}        
+    </style>
+
+</head>
+<body id="body">
+    <div id="buttonbox">
+		<input type="button" id="First" value=" " class="dice" onclick="button_was_clicked(0)">
+		<input id="Second" type="button" value=" " class="dice" onclick="button_was_clicked(1)">
+		<input type="button" id="Changeboth" value=" " class="dice" onclick="button_was_clicked(2)">
+	</div>    
+	<div>	
+	<span id="engtextsubj" class="subjclass">bird</span>
+	<span id="engtextpred" class="predclass">sings</span>
+	<br>
+	<span id="bentextsubj" class="subjclass">pAkhI</span>
+	<span id="bentextpred" class="predclass">gAn kore</span>
+    <script>
+        "use strict";
+        const buttons = [First, Second, Changeboth];
+		
+        (function() {
+            var i = buttons.length;
+            while (i--) {
+                buttons[i].value = " ";
+                buttons[i].setAttribute("type", "button");
+                buttons[i].setAttribute("class", "dice");
+                buttons[i].setAttribute("onclick", "button_was_clicked(" + i + ")");
+            }
+        })();
+
+        function button_was_clicked(param) {
+            if (param === 0) subjectdata.dochange();
+            else if (param === 1) predicatedata.dochange();
+            else {
+                subjectdata.dochange();
+                predicatedata.dochange();
+            }
+        }
+
+        function Part(n, e, b, ed, bd) { // careful, this is an object constructor, if we call it without "new", disaster ensues!!!
+
+            this.name = n
+            this.english = e
+            this.bengali = b
+            this.engdisplay = ed
+            this.bendisplay = bd
+            this.displayfun = function() {
+                this.engdisplay.innerHTML = this.english[this.index];
+                this.bendisplay.innerHTML = this.bengali[this.index];
+            };
+            this.check = function() {
+                if (this.english.length == this.bengali.length) console.log(this.name + " passed the check");
+                else console.log(this.name + " has a list mismatch");
+                this.lengthlessone = this.english.length - 1;
+                this.index = this.old = Math.floor(Math.random() * this.english.length);
+                this.displayfun();
+            };
+            this.dochange = function() {
+                var newvalue;
+                do newvalue = Math.floor(Math.random() * this.english.length);
+                while (newvalue === this.old);
+                this.index = newvalue;
+                this.displayfun();
+                this.old = newvalue;
+            };
+            this.check();
+        }
+
+        var predicatedata = new Part(
+            "predicate data", ["runs", "goes to market", "eats insect", "sings", "plays"], ["dourAy", "bAjAre jAy", "pokA khAy", "gAn kore", "khele"],
+            engtextpred,
+            bentextpred
+        );
+
+        var subjectdata = new Part(
+            "subjectdata", ["dog", "cat", "bird"], ["kukur", "biRAl", "pAkhI"],
+            engtextsubj,
+            bentextsubj
+        );
+</script>
+		<script src="./newsb_step10_files/addlink.js.download"></script>
+
+
+
+
+</div><p><a href="http://onpanini.com/drills/newsb_step09.html">back to step 09 ←</a> (this is step 10) <a href="http://onpanini.com/drills/newsb_step11.html">→ forward to step 11</a></p></body></html>

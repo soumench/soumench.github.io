@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Title </title>
+    <style>
+        body{font-size: 18px; text-align: center;}
+        h1{ 
+            border-width: .4em;
+            border-left-width: .8em;border-right-width: .8em;
+            border-style: outset; background-color: grey; 
+            border-radius: 20px; padding: .2em; text-align: center;}
+        #h1div{
+            border-top-width: .2em; border-bottom-width: .2em;border-left-width: 15px; 
+            border-right-width: 15px;border-style: inset;
+            border-radius: 20px; padding: 5px; display: inline;}
+        div{border: 1px solid red;
+            width: 30%;
+            display: grid;
+            text-align: left;
+            padding-left: 10px;
+        }
+        .chapters{
+            border: 1px solid red;
+            border-radius: 20px;
+            padding: 2px; margin: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><div id="h1div">OOPS lessons tak</div></h1>
+    <div>
+    <a href="newsb_step01.html" target="none"  id="one">Lesson 1</a>
+    <a href="newsb_step02.html" target="none"  id="two">Lesson 2</a>
+    <a href="newsb_step03.html" target="none"  id="three">Lesson 3</a>
+    <a href="newsb_step04.html" target="none"  id="four">Lesson 4</a>
+    <a href="newsb_step05.html" target="none"  id="five">Lesson 5</a>
+    <a href="newsb_step06.html" target="none"  id="six">Lesson 6</a>
+    <a href="newsb_step07.html" target="none"  id="seven">Lesson 7</a>
+    <a href="newsb_step08.html" target="none"  id="eight">Lesson 8</a>
+    <a href="newsb_step09.html" target="none"  id="nine">Lesson 9</a>
+    <a href="newsb_step010.html" target="none" id="ten">Lesson 10</a>
+    <a href="newsb_step011.html" target="none" id="eleven">Lesson 11</a>
+    <a href="newsb_step012.html" target="none" id="twelve">Lesson 12</a>
+    <a href="newsb_step013.html" target="none" id="thirteen">Lesson 13</a>
+    <a href="newsb_step014.html" target="none" id="fourteen">Lesson 14</a>
+    <a href="newsb_step015.html" target="none" id="fifteen">Lesson 15</a>
+    <a href="newsb_step016.html" target="none" id="sixteen">Lesson 16</a>
+    <a href="newsb_step017.html" target="none" id="seventeen">Lesson 17</a>
+    <a href="newsb_step018.html" target="none" id="eighteen">Lesson 18</a>
+    <a href="newsb_step019.html" target="none" id="nineteen">Lesson 19</a>
+    <a href="newsb_step020.html" target="none" id="twenty">Lesson 20</a>
+    </div>
+    <script>
+        const topics=[one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,fourteen,fifteen, sixteen,seventeen,eighteen,nineteen,twenty];
+        var i=topics.length; while(i--){
+           topics[i].setAttribute("class","chapters");
+           topics[i].style.backgroundColor="yellow";
+           topics[i].value="chapter"+topics[i];
+        }
+    </script>
+
+</body>
+</html>

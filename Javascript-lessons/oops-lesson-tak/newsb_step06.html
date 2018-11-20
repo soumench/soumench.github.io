@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://onpanini.com/drills/newsb_step06.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style>
+        body{font-family: sans-serif; }
+        input{font-size:100%;}
+		
+		
+		.subjclass, .predclass {padding:3px}
+        .subjclass{color: red; border: 1px solid grey;  background-color: yellow;}
+        .predclass{color: blue;border: 1px solid #87b168; background-color: #affcbb;}
+        div{border: 1px solid black; margin-left: 10px; margin-right: auto;
+            text-align: left; display: block; padding:10px; border-radius: 16px;}
+        
+        #First,#Second,div{border-radius: 16px;}
+        #First{background-color: yellow;}
+        #Second{background-color: #affcbb;}        
+    </style>
+		
+</head>
+<body id="body">
+    <div id="buttonbox">
+		<input type="button" id="First" value=" " onclick="button_was_clicked(0)">
+		<input type="button" id="Second" value=" " onclick="button_was_clicked(1)">
+	</div>    
+	<div>	
+	<span id="engtextsubj" class="subjclass">dog</span>
+	<span id="engtextpred" class="predclass">sings</span>
+	<br>
+	<span id="bentextsubj" class="subjclass">kukur</span>
+	<span id="bentextpred" class="predclass">gAn kore</span>
+    <script>
+         "use strict";
+
+        const buttons = [First, Second];
+
+        (function() {
+            var i = buttons.length;
+            while (i--) {
+                buttons[i].value = " ";
+                buttons[i].setAttribute("onclick", "button_was_clicked(" + i + ")");
+            }
+        })();
+
+        function button_was_clicked(param) {
+            if (param === 0) subjectdata.dochange();
+            else predicatedata.dochange();
+        }
+		
+        var predicatedata = {
+            name: "predicate data",
+            english: ["runs", "goes to market", "eats insect", "sings", "plays"],
+            bengali: ["dourAy", "bAjAre jAy", "pokA khAy", "gAn kore", "khele"],
+            engdisplay: engtextpred,
+            bendisplay: bentextpred
+        };
+
+        var subjectdata = {
+            name: "subjectdata",
+            english: ["dog", "cat", "bird"],
+            bengali: ["kukur", "biRAl", "pAkhI"],
+            engdisplay: engtextsubj,
+			bendisplay: bentextsubj
+        };
+		
+        var cjheck = function() {
+            if (this.english.length == this.bengali.length) console.log(this.name + " passed the check");
+            else console.log(this.name + " has a list mismatch");
+            this.lengthlessone = this.english.length - 1;
+            this.index = this.old = Math.floor(Math.random() * this.english.length);
+            this.displayfun();
+        };
+
+        var dochange = function() {
+            var newvalue;
+            do newvalue = Math.floor(Math.random() * this.english.length);
+            while (newvalue === this.old);
+            this.index = newvalue;
+            this.displayfun();
+            this.old = newvalue;
+        };
+
+
+        subjectdata.displayfun = function() {
+                this.engdisplay.innerHTML = this.english[this.index];
+                this.bendisplay.innerHTML = this.bengali[this.index];
+            },
+
+		
+			
+        predicatedata.displayfun = subjectdata.displayfun;
+
+        subjectdata.dochange = dochange;
+        predicatedata.dochange = dochange;
+
+        predicatedata.check = cjheck;
+        subjectdata.check = cjheck;
+
+        subjectdata.check()
+        predicatedata.check()
+</script>
+<script src="./newsb_step06_files/addlink.js.download"></script>
+
+
+
+
+</div><p><a href="http://onpanini.com/drills/newsb_step05.html">back to step 05 ←</a> (this is step 06) <a href="http://onpanini.com/drills/newsb_step07.html">→ forward to step 07</a></p></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://onpanini.com/drills/newsb_step20.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+	<link rel="stylesheet" type="text/css" href="./newsb_step20_files/engbeng.css"><title>engbeng, subj + pred version</title></head>
+<body>
+<h1>engbeng, subj + pred version</h1>
+    <div id="newbuttonbox">	<input type="button" value=" " class="dice" onclick="run()" style="background: yellow;"><input type="button" value=" " class="dice" onclick="run()" style="background: rgb(175, 252, 187);"><input type="button" value=" " class="dice" onclick="run()" style="background: red;"></div>    
+	<div>	
+	<span id="engtextsubj" class="subjclass">cat</span>
+	<span id="engtextpred" class="predclass">goes to market</span>
+	<br>
+	<span id="bentextsubj" class="subjclass">biRAl</span>
+	<span id="bentextpred" class="predclass">bAjAre jAy</span>
+    <script src="./newsb_step20_files/engbeng9.js.download"></script>
+	<script src="./newsb_step20_files/addlink.js.download"></script>
+<script>
+	makebutton(	"yellow",
+		function () {subjectdata.dochange();}
+	);			
+	makebutton( "#affcbb",
+		function () {predicatedata.dochange();}
+	);			
+	makebutton(	"red",
+		function () {subjectdata.dochange();predicatedata.dochange();}
+	);
+	var subjectdata = new Part(
+		"subjectdata", 
+		["dog", "cat", "bird"], 
+		["kukur", "biRAl", "pAkhI"],
+		engtextsubj,
+		bentextsubj
+	);
+	var predicatedata = new Part(
+		"predicatedata", 
+		["runs", "goes to market", "eats insect", "sings", "plays"], 
+		["dourAy", "bAjAre jAy", "pokA khAy", "gAn kore", "khele"],
+		engtextpred,
+		bentextpred
+	);
+	
+	init("engbeng, subj + pred version")
+	
+</script>
+
+
+</div><p><a href="http://onpanini.com/drills/newsb_step19.html">back to step 19 ←</a> (this is step 20) <a href="http://onpanini.com/drills/newsb_step21.html">→ forward to step 21</a></p></body></html>
