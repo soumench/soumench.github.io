@@ -28,9 +28,18 @@ function form(x){
     body.appendChild(expdiv)
     
     var linktopanini = document.createElement("a")
-	 expdiv.appendChild(linktopanini)
-    //linktopanini.href= "http://onpanini.com/drills/newsb_step01.html"
+	expdiv.appendChild(linktopanini)
     linktopanini.href="http://onpanini.com/drills/newsb_step"+form(filenumber)+".html" 
     linktopanini.innerHTML="original page in onpanini"
+    
+    
+    /*var indexdiv = document.createElement("div")
+    body.appendChild(indexdiv)*/
+    
+    var linktoindex = document.createElement("a")
+    expdiv.appendChild(linktoindex)
+    linktoindex.href="oop-index.html" 
+    linktoindex.innerHTML="<br>Index"
+    
     
 } )();
