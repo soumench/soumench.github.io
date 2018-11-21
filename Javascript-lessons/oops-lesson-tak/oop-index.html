@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> Title </title>
     <style>
-        body{margin: 10px;margin-top: 0px;
-            font-size: 18px; text-align: center; background-color: black;
+        body{width: 90%; 
+            font-size: 20px;
+            margin: 10px;margin-top: 0px;
+            font-size: 18px; text-align: center; background-color: #313131;
             display: inline-block;
         }
         h1{ 
@@ -14,12 +16,16 @@
             border-left-width: .8em;border-right-width: .8em;
             border-style: outset; background-color: grey; 
             border-radius: 20px; padding: .2em; text-align: center;}
-        #h1div{
+        #h1div{background-color: aqua;
             border-top-width: .2em; border-bottom-width: .2em;border-left-width: 15px; 
-            border-right-width: 15px;border-style: inset;
-            border-radius: 20px; padding: 5px; display: inline;}
-        div{border: 1px solid red;
-            width: 30%;
+            border-right-width: 15px; border-style: inset;
+            border-radius: 20px; padding: 3px; display: inline;}
+        #chapter-box{
+            /*border: 1px solid red;*/
+            border-color: #ff5e5e;
+            border-width: 20px;
+            border-style: inset;
+            width: 45%;
             display: grid;
             text-align: left;
             padding: .5em;
@@ -29,18 +35,42 @@
             background-image: radial-gradient(red, yellow, green);
         }
         .chapters{
+            width: 80%;
             border: 3px solid red;
             border-radius: .5em;
-            padding: .2em; margin: .2em;
+            padding: .2em; padding-left: .7em; padding-right: auto;
+            margin: .2em;
             box-shadow:10px 10px 50px grey; 
+        }
+        .flex-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            background-color: #044501;
+        }
+        .flex-container > div {
+          background-color: #f1f1f1;
+          width: 100%;
+          margin: 10px;
+          text-align: center;
+          line-height: 75px;
+          font-size: 30px;
+        }
+        #taktutinfo{
+            border-style: groove;
+            border-width: 30px;
+        }
+        #tutinnerborder{
+            background-color: antiquewhite; padding-bottom: 1%;
         }
        
     </style>
 </head>
 
 <body>
-    <h1><div id="h1div">OOP Lessons tak</div></h1>
-    <div>
+    <h1><div id="h1div">OOP Lessons by Tak</div></h1>
+    <div class="flex-container">
+    <div id="chapter-box">
     <a href="newsb_step01.html" target="none"  id="one">Lesson 1</a>
     <a href="newsb_step02.html" target="none"  id="two">Lesson 2</a>
     <a href="newsb_step03.html" target="none"  id="three">Lesson 3</a>
@@ -63,7 +93,9 @@
     <a href="newsb_step20.html" target="none" id="twenty">Lesson 20</a>
     <a href="newsb_step21.html" target="none" id="twentyone">Lesson 21</a>
     </div>
-    
+    <div id="taktutinfo"><div id="tutinnerborder">Tak's Tut</div>
+    </div>
+    </div>
     <script>
         const topics=[one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,fourteen,fifteen, sixteen,seventeen,eighteen,nineteen,twenty,twentyone];
         var i=topics.length; while(i--){
