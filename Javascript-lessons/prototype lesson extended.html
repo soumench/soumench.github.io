@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Title </title>
+</head>
+<body>
+
+    <script>
+         function Cat(x){this.name=x;}
+         Cat.prototype.voice="meaow";
+        
+         var duke=new Cat("duke");
+        
+        document.write( duke.name + "<br>" );
+        document.write( duke.voice + "<br>" );
+        
+        function Dog(x){this.name=x}
+        Dog.prototype.voice="bark";
+        var spot=new Dog("spot");
+        var bill=new Dog("bill");
+        document.write( spot.voice + "<br>" );
+    document.write( duke.voice + "<br>" );
+    
+    </script>
+</body>
+</html>

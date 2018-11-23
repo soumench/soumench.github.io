@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Title </title>
+</head>
+
+<body>
+    <script>
+        function Constructor(){this.A=1; this.B=2}
+        var o1=new Constructor()
+        var o2=new Constructor()
+        o2.A=3
+        console.log(o1.A)
+        console.log(o2.A)
+        console.log(o2.C)
+        
+        Constructor.prototype.C=7
+        console.log(o2.C)
+        console.log(o1.C)
+        
+        o1.C=112
+        console.log(o1.C)
+        console.log(o2.C)
+        
+        console.log("--------------------------")
+function Makeletter(letter){this.name=letter}
+var L1=new Makeletter("a")
+var L2=new Makeletter("b")
+var L3=new Makeletter("c")
+
+// Makeletter.prototype.kind="consonant"
+         L1.kind="vowel"
+console.log(L1.kind)
+console.log(L2.kind)
+console.log(L3.kind)
+        
+        
+    </script>
+
+</body>
+</html>
