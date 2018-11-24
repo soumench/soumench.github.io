@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> epe2 </title>
+
+</head>
+<body id="body">
+	<script>
+
+	function Mammal(x){
+	   this.name=x; 
+	   this.hasnipples=true; 
+	   this.voice="voice not known"
+	}
+	
+	var newobject={};
+	listownprops("newobject",newobject);
+	listallprops("newobject",newobject);
+	
+	var alv={name:"Alvin", hasnipples: true, voice:"squealing"};
+	listownprops("alv",alv);
+	listallprops("alv",alv);
+	
+	var generic_mammal=new Mammal();
+	listownprops("generic_mammal",generic_mammal);
+	listallprops("generic_mammal",generic_mammal);
+	
+	listownprops("Mammal function",Mammal);
+	listallprops("Mammal function",Mammal);
+	
+	
+/*if(false){	*/
+    function Cat(x){Mammal.call(this,x); this.voice="meaow"}
+    function Dog(x){Mammal.call(this,x); this.voice="bark"}
+    function Giraffe(x){Mammal.call(this,x);}
+		
+    var duke=new Cat("duke");
+    var spot=new Dog("spot");
+    var bill=new Dog("bill");
+    var bernie=new Giraffe("bernie");
+        
+    /*document.write( duke.name + "<br>" );
+    document.write( duke.voice + "<br>" );        
+    document.write( spot.voice + "<br>" );
+    document.write( bernie.voice + "<br>" );
+    document.write( duke.hasnipples + "<br>" );	*/
+/*}*/
+	
+	function listallprops(name,obj){
+		var answer="all properties of object (( "+name+" )) --> (( "+obj+" ))";
+		var count=0;
+		for (var key in obj){ answer+="<br>"+key+": "+obj[key]+", "; ++ count;} 
+		document.write( answer+"<br>total "+count+" all properties<hr>" );
+	}
+
+	function listownprops(name,obj){
+		var answer="own properties of object (( "+name+" )) --> (( "+obj+" ))";
+		var count=0;
+		for (var key in obj) {
+			if (obj.hasOwnProperty(key)) {
+			   answer+="<br>"+key+": "+obj[key]+", "		
+			   ; ++ count;
+			}
+		}
+		document.write( answer+"<br>total "+count+" own properties<hr>" );
+	}
+        
+    listownprops("bernie", bernie);
+    listownprops("duke", duke);
+        
+    </script>
+</body>
+</html>
