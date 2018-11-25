@@ -32,9 +32,22 @@
 <span class="method">w.height=666</span><span class="remark"> -- The height of w object is now 666</span><br>
 <span class="method">log(o.height)</span><span class="remark"> -- outputs height of o object</span><br>
 <span class="method">log(w.height)</span><span class="remark"> -- outputs height of o object getting a reference from the w variable</span><br><br><br><br><br>
-
+<p>
+    An object is a thing that has many properties ( the thing that tell us more about the object itself) e.g. suppose you are an object. You have a name. You have an age. You have a height, like so. And all these give us more information about you. Now, your best friend also has a name, an age and a height. It may be of different values but it is there.<br> Let's create an object called o and for that we need to write the following:<br> 
+    var o = {age:16, height:1.7}<br>
+    Now we have a new word here called 'var'. In javascript language, var stands for variable. Think about variable as a container. You have a lunchbox. You store your food in it. It can be a sandwich or a cake or some biryani or even you can store a small box containing candy inside the lunchbox. Similarly we can store some values or other type of things in a variable.<br> Let's create a variable named 'w' and store the object we created some moments ago using the following command:<br>
+    var w = o;<br>
+    Easy enough, right? Good! Now when you grow up, you become tall like your parents. So the information about you, is also changed. In this case your height is changed. And you update that information in your Identity card.<br>
+    Interestingly, we can update our object too. To do this, we can use the following: <br>
+    o.height=12;  (The height attribute of the object o is now 12)<br>
+    Now here is an interesting situation..... 
     
-    <script>
+    
+    
+</p>
+    
+    <br><br><br><br><br>
+    <!--<script>
         var o = {age:16, height:1.7}
         var w=o
         o.height=12
@@ -47,7 +60,7 @@
         function display(m){ console.log(m);          
             document.write(m+"<br>");
         }
-    </script>
+    </script>-->
     
 
 </body>
