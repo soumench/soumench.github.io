@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> Oop basic - lesson1</title>
     <style>
-        body{font-size: 20px; color: red;}
+        body{font-size: 20px; color: black; background-color: grey;}
         h1{color: black;}
         .method{position: absolute;
             color: blue;
@@ -33,15 +33,106 @@
 <span class="method">log(o.height)</span><span class="remark"> -- outputs height of o object</span><br>
 <span class="method">log(w.height)</span><span class="remark"> -- outputs height of o object getting a reference from the w variable</span><br><br><br><br><br>
 <p>
-    An object is a thing that has many properties ( the thing that tell us more about the object itself) e.g. suppose you are an object. You have a name. You have an age. You have a height, like so. And all these give us more information about you. Now, your best friend also has a name, an age and a height. It may be of different values but it is there.<br> Let's create an object called o and for that we need to write the following:<br> 
+    <!--An object is a thing that has many properties ( the thing that tell us more about the object itself) e.g. suppose you are an object. You have a name. You have an age. You have a height, like so. And all these give us more information about you. Now, your best friend also has a name, an age and a height. It may be of different values but it is there.<br> Let's create an object called o and for that we need to write the following:<br> 
     var o = {age:16, height:1.7}<br>
     Now we have a new word here called 'var'. In javascript language, var stands for variable. Think about variable as a container. You have a lunchbox. You store your food in it. It can be a sandwich or a cake or some biryani or even you can store a small box containing candy inside the lunchbox. Similarly we can store some values or other type of things in a variable.<br> Let's create a variable named 'w' and store the object we created some moments ago using the following command:<br>
     var w = o;<br>
     Easy enough, right? Good! Now when you grow up, you become tall like your parents. So the information about you, is also changed. In this case your height is changed. And you update that information in your Identity card.<br>
     Interestingly, we can update our object too. To do this, we can use the following: <br>
     o.height=12;  (The height attribute of the object o is now 12)<br>
-    Now here is an interesting situation..... 
+    Now here is an interesting situation..... -->
+    <br><br>
+    ------------------------------------------------------------------------
+    <br><br>
     
+    
+    an object has keys and values<br>
+the keys are strings<br>
+the keys are all different<br>
+ and every key has a value<br>
+ we can add and remove keys from an object<br>
+ and we can give any key any value we want<br>
+   that definition of object works for all programming languages <br><br>
+   an object is a collection of keys, that are all different and come in no particular order, and a value for every key <br>
+     the keys are all strings, two different keys NEVER have the same string<br>
+     and the value of every key is whatever that particular language considers to be a "value" (we will talk aout that afterwards)<br>
+     those are the fundamental characteristics of an object in any programming language<br><br>
+    But in Javascript  every object has a prototype, which is another object, and most often is useless.<br>
+     the keys are also called attributes or properties<br>
+    all objects have a life cycle<br>
+    : when an object is created, it usually has no attributes, and its prototype is also a very boring atributeless object<br>
+ after it is created we can add attributes to it<br>
+ we can also delete attributes<br>
+ and we can change the values of any attribute<br>
+    to do all those things, we need to know some commands.<br>
+     when an object is put in such a place that your script can never reach it again<br>
+     it is deleted and the memory it used to take is recycled for other uses, like creating new objects.<br>
+    -------------------------------------------------------<br>
+    what is a variable?<br>
+     a variable isa container that has a name and a value.<br>
+     var x;<br>
+that creates a variable<br>
+what is its name and what is its value?<br>
+its name is x , value is undefined<br><br><br>
+    
+    what is a value?<br>
+     the thing ( datatype) we store inside a variable<br>
+    what sort of things can we store inside variables?<br>
+    
+    basically there are only four sort of things that can be values<br>
+1. undefined<br>
+ 2. a string<br>
+ 3. a float<br>
+4. a reference to n object<br>
+    <br>(there are no integers in javascript)
+    <br>
+    what is a reference to an object?<br>
+    <br> a reference is something that allows us to get to an object
+    <br>the first thing is, you can create a refrence to an object, but only when you create a new object
+    <br>the second thing is, you can copy a reference and put the copy in some other container
+    <br>and the third thing is, if you have a reference you can get to the object that the reference points to.
+    <br>also please notice that a reference will lways point to one object
+    <br>and will point always to the SAME object 
+    <br>and cannot point to anything that is not an object.
+    <br>
+    <br>why do we need references?
+    <br>there is no way you can write a line of code that reads data from an object or writes data to an object unless you have a reference to it<br>
+    o.age=12 writes to an object<br>
+    console.log(o.age) reads from an object<br>
+    to do that you need to have gotten a refrerence somehow<br>
+    the easiest way is using a variable to hold the reference
+    
+
+     
+ [11:30] : var x=["a", "b", "help"]; var y=x;
+[11:31] : what is thren inside x, and what is then inside y?
+[11:31] : later
+[11:31] : reading
+[11:32] : same
+[11:32] : y is a reference to x
+[11:32] : i made two questions
+[11:32] : answer the first one kindly
+[11:32] : they will contain same thing
+[11:32] : what is inside x?
+[11:32] : the array object
+[11:33] : again, it is not possible to put objects inside variables
+[11:33] Mr. A (alistair.luik) is offline.
+[11:33] : objects are big and variables are very very small
+[11:33] : it is a reference to the array object
+[11:33] : yes!!
+[11:34] : now answer the seconf question
+[11:34] : y is also a reference to the variable x which itself is a ref to an array object
+[11:34] : my ass it is
+[11:35] : i said tha a reference always points tyo one object
+[11:35] : there is no way a reference can point to a variable
+[11:35] : idk
+[11:35] : good
+[11:35] : y contains a reference to the same object that the reference in x points to
+[11:36] : so we have now one ovject
+[11:37] : line var x= [ ... constructed an object and put a reference to it in variable x
+[11:37] : the line var y=x made a copy of that reference and put it n variable y
+[11:37] : so that now we have two references that point to the same array object
+ 
     
     
 </p>
