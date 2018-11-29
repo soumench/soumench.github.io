@@ -1,0 +1,13 @@
+.code{
+    background-color: chartreuse;
+    border-width:5px;  
+    border-style:inset;
+    padding: 1px;
+}
+
+.quiz{
+    border-width:5px;  
+    border-style:inset;
+    padding: 10px;
+    background-color: #fad0c1;
+}

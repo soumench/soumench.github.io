@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+    <style>
+        body{font-size: 20px; background-color: #d1d1d1; border: 1px solid green; padding: 25px;
+            border-radius: 16px; /*text-align: center;*/box-shadow: 10px 10px 5px grey;
+        }
+        p{background-color: #efebeb; padding: 10px; border: 1px solid black;border-radius: 16px;
+            box-shadow: 10px 10px 5px grey;
+        }        
+        .q{position: relative;
+            font-style: italic; font-family: serif; font-weight: bolder;border-radius: 16px;
+        border: 1px solid red; padding: 10px; margin: 10px; background-color: #8bffff;
+            box-shadow: 10px 10px 5px grey; text-align: left;
+        }
+        .img{ margin-left: 300px;}
+        .key{color: red; background-color: white; font-weight: bolder;}
+        .val{color: green; background-color: azure; font-weight: bolder;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/oops-lesson-tak.css">
+</head>
+
+	<body>
+        <a href="tak-tut-oop-index.html" target="_self">[  Index  ]</a> 
+        <a href="tak-oop-final-1.html" target="_self">[  Page 1  ]</a> 
+        <a href="tak-oop-final-2.html" target="_self">[  Page 2  ]</a><br><br>
+        <h1>Lesson 3</h1>
+<span class="q">How do we tell JS to create an object?</span> <br>
+ <p>
+ The following line does two things. first oit creates an object with no drawers.<br> 
+Then it gives to it the name b2e.<br><br> 
+<code class="code">var b2e={};</code></p><br><br>
+ 
+        
+        
+        
+ <span class="q">How do we tell JS to create a drawer with the <span class="key">key "kukkur"</span> and the <span class="val">value "dog"</span>?</span><br>
+ <p> we can always do this:<br><br>
+     <code class="code">b2e["kukkur]="dog";</code><br><br>
+ but it your key starts with a letter, and has only letters and numbers afterwards, you can also type:<br><br>
+     <code class="code">b2e.kukkur="dog"</code>
+</p><br><br>
+        
+        
+        
+  <span class="q">How can we ask JS what is the contents of the drawer kukur in the chest b2e?</span><br>
+ <p>When we want to send the value to the console, we do this:<br><br>
+     <code class="code">console.log(b2e["kukkur"])</code><br><br>
+ When we want to add the value to the end of the HTML page, we do this:<br><br>
+ <code class="code">document.write(b2e["kukkur"])</code>
+</p><br><br>
+        
+        
+        
+        
+<span class="q"> How can we make an object have two names?</span><br>
+<p>       
+ Do this: <br><br>
+    <code class="code">var e2b={}; <br> <br>var englishtobengali=e2b;  <br><br>e2b.kukkur="dog"</code> <br> <br>
+ After you do that it does not matter if you type e2b.kukur or bengali2english.kukur, you get                              to the same drawer anyway, and you get "dog".
+</p><br><br> 
+        
+        
+ <h3>EXERCISE</h3>
+<div class="quiz">
+ <p>Try to guess what the following script will show
+ Do this: 
+     </p>
+        <code class="code">
+        var b2e={}; <br> <br>
+        var bengalitoenglish=b2e; <br><br>
+        e2b.kukur="dog";  <br><br>             
+            console.log(bengalitoenglish.kukur)<br></code>
+ <p>After you guess, look at <a href="" target="_self">THIS PAGE</a> to see if your guesswas right.</p>
+ </div> <br><br>      
+   
+        
+        <a href="tak-tut-oop-index.html" target="_self">[  Index  ]</a> 
+        <a href="tak-oop-final-1.html" target="_self">[  Page 1  ]</a> 
+        <a href="tak-oop-final-2.html" target="_self">[  Page 2  ]</a><br><br>
+
+</body>
+</html>
