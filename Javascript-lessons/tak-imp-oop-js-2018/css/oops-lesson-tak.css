@@ -22,7 +22,8 @@ body{font-size: 20px; background-color: #ffffff; border: 1px solid green; paddin
 }
 
 .code{
-    background-color: chartreuse;
+    font-weight: bolder;
+    background-color: #f2fff3;
     border-width:5px;  
     border-style:inset;
     padding: 1px;
