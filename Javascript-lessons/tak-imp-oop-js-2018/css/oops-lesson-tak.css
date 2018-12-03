@@ -14,7 +14,7 @@ body{font-size: 20px; background-color: #ffffff; border: 1px solid green; paddin
         }
         .img{ margin-left: 300px;}
         .key{color: red; background-color: white; font-weight: bolder;}
-        .val{color: green; background-color: azure; font-weight: bolder;}
+        .tt{color: green; background-color: azure; font-weight: bolder; font-style: italic;}
 
 .combodiv{
     background-color: #efebeb; padding: 10px; border: 1px solid black;border-radius: 16px;
@@ -34,4 +34,11 @@ body{font-size: 20px; background-color: #ffffff; border: 1px solid green; paddin
     border-style:inset;
     padding: 10px;
     background-color: #fad0c1;
+}
+
+.flex-container {
+  display: flex;
+    /*flex-direction: column;*/
+     flex-wrap: wrap;
+     justify-content: center;
 }
