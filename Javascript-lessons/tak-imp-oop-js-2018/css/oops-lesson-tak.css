@@ -14,7 +14,11 @@ body{font-size: 20px; background-color: #ffffff; border: 1px solid green; paddin
         }
         .img{ }
         .key{color: red; background-color: white; font-weight: bolder;}
-        .tt{color: green; background-color: azure; font-weight: bolder; font-style: italic;}
+
+        .tt{color: green;  font-weight: bolder; font-style: italic;
+                font-family: monospace; border: 2px solid red; padding: 2px;
+            border-radius: 8px; background-color: yellow;
+            }
 
 .combodiv{
     background-color: #efebeb; padding: 10px; border: 1px solid black;border-radius: 16px;
