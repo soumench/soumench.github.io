@@ -6,21 +6,29 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> Title </title>
     <link rel="stylesheet" type="text/css" href="css/oops-lesson-tak.css">
+    <style>
+        p{
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 
 	<body>
         [<a href="tak-tut-oop-index.html" target="_self">  Index  </a>] 
         [<a href="tak-oop-final-1.html" target="_self">  Previous Page  </a>] 
         <!--[<a href="tak-oop-final-2.html" target="_self"> Page 2  </a>]--><br><br>
-        <!--<h1>Lesson 3</h1>-->
+        
 <div class="q">How do we tell JS to create an object?</div> 
  <p>
 The following line does two things: <br>
 First it creates an object with no drawers.<br> 
 Then it gives to it the name b2e.<br><br> 
-<code class="code">var b2e={};</code></p><br>
- In the rest of the script, we will be able to use b2e to mean the object we created.       
-<br><br>
+<code class="code">var b2e={};</code></p>
+ <p>In the rest of the script, we will be able to use b2e to mean the object we created.
+    The b2e= in front does nothing, but it will allow us later to ad and remove drawers from that object.
+</p>       
+
  
         
         
@@ -30,7 +38,7 @@ Then it gives to it the name b2e.<br><br>
      <code class="code">b2e["kukkur]="dog";</code><br><br>
  But if your key starts with a letter, and has only letters and numbers afterwards, you can also type:<br><br>
      <code class="code">b2e.kukkur="dog"</code>
-</p><br><br>
+</p>
         
         
         
@@ -39,7 +47,7 @@ Then it gives to it the name b2e.<br><br>
      <code class="code">console.log(b2e["kukkur"])</code><br><br>
  When we want to add the value to the end of the HTML page, we do this:<br><br>
  <code class="code">document.write(b2e["kukkur"])</code>
-</p><br><br>
+</p>
         
         
         
@@ -52,7 +60,7 @@ Then it gives to it the name b2e.<br><br>
     e2b.kukkur="dog"</pre> 
  <!--<p>-->
      After you do that it does not matter if you type e2b.kukur or bengali2english.kukur, you get to the same drawer anyway, and you get "dog".
-</div><br><br> 
+</div> 
         
         
  <h3>EXERCISE:</h3>
