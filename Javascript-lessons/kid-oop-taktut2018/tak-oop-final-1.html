@@ -8,24 +8,26 @@
     <link rel="stylesheet" type="text/css" href="css/oops-lesson-tak.css">
     <style>
         .boxrow_flex_container{
+            box-sizing: border-box;
+            width: 600px;
+            margin: 20px;
             display: flex;
-            flex-direction: row;
-            flex:1; 
-            margin-top: 25px;
-            margin-bottom: 25px;
+            /*flex-direction: row;*/
+            /*flex:1; */
+           
+            padding: 20px;
         }
-        .class="d1_flex"{
+        .d1_flex{
+            
+            display: flex;
+            flex: 1;
+           
+        }
+        .d2_flex{
             display: flex;
             flex: 1;
         }
-        .class="d2_flex"{
-            display: flex;
-            flex: 1;
-        }
-        .class="d3_flex"{
-            display: flex;
-            flex: 1;
-        }
+       
     </style>
 </head>
 
@@ -39,15 +41,15 @@
         
         
         <div class="q">How do we store data inside an 'object'?</div>
-        <div class="boxrow_flex_container">
-        <div class="d1_flex">In a furniture, each drawer has a label and all the labels  are different.
+        
+        <div >In a furniture, each drawer has a label and all the labels  are different.
             We have to say what we want to save, and in which drawer we want it saved. Then to recover it we ask for the contents of that drawer.
             In computer parlance, a drawer label is called a <span class="tt">key</span>, and its contents are called a <span class="tt">value</span>.
         </div>
-             
-         <div><p><img  class="d2_flex" alt="locker" src="img/locker.jpg" width="200" height="340"></p></div>
+        <div class="boxrow_flex_container">     
+        <div class="d1_flex"><p><img alt="locker" src="img/locker.jpg" width="200" height="340"></p></div>
             
-        <div class="d3_flex">            
+        <div class="d2_flex">            
             Let's say we want an 'object' and then we want to put the English translations of some Bengali words in it.<br>We tell the furniture, please put the word "dog" into the drawer that has label "kukur". After a while we ask the furniture, read to me what you have in the drawer 'kukur' and the furniture replies "dog".<br>             
             Now "dog" is said to be a value, and  the "kukur" that we use to retrieve the value is said to be a key.
             

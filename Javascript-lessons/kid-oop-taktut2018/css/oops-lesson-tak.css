@@ -28,10 +28,7 @@ body{
         .img{ width: 100%; }
         .key{color: red; background-color: white; font-weight: bolder;}
 
-        .tt{color: green;  font-weight: bolder; font-style: italic;
-                font-family: monospace; border: 2px solid red; padding: 2px;
-            border-radius: 8px; background-color: yellow;
-            }
+        
 
 .combodiv{
     background-color: #efebeb; padding: 10px; border: 1px solid black;border-radius: 16px;
@@ -55,7 +52,7 @@ body{
 
 .flex-container {
     display: flex;
-    /*max-width: 800px;*/
+    max-width: 800px;
    /* overflow: hidden;*/
     align-items: stretch;
   /*flex-direction: column;
@@ -98,4 +95,14 @@ body{
     padding: 4%;
     box-shadow: 10px 10px 5px grey;
     background-color: #fff7ea;
+}
+
+
+
+
+.tt{
+    clear: both;
+    color: green;  font-weight: bolder; font-style: italic;
+                font-family: monospace; border: 2px solid red; padding: 2px;
+            border-radius: 8px; background-color: yellow;
 }
