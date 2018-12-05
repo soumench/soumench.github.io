@@ -3,7 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{font-size: 20px; background-color: #ffffff; border: 1px solid green; padding: 25px;
+body{
+    height: 100vh;
+   /* display: flex;
+    align-items: center; // CROSS AXIS
+    justify-content: center; // MA
+    */
+    
+    font-size: 20px; background-color: #ffffff; border: 1px solid green; padding: 25px;
             border-radius: 16px; /*text-align: center;*/box-shadow: 10px 10px 5px grey;
         }
         /*p{background-color: #efebeb; padding: 10px; border: 1px solid black;border-radius: 16px;
@@ -47,26 +54,39 @@ body{font-size: 20px; background-color: #ffffff; border: 1px solid green; paddin
 
 .flex-container {
   display: flex;
-  flex-direction: column;
+  /*flex-direction: column;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap;*/
     /* flex-flow: row wrap; *//*The flex-flow property is a shorthand property for setting both the flex-direction and flex-wrap properties.*/
    /* justify-content: center;*/
    /* justify-content: flex-end;*/
-   justify-content: space-around;
+   /*justify-content: space-around;*/
    
-    align-items: stretch;
-    align-items: center;
+    /*align-items: stretch;
+    align-items: center;*/
     /*line-height: 25px;*/
   /*font-size: 20px;*/
 }
 
 .flex-container > div {
   
-  width: 200px; height: 420px;
-  margin-top: 5px;
+  /*width: 200px; height: 400px;*/
+ /* margin-top: 5px;*/
    /*text-align: center;  */
   /*text-align: center;*/
   /*line-height: 75px;*/
   /*font-size: 30px;*/
+}
+.furniture_img{
+    /*flex: 0 0 40%;*/
+    flex: 1;
+}
+.furniture_desc{
+    /*flex: 0 0 60%;*/
+    flex: 1;
+    border: 4px solid grey;
+    border-radius: 16px;
+    padding: 5%;
+    box-shadow: 10px 10px 5px grey;
+    background-color: #fff7ea;
 }
