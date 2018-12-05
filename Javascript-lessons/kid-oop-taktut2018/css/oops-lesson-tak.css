@@ -55,7 +55,7 @@ body{
 
 .flex-container {
     display: flex;
-    max-width: 800px;
+    /*max-width: 800px;*/
    /* overflow: hidden;*/
     align-items: stretch;
   /*flex-direction: column;
