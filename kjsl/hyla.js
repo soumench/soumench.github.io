@@ -5,7 +5,7 @@
     var body = document.getElementsByTagName("BODY")[0];
     var p=document.createElement("p");
     var a=document.createElement("a");
-    body.appendChild(p);
+    /*body.appendChild(p);*/
     p.appendChild(a);
     a.innerHTML="back to index"
     a.href="index.html"
