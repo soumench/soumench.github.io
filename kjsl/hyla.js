@@ -12,7 +12,7 @@
     
     var elemDiv = document.createElement('div');
     elemDiv.className="bottomdiv"
-    elemDiv.style.cssText = 'position:absolute; width:30%;height:5%; opacity:0.7; z-index:100; background:#b2fd96; border: 1px solid black; padding: 2%; border-radius:16px; margin:2%;'; 
+    /*elemDiv.style.cssText = 'position:absolute; width:30%;height:5%; opacity:0.7; z-index:100; background:#b2fd96; border: 1px solid black; padding: 2%; border-radius:16px; margin:2%;'; */
    
     body.append(elemDiv)
     elemDiv.appendChild(p)    
@@ -24,7 +24,7 @@
 
 
 /*
-Home task
+Hometask
 1. add a div at the end of the body
 2. give a class to that div, such as for instance bottomdiv
 3. add the p to that div, not to the body
