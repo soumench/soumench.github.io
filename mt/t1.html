@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+</head>
+
+	<body>
+        <h2 style="color: red">Sorry! This page cannot be displayed.</h2>
+        <input type="button" id="Noun">
+        <input type="button" id="Pronoun">
+       <p>
+        <pre>
+        css linking :
+        &lt link rel="stylesheet" type="text/css" href="css/mcq.css" &gt
+        
+        Random:
+        let cur_a = cur_aud_list[Math.floor(Math.random()*cur_aud_list.length)];
+        
+        Reload/Refresh: 
+        onClick="window.location.reload()"
+        
+        remove DOM:
+        e("quiz_box").parentNode.removeChild(e("quiz_box"));
+        
+        Rotate:
+        function rotate(id, degree){e(id).style = 'transform: rotate(' + degree + 'deg)';}
+        
+        Progress Bar:
+        &lt progress id="progressBar" value="0" max="100" &gt &lt/progress &gt
+        e("progressBar").value=0; e("progressBar").max = 100;
+        
+        Timer:
+        function stop_timer(){clearInterval(time);}
+        function start_timer(){time=setInterval(write,1000);}
+        &lt button onclick="setTimeout(myFunction, 3000);" &gt
+        setInterval( ()=>{ funca(10,3); }, 500);
+        
+        Zindex:
+        e("bg_pic2").style.zIndex=-1;
+        
+        const beep=new Audio("audio/peenk.oga") 
+          
+        Distance calculate:
+        dx = a.x - b.x; dy = a.y - b.y; distance = Math.sqrt(dx*dx + dy*dy);
+          
+          
+        const kbbtns=[Noun,Pronoun]
+        var k=kbbtns.length
+        while(k--){
+            kbbtns[k].setAttribute("onclick", "show("+k+")");
+            kbbtns[k].value=kbbtns[k].id
+            kbbtns[k].setAttribute("class","RB")
+            kbbtns[k].disabled=false
+            kbbtns[k].style.color="black"
+        }function show(p){
+        if(0===p){/*dostuff*/} else if(1===p){/*do stuff*/}
+        
+        
+      Change BGCOLOR BGIMG:
+      function myFunction() {
+        document.body.style.backgroundColor = "#f3f3f3";
+        document.body.style.backgroundImage = "url('img_tree.png')";
+       }
+        </pre>
+        
+        </p>
+    Soumen
+</body>
+</html>
