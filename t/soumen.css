@@ -3,3 +3,10 @@
 a.lts{
     color: green; 
 }
+
+p.but{
+    background-color:  #ffddff;
+    border-width:0px;  
+    border-style:groove;
+    box-shadow:2px 2px 10px black; 
+}
