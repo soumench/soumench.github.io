@@ -19,4 +19,11 @@ p.but{
 /*.lts{font-size:200%;}*/
 p.lts{font-size:200%;}
 
- p a {background-color:lime;}
+p a {background-color:lime;}
+
+p a {font-style:italic}
+
+p{ background-color: cyan;}
+
+p.plant{ background-color: green;}
+p.animal{  color: red;}
