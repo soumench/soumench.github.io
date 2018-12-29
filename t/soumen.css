@@ -41,3 +41,9 @@ p.example{
     padding: 4px;
     box-shadow: 2px 2px;
 }
+
+.ltt{
+   font-family:  monospace,monospace; 
+}
+
+b{font-family: monospace,monospace};
