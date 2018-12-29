@@ -25,5 +25,7 @@ p a {font-style:italic}
 
 p{ background-color: cyan;}
 
+ div  p{ background-color: cyan;}
+
 p.plant{ background-color: green;}
 p.animal{  color: red;}
