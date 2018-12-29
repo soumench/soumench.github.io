@@ -31,3 +31,13 @@ div.zoo p.plant {border: 3px solid red}
 
 p.plant{ background-color: green;}
 p.animal{  color: red;}
+
+
+p.example{
+    background-color: #d2ffd2; 
+    border-radius: 16px;
+    border-color: #fa81fa;
+    border-style:inset;
+    padding: 4px;
+    box-shadow: 2px 2px;
+}
