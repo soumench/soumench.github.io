@@ -23,6 +23,8 @@ p a {background-color:lime;}
 
 p a {font-style:italic}
 
+div.zoo p.plant {border: 3px solid red}
+
 /*p{ background-color: cyan;}*/
 
  div  p{ background-color: cyan;}
