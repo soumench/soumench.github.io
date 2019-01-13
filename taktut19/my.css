@@ -3,6 +3,24 @@
 }
 
 body{
-    color: white;
-    background-color: #009a00
+    color: #bc0553;
+    background-color: #b6f4b6;
+    font-family: sans-serif;
+}
+
+.header{
+    border: 4px solid red;
+    background-color: bisque;
+    border-radius: 16px;
+    padding: 10px;
+    
+}
+h1.devnag{
+   border: 4px solid red;
+    background-color: bisque;
+    border-radius: 16px;
+    padding: 10px; 
+    color: crimson;
+    box-shadow: 5px, 5px;
+    box-shadow:10px 10px 10px grey;  
 }
