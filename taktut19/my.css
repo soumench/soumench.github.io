@@ -17,3 +17,14 @@ h1.devnag{
     padding: 10px; 
     color: crimson;     
 }
+
+p.trans{
+    background-color: #61aafc;  
+}
+p.example{
+    background-color: #fad5ff;
+}
+
+p.question{
+    background-color: yellow;
+}
