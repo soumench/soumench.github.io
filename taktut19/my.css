@@ -16,7 +16,7 @@ h1.devnag{
     padding: 10px; 
     color: crimson; 
     border-width:8px;  
-    border-style:ridge;
+    border-style:solid;
     border-radius: 16px;
     border-color: brown;
     box-shadow:10px 10px 10px grey;
@@ -27,7 +27,7 @@ i{font-style:normal}
 p.trans,p.example,p.question{
     padding: 10px;
     border-width:4px;  
-    border-style:inset;
+    border-style:solid;
     border-radius: 16px;
     box-shadow:10px 10px 10px grey; 
 }
