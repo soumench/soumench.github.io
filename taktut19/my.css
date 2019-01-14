@@ -5,6 +5,7 @@ body{
     border: 10px red double;
     border-radius: 16px;
     padding: 10px;
+    font-size: 22px;
 }
 
 .header{    
@@ -28,13 +29,15 @@ p.trans,p.example,p.question{
     padding: 10px;
     border-width:4px;  
     border-style:solid;
-    border-radius: 16px;
-    box-shadow:10px 10px 10px grey; 
+    padding: 10px;
+    box-shadow:1px 10px 10px grey; 
 }
 
 p.trans{
-    background-color: #b9daff;
+    background-color: #cee5ff;
     border-color: #1400ff;
+    
+    
 }
 p.example{
     background-color: #fdeeff;
@@ -42,6 +45,7 @@ p.example{
 }
 
 p.question{
-    background-color: yellow;
+    background-color: #ffffb6;
     border-color: #1e2103;
+    border-radius: 16px;
 }
