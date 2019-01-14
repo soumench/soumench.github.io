@@ -18,6 +18,7 @@ h1.devnag{
     border-width:8px;  
     border-style:ridge;
     border-radius: 16px;
+    border-color: brown;
     box-shadow:10px 10px 10px grey;
 }
 
@@ -32,12 +33,15 @@ p.trans,p.example,p.question{
 }
 
 p.trans{
-    background-color: #b9daff;  
+    background-color: #b9daff;
+    border-color: #1400ff;
 }
 p.example{
     background-color: #fdeeff;
+    border-color: #f81a1a;
 }
 
 p.question{
     background-color: yellow;
+    border-color: #1e2103;
 }
