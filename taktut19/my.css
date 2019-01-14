@@ -1,6 +1,6 @@
 body{
     color: #000000;
-    background-color: #eeffee;
+    background-color: #e6f7ff;
     font-family: sans-serif;
     border: 10px red double;
     border-radius: 16px;
@@ -15,7 +15,7 @@ body{
 h1.devnag{ 
     background-color: #fff3e6;    
     padding: 10px; 
-    color: crimson; 
+    color: #8a1eb2; 
     border-width:8px;  
     border-style:solid;
     border-radius: 16px;
@@ -23,29 +23,38 @@ h1.devnag{
     box-shadow:10px 10px 10px grey;
 }
 
-i{font-style:normal}
+i{
+    font-style:normal;
+    color: red;
+}
+
+b{
+    font-style:normal;
+    color: #9d00ff;
+}
 
 p.trans,p.example,p.question{
-    padding: 10px;
-    border-width:4px;  
+    padding: 12px;
+    border-width:5px;  
     border-style:solid;
     padding: 10px;
     box-shadow:1px 10px 10px grey; 
 }
 
+
 p.trans{
-    background-color: #cee5ff;
+    background-color: #e1e0ff;
     border-color: #1400ff;
     
     
 }
 p.example{
-    background-color: #fdeeff;
-    border-color: #f81a1a;
+    background-color: #c7ffda;
+    border-color: #013917;
 }
 
 p.question{
-    background-color: #ffffb6;
+    background-color: #fff7f4;
     border-color: #1e2103;
     border-radius: 16px;
 }
