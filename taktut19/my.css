@@ -4,7 +4,7 @@
 
 body{
     color: #bc0553;
-    background-color: #b6f4b6;
+    background-color: #eeffee;
     font-family: sans-serif;
 }
 
@@ -19,10 +19,10 @@ h1.devnag{
 }
 
 p.trans{
-    background-color: #61aafc;  
+    background-color: #b9daff;  
 }
 p.example{
-    background-color: #fad5ff;
+    background-color: #fdeeff;
 }
 
 p.question{
