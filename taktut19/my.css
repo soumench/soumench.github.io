@@ -24,7 +24,7 @@ h1.devnag{
     
 }
 
-.lts{
+.lts, .lttself{
     font-family: monospace;
     font-weight: bolder;
 }
