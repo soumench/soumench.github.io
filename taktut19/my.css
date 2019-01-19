@@ -21,6 +21,12 @@ h1.devnag{
     border-radius: 16px;
     border-color: brown;
     box-shadow:10px 10px 10px grey;
+    
+}
+
+.lts{
+    font-family: monospace;
+    font-weight: bolder;
 }
 
 i{
