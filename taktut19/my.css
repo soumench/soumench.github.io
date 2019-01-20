@@ -20,7 +20,7 @@ h1.devnag{
     border-style:solid;
     border-radius: 16px;
     border-color: brown;
-    box-shadow:10px 10px 10px grey;
+    box-shadow:0px 10px 10px grey;
     
 }
 
@@ -33,17 +33,20 @@ h1.devnag{
 i{
     font-style:normal;
     color: red;
+    font-weight: bolder;
 }
 
 b{
     font-style:normal;
     color: #9d00ff;
+    font-weight: bolder;
 }
 
 p.trans,p.example,p.question{
     padding: 12px;
     border-width:1px;  
     border-style:solid;
+    border-radius: 5px;
     padding: 10px;
     /*box-shadow:1px 10px 10px grey; */
 }
@@ -61,7 +64,7 @@ p.example{
 }
 
 p.question{
-    background-color: #fff7f4;
+    background-color: #fffcfb;
     border-color: #1e2103;
     border-radius: 16px;
 }
