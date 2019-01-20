@@ -47,6 +47,13 @@ b{
     font-family: monospace;
 }
 
+.z{
+    background-color: white;
+    padding: 5px;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
 p.trans,p.example,p.question{
     padding: 12px;
     border-width:1px;  
@@ -84,6 +91,13 @@ p.question{
 th, td {
   border: 2px solid green;
   padding: 10px;
-text-align: center;
+  text-align: center;
+ 
 }
+tr:a{
+    background-color: white;
+}
+
+
+
 tr:hover {background-color: #f5f5f5;}
