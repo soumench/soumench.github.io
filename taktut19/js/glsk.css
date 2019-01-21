@@ -80,22 +80,23 @@ p.question{
     border-color: #1e2103;
     border-radius: 16px;
 }
-
-.prevnext{
-    border: 4px solid black;
+ 
+table.prevnext{
+    border: 5px solid purple;
     border-collapse: collapse;
     font-family: monospace;
     font-size: 16px;
     font-weight: bolder;
+    text-align: center;
 }
 th, td {
   border: 2px solid green;
-  padding: 10px;
-  text-align: center;
- 
+  padding: 10px; 
 }
-tr:a{
+
+tr{
     background-color: white;
+    
 }
 
 
