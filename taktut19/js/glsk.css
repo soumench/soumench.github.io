@@ -1,6 +1,6 @@
 body{
     color: #000000;
-    background-color: #e6f7ff;
+    background-color: #ffe7f3;
     font-family: sans-serif;
     border: 10px red double;
     border-radius: 16px;
@@ -61,6 +61,7 @@ p.trans,p.example,p.question{
     border-radius: 5px;
     padding: 10px;
     /*box-shadow:1px 10px 10px grey; */
+    background-color: #eab0ff;
 }
 
 
