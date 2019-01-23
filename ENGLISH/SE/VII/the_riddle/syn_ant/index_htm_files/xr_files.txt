@@ -5,7 +5,9 @@ index_htm_files/38@2x.png
 index_htm_files/45.png
 index_htm_files/45@2x.png
 index_htm_files/49.png
-index_htm_files/50.png
-index_htm_files/50@2x.png
 index_htm_files/52.png
 index_htm_files/55.png
+index_htm_files/58.png
+index_htm_files/58@2x.png
+index_htm_files/59.png
+index_htm_files/59@2x.png
