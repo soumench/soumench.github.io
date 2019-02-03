@@ -59,7 +59,10 @@ a:active .xr_ro {opacity:0;}
 .xr_nb1 {position: relative;}
 .xr_nb1:after {content: ''; position: absolute; top: 50%; right: .5em; height: 0px; width: 0px; border: 5px solid transparent; margin-top: -5px; margin-right: -3px; border-color: transparent; border-left-color: inherit;}
 .xr_apb {display:block; position:absolute;}
+.xr_c_Theme_Color_3 {color:#54A410;}
 .xr_bgb0 {background:url('1.png') -768px 1536px repeat;}
 .xr_bgb1 {background:url('1.png') -768px 1536px repeat;}
 .xr_bgb2 {background:url('1.png') -768px 1536px repeat;}
 .xr_bgb3 {background:url('1.png') -768px 1536px repeat;}
+.xr_bgb4 {background:url('1.png') -768px 1536px repeat;}
+.xr_bgb5 {background:url('1.png') -768px 1536px repeat;}
