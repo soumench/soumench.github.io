@@ -28,3 +28,6 @@ index_htm_files/46@2x.png
 index_htm_files/42.png
 index_htm_files/58.png
 index_htm_files/58@2x.png
+index_htm_files/62.png
+index_htm_files/67.jpg
+index_htm_files/67@2x.jpg
