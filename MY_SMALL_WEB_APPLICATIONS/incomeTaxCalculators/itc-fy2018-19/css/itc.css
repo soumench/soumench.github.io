@@ -1,7 +1,7 @@
 h3,.heading{position: relative; text-align: center;}
-h3{background-color: #f8f8e9;}
+h3{background-color: #f7d6d6;}
 .heading{font-weight: bolder; left: 0px;}
-body{font-family: sans-serif; background: #d9d9d9; font-size: 16px;}
+body{font-family: sans-serif; background: #ffffff; font-size: 16px;}
 .heading, .ui, .remarks,#totald{ position: absolute; right: 0px;}
 .ui{ left: 250px;}
 .remarks{ left: 10px; color: blue}
