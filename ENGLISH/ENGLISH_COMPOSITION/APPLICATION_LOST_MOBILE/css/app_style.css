@@ -1,10 +1,10 @@
 
 		body{ text-align: center;
 			width: 520px; height: 750px;
-			border: 2px solid red;
+			/*border: 2px solid red;*/
 			display: block;
 			font-size:18px;
-			background-color: #5d5c5c;
+			background-color: #ffffff;
 		}
 		#topic{ font-size:100%;
 			border: 2px solid black; border-radius: 20px; 
@@ -12,18 +12,18 @@
 		}
 		#ui{
 			background-color:#f5deb3; text-align:left; margin-left: 0%; margin-right: auto;
-			background-color: #5d5c5c;
+			background-color: #ffffff;
 			color: aliceblue;
 		}
-		.txt{color: white; }
+		.txt{color: #000000; }
 		#opt_group{ 
 			text-align:left; margin-left:1%;
-			background-color: #5d5c5c;
-			color:white;
+			background-color: #ffffff;
+			color:#000000;
 		}
 		#absent_days{
-			background-color: #5d5c5c;
-			color: aliceblue;
+			background-color: #ffffff;
+			color: #000000;
 		}
 		#letter{text-align: left; background-color:white;}
 		footer{
