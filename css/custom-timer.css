@@ -5,17 +5,18 @@ body {
 }
 
 h3 {
-    box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);
-    background-color: #FFAF72;
+    /*box-shadow: 3px 3px 10px 10px rgba(52, 4, 4, 0.79);*/
+    background-color: #ffffff;
     margin-top: 0px;
 }
 
 .presetBtn {
     font-size: 100%;
+    
 }
 
 .presetBtn:hover {
-    font-size: 130%;
+    font-size: 120%;
     background-color: rgba(220, 20, 60, 0.35);
 }
 
