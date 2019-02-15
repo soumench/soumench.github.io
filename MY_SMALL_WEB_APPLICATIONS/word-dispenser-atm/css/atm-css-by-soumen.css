@@ -1,5 +1,5 @@
 /*Created by Soumen Chakraborty - 2018- only for Educational and non commercial Purpose*/
-body{background-color: #000000; font-family:sans-serif; font-weight: bolder; text-align: center;}
+body{background-color: #ffffff; font-family:sans-serif; font-weight: bolder; text-align: center;}
 #box{background-image: radial-gradient(white, grey);z-index: -1;}
 #box,.LB,#LBBOX,.RB,#RBBOX,#atmScreen,#kbBox,#atmCardSlotBox,#atmName,#atmcard,#atmText,#gpin,#cardSlot,#blinker,#soumen{position: absolute; }
 #box{width: 480px; height: 640px; border: 1px solid black; border-radius: 16px;}
