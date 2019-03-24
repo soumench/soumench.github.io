@@ -124,7 +124,7 @@ const list=[
 			"Gip was",
 	 		"very impressed with that magic shop.",
 	 		"upset with that magic shop.",
-	 		"indifferent with that magic shop.",
+	 		"indifferent to that magic shop.",
 	 		"a", 
 			
 			"The box of soldiers came alive",
