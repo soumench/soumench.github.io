@@ -1,0 +1,185 @@
+const topic_name ="Uncle Podger Hangs a Picture"; 
+const list=[
+            "Jerome Klapka Jerome was a",
+	 		"playwright.",
+	 		"famous poet.",
+	 		"comic writer and humorist.",
+	 		"c",
+	 
+	 
+            "Uncle Podger was",
+	 		"a highly skilled man.",
+	 		"not interested in putting up the picture.",
+	 		"an unskilled man.",
+	 		"c",
+	
+	        "Uncle Podger collected all the materials himself.",
+	 		"True",
+            "I don't know.",
+	 		"False",
+	 		"c",
+	 		
+	 		"Uncle Podger wanted a hammer from",
+	 		"Tom.",
+	 		"Will.",
+	 		"Maria.",
+	 		"b",
+	 		
+	 		"Uncle wanted the step-ladder from",
+	 		"Tom.",
+	 		"Will.",
+	 		"Maria.",
+	 		"a",
+	 		
+	 		"Uncle wanted Maria",
+	 		"to hold the light.",
+	 		"to clean the mess.",
+	 		"to leave the room.",
+	 		"a",
+	 		
+	 		"The girl went out again ",
+	 		"to buy some pizza.",
+	 		"for a bit of picture cord.",
+	 		"to bring the step-ladder.",
+	 		"b",
+	 
+	 		"The handkerchief was ",
+	 		"in the pocket of his shirt.",
+	 		"under the table.",
+	 		"in the pocket of his coat.",
+	 		"c",
+	 
+	 		"For half an hour, the uncle himself was sitting ",
+	 		"on his coat.",
+	 		"on the table.",
+	 		"on the roof top.",
+	 		"a",
+	 
+	 		"How many people were there in the room?",
+	 		" five.",
+	 		" eight including uncle Podger.",
+	 		" ten.",
+	 		"b",
+	 
+	 		"Uncle Podger was puzzled after losing his",
+	 		"hamburger",
+	 		"hammock.",
+	 		"hammer.",
+	 		"c",
+	 
+	 		"Uncle podger lost the sight",
+            "of the mark he made on the wall.",
+	 		"in the dark.",
+	 		"of the photo frame.",
+	 		"a",
+	 
+	 		"Uncle addressed his family members ",
+	 		"with due respect.",
+	 		"as fools.",
+	 		"as intelligent ones.",
+	 		"b",
+	 
+	 		"Uncle dropped the hammer",
+	 		"on the piano.",
+	 		"on somebody's head.",
+	 		"on somebody's toes.",
+	 		"c",
+	 
+	 		"Maria was ",
+	 		"the sister of Uncle Podger.",
+	 		"the wife of uncle Podger.",
+	 		"the mother of uncle Podger.",
+	 		"b",
+			
+			"Aunt Maria was ",
+	 		"interested to help the uncle.",
+	 		"fed up with the uncle's way of working.",
+	 		"eager to assist uncle in putting up the picture.",
+	 		"b",  
+			
+			"Finally a new hole was made. ",
+	 		"True",
+	 		"False",
+	 		"No idea.",
+	 		"a",
+	
+			"The task was completed ",
+	 		"in the evening.",
+	 		"at noon.",
+	 		"at around midnight.",
+	 		"c",
+	
+			"The picture frame on the wall",
+	 		"was stable and secure.",
+	 		"was crooked and insecure.",
+	 		"was beautifully mounted.",
+	 		"b",
+	
+			"Mess means",
+	 		"a sheep.",
+	 		"a dirty state of things.",
+	 		"a clean place.",
+	 		"b",
+		
+			"The word yell means",
+	 		"shout.",
+	 		"doubt.",
+	 		"scout.",
+	 		"a", 
+			
+			"Fuss means",
+	 		"to solve a problem.",
+	 		"to breathe.",
+	 		"to create trouble.",
+	 		"c",
+			
+			"The crooked means",
+	 		"bait.",
+	 		"straight.",
+	 		"not straight.",
+	 		"c",
+	
+			"Commotion means",
+	 		"double.",
+	 		"trouble.",
+	 		"bubble.",
+	 		"b",
+	
+			"Gaping means",
+	 		"looking with the mouth open.",
+	 		"looking with the mouth closed.",
+	 		"looking with the eyes closed.",
+	 		"a",
+	
+			"The word grovel means",
+	 		"stall.",
+	 		"crawl.",
+	 		"hall.",
+	 		"b", 
+	
+			"Uncle Podger's family was interested in music.",
+	 		"False.",
+	 		"I have no idea.",
+	 		"True.",
+	 		"c",
+	
+			"Uncle injured his",
+	 		"head.",
+	 		"thumb.",
+	 		"eyes.",
+	 		"b",
+	
+			"Uncle cut himself",
+	 		"while trying to save the glass.",
+	 		"for fun.",
+	 		"inspite of his being a skilled man.",
+	 		"a",
+			
+			"Uncle Podger did the job all by himself.",
+	 		"Sorry, I don't know.",
+	 		"True",
+	 		"False",
+	 		"c"
+        ];
+
+/*Created By Soumen Chakraborty*/
