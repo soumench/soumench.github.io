@@ -22,6 +22,17 @@
             </p>
             
             <p>
+            Here is an audio clip - a Bengali translation of "The cat went to the market." ( "biRAlTi bAjAre giyechilo").<br>
+                Let's make spectrograms of this. <br>
+                <button onclick="play_sound()">Click me to play the sound.</button><br>
+                The image below is made with wasp.<br>
+                <img src="voiced-unvoiced/wasp%20biral%20wide%20and%20narrow.jpg" alt="wasp img" width="800" height="600"><br>
+                 The image below is made with Praat.<br>
+                <img src="voiced-unvoiced/praat%20biral%20wide%20and%20narrow.jpg" alt="wasp img" width="800" height="600"><br>
+                
+            
+            </p>
+            <p>
                 dA  dhA   tA   thA > at first the graphs will look identical.  But upon meticulous inspection here are the following differences: <br>
 
                 The consonants dA and dhA  are "voiced" consonants. <br>
@@ -48,5 +59,11 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/OV5J6BfToSw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </p>
         </div>
+        <script>
+          const biral=new Audio("voiced-unvoiced/biraltibajaregiyechhilo.wav");
+            function play_sound(){
+                biral.play();
+            }
+        </script>
 </body>
 </html>
