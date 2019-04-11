@@ -9,7 +9,7 @@
         h2{
             text-align: center;
         }
-        body{ font-family: sans-serif; font-size: 24px; border: 0px; margin-left: 25px; padding: 0px; background-color: #fff;}
+        body{ font-family: sans-serif; font-size: 24px; border: 0px; margin-left: 25px; padding: 0px; background-color: #fff; text-align: center;}
         #vuv{ margin: 2px; padding: 2px; }
         #imgbox{
             display: inline-block;
@@ -28,13 +28,13 @@
             <div>
             
                 A spectrogram is a visual representation of the air vibration caused by any sound. <br>
-                We can visually represent a speech sound taking the help of Spectrogram in Phonetics. <br>
                 
-                Example. I recorded a sound file with the bengali sentnce "biRAlTi bAjAre giyechilo" (NVM what it means, it's not important).<br>
+                
+                Example. I recorded a sound file with the bengali sentnce  <button onclick="play_sound();"><h3>biRAlTi bAjAre giyechilo</h3></button> (NVM what it means, it's not important).<br>
                 Then I turned it into graphics using two different pieces of software, and i got these fourgraphs; all of them represent the same sound, but in different ways.<br>
                 
                 
-                <!--I used two spectrogram generating software -  Wasp and Praat to make the following images.<br>-->
+                
                 <div id="imgbox">
                     <div style="width:350px; float:left;">
                     <img src="voiced-unvoiced/wasp%20biral%20wide%20and%20narrow.jpg" alt="wasp img" width="400" height="300"><br>Fig:1 (made with wasp)
@@ -47,31 +47,22 @@
                 </div>
            
             </div>
-            
-            
+                    
             
             <h2>Part 2: How can we tell apart a vowel from a consonant in the above graphs?</h2>
-               <p> Vowels have more energy.  </p>           
+            <p>The vowels and the CH have lost of energy there and the other consonants have little or none. 
+            </p> 
+            
+                    
             
             <h2>Part 3: How vowels appear in a spectrogram </h2>
-            <p>
-            Here is an audio clip - a Bengali translation of "The cat went to the market." ( "biRAlTi bAjAre giyechilo").<br>
+            <p>This  <button onclick="play_sound();"><h3>biRAlTi bAjAre giyechilo</h3></button> clip contains both vowel and consonant sounds. Vowel sounds have more energy.<br>
                 
-                <button onclick="play_sound();">Click me to play the sound.</button><br>
-                The spectrograms of this clip is found in Fig:1 and Fig:2            
-            </p>
-            
-            
-            <p>
-                This clip contains both vowel and consonant sounds. Vowel sounds have more energy.<br>
-                
-               Fig:1 ( The image below is made with Wasp. ) <br>
+                Fig:1 ( The image below is made with Wasp. ) <br>
                 <img src="voiced-unvoiced/wasp%20biral%20wide%20and%20narrow%20-%20LABELED.jpg" alt="wasp img" width="800" height="600"><br>
                 
                  Fig:2 (The image below is made with Praat.)<br>
                 <img src="voiced-unvoiced/praat%20biral%20wide%20and%20narrow%20-%20LABELED.jpg" alt="wasp img" width="800" height="600"><br>
-
-              
             </p>
             
                       
@@ -80,7 +71,7 @@
         <div>
             <h2>Part 4:</h2>
             <p>
-                  The consonants dA and dhA  are "voiced" consonants. <br>
+                The consonants dA and dhA  are "voiced" consonants. <br>
                 That means our vocal cord buzzes and the buzzing sound can be felt and heard. Even if the buzzing sound is 20 dB lower, it can be heard! <br>
                 In a sprctrogram, this buzz can be seen near the base  frequncy of our vocal chord vibration. Mine showed a span of 75 Hz to 370 HZ in dA and dhA. <br>
 
