@@ -33,10 +33,15 @@
                 And it is unique because it is the first device that was able to successfully reproduce the recorded sound.
                 It records the sounds that are uttered or produced in front of it. It records them as grooves on a tinfoil with its recording mechanism. Basically, grooves show air pressure at different moments of time. The phonograph then plays the recording back with the help of its playing mechanism.<br>
                 
-                Nowadays, with the advancement of science, we can easily do the sound recording using our computers or phones. We also can clearly reproduce it. Computer can show those sound pressures along with other information in a simple graph. We call it “waveform”. If we want more advanced information on that recorded sound, we create “spectrograms” using our computers.
+                Nowadays, with the advancement of science, we can easily do the sound recording using our computers or mobile phones. Also We can easily and clearly reproduce our recorded sound. Computer can show those sound pressures as waveform.  <br>
+                
+                Here I played the first four notes of the <button onclick="play_5th();"><h3>Beethoven's 5th Symphony</h3></button> and recorded it with my computer. The computer showed me a graph like the following. <br><br>
+                <img src="voiced-unvoiced/5th%20symphony%20waveform.jpg" alt="fth symphony pic" width="800" height="300" >
                 
                 
-                Example. I recorded a sound file with the Bengali sentence  <button onclick="play_sound();"><h3>biRAlTi bAjAre giyechilo</h3></button> (Never mind meaning.)<br>
+                
+                <br>
+                I recorded a sound file with the Bengali sentence  <button onclick="play_sound();"><h3>biRAlTi bAjAre giyechilo</h3></button> (Never mind meaning.)<br>
                 Then I turned it into graphics using two different pieces of software, and I got these four graphs; all of them represent the same sound, but in different ways.<br>
                 
                 
@@ -99,9 +104,14 @@
             
         </div>
         <script>
-          const biral=new Audio("voiced-unvoiced/biraltibajaregiyechhilo.mp3");
+            const biral=new Audio("voiced-unvoiced/biraltibajaregiyechhilo.mp3");
+            const b5th=new Audio("voiced-unvoiced/5th symphony 4 NOTES GGG Eb.mp3");
             function play_sound(){
                 biral.play();
+            }
+            
+            function play_5th(){
+                b5th.play();
             }
         </script>
 </body>
