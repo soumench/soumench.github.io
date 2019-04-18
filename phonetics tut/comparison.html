@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+</head>
+
+	<body>
+        <h2>comparison a pure tome of a certain frequency, with a panflute tomne of the same frequency</h2>
+        <p>
+        Fig 1. Pure Tone - Eb4 ( 622.25Hz) <br>
+            <button onclick="play_pure();"><h3>PURE TONE</h3></button><br>
+        <img src="panflute&puretoneComparison/pure%20tone%20Eb4%20311.13%20Hz.jpg" alt="" width="800" height="300">
+        </p>
+        
+        <p>
+        Fig.2 Panflute - Eb4<br>
+            <button onclick="play_panflute();"><h3>PAN FLUTE</h3></button><br>
+            <img src="panflute&puretoneComparison/pan%20flute%20Eb4%2010ms%20duration%20waveform%20new.jpg" alt="" width="800" height="300">
+        </p>
+        
+        <script>
+            const puretone =new Audio("panflute&puretoneComparison/Eb4 pure tone.ogg");
+            const panflute=new Audio("panflute&puretoneComparison/pan flute Eb5.ogg");
+            function play_pure(){
+                puretone.play();
+            }
+            
+            function play_panflute(){
+                panflute.play();
+            }
+        
+        </script>
+</body>
+</html>
