@@ -1,0 +1,223 @@
+ul.xgallery {
+   width:100%;
+	background-color:transparent;
+	list-style:none;
+	padding:0 0 2.5% 0;
+	margin-top:5px;
+    margin-left:0px;
+
+}
+
+ul.xgallery li {
+ 
+    float:left;
+    position:relative; /* Needed for z-indexing later */
+    opacity:0.8;
+
+
+}
+
+ul.xgallery li img {
+   /* max-width:100%; */
+    box-sizing:border-box; /* Don't forget vendor prefixes! */
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box; 
+    box-sizing:border-box;
+
+}
+
+    
+
+ul.xgallery li:hover {
+    opacity:1;
+
+
+   
+}
+
+
+/*
+Animate.css - http://daneden.me/animate
+Licensed under the ☺ license (http://licence.visualidiot.com/)
+
+Copyright (c) 2012 Dan Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+/* shake, swing and tada effects from animate.css*/
+
+
+.animated {
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+       -o-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+     -moz-animation-fill-mode: both;
+       -o-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.scale {
+      -moz-transform:scale(1.4) ;
+        -webkit-transform:scale(1.4);
+        -o-transform:scale(1.4);
+        transform:scale(1.4);
+      }
+
+.rotate {
+      -moz-transform:scale(1.4) rotate(360deg) ;
+        -webkit-transform:scale(1.4) rotate(360deg);
+        -o-transform:scale(1.4) rotate(360deg);
+        transform:scale(1.4) rotate(360deg);
+      }
+
+@-webkit-keyframes shake {
+  0%, 100% {-webkit-transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px) scale(1.4);}
+  20%, 40%, 60%, 80% {-webkit-transform: translateX(10px) scale(1.4);}
+  100% {-webkit-transform: scale(1.4)}
+}
+
+@-moz-keyframes shake {
+  0%, 100% {-moz-transform: translateX(0) scale(1.4);}
+  10%, 30%, 50%, 70%, 90% {-moz-transform: translateX(-10px) scale(1.4);}
+  20%, 40%, 60%, 80% {-moz-transform: translateX(10px) scale(1.4);}
+}
+
+@-o-keyframes shake {
+  0%, 100% {-o-transform: translateX(0) scale(1.4);}
+  10%, 30%, 50%, 70%, 90% {-o-transform: translateX(-10px) scale(1.4);}
+  20%, 40%, 60%, 80% {-o-transform: translateX(10px) scale(1.4);}
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0) scale(1.4);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px) scale(1.4); }
+  20%, 40%, 60%, 80% {transform: translateX(10px) scale(1.4); }
+  100% {transform: scale(1.4)}
+}
+
+.shake {;
+  -webkit-animation-name: shake;
+  -moz-animation-name: shake;
+  -o-animation-name: shake;
+  animation-name: shake;
+}
+
+
+@-webkit-keyframes swing {
+  0%, 20%, 40%, 60%, 80%, 100% { -webkit-transform-origin: top center; }
+  0%  { -webkit-transform: rotate(0deg) scale(1.4);}
+  20% { -webkit-transform: rotate(15deg) scale(1.4); } 
+  40% { -webkit-transform: rotate(-10deg) scale(1.4) ; }
+  60% { -webkit-transform: rotate(5deg) scale(1.4); }  
+  80% { -webkit-transform: rotate(-5deg) scale(1.4); } 
+  100% { -webkit-transform: rotate(0deg) scale(1.4); }
+    
+}
+
+@-moz-keyframes swing { 
+  0%  { -moz-transform: rotate(0deg) scale(1.4);}
+  20% { -moz-transform: rotate(15deg) scale(1.4); }  
+  40% { -moz-transform: rotate(-10deg) scale(1.4); }
+  60% { -moz-transform: rotate(5deg) scale(1.4); } 
+  80% { -moz-transform: rotate(-5deg) scale(1.4); }  
+  100% { -moz-transform: rotate(0deg) scale(1.4); }
+ 
+}
+
+@-o-keyframes swing {
+  0%  { -o-transform: rotate(0deg) scale(1.4);}
+  20% { -o-transform: rotate(15deg) scale(1.4); }  
+  40% { -o-transform: rotate(-10deg) scale(1.4); }
+  60% { -o-transform: rotate(5deg) scale(1.4); } 
+  80% { -o-transform: rotate(-5deg) scale(1.4); }  
+  100% { -o-transform: rotate(0deg) scale(1.4); }
+ 
+}
+
+@keyframes swing {
+  0%  {transform: rotate(0deg) scale(1.4);}
+  20% { transform: rotate(15deg) scale(1.4); } 
+  40% { transform: rotate(-10deg) scale(1.4); }
+  60% { transform: rotate(5deg) scale(1.4); }  
+  80% { transform: rotate(-5deg) scale(1.4); } 
+  100% { transform: rotate(0deg) scale(1.4); }
+ 
+}
+
+.swing {
+  -webkit-transform-origin: top center;
+  -moz-transform-origin: top center;
+  -o-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  -moz-animation-name: swing;
+  -o-animation-name: swing;
+  animation-name: swing;
+}
+
+
+@-webkit-keyframes tada {
+  0% {-webkit-transform: scale(1.2);} 
+  10%, 20% {-webkit-transform: scale(1.2) rotate(-3deg);}
+  30%, 50%, 70%, 90% {-webkit-transform: scale(1.4) rotate(3deg);}
+  40%, 60%, 80% {-webkit-transform: scale(1.4) rotate(-3deg);}
+  100% {-webkit-transform: scale(1.4) rotate(0);}
+}
+
+@-moz-keyframes tada {
+  0% {-moz-transform: scale(1.2);}  
+  10%, 20% {-moz-transform: scale(1.2) rotate(-3deg);}
+  30%, 50%, 70%, 90% {-moz-transform: scale(1.4) rotate(3deg);}
+  40%, 60%, 80% {-moz-transform: scale(1.4) rotate(-3deg);}
+  100% {-moz-transform: scale(1.4) rotate(0);}
+}
+
+@-o-keyframes tada {
+  0% {-o-transform: scale(1.2);}  
+  10%, 20% {-o-transform: scale(1.2) rotate(-3deg);}
+  30%, 50%, 70%, 90% {-o-transform: scale(1.4) rotate(3deg);}
+  40%, 60%, 80% {-o-transform: scale(1.4) rotate(-3deg);}
+  100% {-o-transform: scale(1.4) rotate(0);}
+}
+
+@keyframes tada {
+  0% {transform: scale(1.2);} 
+  10%, 20% {transform: scale(1.2) rotate(-3deg);}
+  30%, 50%, 70%, 90% {transform: scale(1.4) rotate(3deg);}
+  40%, 60%, 80% {transform: scale(1.4) rotate(-3deg);}
+  100% {transform: scale(1.4) rotate(0);}
+}
+
+.tada {
+  -webkit-animation-name: tada;
+  -moz-animation-name: tada;
+  -o-animation-name: tada;
+  animation-name: tada;
+}
+
+.holder a {
+  text-decoration:none; display:block; float:left; margin:0 1px; padding:0px 7px; color:#333; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+  }
+
+  .holder a:hover {
+    color:#fff
+  }
+
+  .holder a.jp-current, a.jp-current:hover {
+    background:#eee; 
+    color:#222;
+  }
+
+  .holder  { margin: 5px 0px; display:none; }
+
+  .holder  { position:absolute; left:12px; z-index:1; font-size:12px; padding:3px 2px; background:#eee;  -moz-box-shadow: 0 0 2px #222; -webkit-box-shadow: 0 0 2px #222; box-shadow: 0 0 2px #222; opacity: .7; /* For IE 5-7 */ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);  /* For IE 8 */-MS-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=70)'; }
+
+  .holder a.jp-disabled {color:#333;}
