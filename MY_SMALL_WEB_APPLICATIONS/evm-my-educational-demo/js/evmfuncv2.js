@@ -14,7 +14,6 @@ lampOnGreen(busyCU);lampOnGreen(busyBU); display(`Ballot issued.<br>Press a butt
 function seeTotalVotes(){LcandOFF(msgDuration); checkTotal();}        
 function result(){if(pollIsClosed){ calculateResult(); resultIsDeclared=true;}LcandOFF(msgDuration); }       
 function addvote(s){storeTheVotes();longBeepsound.play(); var now = new Date().toLocaleString();
-
 /*trailMsg.innerHTML=`You have voted <br>for<br> ${s} <br>on<br> ${now}`;  */
 trailMsg.innerHTML=`You have voted <br>for<br> ${s} `;  
 storedVotes.push(s);              
