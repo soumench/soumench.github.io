@@ -14,7 +14,10 @@ lampOnGreen(busyCU);lampOnGreen(busyBU); display(`Ballot issued.<br>Press a butt
 function seeTotalVotes(){LcandOFF(msgDuration); checkTotal();}        
 function result(){if(pollIsClosed){ calculateResult(); resultIsDeclared=true;}LcandOFF(msgDuration); }       
 function addvote(s){storeTheVotes();longBeepsound.play(); var now = new Date().toLocaleString();
-trailMsg.innerHTML=`You have voted <br>for<br> ${s} <br>on<br> ${now}`;  storedVotes.push(s);
+
+/*trailMsg.innerHTML=`You have voted <br>for<br> ${s} <br>on<br> ${now}`;  */
+trailMsg.innerHTML=`You have voted <br>for<br> ${s} `;  
+storedVotes.push(s);              
 c1 = storedVotes.filter(i => i === cn1).length; c2 = storedVotes.filter(i => i === cn2).length;
 c3 = storedVotes.filter(i => i === cn3).length; c4 = storedVotes.filter(i => i === cn4).length;
 candBtnAction();   paperTrailAnimAppear();} function lampon(e){e.style.backgroundColor="#ff0000";} 
