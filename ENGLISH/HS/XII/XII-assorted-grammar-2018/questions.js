@@ -53,7 +53,27 @@ const qa = [
     
 			21,"Nature's changing course is untrimmed.<br> (Split.)", "Nature's course is changing. <br> The course is untrimmed.",
     
-            22,"Few girls can <u>resists</u> flattery.<br> (Correct the error.)", "Few girls can resist flattery."
+            22,"Few girls can <u>resist</u> flattery.<br> (Correct the error.)", "Few girls can resist flattery.",
+    
+            23,"They are ours. Now everybody knows this. <br>( join )", "Now everybody knows that they are ours.",
+    
+            22,"Mine was a very secure childhood. <br>( Make it a negative sentence. ) ", "Mine was not an insecure childhood.",
+    
+            24,"The poetry of earth is never dead.<br> ( Make it an interrogative sentence. )","Is poetry of earth ever dead?",
+            
+            25,"I don’t want the meadows.<br> ( Change the voice. ) ","The meadows are not wanted by me.",
+            
+            26, "Wash your face. <br>(Change the voice.)","Let your face be washed.",
+    
+            27, "All the necessities were provided for.<br> They were in terms of food, medicine and clothing.<br> (Join into a single sentence.)","All the necessities in terms of food, medicine and clothing were provided for.",
+            
+            28,"Who wrote the play “The Proposal”?"," Hint: Anton Chekhov",
+    
+            29, "What makes the summer very hot? ","HInt: The sun.",
+    
+            30, "Whom did Kalam's father ask the people to thank?", " Allah, the almighty",
+    
+            31, "Who is apparently lying asleep in the valley? ", "The dead soldier"
         ];
         const length = qa.length;
 
