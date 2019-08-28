@@ -53,7 +53,7 @@ const qa = [
     
 			21,"Nature's changing course is untrimmed.<br> (Split.)", "Nature's course is changing. <br> The course is untrimmed.",
     
-            22,"Few girls can <u>resist</u> flattery.<br> (Correct the error.)", "Few girls can resist flattery.",
+            22,"Few girls can <u>resists</u> flattery.<br> (Correct the error.)", "Few girls can resist flattery.",
     
             23,"They are ours. Now everybody knows this. <br>( join )", "Now everybody knows that they are ours.",
     
