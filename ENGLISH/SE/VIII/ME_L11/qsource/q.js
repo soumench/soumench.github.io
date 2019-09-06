@@ -1,0 +1,153 @@
+const topic_name =" M.C.Q. on \"THE MIDNIGHT EXPRESS\""; 
+const list=[
+            "Alfred Noyes was ",
+	 		"an English Poet.",
+	 		"an American author.",
+	 		"a French author.",
+	 		"a",
+	 
+	 
+            "The old book was",
+	 		"butchered.",
+	 		"buttered.",
+	 		"battered.",
+	 		"c",
+	
+	        "Mortimer found the book in his",
+	 		"in his garden",
+	 		"father's library",
+	 		"in a lavatory",
+	 		"b",
+	 		
+	 		"The book contained",
+	 		"a poem.",
+	 		"a story.",
+	 		"a play.",
+	 		"b",
+	 		
+	 		"The illustration was on",
+	 		"page fifty.",
+	 		"page fifteen.",
+	 		"page five.",
+	 		"a",
+	 		
+	 		"Under the lamp, a man ",
+	 		"stood.",
+	 		"sat down.",
+	 		"lay fast asleep.",
+	 		"a",
+	 		
+	 		"Mortimer never read beyond page",
+	 		"fifty five.",
+	 		"fifty.",
+	 		"fifteen.",
+	 		"b",
+	 
+	 		"Mortimer was waiting for train",
+	 		"in a cold crowded station.",
+	 		"in a crowded place.",
+	 		"in a dark empty junction.",
+	 		"c",
+	 
+	 		"Mortimer noticed ",
+	 		"a dark and solitary figure.",
+	 		"a large crowd.",
+	 		"an old vendor.",
+	 		"a",
+	 
+	 		"Mortimer was in ",
+	 		"unspeakable joy.",
+	 		"shock.",
+	 		"deep sadness.",
+	 		"b",
+	 
+	 		"Mortimer heard",
+	 		"a sweet song.",
+	 		"a noise.",
+	 		"heavy footsteps.",
+	 		"c",
+	 
+	 		"A shadowy figure stood",
+	 		"with a candle.",
+	 		"with an icecream.",
+	 		"with a cradle.",
+	 		"a",
+	 
+	 		"They went up the",
+	 		"hill.",
+	 		"creaking stairs.",
+	 		"concrete stairs.",
+	 		"b",
+	 
+	 		"The shadowy figure took Mortimer",
+	 		"to a rest room.",
+	 		"to a wash room.",
+	 		"to an upper room.",
+	 		"c",
+	 
+	 		"Mortimer collapsed ",
+	 		"into the tub.",
+	 		"into the arm chair.",
+	 		"into the tumbler.",
+	 		"b",
+			
+			"The clock ticked ",
+	 		"in the garage.",
+	 		"in the hall.",
+	 		"in the garden.",
+	 		"b",  
+			
+			"The sea roared",
+	 		"inside.",
+	 		"outside.",
+	 		"everywhere.",
+	 		"b",
+	
+			"The book was bound",
+	 		"in black leather.",
+	 		"in red leather.",
+	 		"in white leather.",
+	 		"b", 
+	
+			"The candlelight",
+	 		"flickered.",
+	 		"fickled.",
+	 		"freckled.",
+	 		"a",
+	
+			"The book was",
+	 		"under the table.",
+	 		"behind the table.",
+	 		"on the table.",
+	 		"c",
+	
+			"Mortimer tried to grasp",
+	 		"the strange cycle of events.",
+	 		"everything he could.",
+	 		"only a part of the incidents.",
+	 		"a", 
+	
+			"Mortimer was filled with",
+	 		"acute dread.",
+	 		"joy.",
+	 		"deep sorrow.",
+	 		"a",
+	
+			"Mortimer saw",
+	 		"a small squirrel.",
+	 		"a small white cottage.",
+	 		"a small tree.",
+	 		"b",	
+    
+            "Mortimer began to",
+	 		"sleep again.",
+	 		"eat again.",
+	 		"run again.",
+	 		"c",
+            
+            "The lamp was",
+	 		"not glowing.",
+	 		"bright.",
+	 		"dull.",
+	 		"c"
+        ];
