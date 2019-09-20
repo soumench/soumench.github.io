@@ -1,6 +1,6 @@
 const topic_name =" M.C.Q. on \"The Snail\""; 
 const list=[
-            "Who is a hymndodist?",
+            "Who is a hymnodist?",
 	 		"A composer of prose.",
 	 		"A composer of drama.",
 	 		"A composer of hymns.",
