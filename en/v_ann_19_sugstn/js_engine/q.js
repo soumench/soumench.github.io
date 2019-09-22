@@ -1,9 +1,9 @@
 /*
-Copyright: Soumen Chakraborty 2018
+Copyright: Soumen Chakraborty 2018-19
 https://soumen-here.blogspot.com/
 Strictly for Educational and Non-commercial Purpose
 */
-heading.innerHTML="Assorted Questions-CLASS-XI";
+heading.innerHTML="Assorted Questions (CLASS-V)";
 var bank = [
      "Who was Rakesh Sharma?~ The first Indian astronaut in space."
     
@@ -27,7 +27,7 @@ var bank = [
     
     ,"When do you go to bed?~ no hint"
     
-    ,"My grand-dad walks slowly( Add an adverb)~ slowly"
+    ,"My grand-dad walks.( Add an adverb)~ slowly"
     
     ,"Opposite in meaning of 'never'?~always"
     
