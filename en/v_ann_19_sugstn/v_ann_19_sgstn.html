@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css"> 
+</head>
+
+<body>    
+    <p>
+    <span id="heading">Copyright &copy; Made by Soumen</span><br>
+    <progress id="bar" style="height:8px; width:400px";></progress>
+    </p>
+    <div id="board">
+    <div id="qbx"><span id="question"></span></div>
+    <div id="abx"><span id="answer"></span></div>
+    <div id="btnbx">
+        <input type="button" class="bt" name="button" value="previous" onclick="receed()">
+        <input type="button" class="bt" name="button" value="Show hint." onclick="clicktoggle()">
+        <input type="button" class="bt" name="button" value="next" onclick="advance()"><br>
+    </div>
+    </div>
+    
+    <footer> 
+		Copyright &copy; Soumen Chakraborty  - <span id="year">year</span> 
+	<br> 
+		Strictly for Educational and Non-Commercial purpose only.
+   </footer>
+    
+    <script src="js_engine/e.js"></script>
+    <script src="js_engine/randomize.js"></script>
+    <script src="js_engine/q.js"></script>
+    <script src="js_engine/engine.js"></script>
+    <script src="../../ENGLISH/year.js"></script>
+    <script>init();</script>
+</body>
+
+</html>
