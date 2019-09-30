@@ -5,79 +5,69 @@ Strictly for Educational and Non-commercial Purpose
 */
 heading.innerHTML="ভূগোল / Geography - CLass VI";
 var bank = [
-     "Who was Roninson Crusoe? ~ A shipwrecked traveller."
+     "ভারতের বৃহত্তম শহরটির নাম কি ? ~ মুম্বাই "
     
-    ,"What is the noun form of 'perfect'? ~ perfection."
+    ,"সমুদ্র দ্বারা যে শহরের জলবায়ু প্রভাবিত তা হলো  ~ চেন্নাই "
     
-    ,"What is the comparative degree of 'good'?~ better."
+    ,"পানীয় ফসলের উদাহরণ  ~ কফি "
     
-    ,"What is the opposite in meaning of 'before'?~ after"
+    ,"কোনো দেশ অথবা রাজ্যের সীমানা দেখানো হয় যে মানচিত্রে তা হলো ~ রাজনৈতিক মানচিত্র"
     
-    ,"What is the capital of India?~ New Delhi."
+    ,"ভারতের দীর্ঘতম হিমবাহের নাম হল  ~ সিয়াচেন"
     
-    ,"He ___(has been/have been) waiting for an hour.(Choose correct form.) ~ has been"
+    ,"কোন একক দিয়ে আমরা শব্দের তীব্রতাকে মাপি ?  ~ dB  বা ডেসিবেল "
     
-    ,"He is a good boy.(Find out the adjective.)~ good"
+    ,"কোন তাপমাত্রায় জল ফুটে বাষ্প হয় ? ~ 212° F "
     
-    ,"Past tense of give?~ gave"
+    ,"কোথায় লাক্ষাদ্বীপ গঠিত হয়েছে ?~ আরব সাগরে , ২৫টি  ছোটো ছোটো দ্বীপ নিয়ে"
     
-    ,"Past tense of come?~came"
+    ,"উচ্চতা বাড়লে উষ্ণতা  কমে না বাড়ে ? ~ কমে"
     
-    ,"He is___(going/went) to Kolkata tomorrow. ~ going"
+    ,"ভারতে কোথায় সিংহ দেখা যায়?  ~ গির অরণ্যে "
     
-    ,"When do you go to bed?~ no hint"
+    ,"কোন সময় পরিযায়ী পাখি আমাদের দেশে আসে ? ~ শীতকালে "
     
-    ,"My grand-dad walks.( Add an adverb)~ slowly"
+    ,"মানচিত্র আঁকার বিদ্যাকে কি বলে? ~ কার্টোগ্রাফি"
     
-    ,"Opposite in meaning of 'never'?~always"
+    ,"ভারতের অর্থনীতি ও  কৃষিকাজ নির্ভর করে কিসের উপর ? ~ মৌসুমী বায়ুর উপর "
     
-    ,"Opposite of 'love'~hate"
+    ,"প্রবাল দ্বীপপুঞ্জ কিভাবে গঠিত হয়? ~ প্রবাল নামক এক সামুদ্রিক কীটের দেহাবশেষ থেকে"
     
-    ,"What are the citizens of Greece called?~Greek"
+    ,"সাদা মহাদেশ কাকে বলে ? ~ আন্টার্কটিকাকে "
     
-    ,"I have/has a pet cat.( Choose correct form.)~ have"
+    ,"কোন অঞ্চলে সমভাবাপন্ন জলবায়ু দেখা যায় ? ~ সমুদ্রের তীরবর্তী অঞ্চলে"
     
-    ,"Opposite of 'come'~'go'."
+    ,"কত তারিখে গান্ধীজয়ন্তী পালন করা হয় ? ~ ২ অক্টোবর"
     
-    ,"I lost my cat. I have found him. (join) ~ I have found my lost cat."
+    ,"যে যন্ত্র দিয়ে আমরা বায়ুর আদ্রতা মাপি তার নাম কি ?  ~ হাইগ্রোমিটার"
     
-    ,"She is pretty. She is intelligent.(join) ~ She is pretty and intelligent."
+    ,"ভারতের সব থেকে দক্ষিণে একটি স্থান , যাকে আমরা 'দক্ষিণ বিন্দু ' বলি , তার নাম কি? ~ ইন্দিরা পয়েন্ট "
     
-    ,"'Where is the newspaper?', dad said. (Change the mode of narration.)~ no hint"
+    ,"জীবজগতের রক্ষাকবচ বায়ুমণ্ডলের কোন স্তরকে  বলা হয়ে থাকে? ~  OZONE  স্তর কে "
     
-    ,"My father is a/an honest man. ( Choose the correct article.)~ an"
+    ,"পৃথিবীর সবথেকে বেশি বৃষ্টি কোথায় হয়? ~ মৌসিনরাম অঞ্চলে "
     
-    ,"Paltu said,'I have done it'.(Narration)~ Paltu said that he had done it."
+    ," দাক্ষিণাত্য মালভূমির উচ্চতম শৃঙ্গের নাম কি ?  ~ আনাইমুদি "
     
-    ,"How many colours are there in the rainbow?~ seven"
+    ,"আমাদের দেশের নাম কি ?  ~  ভারত"
     
-    ,"What is the name of our country? ~ India."
+    ,"আমাদের রাজ্যের নাম কি ? ~ পশ্চিমবঙ্গ "
     
-    ,"What is the name of your district? ~ no hint."
+    ,"পৃথিবীর ক্ষুদ্রতম মহাদেশের নাম কি ? ~ অস্ট্রেলিয়া "
     
-    ,"What is the name of your town/ village? ~no hint"
+    ,"বায়ুমণ্ডলে কোন গ্যাসের পরিমান সব থেকে বেশি? ~ নাইট্রোজেন "
     
-    ,"What is your father? ( Your father's profession)~ no hint."
+    ,"বাজ পড়ার শব্দের তীব্রতার মাত্রা কত? ~  ১১০ ডেসিবেল "
     
-    ,"What is the name of your school?~ no hint."
+    ,"ভারতের প্রথম কৃত্রিম উপগ্রহের নাম কি ?~  আর্যভট্ট "
     
-    ,"Full form of I.S.R.O ~ Indian Space Research Organization."
+    ,"পৃথিবীর সব জায়গার তাপমাত্রা কি এক ?  ~  না  "
     
-    ,"What is Chandrayaan2 ?  ~ the second lunar exploration mission developed by ISRO."
+    ,"চন্দ্রায়ণ ২ কি ?   ~ the second lunar exploration mission developed by ISRO."
     
-    ,"How paper is made?  ~ no hint"
+    ,"ISRO -এর পুরো কথাটি কি ?   ~ Indian Space Research Organization."
     
-    ,"Who was Einstein?  ~ a famous physicist who developed the theory of relativity."
+    ,"ভারতের একটি পারমাণবিক বিদ্যুৎ উৎপাদন কেন্দ্রের নাম উল্লেখ করো ।   ~ তামিলনাড়ুর  Kudankulam"
     
-    ,"What did wind do to the second ship?  ~ (hint:'the wind hunted it like a beast To anchor in captivity.')"
     
-    ,"Find out the describing words used in the poem 'The North Ship'~ no hint"
-    
-    , "Who was Stephen Hawking? ~ no hint"
-    
-    ,"How can we save water? ~ Discuss with your friends."
-    
-    ,"What is global warming? ~ Share your findings with your friends."
-    
-    ,"What is e-waste? ~ Share your findings with your friends."
 ];
