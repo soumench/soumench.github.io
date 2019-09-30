@@ -3,9 +3,9 @@ Copyright: Soumen Chakraborty 2018-19
 https://soumen-here.blogspot.com/
 Strictly for Educational and Non-commercial Purpose
 */
-heading.innerHTML="Assorted Questions (CLASS-IX)";
+heading.innerHTML="ভূগোল / Geography - CLass VI";
 var bank = [
-     "Who was Robinson Crusoe? ~ A shipwrecked traveller."
+     "Who was Roninson Crusoe? ~ A shipwrecked traveller."
     
     ,"What is the noun form of 'perfect'? ~ perfection."
     

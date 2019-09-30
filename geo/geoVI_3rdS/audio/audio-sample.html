@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <!--Audio Copyright : Soumen  Strictly for Educational and noncommercial purpose only-->
+    <input type="button" id="success" value="success" onclick="play(this)">
+    <input type="button" id="failure" value="failure" onclick="play(this)">
+    <input type="button" id="idk" value="idk" onclick="play(this)">
+    
+    <script>
+        const success = new Audio("success.oga");
+        const failure = new Audio("fail.oga");
+        const idk = new Audio("idk.oga");
+        function play(el){
+            if(el.id==="success"){ success.play();}
+            else if(el.id==="failure"){ failure.play();}
+            else if(el.id==="idk"){ idk.play();}
+        }
+    </script>
+</body>
+</html>
