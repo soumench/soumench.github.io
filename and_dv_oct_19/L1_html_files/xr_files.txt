@@ -4,8 +4,6 @@ L1_html_files/1.png
 L1_html_files/1@2x.png
 L1_html_files/26.png
 L1_html_files/26@2x.png
-L1_html_files/27.png
-L1_html_files/27@2x.png
 L1_html_files/28.png
 L1_html_files/28@2x.png
 L1_html_files/36.png
@@ -52,3 +50,5 @@ L1_html_files/61.png
 L1_html_files/61@2x.png
 L1_html_files/62.png
 L1_html_files/63.png
+L1_html_files/65.png
+L1_html_files/65@2x.png
