@@ -45,7 +45,7 @@ var bank = [
     
     ,"Why does Keats feel that the poetry of earth is never dead?~ no hint"
     
-    ,"The title ‘Tsar’ belonged to? ~ The King of Russia"
+    ,"The title ‘Tsar’ belonged to ~ The King of Russia"
     
     ,"The word ‘pocket book’ in the story “Thank You Ma’am” means ~ no hint"
     
