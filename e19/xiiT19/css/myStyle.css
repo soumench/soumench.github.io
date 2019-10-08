@@ -1,0 +1,75 @@
+/*
+Copyright: Soumen Chakraborty 2018
+https://soumen-here.blogspot.com/
+Strictly for Educational and Non-commercial Purpose
+*/
+body {
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#heading {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+#btnbx,
+#qbx,
+#abx{
+    border: 3px solid grey;
+    padding: .5em;
+    border-radius: 18px;
+    box-shadow: 5px 10px 18px #888888;
+    margin-bottom: .5em;
+}
+
+#qbx {
+    margin-top: .05em;
+}
+
+#btnbx {
+    word-spacing: 30px;
+}
+
+.bt {
+    font-size: 1em;
+}
+
+.bt {
+    padding: 8px 8px;
+    /*font-size: 24px;*/
+    /*text-align: center;*/
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.bt:hover {
+    background-color: #3e8e41
+}
+
+.bt:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#board,
+footer {
+    border: 2px solid green;
+    border-radius: 18px;
+    margin: .02em;
+    padding: .2em;
+    margin-top: .5em;
+}
+
+footer {
+    font-size: 60%;
+}
