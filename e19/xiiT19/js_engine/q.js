@@ -53,7 +53,7 @@ var bank = [
     
     ,"Name a distinguished friend of Kalam’s father. ~ no hint"
     
-    ,"Lomov was called a ‘scare crow’ by~ Lomov"
+    ,"Lomov was called a ‘scare crow’ by~ Chubukov"
     
     ,"What makes the summer musical?~ no hint"
     
