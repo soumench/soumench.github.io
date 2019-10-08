@@ -9,7 +9,7 @@ var bank = [
     
     ,"Did Mrs. Jones show any motherly feeling? ~ no hint "
     
-    ,"What message did the poet want to give in the poem 'Asleep in the Valley  ~ hint:futility of war "
+    ,"What message did the poet want to give in the poem 'Asleep in the Valley' ~ hint:futility of war "
     
     ,"How did the poet depict different seasons in the poem 'The Poetry of Earth'? ~ no hint"
     
