@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>jhay</title>
+	<title>compare</title>
     <style> body{
         font-family: sans-serif; font-size: 24px;
         text-align: center;
@@ -54,29 +54,48 @@
         <hr>
         
         
-        <h2>jAbAgADAdAza</h2>
+        <h2>jAbAgADAdAza and jhAbhAghADhAdhASa</h2>
         <p>
-            <audio controls style="width: 1000px"><source src="jAbAgADadAza.mp3" type="audio/ogg"></audio> 
-            <br>
-            <img src="jAbAgADAdAza.jpg" alt="" width="1000px" height="400px" >
+            
+                 
         </p>
         
-        <h2>jhAbhAghADhAdhASa</h2>
+        
+        <hr>
+        
         <p>
-            <audio controls style="width: 1000px"><source src="jhAbhAghADhAdhASa.mp3" type="audio/ogg"></audio>
-            <br>
-            <img src="jhabhaghaDhadhaSa.jpg" alt="" width="1000px" height="400px" >
+        <button id="btn" onclick="compare()" size="30px" class="button">Compare</button>
         </p>
-        <hr>
-        <hr>
-        <h2>AcApAkATAtA</h2>
-         <audio controls style="width: 1000px"><source src="AcApAkATAtA.mp3" type="audio/ogg"></audio> <br>
-        <img src="AcApAkATAtA.jpg" alt="" width="1000px" height="400px" id="AcA_img"><br>
+       <audio controls style="width: 1000px"><source src="jAbAgADadAza.mp3" type="audio/ogg"></audio><br>
+        <img src="ba0515.jpg" alt="" width="1000px" height="400px" id="ba_img"><br>
+        <audio controls style="width: 1000px"><source src="jhAbhAghADhAdhASa.mp3" type="audio/ogg"></audio><br>
+        <img src="bha0515.jpg" alt="" width="1000px" height="400px" id="bha_img"><br>
         
         
         
         
         
         
+        
+        <script>
+            e("ba_img").style.zIndex=0;
+            e("bha_img").style.zIndex=0;
+            
+            var toggle = 0; 
+            
+            function compare(){
+                if(toggle=toggle^1){
+                    e("ba_img").src = "ba0515Marked.jpg";
+                    e("bha_img").src = "bha0515Marked.jpg";
+                   /* e("trace").innerHTML="different whisker";*/
+                }else{
+                    e("ba_img").src = "ba0515.jpg";
+                    e("bha_img").src = "bha0515.jpg";
+                    /*e("trace").innerHTML="code run";*/
+                }
+                
+            }
+            function e(id){return document.getElementById(id);}
+        </script>
 </body>
 </html>
