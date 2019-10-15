@@ -6,20 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" type="text/css" href="css/tfq_style.css">
+    <style>
+        body{
+            font-size: 24px; font-family: sans-serif;
+        }
+        table, th, td {
+            border: 1px solid black; border-radius: 16px;
+        }
+        #qidBox{
+            height: 200px; background-color: #fcb24c;
+        }
+        #btnBox{
+            height: 200px; background-color: #99ea96;
+        }
+        .btn{
+            font-size: 40px;
+        }
+    </style>
 </head>
 
 <body> 
-   	<span id="topic"> Test Your Parts of Speech Knowledge  </span> <br>
-    <span id="heading">Is the Statement True of False? </span>  <br>
-    <span id="question" style="color:blue"></span>  <br> 
+   	
+      <br>
     
-    <img src="" id="pic" width="240px" height="240px"/> <br>
-    <input type="button" id="rightbtn" class="btn" value="TRUE" onclick="answer(this)"/>
+    <!--table start-->
+    
+    <table style="width:100%">
+        <tr>
+            <th><h2 id="topic"> Test Your Parts of Speech Knowledge  </h2> 
+            <h2 id="heading">Is the Statement True of False? </h2></th> 
+        </tr>
+        <tr>
+            <!--<td><span id="heading">Is the Statement True of False? </span></td> -->  
+        </tr>
+        
+        <tr id="qidBox">
+            <td><span id="question" style="color:blue"></span> </td>
+        </tr>
+        
+        <tr>
+            <td>
+                 <img src="" id="pic" width="240px" height="240px"/>
+            </td>
+        </tr>
+        
+        <tr id="btnBox">
+            <td>
+                  <input type="button" id="rightbtn" class="btn" value="TRUE" onclick="answer(this)"/>
     <input type="button" id="wrongbtn" class="btn" value="FALSE" onclick="answer(this)"/><br>
     
     <input type="button" id="nextbtn" class="btn" value="NEXT" onclick="nextq()" width="440px"/><br>
     <input type="button" id="refresh" class="btn" value="Start Again" onClick="window.location.reload()" width="440px"/><br>
     <span id="trace"></span>
+            </td>
+        </tr>
+</table>
+    
+    <!--table end-->
+   
+   
     
     <footer>
     	Copyright &copy; Soumen Chakraborty - <span id="year">year</span>  <br> Strictly for Educational and Non-commercial purpose only.
