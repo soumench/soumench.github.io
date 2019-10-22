@@ -16,9 +16,9 @@ function gstUpdate(){
                 gst = parseFloat(e("gst").value);               
                 cost = cost ? cost : 0; /*avoid NaN*/
                 gst = gst ? gst :0;
-                cgst.innerHTML=gst/2+" \%";
-                sgst.innerHTML=gst/2+" \%";
-                gstTotal.innerHTML=roundToTwo(cost*gst/100)+" INR";
+                cgst.innerHTML=gst/2+" \%"+" ( "+cost*((gst/2)/100)+" INR)";
+                sgst.innerHTML=gst/2+" \%"+" ( "+cost*((gst/2)/100)+" INR)";
+                gstTotal.innerHTML=roundToTwo(cost*gst/100)+" INR)";
                 total.innerHTML=Math.round(cost+cost*gst/100,0)+" INR";
 }  
 
