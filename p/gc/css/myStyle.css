@@ -14,7 +14,7 @@
             overflow: hidden; /* will contain if #first is longer than #second */}
         h5{text-align: center;margin: 0px;}
         
-        input[type=text] { width: 150px;
+        input[type=number] { width: 150px;
           padding: 0;
           height: 30px;
           position: relative;
