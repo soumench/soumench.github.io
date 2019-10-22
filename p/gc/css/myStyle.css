@@ -5,7 +5,7 @@
          #wrapperBox{width: 350px;   border: 1px solid black; border-radius: 16px; padding: 4px;
             overflow: hidden; /* will contain if #first is longer than #second */}
         .labels{ margin-left: 10px;  text-align: left; margin: 8px; padding: 10px; }
-        .ip{text-align: center; margin-left: 10px; font-size: 12px;}
+        .ip{text-align: center;  font-size: 12px;}
         
         #gstDisplayBox{ margin-top: 0px; margin-left: 0px; padding: 4px;}
       
@@ -29,7 +29,7 @@
 footer {
     border: 2px solid green;
     border-radius: 18px;
-    margin: .02em;
+    /*margin: .02em;*/
     padding: 8px;
     margin-top: .5em;
     width: 340px;
