@@ -1,0 +1,43 @@
+
+        body{width: 100%; font:28px; font-family: sans-serif; margin: 10px; padding: 10px;/*position: absolute;*/}
+        .progTitle{width: inherit; margin-left: 120px; font-weight: 700;}
+        .bg{background-color: #ffc69c;}
+         #wrapperBox{width: 350px;   border: 1px solid black; border-radius: 16px; padding: 4px;
+            overflow: hidden; /* will contain if #first is longer than #second */}
+        .labels{ margin-left: 10px;  text-align: left; margin: 8px; padding: 10px; }
+        .ip{text-align: center; margin-left: 10px; font-size: 12px;}
+        
+        #gstDisplayBox{ margin-top: 0px; margin-left: 0px; padding: 4px;}
+      
+        /*------------------------*/
+         #wrapperBox2{width: 350px;   border: 1px solid black; border-radius: 16px; padding: 4px; margin-top: 8px;
+            overflow: hidden; /* will contain if #first is longer than #second */}
+        h5{text-align: center;margin: 0px;}
+        
+        input[type=text] { width: 150px;
+          padding: 0;
+          height: 30px;
+          position: relative;
+          left: 0;
+          outline: none;
+          border: 1px solid #cdcdcd;
+          border-color: rgba(0, 0, 0, .15);
+          background-color: white;
+          font-size: 16px;
+        }
+
+footer {
+    border: 2px solid green;
+    border-radius: 18px;
+    margin: .02em;
+    padding: 8px;
+    margin-top: .5em;
+    width: 340px;
+}
+
+footer {
+    font-size: 60%;
+}
+        
+        
+    

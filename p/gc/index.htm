@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> gstCalculator </title>
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+   
+</head>
+
+	<body>
+       
+        <div id="wrapperBox"  class="bg">
+             <span class="progTitle">G.S.T. Calculator</span>
+            <hr>            
+                <p id="eboxTxt">
+                    <span class="labels">Original Cost : </span>
+                    <input type="text"  class="ip" id="cost" placeholder="Enter actual cost." >
+                <br><br>
+                    <span class="labels">GST  : <span style="color:#ffc69c;">.............</span>   
+                    </span><input type="text"  class="ip" id="gst" placeholder="Enter GST %" >
+                </p>            
+           <hr>                
+                <p id="gstDisplayBox">
+                    <span class="labels">CGST: </span><span class="labels" id="cgst"></span><br>
+                    <span class="labels">SGST: </span><span class="labels" id="sgst"></span><br>
+                    <span class="labels">TOTAL GST: </span><span class="labels" id="gstTotal"></span><br>
+                    <span class="labels">TOTAL PRICE:</span><span class="labels" id="total"></span>
+                </p>                      
+        </div> <!--wrapperbox#1-->
+        <!--------------------------------------------------------------------------------------->
+        <div id="wrapperBox2" class="bg">
+            <span class="progTitle">G.S.T. Finder</span>
+            <h5>( To find the amount you paid as G.S.T. )</h5>
+            <hr>
+            <p>
+                <span class="labels">Price Paid : </span>
+                <input type="text"  class="ip" id="totalPaid" placeholder="Enter Paid Amount." >
+                <br><br>
+                <span class="labels">G.S.T.  : <span style="color:#ffc69c;">......</span>   </span><input type="text"  class="ip" id="gstPaid" placeholder="Enter GST Percentage." value="12%">
+            </p>
+            <hr>
+            <p>
+                 <span class="labels">CGST PAID: </span><span class="labels" id="cgstPaid"></span><br>
+                <span class="labels">SGST PAID: </span><span class="labels" id="sgstPaid"></span><br>
+                 <span class="labels">TOTAL GST PAID: </span><span class="labels" id="totalGstPaid"></span><br>
+                <span class="labels">Original Cost: </span><span class="labels" id="costPrice"></span><br>
+            </p>
+        </div>
+        <footer>   Copyright &copy; Soumen Chakraborty  <span id="year"> ( year 2019 ) </span><br>
+        Strictly for Educational, Non-profit and Non-commercial Usage only.
+        </footer> 
+        <script src="script/e.js"></script> 
+        
+        <script src="script/calculate.js"></script>
+        <script src="script/find.js"></script>
+        <script src="script/r2.js"></script>
+       
+        <script src="../../ENGLISH/year.js"></script>
+        <script>init();</script>
+</body>
+</html>
