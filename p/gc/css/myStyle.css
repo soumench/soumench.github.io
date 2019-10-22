@@ -27,6 +27,7 @@
         }
 
 footer {
+    text-align: center;
     border: 2px solid green;
     border-radius: 18px;
     /*margin: .02em;*/
