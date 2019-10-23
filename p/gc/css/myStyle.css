@@ -1,22 +1,24 @@
-
-        body{width: 100%; font:28px; font-family: sans-serif; margin: 10px; padding: 10px;/*position: absolute;*/}
-        .progTitle{width: inherit; margin-left: 120px; font-weight: 700; color: yellow; }
+/*myStyle v 2.0*/
+        body{text-align: center; width: 100%; font:24px; font-family: sans-serif; margin: 0; padding: 0;}
+        .progTitle{width: inherit;  font-weight: 700; color: yellow; }
         .bg {background-color: #375235;} 
         .bgInvis{color: #375235;}
-         #wrapperBox,#wrapperBox2{border-width:5px;  border-style:ridge; border-radius: 16px; padding: 4px; width: 350px;    overflow: hidden; /* will contain if #first is longer than #second */} 
+         #wrapperBox,#wrapperBox2{width: 80%;
+             border-width:5px;  border-style:ridge; border-radius: 16px; padding: 4px; padding-bottom: 0 width: 350px;    overflow: hidden; /* will contain if #first is longer than #second */} 
         #wrapperBox2{margin-top: 8px;}
          .ip{text-align: center;  font-size: 13px; color:  darkred; font-weight: 600; float: right; margin-right: 18px;}
-        .labels1{color: white;  font-weight: 600; float: left; margin-left: 10px}
-        .labels{ margin-left: 10px;  text-align: left; margin: 2px; padding: 10px; color: black; font-weight: 700;}
-        .gstDisplayBox{ margin-top: 0px; margin-left: 2px; padding: 4px;background-color: #87e3ff;
-            border-width:5px;  border-style:ridge; border-radius: 16px; padding: 4px; font-weight: 600;}
-         h5{text-align: center;margin: 0px; color:burlywood;}
-        
-        input[type=number] { width: 150px; padding: 0; height: 30px; position: relative; /*left: 0;*/
+        .labels1{color: white;  font-weight: 600; float: left; margin-left: 10px; position: relative;}
+        .gstDisplayBox{ margin-top: 0px; margin-left: 2px; height:auto;
+            background-color: #87e3ff;
+            border-width:5px;  border-style:ridge; border-radius: 16px; padding: 0px; font-weight: 600; text-align: left; color: #191616; }
+         h5{text-align: center;margin: 0px; color:burlywood;}        
+        input[type=number] { width: 150px; padding: 0; height: 30px; position: relative; 
           outline: none; border: 1px solid #cdcdcd; border-color: rgba(0, 0, 0, .15); background-color: white;
           font-size: 16px;}
-        footer {text-align: center; border: 2px solid green; border-radius: 18px; /*margin: .02em;*/
-            padding: 4px; margin-top: .5em; width: 340px;  font-size: 10px; background-color: #ffd3c2;}
+        footer {
+            position: relative; width: 80%;
+            text-align: center; border: 2px solid green; border-radius: 18px; /*margin: .02em;*/
+            padding: 4px; margin-top: .5em;   font-size: 11px; background-color: #ffd3c2;}
 
      
    /*
