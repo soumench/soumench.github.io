@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> gstCalculator </title>
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+   
+</head>
+
+	<body>       
+        <div id="wrapperBox"  class="bg">
+             <span class="progTitle">G.S.T. Calculator</span>
+            <hr>            
+                <p id="eboxTxt">
+                    <span class="labels1">COST PRICE: </span>
+                    <input type="number"  class="ip" id="cost" placeholder="ক্রয়মূল্য়" >
+                <br><br>
+                    <span class="labels1">G.S.T.  %: </span>  
+                    <input type="number"  class="ip" id="gst" placeholder="Enter GST %" ><br>
+                </p>            
+           <hr/>                
+                <p class="gstDisplayBox">
+                    <span class="labels">C.G.S.T.: </span><span  id="cgst"></span><br>
+                    <span class="labels">S.G.S.T.: </span><span  id="sgst"></span><br>
+                    <span class="labels">TOTAL G.S.T.: </span><span  id="gstTotal">মোট G.S.T. দিতে হবে </span><br>
+                    <span class="labels">SELLING PRICE:</span><span  id="total">বিক্রয়মূল্য় যা হবে</span>
+                </p>                      
+        </div> <!--wrapperbox#1-->
+        <!--------------------------------------------------------------------------------------->
+        <div id="wrapperBox2" class="bg">
+            <span class="progTitle">G.S.T. Finder</span>
+            <h5>(Find the G.S.T. &amp; Cost in Selling Price.)</h5>
+            <hr>
+            <p>
+                <span class="labels1">SELLING PRICE : </span>
+                <input type="number"  class="ip" id="totalPaid" placeholder="বিক্রয়মূল্য় " >
+                <br><br>
+                <span class="labels1">G.S.T. % (enter) : </span>    
+                <input type="number"  class="ip" id="gstPaid" placeholder="Enter GST %" value="12"> <br>
+            </p>
+            <hr>
+            <p class="gstDisplayBox">
+                 <span class="labels">C.G.S.T. PAID: </span><span class="labels" id="cgstPaid"></span><br>
+                 <span class="labels">S.G.S.T. PAID: </span><span class="labels" id="sgstPaid"></span><br>
+                 <span class="labels">TOTAL G.S.T. PAID: </span><span  id="totalGstPaid">G.S.T. দিতে হয়েছে</span><br>
+                 <span class="labels">COST PRICE: </span><span  id="costPrice">ক্রয়মূল্য় যা ছিল </span>
+            </p>
+        </div>
+        <footer>Copyright &copy; Soumen Chakraborty  <span id="year">( year 2019 )</span><br>
+        Strictly for Educational, Non-profit and Non-commercial Usage only.
+        </footer> 
+        <script src="script/e.js"></script>        
+        <script src="script/calculate.js"></script>
+        <script src="script/find.js"></script>
+        <script src="script/r2.js"></script>       
+        <script src="../../ENGLISH/year.js"></script>
+        <script>init();e("year").innerHTML = creation_year;</script>
+</body>
+</html>

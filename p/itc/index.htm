@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Personal IGST Calculator : Soumen's Playground</title>
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+   
+</head>
+
+	<body>       
+        <div id="wrapperBox"  class="bg">
+             <span class="progTitle">Import Tax Calculator( Personal ) </span>
+            <hr>            
+                <p id="eboxTxt">
+                    <span class="labels1">Product Value ( in Indian Rupees ):   </span>
+                    <input type="number"  class="ip" id="pValue" placeholder="Enter the price." autofocus ><br><br>
+                    <span class="labels1">Basic Custom Duty @  10 % : </span>  
+                    <input type="number"  class="ip" id="bcd" placeholder="to be paid" disabled  ><br><br>
+                    <span class="labels1">CESS  @ 3 % : </span>  
+                    <input type="number"  class="ip" id="cess" placeholder="to be paid" disabled ><br><br>
+                    <span class="labels1">I.G.S.T.   @  28 % : </span>  
+                    <input type="number"  class="ip" id="igst" placeholder="to be paid " disabled ><br>
+                </p><br>          
+                <p class="gstDisplayBox"><br>
+                    <span class="labels">TOTAL IMPORT TAX: </span><span  id="taxTotal">( Total Tax to be paid.) </span><br><br>
+                    <span class="labels">TOTAL IMPORT COST:</span><span  id="totalCost"> ( To be paid on receipt. )</span><br><br>
+                </p>                      
+        </div> <!--wrapperbox#1-->
+        <!--------------------------------------------------------------------------------------->
+        
+        <footer>Copyright &copy; Soumen Chakraborty  <span id="year">( year 2019 )</span><br>
+        Strictly for Educational, Non-profit and Non-commercial Usage only.
+        </footer> 
+        <script src="script/e.js"></script><script src="script/calculate.js"></script><script src="script/r2.js"></script>      
+        <script src="../../ENGLISH/year.js"></script><script>init();e("year").innerHTML = creation_year;</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/*myStyle v 2.0*/
+        body{text-align: center; width: 100%; font:24px; font-family: sans-serif; margin: 0; padding: 0;}
+        .progTitle{width: inherit;  font-weight: 700; color: yellow; }
+        .bg, #bcd, #cess, #igst {background-color: #580d3c;} 
+       
+         #wrapperBox,#wrapperBox2{width: 80%;
+             border-width:5px;  border-style:ridge; border-radius: 16px; padding: 4px; padding-bottom: 0 width: 350px;    overflow: hidden; /* will contain if #first is longer than #second */} 
+        #wrapperBox2{margin-top: 8px;}
+         .ip{text-align: center;  font-size: 13px; color:  darkred; font-weight: 600; float: right; margin-right: 18px;}
+        .labels1{color: white;  font-weight: 600; float: left; margin-left: 10px; position: relative;}
+        .gstDisplayBox{ margin-top: 0px; margin-left: 2px; height:auto;
+            background-color: #87e3ff;
+            border-width:5px;  border-style:ridge; border-radius: 16px; padding: 0px; font-weight: 600; text-align: left; color: #191616; }
+         h5{text-align: center;margin: 0px; color:burlywood;}        
+        input[type=number] { width: 150px; padding: 0; height: 30px; position: relative; 
+          outline: none; border: 1px solid #cdcdcd; border-color: rgba(0, 0, 0, .15); background-color: white;
+          font-size: 16px;}
+        #totalCost, #taxTotal{ color: red; margin-left: 50px; background-color: yellow; padding: 8px; float: right; margin-right: 10px; border-radius: 16px;}
+        #bcd, #cess, #igst{ color: white; border: black solid 2px; text-align: right;}
+        #pValue{text-align: right;}
+        
+        footer {
+            position: relative; width: 80%;
+            text-align: center; border: 2px solid green; border-radius: 18px; /*margin: .02em;*/
+            padding: 4px; margin-top: .5em;   font-size: 11px; background-color: #ffd3c2;}
+
+     
+   /*
+Copyright: Soumen Chakraborty 2019
+https://soumen-here.blogspot.com/
+Strictly for Educational and Non-commercial Purpose
+*/     
+    
