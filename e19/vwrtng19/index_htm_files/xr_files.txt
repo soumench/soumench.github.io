@@ -18,6 +18,7 @@ index_htm_files/31.png
 index_htm_files/31@2x.png
 index_htm_files/19.png
 index_htm_files/19@2x.png
-index_htm_files/22.png
 index_htm_files/XaraWDGeneratedHTMLfont1.woff
 index_htm_files/XaraWDEmbeddedHTMLfont1.eot
+index_htm_files/XaraWDGeneratedHTMLfont2.woff
+index_htm_files/XaraWDEmbeddedHTMLfont2.eot
