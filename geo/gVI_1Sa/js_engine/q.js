@@ -3,7 +3,7 @@ Copyright: Soumen Chakraborty 2018-20
 https://soumen-here.blogspot.com/
 Strictly for Educational and Non-commercial Purpose
 */
-heading.innerHTML="GEOGRAPHY QUESTIONS - Class VI";
+heading.innerHTML="ভূগোল / GEOGRAPHY QUESTIONS - Class VI";
 var bank = [
      "কত বছর আগে মহাবিশ্বের প্রসারণ শুরু হয়েছিল বলে মনে করা হয়? ~ ১৪০০ কোটি  বছর আগে  "
     

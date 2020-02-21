@@ -3,7 +3,7 @@ Copyright: Soumen Chakraborty 2018-19
 https://soumen-here.blogspot.com/
 Strictly for Educational and Non-commercial Purpose
 */
-heading.innerHTML="ভূগোল / Geography - CLass VI";
+heading.innerHTML="ভূগোল / Geography - Class VI";
 var bank = [
      "ভারতের বৃহত্তম শহরটির নাম কি ? ~ মুম্বাই "
     
