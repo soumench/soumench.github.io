@@ -17,7 +17,7 @@
               height: 700px;
               /*border: 3px solid #73AD21;*/
             
-            font-size: 20px;
+            font-size: 19px;
             font-family:sans-serif;
         }
         #board{}
@@ -33,6 +33,16 @@
         table, th, td {
             border: 1px solid black;
         }
+        
+        th, td {  padding: 5px;  text-align: left;}
+        td {
+            height: 30px;
+            vertical-align: middle;
+        }
+        
+        .ben{color: #500850; font-size: 15px; background-color: #faf9f7; text-align: left;}
+        .eng{color: #500850; font-size: 17px; background-color: #ffeeeb; text-align: left; margin-left: 2px;}
+        .snd{color: #500850; font-size: 17px; background-color: #ffeeeb; text-align: center; margin-left: 2px;}
         footer{text-align: center; color: red;}
     </style>
 </head>
@@ -56,69 +66,72 @@
   </tr>
   <tr>
     <td>1</td>
-    <td>May I come in, sir?</td>
-    <td>আমি কি ভিতরে আসতে পারি, স্যার ?</td>
-    <td><img src="img/play.png" alt="cassette" width="30" height="30" id="one" class="playBtn"></td>
+    <td class="eng"> May I come in, sir?</td>
+    <td class="ben">আমি কি ভিতরে আসতে পারি, স্যার ?</td>
+    <td class="snd"><img src="img/play.png" alt="cassette" width="30" height="30" id="one" class="playBtn"></td>
   </tr>
   <tr>
     <td>2</td>
-    <td>May I go out, please?</td>
-    <td>আমি কি বাইরে যেতে পারি, স্যার?</td>
-     <td><img src="img/play.png" alt="cassette" width="30" height="30" id="two" class="playBtn"></td>
+    <td class="eng">May I go out, sir?</td>
+    <td class="ben">আমি কি বাইরে যেতে পারি, স্যার?</td>
+     <td class="snd"><img src="img/play.png" alt="cassette" width="30" height="30" id="two" class="playBtn"></td>
   </tr>       
   
    <tr>     
   <td>3</td>
-    <td>May I drink water, please?</td>
-       <td>আমি কি জল খেতে পারি,স্যার?</td>
-       <td><img src="img/play.png" alt="cassette" width="30" height="30" id="three" class="playBtn"></td>
+    <td class="eng">May I drink water, sir?</td>
+       <td class="ben">আমি কি জল খেতে পারি,স্যার?</td>
+       <td class="snd"><img src="img/play.png" alt="cassette" width="30" height="30" id="three" class="playBtn"></td>
   </tr>        
   <tr>
     <td>4</td>
-    <td>May I close the door, please?</td>
-    <td>আমি কি দরজাটা একটু বন্ধ করতে পারি?</td>
-    <td><img src="img/play.png" alt="cassette" width="30" height="30" id="four" class="playBtn"></td>
+    <td class="eng">May I close the door, please?</td>
+    <td class="ben">আমি কি দরজাটা একটু বন্ধ করতে পারি?</td>
+    <td class="snd"><img src="img/play.png" alt="cassette" width="30" height="30" id="four" class="playBtn"></td>
   </tr>        
  <tr>
     <td>5</td>
-    <td>May I go to the toilet, please?</td>
-     <td>আমি কি টয়লেটে যেতে পারি, স্যার?</td>
-     <td><img src="img/play.png" alt="cassette" width="30" height="30" id="five" class="playBtn"></td>
+    <td class="eng">May I go to the toilet, sir?</td>
+     <td class="ben">আমি কি টয়লেটে যেতে পারি, স্যার?</td>
+     <td class="snd"><img src="img/play.png" alt="cassette" width="30" height="30" id="five" class="playBtn"></td>
   </tr>       
   <tr>
     <td>6</td>
-    <td>May I answer the question, please?</td>
-       <td>আমি কি এই প্রশ্নের উত্তর দিতে পারি, স্যার?</td>
-       <td><img src="img/play.png" alt="cassette" width="30" height="30" id="six" class="playBtn"></td>
+    <td class="eng">May I answer the question, sir?</td>
+       <td class="ben">আমি কি এই প্রশ্নের উত্তর দিতে পারি, স্যার?</td>
+       <td class="snd"><img src="img/play.png" alt="cassette" width="30" height="30" id="six" class="playBtn"></td>
   </tr>
   <tr>     
   <td>7</td>
-    <td>Sorry for being late.</td>
-       <td>দেরী হবার জন্য দুঃখিত|</td>
-       <td><img src="img/play.png" alt="cassette" width="30" height="30" id="seven" class="playBtn"></td>
+    <td class="eng">Sorry for being late.</td>
+       <td class="ben">দেরী হবার জন্য দুঃখিত|</td>
+       <td class="snd"><img src="img/play.png" alt="cassette" width="30" height="30" id="seven" class="playBtn"></td>
   </tr>        
   <tr>
     <td>8</td>
-    <td>I was absent on the last lesson.</td>
-       <td>গত পাঠে আমি অনুপস্থিত ছিলাম | </td>
-       <td><img src="img/play.png" alt="cassette" width="30" height="30" id="eight" class="playBtn"></td>
+    <td class="eng">I was absent on the last lesson.</td>
+       <td class="ben">গত পাঠে আমি অনুপস্থিত ছিলাম | </td>
+       <td class="snd"><img src="img/play.png" alt="cassette" width="30" height="30" id="eight" class="playBtn"></td>
   </tr>
  <tr>
     <td>9</td>
-    <td>I was not present in the last class.</td>
-       <td>গত পাঠে আমি অনুপস্থিত ছিলাম | </td>
-       <td><img src="img/play.png" alt="cassette" width="30" height="30" id="nine" class="playBtn"></td>
+    <td class="eng">I was not present in the last class.</td>
+       <td class="ben">গত ক্লাসে আমি অনুপস্থিত ছিলাম | </td>
+       <td class="snd"><img src="img/play.png" alt="cassette" width="30" height="30" id="nine" class="playBtn"></td>
   </tr>
         <tr>
     <td>10</td>
-    <td>What is the home work?</td>
-       <td>বাড়ির কাজ কি আছে ?</td>
-       <td><img src="img/play.png" alt="cassette" width="30" height="30" id="ten" class="playBtn"></td>
+    <td class="eng">What is the home work?</td>
+       <td class="ben">বাড়ির কাজ কি আছে?</td>
+       <td class="snd"><img src="img/play.png" alt="cassette" width="30" height="30" id="ten" class="playBtn"></td>
   </tr>       
 </table>
     
     </div>
-    
+   <p>
+       <span style="left: auto">previous</span> 
+       <span style="right: 0px"> next</span>
+    </p> 
     
    
 	
