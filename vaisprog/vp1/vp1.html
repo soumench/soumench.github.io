@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="English">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+</head>
+
+<body>
+    <h1>Kirtan Assistant</h1>
+    <div id="playerBoard">
+    	
+		<img src="flute.png" id="pic" width="300px" height="20px" > 
+        <input type="button" name="button" value="play" onclick="play()">
+		<br>
+       
+        <audio controls loop="loop">
+            <source src="kirtanBeat1.wav" type="audio/ogg">
+		    Your browser does not support the audio element.
+        </audio> 
+	</div>	
+	
+    <footer>
+    	Copyright &copy; Soumen Chakraborty  <span id="year">year</span> <br>
+    	Strictly for Educational and Non-commercial purpose only.
+    </footer>
+    <script src="../../ENGLISH/year.js"></script>
+    <script src="../../e_spk/engine/e.js"></script>
+  
+    <script>
+        const myAudio = new Audio('kirtan_beat48.mp3'); 
+            
+        function play(){
+          
+        
+        const bgSound = new Audio('kirtanBeat1.wav');
+        bgSound.loop = true;
+        bgSound.play();
+        }
+        
+		e("year").innerHTML = creation_year;
+    </script>
+</body>
+</html>
