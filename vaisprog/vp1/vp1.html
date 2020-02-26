@@ -12,27 +12,21 @@
       A work in progress.<br>
       <img src="img/kiitran.jpg" id="pic" width="300px" height="200px"><br>
             <input type="button" name="button" value="Press to Play" id="play1" onclick="doKirtan1()" ><br>
-            <span id="disclaimer">
-                 Known Issue: Press the play button twice to sync.<br>
-                All the sound files are composed, mixed and mastered by yours truly.<br>         
-            </span>       
+            <span id="disclaimer">Known Issue: Press the play button twice to sync.<br>
+                All the sound files are composed, mixed and mastered by yours truly.</span><br>   
     </div>
     <footer>Copyright &copy; Soumen Chakraborty  <span id="year">year</span> <br>
     	Strictly for Educational, Non-Profit Non-commercial and Research purpose only.</footer>
     <script src="../../ENGLISH/year.js"></script><script src="../../e_spk/engine/e.js"></script>
-    <script>
-        "use strict";var toggle = 0;
+    <script>"use strict"; var toggle = 0;
         function doKirtan1(){
            if(toggle=toggle^1){ let current_player = "a";
-            let player_a = document.createElement("audio");
-            let player_b = document.createElement("audio");
-            player_a.src = "kirtanBeat1.wav"; player_b.src = player_a.src;
+            let player_a = document.createElement("audio");let player_b = document.createElement("audio");player_a.src = "kirtanBeat1.wav"; player_b.src = player_a.src;
             function loopIt(){var player = null;
                 if(current_player == "a"){player = player_b;  current_player = "b";}
                 else{ player = player_a; current_player = "a";}
-                player.play(); setTimeout(loopIt, 4780);//the ms length of the clip 
-            }loopIt(); e("play1").value= "Stop";  toggle=1;               
-           }else{window.location.reload();}            
+                player.play(); setTimeout(loopIt, 4780);//the ms length 
+            }loopIt(); e("play1").value= "Stop";  toggle=1;}else{window.location.reload();} 
         };e("year").innerHTML = creation_year;
     </script>
 </body>
