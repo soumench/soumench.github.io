@@ -36,6 +36,7 @@ body{
  background-image: linear-gradient(red, yellow);
 }
 footer{
+    width: 555px;
  font-size: 13px; color: blue;
  border: 1px solid red;
  padding: 4px;
