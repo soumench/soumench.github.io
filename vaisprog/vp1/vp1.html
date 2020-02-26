@@ -4,42 +4,74 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    
+    <style>
+        body{
+            font-family: sans-serif;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        #"playerBoard"{
+              width: 500px;
+              border: 15px solid green;
+              padding: 50px;
+              margin: 20px;
+        }
+        
+        #play1{
+            width: 200px;
+            height: 50px;
+            font-size: 30px;
+            color: purple;
+            font-weight: bolder;
+            background-color: aqua;
+        }
+        
+       
+    </style>
 </head>
 
 <body>
-    <h1>Kirtan Assistant</h1>
-    <div id="playerBoard">
-    	
-		<img src="flute.png" id="pic" width="300px" height="20px" > 
-        <input type="button" name="button" value="play" onclick="play()">
+    <h1>Kiirtan Assistant</h1>
+    <h6>V 0.1</h6>
+    
+   
+    <div id="playerBoard">    	
+		<img src="kiitran.jpg" id="pic" width="300px" height="200px" > <br>
+        <input type="button" name="button" value="Play" id="play1" onclick="doKirtan1()" >
 		<br>
-       
-        <audio controls loop="loop">
-            <source src="kirtanBeat1.wav" type="audio/ogg">
-		    Your browser does not support the audio element.
-        </audio> 
+        All the sound files are composed, mixed and mastered by yours truly. 
 	</div>	
-	
     <footer>
     	Copyright &copy; Soumen Chakraborty  <span id="year">year</span> <br>
-    	Strictly for Educational and Non-commercial purpose only.
+    	Strictly for Educational, Non-Profit Non-commercial and Research purpose only.
     </footer>
     <script src="../../ENGLISH/year.js"></script>
     <script src="../../e_spk/engine/e.js"></script>
-  
     <script>
-        const myAudio = new Audio('kirtan_beat48.mp3'); 
-            
-        function play(){
-          
-        
-        const bgSound = new Audio('kirtanBeat1.wav');
-        bgSound.loop = true;
-        bgSound.play();
-        }
-        
-		e("year").innerHTML = creation_year;
+        "use strict";
+        var toggle = 0;
+        function doKirtan1(){
+           if(toggle=toggle^1){                             
+            var current_player = "a";
+            var player_a = document.createElement("audio");
+            var player_b = document.createElement("audio");
+            player_a.src = "kirtanBeat1.wav";
+            player_b.src = player_a.src;
+            function loopIt(){
+                var player = null;
+                if(current_player == "a"){player = player_b;  current_player = "b";}
+                else{ player = player_a; current_player = "a";}
+                player.play();
+                setTimeout(loopIt, 4780); // the length of the audio clip in milliseconds.
+            }loopIt();
+            e("play1").value= "Stop"; e("play1").color
+            toggle=1;               
+           }
+         else{window.location.reload();}            
+        };
+        /*--------------------------------------*/
+        e("year").innerHTML = creation_year;
     </script>
 </body>
 </html>
