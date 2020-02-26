@@ -1,0 +1,46 @@
+
+body{
+    font-family: sans-serif;
+    font-size: 24px;
+    text-align: center;
+}           
+#playerBoard{
+  width: 550px;
+  border: 3px solid green;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 16px;
+  color: aquamarine;
+  background-image: repeating-radial-gradient(red, blue)
+}
+#proggyName{
+  font-family: fantasy; font-size: 28px;
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#subTitle{
+  font-size: 16px; 
+}
+#disclaimer{
+  font-size: 16px;
+  color: yellow;
+}
+#play1{
+ width: 350px;
+ height: 50px;
+ font-size: 30px;
+ color: purple;
+ font-weight: bolder;
+ background-color: aqua;
+ border-radius: 16px;
+ background-image: linear-gradient(red, yellow);
+}
+footer{
+ font-size: 13px; color: blue;
+ border: 1px solid red;
+ padding: 4px;
+ border-radius: 16px;
+ background-color: #fffdc9;
+ color: red;
+}
+    
