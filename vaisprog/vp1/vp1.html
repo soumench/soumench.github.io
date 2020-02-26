@@ -10,39 +10,60 @@
             font-size: 24px;
             text-align: center;
         }
-        
-        #"playerBoard"{
-              width: 500px;
-              border: 15px solid green;
-              padding: 50px;
-              margin: 20px;
+           
+        #playerBoard{
+              width: 550px;
+              border: 3px solid green;
+              padding: 5px;
+              margin: 2px;
+              border-radius: 16px;
+            color: aquamarine;
+            background-image: repeating-radial-gradient(red, blue)
+        }
+        #proggyName{font-family: fantasy; font-size: 28px;}
+        #subTitle{
+           font-size: 16px; 
+        }
+        #disclaimer{
+            font-size: 16px;
+            color: yellow;
         }
         
         #play1{
-            width: 200px;
+            width: 350px;
             height: 50px;
             font-size: 30px;
             color: purple;
             font-weight: bolder;
             background-color: aqua;
+            border-radius: 16px;
         }
-        
+        footer{
+            font-size: 13px; color: blue;
+            border: 1px solid red;
+            padding: 4px;
+            border-radius: 16px;
+            background-color: #fffdc9;
+        }
        
     </style>
 </head>
 
 <body>
-    <h1>Kiirtan Assistant</h1>
-    <h6>V 0.1</h6>
-    
    
-    <div id="playerBoard">    	
-		<img src="kiitran.jpg" id="pic" width="300px" height="200px" > <br>
-        <input type="button" name="button" value="Play" id="play1" onclick="doKirtan1()" >
-		<br>
-        All the sound files are composed, mixed and mastered by yours truly. .
-        <br><br>
-	</div>	
+   <div id="playerBoard">
+         	 <span id="proggyName">Kiirtan Assistant ( v 0.1 )</span><br> <br>
+        <span id="subTitle">I dedicate this little proggy to that very special respected person who always bestows her kind and unconditional motherly affection upon me <br> AND <br> to the whole Vaisnav community all over the world.</span><br>
+            <img src="kiitran.jpg" id="pic" width="300px" height="200px" > <br>
+            <input type="button" name="button" value="Press to Play" id="play1" onclick="doKirtan1()" >
+            <br>
+            <span id="disclaimer">
+                 Known Issue: Press the play button twice to sync.<br>
+                All the sound files are composed, mixed and mastered by yours truly.<br>         
+            </span>
+           
+       
+    </div>
     <footer>
     	Copyright &copy; Soumen Chakraborty  <span id="year">year</span> <br>
     	Strictly for Educational, Non-Profit Non-commercial and Research purpose only.
@@ -53,10 +74,9 @@
         "use strict";
         var toggle = 0;
         function doKirtan1(){
-           if(toggle=toggle^1){                             
-            var current_player = "a";
-            var player_a = document.createElement("audio");
-            var player_b = document.createElement("audio");
+           if(toggle=toggle^1){                          let current_player = "a";
+            let player_a = document.createElement("audio");
+            let player_b = document.createElement("audio");
             player_a.src = "kirtanBeat1.wav";
             player_b.src = player_a.src;
             function loopIt(){
