@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> v1s20 </title>
+    <style>
+        .ico:hover{cursor:grab;}
+    </style>
+</head>
+
+	<body>
+        <img src="ico/speaker_icon.png" alt="" width="60px" height="auto" class="ico" onclick="clickme(this)"  id="spk1">
+        <span id="trace1"></span><span id="trace2"></span><br>
+        <input type="button" id="bt2" value="<<<" onclick="clickme(this)">
+        <input type="button" id="bt1" value=">>>" onclick="clickme(this)">        
+        <script>"use strict"
+            let i=0; trace1.innerHTML=i;
+            function clickme(p){
+                let el = p.id;
+                if(el=="bt1"){
+                    i+=1;
+                    correct_audio();
+                }
+                                                            
+                else if(el=="bt2"){
+                    i-=1;
+                    wrong_audio();
+                }
+                
+                
+                 else if(el=="spk1"){
+                    spk1.style.visibility="hidden";
+                    i-=1;
+                    wrong_audio();
+                    
+                }
+                trace1.innerHTML=i;trace2.innerHTML=` - ${p.value}`;}
+        
+        
+          
+            
+            
+          
+        const r1 = new Audio("audio/r1.oga");
+        const r2 = new Audio("audio/r2.oga");
+        const r3 = new Audio("audio/r3.oga");
+        const r4 = new Audio("audio/r4.oga");
+        const r5 = new Audio("audio/r5.oga");
+        const r6 = new Audio("audio/r6.oga");
+        function correct_audio(){
+            const cur_aud_list = [r1,r2,r3,r4,r5,r6];
+           let cur_a = cur_aud_list[Math.floor(Math.random()*cur_aud_list.length)];
+            cur_a.play();
+        }
+
+        const w1 = new Audio("audio/w1.oga");
+        const w2 = new Audio("audio/w2.oga");
+        const w3 = new Audio("audio/w3.oga");
+        const w4 = new Audio("audio/w4.oga");
+        const w5 = new Audio("audio/w5.oga");
+        const w6 = new Audio("audio/w6.oga");
+        function wrong_audio(){
+            const wr_aud_list = [w1,w2,w3,w4,w5,w6];
+            let wro_a = wr_aud_list[Math.floor(Math.random()*wr_aud_list.length)];
+            wro_a.play();
+        }
+        const nxt_audio = new Audio("audio/ting-128kbps.ogg");
+
+        </script>
+        
+        
+
+</body>
+</html>
