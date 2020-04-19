@@ -23,14 +23,13 @@ h2{
 
 
 
- table, th, td {border: 1px solid black;}
+table, th, td {border: 1px solid black;}
         th, td {padding: 2px;}
 th{background-color: #9aff9a;}
 
+.btn{border-style: outset; padding: 12px; border-radius: 16px; background-color: #d5d5ff;  font-weight: bolder; box-shadow: 8px 8px 5px #605d5d; }
 
-.btn{border-style: outset; padding: 12px; border-radius: 16px; background-color: #bebeff;  font-weight: bolder; box-shadow: 8px 8px 5px grey;}
-
-.btnBox{padding: 25px; border-style: groove; border-width: thick;border-radius: 16px; color: yellow;}
+.btnBox{padding: 25px; border-style: outset; border-width: thick;border-radius: 16px; color: yellow; border-color: #383333; background-image: radial-gradient(circle, white, #f7e0e0, #7c7b7b);}
 
 footer{
     border-style: double; border-radius: 16px; padding: 5px;
