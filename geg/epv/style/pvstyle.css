@@ -39,3 +39,7 @@ footer{
     border-style: double; border-radius: 16px; padding: 5px;
     font-size: 14px;margin: 10px; background-color: cornsilk; color: darkred;
 }
+
+
+.flex-container {display: flex;flex-direction: row;
+        padding: 5px; vertical-align: middle;}
