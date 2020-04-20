@@ -33,7 +33,7 @@ th{background-color: #9aff9a;}
 
 .btn{border-style: outset; padding: 12px; border-radius: 16px; background-color: #d5d5ff;  font-weight: bolder; box-shadow: 8px 8px 5px #605d5d; }
 
-.btnBox{padding: 25px; border-style: outset; border-width: thick;border-radius: 16px; color: yellow; border-color: #383333; background-image: radial-gradient(circle, white, #f7e0e0, #7c7b7b);}
+.btnBox{padding: 15px; border-style: outset; border-width: thick;border-radius: 16px; color: yellow; border-color: #383333; background-image: radial-gradient(circle, white, #f7e0e0, #7c7b7b);}
 
 footer{
     border-style: double; border-radius: 16px; padding: 5px;
