@@ -45,6 +45,17 @@ footer{
 
 .player{width:100%; border-style: double; border-radius: 16px; }
 
+a:link, a:visited {
+  /*background-color: #f44336;*/
+  color: blue;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;}
+a:hover, a:active {
+  background-color: red;
+}
+
 .flex-container {
     display: flex;
     flex-direction: row;
