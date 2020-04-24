@@ -22,7 +22,7 @@ body{
     text-align: center;
 }
 p{text-align: left; padding-left: 2em; width: 95%;}
-.example{font-weight: 600; color: blue; }
+.ee{font-weight: 600; color: blue; }
 .eb{color: purple;}
 .highlight{color: #7c1c05;}
 .note{font-weight: 500; color: blueviolet; border-radius: 16px; background-color: #fde9e1;}
