@@ -50,7 +50,7 @@ footer{
     font-size: 14px;margin: 10px; background-color: cornsilk; color: darkred;
 }
 
-.player{width:100%; border-style: double; border-radius: 16px; }
+.vo{width:95%; border-style: double; border-radius: 16px; }
 
 a:link, a:visited {
   /*background-color: #f44336;*/
