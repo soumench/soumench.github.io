@@ -23,7 +23,7 @@ body{
     /*border: 1px solid grey; */
     text-align: center;
 }
-p{text-align: left;  width: 95%;}
+p{text-align: left;  padding-left: 1em;}
 .ee{font-weight: 600; color: blue; padding-left: 2em; }
 .eb{color: purple; padding-left: 2em; }
 .highlight{color: #7c1c05;}
