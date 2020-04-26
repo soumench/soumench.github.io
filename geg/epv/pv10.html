@@ -34,6 +34,10 @@
         <p class="ee">He <b>looks after</b> her.</p>
         <p class="eb">সে তার দেখাশোনা করে।</p>
         
+        <p>
+        Click on the speaker to listen : <img src="img/spkrIcon.png" alt="" width="70em" height="auto" onclick="play()"> 
+       </p>
+        
     <!-----Panel start----->
     <div  class="btnBox"> 
         <div class="flex-container" style="align-content: space-between;">
@@ -62,7 +66,8 @@
    
     <script>       
      "use strict"; 
-     
+     var spk = new Audio("vo/pv10.mp3"); 
+     function play(){spk.currentTime = 0; spk.play();}
         
      e("year").innerHTML = creation_year;
     </script>

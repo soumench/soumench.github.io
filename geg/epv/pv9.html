@@ -28,7 +28,9 @@
             <p class="ee"> He <b>looked down</b> at me from the roof.</p>
             <p class="eb">সে ছাদ থেকে নিচের দিকে তাকিয়ে আমাকে দেখলো।</p>
      
-        
+        <p>
+        Click on the speaker to listen : <img src="img/spkrIcon.png" alt="" width="70em" height="auto" onclick="play()"> 
+       </p>
  
    
     <!-----Panel start----->
@@ -58,7 +60,9 @@
 	<script src="../../ENGLISH/year.js"></script>
    
     <script>       
-     "use strict";ye        
+     "use strict";
+     var spk = new Audio("vo/pv9.mp3"); 
+     function play(){spk.currentTime = 0; spk.play();} 
      e("year").innerHTML = creation_year;
     </script>
 </body>
