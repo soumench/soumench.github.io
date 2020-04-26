@@ -27,8 +27,10 @@
                 <p>
                 <b>The truth is, we cannot figure that out .</b> The problem here came from using  a bad dictionary, wordlist or website to find the translation, or more likely, from using a good one badly. </p>
                 <p>A good dictionary will tell us that <b>"turn"</b> alone means <b>" ঘোরা "</b>, but <b>"turn up"</b> means <b>" উপস্থিত হওয়া "</b>. <!--Please go now to google translate at type this: turn up.-->
-     <audio controls class="vo">
-	<source src="vo/pv2.mp3" type="audio/ogg" ></audio>     
+        <p>
+        Click on the speaker to listen : <img src="img/spkrIcon.png" alt="" width="70em" height="auto" onclick="play()"> 
+       </p>
+         
     <!-----Panel start----->
     <div  class="btnBox"> 
         <div class="flex-container" style="align-content: space-between;">
@@ -55,8 +57,8 @@
    
     <script>       
      "use strict"; 
-           
-        
+      var spk = new Audio("vo/pv2.mp3"); 
+     function play(){spk.currentTime = 0; spk.play();}   
      e("year").innerHTML = creation_year;
     </script>
 </body>
