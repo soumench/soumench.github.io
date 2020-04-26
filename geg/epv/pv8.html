@@ -27,7 +27,7 @@
         <hr>
         <!--<p class="ee">count on = rely</p>-->
         <p class="ee">If there's anything I can do for you, <b>count on </b>me.</p>  
-        <p class="ee">If there's anything I can do for you, <b> rely </b> me.</p>
+        <p class="ee">If there's anything I can do for you, <b> rely </b>on me.</p>
         <p class="eb">যদি আমি আপনার জন্য কিছু করতে পারি তবে আমার উপর নির্ভর করুন।</p>
         <hr>
         <!--<p class="ee">get away = escape</p>-->
@@ -54,7 +54,9 @@
         <p class="ee">Bullies look for weaker classmates to <b>tease</b>.</p> 
         <p class="eb">উৎপীড়করা অত্যাচার করার জন্য দুর্বল সহপাঠীদের  খোঁজে ।</p> 
         
-        
+         <p>
+        Click on the speaker to listen : <img src="img/spkrIcon.png" alt="" width="70em" height="auto" onclick="play()"> 
+       </p>
        
        
     <!-----Panel start----->
@@ -84,8 +86,8 @@
    
     <script>       
      "use strict"; 
-     
-        
+      var spk = new Audio("vo/pv8.mp3"); 
+     function play(){spk.currentTime = 0; spk.play();} 
      e("year").innerHTML = creation_year;
     </script>
 </body>
