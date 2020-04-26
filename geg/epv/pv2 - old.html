@@ -43,7 +43,7 @@
         </div>
      </div>    
     <!-----Panel end----->
-         <img src="img/sleepy_cat.PNG" alt="" width="25%" height="auto">  
+         <img src="img/sleepy_cat.PNG" alt="" width="25%" height="auto" onclick="play()">  
     </main>
 	<footer>
     Copyright &copy; Soumen Chakraborty  <span id="year">year</span> <br>
@@ -55,7 +55,9 @@
    
     <script>       
      "use strict"; 
-           
+       
+    var spk = new Audio("vo/pv2.mp3"); 
+    function play(){spk.currentTime = 20; spk.play();}
         
      e("year").innerHTML = creation_year;
     </script>
