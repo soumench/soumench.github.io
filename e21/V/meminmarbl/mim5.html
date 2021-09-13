@@ -14,8 +14,8 @@
 	<header></header>
 	<main>
         <hr>
-        <h1>Memory in Marble</h1>
-        <h3>[Page : 5 ]</h3>
+         <h1 id="pageTitle">  </h1>
+        <h3 id="pageNum"> "" </h3>
         <hr>
         <div class="txt">
         <p id>
@@ -46,7 +46,13 @@
     
     </main>
 	<footer></footer>
-	<script type="text/javascript" src=""></script>
+	<script type="text/javascript" src="engine.js"></script>    <script>document.getElementById("pageTitle").innerHTML = topicName;
+    
+    var path = window. location. pathname;
+    var page = path. split("/"). pop();
+    var thisPage = page.slice(3,-5); 
+   document.getElementById("pageNum").innerHTML = "[ Page: "+ thisPage +" ]";
+    </script>
 </body>
 
 </html>
