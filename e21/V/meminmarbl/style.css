@@ -34,7 +34,7 @@ body {
     border-radius: 25px;
     padding: 1px;
 }
-h1{text-align: center;}
+h1,h3{text-align: center;}
 
 p{
    font-family:sans-serif; font-size: 24px;
