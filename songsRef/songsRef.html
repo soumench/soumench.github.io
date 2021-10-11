@@ -1,0 +1,85 @@
+<!--Page Created by Soumen - 2018-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Songs Ref </title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th,td {
+            text-align: center;
+            vertical-align: middle;
+            padding: 5px;
+            /*border-bottom: 1px solid #ddd;*/
+        }
+        th {
+            background-color: #4caf6a;
+            color: white;
+        }
+        tr:nth-child(even) {background-color: #f2f2f2;} /* Striped Tables, maintain the order*/
+        tr:hover {background-color: #ddd;}
+        
+    </style>
+</head>
+
+<body>
+  <h3>Songs Ref</h3>
+  <div style="overflow-x:auto;"><table></table></div>  
+    
+  <script>  
+  function createTable(objectArray, fields, fieldTitles) {
+  let body = document.getElementsByTagName('body')[0];
+  let tbl = document.createElement('table');
+  let thead = document.createElement('thead');
+  let thr = document.createElement('tr');
+  fieldTitles.forEach((fieldTitle) => {
+    let th = document.createElement('th');
+    th.appendChild(document.createTextNode(fieldTitle));
+    thr.appendChild(th);
+  });
+  thead.appendChild(thr);
+  tbl.appendChild(thead);
+
+  let tbdy = document.createElement('tbody');
+  let tr = document.createElement('tr');
+  objectArray.forEach((object) => {
+    let tr = document.createElement('tr');
+    fields.forEach((field) => {
+      var td = document.createElement('td');
+      td.appendChild(document.createTextNode(object[field]));
+      tr.appendChild(td);
+    });
+    tbdy.appendChild(tr);    
+  });
+  tbl.appendChild(tbdy);
+  body.appendChild(tbl)
+  return tbl;
+}
+
+createTable([
+    {sl: '1', name: 'Maili chadar odhke kaise',  chord:'C#', link:'www '},
+    {sl: '2', name: 'Tum itna jo muskura rahe ho', chord:'C#', link:''},
+    {sl: '3', name: 'Tumko dekha to yeh khyal aya', chord:'C#', link:''},
+    {sl: '4', name: 'Hoton se chholon tum', chord:'C#', link:''},
+    {sl: '5', name: 'Chingari koi bhaDke', chord:'Bb/Cm', link:''},
+    {sl: '6', name: 'Kisko aati hain masihaayee', chord:'Cm', link:''},
+    {sl: '7', name: 'pyar manga hain tumhi se', chord:'Bb', link:''},
+    {sl: '8', name: 'pyar deewana hota hain', chord:'Bb', link:''}
+],
+['sl', 'name','chord', 'link'], ['SL', 'Name','Chord', 'Link']);
+    
+</script>
+</body>
+
+</html>
