@@ -7,7 +7,7 @@ const qa = [
         
             4,"She would forget our brief encounter. <br> ( Change the voice.)", "Our brief encounter would be forgotten by her. <br> ( >>>>  important  <<<< ) ",
     
-            5,"How does the Poet bring out the futility of war in the poem 'Asleep in the valley'", " no hint <br> (>>>  important <<<)",
+            5,"How does the Poet bring out the futility of war in the poem 'Asleep in the valley'?", " no hint <br> (>>>  important <<<)",
         
             6,"It takes much time to kill a tree.<br>(Change the voice.)", "Much time is taken to kill a tree.",
         
