@@ -15,9 +15,9 @@ index_htm_files/19.jpg
 index_htm_files/19@2x.jpg
 index_htm_files/17.jpg
 index_htm_files/17@2x.jpg
-index_htm_files/35.png
-index_htm_files/35@2x.png
 index_htm_files/36.png
+index_htm_files/40.png
+index_htm_files/40@2x.png
 index_htm_files/36@2x.png
-index_htm_files/37.png
-index_htm_files/37@2x.png
+index_htm_files/41.png
+index_htm_files/41@2x.png
