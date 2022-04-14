@@ -4,7 +4,7 @@ const list=[
 	 		"a soldier.",
 	 		"a sailor.",
 	 		"an actor.",
-	 		"a",
+	 		"b",
 	 
 	 
             "jon was a",
