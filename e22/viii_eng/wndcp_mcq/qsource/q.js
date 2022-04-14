@@ -7,7 +7,7 @@ const list=[
 	 		"b",
 	 
 	 
-            "jon was a",
+            "Jon was a",
 	 		"an old man.",
 	 		"a man.",
 	 		"boy.",
