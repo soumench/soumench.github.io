@@ -49,7 +49,7 @@ var bank = [
     
     ,"Everybody loves his motherland.<br>(to interrogative)~Who does not love his motherland?"
     
-    ,"Where is the newspaper? “, he asked. (Change the mode of narration.)~no hint"
+    ,"'Where is the newspaper?', he asked. (Change the mode of narration.)~no hint"
     
     ,"We must eat to live. (Change into a compound sentence.)~ no hint"
     
