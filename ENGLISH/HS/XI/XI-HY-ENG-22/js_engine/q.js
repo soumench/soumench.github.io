@@ -65,7 +65,7 @@ var bank = [
     
     ,"How many fields will the poet have to cross before a firm appears? ~'three fields to cross till a firm appears'"
     
-    ,"How does Browning describes the Half Moon?  ~ yellow, large and low"
+    ,"How does Browning describe the Half Moon?  ~ yellow, large and low"
         
     , "What garment did the city wear?~The beauty of the morning."
     
