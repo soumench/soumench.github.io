@@ -20,7 +20,7 @@ var bank = [
     
     ,"Who was Mr. Adams? ~ the owner of Elmore Bank and the father of Annabel"
     
-    ,"What is Phoenix? ~ an immortal bird associated with Greek mythology"
+    ,"What is a phoenix? ~ an immortal bird associated with Greek mythology"
     
     //--
     
