@@ -10,7 +10,7 @@ var bank = [
     
     ,"What did Jimmy enjoy in the restaurant? ~the sweet joy of liberty in the form of a broiled chicken, a bottle of white wine and a cigar of superior quality."
     
-    ,"'That child- she cannot stand it long in there.'- Who is referred to here?~ Agatha, the younger daughter of Annabels sister"
+    ,"'That child- she cannot stand it long in there.'- Who is referred to here?~ Agatha, the younger daughter of Annabel's sister"
     
     ,"What did Jimmy want to give away to his old friend Billy? ~ his set of burglers' tools"
     
@@ -47,7 +47,7 @@ var bank = [
     
    
     
-    ,"How does Wordswoth describe London in his poem?~ no hint"
+    ,"How does Wordsworth describe London in his poem?~ no hint"
     
     ,"How does Wordsworth describe the air in the city?~smokeless"
     
@@ -61,7 +61,7 @@ var bank = [
     
     ,"Justify the title of the poem 'Meeting at Night'.~ no hint"
     
-    , "What is the colour of the sea in 'Meeting at NIght'? ~ grey"
+    , "What is the colour of the sea in 'Meeting at Night'? ~ grey"
     
     ,"How many fields will the poet have to cross before a firm appears? ~'three fields to cross till a firm appears'"
     
@@ -104,14 +104,14 @@ var bank = [
     
     ,"And then Ben Price acted rather strangely.( Rewrite using adjective form of 'strangely'.)~ no hint"
     
-    ,"'Guess you're mistaken,Mr. Spencer', he said. ( Change the mode of narration) ~ He told Mr. Spencer that he guessed that he were mistaken."
+    ,"'Guess you're mistaken, Mr. Spencer', he said. ( Change the mode of narration) ~ He told Mr. Spencer that he guessed that he were mistaken."
     
     
     ,"He stopped near the well and pointed down.(Change into a simple sentence.)~ no hint"
     
     ,"All the mighty heart is lying still.(Change into a complex sentence. ) ~ no hint"
     
-    ,"The very houses seem asleep.(Use the adverb form of 'seem')~ THe very houses are seemingly asleep."
+    ,"The very houses seem asleep.(Use the adverb form of 'seem')~ The very houses are seemingly asleep."
     //-----
     
     
