@@ -3,7 +3,7 @@ Copyright: Soumen Chakraborty 2018
 https://soumen-here.blogspot.com/
 Strictly for Educational and Non-commercial Purpose
 */
-heading.innerHTML="Assorted Sample Questions for The Half Yearly Exam<br>Class-XI";
+heading.innerHTML="Assorted Sample Questions <br>for The Half Yearly Exam<br>Class-XI";
 var bank = [
     
     "Who had pardoned Jimmy?~no hint"
