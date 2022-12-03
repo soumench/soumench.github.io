@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assorted Questions</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+   <h2>Spoken English</h2>
+
+   
+   <div id="btn-box" >
+       <p>
+           <button class="btn" onclick="backward()">Previous</button>
+           <img src="sr_mcq/GOLU-FRONT.png" alt="golu by soumen" width="70" height="70">
+           <button class="btn" onclick="forward()">Next</button>
+        </p>
+    </div>
+   
+   <br>
+   <span class="quiz-section" id="Index-display" style="color:red">Index display</span> 
+    
+   <span class="quiz-section" id="Q-display" >Question display</span>
+    
+    <br>
+    
+    <p>
+        <button onclick="toggle()">Show hint / answer !</button>
+    </p>
+    
+   <p class="quiz-section" id="A-display" style="color: blue"> ...</p><br>
+
+   
+   <footer>   Copyright &copy; Soumen Chakraborty  <span id="year"> year</span><br>
+        Strictly for Educational, Non-profit and Non-commercial Usage.
+   </footer>         
+    
+         
+    <script src="eclean.js"></script>
+    <script src="questions.js"></script>
+    <script src="../../ENGLISH/year.js"></script>    
+    <script>
+		const sound = new Audio("ting-128kbps.ogg");
+        
+        let i = 0;
+      
+        
+		/*----------------- initial display parameters -------------*/
+		write("Index-display","Q."+ qa[0])+"- ";
+		write("Q-display", qa[1]); 
+		write("A-display", qa[2]); 
+		e("A-display").style.display = "none";
+        /*------------------------------------------------------------*/
+		
+		/*let t;
+        function toggle(){
+			e("A-display").style.display = (t=t^1)? "none":"block";
+		}*/
+		
+		function toggle(){
+            var x = e("A-display");
+            if( x.style.display === "none"){
+               x.style.display = "block"; 
+            }
+            else{
+                x.style.display = "none";
+            }
+        }
+        
+        function forward(){
+            ++i;
+            if( i >= length/3){i = 0;}
+            displayAll(); sound.play();
+        }
+        
+        function backward(){
+            --i;
+            if(i<0){ i= length/3-1; }
+            displayAll(); sound.play();
+        }
+        
+        function displayAll(){
+           e("A-display").style.display = "none";    
+            
+           write("Index-display","Q."+ qa[i*3])+"- ";            
+           write("Q-display", qa[i*3+1]);            
+           write("A-display", qa[i*3+2]); 
+        }
+       
+        function countWords(){
+            var writtenWords = e("userWriteArea").value;
+           e("words").innerHTML = "Word-count: "+ wordcount(writtenWords);
+        }
+        function wordcount(txt){ return mysplit(txt).length;}            
+        function mysplit(txt){
+                txt = txt.replace(/^\s+/,"");
+                if(""==txt)return [];
+                txt = txt.replace(/\s+$/,"");
+                return txt.split(/\s+/);
+        }     
+            
+        e("year").innerHTML = creation_year;
+    </script>
+    
+</body>
+</html>
