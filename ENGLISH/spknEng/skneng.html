@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div>
+        <h2>Spoken English</h2>
+    </div>
+
+    <div class="flex-container" id="btn-box">
+        <div>
+            <span class="sentences" id="E-display" onclick="E_Snd_File.play()" style="color: blue">English Display</span>
+            <br><br><br>
+        </div>
+        <div>
+            <span class="sentences" id="B-display" onclick="B_Snd_File.play()" style="color: blue"> Bengali Display</span>
+            <br><br> <br> <br>
+        </div>
+        <div>
+            <button class="btn" onclick="backward()">Previous</button>
+            <button class="btn" onclick="forward()">Next</button><br><br>
+        </div>
+
+        <div>
+            Copyright &copy; Soumen Chakraborty <span id="year"> year</span><br>
+            Strictly for Educational, Non-profit and Non-commercial Usage.
+        </div>
+    </div>
+
+    <script src="eclean.js"></script>
+    <script src="questions.js"></script>
+    <script src="../../ENGLISH/year.js"></script>
+    <script>
+        const btnClkSnd = new Audio("btnSnd.mp3");
+        var E_Snd_File; var B_Snd_File;
+        e("year").innerHTML = creation_year;
+        
+        let i = 0;
+
+        /*----------------- initial display parameters -------------*/
+        write("E-display", bank[0]);
+        write("B-display", bank[1]);
+       // write("E-Snd", bank[2]);
+        //write("B-Snd", bank[3]);
+        E_Snd_File = new Audio("bank[2]");
+        B_Snd_File = new Audio("bank[3]");
+        /*------------------------------------------------------------*/
+
+        function forward() {
+            btnClkSnd.play();
+            ++i;
+            if (i >= length / 4) {
+                i = 0;
+            }
+            displayAll();            
+        }
+
+        function backward() {
+            btnClkSnd.play();
+            --i;
+            if (i < 0) {
+                i = length / 4 - 1;
+            }
+            displayAll();            
+        }
+
+        function displayAll() {
+            write("E-display", bank[i * 4]);
+            write("B-display", bank[i * 4 + 1]);
+           // write("E-Snd", bank[i * 4 + 2]);
+           // write("B-Snd", bank[i * 4 + 3]);
+            E_Snd_File = new Audio("bank[i * 4 + 2]");
+            B_Snd_File = new Audio("bank[i * 4 + 3]");
+        }
+        
+        /*let t;
+        function toggle(){
+			e("A-display").style.display = (t=t^1)? "none":"block";
+		}*/
+        /*
+		function toggle(){
+            var x = e("A-display");
+            if( x.style.display === "none"){
+               x.style.display = "block"; 
+            }
+            else{
+                x.style.display = "none";
+            }
+        }
+        */
+
+        /* function countWords(){
+             var writtenWords = e("userWriteArea").value;
+            e("words").innerHTML = "Word-count: "+ wordcount(writtenWords);
+         }
+         function wordcount(txt){ return mysplit(txt).length;}            
+         function mysplit(txt){
+                 txt = txt.replace(/^\s+/,"");
+                 if(""==txt)return [];
+                 txt = txt.replace(/\s+$/,"");
+                 return txt.split(/\s+/);
+         }    */        
+    </script>
+</body></html>

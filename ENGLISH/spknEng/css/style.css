@@ -1,15 +1,32 @@
 /*<style>*/
 body{font-size: 20px; display: block;text-align: center; background-color: rgba(255, 255, 255, 0.08);}
 h2{margin: 0px;box-shadow:3px 3px 5px 6px #ccc; }
-#btn-box{  }
-.btn{font-size:110%; margin:0.3em 0.5em 0.05em 0.5em;padding: 0px; 
-    color: rgba(69, 5, 80, 0.97);font-weight: bolder;}
-.quiz-section{font-size: 130%; margin-bottom: 1em; padding: 0.2em;} /*index and question gap*/
-#userWriteArea{font-size:100%;background-color:#dbe6f5; 
-    font-weight:bolder;box-shadow:3px 3px 5px 6px #ccc;
-    margin-bottom: 0.5em; margin-top: 0.5em;
-}
+#btn-box{ border: 5px solid cyan;
+            border-inline-style: solid;
+            background-color: #ffbdff; 
+            }
+.btn{font-size:160%; margin:0.5em 0.5em 0.05em 1em;padding: 10px; 
+    color: rgba(69, 5, 80, 0.97);font-weight: bolder;
+    border-radius: 16px;}
+.btn:hover, .sentences:hover{background-color: yellow;}
+.sentences{font-size: 150%; margin-top: 0em; padding: 0.3em;} /*index and question gap*/
+
+
 footer{font-size: 75%;box-shadow:3px 3px 5px 6px #ccc;
-    margin-top: 2em; /*position: fixed;*/ /*bottom: .1em; right: 10%; left: 10%;*/
+    margin-top: 1em; /*position: fixed;*/ /*bottom: .1em; right: 10%; left: 10%;*/
 }
+
+.flex-container {
+    display: flex;
+    justify-content: center;   
+    flex-direction: column;    
+    height: 800px;
+    width: auto;
+    align-content:stretch;   
+}
+
+/*//----------------------*/
+
+
+
 /*    </style>*/

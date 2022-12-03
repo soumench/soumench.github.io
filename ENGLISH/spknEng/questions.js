@@ -1,11 +1,10 @@
-const qa = [ 
- 1.,"Are you ready?","তুমি কি প্রস্তুত?" "areUready_snd.mp3",
- 2.,"What do you want?", "তুমি কি চাও?", "whatDouwant_snd.mp3",
- 3., "Where are you now?", "তুমি কোথায় এখন?তুই কোথায় আছিস?", "whereRunow_snd.mp3"        
-    
+const bank = [ 
+ "Are you ready?","তুমি কি প্রস্তুত?", "btnSnd.mp3", "areUready_B-snd.mp3",
+ "What do you want?", "তুমি কি চাও?", "whatDouwant_E-snd.mp3", "whatDouwant_B-snd.mp3",
+ "Where are you now?", "তুমি কোথায় এখন?তুই কোথায় আছিস?", "whereRunow_E-snd.mp3", "whereRunow_B-snd.mp3"   
     
     
         ];
-        const length = qa.length;
+        const length = bank.length;
 
 /*Copyright- Soumen Chakraborty 2018-22*/
