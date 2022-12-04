@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my test page-----</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div>
+        <h2>Spoken English</h2>
+    </div>
+
+    <div class="flex-container" id="btn-box">
+        <!--<div>
+            <span class="sentences" id="E-display" onclick="playEng()" style="color: blue">English Display</span>
+            <br><br><br>
+        </div>-->
+        
+        <div>
+            <button class="btn" onclick="snd1()">Previous</button>
+            <button class="btn" onclick="snd2()">middle</button>
+            <button class="btn" onclick="snd3()">Next</button>
+        </div>
+
+        
+    </div>
+
+    
+    <script>
+        
+        const bank = [];
+        const length = bank.length;            
+
+        const btnClkSnd1 = new Audio("btnSnd1.mp3");
+        const btnClkSnd2 = new Audio("btnSnd2.ogg");
+        const btnClkSnd3 = new Audio("btnSnd3.oga");
+        
+        function snd1(){btnClkSnd1.play();}
+        function snd2(){btnClkSnd2.play();}
+        function snd3(){btnClkSnd3.play();}
+        
+    </script>
+</body></html>

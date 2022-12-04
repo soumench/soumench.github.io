@@ -14,7 +14,7 @@
 
     <div class="flex-container" id="btn-box">
         <div>
-            <span class="sentences" id="E-display" onclick="E_Snd_File.play()" style="color: blue">English Display</span>
+            <span class="sentences" id="E-display" onclick="playEng()" style="color: blue">English Display</span>
             <br><br><br>
         </div>
         <div>
@@ -36,14 +36,14 @@
     <!--<script src="questions.js"></script> -->
     <script src="../../ENGLISH/year.js"></script>
     <script>
-        const e1 = new Audio("btnSnd.mp3");
-        const b1 = new Audio("btnSnd.mp3");
+        
         const bank = [ 
- "Are you ready?","তুমি কি প্রস্তুত?", e1, b1,
+ "Are you ready?","তুমি কি প্রস্তুত?", "btnSnd.mp3", "btnSnd.mp3",
  "What do you want?", "তুমি কি চাও?", "whatDouwant_E-snd.mp3", "whatDouwant_B-snd.mp3",
  "Where are you now?", "তুমি কোথায় এখন?তুই কোথায় আছিস?", "whereRunow_E-snd.mp3", "whereRunow_B-snd.mp3" 
         ];
         const length = bank.length;
+        var eSndIndex;
         
 
         const btnClkSnd = new Audio("btnSnd.mp3");
@@ -84,8 +84,14 @@
             write("B-display", bank[i * 4 + 1]);
            // write("E-Snd", bank[i * 4 + 2]);
            // write("B-Snd", bank[i * 4 + 3]);
-            E_Snd_File = new Audio("bank[i * 4 + 2]");
+            eSndIndex = bank[i * 4 + 2]";
+           // E_Snd_File = new Audio("bank[i * 4 + 2]");
             B_Snd_File = new Audio("bank[i * 4 + 3]");
+        }
+        
+        function playEng(){
+           E_Snd_File = new Audio(bank[eSndIndex]); 
+           E_Snd_File.play(); 
         }
        
     </script>
