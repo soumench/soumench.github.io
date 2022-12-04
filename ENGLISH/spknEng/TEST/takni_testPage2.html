@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+                    
+            <script>  
+               
+    const filenames = ["btnSnd1.mp3", "btnSnd2.ogg", "btnSnd3.oga"];
+    const audioobjects=filenames.map(x => new Audio(x));
+    let i; for(i=0;i<filenames.length;++i){
+        let b=document.createElement("input");
+        b.type='button';
+        b.value=filenames[i];
+        b.setAttribute('onclick',`clicked(${i})`);
+        document.body.appendChild(b);
+    }
+    
+    function clicked(i){
+        console.log(i);
+        audioobjects[i].play();
+    }
+    
+                console.log(2+2);
+                console.log("2+2");
+
+    
+            </script>  
+</body>  
+</html>  
