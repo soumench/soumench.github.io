@@ -33,9 +33,19 @@
     </div>
 
     <script src="eclean.js"></script>
-    <script src="questions.js"></script>
+    <!--<script src="questions.js"></script> -->
     <script src="../../ENGLISH/year.js"></script>
     <script>
+        const e1 = new Audio("btnSnd.mp3");
+        const b1 = new Audio("btnSnd.mp3");
+        const bank = [ 
+ "Are you ready?","তুমি কি প্রস্তুত?", e1, b1,
+ "What do you want?", "তুমি কি চাও?", "whatDouwant_E-snd.mp3", "whatDouwant_B-snd.mp3",
+ "Where are you now?", "তুমি কোথায় এখন?তুই কোথায় আছিস?", "whereRunow_E-snd.mp3", "whereRunow_B-snd.mp3" 
+        ];
+        const length = bank.length;
+        
+
         const btnClkSnd = new Audio("btnSnd.mp3");
         var E_Snd_File; var B_Snd_File;
         e("year").innerHTML = creation_year;
@@ -77,33 +87,6 @@
             E_Snd_File = new Audio("bank[i * 4 + 2]");
             B_Snd_File = new Audio("bank[i * 4 + 3]");
         }
-        
-        /*let t;
-        function toggle(){
-			e("A-display").style.display = (t=t^1)? "none":"block";
-		}*/
-        /*
-		function toggle(){
-            var x = e("A-display");
-            if( x.style.display === "none"){
-               x.style.display = "block"; 
-            }
-            else{
-                x.style.display = "none";
-            }
-        }
-        */
-
-        /* function countWords(){
-             var writtenWords = e("userWriteArea").value;
-            e("words").innerHTML = "Word-count: "+ wordcount(writtenWords);
-         }
-         function wordcount(txt){ return mysplit(txt).length;}            
-         function mysplit(txt){
-                 txt = txt.replace(/^\s+/,"");
-                 if(""==txt)return [];
-                 txt = txt.replace(/\s+$/,"");
-                 return txt.split(/\s+/);
-         }    */        
+       
     </script>
 </body></html>
