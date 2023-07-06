@@ -1,0 +1,141 @@
+const topic_name ="Second Summative Evaluation Helper 2023"; 
+const list=[
+            "Who was the king of England many hundreds of years ago? ",
+	 		"Prince Charles III.",
+	 		"Uther-Pendragon.",
+	 		"Edward VIII",
+	 		"b",
+	 
+	 
+            "Who were the two wise counselors of King Uther-Pendragon?",
+	 		"Peter and Harry.",
+	 		"Igraine and Ector",
+	 		"Merlin,the magician and Sir Ulfius.",
+	 		"c",
+	
+	        "What was the name given to the baby by Sir Ulfius?",
+	 		"Henry",
+	 		"Arthur.",
+	 		"Uther",
+	 		"b",
+	 		
+	 		"What did Merlin and Sir Ulfius ask Sir Ector to do? ",
+	 		"to kill the baby",
+	 		"to raise the baby",
+	 		"to ebslave the baby",
+	 		"b",
+	 		
+	 		"Why did Sir Ector agree to raise the baby boy as his own son?",
+	 		"He was obedient and loyal.",
+	 		"He had no baby.",
+	 		"He wanted to sell the baby.",
+	 		"a",
+	 		
+	 		"The magnificent sword was fixed ",
+	 		"on a large stone in a churchyard.",
+	 		"in the water.",
+	 		"on the palace wall..",
+	 		"a",
+	 		
+	 		"Arthur was able to lift the sword when he was",
+	 		"sixteen.",
+	 		"eighteen.",
+	 		"eighty.",
+	 		"b",
+	 
+	 		"A beautiful arm rose from the  ",
+	 		"fire.",
+	 		"road.",
+	 		"water.",
+	 		"c",
+	 
+	 		"Arthur lost his Royal sword ",
+	 		"in a battle.",
+	 		"while playing.",
+	 		"in the street.",
+	 		"a",
+	 
+	 		"The knights gathered around ",
+	 		"the deep well.",
+	 		"the famous round table.",
+	 		"the village.",
+	 		"b",
+	 
+	 		"Arthur ruled for ",
+	 		"only some years.",
+	 		"only some months.",
+	 		"many happy years.",
+	 		"c",
+	 
+	 		"Arthur insructed his people to put him ",
+	 		"on a barge.",
+	 		"in his ship.",
+	 		"in his boat.",
+	 		"a",
+	 
+	 		"Acorns are",
+	 		"seeds of corns.",
+	 		"fruits of the oak tress.",
+	 		"small unicorns.",
+	 		"b",
+	 
+	 		"The man was planting ",
+	 		"mango trees.",
+	 		"orange trees.",
+	 		"oak trees.",
+	 		"c",
+	 
+	 		"The man had been planing trees for",
+	 		"two years.",
+	 		"three years.",
+	 		"ten years.",
+	 		"b",
+			
+			"The name of the shepherd was",
+	 		"Alexander.",
+	 		"Elzeard Bouffier.",
+	 		"Elton john.",
+	 		"b",  
+			
+			"The man lives",
+	 		"with his family.",
+	 		"with his flocks of sheep and his dog.",
+	 		"with his wife and son.",
+	 		"b",
+	
+			"The author was engaged in war",
+	 		"for two years.",
+	 		"for five years.",
+	 		"for three years.",
+	 		"b", 
+	
+			"The man concluded that his country was dying for",
+	 		"lack of trees.",
+	 		"lack of people.",
+	 		"lack of water.",
+	 		"a",
+	
+			"How long was the forest?",
+	 		"ten kilometers.",
+	 		"twelve kilometers.",
+	 		"eleven kilometers.",
+	 		"c",
+	
+			"The forest scene was",
+	 		"impressive.",
+	 		"ugly.",
+	 		"deadly.",
+	 		"a", 
+	
+			"The war had not disturbed the shepherd at all.",
+	 		"True.",
+	 		"False.",
+	 		"No idea.",
+	 		"a",
+	
+			"The man could be as effective as God",
+	 		"in destruction.",
+	 		"in domains other than destruction.",
+	 		"in killing trees.",
+	 		"b"			
+        ];
